@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Kevin Cheng em Portugal</title>
+	<atom:link href="/kevin-cheng-em-portugal/feed/" rel="self" type="application/rss+xml" />
+	<link>/kevin-cheng-em-portugal/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/kevin-cheng-em-portugal/#comment-537</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 26 Jan 2005 12:14:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=114#comment-537</guid>
+		<description><![CDATA[Infelizmente não foi possível fazer um video da apresentação, mas também não sei se valia a pena porque o Kevin só veio cá fazer mais uma espécie de &quot;introdução à usabilidade&quot;. Nada de novo.]]></description>
+		<content:encoded><![CDATA[<p>Infelizmente não foi possível fazer um video da apresentação, mas também não sei se valia a pena porque o Kevin só veio cá fazer mais uma espécie de &#8220;introdução à usabilidade&#8221;. Nada de novo.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/kevin-cheng-em-portugal/#comment-533</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Thu, 20 Jan 2005 13:22:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=114#comment-533</guid>
+		<description><![CDATA[E que tal colocar depois online a apresentação ou um vídeo para quem não pode ir a Lx ver isso?
+É que ainda por cima tenho exame :(]]></description>
+		<content:encoded><![CDATA[<p>E que tal colocar depois online a apresentação ou um vídeo para quem não pode ir a Lx ver isso?<br />
+É que ainda por cima tenho exame :(</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

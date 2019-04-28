@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Novo site log</title>
+	<atom:link href="/novo-site-log/feed/" rel="self" type="application/rss+xml" />
+	<link>/novo-site-log/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Rodrigo Muniz</title>
+		<link>/novo-site-log/#comment-3467</link>
+		<dc:creator><![CDATA[Rodrigo Muniz]]></dc:creator>
+		<pubDate>Sat, 25 Feb 2006 16:09:10 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3467</guid>
+		<description><![CDATA[Você provou que esses passos no projeto dão mesmo muito certo. Como a gente diz aqui no Brasil: &quot;matou a cobra e mostrou o pau&quot;.
+Não conhecia o Card Sorting. Aprendi mais uma, ou melhor, mais duas.
+Grande trabalho Ivo, meus parabéns!]]></description>
+		<content:encoded><![CDATA[<p>Você provou que esses passos no projeto dão mesmo muito certo. Como a gente diz aqui no Brasil: &#8220;matou a cobra e mostrou o pau&#8221;.<br />
+Não conhecia o Card Sorting. Aprendi mais uma, ou melhor, mais duas.<br />
+Grande trabalho Ivo, meus parabéns!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/novo-site-log/#comment-3466</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Sat, 25 Feb 2006 10:57:50 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3466</guid>
+		<description><![CDATA[Em nome de toda a equipa &lt;strong&gt;log&lt;/strong&gt;, obrigado :)
+
+&lt;strong&gt;@S.:&lt;/strong&gt; A estrutura dos URLs foi pensada para facilitar ao máximo o endereço web, no entanto, à medida que se vai avançando na navegação é incomportável ter uma pasta para todos os itens. Apenas os itens principais são acedidos directamente através da sua pasta: http://www.log.pt/solucoes/ ; http://www.log.pt/emprego/ ; etc...
+
+&lt;strong&gt;@Carlos Jorge Andrade:&lt;/strong&gt; Havias de ver as frases que temos na versão interna do site :D]]></description>
+		<content:encoded><![CDATA[<p>Em nome de toda a equipa <strong>log</strong>, obrigado :)</p>
+<p><strong>@S.:</strong> A estrutura dos URLs foi pensada para facilitar ao máximo o endereço web, no entanto, à medida que se vai avançando na navegação é incomportável ter uma pasta para todos os itens. Apenas os itens principais são acedidos directamente através da sua pasta: <a href="http://www.log.pt/solucoes/" rel="nofollow">http://www.log.pt/solucoes/</a> ; <a href="http://www.log.pt/emprego/" rel="nofollow">http://www.log.pt/emprego/</a> ; etc&#8230;</p>
+<p><strong>@Carlos Jorge Andrade:</strong> Havias de ver as frases que temos na versão interna do site :D</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: João Ramos</title>
+		<link>/novo-site-log/#comment-3465</link>
+		<dc:creator><![CDATA[João Ramos]]></dc:creator>
+		<pubDate>Sat, 25 Feb 2006 01:31:57 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3465</guid>
+		<description><![CDATA[Mt boa a explicação dos processos de desenvolvimento do novo site, a &lt;b&gt;log&lt;/b&gt; parece-me boa empresa, pelo menos utiliza as metodologias correctas.
+Mt bom, parabéns a &lt;b&gt;log&lt;/b&gt;.]]></description>
+		<content:encoded><![CDATA[<p>Mt boa a explicação dos processos de desenvolvimento do novo site, a <b>log</b> parece-me boa empresa, pelo menos utiliza as metodologias correctas.<br />
+Mt bom, parabéns a <b>log</b>.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Mario</title>
+		<link>/novo-site-log/#comment-3464</link>
+		<dc:creator><![CDATA[Mario]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2006 21:26:14 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3464</guid>
+		<description><![CDATA[Acho que o site está bem conseguido.
+Simples, directo e funcional. Parece-me bem :)]]></description>
+		<content:encoded><![CDATA[<p>Acho que o site está bem conseguido.<br />
+Simples, directo e funcional. Parece-me bem :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: S.</title>
+		<link>/novo-site-log/#comment-3463</link>
+		<dc:creator><![CDATA[S.]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2006 18:07:46 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3463</guid>
+		<description><![CDATA[Muito bom, quer ao nível do design quer ao nível técnico (particularmente as CSS). Ao nível do que de melhor se faz actualmente.
+
+Uma pequena pergunta, estudaram a estrutura dos URL? Chegaram a considerar remover completamente as referências à tecnologia? Pergunto porque nas páginas finais os documentos terminam em &quot;.php&quot;.]]></description>
+		<content:encoded><![CDATA[<p>Muito bom, quer ao nível do design quer ao nível técnico (particularmente as CSS). Ao nível do que de melhor se faz actualmente.</p>
+<p>Uma pequena pergunta, estudaram a estrutura dos URL? Chegaram a considerar remover completamente as referências à tecnologia? Pergunto porque nas páginas finais os documentos terminam em &#8220;.php&#8221;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: andr3</title>
+		<link>/novo-site-log/#comment-3462</link>
+		<dc:creator><![CDATA[andr3]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2006 17:32:51 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3462</guid>
+		<description><![CDATA[Ivo, muito bom. Tanto o produto final como a metodologia que utilizaram e apresentaste aqui.
+
+Costumo ser hiper crítico a sites de empresas nacionais, mas não tenho nada a apontar a este novo site da Log. Estão de parabéns. :)]]></description>
+		<content:encoded><![CDATA[<p>Ivo, muito bom. Tanto o produto final como a metodologia que utilizaram e apresentaste aqui.</p>
+<p>Costumo ser hiper crítico a sites de empresas nacionais, mas não tenho nada a apontar a este novo site da Log. Estão de parabéns. :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Carlos Jorge Andrade</title>
+		<link>/novo-site-log/#comment-3461</link>
+		<dc:creator><![CDATA[Carlos Jorge Andrade]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2006 17:01:36 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3461</guid>
+		<description><![CDATA[Gostei... só acho que o &quot;banner&quot; dos &quot;Valores &#038; Cultura log&quot; é grande demais. Tem protagonismo a mais.
+
+Tinha de dizer mal de algo. :-)]]></description>
+		<content:encoded><![CDATA[<p>Gostei&#8230; só acho que o &#8220;banner&#8221; dos &#8220;Valores &amp; Cultura log&#8221; é grande demais. Tem protagonismo a mais.</p>
+<p>Tinha de dizer mal de algo. :-)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dextro</title>
+		<link>/novo-site-log/#comment-3460</link>
+		<dc:creator><![CDATA[Dextro]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2006 15:07:09 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3460</guid>
+		<description><![CDATA[O site está muito bom mas o menu superior acho que ficou redondo demais... E quando esta é a unica critica que consigo fazer estão de parabens pelo optimo trabalho (e este artigo é uma optima referençia para qualquer webdesigner ;) ).]]></description>
+		<content:encoded><![CDATA[<p>O site está muito bom mas o menu superior acho que ficou redondo demais&#8230; E quando esta é a unica critica que consigo fazer estão de parabens pelo optimo trabalho (e este artigo é uma optima referençia para qualquer webdesigner ;) ).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Marco Neves</title>
+		<link>/novo-site-log/#comment-3459</link>
+		<dc:creator><![CDATA[Marco Neves]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2006 14:36:58 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3459</guid>
+		<description><![CDATA[O site está muito bom. Parabens. A Log tem realmente uma equipa fantástica.]]></description>
+		<content:encoded><![CDATA[<p>O site está muito bom. Parabens. A Log tem realmente uma equipa fantástica.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: José Carlos</title>
+		<link>/novo-site-log/#comment-3458</link>
+		<dc:creator><![CDATA[José Carlos]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2006 13:57:29 +0000</pubDate>
+		<guid isPermaLink="false">/novo-site-log/#comment-3458</guid>
+		<description><![CDATA[Parabéns, o site está fantástico! Simples, intuitivo e bastante leve, o que permite uma enorme rapidez de navegação.
+
+Mais uma vez, parabéns
+
+José Carlos]]></description>
+		<content:encoded><![CDATA[<p>Parabéns, o site está fantástico! Simples, intuitivo e bastante leve, o que permite uma enorme rapidez de navegação.</p>
+<p>Mais uma vez, parabéns</p>
+<p>José Carlos</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

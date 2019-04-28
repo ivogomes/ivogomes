@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>curiosidades &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/curiosidades/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Primeiro Portugal, depois o Brasil&#8230; agora o Mundo</title>
+		<link>/primeiro-portugal-depois-o-brasil-agora-o-mundo/</link>
+		<comments>/primeiro-portugal-depois-o-brasil-agora-o-mundo/#comments</comments>
+		<pubDate>Mon, 30 Apr 2007 15:39:37 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[curiosidades]]></category>
+		<category><![CDATA[forum]]></category>
+		<category><![CDATA[portal]]></category>
+
+		<guid isPermaLink="false">/primeiro-portugal-depois-o-brasil-agora-o-mundo/</guid>
+		<description><![CDATA[<p>Está oficializado o lançamento da versão internacional do <a href="http://www.portaldascuriosidades.com/">Portal das Curiosidades</a>. Senhoras e senhores, apresento-vos o <a href="http://www.curious-forum.com/">Curious Forum</a>!</p>
+<p><a href="http://www.curious-forum.com/"><img src='/wp-content/uploads/2007/04/curious-forum.png' alt='Curious Forum' class="img"/></a></p>
+<p>O conteúdo <a rel="nofollow" href="/primeiro-portugal-depois-o-brasil-agora-o-mundo/">Primeiro Portugal, depois o Brasil&#8230; agora o Mundo</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/primeiro-portugal-depois-o-brasil-agora-o-mundo/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+	</channel>
+</rss>

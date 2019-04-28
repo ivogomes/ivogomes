@@ -1,0 +1,447 @@
+<!doctype html>
+<html amp lang="pt-PT">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title>A Usabilidade de subscrever RSS Feeds - IvoGomes.com</title>
+		<link rel="canonical" href="/jeffrey-veen-the-usability-of-subscribing-to-feeds/" />
+	<script type='text/javascript' src='https://cdn.ampproject.org/v0.js' async></script>
+<script type='text/javascript' src='https://cdn.ampproject.org/v0/amp-anim-0.1.js' async custom-element="amp-anim"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic"><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"IvoGomes.com"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/www.ivogomes.com\/blog\/jeffrey-veen-the-usability-of-subscribing-to-feeds\/","headline":"A Usabilidade de subscrever RSS Feeds","datePublished":"2005-06-04T11:23:52+00:00","dateModified":"2016-06-17T09:05:26+00:00","author":{"@type":"Person","name":"Ivo Gomes"}}</script>
+	<meta name="generator" content="AMP Plugin v1.0.1; mode=classic">	<style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.amp-wp-unknown-size img {
+	/** Worst case scenario when we can't figure out dimensions for an image. **/
+	/** Force the image into a box of fixed dimensions and use object-fit to scale. **/
+	object-fit: contain;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #fff;
+	color: #353535;
+	font-family: 'Merriweather', 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #353535;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #353535;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Site Icon */
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #353535;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #353535;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #696969;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #c2c2c2;
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+amp-carousel {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #c2c2c2 url( /wp-content/plugins/amp/assets/images/placeholder-icon.png) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #c2c2c2;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #c2c2c2;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #696969;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style>
+</head>
+
+<body class="">
+
+<header id="top" class="amp-wp-header">
+	<div>
+		<a href="/">
+									<span class="amp-site-title">
+				IvoGomes.com			</span>
+		</a>
+	</div>
+</header>
+
+<article class="amp-wp-article">
+	<header class="amp-wp-article-header">
+		<h1 class="amp-wp-title">A Usabilidade de subscrever RSS Feeds</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/5d965724123073222e4d321ab394f4c8?s=24&#038;d=mm&#038;r=r" alt="Ivo Gomes" width="24" height="24" layout="fixed"></amp-img>
+				<span class="amp-wp-author author vcard">Ivo Gomes</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2005-06-04T11:23:52+00:00">
+		14 anos ago	</time>
+</div>
+	</header>
+
+	
+	<div class="amp-wp-article-content">
+		<p>Li há pouco tempo um artigo do <a href="http://www.veen.com/jeff/archives/000733.html">Jeffrey Veen</a> que falava precisamente deste facto: a usabilidade de subscrever <a href="http://pt.wikipedia.org/wiki/RSS">RSS Feeds</a>.</p>
+<p>Antes de mais, é necessário explicar o que são as <a href="http://pt.wikipedia.org/wiki/RSS">RSS Feeds</a>.<br>
+Um utilizador normal da Internet provavelmente não sabe o que significa nem para que serve aquele botão cor-de-laranja <amp-anim src="https://www.ivogomes.com/img/artigos/rss_feed.gif" alt="RSS Feed" width="32" height="15" class="amp-wp-enforced-sizes" layout="intrinsic"></amp-anim> que quando é clicado abre uma página com um código indecifrável. A maior parte das pessoas não sabe que é preciso um "<a href="http://www.rssficado.com.br/index.php?wiki=__Leitores_de_Feeds__">Feed Reader</a>" para abrir este tipo de ficheiros, ou então usar um browser que suporte RSS (O Internet Explorer, que é o mais utilizado, não suporta RSS... para variar).<br>
+E mesmo que o utilizador tenha esses programas ou use um browser moderno (<a href="http://www.getfirefox.com/">Firefox</a> ou <a href="http://www.apple.com/macosx/features/safari/">Safari</a>) que consiga ler RSS, vai continuar a haver a mesma questão: Para que servem os RSS?</p>
+<p>Basicamente os RSS servem para disponibilizar aos utilizadores os conteúdos de um website. A grande maioria dos websites de notícias (em Portugal o <a href="http://publico.clix.pt/">Público</a> ainda é o único a ter), os blogs (quase todos têm) e alguns outros websites fornecem um ficheiro com as notícias ou artigos que lá são publicados. Este ficheiro pode ser subscrito pelos utilizadores para que, sempre que o site for actualizado com uma nova notícia ou artigo, o utilizador poderá ler sem ter que visitar o website.</p>
+<p>Agora imaginemos que eu tenho um conjunto de websites de notícias e de blogs que leio frequentemente. Todos os dias tenho que visitar cada um desses sites para ver se há actualizações. Se eu tiver 50 sites preferidos, tenho que abrir o browser em 50 páginas diferentes só para ver se há novos artigos! A grande utilidade dos RSS Feeds é que eu posso subscrever esses 50 sites e vê-los todos numa única janela usando um Feed Reader.</p>
+<p><amp-img src="https://www.ivogomes.com/img/artigos/netnewswire.png" alt="Feed Reader" class="imgartigo amp-wp-enforced-sizes" width="420" height="270" layout="intrinsic"></amp-img></p>
+<p>Nesta imagem podemos ver a lista de sites do lado esquerdo (separados por grupos para facilitar a leitura) em que está indicado ao lado de cada um deles o número de artigos não lidos por mim. Clicando num deles (na imagem está clicado o <a href="http://www.simplebits.com/">SimpleBits</a>) do lado direito aparecem os últimos artigos do site, e clicando nos títulos dá para ler o resumo ou o artigo completo. Tudo dentro de uma única janela, sem ter que abrir o browser e abrir as páginas todas "à mão".</p>
+<p>Tudo isto é muito simples, mas ainda só é utilizado pelos utilizadores mais experientes da Internet. O utilizador normal continua sem saber para que servem e como deve utilizar as RSS Feeds. Como tal, penso que deveriamos ter um link ao lado do tal botão cor-de-laranja com informação sobre para que serve e como deve ser lido o ficheiro RSS para que todos possam aproveitar da melhor forma esta tecnologia que nos simplifica o processo de leitura de vários sites e nos poupa tempo porque não precisamos de abrir tantas janelas no browser...</p>
+<p>No entanto há ainda outro problema. Além da nomenclatura RSS, também há sites que usam o nome XML ou "Syndication". Há ainda outra tecnologia semelhante chamada Atom (os Feed Readers não fazem distinção e lêm ambas as tecnologias da mesma maneira). Com tantos nomes diferentes o utilizador fica ainda mais confuso. Tal como o <a href="http://blog.delaranja.com/?p=324">André</a> diz, neste momento, provavelmente o melhor termo a usar é mesmo RSS:</p>
+<blockquote><p>The best thing to do is help turning the most popular feed format (RSS) into an even more popular term. There are other types of feeds like Atom (which <a href="http://blogger.com/">blogger</a> uses) which might even be technologically better. But by now the user is already tunned in into RSS and big sites are already marketing RSS feeds and RSS icons. This will surely help spread the adoption of feeds in general.</p></blockquote>
+	</div>
+
+	<footer class="amp-wp-article-footer">
+			<div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="/category/usabilidade/" rel="category tag">Usabilidade</a>	</div>
+
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="/jeffrey-veen-the-usability-of-subscribing-to-feeds/#comments">
+			Leave a Comment		</a>
+	</div>
+	</footer>
+</article>
+
+<footer class="amp-wp-footer">
+	<div>
+		<h2>IvoGomes.com</h2>
+		<p>
+			<a href="https://wordpress.org/">
+				Powered by WordPress			</a>
+		</p>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer>
+
+
+
+</body>
+</html>

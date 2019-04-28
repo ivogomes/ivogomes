@@ -1,0 +1,489 @@
+<!doctype html>
+<html amp lang="pt-PT">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title>WordPress como gestor de conteúdos de um Jornal - IvoGomes.com</title>
+		<link rel="canonical" href="/wordpress-gestor-conteudos-um-jornal/" />
+	<script type='text/javascript' src='https://cdn.ampproject.org/v0.js' async></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic"><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"IvoGomes.com"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/www.ivogomes.com\/blog\/wordpress-gestor-conteudos-um-jornal\/","headline":"WordPress como gestor de conte\u00fados de um Jornal","datePublished":"2007-07-28T11:16:33+00:00","dateModified":"2016-07-28T11:17:38+00:00","author":{"@type":"Person","name":"Ivo Gomes"},"image":{"@type":"ImageObject","url":"https:\/\/www.ivogomes.com\/blog\/wp-content\/uploads\/2007\/07\/picture-1.png","width":0,"height":0}}</script>
+	<meta name="generator" content="AMP Plugin v1.0.1; mode=classic">	<style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.amp-wp-unknown-size img {
+	/** Worst case scenario when we can't figure out dimensions for an image. **/
+	/** Force the image into a box of fixed dimensions and use object-fit to scale. **/
+	object-fit: contain;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #fff;
+	color: #353535;
+	font-family: 'Merriweather', 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #353535;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #353535;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Site Icon */
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #353535;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #353535;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #696969;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #c2c2c2;
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+amp-carousel {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #c2c2c2 url( /wp-content/plugins/amp/assets/images/placeholder-icon.png) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #c2c2c2;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #c2c2c2;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #696969;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+		/* Inline stylesheets */
+:root:not(#_):not(#_):not(#_):not(#_):not(#_) .amp-wp-2dc016a{width:398px}:root:not(#_):not(#_):not(#_):not(#_):not(#_) .amp-wp-ca17b5e{width:562px}	</style>
+</head>
+
+<body class="">
+
+<header id="top" class="amp-wp-header">
+	<div>
+		<a href="/">
+									<span class="amp-site-title">
+				IvoGomes.com			</span>
+		</a>
+	</div>
+</header>
+
+<article class="amp-wp-article">
+	<header class="amp-wp-article-header">
+		<h1 class="amp-wp-title">WordPress como gestor de conteúdos de um Jornal</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/5d965724123073222e4d321ab394f4c8?s=24&#038;d=mm&#038;r=r" alt="Ivo Gomes" width="24" height="24" layout="fixed"></amp-img>
+				<span class="amp-wp-author author vcard">Ivo Gomes</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2007-07-28T11:16:33+00:00">
+		12 anos ago	</time>
+</div>
+	</header>
+
+	
+	<div class="amp-wp-article-content">
+		<p>Há cerca de um mês e meio atrás, foi colocado on-line o novo website do Jornal <a href="http://www.meiosepublicidade.pt/">Meios &amp; Publicidade</a>. Nesse mesmo dia <a href="/renovacao-do-website-do-jornal-meios-publicidade/">escrevi um artigo</a> que mostrava as novidades do novo website e na altura disse que para além das mudanças no layout também tínhamos mudado de gestor de conteúdos. Apesar de não ter mencionado o nome do novo CMS (apenas disse que tínhamos mudado do <a href="http://www.bricolage.cc/">Bricolage</a> para outro CMS adaptado pela <a href="http://www.log.pt/">log</a> à realidade do jornal), alguns utilizadores mais atentos repararam que se tratava na realidade do <a href="http://www.wordpress.org/">WordPress</a>.</p>
+<p>Para quem conhece, o <a href="http://www.wordpress.org/">WordPress</a> é uma plataforma de blogs bastante utilizada. Tem uma comunidade de utilizadores bastante grande e tem um backoffice relativamente fácil de usar (bastante mais fácil do que o <a href="http://www.bricolage.cc/">Bricolage</a> ou o <a href="http://www.joomlapt.com/">Joomla</a>, por exemplo). Uma das maiores prioridades que tínhamos era exactamente essa: ter algo fácil de utilizar e que permitisse que os jornalistas passassem mais tempo a criar notícias (aquilo para o qual são pagos) do que a inserír conteúdos tediosamente no CMS.</p>
+<p>Não optámos por criar um CMS de raíz porque provavelmente isso iria demorar mais tempo a desenvolver, e sendo assim, aproveitámos as funcionalidades já existentes do WordPress (que eram bastante semelhantes aos requisitos que tínhamos identificado junto dos jornalistas) e adaptámo-las à realidade do jornal.</p>
+<p>Sendo assim, aqui vão alguns screenshots das alterações que fizémos e qual o aspecto final do backoffice do "nosso" WordPress.</p>
+<h2>Escrita de Notícias</h2>
+<p>Alterámos ligeiramente os menus para separar os conteúdos que são produzidos no Jornal. Ou seja, os jornalistas têm a possibilidade de escrever Notícias do Dia (publicadas todos os dias no site), Notícias do Jornal (publicação semanal das notícias da edição em papel) e Dossiers (grupos de notícias sobre um determinado tema, também chamados de "Especiais").</p>
+<div class="cl amp-wp-2dc016a">
+<div class="img">
+<p><amp-img src="/wp-content/uploads/2007/07/picture-1.png" alt="Escrever Notícia" width="378" height="193" class="amp-wp-enforced-sizes" layout="intrinsic"></amp-img></p>
+<div class="caption"><strong>Escrever Notícias</strong><br>
+Separação de escrita de artigos em três tipos: Notícias do Dia, Notícias do Jornal e Dossiers.</div>
+</div>
+</div>
+<p>As Notícias do Jornal tinham que estar organizadas por Edição. Desta forma, antes de se poder criar uma notícia deste tipo, era necessário indicar qual a edição à qual a notícia iria ser agregada. Para os Editores existe a possibilidade de criar uma nova edição caso esta ainda não exista (todas as semanas deve ser criada uma nova edição correspondente à edição em papel).</p>
+<div class="cl amp-wp-ca17b5e">
+<div class="img">
+<p><amp-img src="/wp-content/uploads/2007/07/picture-3.png" alt="Criar Nova Edição do Jornal" width="542" height="303" class="amp-wp-enforced-sizes" layout="intrinsic"></amp-img></p>
+<div class="caption"><strong>Seleccionar Edição do Jornal ou Criar uma Nova</strong><br>
+Antes de escrever uma notícia do jornal é necessário indicar a que edição do jornal é que a notícia vai ser agregada.</div>
+</div>
+</div>
+<p>Para evitar ter que passar por este ecrã todas as vezes que se quer introduzir uma notícia deste tipo (normalmente são todas introduzidas no mesmo dia), adicionámos a opção para considerar que todas as notícias inseridas nesse dia iriam pertencer à edição seleccionada.</p>
+<h2>Ordenação de Notícias e Selecção de Notícia de Destaque</h2>
+<p>Para ordenar as notícias no site (algumas têm que aparecer primeiro porque são mais importantes), adicionámos uns botões com umas setas para cima e para baixo, que reordenam automaticamente (tipo AJAX) as notícias na página.</p>
+<p>Para a selecção da notícia de destaque, basicamente temos um menu dropdown com todas as notícias do dia, em que basta seleccionar uma delas. Automaticamente o WordPress usa essa notícia como destaque e a imagem do destaque é a primeira imagem que estiver no corpo da notícia.</p>
+<div class="cl">
+<div class="img">
+<p><amp-img src="/wp-content/uploads/2007/07/picture-5.png" alt="Ordenação de Notícias e selecção da Notícia de Destaque" width="550" height="334" class="amp-wp-enforced-sizes" layout="intrinsic"></amp-img></p>
+<div class="caption"><strong>Ordenar Notícias e Seleccionar a Notícia de Destaque</strong><br>
+Menu dropdown para selecção da notícia de destaque e setas para ordenação das notícias dentro de cada categoria.</div>
+</div>
+</div>
+<h2>Vídeos</h2>
+<p>Durante o desenvolvimento do CMS foi-nos pedido para que se pudesse inserir vídeos nos artigos e ter uma listagem dos vídeos inseridos. Apesar do WordPress permitir o envio/upload de vídeos através da mesma caixa com que se faz o upload das imagens, o problema é que os vídeos não iriam ter um player, ou seja, ficaria apenas um link para download do vídeo em vez de ter um player em Flash como o <a href="http://www.youtube.com/">YouTube</a> ou o <a href="http://videos.sapo.pt/">Sapo Vídeos</a>, por exemplo. Existem alguns plugins para isso, no entanto ainda tínhamos outro problema: a listagem dos vídeos. Era preciso algo que permitisse ver uma listagem de todos os vídeos inseridos, independentemente de estarem ou não agregados a uma notícia. Essa listagem teria que existir tanto no WordPress como no próprio website (<a href="http://www.meiosepublicidade.pt/videos/1">vejam aqui como ficou no website</a>)</p>
+<p>E assim criámos nós um plugin para o WordPress, que permite adicionar vídeos do <a href="http://www.youtube.com/">Youtube</a> e do <a href="http://videos.sapo.pt/">Sapo</a> (entre outros) de forma simples: só é preciso escrever o link do vídeo e o plugin faz o resto (identifica se o vídeo pertence ao YouTube ou ao Sapo Vídeos e adiciona o player em Flash correspondente). Aqui temos <a href="http://www.meiosepublicidade.pt/video/64">um exemplo no site do Meios &amp; Publicidade</a>.</p>
+<div class="cl">
+<div class="img">
+<p><amp-img src="/wp-content/uploads/2007/07/picture-4.png" alt="Listagem de Vídeos" width="550" height="313" class="amp-wp-enforced-sizes" layout="intrinsic"></amp-img></p>
+<div class="caption"><strong>Listagem dos Vídeos Adicionados</strong><br>
+Página com a listagem de todos os vídeos inseridos no WordPress.</div>
+</div>
+</div>
+<p>Para associar facilmente um vídeo a uma notícia, criámos mais uma caixa no formulário de criação/edição de artigos para incluir uma pesquisa de vídeos. Os resultados da pesquisa devolvem a thumbnail dos vídeos e basta clicar em cima de um deles para o associar à notícia (tal como se faz com as imagens).</p>
+<div class="cl">
+<div class="img">
+<p><amp-img src="/wp-content/uploads/2007/07/picture-2.png" alt="Associar Vídeos às Notícias" width="550" height="324" class="amp-wp-enforced-sizes" layout="intrinsic"></amp-img></p>
+<div class="caption"><strong>Associar Vídeos às Notícias</strong><br>
+Visualização dos resultados de uma pesquisa de vídeos dentro da página de escrita de notícia.</div>
+</div>
+</div>
+<p>Contamos em breve disponibilizar no website da <a href="http://www.log.pt/">log</a> este plugin à comunidade WordPress, devidamente documentado em Português e Inglês :)</p>
+	</div>
+
+	<footer class="amp-wp-article-footer">
+			<div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="/category/usabilidade/" rel="category tag">Usabilidade</a>	</div>
+
+	<div class="amp-wp-meta amp-wp-tax-tag">
+		Tags: <a href="/tag/meiospublicidade/" rel="tag">meios&amp;publicidade</a>, <a href="/tag/usabilidade/" rel="tag">Usabilidade</a>, <a href="/tag/user-centered/" rel="tag">user-centered</a>	</div>
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="/wordpress-gestor-conteudos-um-jornal/#respond">
+			Leave a Comment		</a>
+	</div>
+	</footer>
+</article>
+
+<footer class="amp-wp-footer">
+	<div>
+		<h2>IvoGomes.com</h2>
+		<p>
+			<a href="https://wordpress.org/">
+				Powered by WordPress			</a>
+		</p>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Scene360: Entrevista a 8 personalidades da web</title>
+	<atom:link href="/scene360-entrevista-a-8-personalidades-da-web/feed/" rel="self" type="application/rss+xml" />
+	<link>/scene360-entrevista-a-8-personalidades-da-web/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/scene360-entrevista-a-8-personalidades-da-web/#comment-16459</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Thu, 17 May 2007 19:08:32 +0000</pubDate>
+		<guid isPermaLink="false">/scene360-entrevista-a-8-personalidades-da-web/#comment-16459</guid>
+		<description><![CDATA[Vale sempre a pena ler artigos destes, ainda mais quando é feito por portugueses :)]]></description>
+		<content:encoded><![CDATA[<p>Vale sempre a pena ler artigos destes, ainda mais quando é feito por portugueses :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Stuart Vail</title>
+		<link>/scene360-entrevista-a-8-personalidades-da-web/#comment-16376</link>
+		<dc:creator><![CDATA[Stuart Vail]]></dc:creator>
+		<pubDate>Wed, 16 May 2007 17:18:13 +0000</pubDate>
+		<guid isPermaLink="false">/scene360-entrevista-a-8-personalidades-da-web/#comment-16376</guid>
+		<description><![CDATA[It&#039;s nice to see this great article get such wide recognition around the web.]]></description>
+		<content:encoded><![CDATA[<p>It&#8217;s nice to see this great article get such wide recognition around the web.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

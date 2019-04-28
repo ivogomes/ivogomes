@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: cTIC 2010</title>
+	<atom:link href="/ctic-2010/feed/" rel="self" type="application/rss+xml" />
+	<link>/ctic-2010/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Fernando</title>
+		<link>/ctic-2010/#comment-91211</link>
+		<dc:creator><![CDATA[Fernando]]></dc:creator>
+		<pubDate>Fri, 22 Oct 2010 18:42:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1194#comment-91211</guid>
+		<description><![CDATA[Saudações
+Já algum tempo que acompanho este blog e fico muito contente pelo seu autor ir á minha escola. Não faltarei.]]></description>
+		<content:encoded><![CDATA[<p>Saudações<br />
+Já algum tempo que acompanho este blog e fico muito contente pelo seu autor ir á minha escola. Não faltarei.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

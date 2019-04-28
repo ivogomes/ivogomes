@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: User Experience Week em Portugal</title>
+	<atom:link href="/user-experience-week-em-portugal/feed/" rel="self" type="application/rss+xml" />
+	<link>/user-experience-week-em-portugal/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Carlos Figueiredo</title>
+		<link>/user-experience-week-em-portugal/#comment-71776</link>
+		<dc:creator><![CDATA[Carlos Figueiredo]]></dc:creator>
+		<pubDate>Mon, 20 Oct 2008 12:21:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=608#comment-71776</guid>
+		<description><![CDATA[Olá Ivo!
+Fui agora ver o site e reparei que os preços baixaram. Já não são os que colocaste no blog. Passaram para 700 e 300 Euros.]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo!<br />
+Fui agora ver o site e reparei que os preços baixaram. Já não são os que colocaste no blog. Passaram para 700 e 300 Euros.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

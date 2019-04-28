@@ -1,0 +1,503 @@
+<!doctype html>
+<html amp lang="pt-PT">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title>Curso breve: Usabilidade de Sistemas de Informação - IvoGomes.com</title>
+		<link rel="canonical" href="/curso-breve-usabilidade-de-sistemas-de-informacao/" />
+	<script type='text/javascript' src='https://cdn.ampproject.org/v0.js' async></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic"><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"IvoGomes.com"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/www.ivogomes.com\/blog\/curso-breve-usabilidade-de-sistemas-de-informacao\/","headline":"Curso breve: Usabilidade de Sistemas de Informa\u00e7\u00e3o","datePublished":"2011-01-03T14:47:58+00:00","dateModified":"2016-06-17T09:01:41+00:00","author":{"@type":"Person","name":"Ivo Gomes"}}</script>
+	<meta name="generator" content="AMP Plugin v1.0.1; mode=classic">	<style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.amp-wp-unknown-size img {
+	/** Worst case scenario when we can't figure out dimensions for an image. **/
+	/** Force the image into a box of fixed dimensions and use object-fit to scale. **/
+	object-fit: contain;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #fff;
+	color: #353535;
+	font-family: 'Merriweather', 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #353535;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #353535;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Site Icon */
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #353535;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #353535;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #696969;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #c2c2c2;
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+amp-carousel {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #c2c2c2 url( /wp-content/plugins/amp/assets/images/placeholder-icon.png) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #c2c2c2;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #c2c2c2;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #696969;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style>
+</head>
+
+<body class="">
+
+<header id="top" class="amp-wp-header">
+	<div>
+		<a href="/">
+									<span class="amp-site-title">
+				IvoGomes.com			</span>
+		</a>
+	</div>
+</header>
+
+<article class="amp-wp-article">
+	<header class="amp-wp-article-header">
+		<h1 class="amp-wp-title">Curso breve: Usabilidade de Sistemas de Informação</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/5d965724123073222e4d321ab394f4c8?s=24&#038;d=mm&#038;r=r" alt="Ivo Gomes" width="24" height="24" layout="fixed"></amp-img>
+				<span class="amp-wp-author author vcard">Ivo Gomes</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2011-01-03T14:47:58+00:00">
+		8 anos ago	</time>
+</div>
+	</header>
+
+	
+	<div class="amp-wp-article-content">
+		<p>Nos próximos meses vai ser disponibilizado na <a href="http://www.fmh.utl.pt/">Faculdade de Motricidade Humana</a> um curso breve de usabilidade de sistemas de informação. Tem a duração de 24 horas (espalhadas ao longo de um mês) onde serão abordadas várias metodologias de usabilidade, incluindo alguns trabalhos práticos.</p>
+<h2>Público alvo</h2>
+<ul><li>Profissionais que necessitam de avaliar a usabilidade de sistemas de informação;</li>
+<li>Profissionais que necessitam de desenvolver material para informação e/ou comunicação.</li>
+</ul><h2>Competências a desenvolver</h2>
+<ul><li>Dominar o conceito de usabilidade.</li>
+<li>Dominar o conceito de representação mental.</li>
+<li>Aplicar heurísticas para fazer testes usabilidade.</li>
+<li>Desenvolver um sistema de informação que integre as heurísticas de usabilidade.</li>
+</ul><h2>Programa</h2>
+<ul><li><strong>Dia 01</strong><br>
+Introdução - A Ergonomia e o Design Centrado no Utilizador / Normas Internacionais (Francisco Rebelo)</li>
+<li><strong>Dia 02</strong><br>
+Psicologia aplicada à Usabilidade - Modelos Mentais e Erros (Paulo Noriega)</li>
+<li><strong>Dia 03</strong><br>
+Estudos com Utilizadores / Personas e Cenários - exercícios práticos (Bruno Figueiredo)</li>
+<li><strong>Dia 04</strong><br>
+Planeamento e Layout de Ecrãs - exercícios práticos (Bruno Figueiredo)</li>
+<li><strong>Dia 05</strong><br>
+Heurísticas - exercícios práticos (Ivo Gomes)</li>
+<li><strong>Dia 06</strong><br>
+Heurísticas  - exercícios práticos (Ivo Gomes)</li>
+<li><strong>Dia 07</strong><br>
+Métricas de Usabilidade -  exercícios práticos(Bruno Figueiredo)</li>
+<li><strong>Dia 08</strong><br>
+Avaliação - Projecto - Aplicação Prática (Ivo Gomes)</li>
+</ul><h2>Duração</h2>
+<p>24 horas durante 1 mês.</p>
+<h2>Horário</h2>
+<p>Sextas das 18h:30 às 21h:30<br>
+Sábados das 9h:30 às 12h:30</p>
+<h2>Início do Curso</h2>
+<p>4 de Fevereiro de 2011</p>
+<h2>Formato das aulas e avaliação</h2>
+<p>Aulas expositivas com participação activa dos alunos, seguidas de componente prática.</p>
+<p>A avaliação será efectuada através do desenvolvimento de uma apresentação que expõe os resultados de uma análise da usabilidade de um sistema de informação.</p>
+<h2>Formadores</h2>
+<ul><li>
+<strong>Francisco Rebelo</strong>
+<p>Doutorado em Ergonomia, responsável pelas disciplinas de Ergonomia no Design de Sistemas de Informação na Licenciatura em Ergonomia, Usabilidade de Sistemas de Informação e Desenvolvimento e Avaliação de Materiais Multimédia nos Mestrados de Ergonomia e Ciências da Educação, da Faculdade de Motricidade Humana da Universidade Técnica de Lisboa. Foi responsável pela usabilidade do projecto Europeu electronic eExhibitions e em projectos com empresas e organizações, em particular com, a Siemens, as Oficinas Gerais de Material Aeronáutico e a Autoridade para as Condições de Trabalho.  Actualmente é coordenador  de dois projectos financiados pela Fundação para a Ciência e a Tecnologia no âmbito da utilização da Realidade Virtual para avaliação de avisos de base tecnológica.
+</p></li>
+<li>
+<strong>Paulo Noriega</strong>
+<p>É Professor Auxiliar na Faculdade de Motricidade Humana. É doutorado em Ergonomia pela Universidade Técnica de Lisboa e tem um mestrado em Engenharia Humana pela Universidade do Minho e uma licenciatura em Psicologia Social e das Organizações pelo Instituto Superior de Psicologia Aplicada. É responsável pelas disciplinas de Psicossociologia do Trabalho e Psicologia Cognitiva da Licenciatura em Ergonomia da Faculdade de Motricidade Humana. Tem desenvolvido investigação em Percepção visual e tráfego rodoviário.
+</p></li>
+<li>
+<strong>Bruno Figueiredo</strong>
+<p>Licenciado em Arquitectura pela Faculdade de Arquitectura de Lisboa, tem mais de 10 anos de experiência nacional e internacional na área da Usabilidade. É actualmente Director de User Experience na Ideias e Imagens. É também fundador e actual presidente da Associação Portuguesa de Profissionais de Usabilidade e membro das associações internacionais UPA, IxDA e ACM SIG-CHI.
+</p></li>
+<li>
+<strong>Ivo Gomes</strong>
+<p>Licenciado em Ergonomia pela Faculdade de Motricidade Humana e especializado em Ergonomia de Sistemas de Informação (Usabilidade e Acessibilidade). Faz actualmente parte do departamento de Qualidade e Usabilidade do portal <a href="http://www.sapo.pt/">SAPO.pt</a> onde ajuda a desenvolver soluções centradas no utilizador em várias plataformas (web, mobile, IPTV) para todas as empresas do Grupo PT (PT, SAPO, MEO, TMN).
+</p></li>
+</ul><h2>Certificação</h2>
+<p>Os alunos receberão um Certificado de Aprovação que lhes permite acumular créditos, que somados a outros cursos, que se seguirão neste âmbito, permitirão aos alunos obter um diploma de pós-graduação.</p>
+<p>O curso será também certificado pela <a href="http://www.usabilidade.org/">Associação Portuguesa de Profissionais de Usabilidade</a>.</p>
+<h2>Custo</h2>
+<p>600,00 Euros</p>
+<h2>Candidaturas</h2>
+<p>As candidaturas devem ser feitas até ao dia 28 de Janeiro de 2011. A divulgação dos resultados será efectuada no dia 1 de fevereiro de 2011.</p>
+<p class="download"><a href="/wp-content/uploads/2011/01/ficha-de-candidatura_2011.pdf">Download da Ficha de Candidatura</a> <span class="small">(PDF 114Kb)</span></p>
+<p><a href="http://www.fmh.utl.pt/">Faculdade de Motricidade Humana</a> da Universidade Técnica de Lisboa<br>
+Enfª Geneviève Koppens Santorum<br>
+Tel:   +351 214 149 139<br>
+Fax:  +351 214 144 720<br><a href="mailto://gksantorum@fmh.utl.pt/">gksantorum@fmh.utl.pt</a></p>
+<h2>Informações</h2>
+<p>Geneviève Santorum: <a href="mailto://gksantorum@fmh.utl.pt/">gksantorum@fmh.utl.pt</a><br>
+Francisco Rebelo: <a href="mailto://frebelo@fmh.utl.pt/">frebelo@fmh.utl.pt</a></p>
+	</div>
+
+	<footer class="amp-wp-article-footer">
+			<div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="/category/usabilidade/" rel="category tag">Usabilidade</a>	</div>
+
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="/curso-breve-usabilidade-de-sistemas-de-informacao/#comments">
+			Leave a Comment		</a>
+	</div>
+	</footer>
+</article>
+
+<footer class="amp-wp-footer">
+	<div>
+		<h2>IvoGomes.com</h2>
+		<p>
+			<a href="https://wordpress.org/">
+				Powered by WordPress			</a>
+		</p>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Formação Perl em Lisboa, por Damian Conway</title>
+	<atom:link href="/formacao-perl-em-lisboa-por-damian-conway/feed/" rel="self" type="application/rss+xml" />
+	<link>/formacao-perl-em-lisboa-por-damian-conway/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: José Carlos</title>
+		<link>/formacao-perl-em-lisboa-por-damian-conway/#comment-5278</link>
+		<dc:creator><![CDATA[José Carlos]]></dc:creator>
+		<pubDate>Wed, 09 Aug 2006 22:31:52 +0000</pubDate>
+		<guid isPermaLink="false">/formacao-perl-em-lisboa-por-damian-conway/#comment-5278</guid>
+		<description><![CDATA[Fantástica iniciativa. Parabéns à Log.
+
+Infelizmente, e apesar de estar interessado, não vou poder ir, parece que tenho mesmo de trabalhar. O facto de ser em Lisboa também não ajuda à festa.
+
+Mais uma vez parabéns pela iniciativa. Tenho pena de não existirem mais empresas a apoiar este tipo de eventos. Se possível, no centro do país também.
+
+Pode ser que um dia destes aconteça.]]></description>
+		<content:encoded><![CDATA[<p>Fantástica iniciativa. Parabéns à Log.</p>
+<p>Infelizmente, e apesar de estar interessado, não vou poder ir, parece que tenho mesmo de trabalhar. O facto de ser em Lisboa também não ajuda à festa.</p>
+<p>Mais uma vez parabéns pela iniciativa. Tenho pena de não existirem mais empresas a apoiar este tipo de eventos. Se possível, no centro do país também.</p>
+<p>Pode ser que um dia destes aconteça.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

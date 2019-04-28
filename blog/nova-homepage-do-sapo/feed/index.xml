@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Nova homepage do SAPO</title>
+	<atom:link href="/nova-homepage-do-sapo/feed/" rel="self" type="application/rss+xml" />
+	<link>/nova-homepage-do-sapo/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Carlos Faria</title>
+		<link>/nova-homepage-do-sapo/#comment-89888</link>
+		<dc:creator><![CDATA[Carlos Faria]]></dc:creator>
+		<pubDate>Tue, 20 Jul 2010 20:31:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=963#comment-89888</guid>
+		<description><![CDATA[A homepage da SAPO ficou muito boa, parabéns pelo trabalho ivo!]]></description>
+		<content:encoded><![CDATA[<p>A homepage da SAPO ficou muito boa, parabéns pelo trabalho ivo!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rui Cruz</title>
+		<link>/nova-homepage-do-sapo/#comment-87928</link>
+		<dc:creator><![CDATA[Rui Cruz]]></dc:creator>
+		<pubDate>Thu, 07 Jan 2010 00:28:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=963#comment-87928</guid>
+		<description><![CDATA[Grande trabalho, nota 10/10!
+
+A aposta na acessibilidade e na usuabilidade é algo de louvar.
+
+
+Rui]]></description>
+		<content:encoded><![CDATA[<p>Grande trabalho, nota 10/10!</p>
+<p>A aposta na acessibilidade e na usuabilidade é algo de louvar.</p>
+<p>Rui</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: PauloASilva</title>
+		<link>/nova-homepage-do-sapo/#comment-87743</link>
+		<dc:creator><![CDATA[PauloASilva]]></dc:creator>
+		<pubDate>Fri, 11 Dec 2009 22:57:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=963#comment-87743</guid>
+		<description><![CDATA[Sem dúvida um trabalho de referência.
+Parabéns à equipa responsável.]]></description>
+		<content:encoded><![CDATA[<p>Sem dúvida um trabalho de referência.<br />
+Parabéns à equipa responsável.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ricardo</title>
+		<link>/nova-homepage-do-sapo/#comment-87742</link>
+		<dc:creator><![CDATA[Ricardo]]></dc:creator>
+		<pubDate>Fri, 11 Dec 2009 18:36:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=963#comment-87742</guid>
+		<description><![CDATA[Parabéns. Está no mínimo 1000% melhor do que a anterior homepage &quot;sem graça nenhuma&quot;.
+Parabéns ao Sapo.
+
+Não está prevista a personalização do menu principal?? Acho que seria melhor cada utilizador ter lá os seus próprios links para canais (hmmm... ou talvez outros links) ao invés dos predefinidos apenas.]]></description>
+		<content:encoded><![CDATA[<p>Parabéns. Está no mínimo 1000% melhor do que a anterior homepage &#8220;sem graça nenhuma&#8221;.<br />
+Parabéns ao Sapo.</p>
+<p>Não está prevista a personalização do menu principal?? Acho que seria melhor cada utilizador ter lá os seus próprios links para canais (hmmm&#8230; ou talvez outros links) ao invés dos predefinidos apenas.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

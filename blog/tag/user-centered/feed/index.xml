@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>user-centered &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/user-centered/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>WordPress como gestor de conteúdos de um Jornal</title>
+		<link>/wordpress-gestor-conteudos-um-jornal/</link>
+		<comments>/wordpress-gestor-conteudos-um-jornal/#respond</comments>
+		<pubDate>Sat, 28 Jul 2007 11:16:33 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[meios&publicidade]]></category>
+		<category><![CDATA[user-centered]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=387</guid>
+		<description><![CDATA[<p>Há cerca de um mês e meio atrás, foi colocado on-line o novo website do Jornal <a href="http://www.meiosepublicidade.pt/">Meios &#038; Publicidade</a>. Nesse mesmo dia <a href="/renovacao-do-website-do-jornal-meios-publicidade/">escrevi um artigo</a> que mostrava as novidades do novo website e na altura disse que para além das mudanças no layout também tínhamos mudado de gestor de conteúdos. Apesar de não ter mencionado o nome do novo CMS (apenas disse que tínhamos mudado do <a href="http://www.bricolage.cc/">Bricolage</a> para outro CMS adaptado pela <a href="http://www.log.pt/">log</a> à realidade do jornal), alguns utilizadores mais atentos repararam que se tratava na realidade do <a href="http://www.wordpress.org/">WordPress</a>.</p>
+<p>Para quem conhece, o <a href="http://www.wordpress.org/">WordPress</a> é uma plataforma de blogs bastante utilizada. Tem uma comunidade de utilizadores bastante grande e tem um backoffice relativamente fácil de usar (bastante mais fácil do que o <a href="http://www.bricolage.cc/">Bricolage</a> ou o <a href="http://www.joomlapt.com/">Joomla</a>, por exemplo). Uma das maiores prioridades que tínhamos era exactamente essa: ter algo fácil de utilizar e que permitisse que os jornalistas passassem mais tempo a criar notícias (aquilo para o qual são pagos) do que a inserír conteúdos tediosamente no CMS.</p>
+<p>O conteúdo <a rel="nofollow" href="/wordpress-gestor-conteudos-um-jornal/">WordPress como gestor de conteúdos de um Jornal</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/wordpress-gestor-conteudos-um-jornal/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Renovação do website do Jornal Meios &#038; Publicidade</title>
+		<link>/renovacao-do-website-do-jornal-meios-publicidade/</link>
+		<comments>/renovacao-do-website-do-jornal-meios-publicidade/#comments</comments>
+		<pubDate>Thu, 31 May 2007 21:42:24 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[meios&publicidade]]></category>
+		<category><![CDATA[user-centered]]></category>
+		<category><![CDATA[web-standards]]></category>
+
+		<guid isPermaLink="false">/renovacao-do-website-do-jornal-meios-publicidade/</guid>
+		<description><![CDATA[<p>Foi hoje lançada a nova versão do website do Jornal <a href="http://www.meiosepublicidade.pt/">Meios &#038; Publicidade</a>. A remodelação foi feita pela <a href="http://www.log.pt/">log</a> (o layout foi feito por mim) e incluiu a migração do antigo CMS para um novo, mais fácil de utilizar para os jornalistas. </p>
+<p>O conteúdo <a rel="nofollow" href="/renovacao-do-website-do-jornal-meios-publicidade/">Renovação do website do Jornal Meios &#038; Publicidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/renovacao-do-website-do-jornal-meios-publicidade/feed/</wfw:commentRss>
+		<slash:comments>25</slash:comments>
+		</item>
+		<item>
+		<title>Soluções web centradas no utilizador</title>
+		<link>/solucoes-web-centradas-no-utilizador/</link>
+		<comments>/solucoes-web-centradas-no-utilizador/#comments</comments>
+		<pubDate>Fri, 14 Jul 2006 09:09:55 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[multimedia]]></category>
+		<category><![CDATA[soluções-web]]></category>
+		<category><![CDATA[user-centered]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">/solucoes-web-centradas-no-utilizador/</guid>
+		<description><![CDATA[<p>Fiz ontem, no I Encontro de Design Multimédia de Coimbra, uma apresentação sobre Soluções Web Centradas no Utilizador.<br />
+Podem fazer aqui o download dos slides da apresentação.</p>
+<p>O conteúdo <a rel="nofollow" href="/solucoes-web-centradas-no-utilizador/">Soluções web centradas no utilizador</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/solucoes-web-centradas-no-utilizador/feed/</wfw:commentRss>
+		<slash:comments>22</slash:comments>
+		</item>
+		<item>
+		<title>I Encontro de Design Multimédia</title>
+		<link>/i-encontro-de-design-multimedia/</link>
+		<comments>/i-encontro-de-design-multimedia/#comments</comments>
+		<pubDate>Fri, 07 Jul 2006 14:55:13 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[multimedia]]></category>
+		<category><![CDATA[soluções-web]]></category>
+		<category><![CDATA[user-centered]]></category>
+
+		<guid isPermaLink="false">/i-encontro-de-design-multimedia/</guid>
+		<description><![CDATA[<p>Vai realizar-se na próxima semana, dias 12 e 13 de Julho o I Encontro de Design Multimédia em Coimbra. A organização está a cargo dos alunos do 4º ano de Comunicação e Design Multimédia da Escola Superior de Educação de Coimbra e eu fui convidado para falar no dia 13 (quinta-feira) sobre Soluções Web Centradas no Utilizador.</p>
+<p>O conteúdo <a rel="nofollow" href="/i-encontro-de-design-multimedia/">I Encontro de Design Multimédia</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/i-encontro-de-design-multimedia/feed/</wfw:commentRss>
+		<slash:comments>21</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>webstandards &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/webstandards/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Internet Explorer 8</title>
+		<link>/internet-explorer-8/</link>
+		<comments>/internet-explorer-8/#comments</comments>
+		<pubDate>Thu, 06 Mar 2008 08:47:07 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[explorer]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[ie]]></category>
+		<category><![CDATA[internet]]></category>
+		<category><![CDATA[webstandards]]></category>
+
+		<guid isPermaLink="false">/internet-explorer-8/</guid>
+		<description><![CDATA[<p>Esta semana foi lançada a primeira <a href="http://www.microsoft.com/windows/products/winfamily/ie/ie8/default.mspx">versão Beta do Internet Explorer 8</a>. Este é um grande passo da Microsoft para tornar o seu browser mais compatível com os web standards e fazer com que no futuro os webdesigners não tenham que passar horas e horas a fio a tentar corrigir bugs de interpretação de CSS.</p>
+<p><img src='/wp-content/uploads/2008/03/picture-1.png' alt='IE8' class="img" /></p>
+<p>O conteúdo <a rel="nofollow" href="/internet-explorer-8/">Internet Explorer 8</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/internet-explorer-8/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+		</item>
+	</channel>
+</rss>

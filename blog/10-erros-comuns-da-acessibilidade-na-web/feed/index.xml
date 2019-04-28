@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: 10 erros comuns da acessibilidade na web</title>
+	<atom:link href="/10-erros-comuns-da-acessibilidade-na-web/feed/" rel="self" type="application/rss+xml" />
+	<link>/10-erros-comuns-da-acessibilidade-na-web/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: 10 erros comuns da acessibilidade na web &#171; Acessibilidade Web</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-90940</link>
+		<dc:creator><![CDATA[10 erros comuns da acessibilidade na web &#171; Acessibilidade Web]]></dc:creator>
+		<pubDate>Mon, 11 Oct 2010 14:55:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-90940</guid>
+		<description><![CDATA[[...] Fonte: IvoGomes [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Fonte: IvoGomes [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-73075</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 04 Nov 2008 15:20:24 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-73075</guid>
+		<description><![CDATA[Olá Magda. No teu comentário tocas num ponto essencial e que não mencionei no artigo, que é o facto de por vezes haver excesso de preocupação com a acessibilidade e ao tentarmos ajudar usando demasiada informação alternativa, estamos é a complicar ainda mais o acesso à informação.
+
+Há um post muito interessante sobre isso aqui: &lt;a href=&quot;http://www.456bereastreet.com/archive/200712/overdoing_accessibility/&quot; rel=&quot;nofollow&quot;&gt;Overdoing Accessibility&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>Olá Magda. No teu comentário tocas num ponto essencial e que não mencionei no artigo, que é o facto de por vezes haver excesso de preocupação com a acessibilidade e ao tentarmos ajudar usando demasiada informação alternativa, estamos é a complicar ainda mais o acesso à informação.</p>
+<p>Há um post muito interessante sobre isso aqui: <a href="http://www.456bereastreet.com/archive/200712/overdoing_accessibility/" rel="nofollow">Overdoing Accessibility</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Magda Joana SIlva</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-71868</link>
+		<dc:creator><![CDATA[Magda Joana SIlva]]></dc:creator>
+		<pubDate>Tue, 21 Oct 2008 20:31:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-71868</guid>
+		<description><![CDATA[Olá Ivo, sou a amiga do Zé (cog) de Braga. Já à algum tempo que sigo o teu trabalho e que tenho vindo a entrar na área de acessibilidade Web. Segundo a minha experiência e e tudo o que tenho lido sobre o assunto, acho que o essencial é existir um equilíbrio entre as W3C guidelines, o bom senso e o público alvo para que o web site está a ser desenvolvido. Tanto que conformidade e acessibilidade não são sinónimos. 
+Concordo com tudo (quase tudo, as teclas de atalho pode ser um ponto em discussão) o que disseste, tanto mais que algumas coisas são tão óbvias que nem deviam ser postas em causa.
+Acho também que, por vezes, existem mais pormenores a serem levados em conta, como por exemplo a dimensão ou o tipo de informação do atributo title, 
+ou simplesmente o facto de muita informação alternativa possa dificultar determinados utilizadores (incrivelmente, isso pode acontecer).
+No fundo, é impossível implementar um web site que funcione correctamente com todos os browsers ou ferramentas alternativas para a navegação na web.
+
+De qualquer das formas, parabéns pelo teu trabalho e continua escrever os teus posts pois são muito úteis]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo, sou a amiga do Zé (cog) de Braga. Já à algum tempo que sigo o teu trabalho e que tenho vindo a entrar na área de acessibilidade Web. Segundo a minha experiência e e tudo o que tenho lido sobre o assunto, acho que o essencial é existir um equilíbrio entre as W3C guidelines, o bom senso e o público alvo para que o web site está a ser desenvolvido. Tanto que conformidade e acessibilidade não são sinónimos.<br />
+Concordo com tudo (quase tudo, as teclas de atalho pode ser um ponto em discussão) o que disseste, tanto mais que algumas coisas são tão óbvias que nem deviam ser postas em causa.<br />
+Acho também que, por vezes, existem mais pormenores a serem levados em conta, como por exemplo a dimensão ou o tipo de informação do atributo title,<br />
+ou simplesmente o facto de muita informação alternativa possa dificultar determinados utilizadores (incrivelmente, isso pode acontecer).<br />
+No fundo, é impossível implementar um web site que funcione correctamente com todos os browsers ou ferramentas alternativas para a navegação na web.</p>
+<p>De qualquer das formas, parabéns pelo teu trabalho e continua escrever os teus posts pois são muito úteis</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: severina</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-65437</link>
+		<dc:creator><![CDATA[severina]]></dc:creator>
+		<pubDate>Sat, 30 Aug 2008 22:05:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-65437</guid>
+		<description><![CDATA[o q vc quis dizer foi seja        
+breve nas palavras na internet?]]></description>
+		<content:encoded><![CDATA[<p>o q vc quis dizer foi seja<br />
+breve nas palavras na internet?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Flavio Mendes</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-64281</link>
+		<dc:creator><![CDATA[Flavio Mendes]]></dc:creator>
+		<pubDate>Sun, 24 Aug 2008 19:24:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-64281</guid>
+		<description><![CDATA[Parabéns pelo artigo, Ivo. Vou compartilhar com meus alunos.]]></description>
+		<content:encoded><![CDATA[<p>Parabéns pelo artigo, Ivo. Vou compartilhar com meus alunos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Felipe Spina in Blog &#187; Blog Archive &#187; 10 erros comuns da acessibilidade na web</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-63616</link>
+		<dc:creator><![CDATA[Felipe Spina in Blog &#187; Blog Archive &#187; 10 erros comuns da acessibilidade na web]]></dc:creator>
+		<pubDate>Fri, 22 Aug 2008 04:17:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-63616</guid>
+		<description><![CDATA[[...] de ver um post do Ivo Gomes, sobre os 10 principais erros na acessibilidade [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] de ver um post do Ivo Gomes, sobre os 10 principais erros na acessibilidade [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: PR</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-62153</link>
+		<dc:creator><![CDATA[PR]]></dc:creator>
+		<pubDate>Mon, 11 Aug 2008 12:10:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-62153</guid>
+		<description><![CDATA[Muito obrigado pelas dicas :)]]></description>
+		<content:encoded><![CDATA[<p>Muito obrigado pelas dicas :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Dulcetti</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-61480</link>
+		<dc:creator><![CDATA[Bruno Dulcetti]]></dc:creator>
+		<pubDate>Thu, 07 Aug 2008 15:49:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-61480</guid>
+		<description><![CDATA[Belo post Ivo.
+
+Só o ponto 8 que eu fiquei com um pulga atrás da orelha. Tudo bem que encher de &lt;abbr&gt; e tudo mais pode ser exagero, mas será que amanhã os leitores de ecrã não podem suportar essas fucionalidades?
+
+E, com isso, já deixarmos preparado? Pois é um atributo title que ajuda a identificação da sigla ou acrônimo.
+
+Mas sei lá, posso estar enganado também :)
+
+E sobre os alts, eu sempre tento escrever um alt, não extenso, mas num tamanho considerável e que explique corretamente a imagem. Esse é o esquema :)
+
+Abraços.]]></description>
+		<content:encoded><![CDATA[<p>Belo post Ivo.</p>
+<p>Só o ponto 8 que eu fiquei com um pulga atrás da orelha. Tudo bem que encher de <abbr> e tudo mais pode ser exagero, mas será que amanhã os leitores de ecrã não podem suportar essas fucionalidades?</p>
+<p>E, com isso, já deixarmos preparado? Pois é um atributo title que ajuda a identificação da sigla ou acrônimo.</p>
+<p>Mas sei lá, posso estar enganado também :)</p>
+<p>E sobre os alts, eu sempre tento escrever um alt, não extenso, mas num tamanho considerável e que explique corretamente a imagem. Esse é o esquema :)</p>
+<p>Abraços.</abbr></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Alves</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-61054</link>
+		<dc:creator><![CDATA[Alves]]></dc:creator>
+		<pubDate>Mon, 04 Aug 2008 20:28:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-61054</guid>
+		<description><![CDATA[O ponto 10 é sem dúvida o ponto fulcral, e do qual deviam derivar todas as regras, pois cumprir as normas só por cumprir não tem qualquer interesse. 
+
+Fala-se muito em sites que respeitam as normas de acessibilidade, níveis A e AA, etc. - isso na teoria é muito bonito mas na prática devia-se era preparar o site para alguns leitores de écran e colocar uma nota informativa do tipo &quot;Testado em JAWS, HAL, ...&quot; 
+
+É que muitas das normas são ambíguas, já para não dizer contraditórias (ora recomendam que o layout seja feito através de css ora dizem que o site tem que ser legível sem css...) e não são uma garantia que vai ficar alguma coisa de jeito quando processados por um leitor de écran.
+
+Pessoalmente, já desisti há muito de tentar que um site seja simultâneamente acessível e utilizável/ergonómico. Porque razão se há-de lixar 99% dos utilizadores com uma interface pobre, desprovida de dinamismo só para ficar acessível? Sou apologista de se criar uma página alternativa, extremamente simples, para quem não pode aproveitar o dinamismo, um pouco como as duas versões do gmail (standard e basic html).]]></description>
+		<content:encoded><![CDATA[<p>O ponto 10 é sem dúvida o ponto fulcral, e do qual deviam derivar todas as regras, pois cumprir as normas só por cumprir não tem qualquer interesse. </p>
+<p>Fala-se muito em sites que respeitam as normas de acessibilidade, níveis A e AA, etc. &#8211; isso na teoria é muito bonito mas na prática devia-se era preparar o site para alguns leitores de écran e colocar uma nota informativa do tipo &#8220;Testado em JAWS, HAL, &#8230;&#8221; </p>
+<p>É que muitas das normas são ambíguas, já para não dizer contraditórias (ora recomendam que o layout seja feito através de css ora dizem que o site tem que ser legível sem css&#8230;) e não são uma garantia que vai ficar alguma coisa de jeito quando processados por um leitor de écran.</p>
+<p>Pessoalmente, já desisti há muito de tentar que um site seja simultâneamente acessível e utilizável/ergonómico. Porque razão se há-de lixar 99% dos utilizadores com uma interface pobre, desprovida de dinamismo só para ficar acessível? Sou apologista de se criar uma página alternativa, extremamente simples, para quem não pode aproveitar o dinamismo, um pouco como as duas versões do gmail (standard e basic html).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rui Cruz</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-61022</link>
+		<dc:creator><![CDATA[Rui Cruz]]></dc:creator>
+		<pubDate>Mon, 04 Aug 2008 14:57:37 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-61022</guid>
+		<description><![CDATA[Tens razão, tens razão...
+
+/me stabs himself
+
+Rui]]></description>
+		<content:encoded><![CDATA[<p>Tens razão, tens razão&#8230;</p>
+<p>/me stabs himself</p>
+<p>Rui</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-61021</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 04 Aug 2008 14:40:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-61021</guid>
+		<description><![CDATA[@Rui Cruz: Nesta listagem de atalhos do JAWS (http://www.webaim.org/resources/shortcuts/jaws.php) vejo algumas teclas de acesso directo: 5, H, L, I, T, F e B
+
+Se usares, por exemplo o Google Reader, verás que a tecla de atalho T funciona para adicionar tags a um item. Ao usar o JAWS estamos a criar um conflito ao usar esta tecla.
+
+Quanto aos browsers normais, esses sim, apenas aceitam atalhos com a conjunção de 2 ou mais teclas.
+
+Finalmente, quanto à bolsa de emprego na ACAPO, eles dizem que não podes estar empregado numa &quot;empresa que desenvolva software com tecnologias de acesso para pessoas com deficiência visual&quot;. Logo, não me posso candidatar :)]]></description>
+		<content:encoded><![CDATA[<p>@Rui Cruz: Nesta listagem de atalhos do JAWS (<a href="http://www.webaim.org/resources/shortcuts/jaws.php" rel="nofollow">http://www.webaim.org/resources/shortcuts/jaws.php</a>) vejo algumas teclas de acesso directo: 5, H, L, I, T, F e B</p>
+<p>Se usares, por exemplo o Google Reader, verás que a tecla de atalho T funciona para adicionar tags a um item. Ao usar o JAWS estamos a criar um conflito ao usar esta tecla.</p>
+<p>Quanto aos browsers normais, esses sim, apenas aceitam atalhos com a conjunção de 2 ou mais teclas.</p>
+<p>Finalmente, quanto à bolsa de emprego na ACAPO, eles dizem que não podes estar empregado numa &#8220;empresa que desenvolva software com tecnologias de acesso para pessoas com deficiência visual&#8221;. Logo, não me posso candidatar :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rui Cruz</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-61019</link>
+		<dc:creator><![CDATA[Rui Cruz]]></dc:creator>
+		<pubDate>Mon, 04 Aug 2008 14:15:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-61019</guid>
+		<description><![CDATA[Olá.
+
+Algumas coisas a considerar...
+
+Ponto 1: usar então o atributo LONGDESC para descrever uma imagem extensivamente.
+
+Ponto 4: discordo em parte. As teclas de atalho dos leitores de ecrã que eu tenho visto e testado (JAWS, Hal) começam com insert+qualquercoisa, alt+qualquercoisa. Segundo o que sei, teclas de atalho só se podem fazer no browser com control+letra, certo? Então as teclas não vão interferir.
+
+Ponto 7: deixo mais recomendações:
+- não usar o simbolo da acessibilidade se o seu site não for acessível (sites do governo, HELLOOOOOOOO... acordem para a vida!)
+- até em muitos casos não dizer nada. o demasiado protagonismo é a primei etapa do falhanço.
+
+Ponto 9: falta numerare este ponto... :P
+
+Ponto 10: Recomendo portanto o uso dos seguintes leitores de ecrã:
+JAWS
+Window-Eyes
+JAWS
+HAL
+
+Os teus leitores não querem perder tempo a instalar? Então usem esta simulação para ver como se comporta um leitor de ecrã: http://www.webaim.org/simulations/screenreader-sim.htm
+
+Isto também é válido para o War.
+
+
+Já agora, não estás ou não conheces ninguém interessado nisto: http://ruicruz.forunsbb.com/anuncio-de-bolsa-de-emprego-acessibilidades-web.html
+
+Se não fosse a recibos verdes (desisti deles este ano) já me tinha metido lá... 
+
+
+
+
+Rui]]></description>
+		<content:encoded><![CDATA[<p>Olá.</p>
+<p>Algumas coisas a considerar&#8230;</p>
+<p>Ponto 1: usar então o atributo LONGDESC para descrever uma imagem extensivamente.</p>
+<p>Ponto 4: discordo em parte. As teclas de atalho dos leitores de ecrã que eu tenho visto e testado (JAWS, Hal) começam com insert+qualquercoisa, alt+qualquercoisa. Segundo o que sei, teclas de atalho só se podem fazer no browser com control+letra, certo? Então as teclas não vão interferir.</p>
+<p>Ponto 7: deixo mais recomendações:<br />
+&#8211; não usar o simbolo da acessibilidade se o seu site não for acessível (sites do governo, HELLOOOOOOOO&#8230; acordem para a vida!)<br />
+&#8211; até em muitos casos não dizer nada. o demasiado protagonismo é a primei etapa do falhanço.</p>
+<p>Ponto 9: falta numerare este ponto&#8230; :P</p>
+<p>Ponto 10: Recomendo portanto o uso dos seguintes leitores de ecrã:<br />
+JAWS<br />
+Window-Eyes<br />
+JAWS<br />
+HAL</p>
+<p>Os teus leitores não querem perder tempo a instalar? Então usem esta simulação para ver como se comporta um leitor de ecrã: <a href="http://www.webaim.org/simulations/screenreader-sim.htm" rel="nofollow">http://www.webaim.org/simulations/screenreader-sim.htm</a></p>
+<p>Isto também é válido para o War.</p>
+<p>Já agora, não estás ou não conheces ninguém interessado nisto: <a href="http://ruicruz.forunsbb.com/anuncio-de-bolsa-de-emprego-acessibilidades-web.html" rel="nofollow">http://ruicruz.forunsbb.com/anuncio-de-bolsa-de-emprego-acessibilidades-web.html</a></p>
+<p>Se não fosse a recibos verdes (desisti deles este ano) já me tinha metido lá&#8230; </p>
+<p>Rui</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-61018</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 04 Aug 2008 14:03:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-61018</guid>
+		<description><![CDATA[@Hugo Fernandes: Obrigado pela sugestão, vou alterar os títulos para fazer mais sentido.
+
+@War: O termo &quot;leitor de ecrã&quot; existe e é um software que se instala no computador e que permite LER o texto que está no ecrã (daí o nome). O termo em Inglês é &quot;Screen Reader&quot; e no link que forneceu (Comissão Técnica Portuguesa para a Normalização da Terminologia Informática) não há nada relacionado com este termo. 
+
+Pode obter aqui mais informações sobre o que é um leitor de ecrã: http://pt.wikipedia.org/wiki/Leitor_de_tela]]></description>
+		<content:encoded><![CDATA[<p>@Hugo Fernandes: Obrigado pela sugestão, vou alterar os títulos para fazer mais sentido.</p>
+<p>@War: O termo &#8220;leitor de ecrã&#8221; existe e é um software que se instala no computador e que permite LER o texto que está no ecrã (daí o nome). O termo em Inglês é &#8220;Screen Reader&#8221; e no link que forneceu (Comissão Técnica Portuguesa para a Normalização da Terminologia Informática) não há nada relacionado com este termo. </p>
+<p>Pode obter aqui mais informações sobre o que é um leitor de ecrã: <a href="http://pt.wikipedia.org/wiki/Leitor_de_tela" rel="nofollow">http://pt.wikipedia.org/wiki/Leitor_de_tela</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: War</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-61003</link>
+		<dc:creator><![CDATA[War]]></dc:creator>
+		<pubDate>Mon, 04 Aug 2008 12:33:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-61003</guid>
+		<description><![CDATA[11. Não inventar traduções de termos informáticos.
+
+O que é um leitor de ecrã?!?!
+
+No máximo pode ser traduzido para navegador.
+
+Se tiverem duvidas consultem a página da Comissão Técnica Portuguesa de Normalização de Terminologia Informática
+
+http://www.inst-informatica.pt/ct113/global.htm]]></description>
+		<content:encoded><![CDATA[<p>11. Não inventar traduções de termos informáticos.</p>
+<p>O que é um leitor de ecrã?!?!</p>
+<p>No máximo pode ser traduzido para navegador.</p>
+<p>Se tiverem duvidas consultem a página da Comissão Técnica Portuguesa de Normalização de Terminologia Informática</p>
+<p><a href="http://www.inst-informatica.pt/ct113/global.htm" rel="nofollow">http://www.inst-informatica.pt/ct113/global.htm</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Hugo Fernandes</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/#comment-61000</link>
+		<dc:creator><![CDATA[Hugo Fernandes]]></dc:creator>
+		<pubDate>Mon, 04 Aug 2008 12:13:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523#comment-61000</guid>
+		<description><![CDATA[Já agora deixo a minha sugestão, se me é permitido:
+
+Estes 10 exemplos mostram aquilo que NÃO DEVE SER FEITO, mas que costumamos ver recorrentemente
+Erro 1: Usar frases grandes no texto ALT das imagens
+
+Erro 2: Usar caracteres aleatórios para separar os links
+
+Erro 3: ...]]></description>
+		<content:encoded><![CDATA[<p>Já agora deixo a minha sugestão, se me é permitido:</p>
+<p>Estes 10 exemplos mostram aquilo que NÃO DEVE SER FEITO, mas que costumamos ver recorrentemente<br />
+Erro 1: Usar frases grandes no texto ALT das imagens</p>
+<p>Erro 2: Usar caracteres aleatórios para separar os links</p>
+<p>Erro 3: &#8230;</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

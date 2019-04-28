@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>metro &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/metro/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>A menor distância entre A e B é uma linha recta</title>
+		<link>/a-menor-distancia-entre-a-e-b-e-uma-linha-recta/</link>
+		<comments>/a-menor-distancia-entre-a-e-b-e-uma-linha-recta/#comments</comments>
+		<pubDate>Thu, 01 Jan 2009 15:36:44 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[carris]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[maps]]></category>
+		<category><![CDATA[metro]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=702</guid>
+		<description><![CDATA[<p>Recentemente o Google Maps introduziu informações sobre como chegar a determinado local em Lisboa usando os transportes públicos.</p>
+<p>Apesar do serviço ser muito bom (mesmo!), ainda há algumas falhas, nomeadamente no percurso dos autocarros entre as várias paragens.</p>
+<p>O conteúdo <a rel="nofollow" href="/a-menor-distancia-entre-a-e-b-e-uma-linha-recta/">A menor distância entre A e B é uma linha recta</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/a-menor-distancia-entre-a-e-b-e-uma-linha-recta/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Novo mapa do Metro de Madrid</title>
+		<link>/novo-mapa-do-metro-de-madrid/</link>
+		<comments>/novo-mapa-do-metro-de-madrid/#comments</comments>
+		<pubDate>Wed, 18 Apr 2007 11:16:59 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Ergonomia]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[diagrama]]></category>
+		<category><![CDATA[mapa]]></category>
+		<category><![CDATA[metro]]></category>
+
+		<guid isPermaLink="false">/novo-mapa-do-metro-de-madrid/</guid>
+		<description><![CDATA[<p>Foi dado a conhecer há alguns dias o futuro mapa do Metro de Madrid. Em comparação com o mapa actual, as diferenças são muitas. Em primeiro lugar, com o crescente número de linhas e a complexidade dos cruzamentos e transbordos entre estações, o mapa actual começava a ficar demasiado confuso.</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-mapa-do-metro-de-madrid/">Novo mapa do Metro de Madrid</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-mapa-do-metro-de-madrid/feed/</wfw:commentRss>
+		<slash:comments>31</slash:comments>
+		</item>
+		<item>
+		<title>Mais Usabilidade no Metro de Lisboa</title>
+		<link>/mais-usabilidade-no-metro-de-lisboa/</link>
+		<comments>/mais-usabilidade-no-metro-de-lisboa/#comments</comments>
+		<pubDate>Mon, 02 Apr 2007 09:11:25 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[metro]]></category>
+
+		<guid isPermaLink="false">/mais-usabilidade-no-metro-de-lisboa/</guid>
+		<description><![CDATA[<p>Há cerca de um ano, quando estive em Londres, reparei que o Underground (Metro de Londres) indicava o tempo restante até chegar o próximo comboio. Na altura pensei, qual a dificuldade de implementar isto em Lisboa?</p>
+<p>O conteúdo <a rel="nofollow" href="/mais-usabilidade-no-metro-de-lisboa/">Mais Usabilidade no Metro de Lisboa</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/mais-usabilidade-no-metro-de-lisboa/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+		</item>
+	</channel>
+</rss>

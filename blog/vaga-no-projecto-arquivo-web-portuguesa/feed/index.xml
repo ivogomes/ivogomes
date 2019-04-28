@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Vaga para colaborador no projecto de Arquivo da Web Portuguesa</title>
+	<atom:link href="/vaga-no-projecto-arquivo-web-portuguesa/feed/" rel="self" type="application/rss+xml" />
+	<link>/vaga-no-projecto-arquivo-web-portuguesa/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Jackes de Amorim Silva</title>
+		<link>/vaga-no-projecto-arquivo-web-portuguesa/#comment-79937</link>
+		<dc:creator><![CDATA[Jackes de Amorim Silva]]></dc:creator>
+		<pubDate>Fri, 13 Feb 2009 02:27:36 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=731#comment-79937</guid>
+		<description><![CDATA[Estou em busca de desafios, porém, que valham a pena (obs.: sejam rentáveis), diga-me qual é a sua proposta e eu estarei observando. Mande-me um e-mail. Nós precisamos de ajuda um do outro.]]></description>
+		<content:encoded><![CDATA[<p>Estou em busca de desafios, porém, que valham a pena (obs.: sejam rentáveis), diga-me qual é a sua proposta e eu estarei observando. Mande-me um e-mail. Nós precisamos de ajuda um do outro.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gustavo Pimenta</title>
+		<link>/vaga-no-projecto-arquivo-web-portuguesa/#comment-79138</link>
+		<dc:creator><![CDATA[Gustavo Pimenta]]></dc:creator>
+		<pubDate>Fri, 06 Feb 2009 15:48:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=731#comment-79138</guid>
+		<description><![CDATA[Hum... Conhecimentos de Java e desenho de interfaces? Será que o nosso mercado ainda não percebeu que o tipo de profissional &quot;faz tudo&quot; dificilmente faz alguma coisa bem?]]></description>
+		<content:encoded><![CDATA[<p>Hum&#8230; Conhecimentos de Java e desenho de interfaces? Será que o nosso mercado ainda não percebeu que o tipo de profissional &#8220;faz tudo&#8221; dificilmente faz alguma coisa bem?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

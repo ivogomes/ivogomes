@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>publicações &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/publicacoes/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Congresso de Ergonomia dos Países de Língua Oficial Portuguesa</title>
+		<link>/congresso-de-ergonomia-dos-paises-de-lingua-oficial-portuguesa/</link>
+		<comments>/congresso-de-ergonomia-dos-paises-de-lingua-oficial-portuguesa/#respond</comments>
+		<pubDate>Thu, 29 Jul 2004 22:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[comunicação]]></category>
+		<category><![CDATA[congresso]]></category>
+		<category><![CDATA[madeira]]></category>
+		<category><![CDATA[publicações]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=54</guid>
+		<description><![CDATA[<p>Decorreu entre 26 a 28 de Julho de 2004 o 1º Congresso de Ergonomia dos Países de Língua Oficial Portuguesa no Funchal, Ilha da Madeira, Portugal. Unidos pelo mesmo idioma, os Países de Língua Oficial Portuguesa cooperam actualmente nas mais diversas áreas privilegiadas para a cooperação. É ao encontro de uma unidade simultaneamente conceptual e [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/congresso-de-ergonomia-dos-paises-de-lingua-oficial-portuguesa/">Congresso de Ergonomia dos Países de Língua Oficial Portuguesa</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/congresso-de-ergonomia-dos-paises-de-lingua-oficial-portuguesa/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

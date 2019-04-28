@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Boas notícias sobre &#8216;performance&#8217;</title>
+	<atom:link href="/boas-noticias-sobre-performance/feed/" rel="self" type="application/rss+xml" />
+	<link>/boas-noticias-sobre-performance/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Dextro</title>
+		<link>/boas-noticias-sobre-performance/#comment-68786</link>
+		<dc:creator><![CDATA[Dextro]]></dc:creator>
+		<pubDate>Tue, 16 Sep 2008 20:42:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=551#comment-68786</guid>
+		<description><![CDATA[Bem, o MyTVShows parece um site novo :D
+
+BTW subscrevo o que foi dito aqui, procura um bom livrinho sobre SQL que é sempre uma boa ajuda.]]></description>
+		<content:encoded><![CDATA[<p>Bem, o MyTVShows parece um site novo :D</p>
+<p>BTW subscrevo o que foi dito aqui, procura um bom livrinho sobre SQL que é sempre uma boa ajuda.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Pedro Melo</title>
+		<link>/boas-noticias-sobre-performance/#comment-68728</link>
+		<dc:creator><![CDATA[Pedro Melo]]></dc:creator>
+		<pubDate>Tue, 16 Sep 2008 12:17:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=551#comment-68728</guid>
+		<description><![CDATA[JoaoJose,
+
+as views não fazem nada disso. A querie é executada sempre totalmente.
+
+Isso é uma summary table, que o mysql não suporta (no sentido de não a mantém actualizada automágicamente).
+
+As views são usadas para limitar o acesso tipicamente, ou dar um interface mais simplificado a queries mais complexas.
+
+Inté,]]></description>
+		<content:encoded><![CDATA[<p>JoaoJose,</p>
+<p>as views não fazem nada disso. A querie é executada sempre totalmente.</p>
+<p>Isso é uma summary table, que o mysql não suporta (no sentido de não a mantém actualizada automágicamente).</p>
+<p>As views são usadas para limitar o acesso tipicamente, ou dar um interface mais simplificado a queries mais complexas.</p>
+<p>Inté,</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Francisco</title>
+		<link>/boas-noticias-sobre-performance/#comment-68629</link>
+		<dc:creator><![CDATA[Francisco]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2008 23:32:37 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=551#comment-68629</guid>
+		<description><![CDATA[Caro Ivo,
+
+Parece-me fundamental que leia rapidamente um livro sobre bases de dados. Pode ser um daqueles guias simples, só mesmo para ficar com as noções do básico. Fazer SELECT&#039;s numa base de dados não indexada é procurar uma agulha num palheiro.
+
+Já no que diz o Felisberto... nem 8 nem 80 mas uma base de dados não indexada... acho que não se pode chamar de base de dados. Deve ter um nome estilo &quot;amalgama de informação&quot; ou coisa do estilo.
+
+No post de cima tinha-lhe sugerido a Media Temple mas, dado este novo post, sugiro uma revisão profunda de SQL.
+
+Abraço e boa sorte para o projecto.]]></description>
+		<content:encoded><![CDATA[<p>Caro Ivo,</p>
+<p>Parece-me fundamental que leia rapidamente um livro sobre bases de dados. Pode ser um daqueles guias simples, só mesmo para ficar com as noções do básico. Fazer SELECT&#8217;s numa base de dados não indexada é procurar uma agulha num palheiro.</p>
+<p>Já no que diz o Felisberto&#8230; nem 8 nem 80 mas uma base de dados não indexada&#8230; acho que não se pode chamar de base de dados. Deve ter um nome estilo &#8220;amalgama de informação&#8221; ou coisa do estilo.</p>
+<p>No post de cima tinha-lhe sugerido a Media Temple mas, dado este novo post, sugiro uma revisão profunda de SQL.</p>
+<p>Abraço e boa sorte para o projecto.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: JoaoJose</title>
+		<link>/boas-noticias-sobre-performance/#comment-68628</link>
+		<dc:creator><![CDATA[JoaoJose]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2008 23:32:21 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=551#comment-68628</guid>
+		<description><![CDATA[Técnicas de Cache são ótimas e diminuem bastante o consumo de recursos. Nem sempre é possível utilizar Cache, mas com um pouco de esforço é possível diminuir bastante o acesso ao banco.
+
+Otimizações de banco também são interessantes, caso você faça bastante junções aconselho ler um pouco sobre VIEWs. VIEWs criam tabelas virtuais que armazenam os dados já filtrados e agrupados, economizando o tempo de junção.
+
+Outra otimização são CRON JOBs, você pode executar alguma tarefa complicada e custosa separadamente (exemplo redimensionamento de imagens), depois, quando a tarefa for concluída, enviar alguma resposta para o usuário.]]></description>
+		<content:encoded><![CDATA[<p>Técnicas de Cache são ótimas e diminuem bastante o consumo de recursos. Nem sempre é possível utilizar Cache, mas com um pouco de esforço é possível diminuir bastante o acesso ao banco.</p>
+<p>Otimizações de banco também são interessantes, caso você faça bastante junções aconselho ler um pouco sobre VIEWs. VIEWs criam tabelas virtuais que armazenam os dados já filtrados e agrupados, economizando o tempo de junção.</p>
+<p>Outra otimização são CRON JOBs, você pode executar alguma tarefa complicada e custosa separadamente (exemplo redimensionamento de imagens), depois, quando a tarefa for concluída, enviar alguma resposta para o usuário.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Pedro Melo</title>
+		<link>/boas-noticias-sobre-performance/#comment-68605</link>
+		<dc:creator><![CDATA[Pedro Melo]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2008 19:51:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=551#comment-68605</guid>
+		<description><![CDATA[Olá,
+
+no mysql, podes activar um log de queries lentas.
+
+Assim, qq select que demore mais do que X segundos, ele mete no log.
+
+Fica mais fácil de apanhar essas coisas.
+
+Inté,]]></description>
+		<content:encoded><![CDATA[<p>Olá,</p>
+<p>no mysql, podes activar um log de queries lentas.</p>
+<p>Assim, qq select que demore mais do que X segundos, ele mete no log.</p>
+<p>Fica mais fácil de apanhar essas coisas.</p>
+<p>Inté,</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gustavo Felisberto</title>
+		<link>/boas-noticias-sobre-performance/#comment-68599</link>
+		<dc:creator><![CDATA[Gustavo Felisberto]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2008 19:03:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=551#comment-68599</guid>
+		<description><![CDATA[Eu se fosse a ti comprava um livrito sobre bases de dados e lia a teoria da coisa. Digo isto porque indices são uma coisa boa, mas não devemos abusar da coisa.]]></description>
+		<content:encoded><![CDATA[<p>Eu se fosse a ti comprava um livrito sobre bases de dados e lia a teoria da coisa. Digo isto porque indices são uma coisa boa, mas não devemos abusar da coisa.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Paulo Abreu</title>
+		<link>/boas-noticias-sobre-performance/#comment-68581</link>
+		<dc:creator><![CDATA[Paulo Abreu]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2008 17:24:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=551#comment-68581</guid>
+		<description><![CDATA[Sugiro técnicas de cache.]]></description>
+		<content:encoded><![CDATA[<p>Sugiro técnicas de cache.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

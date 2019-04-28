@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Tabela de compatibilidade de CSS</title>
+	<atom:link href="/tabela-de-compatibilidade-de-css/feed/" rel="self" type="application/rss+xml" />
+	<link>/tabela-de-compatibilidade-de-css/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/tabela-de-compatibilidade-de-css/#comment-3054</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 01 Nov 2005 18:03:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=97#comment-3054</guid>
+		<description><![CDATA[Parece que o site está offline. Infelizmente não tenho nenhuma cópia dessa tabela e uma vez que este artigo já foi escrito há quase 1 ano, não me parece que esse site volte a estar online...
+
+De qualquer das formas, aqui vão dois links para umas tabelas de comparação das propriedades de CSS em vários browsers:
+
+http://www.richinstyle.com/bugs/table.html
+
+http://www.quirksmode.org/css/contents.html]]></description>
+		<content:encoded><![CDATA[<p>Parece que o site está offline. Infelizmente não tenho nenhuma cópia dessa tabela e uma vez que este artigo já foi escrito há quase 1 ano, não me parece que esse site volte a estar online&#8230;</p>
+<p>De qualquer das formas, aqui vão dois links para umas tabelas de comparação das propriedades de CSS em vários browsers:</p>
+<p><a href="http://www.richinstyle.com/bugs/table.html" rel="nofollow">http://www.richinstyle.com/bugs/table.html</a></p>
+<p><a href="http://www.quirksmode.org/css/contents.html" rel="nofollow">http://www.quirksmode.org/css/contents.html</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jonatas Cavalcante</title>
+		<link>/tabela-de-compatibilidade-de-css/#comment-3053</link>
+		<dc:creator><![CDATA[Jonatas Cavalcante]]></dc:creator>
+		<pubDate>Tue, 01 Nov 2005 17:30:20 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=97#comment-3053</guid>
+		<description><![CDATA[Amigo,
+
+Gostaria que se possivel vc me enviasse a tabela de compatibilidade entre os browsers, ou seja, a lista... pois nao abriu o link aqui.
+
+Abraco e Parabens pelo site!]]></description>
+		<content:encoded><![CDATA[<p>Amigo,</p>
+<p>Gostaria que se possivel vc me enviasse a tabela de compatibilidade entre os browsers, ou seja, a lista&#8230; pois nao abriu o link aqui.</p>
+<p>Abraco e Parabens pelo site!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Fernando Nunes Lages</title>
+		<link>/tabela-de-compatibilidade-de-css/#comment-629</link>
+		<dc:creator><![CDATA[Fernando Nunes Lages]]></dc:creator>
+		<pubDate>Thu, 14 Apr 2005 14:54:37 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=97#comment-629</guid>
+		<description><![CDATA[Gostei muito deste link para compatibilidade CSS.
+Valeu por deixar isto disponível.]]></description>
+		<content:encoded><![CDATA[<p>Gostei muito deste link para compatibilidade CSS.<br />
+Valeu por deixar isto disponível.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

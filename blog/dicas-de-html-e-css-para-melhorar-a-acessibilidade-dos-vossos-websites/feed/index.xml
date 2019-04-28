@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Dicas de HTML e CSS para melhorar a Acessibilidade dos vossos websites</title>
+	<atom:link href="/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/feed/" rel="self" type="application/rss+xml" />
+	<link>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: HugoNS</title>
+		<link>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/#comment-105498</link>
+		<dc:creator><![CDATA[HugoNS]]></dc:creator>
+		<pubDate>Tue, 15 Nov 2011 12:43:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1329#comment-105498</guid>
+		<description><![CDATA[Ok.
+Faz todo o sentido.
+Acho que vou passar a usar esta solução.]]></description>
+		<content:encoded><![CDATA[<p>Ok.<br />
+Faz todo o sentido.<br />
+Acho que vou passar a usar esta solução.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/#comment-105495</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 15 Nov 2011 12:01:58 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1329#comment-105495</guid>
+		<description><![CDATA[@Hugo, por causa disto: http://www.maratz.com/blog/archives/2005/10/21/typetesters-base-font-size/
+
+E depois podes associar os em a px da seguinte forma: 1.6em = 16px sem ter que fazer contas de cabeça.
+
+Nem todos os browsers/SO usam 16px como base, por isso, se definires 1em como base, vais ter tamanhos diferentes nos vários browsers.]]></description>
+		<content:encoded><![CDATA[<p>@Hugo, por causa disto: <a href="http://www.maratz.com/blog/archives/2005/10/21/typetesters-base-font-size/" rel="nofollow">http://www.maratz.com/blog/archives/2005/10/21/typetesters-base-font-size/</a></p>
+<p>E depois podes associar os em a px da seguinte forma: 1.6em = 16px sem ter que fazer contas de cabeça.</p>
+<p>Nem todos os browsers/SO usam 16px como base, por isso, se definires 1em como base, vais ter tamanhos diferentes nos vários browsers.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: HugoNS</title>
+		<link>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/#comment-105461</link>
+		<dc:creator><![CDATA[HugoNS]]></dc:creator>
+		<pubDate>Tue, 15 Nov 2011 00:37:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1329#comment-105461</guid>
+		<description><![CDATA[Muito bom e bastante completo.
+Um link que, sem dúvida vou guardar nos meus favoritos.
+Só tenho uma dúvida, pq é que no slide 17 defines que o font-size do HTML deva ser 62.5%, para depois no body, o definires em 1.6em. 
+Não era mais simples apenas definir no body o font-size com 1em (+-16px)? Quais as vantagens desta abordagem?
+Abraço]]></description>
+		<content:encoded><![CDATA[<p>Muito bom e bastante completo.<br />
+Um link que, sem dúvida vou guardar nos meus favoritos.<br />
+Só tenho uma dúvida, pq é que no slide 17 defines que o font-size do HTML deva ser 62.5%, para depois no body, o definires em 1.6em.<br />
+Não era mais simples apenas definir no body o font-size com 1em (+-16px)? Quais as vantagens desta abordagem?<br />
+Abraço</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Margarida Rebelo</title>
+		<link>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/#comment-105432</link>
+		<dc:creator><![CDATA[Margarida Rebelo]]></dc:creator>
+		<pubDate>Mon, 14 Nov 2011 14:56:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1329#comment-105432</guid>
+		<description><![CDATA[Gostei bastante, muito completo. :)]]></description>
+		<content:encoded><![CDATA[<p>Gostei bastante, muito completo. :)</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>desgn &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/desgn/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Ergonomics in Design</title>
+		<link>/ergonomics-in-design/</link>
+		<comments>/ergonomics-in-design/#comments</comments>
+		<pubDate>Mon, 19 May 2008 08:33:15 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Ergonomia]]></category>
+		<category><![CDATA[desgn]]></category>
+		<category><![CDATA[seminário]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=472</guid>
+		<description><![CDATA[<p>A <a href="http://www.fmh.utl.pt/ergonomia/">Unidade de Ergonomia</a> da <a href="http://www.fmh.utl.pt/">Faculdade de Motricidade Humana</a> da Universidade Técnica de Lisboa (FMH-UTL), com o apoio da <a href="http://www.fccn.pt/">Fundação para a Ciência e Tecnologia</a>, vai organizar um seminário intitulado “Ergonomics in Design” que decorrerá no próximo dia 26 de Maio de 2008, pelas 14.00h, no Salão Nobre da FMH-UTL.</p>
+<p><img class="alignnone size-full wp-image-473" title="Ergonomics in Design" src="/wp-content/uploads/2008/05/picture-1.png" alt="" width="500" height="430" /></p>
+<p>O conteúdo <a rel="nofollow" href="/ergonomics-in-design/">Ergonomics in Design</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/ergonomics-in-design/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

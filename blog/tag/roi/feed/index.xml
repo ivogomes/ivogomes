@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ROI &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/roi/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>A importância da usabilidade na fase inicial de um projecto</title>
+		<link>/a-importancia-da-usabilidade-na-fase-inicial-de-um-projecto/</link>
+		<comments>/a-importancia-da-usabilidade-na-fase-inicial-de-um-projecto/#comments</comments>
+		<pubDate>Tue, 26 Jan 2010 17:19:48 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Project 52]]></category>
+		<category><![CDATA[ROI]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=483</guid>
+		<description><![CDATA[<p>Há cerca de 1 ano e meio atrás fui abordado para ajudar no desenvolvimento de um grande portal. A ideia seria torná-lo o melhor portal do género em Portugal em termos de usabilidade, facilidade de uso, e de conteúdos. Convém dizer que não se trata de um portal generalista como o Clix ou o SAPO, mas sim de um portal com conteúdos muito específicos numa área com bastante procura por parte dos utilizadores (infelizmente não posso adiantar já qual é). Já existem outros grandes sites (inclusivé o maior competidor é um canal do SAPO) o que faz com que a concorrência seja muita e daí a necessidade de termos o melhor produto no mercado.</p>
+<p>O conteúdo <a rel="nofollow" href="/a-importancia-da-usabilidade-na-fase-inicial-de-um-projecto/">A importância da usabilidade na fase inicial de um projecto</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/a-importancia-da-usabilidade-na-fase-inicial-de-um-projecto/feed/</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+	</channel>
+</rss>

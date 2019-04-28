@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Browser Not Supported!!</title>
+	<atom:link href="/browser-not-supported/feed/" rel="self" type="application/rss+xml" />
+	<link>/browser-not-supported/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Rogerio</title>
+		<link>/browser-not-supported/#comment-89559</link>
+		<dc:creator><![CDATA[Rogerio]]></dc:creator>
+		<pubDate>Thu, 10 Jun 2010 01:35:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-89559</guid>
+		<description><![CDATA[Ola, para saber a versao do browser existe um site que mostra &lt;a href=&quot;http://seubrowserinfo.blogspot.com/&quot; rel=&quot;nofollow&quot;&gt;http://seubrowserinfo.blogspot.com/&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>Ola, para saber a versao do browser existe um site que mostra <a href="http://seubrowserinfo.blogspot.com/" rel="nofollow">http://seubrowserinfo.blogspot.com/</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Francisco Gomes</title>
+		<link>/browser-not-supported/#comment-87166</link>
+		<dc:creator><![CDATA[Francisco Gomes]]></dc:creator>
+		<pubDate>Fri, 09 Oct 2009 11:12:45 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-87166</guid>
+		<description><![CDATA[ok, vlw Ivo, é...estou a aprender, mas vejo que estas coisas tenho que deixar para os profissionais, rsrsrs
+
+obrigado, fraternal abraço.]]></description>
+		<content:encoded><![CDATA[<p>ok, vlw Ivo, é&#8230;estou a aprender, mas vejo que estas coisas tenho que deixar para os profissionais, rsrsrs</p>
+<p>obrigado, fraternal abraço.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/browser-not-supported/#comment-87157</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 08 Oct 2009 13:27:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-87157</guid>
+		<description><![CDATA[Olá Francisco. Eu consigo abrir o site em Firefox (demora uma eternidade, mas abre). Olhando para o código vejo bastantes erros de HTML (no topo tem o DOCTYPE XHTML mas no HTML tem misturado HTML3 com XHTML e há várias centenas de linhas de JavaScript que não percebo para que servem...
+Sugiro que aprenda um pouco mais sobre HTML4 ou XHTML e CSS e que consiga simplificar o código da página. Provavelmente consegue-se o mesmo efeito que tem actualmente apenas usando 10% do código.]]></description>
+		<content:encoded><![CDATA[<p>Olá Francisco. Eu consigo abrir o site em Firefox (demora uma eternidade, mas abre). Olhando para o código vejo bastantes erros de HTML (no topo tem o DOCTYPE XHTML mas no HTML tem misturado HTML3 com XHTML e há várias centenas de linhas de JavaScript que não percebo para que servem&#8230;<br />
+Sugiro que aprenda um pouco mais sobre HTML4 ou XHTML e CSS e que consiga simplificar o código da página. Provavelmente consegue-se o mesmo efeito que tem actualmente apenas usando 10% do código.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Francisco Gomes</title>
+		<link>/browser-not-supported/#comment-87156</link>
+		<dc:creator><![CDATA[Francisco Gomes]]></dc:creator>
+		<pubDate>Thu, 08 Oct 2009 12:07:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-87156</guid>
+		<description><![CDATA[Conforme solicitação segue o endereço do meu site:
+http://www.fbgwebservice.com.br/
+
+estou a aprender e ainda me vejo perdido em muitas coisas.
+
+obrigado pela atenção]]></description>
+		<content:encoded><![CDATA[<p>Conforme solicitação segue o endereço do meu site:<br />
+<a href="http://www.fbgwebservice.com.br/" rel="nofollow">http://www.fbgwebservice.com.br/</a></p>
+<p>estou a aprender e ainda me vejo perdido em muitas coisas.</p>
+<p>obrigado pela atenção</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/browser-not-supported/#comment-87153</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 07 Oct 2009 15:15:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-87153</guid>
+		<description><![CDATA[Olá Francisco. Pode-me dar o endereço do site? É que se foi feito em HTML, ele deve funcionar em qualquer browser.
+
+Normalmente costuma-se é corrigir bugs para que o site seja visto correctamente em IE6 e IE7.]]></description>
+		<content:encoded><![CDATA[<p>Olá Francisco. Pode-me dar o endereço do site? É que se foi feito em HTML, ele deve funcionar em qualquer browser.</p>
+<p>Normalmente costuma-se é corrigir bugs para que o site seja visto correctamente em IE6 e IE7.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Francisco Gomes</title>
+		<link>/browser-not-supported/#comment-87152</link>
+		<dc:creator><![CDATA[Francisco Gomes]]></dc:creator>
+		<pubDate>Wed, 07 Oct 2009 15:04:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-87152</guid>
+		<description><![CDATA[Ivo, somos parentes em algum lugar de nossa árvore genealógica, rsrsrsrs
+
+Bem, eu criei um pequeno site, mas não consigo faze-lo aparecer em outros browsers, existe algum código que dvo colocar para que o mesmo seja reconhecido pelo demais browsers, eu utilizo o IE8
+
+Muito agradecido.
+
+Fraternal Abraço]]></description>
+		<content:encoded><![CDATA[<p>Ivo, somos parentes em algum lugar de nossa árvore genealógica, rsrsrsrs</p>
+<p>Bem, eu criei um pequeno site, mas não consigo faze-lo aparecer em outros browsers, existe algum código que dvo colocar para que o mesmo seja reconhecido pelo demais browsers, eu utilizo o IE8</p>
+<p>Muito agradecido.</p>
+<p>Fraternal Abraço</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: lssa</title>
+		<link>/browser-not-supported/#comment-69216</link>
+		<dc:creator><![CDATA[lssa]]></dc:creator>
+		<pubDate>Thu, 18 Sep 2008 16:35:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-69216</guid>
+		<description><![CDATA[Keria saber mais nomes de browser so sei 4...
+Precisava pra um trabalho pra amanha...]]></description>
+		<content:encoded><![CDATA[<p>Keria saber mais nomes de browser so sei 4&#8230;<br />
+Precisava pra um trabalho pra amanha&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/browser-not-supported/#comment-10798</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 28 Feb 2007 10:54:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-10798</guid>
+		<description><![CDATA[É um plugin do WordPress chamaod &quot;landing sites&quot;.]]></description>
+		<content:encoded><![CDATA[<p>É um plugin do WordPress chamaod &#8220;landing sites&#8221;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Doufer</title>
+		<link>/browser-not-supported/#comment-10768</link>
+		<dc:creator><![CDATA[Doufer]]></dc:creator>
+		<pubDate>Tue, 27 Feb 2007 12:59:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-10768</guid>
+		<description><![CDATA[Fala Ivo!
+
+Gostei muito do campo &quot;Quer mais informação?&quot;
+
+Você mesmo desenvolveu o código ou conseguiu sob liceça CC?
+
+Poderia me dar a dica? Acho que ele me vai serr útil.
+
+Forte abraço!]]></description>
+		<content:encoded><![CDATA[<p>Fala Ivo!</p>
+<p>Gostei muito do campo &#8220;Quer mais informação?&#8221;</p>
+<p>Você mesmo desenvolveu o código ou conseguiu sob liceça CC?</p>
+<p>Poderia me dar a dica? Acho que ele me vai serr útil.</p>
+<p>Forte abraço!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/browser-not-supported/#comment-3217</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 27 Dec 2005 09:54:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-3217</guid>
+		<description><![CDATA[Olá Tiago.
+O problema não é do ASP, mas sim do HTML. Experimente desenvolver HTML segundo os webstandards e os formulários funcionarão bem em qualquer browser.
+
+O IE tem imensos bugs e se um website for desenvolvido com base neste browser é normal que não funcione nos outros. O ideal é desenvolver segundo as regras do W3C e só no final fazer os ajustes necessários para suportar o IE.]]></description>
+		<content:encoded><![CDATA[<p>Olá Tiago.<br />
+O problema não é do ASP, mas sim do HTML. Experimente desenvolver HTML segundo os webstandards e os formulários funcionarão bem em qualquer browser.</p>
+<p>O IE tem imensos bugs e se um website for desenvolvido com base neste browser é normal que não funcione nos outros. O ideal é desenvolver segundo as regras do W3C e só no final fazer os ajustes necessários para suportar o IE.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Tiago</title>
+		<link>/browser-not-supported/#comment-3214</link>
+		<dc:creator><![CDATA[Tiago]]></dc:creator>
+		<pubDate>Mon, 26 Dec 2005 15:48:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-3214</guid>
+		<description><![CDATA[Olá.. Sou desenvolvedor ASP e gostaria de uma mãozinha.. 
+Muitas páginas minhas que contém formulários ou até mesmo as páginas de quadros não funcionam bem no Firefox... O que estou fazendo de errado??? No IE elas funcionam perfeitamente.. 
+Tem como solucionar o problema??  Se alguem puder me mandar uma resposta fico grato..
+
+Desde já obrigado..]]></description>
+		<content:encoded><![CDATA[<p>Olá.. Sou desenvolvedor ASP e gostaria de uma mãozinha..<br />
+Muitas páginas minhas que contém formulários ou até mesmo as páginas de quadros não funcionam bem no Firefox&#8230; O que estou fazendo de errado??? No IE elas funcionam perfeitamente..<br />
+Tem como solucionar o problema??  Se alguem puder me mandar uma resposta fico grato..</p>
+<p>Desde já obrigado..</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: carlos</title>
+		<link>/browser-not-supported/#comment-2860</link>
+		<dc:creator><![CDATA[carlos]]></dc:creator>
+		<pubDate>Tue, 12 Jul 2005 18:08:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-2860</guid>
+		<description><![CDATA[deixo aqui o meu testemunho, fui ao site :  http://www.portaldocidadao.pt/PORTAL/pt onde supostamente se pede todo o tipo de Certidões e Formulários entre a Administração Publica e os seus &quot;Clientes&quot; - os particulares e as empresas - pois bem fui pedir uma Certidão de NAscimento em 16.05.2005, o tempo foi passando e começei a enviar mails para saber o  que aconteceu a minha CERTIDAO... diziam-me que o pedido não estava registado no sistema... mas eu tinha um comprovativo de que o PEDIDO estava registado. Voltei a refazer o pedido e continuava com o mesmo problema. Quando experimentei com o IE 6.0 o botão já aparecia... imaginem bem , só HOJE, passados quase 2 meses é que me apercebi de que o problema era que o meu Browser - MOZILLA FIREFOX - que eu adoro e não vou mudar- não era compativel e por isso é que o Botão Confirmar não aparecia.... e então o pedido não entrava no sistema... VEJAM BEM OS PROBLEMAS QUE ISTO A CAUSA....será que estes gajos não se apercebem que existem outros browsers e que além disso deveriam colocar no sopé de página uma coisa simples: Browser supported ou not supported... é assim tão díficil...]]></description>
+		<content:encoded><![CDATA[<p>deixo aqui o meu testemunho, fui ao site :  <a href="http://www.portaldocidadao.pt/PORTAL/pt" rel="nofollow">http://www.portaldocidadao.pt/PORTAL/pt</a> onde supostamente se pede todo o tipo de Certidões e Formulários entre a Administração Publica e os seus &#8220;Clientes&#8221; &#8211; os particulares e as empresas &#8211; pois bem fui pedir uma Certidão de NAscimento em 16.05.2005, o tempo foi passando e começei a enviar mails para saber o  que aconteceu a minha CERTIDAO&#8230; diziam-me que o pedido não estava registado no sistema&#8230; mas eu tinha um comprovativo de que o PEDIDO estava registado. Voltei a refazer o pedido e continuava com o mesmo problema. Quando experimentei com o IE 6.0 o botão já aparecia&#8230; imaginem bem , só HOJE, passados quase 2 meses é que me apercebi de que o problema era que o meu Browser &#8211; MOZILLA FIREFOX &#8211; que eu adoro e não vou mudar- não era compativel e por isso é que o Botão Confirmar não aparecia&#8230;. e então o pedido não entrava no sistema&#8230; VEJAM BEM OS PROBLEMAS QUE ISTO A CAUSA&#8230;.será que estes gajos não se apercebem que existem outros browsers e que além disso deveriam colocar no sopé de página uma coisa simples: Browser supported ou not supported&#8230; é assim tão díficil&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Leandro Nascimento Camargo</title>
+		<link>/browser-not-supported/#comment-616</link>
+		<dc:creator><![CDATA[Leandro Nascimento Camargo]]></dc:creator>
+		<pubDate>Sat, 02 Apr 2005 00:37:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-616</guid>
+		<description><![CDATA[É realmente lamentável isso. Só faz ferver o nosso sangue de desenvolvedor de website que preza enormemente pela acessabilidade e pelos padrões da web...
+
+É ai que valorizo o nosso conhecimento... :D]]></description>
+		<content:encoded><![CDATA[<p>É realmente lamentável isso. Só faz ferver o nosso sangue de desenvolvedor de website que preza enormemente pela acessabilidade e pelos padrões da web&#8230;</p>
+<p>É ai que valorizo o nosso conhecimento&#8230; :D</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/browser-not-supported/#comment-613</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 23 Mar 2005 10:23:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-613</guid>
+		<description><![CDATA[Não sabia que o sistema da SAP só funcionava em IE!
+O que é que eles têm que só possa funcionar em IE e nos outros não?
+
+Comigo não funciona no Firefox, no Safari, nem no Opera. Só no IE, e mesmo assim fica todo torto.
+
+Talvez seja um bom negócio falar com os tipos da SAP, ou então convencer os sites que usam o sistema deles para mudarem para outro melhor... De certeza que depois disso a SAP já desenvolvia uma nova versão mais compatível... :)]]></description>
+		<content:encoded><![CDATA[<p>Não sabia que o sistema da SAP só funcionava em IE!<br />
+O que é que eles têm que só possa funcionar em IE e nos outros não?</p>
+<p>Comigo não funciona no Firefox, no Safari, nem no Opera. Só no IE, e mesmo assim fica todo torto.</p>
+<p>Talvez seja um bom negócio falar com os tipos da SAP, ou então convencer os sites que usam o sistema deles para mudarem para outro melhor&#8230; De certeza que depois disso a SAP já desenvolvia uma nova versão mais compatível&#8230; :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/browser-not-supported/#comment-612</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Wed, 23 Mar 2005 10:14:24 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=131#comment-612</guid>
+		<description><![CDATA[Eu creio que o problema da FIL esteja em usar SAPportals
+Alguém da SAP já se apercebeu que os seus sites só funcionam bem em IE ?
+Duh! Abram os olhos! E os MAC USERS, Linux users e windows users que usam Firefox ?]]></description>
+		<content:encoded><![CDATA[<p>Eu creio que o problema da FIL esteja em usar SAPportals<br />
+Alguém da SAP já se apercebeu que os seus sites só funcionam bem em IE ?<br />
+Duh! Abram os olhos! E os MAC USERS, Linux users e windows users que usam Firefox ?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

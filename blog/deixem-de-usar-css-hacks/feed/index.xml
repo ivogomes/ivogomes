@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Deixem de usar CSS Hacks!</title>
+	<atom:link href="/deixem-de-usar-css-hacks/feed/" rel="self" type="application/rss+xml" />
+	<link>/deixem-de-usar-css-hacks/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Pablo Alves Lima</title>
+		<link>/deixem-de-usar-css-hacks/#comment-86257</link>
+		<dc:creator><![CDATA[Pablo Alves Lima]]></dc:creator>
+		<pubDate>Mon, 06 Jul 2009 15:31:14 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-86257</guid>
+		<description><![CDATA[Gostaria de uma indicação de livros ou curso para me atualizar nessa questão de CSS com ou sem hacks.
+Obrigado.]]></description>
+		<content:encoded><![CDATA[<p>Gostaria de uma indicação de livros ou curso para me atualizar nessa questão de CSS com ou sem hacks.<br />
+Obrigado.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Leo Cabral</title>
+		<link>/deixem-de-usar-css-hacks/#comment-68469</link>
+		<dc:creator><![CDATA[Leo Cabral]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2008 00:27:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-68469</guid>
+		<description><![CDATA[Confesso que não desenvolvo utilizando hacks (exceto em fragmentos de terceiros, como widgets).
+
+A idéia de programar errado para que apareça corretamente é algo que vai contra qualquer convicção profissional. E me assombra que a Microsoft hoje (estamos em 2008, mas esste artigo ainda é muito atual dado o número de browsers) force a esse hábito contraproducente com o IE6, que ainda persiste.]]></description>
+		<content:encoded><![CDATA[<p>Confesso que não desenvolvo utilizando hacks (exceto em fragmentos de terceiros, como widgets).</p>
+<p>A idéia de programar errado para que apareça corretamente é algo que vai contra qualquer convicção profissional. E me assombra que a Microsoft hoje (estamos em 2008, mas esste artigo ainda é muito atual dado o número de browsers) force a esse hábito contraproducente com o IE6, que ainda persiste.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Filipe Abreu</title>
+		<link>/deixem-de-usar-css-hacks/#comment-61461</link>
+		<dc:creator><![CDATA[Filipe Abreu]]></dc:creator>
+		<pubDate>Thu, 07 Aug 2008 14:10:20 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-61461</guid>
+		<description><![CDATA[Eu tenho um cpomputador antigo rodando win98. Só posso usar até o IE 6 nele, pois o IE 7 requer ao mínimo o XP. Também é fato que ainda existe gente que tem win98... bom tem mta gente q tem mta coisa ainda... Usar hack é uma forma de dar um jeitinho... se bem q não tem outro mesmo, a não ser limitar o layout a um formato que não se altere em borwsers diferentes. Vejo diferenças até entre FF de PC e de Mac. Safari e Opera também conseguem serem chatinhos. Uso o meu FF como base, e depois vou hackeando. &lt;!--[If browser not tosco]&#062; Hack free! &#060;[!endif]--&gt;]]></description>
+		<content:encoded><![CDATA[<p>Eu tenho um cpomputador antigo rodando win98. Só posso usar até o IE 6 nele, pois o IE 7 requer ao mínimo o XP. Também é fato que ainda existe gente que tem win98&#8230; bom tem mta gente q tem mta coisa ainda&#8230; Usar hack é uma forma de dar um jeitinho&#8230; se bem q não tem outro mesmo, a não ser limitar o layout a um formato que não se altere em borwsers diferentes. Vejo diferenças até entre FF de PC e de Mac. Safari e Opera também conseguem serem chatinhos. Uso o meu FF como base, e depois vou hackeando. <!--[If browser not tosco]&gt; Hack free! &lt;[!endif]--></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Thalis Valle</title>
+		<link>/deixem-de-usar-css-hacks/#comment-40749</link>
+		<dc:creator><![CDATA[Thalis Valle]]></dc:creator>
+		<pubDate>Tue, 19 Feb 2008 15:17:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-40749</guid>
+		<description><![CDATA[hoje está sendo impossícel usar hacks. Eu particularmente desenvolvo em front-end na plataforma Windows com os navegadores IE6/ IE7 / Firefox 2.x / Opera 9.x
+
+É impossível não precisar usar hacl, pois cada um renderiza de um jeito, mesmo em layouts mais simples.
+
+Nós sofremos!]]></description>
+		<content:encoded><![CDATA[<p>hoje está sendo impossícel usar hacks. Eu particularmente desenvolvo em front-end na plataforma Windows com os navegadores IE6/ IE7 / Firefox 2.x / Opera 9.x</p>
+<p>É impossível não precisar usar hacl, pois cada um renderiza de um jeito, mesmo em layouts mais simples.</p>
+<p>Nós sofremos!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Igor</title>
+		<link>/deixem-de-usar-css-hacks/#comment-36250</link>
+		<dc:creator><![CDATA[Igor]]></dc:creator>
+		<pubDate>Wed, 28 Nov 2007 19:41:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-36250</guid>
+		<description><![CDATA[* ainda funciona!]]></description>
+		<content:encoded><![CDATA[<p>* ainda funciona!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/deixem-de-usar-css-hacks/#comment-15357</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 04 May 2007 15:38:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-15357</guid>
+		<description><![CDATA[Um GIF transparente funciona em qualquer browser. O problema pode estar no código que está a usar. Basicamente basta meter a imagem com &quot;positioning: absolute&quot; centrada na página e com um &quot;z-index&quot; superior aos restantes conteúdos para ficar sempre por cima.]]></description>
+		<content:encoded><![CDATA[<p>Um GIF transparente funciona em qualquer browser. O problema pode estar no código que está a usar. Basicamente basta meter a imagem com &#8220;positioning: absolute&#8221; centrada na página e com um &#8220;z-index&#8221; superior aos restantes conteúdos para ficar sempre por cima.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: helder</title>
+		<link>/deixem-de-usar-css-hacks/#comment-15355</link>
+		<dc:creator><![CDATA[helder]]></dc:creator>
+		<pubDate>Fri, 04 May 2007 15:33:42 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-15355</guid>
+		<description><![CDATA[Pois, é mto bonito tentar, mas não me parece contornável. Queremos fazer algo mais específico e um dos 3 browsers actualmente mais representativos (ie6, 7 e ff) manda-nos dar uma grande curva.
+
+Exemplo: um cliente pediu-me para pôr uma marca por cima do conteúdo todo na impressão, que se sobreponha ao texto e imagens impressas. O firefox não faz transparencia ao gif. O ie6 só faz ao gif. E agora?]]></description>
+		<content:encoded><![CDATA[<p>Pois, é mto bonito tentar, mas não me parece contornável. Queremos fazer algo mais específico e um dos 3 browsers actualmente mais representativos (ie6, 7 e ff) manda-nos dar uma grande curva.</p>
+<p>Exemplo: um cliente pediu-me para pôr uma marca por cima do conteúdo todo na impressão, que se sobreponha ao texto e imagens impressas. O firefox não faz transparencia ao gif. O ie6 só faz ao gif. E agora?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: william</title>
+		<link>/deixem-de-usar-css-hacks/#comment-10118</link>
+		<dc:creator><![CDATA[william]]></dc:creator>
+		<pubDate>Sun, 18 Feb 2007 15:10:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-10118</guid>
+		<description><![CDATA[existe um escaner que não da comflito com windows xp editom 
+como resouvo este problema]]></description>
+		<content:encoded><![CDATA[<p>existe um escaner que não da comflito com windows xp editom<br />
+como resouvo este problema</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: fernando</title>
+		<link>/deixem-de-usar-css-hacks/#comment-6522</link>
+		<dc:creator><![CDATA[fernando]]></dc:creator>
+		<pubDate>Fri, 15 Dec 2006 18:18:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-6522</guid>
+		<description><![CDATA[eu quero ser hacker]]></description>
+		<content:encoded><![CDATA[<p>eu quero ser hacker</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: MIguel</title>
+		<link>/deixem-de-usar-css-hacks/#comment-5294</link>
+		<dc:creator><![CDATA[MIguel]]></dc:creator>
+		<pubDate>Mon, 21 Aug 2006 00:09:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-5294</guid>
+		<description><![CDATA[Usem o Mozilla ou o Opera, pelo menos esses respeitam os standards. E o IE tem demasiadas falhas de segurança.]]></description>
+		<content:encoded><![CDATA[<p>Usem o Mozilla ou o Opera, pelo menos esses respeitam os standards. E o IE tem demasiadas falhas de segurança.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: TALLITA CORDEIRO ARAUJO</title>
+		<link>/deixem-de-usar-css-hacks/#comment-4065</link>
+		<dc:creator><![CDATA[TALLITA CORDEIRO ARAUJO]]></dc:creator>
+		<pubDate>Tue, 06 Jun 2006 17:03:15 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-4065</guid>
+		<description><![CDATA[REALMENTE QUAL A DEFINIÇÃO DE HACKS?]]></description>
+		<content:encoded><![CDATA[<p>REALMENTE QUAL A DEFINIÇÃO DE HACKS?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno</title>
+		<link>/deixem-de-usar-css-hacks/#comment-3300</link>
+		<dc:creator><![CDATA[Bruno]]></dc:creator>
+		<pubDate>Fri, 27 Jan 2006 16:17:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-3300</guid>
+		<description><![CDATA[Legal! Gostaria de fazer um pedido também; Parem de utilizar Internet Explorer!
+
+Porque mesmo que o IE7 resolva todos os problemas, nem todos os usuários irão atualizar suas versões e continuaremos com problemas de versões e os hacks continuam a ser uma solução.]]></description>
+		<content:encoded><![CDATA[<p>Legal! Gostaria de fazer um pedido também; Parem de utilizar Internet Explorer!</p>
+<p>Porque mesmo que o IE7 resolva todos os problemas, nem todos os usuários irão atualizar suas versões e continuaremos com problemas de versões e os hacks continuam a ser uma solução.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Romeu Ribeiro</title>
+		<link>/deixem-de-usar-css-hacks/#comment-3282</link>
+		<dc:creator><![CDATA[Romeu Ribeiro]]></dc:creator>
+		<pubDate>Wed, 25 Jan 2006 21:44:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-3282</guid>
+		<description><![CDATA[Já agora, se o IE7 não vai conter o mesmo erros que o seu anterior irmão, nesse caso todos os sites que tenhamos criado até hoje com hack deverão apareçer tal como apareçem hoje?? o meu raciocinio é o seguinte:
+
+o firefox apesar de também não ser perfeito é o melhor que se pode encontrar por ai, e ao conceber hack&#039;s para o IE normal o faço sempre com o html &#062; body... de forma a que o IE não o interprete mas isso depois  de colocar uma linha de codigo normal que funciona no IE, pois o firefox vai ignorar a primeira, assim sendo o comportamento do IE7 não devia ser semelhante? e fazer o render como faz actualemente o firefox?
+
+talvez não esteja muito claro este post&#039;s mas o tempo já aperta e eu queria mesmo colocar esta questão.
+
+Mais uma vez obrigado Ivo Gomes]]></description>
+		<content:encoded><![CDATA[<p>Já agora, se o IE7 não vai conter o mesmo erros que o seu anterior irmão, nesse caso todos os sites que tenhamos criado até hoje com hack deverão apareçer tal como apareçem hoje?? o meu raciocinio é o seguinte:</p>
+<p>o firefox apesar de também não ser perfeito é o melhor que se pode encontrar por ai, e ao conceber hack&#8217;s para o IE normal o faço sempre com o html &gt; body&#8230; de forma a que o IE não o interprete mas isso depois  de colocar uma linha de codigo normal que funciona no IE, pois o firefox vai ignorar a primeira, assim sendo o comportamento do IE7 não devia ser semelhante? e fazer o render como faz actualemente o firefox?</p>
+<p>talvez não esteja muito claro este post&#8217;s mas o tempo já aperta e eu queria mesmo colocar esta questão.</p>
+<p>Mais uma vez obrigado Ivo Gomes</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rodrigo Muniz &#187; CSS Hacks e IE 7</title>
+		<link>/deixem-de-usar-css-hacks/#comment-3133</link>
+		<dc:creator><![CDATA[Rodrigo Muniz &#187; CSS Hacks e IE 7]]></dc:creator>
+		<pubDate>Fri, 11 Nov 2005 17:57:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-3133</guid>
+		<description><![CDATA[[...] ivogomes.com » Deixem de usar CSS Hacks!  Technorati TagsIE, CSS [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] ivogomes.com » Deixem de usar CSS Hacks!  Technorati TagsIE, CSS [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rui Moura</title>
+		<link>/deixem-de-usar-css-hacks/#comment-3011</link>
+		<dc:creator><![CDATA[Rui Moura]]></dc:creator>
+		<pubDate>Mon, 17 Oct 2005 10:57:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=179#comment-3011</guid>
+		<description><![CDATA[Percebi perfeitamente ;). Obrigado pelo esclarecimento. Estamos sempre a aprender :D]]></description>
+		<content:encoded><![CDATA[<p>Percebi perfeitamente ;). Obrigado pelo esclarecimento. Estamos sempre a aprender :D</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

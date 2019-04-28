@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Layouts Complexos em CSS</title>
+	<atom:link href="/layouts-complexos-em-css/feed/" rel="self" type="application/rss+xml" />
+	<link>/layouts-complexos-em-css/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Aldemir Vieira</title>
+		<link>/layouts-complexos-em-css/#comment-586</link>
+		<dc:creator><![CDATA[Aldemir Vieira]]></dc:creator>
+		<pubDate>Sun, 27 Feb 2005 12:29:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=126#comment-586</guid>
+		<description><![CDATA[E sabe o que tem de negativo nesta apresentação? A falta de semântica na nomenclatura dos ID´s (#left, #center, #right). Vocês vão dizer que é apenas um exemplo, mas tem lugar melhor para fixar conceito que &quot;exemplos&quot;? 
+Devemos sempre pensar semanticamente:
+Use class with semantics in mind&lt;a href=&quot;http://www.w3.org/QA/Tips/goodclassnames&quot; title=&quot;Semântica na mente&quot; rel=&quot;nofollow&quot;&gt;
+
+Veja mais: &lt;/a&gt;&lt;a title=&quot;Nomenclatura Semântica&quot; rel=&quot;nofollow&quot;&gt;
+&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>E sabe o que tem de negativo nesta apresentação? A falta de semântica na nomenclatura dos ID´s (#left, #center, #right). Vocês vão dizer que é apenas um exemplo, mas tem lugar melhor para fixar conceito que &#8220;exemplos&#8221;?<br />
+Devemos sempre pensar semanticamente:<br />
+Use class with semantics in mind<a href="http://www.w3.org/QA/Tips/goodclassnames" title="Semântica na mente" rel="nofollow"></p>
+<p>Veja mais: </a><a title="Nomenclatura Semântica" rel="nofollow"><br />
+</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Aldemir Vieira</title>
+		<link>/layouts-complexos-em-css/#comment-585</link>
+		<dc:creator><![CDATA[Aldemir Vieira]]></dc:creator>
+		<pubDate>Sun, 27 Feb 2005 11:28:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=126#comment-585</guid>
+		<description><![CDATA[É o artigo é bonzinho, a forma de apresentar é ótima, mas ele tinha que fazer a asneira de codificar: #left, #center, #right ? Onde está a complexidade se a semântica não está na mente? 
+
+- Sobre nomenclatura de TAG semântica&lt;a href=&quot;http://lutandoporwasp.blogspot.com/2004/06/ainda-sobre-nomenclaturas-css.html&quot; rel=&quot;nofollow&quot;&gt;
+- Semântica na Mente - W3C Good Name Class&lt;/a&gt;&lt;a href=&quot;http://www.w3.org/QA/Tips/goodclassnames&quot; rel=&quot;nofollow&quot;&gt;
+
+Eu costumo sempre a criticar esse tipo de atitude e sempre há a justificativa &quot;É apenas para exemplificar&quot;,  mas é no exemplo que as pessoas levam a prática. Uma pena&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>É o artigo é bonzinho, a forma de apresentar é ótima, mas ele tinha que fazer a asneira de codificar: #left, #center, #right ? Onde está a complexidade se a semântica não está na mente? </p>
+<p>&#8211; Sobre nomenclatura de TAG semântica<a href="http://lutandoporwasp.blogspot.com/2004/06/ainda-sobre-nomenclaturas-css.html" rel="nofollow"><br />
+&#8211; Semântica na Mente &#8211; W3C Good Name Class</a><a href="http://www.w3.org/QA/Tips/goodclassnames" rel="nofollow"></p>
+<p>Eu costumo sempre a criticar esse tipo de atitude e sempre há a justificativa &#8220;É apenas para exemplificar&#8221;,  mas é no exemplo que as pessoas levam a prática. Uma pena</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: s1mone</title>
+		<link>/layouts-complexos-em-css/#comment-584</link>
+		<dc:creator><![CDATA[s1mone]]></dc:creator>
+		<pubDate>Fri, 25 Feb 2005 22:58:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=126#comment-584</guid>
+		<description><![CDATA[Sabe o que é mais nesta apresentação? É a tal técnica de XMLHttpRequest. Super leve, eficiente e uma experiência satisfatória para o usuário. Veja mais sobre isso no artigo &quot;XMLHttpRequest, Ajax, and the customer experience&quot; [http://www.37signals.com/svn/archives/001070.php]
+[]s]]></description>
+		<content:encoded><![CDATA[<p>Sabe o que é mais nesta apresentação? É a tal técnica de XMLHttpRequest. Super leve, eficiente e uma experiência satisfatória para o usuário. Veja mais sobre isso no artigo &#8220;XMLHttpRequest, Ajax, and the customer experience&#8221; [http://www.37signals.com/svn/archives/001070.php]<br />
+[]s</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

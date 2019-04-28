@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>codebits &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/codebits/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Codebits 2008</title>
+		<link>/codebits-2008/</link>
+		<comments>/codebits-2008/#comments</comments>
+		<pubDate>Wed, 12 Nov 2008 10:56:35 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[codebits]]></category>
+		<category><![CDATA[codebits2008]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[mytvshows]]></category>
+		<category><![CDATA[sapo]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=627</guid>
+		<description><![CDATA[<p><a href="http://codebits.sapo.pt/"><img class="size-full wp-image-628 alignleft imgartigo" title="Codebits 2008" src="/wp-content/uploads/2008/11/hb300x75.png" alt="" width="300" height="75" /></a>É já amanhã que começa a segunda edição do <a href="http://codebits.sapo.pt/">SAPO Codebits</a>.</p>
+<p>O <a href="http://codebits.sapo.pt/">SAPO Codebits</a> é um concurso de programação para a Web, feito para o melhor talento português, com características muito especiais e que o diferenciam de outros eventos. Não tem regras, promove um ambiente muito informal e muito descontraído, e tenta criar as condições necessárias para que sobressaiam a criatividade e a inovação nos participantes.</p>
+<p>O conteúdo <a rel="nofollow" href="/codebits-2008/">Codebits 2008</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/codebits-2008/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Codebits e Séries de TV</title>
+		<link>/codebits-e-series-de-tv/</link>
+		<comments>/codebits-e-series-de-tv/#comments</comments>
+		<pubDate>Fri, 07 Dec 2007 15:56:52 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[codebits]]></category>
+		<category><![CDATA[sapocodebits2007]]></category>
+		<category><![CDATA[tvshows]]></category>
+
+		<guid isPermaLink="false">/codebits-e-series-de-tv/</guid>
+		<description><![CDATA[<p>O Codebits foi um evento promovido pelo <a href="http://www.sapo.pt/">SAPO</a> para programadores de todos os tipos, da <em>web</em>, <em>desktop</em>, <em>hardware</em>, e foi também um evento para <em>hackers</em>, entusiastas e empreendedores da Internet em Portugal, para evagelistas de novas tecnologias, <em>webdesigners</em> e estudantes.</p>
+<p>Foi lá que desenvolvi a minha aplicação TV Shows para gerir as séries de TV que costumo ver. Através desta aplicação consigo manter um registo de todas as séries que acompanho, quais os episódios que já vi (e os que ainda me falta ver) e também se tenho (ou não) um ficheiro com as legendas para cada episódio.</p>
+<p>O conteúdo <a rel="nofollow" href="/codebits-e-series-de-tv/">Codebits e Séries de TV</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/codebits-e-series-de-tv/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+	</channel>
+</rss>

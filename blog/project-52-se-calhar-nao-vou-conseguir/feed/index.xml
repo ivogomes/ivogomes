@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Project 52 (se calhar não vou conseguir)</title>
+	<atom:link href="/project-52-se-calhar-nao-vou-conseguir/feed/" rel="self" type="application/rss+xml" />
+	<link>/project-52-se-calhar-nao-vou-conseguir/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/project-52-se-calhar-nao-vou-conseguir/#comment-88259</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 24 Feb 2010 11:03:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1026#comment-88259</guid>
+		<description><![CDATA[Bolas :)]]></description>
+		<content:encoded><![CDATA[<p>Bolas :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Silva</title>
+		<link>/project-52-se-calhar-nao-vou-conseguir/#comment-88258</link>
+		<dc:creator><![CDATA[Bruno Silva]]></dc:creator>
+		<pubDate>Wed, 24 Feb 2010 10:46:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1026#comment-88258</guid>
+		<description><![CDATA[E posts a dizer que vais fazer posts não contam :-P]]></description>
+		<content:encoded><![CDATA[<p>E posts a dizer que vais fazer posts não contam :-P</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

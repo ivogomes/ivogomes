@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Mudanças</title>
+	<atom:link href="/mudancas/feed/" rel="self" type="application/rss+xml" />
+	<link>/mudancas/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Paulo A. Silva</title>
+		<link>/mudancas/#comment-5532</link>
+		<dc:creator><![CDATA[Paulo A. Silva]]></dc:creator>
+		<pubDate>Tue, 17 Oct 2006 18:21:24 +0000</pubDate>
+		<guid isPermaLink="false">/mudancas/#comment-5532</guid>
+		<description><![CDATA[O produto final parece-me bastante agradável.
+
+O pormenor do sticky colado no monitor (numa das fotos) está fenomenal...]]></description>
+		<content:encoded><![CDATA[<p>O produto final parece-me bastante agradável.</p>
+<p>O pormenor do sticky colado no monitor (numa das fotos) está fenomenal&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: José Carlos</title>
+		<link>/mudancas/#comment-5528</link>
+		<dc:creator><![CDATA[José Carlos]]></dc:creator>
+		<pubDate>Tue, 17 Oct 2006 00:20:55 +0000</pubDate>
+		<guid isPermaLink="false">/mudancas/#comment-5528</guid>
+		<description><![CDATA[Continuação do bom trabalho nas novas instalações!
+
+Sobre o aspecto do blog, parece-me ainda melhor. Notam-se os pormentores :). Parabéns.]]></description>
+		<content:encoded><![CDATA[<p>Continuação do bom trabalho nas novas instalações!</p>
+<p>Sobre o aspecto do blog, parece-me ainda melhor. Notam-se os pormentores :). Parabéns.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: carlos afonso</title>
+		<link>/mudancas/#comment-5526</link>
+		<dc:creator><![CDATA[carlos afonso]]></dc:creator>
+		<pubDate>Mon, 16 Oct 2006 22:28:24 +0000</pubDate>
+		<guid isPermaLink="false">/mudancas/#comment-5526</guid>
+		<description><![CDATA[Realmente o site da Log agora já pode ser ampliado sem se desfazer em termos de aspecto,
+
+Continuação de bom trabalho (nas novas instalações)]]></description>
+		<content:encoded><![CDATA[<p>Realmente o site da Log agora já pode ser ampliado sem se desfazer em termos de aspecto,</p>
+<p>Continuação de bom trabalho (nas novas instalações)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rodrigo</title>
+		<link>/mudancas/#comment-5525</link>
+		<dc:creator><![CDATA[Rodrigo]]></dc:creator>
+		<pubDate>Mon, 16 Oct 2006 22:07:38 +0000</pubDate>
+		<guid isPermaLink="false">/mudancas/#comment-5525</guid>
+		<description><![CDATA[O ambiente de trabalho influencia diretamente em nossa produção!]]></description>
+		<content:encoded><![CDATA[<p>O ambiente de trabalho influencia diretamente em nossa produção!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: dextro</title>
+		<link>/mudancas/#comment-5524</link>
+		<dc:creator><![CDATA[dextro]]></dc:creator>
+		<pubDate>Mon, 16 Oct 2006 20:16:05 +0000</pubDate>
+		<guid isPermaLink="false">/mudancas/#comment-5524</guid>
+		<description><![CDATA[Isso sim é um sitio que mereçe ser usado para trabalhar, uma mesa de reuniões assim fazia falta em todos os escritorios LOL :lol: 
+
+btw se disser bem vindos a Santos acertei certo? :P]]></description>
+		<content:encoded><![CDATA[<p>Isso sim é um sitio que mereçe ser usado para trabalhar, uma mesa de reuniões assim fazia falta em todos os escritorios LOL :lol: </p>
+<p>btw se disser bem vindos a Santos acertei certo? :P</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Zé</title>
+		<link>/mudancas/#comment-5523</link>
+		<dc:creator><![CDATA[Zé]]></dc:creator>
+		<pubDate>Mon, 16 Oct 2006 17:55:39 +0000</pubDate>
+		<guid isPermaLink="false">/mudancas/#comment-5523</guid>
+		<description><![CDATA[Parabens!
+
+O teu site está o maximo!]]></description>
+		<content:encoded><![CDATA[<p>Parabens!</p>
+<p>O teu site está o maximo!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

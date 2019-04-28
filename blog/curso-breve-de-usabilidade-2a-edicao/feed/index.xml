@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Curso Breve de Usabilidade (2ª Edição)</title>
+	<atom:link href="/curso-breve-de-usabilidade-2a-edicao/feed/" rel="self" type="application/rss+xml" />
+	<link>/curso-breve-de-usabilidade-2a-edicao/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Luís Soares</title>
+		<link>/curso-breve-de-usabilidade-2a-edicao/#comment-122928</link>
+		<dc:creator><![CDATA[Luís Soares]]></dc:creator>
+		<pubDate>Tue, 26 Feb 2013 11:09:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1359#comment-122928</guid>
+		<description><![CDATA[alguma previsão de quando será?]]></description>
+		<content:encoded><![CDATA[<p>alguma previsão de quando será?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Maria Correia</title>
+		<link>/curso-breve-de-usabilidade-2a-edicao/#comment-118323</link>
+		<dc:creator><![CDATA[Maria Correia]]></dc:creator>
+		<pubDate>Fri, 01 Jun 2012 15:11:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1359#comment-118323</guid>
+		<description><![CDATA[Sempre começou?!
+Deixei passar a data de inscrição!!!!! :(]]></description>
+		<content:encoded><![CDATA[<p>Sempre começou?!<br />
+Deixei passar a data de inscrição!!!!! :(</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rosa Cunha</title>
+		<link>/curso-breve-de-usabilidade-2a-edicao/#comment-115932</link>
+		<dc:creator><![CDATA[Rosa Cunha]]></dc:creator>
+		<pubDate>Wed, 29 Feb 2012 10:28:11 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1359#comment-115932</guid>
+		<description><![CDATA[hummmm... interessante! Talvez nessa altura considere fazer! :D 
+Obrigada, Ivo!]]></description>
+		<content:encoded><![CDATA[<p>hummmm&#8230; interessante! Talvez nessa altura considere fazer! :D<br />
+Obrigada, Ivo!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/curso-breve-de-usabilidade-2a-edicao/#comment-115930</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 29 Feb 2012 10:23:57 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1359#comment-115930</guid>
+		<description><![CDATA[Não, tentámos realizar no final do ano passado, mas não foram preenchidas todas as vagas. Vamos tentar novamente em Maio]]></description>
+		<content:encoded><![CDATA[<p>Não, tentámos realizar no final do ano passado, mas não foram preenchidas todas as vagas. Vamos tentar novamente em Maio</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rosa Cunha</title>
+		<link>/curso-breve-de-usabilidade-2a-edicao/#comment-115925</link>
+		<dc:creator><![CDATA[Rosa Cunha]]></dc:creator>
+		<pubDate>Wed, 29 Feb 2012 08:37:38 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1359#comment-115925</guid>
+		<description><![CDATA[Sempre houve este curso?]]></description>
+		<content:encoded><![CDATA[<p>Sempre houve este curso?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

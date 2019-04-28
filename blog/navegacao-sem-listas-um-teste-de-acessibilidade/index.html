@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# profile: https://ogp.me/ns/profile#">
+<title>
+	    Navegação sem listas: um teste de acessibilidade - IvoGomes.com
+	</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Ivo Gomes">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+<link rel="shortcut icon" href="https://www.ivogomes.com/img/favicon.ico">
+<link rel="icon" sizes="196x196" href="https://www.ivogomes.com/img/icon-highres.png">
+<link rel="icon" sizes="128x128" href="https://www.ivogomes.com/img/icon.png">
+<link rel="apple-touch-icon" href="https://www.ivogomes.com/img/touch-icon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.ivogomes.com/img/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.ivogomes.com/img/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.ivogomes.com/img/touch-icon-ipad-retina.png">
+<meta name="mobile-web-app-capable" content="yes">
+<noscript>
+      <link rel="stylesheet" type="text/css" href="https://www.ivogomes.com/css/ink.min.css">
+      <link rel="stylesheet" type="text/css" href="https://www.ivogomes.com/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo%7CPacifico">
+    </noscript>
+<link rel="stylesheet" type="text/css" href="https://www.ivogomes.com/css/styles.min.css">
+<link rel="alternate" type="application/rss+xml" title="Feed RSS dos artigos do blog IvoGomes.com" href="/feed/" />
+<!--[if IE lte 8 ]>
+    <link rel="stylesheet" type="text/css" href="/css/ink-ie.min.css">
+    <![endif]-->
+<link href="https://plus.google.com/+IvoGomes/" rel="author" />
+<meta property="fb:admins" content="557197683" />
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="description" content="Durante anos o markup dos links de navegação tem sido sempre feito com recurso a listas. Será que existem soluções melhores a nível de acessibilidade?" />
+<link rel="canonical" href="/navegacao-sem-listas-um-teste-de-acessibilidade/" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Navegação sem listas: um teste de acessibilidade" />
+<meta property="og:description" content="Durante anos o markup dos links de navegação tem sido sempre feito com recurso a listas. Será que existem soluções melhores a nível de acessibilidade?" />
+<meta property="og:url" content="https://www.ivogomes.com/blog/navegacao-sem-listas-um-teste-de-acessibilidade/" />
+<meta property="og:site_name" content="IvoGomes.com" />
+<meta property="article:publisher" content="http://www.facebook.com/ivogomes" />
+<meta property="article:author" content="http://facebook.com/ivogomes" />
+<meta property="article:section" content="Acessibilidade" />
+<meta property="article:published_time" content="2015-11-06T11:00:55+00:00" />
+<meta property="article:modified_time" content="2016-06-17T08:59:38+00:00" />
+<meta property="og:updated_time" content="2016-06-17T08:59:38+00:00" />
+<meta property="og:image" content="https://www.ivogomes.com/blog/wp-content/uploads/2015/11/nav1.png" />
+<meta property="og:image:secure_url" content="https://www.ivogomes.com/blog/wp-content/uploads/2015/11/nav1.png" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="419" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Durante anos o markup dos links de navegação tem sido sempre feito com recurso a listas. Será que existem soluções melhores a nível de acessibilidade?" />
+<meta name="twitter:title" content="Navegação sem listas: um teste de acessibilidade" />
+<meta name="twitter:site" content="@ivogomes" />
+<meta name="twitter:image" content="https://www.ivogomes.com/blog/wp-content/uploads/2015/11/nav1.png" />
+<meta name="twitter:creator" content="@ivogomes" />
+<script type='application/ld+json'>{"@context":"https://schema.org","@type":"Person","url":"https://www.ivogomes.com/blog/","sameAs":["http://www.facebook.com/ivogomes","https://instagram.com/ivogomes/","http://www.linkedin.com/in/ivogomes","https://www.youtube.com/user/ivogomes","https://twitter.com/ivogomes"],"@id":"#person","name":"Ivo Gomes"}</script>
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários de IvoGomes.com &raquo; Navegação sem listas: um teste de acessibilidade" href="/navegacao-sem-listas-um-teste-de-acessibilidade/feed/" />
+<link rel='stylesheet' id='wp-block-library-css' href='/wp-includes/css/dist/block-library/style.min.css?ver=5.0.4' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='/?p=1466' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ivogomes.com%2Fblog%2Fnavegacao-sem-listas-um-teste-de-acessibilidade%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ivogomes.com%2Fblog%2Fnavegacao-sem-listas-um-teste-de-acessibilidade%2F&#038;format=xml" />
+<link rel="amphtml" href="/navegacao-sem-listas-um-teste-de-acessibilidade/amp/"></head>
+<body id="blog">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v2.4&appId=634518223269818";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+<!--[if IE lte 8 ]>
+    <div class="ie-warning">
+        <div class="ink-grid">
+            <p><strong>AVISO: Está a usar uma versão desactualizada do Internet Explorer.</strong><br />Para poder ter uma mehor experiência de navegação neste site, por favor actualize para um navegador mais moderno como o <a href="https://google.com/chrome">Chrome</a>, <a href="https://apple.com/safari">Safari</a>, <a href="getfirefox.com">Firefox</a> ou o <a href="https://windows.microsoft.com/en-us/internet-explorer/ie-10-worldwide-languages">Internet Explorer 10</a>.</p>
+        </div>
+    </div>
+<![endif]-->
+<nav class="a11y"><a href="#contents">Saltar para os conteúdos</a></nav>
+<header id="top">
+<div class="ink-grid">
+<div class="column-group">
+<div class="all-30 small-100 tiny-100 align-left">
+<h1>IvoGomes.com</h1>
+</div>
+<div class="all-70 small-100 tiny-100 align-right">
+<form method="get" class="ink-form" id="searchform" action="/">
+<div class="control-group push-right">
+<label for="s">Pesquisar no blog</label>
+<div class="control">
+<input type="search" id="s" name="s" placeholder="Pesquisar no blog" value="">
+<button class="ink-button" type="submit"><span class="fa fa-search"></span><span class="hide-all"> Pesquisar</span></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</header>
+<nav class="ink-navigation ink-sticky" id="main-menu">
+<div class="ink-grid">
+<ul class="menu horizontal" role="menubar">
+<li role="menuitem" class="home"><a href="https://www.ivogomes.com/#top" title="Voltar ao topo">IG</a></li>
+<li role="menuitem"><a href="https://www.ivogomes.com/#about">Sobre<span class="hide-large hide-medium"> Mim</span></a></li>
+<li role="menuitem" class="hide-small hide-tiny"><a href="https://www.ivogomes.com/#work">Trabalho</a></li>
+<li role="menuitem" class="hide-small hide-tiny"><a href="https://www.ivogomes.com/#training">Formações<span class="hide-medium"> e Workshops</span></a></li>
+
+<li role="menuitem" class="hide-small hide-tiny"><a href="https://www.ivogomes.com/#contact">Contactos</a></li>
+<li role="menuitem" class="push-right active"><a href="/"><span class="hide-small hide-tiny"></span>Blog</a></li>
+</ul>
+</div>
+</nav>
+<div id="contents">
+<div class="ink-grid">
+<div class="column-group gutters">
+<div class="all-15 medium-10 hide-small hide-tiny">
+<p></p>
+</div>
+<div class="all-70 medium-80 small-100 tiny-100">
+<p><a href=""><span class="fa fa-arrow-left"></span> Voltar ao início</a></p>
+<article itemscope itemtype="http://schema.org/Article">
+<h1 id="post-1466" itemprop="name">Navegação sem listas: um teste de acessibilidade</h1>
+<p class="author-date">Por <strong itemprop="author" itemscope itemtype="http://schema.org/Person">Ivo Gomes</strong>, em <span itemprop="datePublished" content="2015-11-6">Sexta-feira, 6 de Novembro de 2015</span> | <a href="#comments-list" title="Coment&aacute;rios para: Navegação sem listas: um teste de acessibilidade"><span class="fa fa-comment"></span> 0 Coment&aacute;rios</a></p>
+<meta itemprop="interactionCount" content="UserComments:0" />
+<div itemprop="articleBody">
+<p>Desde o início da web que os links de navegação são normalmente colocados numa lista não ordenada (<code class="language-markup">&lt;ul&gt;</code>) em que cada item é identificado na lista por um <code class="language-markup">&lt;li&gt;</code>.</p>
+<pre><code class="language-markup">&lt;ul&gt;
+   &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>Em termos de acessibilidade isto é vantajoso porque os leitores de ecrã vão sempre ler "lista com X itens" e depois vão ler cada item da lista individualmente. No final, alguns ainda comunicam "fim da lista".</p>
+<h2>HTML5</h2>
+<p>Com a chegada do HTML5, apareceram algumas tags mais semânticas que permitem dar significado a alguns elementos na página. Entre essas novas tags destaca-se a <code class="language-markup">&lt;nav&gt;</code>.</p>
+<p>À medida que o HTML5 ia ganhando popularidade e suporte por parte dos browsers, os web designers começaram a aproveitar as vantagens das novas tags, e assim, a navegação passou de uma simples lista para uma lista dentro de um bloco de navegação:</p>
+<pre><code class="language-markup">&lt;nav&gt;
+   &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;...&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>Na melhoria contínua de acessibilidade, passou a ser <a href="https://www.w3.org/WAI/GL/wiki/Using_HTML5_nav_element">recomendado</a> adicionar um "<a href="https://www.w3.org/TR/wai-aria/roles">ARIA role</a>" à navegação, para que os browsers que não tenham ainda suporte total para as novas tags possam reconhecer o seu significado semântico. Assim, o <code class="language-markup">&lt;nav&gt;</code> passou a ser acompanhado, de forma redundante, pelo seu "role" <code class="language-markup">&lt;nav role="navigation"&gt;</code>, assim:</p>
+<pre><code class="language-markup">&lt;nav role="navigation"&gt;
+   &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;...&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>No entanto, em todo os browsers que testei, com ou sem "role" o elemento de navegação era corretamente identificado pelos leitores de ecrã. Apenas em browsers mais antigos (ex: <abbr title="Internet Explorer 8">IE8</abbr>) ele é ignorado, mas se vamos usar tags de HTML5 e queremos na mesma dar suporte a browsers antigos, usamos o <a href="https://github.com/afarkas/html5shiv">HTML5Shiv</a>, um script que permite que browsers antigos interpretem corretamente as novas tags de HTML.</p>
+<p>Com este script, até o <abbr title="Internet Explorer 8">IE8</abbr> interpretou corretamente o bloco de navegação no leitor de ecrã, o que indica que não é necessário ter a redundância do "role" quando o próprio elemento <code class="language-markup">&lt;nav&gt;</code> já tem esse significado de forma intrínseca.</p>
+<p>Nos últimos anos tem sido assim que a maior parte dos blocos de navegação tem sido escrito pelos web designers, em nome da acessibilidade e da semântica das novas tags HTML5. Mas será assim tão melhor do que o método antigo?</p>
+<h2>Como os leitores de ecrã interpretam os dois tipos de navegação?</h2>
+<p>Se testarmos a navegação apenas com a lista (<code class="language-css">ul</code>) versus a navegação com a lista dentro do bloco de navegação (<code class="language-css">nav &gt; ul</code>), vemos que o segundo caso acaba por ser bastante mais verboso para os utilizadores, e como tal, potencialmente mais confuso.</p>
+<p>Fazendo um teste com os 3 leitores de ecrã mais populares do mercado, os resultados foram os seguintes:</p>
+<div class="table-container">
+<table class="ink-table">
+<thead>
+<tr>
+<th scope="col">Tipo de navegação</th>
+<th scope="col"><a href="http://www.freedomscientific.com/Products/Blindness/JAWS">JAWS</a></th>
+<th scope="col"><a href="https://www.apple.com/pt/accessibility/osx/voiceover/">VoiceOver</a></th>
+<th scope="col"><a href="http://www.nvaccess.org/">NVDA</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row"><code class="language-css">ul &gt; li &gt; a</code></th>
+<td class="align-center" colspan="3">Todos os leitores de ecrã comunicam "Lista de X itens"</td>
+</tr>
+<tr>
+<th scope="row"><code class="language-css">nav &gt; ul &gt; li &gt; a</code></th>
+<td class="align-center">Comunica "Região de navegação" e depois "Lista de X itens"</td>
+<td class="align-center">Ignora o bloco de navegação e comunica apenas "Lista de X itens"</td>
+<td class="align-center">Comunica "Marca: navegação" e depois "Lista de X itens"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Como podemos ver, à exceção do VoiceOver da Apple, os outros leitores de ecrã comunicam tanto a região de navegação como a lista de itens, resultando assim em mais ruído auditivo para o utilizador que está a navegar na página. O VoiceOver ignora completamente o bloco de navegação e comunica apenas uma lista normal.</p>
+<h2>E se não usarmos listas?</h2>
+<p>O que acontece se colocarmos apenas uma lista de links dentro de um bloco de navegação <code class="language-markup">&lt;nav&gt;</code>?</p>
+<p>O código é válido em HTML5 e teoricamente vamos reduzir a quantidade de informação verbalizada pelo leitor de ecrã, ao mesmo tempo que damos um significado semântico à navegação (algo que com um simples <code class="language-markup">&lt;ul&gt;</code> não é possível, pois não podemos simplesmente adicionar um role="navigation" a este tipo de elemento).</p>
+<pre><code class="language-markup">&lt;nav&gt;
+   &lt;a href="#"&gt;Link 1&lt;/a&gt;
+   &lt;a href="#"&gt;Link 2&lt;/a&gt;
+   &lt;a href="#"&gt;...&lt;/a&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>Olhando para este markup podem achar que isto não faz sentido, mas se formos ler as <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-nav-element">especificações do HTML5 para o <code class="language-markup">&lt;nav&gt;</code></a>, isto é uma solução válida.</p>
+<blockquote cite="https://html.spec.whatwg.org/multipage/semantics.html#the-nav-element"><p>A nav element doesn't have to contain a list, it can contain other kinds of content as well. In this navigation block, links are provided in prose.</p></blockquote>
+<p>Adicionalmente, podemos ter outros elementos (que sejam ARIA landmarks) que podem ter navegação própria sem esta estar contida numa lista.</p>
+<blockquote cite="https://html.spec.whatwg.org/multipage/semantics.html#the-nav-element"><p>Not all groups of links on a page need to be in a nav element — the element is primarily intended for sections that consist of major navigation blocks. In particular, it is common for footers to have a short list of links to various pages of a site, such as the terms of service, the home page, and a copyright page. The footer element alone is sufficient for such cases; while a nav element can be used in such cases, it is usually unnecessary.</p></blockquote>
+<p>Por exemplo, ter uma navegação no <code class="language-markup">&lt;footer&gt;</code> da seguinte maneira, também é válido.</p>
+<pre><code class="language-markup">&lt;footer&gt;
+   &lt;a href="#"&gt;Link 1&lt;/a&gt;
+   &lt;a href="#"&gt;Link 2&lt;/a&gt;
+   &lt;a href="#"&gt;...&lt;/a&gt;
+&lt;/footer&gt;
+</code></pre>
+<p>Em termos de markup, esta solução é bastante mais simples, pois temos apenas a relação directa <code class="language-css">nav &gt; a</code> em vez de <code class="language-css">nav &gt; ul &gt; li &gt; a</code>.</p>
+<p>Testando nos leitores de ecrã, obtemos a seguinte verbalização para este elemento:</p>
+<div class="table-container">
+<table class="ink-table">
+<thead>
+<tr>
+<th scope="col">Tipo de navegação</th>
+<th scope="col"><a href="http://www.freedomscientific.com/Products/Blindness/JAWS">JAWS</a></th>
+<th scope="col"><a href="https://www.apple.com/pt/accessibility/osx/voiceover/">VoiceOver</a></th>
+<th scope="col"><a href="http://www.nvaccess.org/">NVDA</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row"><code class="language-css">nav &gt; a</code></th>
+<td class="align-center">"Região de navegação"</td>
+<td class="align-center">"Navegação com X itens"</td>
+<td class="align-center">"Marca: navegação"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Todos os leitores de ecrã comunicam corretamente o bloco de navegação, sendo que o VoiceOver vai um pouco mais longe e indica também o número de itens, como nas listas.</p>
+<h2>Testando com utilizadores reais</h2>
+<p>Com base neste resultados, fiz o teste com alguns utilizadores cegos (utilizadores regulares de leitores de ecrã) para saber a sua opinião sobre qual das navegações era mais intuitiva.</p>
+<p>O primeiro feedback recebido é de que não há grandes diferenças de navegabilidade entre as várias versões. No entanto, a versão com <code class="language-css">nav &gt; ul &gt; li &gt; a</code>, por ser mais verbosa (na maior parte dos leitores de ecrã são lidas ambas as informações: "região de navegação" e "lista com X itens"), foi a menos preferida.</p>
+<p>Com base nos testes efetuados e no feedback de utilizadores reais, concluo que a solução de ter uma lista de links diretamente num bloco <code class="language-markup">&lt;nav&gt;</code> é uma solução eficaz, que mantém a semântica do elemento, e não é demasiado verbosa para o utilizador.</p>
+<p>A solução que engloba uma <code class="language-markup">&lt;ul&gt;</code> dentro de um bloco <code class="language-markup">&lt;nav&gt;</code> (que é a que o que vemos com maior frequência por aí) acaba por ser a pior de todas, pois cria uma redundância denecessária no código e na verbalização feita pelo leitor de ecrã.</p>
+<h2>Então e os sub-menus?</h2>
+<p>Com as listas, criar sub-menus é trivial. Basta iniciar uma nova lista dentro do elemento que queremos que tenha sub-itens. Podemos criar sub-níveis infinitamente, no entanto, por questões de usabilidade, não se recomendam mais do que 3 níveis de navegação.</p>
+<pre><code class="language-markup">&lt;nav&gt;
+   &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;
+         &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Sub-link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Sub-link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;...&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>Infelizmente, o uso do elemento <code class="language-markup">&lt;nav&gt;</code> não contempla (de forma semântica) o aninhamento de sub-navegações. Qualquer combinação de <code class="language-css">nav &gt; nav</code> resulta numa confusão por parte dos leitores de ecrã, que não percebem que é uma navegação dentro de outra navegação, e tratam-na como duas navegações iguais, uma a meio da outra.</p>
+<p>Uma possível solução é usar o atributo <code class="language-markup">aria-owns</code> para dar esse significado hierárquico. Segundo as <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-owns">especificações</a>, podemos criar uma relação "pai/filho" entre dois elementos no DOM usando este atributo, assim:</p>
+<pre><code class="language-markup">&lt;nav role="navigation"&gt;
+   &lt;a href="#"&gt;Link 1&lt;/a&gt;
+   &lt;a href="#" aria-owns="SubLink2"&gt;Link 2&lt;/a&gt;
+   &lt;nav id="SubLink2"&gt;
+      &lt;a href="#"&gt;Sub-link 1&lt;/a&gt;
+      &lt;a href="#"&gt;Sub-link 2&lt;/a&gt;
+   &lt;/nav&gt;
+   &lt;a href="#" aria-owns="SubLink3"&gt;Link 3&lt;/a&gt;
+   &lt;nav id="SubLink3"&gt;
+      &lt;a href="#"&gt;Sub-link 1&lt;/a&gt;
+      &lt;a href="#"&gt;Sub-link 2&lt;/a&gt;
+   &lt;/nav&gt;
+   &lt;a href="#"&gt;Link 4&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+<p>No entanto, nos testes com leitores de ecrã, não é muito claro a perceção destes níveis hierárquicos. Essencialmente, o leitor de ecrã acaba por comunicar apenas uma região de navegação a meio de outra região de navegação, sem que se perceba a sua relação "pai/filho".</p>
+<p>Adicionalmente, uma vez que o elemento "pai" é um <code class="language-markup">&lt;a&gt;</code>, antes de passar a ler o elemento filho <code class="language-markup">&lt;div&gt;</code>, o leitor de ecrã comunica "link região de navegação", ou seja, associa o tipo dos dois elementos (link e região de navegação) e comunica os dois de forma concatenada, resultando em mais confusão para o utilizador.</p>
+<p>Para tentar resolver este problema, tentei colocar os links dentro de um elemento diferente, ex: um <code class="language-markup">&lt;span&gt;</code>:</p>
+<pre><code class="language-markup">&lt;nav role="navigation"&gt;
+   &lt;span&gt;&lt;a href="#"&gt;Atualidade&lt;/a&gt;&lt;/span&gt;
+   &lt;span aria-owns="SubLink2"&gt;&lt;a href="#"&gt;Desporto&lt;/a&gt;&lt;/span&gt;
+   &lt;nav id="SubLink2" role="navigation"&gt;
+      &lt;span&gt;&lt;a href="#"&gt;Porto&lt;/a&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;a href="#"&gt;Benfica&lt;/a&gt;&lt;/span&gt;
+   &lt;/nav&gt;
+   &lt;span aria-owns="SubLink3"&gt;&lt;a href="#"&gt;Economia&lt;/a&gt;&lt;/span&gt;
+   &lt;nav id="SubLink3" role="navigation"&gt;
+      &lt;span&gt;&lt;a href="#"&gt;Finanças&lt;/a&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;a href="#"&gt;Dinheiro&lt;/a&gt;&lt;/span&gt;
+   &lt;/nav&gt;
+   &lt;span&gt;&lt;a href="#"&gt;Tecnologia&lt;/a&gt;&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+<p>Isto resolveu o problema da confusão anterior, no entanto continua a não ser fácil de navegar, pois nem todos os leitores de ecrã comunicam o fim das regiões de navegação (tal como fazem com as listas), o que faz com que os utilizadores não percebam que terminou o sub-menu e já estão a ouvir o link de navegação de topo que vem a seguir.</p>
+<h2>Conclusão</h2>
+<p>Com base nestes dados, para uma navegação simples (apenas um nivel hierárquico) é melhor usar um markup simples como <code class="language-css">nav &gt; a</code> ou até mesmo <code class="language-css">footer &gt; a</code>.</p>
+<p>Para navegações mais complexas, com vários níveis hierárquicos, em termos de acessibilidade é melhor manter o uso de listas, pois estas permitem que o browser consiga perceber o que está dentro do quê, criando assim uma árvore lógica dos conteúdos.</p>
+<p>Outras soluções? Opiniões? Sugestões? Escrevam nos comentários abaixo ;)</p>
+<hr />
+<p><strong>Atualização:</strong> O capítulo sobre os sub-menus foi rescrito para testar o atributo <code class="language-markup">aria-owns</code>.</p>
+</div>
+<div class="fb-like" data-href="https://www.ivogomes.com/blog/navegacao-sem-listas-um-teste-de-acessibilidade/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</article>
+<div class="column-group more-articles">
+<div class="all-50 medium-50 small-100 tiny-100">
+<p><span class="fa fa-arrow-left"></span> Artigo Anterior<br /><a href="/html5-e-acessibilidade/">HTML5 e Acessibilidade</a></p>
+</div>
+<div class="all-50 medium-50 small-100 tiny-100">
+<p class="align-right">Artigo Seguinte <span class="fa fa-arrow-right"></span><br /><a href="/dia-mundial-da-usabilidade-2015/">Dia Mundial da Usabilidade 2015</a></p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="column-group gutters">
+<div class="all-20 medium-10 hide-small hide-tiny">
+<p></p>
+</div>
+<div class="all-60 medium-80 small-100 tiny-100">
+<section id="comments-list">
+<h2 class="align-center"><span class="fa fa-comment fa-2x"></span><br &>0 Coment&aacute;rios</h2>
+<p class="comente align-center"><a href="#comment">Comente este artigo!</a></p>
+</section>
+<div id="comment">
+<h2>Comente!</h2>
+<form class="ink-form" method="post" id="commentform" action="/wp-comments-post.php" onsubmit="return Ink.UI.FormValidator_1.validate(this);">
+<fieldset>
+<div class="control-group required validation">
+<label for="author">Nome</label>
+<div class="control">
+<input id="author" name="author" value="" class="ink-fv-required" type="text" placeholder="O seu nome">
+<input type="hidden" name="comment_post_ID" value="1466">
+<input type="hidden" name="redirect_to" value="/blog/navegacao-sem-listas-um-teste-de-acessibilidade/">
+</div>
+<p class="tip">* Campo obrigatório, de modo a aparecer o seu nome como autor do comentário</p>
+</div>
+<div class="control-group required validation">
+<label for="email">E-Mail</label>
+<div class="control append-symbol">
+<span>
+<input id="email" name="email" value="" type="email" class="ink-fv-required ink-fv-email" placeholder="O seu endereço de e-mail">
+<i class="fa fa-envelope-o"></i>
+</span>
+</div>
+<p class="tip">* Campo obrigatório, mas não será mostrado no site</p>
+</div>
+<div class="control-group">
+<label for="url">Website</label>
+<div class="control append-symbol">
+<span>
+<input id="url" name="url" value="" type="text" class="" placeholder="Se tiver um site pessoal, indique aqui">
+<i class="fa fa-globe"></i>
+</span>
+</div>
+</div>
+<div class="control-group required validation">
+<label for="comment.text">Comentário</label>
+<div class="control">
+<textarea id="comment-text" rows="10" name="comment" class="ink-fv-required"></textarea>
+</div>
+<p class="tip">* Campo obrigatório, convém escrever alguma coisa ;)</p>
+<p class="tip">São permitidas algumas tags HTML, como<br />
+<code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt;
+&lt;abbr title=&quot;&quot;&gt;
+&lt;acronym title=&quot;&quot;&gt;
+&lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt;
+&lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt;
+&lt;strong&gt;</code>
+</p>
+</div>
+</fieldset>
+<p style="clear: both;" class="subscribe-to-comments">
+<input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" />
+<label for="subscribe">Notificar-me por e-mail de novos comentários a este artigo</label>
+</p>
+<button class="button" type="submit"><span class="fa fa-comment"></span> Comentar</button>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e3a1ccba19" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="152" /></p> </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="ink-grid">
+<p>Ivo Gomes</p>
+<div class="social">
+<ul>
+<li><a title="Facebook" class="fb" href="https://www.facebook.com/ivogomes"><span class="fa fa-facebook"></span><i>Facebook</i></a></li>
+<li><a title="Twitter" class="twitter" href="https://www.twitter.com/ivogomes"><span class="fa fa-twitter"></span><i>Twitter</i></a></li>
+<li><a title="Google+" class="gplus" href="https://google.com/+IvoGomes/?rel=author"><span class="fa fa-google-plus"></span><i>Google+</i></a></li>
+<li><a title="LinkedIn" class="lk" href="https://www.linkedin.com/in/ivogomes"><span class="fa fa-linkedin"></span><i>LinkedIn</i></a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script type="text/javascript" src="https://www.ivogomes.com/js/ink-all.min.js"></script>
+<script type="text/javascript" src="https://www.ivogomes.com/js/autoload.js"></script>
+<script type="text/javascript" src="https://www.ivogomes.com/js/prism.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88368-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+/* Deffer loading CSS files */
+var giftofspeed = document.createElement('link');
+giftofspeed.rel = 'stylesheet';
+giftofspeed.href = '/css/ink.min.css';
+giftofspeed.type = 'text/css';
+var godefer = document.getElementsByTagName('link')[0];
+godefer.parentNode.insertBefore(giftofspeed, godefer);
+
+var giftofspeed2 = document.createElement('link');
+giftofspeed2.rel = 'stylesheet';
+giftofspeed2.href = '/css/font-awesome.min.css';
+giftofspeed2.type = 'text/css';
+var godefer2 = document.getElementsByTagName('link')[0];
+godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+
+var giftofspeed3 = document.createElement('link');
+giftofspeed3.rel = 'stylesheet';
+giftofspeed3.href = 'https://fonts.googleapis.com/css?family=Arvo%7CPacifico';
+giftofspeed3.type = 'text/css';
+var godefer3 = document.getElementsByTagName('link')[0];
+godefer3.parentNode.insertBefore(giftofspeed3, godefer3);
+</script>
+
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"Este site utiliza cookies para ajudar a disponibilizar os respetivos serviços e analisar o tráfego. Ao utilizar este site, concorda que o mesmo utilize cookies.","dismiss":"Entendi","learnMore":"Saiba mais","link":"","theme":"dark-bottom"};
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+
+</body>
+</html>

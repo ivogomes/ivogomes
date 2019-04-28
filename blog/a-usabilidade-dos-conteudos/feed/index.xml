@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: A Usabilidade dos Conteúdos</title>
+	<atom:link href="/a-usabilidade-dos-conteudos/feed/" rel="self" type="application/rss+xml" />
+	<link>/a-usabilidade-dos-conteudos/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Gean</title>
+		<link>/a-usabilidade-dos-conteudos/#comment-2885</link>
+		<dc:creator><![CDATA[Gean]]></dc:creator>
+		<pubDate>Sat, 30 Jul 2005 19:39:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=144#comment-2885</guid>
+		<description><![CDATA[Gostei do artigo. Entreguei inclusive 1 copia para meu chefe, pois ele eh o responsavel pela preparacao dos conteudos. Ele gostou da ideia :) Depois vou ver se ele esta seguindo direitinho, pq eu tambem fiquei com 1 copia ;)
+
+Abraco]]></description>
+		<content:encoded><![CDATA[<p>Gostei do artigo. Entreguei inclusive 1 copia para meu chefe, pois ele eh o responsavel pela preparacao dos conteudos. Ele gostou da ideia :) Depois vou ver se ele esta seguindo direitinho, pq eu tambem fiquei com 1 copia ;)</p>
+<p>Abraco</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/a-usabilidade-dos-conteudos/#comment-2880</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Wed, 27 Jul 2005 14:00:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=144#comment-2880</guid>
+		<description><![CDATA[Óptimo artigo. Continua :D]]></description>
+		<content:encoded><![CDATA[<p>Óptimo artigo. Continua :D</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

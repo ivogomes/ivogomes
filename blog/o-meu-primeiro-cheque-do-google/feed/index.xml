@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: O meu primeiro cheque do Google</title>
+	<atom:link href="/o-meu-primeiro-cheque-do-google/feed/" rel="self" type="application/rss+xml" />
+	<link>/o-meu-primeiro-cheque-do-google/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/o-meu-primeiro-cheque-do-google/#comment-61</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 21 Sep 2004 12:36:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=44#comment-61</guid>
+		<description><![CDATA[He he!!
+Olha que não foi assim tanto que dê para pagar um almoço desses!! Vocês comem muito ;)]]></description>
+		<content:encoded><![CDATA[<p>He he!!<br />
+Olha que não foi assim tanto que dê para pagar um almoço desses!! Vocês comem muito ;)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ritta</title>
+		<link>/o-meu-primeiro-cheque-do-google/#comment-47</link>
+		<dc:creator><![CDATA[Ritta]]></dc:creator>
+		<pubDate>Mon, 13 Sep 2004 16:34:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=44#comment-47</guid>
+		<description><![CDATA[Ena, ena, muitos parabéns Migo, agora já sabemos quem pagará o próximo almoço!!! :-))))))
+
+
+(Brincadeira)
+
+Jinhos grandes]]></description>
+		<content:encoded><![CDATA[<p>Ena, ena, muitos parabéns Migo, agora já sabemos quem pagará o próximo almoço!!! :-))))))</p>
+<p>(Brincadeira)</p>
+<p>Jinhos grandes</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

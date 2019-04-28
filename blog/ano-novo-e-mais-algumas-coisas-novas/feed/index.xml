@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Ano novo&#8230; e mais algumas coisas novas</title>
+	<atom:link href="/ano-novo-e-mais-algumas-coisas-novas/feed/" rel="self" type="application/rss+xml" />
+	<link>/ano-novo-e-mais-algumas-coisas-novas/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/ano-novo-e-mais-algumas-coisas-novas/#comment-3245</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 19 Jan 2006 17:06:35 +0000</pubDate>
+		<guid isPermaLink="false">/ano-novo-e-mais-algumas-coisas-novas/#comment-3245</guid>
+		<description><![CDATA[Estou também a fazer umas alterações ao site e a remover algum código JavaScript que estou a usar neste momento. A maior parte das coisas que uso foram para experimentar e testar algumas funcionalidades do AJAX, tais como a pesquisa.
+
+Além da remoção do javaScript estou também a tentar reduzir o tamanho do XHTML e do CSS. O resultado está a ficar muito bom e o layout não se vai alterar muito...]]></description>
+		<content:encoded><![CDATA[<p>Estou também a fazer umas alterações ao site e a remover algum código JavaScript que estou a usar neste momento. A maior parte das coisas que uso foram para experimentar e testar algumas funcionalidades do AJAX, tais como a pesquisa.</p>
+<p>Além da remoção do javaScript estou também a tentar reduzir o tamanho do XHTML e do CSS. O resultado está a ficar muito bom e o layout não se vai alterar muito&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dextro</title>
+		<link>/ano-novo-e-mais-algumas-coisas-novas/#comment-3229</link>
+		<dc:creator><![CDATA[Dextro]]></dc:creator>
+		<pubDate>Mon, 09 Jan 2006 21:44:16 +0000</pubDate>
+		<guid isPermaLink="false">/ano-novo-e-mais-algumas-coisas-novas/#comment-3229</guid>
+		<description><![CDATA[É um mal que começo a ver em bastantes sites que querem usar (e abusar) do AJAX: a lentidão. Java e Javascript são duas linguagens muito lentas visto serem client-side e (no caso do javascript) intrepertadas o que puxa muito pelo CPU... Isto e o facto de serem muito intensivas para o processador.
+Eu continuo a usar o minimo de javascript possivel e continuo a sugerir que todos façam o mesmo.]]></description>
+		<content:encoded><![CDATA[<p>É um mal que começo a ver em bastantes sites que querem usar (e abusar) do AJAX: a lentidão. Java e Javascript são duas linguagens muito lentas visto serem client-side e (no caso do javascript) intrepertadas o que puxa muito pelo CPU&#8230; Isto e o facto de serem muito intensivas para o processador.<br />
+Eu continuo a usar o minimo de javascript possivel e continuo a sugerir que todos façam o mesmo.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

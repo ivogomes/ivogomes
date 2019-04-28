@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Seminário de Usabilidade</title>
+	<atom:link href="/seminario-de-usabilidade/feed/" rel="self" type="application/rss+xml" />
+	<link>/seminario-de-usabilidade/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: ivogomes.com &#187; A Usabilidade do Sistema de Votação Americano</title>
+		<link>/seminario-de-usabilidade/#comment-3021</link>
+		<dc:creator><![CDATA[ivogomes.com &#187; A Usabilidade do Sistema de Votação Americano]]></dc:creator>
+		<pubDate>Wed, 19 Oct 2005 15:06:48 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=87#comment-3021</guid>
+		<description><![CDATA[[...] Durante o Seminário de Usabilidade que ocorreu em Lisboa no mês passado, e do qual já falei aqui, aqui e aqui, houve uma apresentação que me chamou a atenção. Foi a do Professor Francisco Rebelo, não só por ter sido meu professor na licenciatura em Ergonomia, mas também por ter sido o meu orientador do estágio académico. [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Durante o Seminário de Usabilidade que ocorreu em Lisboa no mês passado, e do qual já falei aqui, aqui e aqui, houve uma apresentação que me chamou a atenção. Foi a do Professor Francisco Rebelo, não só por ter sido meu professor na licenciatura em Ergonomia, mas também por ter sido o meu orientador do estágio académico. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

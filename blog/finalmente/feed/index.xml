@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Finalmente!</title>
+	<atom:link href="/finalmente/feed/" rel="self" type="application/rss+xml" />
+	<link>/finalmente/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/finalmente/#comment-15448</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Sun, 06 May 2007 20:07:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=77#comment-15448</guid>
+		<description><![CDATA[Colocar um formulário? Monte um blog, já vem com formulários de comentários. Se não quer um blog pode sempre &lt;a href=&quot;http://php.resourceindex.com/Complete_Scripts/Form_Processing/&quot; rel=&quot;nofollow&quot;&gt;pesquisar na net&lt;/a&gt; por formulários em várias linguagens de programação.]]></description>
+		<content:encoded><![CDATA[<p>Colocar um formulário? Monte um blog, já vem com formulários de comentários. Se não quer um blog pode sempre <a href="http://php.resourceindex.com/Complete_Scripts/Form_Processing/" rel="nofollow">pesquisar na net</a> por formulários em várias linguagens de programação.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Anisio Pereira da Silva</title>
+		<link>/finalmente/#comment-15183</link>
+		<dc:creator><![CDATA[Anisio Pereira da Silva]]></dc:creator>
+		<pubDate>Tue, 01 May 2007 13:29:14 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=77#comment-15183</guid>
+		<description><![CDATA[Olá!, ve se pode me ajudar preciso colocar um formulario de Comentários no meu site como faço isso, Onde acho este formulario.
+
+Aguardo resposta 
+
+Obrigado]]></description>
+		<content:encoded><![CDATA[<p>Olá!, ve se pode me ajudar preciso colocar um formulario de Comentários no meu site como faço isso, Onde acho este formulario.</p>
+<p>Aguardo resposta </p>
+<p>Obrigado</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

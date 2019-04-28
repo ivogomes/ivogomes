@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Acessibilidade &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/acessibilidade/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Apresentação: Acessibilidade na Web</title>
+		<link>/apresentacao-acessibilidade-na-web/</link>
+		<comments>/apresentacao-acessibilidade-na-web/#comments</comments>
+		<pubDate>Thu, 19 Mar 2009 09:00:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=777</guid>
+		<description><![CDATA[<p>Já está disponível online (slides e vídeo) a apresentação que fiz no <a href="/sapo-sessions/">SAPO Sessions #1</a> intitulada: <strong>Acessibilidade na Web</strong>.</p>
+<p><img src="http://fotos.sapo.pt/vSiuZ90htSBFzZg8NAwi/x435" alt="Acessibilidade na Web" /></p>
+<p>Basicamente falei um pouco sobre o que é a acessibilidade, a quem se destina e dei alguns exemplos dos principais problemas de acessibilidade que costumamos encontrar e como os resolver. Nada de muito aprofundado, foi apenas para dar a ideia de que não é difícil fazer um website acessível, basta ter atenção apenas a alguns detalhes e ter o mínimo de preocupação em criar HTML limpo e semântico.</p>
+<p>O conteúdo <a rel="nofollow" href="/apresentacao-acessibilidade-na-web/">Apresentação: Acessibilidade na Web</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/apresentacao-acessibilidade-na-web/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>SAPO Sessions</title>
+		<link>/sapo-sessions/</link>
+		<comments>/sapo-sessions/#comments</comments>
+		<pubDate>Thu, 05 Mar 2009 11:19:36 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[sapo]]></category>
+		<category><![CDATA[sessions]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=755</guid>
+		<description><![CDATA[<p>Ontem teve início a primeira edição do SAPO Sessions. Na primeira e na terceira Quarta-feira de cada mês o <a href="http://www.sapo.pt/">SAPO</a> organizará um destes eventos, que consiste numa manhã com várias apresentações dentro de um mesmo tema.</p>
+<p>O conteúdo <a rel="nofollow" href="/sapo-sessions/">SAPO Sessions</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sapo-sessions/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Novo website da Direcção-Geral de Arquivos</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/</link>
+		<comments>/novo-website-da-direccao-geral-de-arquivos/#comments</comments>
+		<pubDate>Tue, 23 Dec 2008 11:23:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[dgarq]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682</guid>
+		<description><![CDATA[<p>Nos últimos meses estive a trabalhar na remodelação do website da Direcção-Geral de Arquivos. Os requisitos principais para a remodelação prendiam-se com a necessidade de ter um website mais acessível (nível de acessibilidade AA) e mais leve (evitando o uso de imagens pesadas e elementos gráficos desnecessários). Todos estes requisitos vieram do próprio cliente que explicitou muito bem todos estes pontos.</p>
+<p>A Direcção-Geral de Arquivos (antigo IAN/TT - Instituto dos Arquivos Nacionais / Torre do Tombo), devido às mudanças que houveram na instituição, passou a estar separada da Torre do Tombo. Assim, hoje temos a Direcção-Geral de Arquivos e o Arquivo Nacional da Torre do Tombo. Desta forma, teríamos que desenvolver dois websites distintos, mas mantendo a mesma linha gráfica.</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-da-direccao-geral-de-arquivos/">Novo website da Direcção-Geral de Arquivos</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-da-direccao-geral-de-arquivos/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Novo site sobre acessibilidade é pouco acessível</title>
+		<link>/novo-site-sobre-acessibilidade-pouco-acessivel/</link>
+		<comments>/novo-site-sobre-acessibilidade-pouco-acessivel/#comments</comments>
+		<pubDate>Mon, 27 Oct 2008 17:06:25 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=622</guid>
+		<description><![CDATA[<p>Via "O Design e a Ergonomia" soube que a Câmara Municipal de Lisboa, através do Núcleo de Acessibilidade do Departamento de Acção Social desenvolveu um novo site sobre acessibilidade / design inclusivo, com informações úteis, bibliografia e links de interesse para a área.</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-site-sobre-acessibilidade-pouco-acessivel/">Novo site sobre acessibilidade é pouco acessível</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-site-sobre-acessibilidade-pouco-acessivel/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+		<item>
+		<title>10 erros comuns da acessibilidade na web</title>
+		<link>/10-erros-comuns-da-acessibilidade-na-web/</link>
+		<comments>/10-erros-comuns-da-acessibilidade-na-web/#comments</comments>
+		<pubDate>Mon, 04 Aug 2008 09:47:29 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=523</guid>
+		<description><![CDATA[<p>Normalmente quem tenta desenvolver websites acessíveis costuma cometer os mesmos erros vezes sem conta. Apesar de tentarem dar o seu melhor para tornar os sites mais acessíveis, por vezes esforçam-se demasiado e em vez de melhorar a acessibilidade, acabam por piorá-la.</p>
+<p>O conteúdo <a rel="nofollow" href="/10-erros-comuns-da-acessibilidade-na-web/">10 erros comuns da acessibilidade na web</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/10-erros-comuns-da-acessibilidade-na-web/feed/</wfw:commentRss>
+		<slash:comments>17</slash:comments>
+		</item>
+		<item>
+		<title>Novo website do Alto Comissariado da Saúde</title>
+		<link>/novo-website-do-alto-comissariado-da-saude/</link>
+		<comments>/novo-website-do-alto-comissariado-da-saude/#comments</comments>
+		<pubDate>Fri, 04 Jan 2008 12:01:34 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[alto]]></category>
+		<category><![CDATA[comissariado]]></category>
+		<category><![CDATA[saúde]]></category>
+
+		<guid isPermaLink="false">/novo-website-do-alto-comissariado-da-saude/</guid>
+		<description><![CDATA[<p>Acabou de ser lançado esta semana o novo website do Alto Comissariado da Saúde. Estive envolvido neste projecto, nomeadamente no que toca ao design dos layouts e da integração do WordPress com o mesmo, em detrimento do CMS anterior. Além do site principal, foi também redesenhado o microsite com as Metas e Indicadores do Plano [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-do-alto-comissariado-da-saude/">Novo website do Alto Comissariado da Saúde</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-do-alto-comissariado-da-saude/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+		<item>
+		<title>Nova Resolução do Conselho de Ministros para a Acessibilidade Web</title>
+		<link>/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/</link>
+		<comments>/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/#comments</comments>
+		<pubDate>Wed, 10 Oct 2007 16:14:50 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[directivas]]></category>
+		<category><![CDATA[governo]]></category>
+		<category><![CDATA[w3c]]></category>
+
+		<guid isPermaLink="false">/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/</guid>
+		<description><![CDATA[<p>A <a href="http://www.acessibilidade.net/web/RCM155-2007.pdf">Resolução do Conselho de Ministros 155/2007</a>, de 2 de Outubro de 2007, estabelece os requisitos mínimos de acessibilidade que devem respeitar os sítios da Internet do Governo e dos serviços e organismos públicos da Administração Central, adoptando os níveis de conformidade das <a href="http://www.utad.pt/wai/wai-pageauth.html">directrizes sobre a acessibilidade do conteúdo da Internet</a> desenvolvidas pelo <a href="http://www.w3.org/wai">World Wide Web Consortium (W3C)</a>. </p>
+<p>O conteúdo <a rel="nofollow" href="/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/">Nova Resolução do Conselho de Ministros para a Acessibilidade Web</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>O novo website do jornal Record</title>
+		<link>/o-novo-website-do-jornal-record/</link>
+		<comments>/o-novo-website-do-jornal-record/#comments</comments>
+		<pubDate>Mon, 01 Oct 2007 09:09:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[jornal]]></category>
+
+		<guid isPermaLink="false">/o-novo-website-do-jornal-record/</guid>
+		<description><![CDATA[<p>O <a href="http://www.record.pt/">Jornal Record</a> renovou o seu website há algumas semanas atrás. Além de terem piorado no grafismo (o site parece um <a href="/wireframes">wireframe</a>), também pioraram na acessibilidade dos conteúdos. Em relação à usabilidade, continua tão má como antes (continuo a ter grandes dificuldades a distinguir o que é link e o que não é).</p>
+<p>O conteúdo <a rel="nofollow" href="/o-novo-website-do-jornal-record/">O novo website do jornal Record</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/o-novo-website-do-jornal-record/feed/</wfw:commentRss>
+		<slash:comments>22</slash:comments>
+		</item>
+		<item>
+		<title>Acessibilidade&#8230; na ponta do polegar</title>
+		<link>/acessibilidade-na-ponta-do-polegar/</link>
+		<comments>/acessibilidade-na-ponta-do-polegar/#comments</comments>
+		<pubDate>Sat, 29 Sep 2007 08:43:44 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[assistivos]]></category>
+		<category><![CDATA[atrofia]]></category>
+		<category><![CDATA[espinhal]]></category>
+		<category><![CDATA[muscular]]></category>
+
+		<guid isPermaLink="false">/acessibilidade-na-ponta-do-polegar/</guid>
+		<description><![CDATA[<p><a href="http://www.assistiveware.com/michael.php">Mike Phillips</a> é um jovem que gosta de jogar jogos de computador e é também um jornalista freelancer sobre tecnologia. Nada disto parece fora do normal, excepto o facto de que Mike sofre de <a href="http://www.fsma.org/portug/">Atrofia Muscular Espinhal (SMA)</a>. A SMA afecta os músculos voluntários para actividades tais como gatinhar, caminhar, o controlo do pescoço e a deglutição. Esta doença afecta inicialmente os músculos mais próximos ao tronco. Geralmente causam debilidade nas pernas e nos braços e alguma anormalidade nos movimentos da língua. A actividade intelectual não é afectada. Para além do mais observa-se que os doentes com SMA são inteligentes e sociáveis.</p>
+<p>O conteúdo <a rel="nofollow" href="/acessibilidade-na-ponta-do-polegar/">Acessibilidade&#8230; na ponta do polegar</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/acessibilidade-na-ponta-do-polegar/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>WCAG Samurai</title>
+		<link>/wcag-samurai/</link>
+		<comments>/wcag-samurai/#comments</comments>
+		<pubDate>Tue, 26 Jun 2007 10:59:42 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[samurai]]></category>
+		<category><![CDATA[wcag]]></category>
+
+		<guid isPermaLink="false">/wcag-samurai/</guid>
+		<description><![CDATA[<p>O que é o WCAG? Esta sigla significa "Web Content Accessibility Guidelines", ou seja, é um conjunto de regras para assegurar que os conteúdos disponibilizados na Internet são acessíveis. O <a href="http://www.w3.org/TR/WCAG/">WCAG 1.0</a> foi publicado em 1999 e, com o evoluir das tecnologias e da própria Internet, as suas regras e recomendações estão já um pouco desactualizadas. Assim, há alguns anos começou-se a trabalhar no <a href="http://www.w3.org/TR/WCAG20/">WCAG 2.0</a> que supostamente viria substituir a versão anterior e traria a devida actualização às regras e recomendações de acessibilidade.</p>
+<p>O conteúdo <a rel="nofollow" href="/wcag-samurai/">WCAG Samurai</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/wcag-samurai/feed/</wfw:commentRss>
+		<slash:comments>35</slash:comments>
+<enclosure url="http://media27a.libsyn.com/podcasts/c18ba704e5d627034e371d7200d3c053/4680eb53/uxpod/Web_Accessibility_Guidelines_-_an_Interview_with_GIan_Sampson-Wild.mp3" length="20007963" type="audio/mpeg" />
+		</item>
+		<item>
+		<title>Renovação do website do Jornal Meios &#038; Publicidade</title>
+		<link>/renovacao-do-website-do-jornal-meios-publicidade/</link>
+		<comments>/renovacao-do-website-do-jornal-meios-publicidade/#comments</comments>
+		<pubDate>Thu, 31 May 2007 21:42:24 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[meios&publicidade]]></category>
+		<category><![CDATA[user-centered]]></category>
+		<category><![CDATA[web-standards]]></category>
+
+		<guid isPermaLink="false">/renovacao-do-website-do-jornal-meios-publicidade/</guid>
+		<description><![CDATA[<p>Foi hoje lançada a nova versão do website do Jornal <a href="http://www.meiosepublicidade.pt/">Meios &#038; Publicidade</a>. A remodelação foi feita pela <a href="http://www.log.pt/">log</a> (o layout foi feito por mim) e incluiu a migração do antigo CMS para um novo, mais fácil de utilizar para os jornalistas. </p>
+<p>O conteúdo <a rel="nofollow" href="/renovacao-do-website-do-jornal-meios-publicidade/">Renovação do website do Jornal Meios &#038; Publicidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/renovacao-do-website-do-jornal-meios-publicidade/feed/</wfw:commentRss>
+		<slash:comments>25</slash:comments>
+		</item>
+		<item>
+		<title>Como vender mais óculos?</title>
+		<link>/como-vender-mais-oculos/</link>
+		<comments>/como-vender-mais-oculos/#comments</comments>
+		<pubDate>Fri, 25 May 2007 08:19:43 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[font]]></category>
+		<category><![CDATA[visão]]></category>
+
+		<guid isPermaLink="false">/como-vender-mais-oculos/</guid>
+		<description><![CDATA[<p>A Optivisão renovou hoje a sua marca (logótipo) e aproveitou também para remodelar o website. Sendo uma empresa que vende produtos para pessoas com problemas de visão, seria de esperar que o website estivesse adaptado para o seu público alvo... Antes pelo contrário, mesmo para quem tenha uma visão perfeita vai ter muita dificuladade em conseguir ler o menu de navegação do site.</p>
+<p>O conteúdo <a rel="nofollow" href="/como-vender-mais-oculos/">Como vender mais óculos?</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/como-vender-mais-oculos/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Como funciona um Screen Reader?</title>
+		<link>/como-funciona-um-screen-reader/</link>
+		<comments>/como-funciona-um-screen-reader/#comments</comments>
+		<pubDate>Wed, 23 May 2007 16:51:45 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[leitor-de-ecrã]]></category>
+		<category><![CDATA[screen-reader]]></category>
+
+		<guid isPermaLink="false">/como-funciona-um-screen-reader/</guid>
+		<description><![CDATA[<p>Se nunca experimentaram usar um leitor de ecrã, vejam neste vídeo como é que uma pessoa com incapacidade visual "vê" a Internet. Um aspecto curioso: no final do vídeo ele altera a velocidade de leitura do texto, que estava em velocidade lenta (necessário para nós percebermos a explicação) e muda para super rápida (que é o que ele usa no dia-a-dia).</p>
+<p>O conteúdo <a rel="nofollow" href="/como-funciona-um-screen-reader/">Como funciona um Screen Reader?</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/como-funciona-um-screen-reader/feed/</wfw:commentRss>
+		<slash:comments>18</slash:comments>
+<enclosure url="http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/tsaran-screenreaders.m4v" length="73402059" type="video/x-m4v" />
+		</item>
+		<item>
+		<title>RoboBraille: converter textos em MP3 e Braille</title>
+		<link>/robobraille-converter-textos-em-mp3-e-braille/</link>
+		<comments>/robobraille-converter-textos-em-mp3-e-braille/#comments</comments>
+		<pubDate>Sat, 28 Apr 2007 13:01:02 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[braille]]></category>
+		<category><![CDATA[screen-reader]]></category>
+
+		<guid isPermaLink="false">/robobraille-converter-textos-em-mp3-e-braille/</guid>
+		<description><![CDATA[<p>O RoboBraille é um conversor gratuito de textos para formato digital em audio MP3 e braille. O serviço está ainda em fase de testes e foi concebido por um consórcio de empresas e instituições da Dinamarca, Chipre, Portugal, Itália, Irlanda e Reino Unido. Em Portugal, a instituição que participa neste projecto é o CIDEF (Centro de Inovação para Deficientes).</p>
+<p>O conteúdo <a rel="nofollow" href="/robobraille-converter-textos-em-mp3-e-braille/">RoboBraille: converter textos em MP3 e Braille</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/robobraille-converter-textos-em-mp3-e-braille/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+<enclosure url="https://www.ivogomes.com/files/robobraille.mp3" length="2401174" type="audio/mpeg" />
+		</item>
+		<item>
+		<title>Petição pela Acessibilidade Electrónica</title>
+		<link>/peticao-pela-acessibilidade-electronica/</link>
+		<comments>/peticao-pela-acessibilidade-electronica/#comments</comments>
+		<pubDate>Sat, 09 Dec 2006 14:45:55 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[petição]]></category>
+
+		<guid isPermaLink="false">/peticao-pela-acessibilidade-electronica/</guid>
+		<description><![CDATA[<p>No passado dia 3 de Dezembro foi celebrado o Dia Internacional das Pessoas com Deficiência. Nesse mesmo dia, o site <a href="http://www.lerparaver.com/home">LerParaVer</a> criou uma petição para recolher assinaturas (no mínimo quatro mil), a serem enviadas à Assembleia da República por forma a ser discutida a temática da acessibilidade electrónica.</p>
+<p>O conteúdo <a rel="nofollow" href="/peticao-pela-acessibilidade-electronica/">Petição pela Acessibilidade Electrónica</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/peticao-pela-acessibilidade-electronica/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

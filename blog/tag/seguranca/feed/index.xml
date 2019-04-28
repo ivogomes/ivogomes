@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>segurança &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/seguranca/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Ergonomia contra o Terrorismo</title>
+		<link>/ergonomia-contra-o-terrorismo/</link>
+		<comments>/ergonomia-contra-o-terrorismo/#respond</comments>
+		<pubDate>Thu, 25 Aug 2005 10:13:20 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Ergonomia]]></category>
+		<category><![CDATA[factores-humanos]]></category>
+		<category><![CDATA[segurança]]></category>
+		<category><![CDATA[terrorismo]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=166</guid>
+		<description><![CDATA[<p>A HFES (Human Factors and Ergonomics Society) publicou um artigo na sua popular revista "Ergonomics in Design" sobre a forma como a Ergonomia pode ajudar a combater o terrorismo. </p>
+<p>O artigo: "Defeating Terrorism: What Can Human Factors/Ergonomics Offer?" descreve alguns trabalhos antigos e recentes na área da Ergonomia que podem contribuir para aumentar a segurança de todos nós.</p>
+<p>O conteúdo <a rel="nofollow" href="/ergonomia-contra-o-terrorismo/">Ergonomia contra o Terrorismo</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/ergonomia-contra-o-terrorismo/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

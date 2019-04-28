@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Relatório Acessibilidade Web &#8211; Ponto de Situação das Maiores Empresas Portuguesas</title>
+	<atom:link href="/relatorio-acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/feed/" rel="self" type="application/rss+xml" />
+	<link>/relatorio-acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/relatorio-acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/#comment-87039</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 22 Sep 2009 14:02:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=920#comment-87039</guid>
+		<description><![CDATA[Olhando para o site da APDSI e navegando em uma ou duas páginas dá logo para perceber que o site não é lá muito acessível, mesmo sem fazer a avaliação automática...
+
+É como se diz, em casa de ferreiro, espeto de pau. De facto eles deveriam dar o exemplo, mas normalmente estes relatórios são apresentados por uma pequena equipa (foi o caso) e depois mais ninguém se importa com isso (infelizmente).]]></description>
+		<content:encoded><![CDATA[<p>Olhando para o site da APDSI e navegando em uma ou duas páginas dá logo para perceber que o site não é lá muito acessível, mesmo sem fazer a avaliação automática&#8230;</p>
+<p>É como se diz, em casa de ferreiro, espeto de pau. De facto eles deveriam dar o exemplo, mas normalmente estes relatórios são apresentados por uma pequena equipa (foi o caso) e depois mais ninguém se importa com isso (infelizmente).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Pedro Barata</title>
+		<link>/relatorio-acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/#comment-87038</link>
+		<dc:creator><![CDATA[Pedro Barata]]></dc:creator>
+		<pubDate>Tue, 22 Sep 2009 13:09:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=920#comment-87038</guid>
+		<description><![CDATA[Olá Ivo,
+o que muito me espanta (ou não!) é o site da APDSI apresentar 19 erros de HTML mais uns tantos de CSS level 2.1.
+
+O exemplo deve vir sempre de cima, não??!?!?!
+
+abraço
+PB]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo,<br />
+o que muito me espanta (ou não!) é o site da APDSI apresentar 19 erros de HTML mais uns tantos de CSS level 2.1.</p>
+<p>O exemplo deve vir sempre de cima, não??!?!?!</p>
+<p>abraço<br />
+PB</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Relatório Acessibilidade &#171; EduTic</title>
+		<link>/relatorio-acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/#comment-87037</link>
+		<dc:creator><![CDATA[Relatório Acessibilidade &#171; EduTic]]></dc:creator>
+		<pubDate>Tue, 22 Sep 2009 13:09:45 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=920#comment-87037</guid>
+		<description><![CDATA[[...] semana passada foi apresentado o estado de arte em relação à acessibilidade on-line nas maiores empresas portuguesas. Para ler o relatório completo consulte o sítio [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] semana passada foi apresentado o estado de arte em relação à acessibilidade on-line nas maiores empresas portuguesas. Para ler o relatório completo consulte o sítio [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

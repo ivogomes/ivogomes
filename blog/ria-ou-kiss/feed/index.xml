@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: RIA ou KISS?</title>
+	<atom:link href="/ria-ou-kiss/feed/" rel="self" type="application/rss+xml" />
+	<link>/ria-ou-kiss/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Eduardo Loureiro</title>
+		<link>/ria-ou-kiss/#comment-8005</link>
+		<dc:creator><![CDATA[Eduardo Loureiro]]></dc:creator>
+		<pubDate>Tue, 23 Jan 2007 19:22:11 +0000</pubDate>
+		<guid isPermaLink="false">/ria-ou-kiss/#comment-8005</guid>
+		<description><![CDATA[E ai beleza? Queria ouvir sua opinião sobre o site da presidencia: http://www.presidencia.pt/]]></description>
+		<content:encoded><![CDATA[<p>E ai beleza? Queria ouvir sua opinião sobre o site da presidencia: <a href="http://www.presidencia.pt/" rel="nofollow">http://www.presidencia.pt/</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Dulcetti</title>
+		<link>/ria-ou-kiss/#comment-7929</link>
+		<dc:creator><![CDATA[Bruno Dulcetti]]></dc:creator>
+		<pubDate>Mon, 22 Jan 2007 20:01:39 +0000</pubDate>
+		<guid isPermaLink="false">/ria-ou-kiss/#comment-7929</guid>
+		<description><![CDATA[Boa Ivo. Gostei bastante e assim como o João disse, gostei da parte sobre os dispositivos móveis.
+
+E parabéns pela oportunidade na Comunidade Portuguesa de Desenvolvimento de Rich Internet Applications.
+
+Sobre os desktops e aplicações web, a grande diferença que pesa bastante é que no desktop você só precisa ter uma configuração mínima para executar tal aplicativo, enquanto na web você ainda tem restrições em navegadores, internet (isso nem é tanto problema hoje em dia), uma má organização no layout do aplicativo ou na construção de um JS, por exemplo.
+
+Mas cada dia o termo e tecnologia crossbrowser ganha mais força ;)
+
+Aquele abraço.]]></description>
+		<content:encoded><![CDATA[<p>Boa Ivo. Gostei bastante e assim como o João disse, gostei da parte sobre os dispositivos móveis.</p>
+<p>E parabéns pela oportunidade na Comunidade Portuguesa de Desenvolvimento de Rich Internet Applications.</p>
+<p>Sobre os desktops e aplicações web, a grande diferença que pesa bastante é que no desktop você só precisa ter uma configuração mínima para executar tal aplicativo, enquanto na web você ainda tem restrições em navegadores, internet (isso nem é tanto problema hoje em dia), uma má organização no layout do aplicativo ou na construção de um JS, por exemplo.</p>
+<p>Mas cada dia o termo e tecnologia crossbrowser ganha mais força ;)</p>
+<p>Aquele abraço.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Camilo</title>
+		<link>/ria-ou-kiss/#comment-7908</link>
+		<dc:creator><![CDATA[Camilo]]></dc:creator>
+		<pubDate>Mon, 22 Jan 2007 12:33:05 +0000</pubDate>
+		<guid isPermaLink="false">/ria-ou-kiss/#comment-7908</guid>
+		<description><![CDATA[Acho que o conceito de KISS não deve ser deixado de lado, mesmo numa aplicação rica. 
+
+O &lt;em&gt;&quot;Não me faça pensar&quot;&lt;/em&gt; é não pode ser esquecido nem um minuto!
+
+[ ]´s]]></description>
+		<content:encoded><![CDATA[<p>Acho que o conceito de KISS não deve ser deixado de lado, mesmo numa aplicação rica. </p>
+<p>O <em>&#8220;Não me faça pensar&#8221;</em> é não pode ser esquecido nem um minuto!</p>
+<p>[ ]´s</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: João Saleiro</title>
+		<link>/ria-ou-kiss/#comment-7813</link>
+		<dc:creator><![CDATA[João Saleiro]]></dc:creator>
+		<pubDate>Mon, 22 Jan 2007 09:49:02 +0000</pubDate>
+		<guid isPermaLink="false">/ria-ou-kiss/#comment-7813</guid>
+		<description><![CDATA[Gostei especialmente da parte em que fala dos problemas de compatibilidade das RIAs em dispositivos móveis. É um assunto delicado, e de certa forma complexo com que tive que lidar já num projecto (foi resolvido criando dois interfaces diferentes para a mesma aplicação, um para PC e outro para o telemóvel). 
+
+A sua opinião deve ser levada em conta para iniciar discussão em volta deste tema. Pergunto-lhe se se importaria de inserir a segunda parte do seu post no blog da riapt.org . Se aceitar, envie-me um mail para lhe adicionar as permissões de blogger. :)]]></description>
+		<content:encoded><![CDATA[<p>Gostei especialmente da parte em que fala dos problemas de compatibilidade das RIAs em dispositivos móveis. É um assunto delicado, e de certa forma complexo com que tive que lidar já num projecto (foi resolvido criando dois interfaces diferentes para a mesma aplicação, um para PC e outro para o telemóvel). </p>
+<p>A sua opinião deve ser levada em conta para iniciar discussão em volta deste tema. Pergunto-lhe se se importaria de inserir a segunda parte do seu post no blog da riapt.org . Se aceitar, envie-me um mail para lhe adicionar as permissões de blogger. :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dextro</title>
+		<link>/ria-ou-kiss/#comment-7742</link>
+		<dc:creator><![CDATA[Dextro]]></dc:creator>
+		<pubDate>Sun, 21 Jan 2007 23:12:17 +0000</pubDate>
+		<guid isPermaLink="false">/ria-ou-kiss/#comment-7742</guid>
+		<description><![CDATA[E tirando o facto que até hoje todo o santo telemovel S60 (grande maioria Nokias) já dispunha do browser Opera sem grandes limitações (muitos dos modelos até já vinham com o browser pre-instalado) tirando o tamanho do ecrã e que existe também o opera mini para telemoveis java não me pareçe que o problema seja a falta de padrões (até porque a maioria dos outros suporta xhtml-mp razoavelmente) mas sim da falta de memoria muitas vezes :?]]></description>
+		<content:encoded><![CDATA[<p>E tirando o facto que até hoje todo o santo telemovel S60 (grande maioria Nokias) já dispunha do browser Opera sem grandes limitações (muitos dos modelos até já vinham com o browser pre-instalado) tirando o tamanho do ecrã e que existe também o opera mini para telemoveis java não me pareçe que o problema seja a falta de padrões (até porque a maioria dos outros suporta xhtml-mp razoavelmente) mas sim da falta de memoria muitas vezes :?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: jlagapito.net</title>
+		<link>/ria-ou-kiss/#comment-7723</link>
+		<dc:creator><![CDATA[jlagapito.net]]></dc:creator>
+		<pubDate>Sun, 21 Jan 2007 17:29:45 +0000</pubDate>
+		<guid isPermaLink="false">/ria-ou-kiss/#comment-7723</guid>
+		<description><![CDATA[[...] Via Ivo Gomes, descobri mais uma aplicação Google: o Docs &#038; Spreadsheets, uma RIA que integra um processador de texto e uma folha de cálculo on-line. [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Via Ivo Gomes, descobri mais uma aplicação Google: o Docs &amp; Spreadsheets, uma RIA que integra um processador de texto e uma folha de cálculo on-line. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: O tamanho importa</title>
+	<atom:link href="/o-tamanho-importa/feed/" rel="self" type="application/rss+xml" />
+	<link>/o-tamanho-importa/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: MUF #25: Avaliação heurística da interface do Café Colombo</title>
+		<link>/o-tamanho-importa/#comment-168044</link>
+		<dc:creator><![CDATA[MUF #25: Avaliação heurística da interface do Café Colombo]]></dc:creator>
+		<pubDate>Wed, 11 Jan 2017 20:47:32 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-168044</guid>
+		<description><![CDATA[[&#8230;] da fonte e também que o tamanho default pode ser alterado (confira uma discussão sobre o assunto neste post do Ivo [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] da fonte e também que o tamanho default pode ser alterado (confira uma discussão sobre o assunto neste post do Ivo [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: MUF #25: Avaliação heurística da interface do Café Colombo - Fator.WS</title>
+		<link>/o-tamanho-importa/#comment-135098</link>
+		<dc:creator><![CDATA[MUF #25: Avaliação heurística da interface do Café Colombo - Fator.WS]]></dc:creator>
+		<pubDate>Tue, 02 Sep 2014 17:55:33 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-135098</guid>
+		<description><![CDATA[[&#8230;] da fonte e também que o tamanho default pode ser alterado (confira uma discussão sobre o assunto neste post do Ivo [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] da fonte e também que o tamanho default pode ser alterado (confira uma discussão sobre o assunto neste post do Ivo [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Flavio Mendes</title>
+		<link>/o-tamanho-importa/#comment-40958</link>
+		<dc:creator><![CDATA[Flavio Mendes]]></dc:creator>
+		<pubDate>Sat, 23 Feb 2008 15:58:02 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-40958</guid>
+		<description><![CDATA[Excelente artigo!
+
+Parabéns também aos comentários que tanto acrescentam.]]></description>
+		<content:encoded><![CDATA[<p>Excelente artigo!</p>
+<p>Parabéns também aos comentários que tanto acrescentam.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Kiki</title>
+		<link>/o-tamanho-importa/#comment-5506</link>
+		<dc:creator><![CDATA[Kiki]]></dc:creator>
+		<pubDate>Sat, 14 Oct 2006 23:58:09 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-5506</guid>
+		<description><![CDATA[Não sei como calcular o ems... Tipo 12 pixels eu sei o que é, qd vou para o ems fico copiando daqui e dali e não consigo calcular. Há uma maneira para novatos entenderem?]]></description>
+		<content:encoded><![CDATA[<p>Não sei como calcular o ems&#8230; Tipo 12 pixels eu sei o que é, qd vou para o ems fico copiando daqui e dali e não consigo calcular. Há uma maneira para novatos entenderem?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: andr3</title>
+		<link>/o-tamanho-importa/#comment-3860</link>
+		<dc:creator><![CDATA[andr3]]></dc:creator>
+		<pubDate>Wed, 17 May 2006 15:19:12 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3860</guid>
+		<description><![CDATA[Podes também usar o &lt;code&gt;line-height&lt;/code&gt; para garantir que lá por usarem fonts diferentes da default nao te &quot;estragam&quot; o layout... assim a linha, paragrafo, etc. fica com a mesma altura, mesmo que o texto seja menor. (convem dar um intervalo pequeno para haver margem de manobra.. testando com todas as fonts que definist no css, por exemplo)
+
+Não soluciona o caso em todas as situações, mas pode ajudar noutras. ;)]]></description>
+		<content:encoded><![CDATA[<p>Podes também usar o <code>line-height</code> para garantir que lá por usarem fonts diferentes da default nao te &#8220;estragam&#8221; o layout&#8230; assim a linha, paragrafo, etc. fica com a mesma altura, mesmo que o texto seja menor. (convem dar um intervalo pequeno para haver margem de manobra.. testando com todas as fonts que definist no css, por exemplo)</p>
+<p>Não soluciona o caso em todas as situações, mas pode ajudar noutras. ;)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/o-tamanho-importa/#comment-3858</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 17 May 2006 14:11:33 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3858</guid>
+		<description><![CDATA[Ola Robson!
+
+Desconheço que haja alguma técnica para enviar fontes diferentes consoante o sistema operativo, no entanto recomendo que dê uma vista de olhos por esta &lt;a href=&quot;http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html&quot; rel=&quot;nofollow&quot;&gt;tabela comparativa de fontes em Mac e Windows&lt;/a&gt; para ter uma ideia de como aparecem as fontes nos dosi sistemas e quais as fontes alternativas.]]></description>
+		<content:encoded><![CDATA[<p>Ola Robson!</p>
+<p>Desconheço que haja alguma técnica para enviar fontes diferentes consoante o sistema operativo, no entanto recomendo que dê uma vista de olhos por esta <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html" rel="nofollow">tabela comparativa de fontes em Mac e Windows</a> para ter uma ideia de como aparecem as fontes nos dosi sistemas e quais as fontes alternativas.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Robson Waterkemper</title>
+		<link>/o-tamanho-importa/#comment-3848</link>
+		<dc:creator><![CDATA[Robson Waterkemper]]></dc:creator>
+		<pubDate>Mon, 15 May 2006 16:55:33 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3848</guid>
+		<description><![CDATA[Ivo, escrvo do Brasil, e gostei muito do seu website. Acompanho sempre aqui novidades sobre Usabilidade, CSS, Standards, etc.
+
+Lendo o seu artigo sobre tamanho de texto, me lembrei da dificuldade que tive para fazer o meu &lt;a href=&quot;http://www.twodividedbyzero.com/robsonwt/&quot; rel=&quot;nofollow&quot;&gt;website&lt;/a&gt;. Uso Mac e quis usar a fonte Lucida do Mac OS X tb no meu site, e deixei a opcao da Trebuchet MS para os usuarios Windows. Mas vi que o tamanho base dessas duas fontes e&#039; bem diferente. Existe alguma solucao para que o usuario Mac veja a fonte de um jeito e o usuario PC de outro. Sei que posso fazer isso usando javascript de deteccao de browser, mas gostaria de saber se ha&#039; outra forma. Nao estaria disposto a manter duas folhas de estilo.]]></description>
+		<content:encoded><![CDATA[<p>Ivo, escrvo do Brasil, e gostei muito do seu website. Acompanho sempre aqui novidades sobre Usabilidade, CSS, Standards, etc.</p>
+<p>Lendo o seu artigo sobre tamanho de texto, me lembrei da dificuldade que tive para fazer o meu <a href="http://www.twodividedbyzero.com/robsonwt/" rel="nofollow">website</a>. Uso Mac e quis usar a fonte Lucida do Mac OS X tb no meu site, e deixei a opcao da Trebuchet MS para os usuarios Windows. Mas vi que o tamanho base dessas duas fontes e&#8217; bem diferente. Existe alguma solucao para que o usuario Mac veja a fonte de um jeito e o usuario PC de outro. Sei que posso fazer isso usando javascript de deteccao de browser, mas gostaria de saber se ha&#8217; outra forma. Nao estaria disposto a manter duas folhas de estilo.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: José Luís Agapito</title>
+		<link>/o-tamanho-importa/#comment-3847</link>
+		<dc:creator><![CDATA[José Luís Agapito]]></dc:creator>
+		<pubDate>Mon, 15 May 2006 16:16:22 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3847</guid>
+		<description><![CDATA[Embora sendo um &quot;maçarico&quot; nesta andanças, sempre achei, do ponto de vista do designer, a determinação do tamanho da fonte em pixeis mais maleável. 
+
+Lógico que isso coloca problemas para o utilizador, mas tal como o &lt;b&gt;Mário Lopes&lt;/b&gt; disse, é uma questão dos utilizadores estarem mais atentos à forma como personalizam as definições do browser e configuram o tamanho de letra. 
+
+Por muito nos que tentemos moldar ao cliente / utilizador, acho que tem que haver uma certa plasticidade do mesmo para se adaptar a práticas que nunca serão 100% &quot;à medida&quot;. No fundo, treinar a adaptabilidade, ao passo que o webdesigner pratica a acessibilidade... chegar-se-á a uma solução de compromisso mais... equilibrada.]]></description>
+		<content:encoded><![CDATA[<p>Embora sendo um &#8220;maçarico&#8221; nesta andanças, sempre achei, do ponto de vista do designer, a determinação do tamanho da fonte em pixeis mais maleável. </p>
+<p>Lógico que isso coloca problemas para o utilizador, mas tal como o <b>Mário Lopes</b> disse, é uma questão dos utilizadores estarem mais atentos à forma como personalizam as definições do browser e configuram o tamanho de letra. </p>
+<p>Por muito nos que tentemos moldar ao cliente / utilizador, acho que tem que haver uma certa plasticidade do mesmo para se adaptar a práticas que nunca serão 100% &#8220;à medida&#8221;. No fundo, treinar a adaptabilidade, ao passo que o webdesigner pratica a acessibilidade&#8230; chegar-se-á a uma solução de compromisso mais&#8230; equilibrada.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: ivogomes.com &#187; Novamente sobre o tamanho do texto</title>
+		<link>/o-tamanho-importa/#comment-3805</link>
+		<dc:creator><![CDATA[ivogomes.com &#187; Novamente sobre o tamanho do texto]]></dc:creator>
+		<pubDate>Thu, 11 May 2006 16:24:19 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3805</guid>
+		<description><![CDATA[[...] 11 Maio, 2006 &#124; 0 Coment&#225;rios Depois de alguma discussão sobre qual a melhor forma de definir o tamanho do texto num website,hoje encontrei uma possível solução para o problema e que funciona em qualquer browser/plataforma. [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] 11 Maio, 2006 | 0 Coment&aacute;rios Depois de alguma discussão sobre qual a melhor forma de definir o tamanho do texto num website,hoje encontrei uma possível solução para o problema e que funciona em qualquer browser/plataforma. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Wlad</title>
+		<link>/o-tamanho-importa/#comment-3531</link>
+		<dc:creator><![CDATA[Wlad]]></dc:creator>
+		<pubDate>Fri, 24 Mar 2006 17:26:01 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3531</guid>
+		<description><![CDATA[Quantas pessoas afinal ainda estão presas ao IE 5, na beira da saída do 7 ?]]></description>
+		<content:encoded><![CDATA[<p>Quantas pessoas afinal ainda estão presas ao IE 5, na beira da saída do 7 ?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dextro</title>
+		<link>/o-tamanho-importa/#comment-3505</link>
+		<dc:creator><![CDATA[Dextro]]></dc:creator>
+		<pubDate>Mon, 20 Mar 2006 16:45:16 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3505</guid>
+		<description><![CDATA[Aqui está tudo bem, não tenho problemas nenhuns no IE7 :?]]></description>
+		<content:encoded><![CDATA[<p>Aqui está tudo bem, não tenho problemas nenhuns no IE7 :?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/o-tamanho-importa/#comment-3495</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 16 Mar 2006 10:23:59 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3495</guid>
+		<description><![CDATA[Obrigado Felipe pela informação. Assim que tiver acesso a uma máquina Windows vou testar no IE7...
+
+Em relação ao tamanho do texto, a melhor opção é usar só EM. O facto de ter usado o tamanho 100.01% foi devido a um texto que li e sinceramente já não me lembro a razão. No entanto esta semana li este artigo (&lt;a href=&quot;http://www.clagnut.com/blog/348/&quot;&gt;How to size text using ems&lt;/a&gt;) que explica uma forma ainda melhor e mais simples de usar EMs.
+
+Ainda não tive tempo de testar, mas assim que puder vou tentar aplicar aqui e ver como fica ;)]]></description>
+		<content:encoded><![CDATA[<p>Obrigado Felipe pela informação. Assim que tiver acesso a uma máquina Windows vou testar no IE7&#8230;</p>
+<p>Em relação ao tamanho do texto, a melhor opção é usar só EM. O facto de ter usado o tamanho 100.01% foi devido a um texto que li e sinceramente já não me lembro a razão. No entanto esta semana li este artigo (<a href="http://www.clagnut.com/blog/348/">How to size text using ems</a>) que explica uma forma ainda melhor e mais simples de usar EMs.</p>
+<p>Ainda não tive tempo de testar, mas assim que puder vou tentar aplicar aqui e ver como fica ;)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Felipe Lima</title>
+		<link>/o-tamanho-importa/#comment-3492</link>
+		<dc:creator><![CDATA[Felipe Lima]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2006 20:34:46 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3492</guid>
+		<description><![CDATA[]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo, ótimo site e artigo excelente este. Mas veja, este formulário que você está usando, apresenta instruções d e preenchimento dos campos&#8230; Usando IE 7.0 Beta, em 1024&#215;768, fica IMPOSS�?VEL ler o que está escrito. Outra dúvida: Não entendi a dica do font-size: 100,01% devo utilizá-lo no body {} ? Quais as vantagens disso? Será que uma possibilidade, como já dito aqui, não seria usar como padrão, o xx-small, e ir colocando o resto em EM, em relação a ele? Todo o restante do texto seria em torno de 1.8em &#8230; É válido?<br />
+Abraços e ótimo trabalho!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/o-tamanho-importa/#comment-3316</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 01 Feb 2006 15:46:09 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3316</guid>
+		<description><![CDATA[&lt;strong&gt;@João Craveiro:&lt;/strong&gt; Tens razão. Quando o link termina num algarismo ele não interpreta a tag &lt;a&gt;... Não fui eu que fiz o script e nem tenho conhecimentos técnicos para o alterar por isso acho que o vou deixar assim :)&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p><strong>@João Craveiro:</strong> Tens razão. Quando o link termina num algarismo ele não interpreta a tag <a>&#8230; Não fui eu que fiz o script e nem tenho conhecimentos técnicos para o alterar por isso acho que o vou deixar assim :)</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Margarida</title>
+		<link>/o-tamanho-importa/#comment-3299</link>
+		<dc:creator><![CDATA[Margarida]]></dc:creator>
+		<pubDate>Thu, 26 Jan 2006 21:18:32 +0000</pubDate>
+		<guid isPermaLink="false">/o-tamanho-importa/#comment-3299</guid>
+		<description><![CDATA[por acaso isso é bom dos em&#039;s e pt&#039;s, mas nunca me habituei e sempre usei pixeis mesmo definidos por mim... bom uma vez usei a cena do javascript com o extra small, small, etc. É bem porreiro, mas hen, javascript e eu... eu e javascript :X lol fico-me pelos pixeis :)
+gostei do teu post :D bem bacano]]></description>
+		<content:encoded><![CDATA[<p>por acaso isso é bom dos em&#8217;s e pt&#8217;s, mas nunca me habituei e sempre usei pixeis mesmo definidos por mim&#8230; bom uma vez usei a cena do javascript com o extra small, small, etc. É bem porreiro, mas hen, javascript e eu&#8230; eu e javascript :X lol fico-me pelos pixeis :)<br />
+gostei do teu post :D bem bacano</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

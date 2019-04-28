@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# profile: https://ogp.me/ns/profile#">
+<title>
+	    Abrir/Fechar elementos usando Javascript e CSS - IvoGomes.com
+	</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Ivo Gomes">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+<link rel="shortcut icon" href="http://www.ivogomes.com/img/favicon.ico">
+<link rel="icon" sizes="196x196" href="http://www.ivogomes.com/img/icon-highres.png">
+<link rel="icon" sizes="128x128" href="http://www.ivogomes.com/img/icon.png">
+<link rel="apple-touch-icon" href="http://www.ivogomes.com/img/touch-icon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://www.ivogomes.com/img/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://www.ivogomes.com/img/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://www.ivogomes.com/img/touch-icon-ipad-retina.png">
+<meta name="mobile-web-app-capable" content="yes">
+<noscript>
+      <link rel="stylesheet" type="text/css" href="http://www.ivogomes.com/css/ink.min.css">
+      <link rel="stylesheet" type="text/css" href="http://www.ivogomes.com/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo%7CPacifico">
+    </noscript>
+<link rel="stylesheet" type="text/css" href="http://www.ivogomes.com/css/styles.min.css">
+<link rel="alternate" type="application/rss+xml" title="Feed RSS dos artigos do blog IvoGomes.com" href="/feed/" />
+<!--[if IE lte 8 ]>
+    <link rel="stylesheet" type="text/css" href="/css/ink-ie.min.css">
+    <![endif]-->
+<link href="https://plus.google.com/+IvoGomes/" rel="author" />
+<meta property="fb:admins" content="557197683" />
+<link rel="pingback" href="/xmlrpc.php">
+
+<link rel="canonical" href="/abrirfechar-elementos-usando-javascript-e-css/" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Abrir/Fechar elementos usando Javascript e CSS - IvoGomes.com" />
+<meta property="og:description" content="Basicamente, através de um pequeno código Javascript e uma linha de CSS conseguimos fazer com que um determinado elemento se abra ou feche mediante um clique. Por exemplo, podemos querer ter alguma informação na página que é acedida apenas quando o utilizador clica num link. Isto faz com que essa informação apareça sem ter que recarregar a página (no fundo, a informação está lá, mas está escondida)." />
+<meta property="og:url" content="https://www.ivogomes.com/blog/abrirfechar-elementos-usando-javascript-e-css/" />
+<meta property="og:site_name" content="IvoGomes.com" />
+<meta property="article:publisher" content="http://www.facebook.com/ivogomes" />
+<meta property="article:author" content="http://facebook.com/ivogomes" />
+<meta property="article:section" content="CSS &#038; Webstandards" />
+<meta property="article:published_time" content="2007-03-14T12:14:26+00:00" />
+<meta property="article:modified_time" content="2016-06-17T09:04:30+00:00" />
+<meta property="og:updated_time" content="2016-06-17T09:04:30+00:00" />
+<meta property="og:image" content="https://www.ivogomes.com/img/ivo.jpg" />
+<meta property="og:image:secure_url" content="https://www.ivogomes.com/img/ivo.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Basicamente, através de um pequeno código Javascript e uma linha de CSS conseguimos fazer com que um determinado elemento se abra ou feche mediante um clique. Por exemplo, podemos querer ter alguma informação na página que é acedida apenas quando o utilizador clica num link. Isto faz com que essa informação apareça sem ter que recarregar a página (no fundo, a informação está lá, mas está escondida)." />
+<meta name="twitter:title" content="Abrir/Fechar elementos usando Javascript e CSS - IvoGomes.com" />
+<meta name="twitter:site" content="@ivogomes" />
+<meta name="twitter:image" content="https://www.ivogomes.com/img/ivo.jpg" />
+<meta name="twitter:creator" content="@ivogomes" />
+<script type='application/ld+json'>{"@context":"https://schema.org","@type":"Person","url":"https://www.ivogomes.com/blog/","sameAs":["http://www.facebook.com/ivogomes","https://instagram.com/ivogomes/","http://www.linkedin.com/in/ivogomes","https://www.youtube.com/user/ivogomes","https://twitter.com/ivogomes"],"@id":"#person","name":"Ivo Gomes"}</script>
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários de IvoGomes.com &raquo; Abrir/Fechar elementos usando Javascript e CSS" href="/abrirfechar-elementos-usando-javascript-e-css/feed/" />
+<link rel='stylesheet' id='wp-block-library-css' href='/wp-includes/css/dist/block-library/style.min.css?ver=5.0.4' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='/?p=337' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ivogomes.com%2Fblog%2Fabrirfechar-elementos-usando-javascript-e-css%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ivogomes.com%2Fblog%2Fabrirfechar-elementos-usando-javascript-e-css%2F&#038;format=xml" />
+<link rel="amphtml" href="/abrirfechar-elementos-usando-javascript-e-css/amp/"></head>
+<body id="blog">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v2.4&appId=634518223269818";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+<!--[if IE lte 8 ]>
+    <div class="ie-warning">
+        <div class="ink-grid">
+            <p><strong>AVISO: Está a usar uma versão desactualizada do Internet Explorer.</strong><br />Para poder ter uma mehor experiência de navegação neste site, por favor actualize para um navegador mais moderno como o <a href="https://google.com/chrome">Chrome</a>, <a href="https://apple.com/safari">Safari</a>, <a href="getfirefox.com">Firefox</a> ou o <a href="https://windows.microsoft.com/en-us/internet-explorer/ie-10-worldwide-languages">Internet Explorer 10</a>.</p>
+        </div>
+    </div>
+<![endif]-->
+<nav class="a11y"><a href="#contents">Saltar para os conteúdos</a></nav>
+<header id="top">
+<div class="ink-grid">
+<div class="column-group">
+<div class="all-30 small-100 tiny-100 align-left">
+<h1>IvoGomes.com</h1>
+</div>
+<div class="all-70 small-100 tiny-100 align-right">
+<form method="get" class="ink-form" id="searchform" action="/">
+<div class="control-group push-right">
+<label for="s">Pesquisar no blog</label>
+<div class="control">
+<input type="search" id="s" name="s" placeholder="Pesquisar no blog" value="">
+<button class="ink-button" type="submit"><span class="fa fa-search"></span><span class="hide-all"> Pesquisar</span></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</header>
+<nav class="ink-navigation ink-sticky" id="main-menu">
+<div class="ink-grid">
+<ul class="menu horizontal" role="menubar">
+<li role="menuitem" class="home"><a href="http://www.ivogomes.com/#top" title="Voltar ao topo">IG</a></li>
+<li role="menuitem"><a href="http://www.ivogomes.com/#about">Sobre<span class="hide-large hide-medium"> Mim</span></a></li>
+<li role="menuitem" class="hide-small hide-tiny"><a href="http://www.ivogomes.com/#work">Trabalho</a></li>
+<li role="menuitem" class="hide-small hide-tiny"><a href="http://www.ivogomes.com/#training">Formações<span class="hide-medium"> e Workshops</span></a></li>
+
+<li role="menuitem" class="hide-small hide-tiny"><a href="http://www.ivogomes.com/#contact">Contactos</a></li>
+<li role="menuitem" class="push-right active"><a href="/"><span class="hide-small hide-tiny"></span>Blog</a></li>
+</ul>
+</div>
+</nav>
+<div id="contents">
+<div class="ink-grid">
+<div class="column-group gutters">
+<div class="all-15 medium-10 hide-small hide-tiny">
+<p></p>
+</div>
+<div class="all-70 medium-80 small-100 tiny-100">
+<p><a href=""><span class="fa fa-arrow-left"></span> Voltar ao início</a></p>
+<article itemscope itemtype="http://schema.org/Article">
+<h1 id="post-337" itemprop="name">Abrir/Fechar elementos usando Javascript e CSS</h1>
+<p class="author-date">Por <strong itemprop="author" itemscope itemtype="http://schema.org/Person">Ivo Gomes</strong>, em <span itemprop="datePublished" content="2007-3-14">Quarta-feira, 14 de Março de 2007</span> | <a href="#comments-list" title="Coment&aacute;rios para: Abrir/Fechar elementos usando Javascript e CSS"><span class="fa fa-comment"></span> 62 Coment&aacute;rios</a></p>
+<meta itemprop="interactionCount" content="UserComments:62" />
+<div itemprop="articleBody">
+<div class="warning-old-post"><strong><span class="fa fa-warning"></span> AVISO:</strong> Este artigo foi escrito em 2007. Todos os exemplos aqui demonstrados já estão bastante desatualizados e este artigo é mantido apenas por histórico. Os comentários a este artigo foram também desativados.</div>
+<p>Vou começar hoje a publicar uma série de artigos com exemplos de código que costumo usar para elaborar vários tipos de layout (HTML+CSS) e efeitos em Javascript ou AJAX (algo que estou a começar a aprender a mexer este ano).</p>
+<p>Estes exemplos irão contemplar temas como: criação de 2 ou mais colunas usando CSS, como criar menus usando uma lista de itens, como posicionar elementos num local exacto numa página, bem como alguns efeitos simples em Javascript. Estou aberto a sugestões ;)</p>
+<p>Hoje começo com o tema:</p>
+<h2>Abrir/Fechar elementos usando Javascript e CSS</h2>
+<p>Basicamente, através de um pequeno código Javascript e uma linha de CSS conseguimos fazer com que um determinado elemento se abra ou feche mediante um clique. Por exemplo, podemos querer ter alguma informação na página que é acedida apenas quando o utilizador clica num link. Isto faz com que essa informação apareça sem ter que recarregar a página (no fundo, a informação está lá, mas está escondida).</p>
+<p>Para tal, basta termos o seguinte código Javascript e colocá-lo na nossa página ou num ficheiro externo:</p>
+<ol class="code">
+<li><code>function toggle(obj) {</code></li>
+<li class="tab1"><code>var el = document.getElementById(obj);</code></li>
+<li class="tab1"><code>if ( el.style.display != 'none' ) {</code></li>
+<li class="tab2"><code>el.style.display = 'none';</code></li>
+<li class="tab1"><code>}</code></li>
+<li class="tab1"><code>else {</code></li>
+<li class="tab2"><code>el.style.display = '';</code></li>
+<li class="tab1"><code>}</code></li>
+<li><code>}</code></li>
+</ol>
+<p>No HTML teremos o link para abrir/fechar a caixa de informação (nota, é necessário indicar que "id" é que vamos abrir/fechar):</p>
+<ol class="code">
+<li><code>&lt;a href="#" onclick="toggle('maisinfo');"&gt;Mais Informação&lt;/a&gt;</code></li>
+</ol>
+<p>E finalmente, a <code>div</code> com a "id" que será aberta ou fechada usando o link anterior:</p>
+<ol class="code">
+<li><code>&lt;div id="maisinfo" style="display:none"&gt;Conteúdos que ficarão escondidos&lt;/div&gt;</code></li>
+</ol>
+<p>O CSS usado nesta <code>div</code> indica que este elemento está escondido quando se abrir a página. Se quiserem que o elemento apareça aberto, basta remover a instrução do <code>style</code>.</p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle.php">Ver exemplo 1</a></p>
+<h2>E para quem não tem o javascript activado no browser?</h2>
+<p>Pegando no Exemplo 1, vamos fazer com que o link "Mais Informação" apenas apareça para os browsers que tiverem o Javascript activado. Sendo assim, alteramos o link para:</p>
+<ol class="code">
+<li><code>&lt;script&gt;</code></li>
+<li class="tab1"><code>if (true) {</code></li>
+<li class="tab2"><code>document.write('&lt;p&gt;&lt;a href="#" onclick="toggle(\'maisinfo\');"&gt;Mais Informação&lt;/a&gt;&lt;/p&gt;');</code></li>
+<li class="tab1"><code>}</code></li>
+<li><code>&lt;/script&gt;</code></li>
+<li><code>&lt;noscript&gt;&lt;p class="erro"&gt;O Javascript está desactivado no seu browser.&lt;/p&gt;&lt;/noscript&gt;</code></li>
+</ol>
+<p>Ou seja, caso não exista nenhuma versão de Javascript, apenas mostramos o texto que está entre as tags <code>noscript</code>.<br />
+Esta versão ainda não está perfeita porque falta dizer ao browser que, se não houver javascript, então os conteúdos devem ter um <code>display:block</code>, caso contrário, um utilizador com CSS activo e Javascript desactivo, não irá ver o texto.</p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle2.php">Ver exemplo 2</a></p>
+<h2>Fazer a mesma coisa, mas com efeitos animados (Script.aculo.us + Prototype)</h2>
+<p>Para que possamos animar a abertura/fecho do elemento, necessitamos de usar uma "library" de efeitos. Neste exemplo, vamos usar a <a href="http://script.aculo.us/">Script.aculo.us</a>.<br />
+A Scrip.taculo.us é uma biblioteca de efeitos em Javascript que pode ser facilmente usada no nosso site, sem ser necessário grandes conhecimentos de programação. Basta fazer download e colocar numa pasta do site.</p>
+<p>No cabeçalho da página, temos que chamar os efeitos, assim:</p>
+<ol class="code">
+<li><code>&lt;script type="text/javascript" src="/lib/js/prototype.js"&gt;&lt;/script&gt;<br />
+&lt;script type="text/javascript" src="/lib/js/scriptaculous.js"&gt;&lt;/script&gt;</code></li>
+</ol>
+<p><strong>Nota: </strong>Iremos usar esta biblioteca em vez do javascript usado no Exemplo 1.</p>
+<p>Depois basta alterar o link que também tinhamos definido para algo como:</p>
+<ol class="code">
+<li><code>&lt;a href="#" onclick="Effect.toggle('maisinfo','slide'); return false;"&gt;</code></li>
+</ol>
+<p>Em que: "maisinfo" é o nome da <code>div</code> a abrir/fechar e "slide" é o efeito. Podemos usar outros efeitos, tais como "blind" ou "appear".</p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle3.php">Ver exemplo 3</a></p>
+<h2>Separação do Javascript dos conteúdos</h2>
+<p>Da mesma forma que podemos separar a apresentação (CSS) dos conteúdos (HTML), também é possível separar os efeitos e outras animações (Javascript) para fora do código HTML.<br />
+(Obrigado ao <a href="http://www.sergionunes.com/">Sérgio Nunes</a> pela dica!)</p>
+<p>Fiz um pequeno teste com base no Exemplo 1, em que modifiquei o HTML, removendo todo o Javascript e colocando as acções à parte no Javascript.</p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle4.php">Ver exemplo 4</a></p>
+<h2>E fazendo a mesma coisa usando jQuery</h2>
+<p>Graças ao <a href="http://blog.logon.com.pt/">José Carlos</a>, temos um exemplo que consegue fazer tudo o que os anteriores fazem, e melhor. Através do <a href="https://jquery.com/">jQuery</a>, uma biblioteca de Javascript, é possível, com pouco código, abrir ou fechar um elemento usando animação e, ao mesmo tempo, ter em conta os utilizadores que não têm javascript activado. Além de tudo isto, faz também a separação do Javascript para um ficheiro externo, o que nos deixa com um HTML limpo e sem mais nenhuma tag que não seja HTML puro.</p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle5.php">Ver exemplo 5</a></p>
+<p>Definitivamente, esta é a melhor solução para este tipo de situações.</p>
+<h2>Outros métodos</h2>
+<p>O <a href="http://www.dustindiaz.com/seven-togglers/">Dustin Diaz mostra 7 maneiras diferentes de abrir/fechar (toggle) um elemento</a> usando Javascript. Estes exemplos fazem basicamente a mesma coisa mostrada no Exemplo 1, mas usando várias metodologias diferentes.</p>
+<h2>Conclusão</h2>
+<p>Usando um pequeno pedaço de código é possível tornar o nosso site um pouco mais interactivo. É claro que este tipo de elementos e as animações não devem ser usadas em demasia, mas sim, tendo em conta um propósito e um objectivo bem definidos que facilitem de alguma forma a navegabilidade do site.<br />
+Por exemplo, esta função seria bastante útil numa listagem de itens com um link para "ver mais informações" sobre cada um deles. Desta forma, o utilizador não seria bombardeado com tanta informação de início e ao mesmo tempo teria a liberdade de poder abrir a informação detalhada de cada elemento sem ter que recarregar a página inteira nem distrair-se com outra informação que não é relevante na altura.</p>
+<p><strong>Nota: </strong>Este artigo é apenas uma forma de eu ir testando algumas coisas em Javascript. Uma vez que só agora estou a aprender a usar esta linguagem (ainda só consigo usar coisas que outros já desenvolveram) é normal que nos comentários apareçam pessoas mais entendidas que eu e que dêem melhores sugestões/soluções para estes problemas. De qualquer das formas, a discussão do tema ajudará sempre a que eu (e outros) possamos aprender um pouco mais. Talvez nos próximos artigos me fique exclusivamente pelo HTML+CSS e deixe o javascript um pouco de lado até perceber minimamente da coisa :)</p>
+</div>
+<div class="fb-like" data-href="https://www.ivogomes.com/blog/abrirfechar-elementos-usando-javascript-e-css/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</article>
+<div class="column-group more-articles">
+<div class="all-50 medium-50 small-100 tiny-100">
+<p><span class="fa fa-arrow-left"></span> Artigo Anterior<br /><a href="/2%c2%ba-encontro-de-profissionais-de-usabilidade/">CANCELADO: 2º Encontro de Profissionais de Usabilidade</a></p>
+</div>
+<div class="all-50 medium-50 small-100 tiny-100">
+<p class="align-right">Artigo Seguinte <span class="fa fa-arrow-right"></span><br /><a href="/3%c2%ba-seminario-de-usabilidade/">3º Seminário de Usabilidade</a></p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="column-group gutters">
+<div class="all-20 medium-10 hide-small hide-tiny">
+<p></p>
+</div>
+<div class="all-60 medium-80 small-100 tiny-100">
+<section id="comments-list">
+<h2 class="align-center"><span class="fa fa-comment fa-2x"></span><br &>62 Coment&aacute;rios</h2>
+<ol class="unstyled">
+<li class="comentario" id="comment-11603">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/30def9b77ccaf2e9df8d615fd8837ebc?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/30def9b77ccaf2e9df8d615fd8837ebc?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.profissionalweb.net/blog/' rel='external nofollow' class='url'>Cesar Oliveira</a></p>
+<p class="author-date">14 de Março de 2007, 12:44</p>
+</div>
+<div class="text">
+<p>Olá Ivo, muitos parabéns,</p>
+<p>Aqui está um post verdadeiramente util e interessante.</p>
+<p>Continua nessa onda que vais bem.</p>
+<p>Um abraço de Guimarães<br />
+César Oliveira<br />
+<a href="http://www.profissionalweb.net/blog/" rel="nofollow">http://www.profissionalweb.net/blog/</a><br />
+<a href="http://www.profissionalweb.net/cursos/" rel="nofollow">http://www.profissionalweb.net/cursos/</a><br />
+<a href="http://www.profissionalweb.net/gestdoc/" rel="nofollow">http://www.profissionalweb.net/gestdoc/</a></p>
+<p>PS: Tu estás em que cidade ?</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-11604">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/8ac73fe5c5b3d09bf674f7b4ba2cde1a?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/8ac73fe5c5b3d09bf674f7b4ba2cde1a?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://rodrigomuniz.com/' rel='external nofollow' class='url'>Muniz</a></p>
+<p class="author-date">14 de Março de 2007, 12:53</p>
+</div>
+<div class="text">
+<p>Está aí uma dica que merecia um pouco de material português :)<br />
+Ótimo!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-11605">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://blog.logon.com.pt/' rel='external nofollow' class='url'>José Carlos</a></p>
+<p class="author-date">14 de Março de 2007, 13:01</p>
+</div>
+<div class="text">
+<p>Boa dica.</p>
+<p>Penso que se deve evitar a utilização de links com o # como destino.<br />
+Podes fazer o seguinte: se a pessoa tiver o javascript activo, a informação adiccional aparece normalmente, logo, não é necessário o link.<br />
+Se a pessoa tiver o javascript activo, podes criar o link via javascript.<br />
+Para evitar a utilização dos eventos inline, pode-se atribuir ao link criado uma id, ou uma class, e fazer o seguinte (utilizando a scriptaculous ou a jquery é simples):<br />
+&#8220;raptar&#8221; a funcionalidade de clique do link e fazer que, ao clicar, em vez de ter o comportamento normal seguir o link), execute uma função, neste caso a toggle().<br />
+Logo sou capaz de ter mais tempo para exemplificar.</p>
+<p>Fica a sugestão.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-11607">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://blog.logon.com.pt/' rel='external nofollow' class='url'>José Carlos</a></p>
+<p class="author-date">14 de Março de 2007, 13:03</p>
+</div>
+<div class="text">
+<p>no inicio, onde disse:<br />
+: se a pessoa tiver o javascript activo, a informação adiccional aparece normalmente, logo, não é necessário o link.</p>
+<p>deve ler-se:<br />
+: se a pessoa tiver o javascript <strong>desactivo</strong>, a informação adiccional aparece normalmente, logo, não é necessário o link..</p>
+<p>Peço desculpa.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-11613">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">14 de Março de 2007, 13:52</p>
+</div>
+<div class="text">
+<p>@José Carlos: Obrigado pela dica. Por acaso já tinha pensado nisso dos links a apontar para &#8220;#&#8221;, mas não me ocorreu nenhuma forma de dar a volta. Quanto às sugestões que dás, infelizmente só comecei agora a aprender Javascript, por isso ainda não estou apto para as implementar de cabeça :)<br />
+Vou pesquisar um pouco e depois meto aqui a solução (ou faço um novo post só sobre isso).</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-11614">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href="https://concursosdefotografia.blogspot.com/" rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+<p class="author-date">14 de Março de 2007, 14:01</p>
+</div>
+<div class="text">
+<p>O José Carlos tem razão.<br />
+E é importante que o site não deixe de ser acessível só por usar Ajax.</p>
+<p>E já experimentaste a jQuery? <a href="https://jquery.com/" rel="nofollow">http://jquery.com/</a></p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-11618">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/1ff9c55fcc06a93a614248d31cb4ed3c?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/1ff9c55fcc06a93a614248d31cb4ed3c?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.sergionunes.com/' rel='external nofollow' class='url'>Sérgio Nunes</a></p>
+<p class="author-date">14 de Março de 2007, 14:38</p>
+</div>
+<div class="text">
+<p>Sugiro que, em vez de usar JS directamente nos código HTML, se use JS não intrusivo. Ver por exemplo:</p>
+<p><a href="http://alistapart.com/articles/behavioralseparation" rel="nofollow">http://alistapart.com/articles/behavioralseparation</a></p>
+<p>As vantagens são grandes e estão associadas à separação da estrutura-estilo-dinâmica das páginas web.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-11620">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">14 de Março de 2007, 15:04</p>
+</div>
+<div class="text">
+<p>@Jorge Laranjo: Vou ver a jQuery. Já me falaram muito bem disso.</p>
+<p>@Sérgio Nunes: Obrigado pelo link. Não sabia que dava para fazer essa separação, tal como a do CSS/HTML. Estive a experimentar, mas ainda não percebo muito de Javascript para conseguir fazer com que algo funcione&#8230;</p>
+<p>Quanto à acessibilidade, já tenho uma versão que só mostra o link se o browser tiver o javascript activado. Agora só me falta dizer que a div tem que ter o display:block se não houver javascript (para que o texto fique visível).</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-11625">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/c3c400c18b635c67ded330d03c92d0e1?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/c3c400c18b635c67ded330d03c92d0e1?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Estevão Lucas</p>
+<p class="author-date">14 de Março de 2007, 16:52</p>
+</div>
+<div class="text">
+<p>Olá Ivo,<br />
+Tudo bem?</p>
+<p>Alguns exemplos você utiliza o Prototype + Scriptaculous (2 frameworks). Recomendo, por varios fatores, jQuery, um fremework que faz o que o Prototype e o Scriptaculous faz junto, e quando não faz, existe um Plugin que o faça.<br />
+jQuery tem uma comunidade de desenvolvedores muito grande, varios plugins&#8230;! É uma maravilhar.<br />
+So pra exemplificar a simplicidade, abaixo vai o código com a mesma funcionalidade que você fez:<br />
+<code><br />
+$( "p &gt; a" ).click( function()<br />
+{<br />
+$( "#maisinfor" ).toggle();<br />
+});<br />
+</code></p>
+<p>Não-obstrutivo, muito menor, e com somente um framework!<br />
+Ah&#8230;trabalha com seletores de CSS3&#8230;nossa!</p>
+<p>Abraços</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-11626">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://blog.logon.com.pt/' rel='external nofollow' class='url'>José Carlos</a></p>
+<p class="author-date">14 de Março de 2007, 17:19</p>
+</div>
+<div class="text">
+<p>Também concordo que a jQuery é das mais interessantes, quer pelo tamnho reduzido, quer pelas funcionalidades.<br />
+Para não alongar o post, e como era preciso código, deixo esta página de exemplo para aquilo que disse atrás, <a href="http://logon.com.pt/diversos/jquery.html" title="ver exemplo" rel="nofollow">a criação, via javascript do link</a>, recorrendo à <a href="https://jquery.com/" title="jquery.com" rel="nofollow">jQuery</a>.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-11627">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/0a5e7ae59ecf7efee3168b8d3ad424c9?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/0a5e7ae59ecf7efee3168b8d3ad424c9?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.andrecrins.com/' rel='external nofollow' class='url'>André</a></p>
+<p class="author-date">14 de Março de 2007, 17:42</p>
+</div>
+<div class="text">
+<p><strong>Grande ivo!</strong><br />
+Muito boa a iniciativa de publicar artigos relacionados a desenvolvimento. Tenho certeza que será útil para os visitantes do seu blog.</p>
+<p>Meu conhecimento em JS é muito pequeno. Eis aqui a oportunidade de aprender.</p>
+<p>Parabéns pelo site/blog.</p>
+</div>
+<div class="clear"></div>
+</li>
+
+<li class="comentarioi" id="comment-11629">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">14 de Março de 2007, 17:50</p>
+</div>
+<div class="text">
+<p>Esse exemplo do jQuery deixou-me embasbacado :D</p>
+<p>Brutal. Extremamente simples quando comparado com outros métodos que andei a pesquisar.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-14493">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/44dd01f5b3ac8a8724e6c3e4bf020c53?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/44dd01f5b3ac8a8724e6c3e4bf020c53?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Gabriel</p>
+<p class="author-date">25 de Abril de 2007, 05:39</p>
+</div>
+<div class="text">
+<p>Cara, muito bom o post, mas pintou uma duvida: sou leigo no assunto e queria saber como faço para ao clicar em 1, fechas as demais abertas&#8230; trocando em miudos: sempre deixar no maximo 1 aberta&#8230;</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-14500">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/c9dd589616d26396a12d70c773e3cf64?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/c9dd589616d26396a12d70c773e3cf64?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Euclides</p>
+<p class="author-date">25 de Abril de 2007, 08:15</p>
+</div>
+<div class="text">
+<p>Oi pessoal eu estou aprendendo java script e enfrento ainda muitas deficuldades, tentei seguir todos os passos para abrire fechar usando o JS, mas nao deu em nada, eu uso o dreaweaver e pois os codico assim:</p>
+<p>Untitled Document</p>
+<p>Mais Informação<br />
+function toggle(obj) {<br />
+var el = document.getElementById(obj);<br />
+if ( el.style.display != &#8216;none&#8217; ) {<br />
+el.style.display = &#8216;none&#8217;;<br />
+}<br />
+else {<br />
+el.style.display = &#8221;;<br />
+}<br />
+}<br />
+Conteúdos que ficarão escondidos</p>
+<p>//- -&gt;</p>
+<p><strong> 1. Objetivo </strong><br />
+&nbsp;<br />
+&nbsp; </p>
+<p>Ajude-me por favor</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-14727">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">27 de Abril de 2007, 10:58</p>
+</div>
+<div class="text">
+<p>Euclides, o Javascript não pode ficar no meio do HTML. Abra as páginas com os meus exemplos e veja como foi colocado o código.</p>
+<p>Gabriel, provavelmente para isso terá que ser definido mais algum código para deixar sempre um bloco aberto, mas neste momento também ainda não sei como o fazer (ainda não tive tempo de aprofundar mais os meus conhecimentos de JavaScript).</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-14737">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/c9dd589616d26396a12d70c773e3cf64?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/c9dd589616d26396a12d70c773e3cf64?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Euclides</p>
+<p class="author-date">27 de Abril de 2007, 11:59</p>
+</div>
+<div class="text">
+<p>Alo ivo , eu estou aprendendo java script agora , se pode &#8211; se indicar um manual ou coisa parecida para eu aprefessoar os meus conhecimentos agradeceria, e um dos males que eu enfrento e que estou num pais de africa e acesso a livros de treinamento web e ferramentas web e muito deficil , se podem se ajudar me agradeceria imenso. eu de sul de africa em mocambique. foi&#8230;</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-14740">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://logon.com.pt/' rel='external nofollow' class='url'>José Carlos</a></p>
+<p class="author-date">27 de Abril de 2007, 12:30</p>
+</div>
+<div class="text">
+<p>@Euclides: posso recomendar eu um? Se sim, um excelente livro de DOM Scripting é o DOM Scripting &#8211; Web DEsign with Javascript and the Document Object Model, do Jeremy Keith.<br />
+Tem uma introdução bastante boa ao Javascript e depois avança para o DOM Scripting, sempre com exemplos e conselhos.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-15323">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">3 de Maio de 2007, 17:23</p>
+</div>
+<div class="text">
+<p>Eu comprei o &#8220;Learning Javascript&#8221; há uns dois meses mas ainda não tive tempo de começar a ler.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-15519">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">7 de Maio de 2007, 17:36</p>
+</div>
+<div class="text">
+<p>E finalmente tive a oportunidade de fazer uma pequena página usando o JQuery :)</p>
+<p>Podem ver aqui: <a href="http://anedotas.numsitedejeito.com/faq" rel="nofollow">http://anedotas.numsitedejeito.com/faq</a></p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-19378">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/c8abf7f548e7df76ebb79c53e07bcce9?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/c8abf7f548e7df76ebb79c53e07bcce9?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href="https://danilodebiazi.blogspot.com/" rel='external nofollow' class='url'>Danilo Debiazi</a></p>
+<p class="author-date">13 de Junho de 2007, 08:45</p>
+</div>
+<div class="text">
+<p>Achei muito interessante este artigo, me ajudou muito de fato. Mas neste código surgiu o seguinte problema:</p>
+<p><code><a href="#" rel="nofollow">Mais Informação</a></code></p>
+<p>O href fazia com que no clique o site fosse para o topo, resolvi este problema simplesmente tirando o href inteiro.</p>
+<p><b>Eu queria saber se tem como colocar img do lado da sessao, uma img com seta para baixo ou seta para direita, vai depende do estado. Como que faz isso ? </b></p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-30476">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/3c3f653196981dcf79b5c0ee4e2fd5a2?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/3c3f653196981dcf79b5c0ee4e2fd5a2?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.wwwsites.com.br/' rel='external nofollow' class='url'>Elfrancio Granjense</a></p>
+<p class="author-date">25 de Setembro de 2007, 20:06</p>
+</div>
+<div class="text">
+<p>Finalmente encontrei o que procurava neste blog, obrigadão!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-31518">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/118b439aecf80f34b7716ae8b4ccf471?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/118b439aecf80f34b7716ae8b4ccf471?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Ademir Bastiani</p>
+<p class="author-date">6 de Outubro de 2007, 19:04</p>
+</div>
+<div class="text">
+<p>Ola , estou tentando fazer um exemplo, mas da erro effect não está defenido onde estou erando.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-35827">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/0ebaa3c9f3b52c19e0d13c090a15962f?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/0ebaa3c9f3b52c19e0d13c090a15962f?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">TIAGO...BELOM</p>
+<p class="author-date">22 de Novembro de 2007, 17:55</p>
+</div>
+<div class="text">
+<p>e ae galera eu queria saber como eu faço para colocar uma parte so de comentarios em meu site&#8230;.pohhh se alguem souber porfavor me ajudem&#8230;.blz&#8230;.ate+++</p>
+<p><a href="http://www.ivogomes.com/cdn-cgi/l/email-protection#22564b43454d7d40474e4d4f624a4d564f434b4e0c414d4f"><span class="__cf_email__" data-cfemail="e7938e868088b885828b888aa78f88938a868e8bc984888a">[email&#160;protected]</span></a></p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-37594">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/8a5604e816380ff809f344acf0cf33b1?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/8a5604e816380ff809f344acf0cf33b1?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.yogodoshi.com/blog' rel='external nofollow' class='url'>Cayo Medeiros aka. yogodoshi</a></p>
+<p class="author-date">20 de Dezembro de 2007, 15:08</p>
+</div>
+<div class="text">
+<p>Parabéns pelo artigo.<br />
+Muito bem explicado!</p>
+<p>Ia fazer um post como esse no meu blog mas agora acho que não é mais necessário, indicarei o seu link. ^^</p>
+<p>Abraços!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-51299">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/01d326908cf5fc67218d608a7dc0dc0e?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/01d326908cf5fc67218d608a7dc0dc0e?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href="https://dominiohacker.blogspot.com/" rel='external nofollow' class='url'>Lipeh</a></p>
+<p class="author-date">1 de Junho de 2008, 00:51</p>
+</div>
+<div class="text">
+<p>Gostei, uma post que realmente presta..<br />
+amigo queria uma ajudinha sua..<br />
+to cum um pekeno problema..<br />
+ve se entende&#8230;<br />
+tenho um arkivo index.htm dentro de uma pasta chamada 1.<br />
+E tenho uma pagina chamada comandos.htm fora da pasta 1, ou seja, no desktop.<br />
+Supondo entao:<br />
+Desktop:<br />
+Desktop/comandos.htm<br />
+Desktop/1/index.htm<br />
+Queria saber se existe alguma forma de eu fazer um link dentro da minha index.htm ir para a pagina que esta fora da pasta entende??<br />
+eu sei que poderia usar o link certinho que da certo, colocar:<br />
+C:&#8230;.desktop\comandos.htm<br />
+so que eu vou colocar esta pagina(index.htm) em um cd para ser a autorun dele&#8230;<br />
+logo, o meu driver aki em casa é E;<br />
+mais tem locais que ele é d; f; g;<br />
+e ai nao vai dar certo&#8230;<br />
+tem como??<br />
+valew espero respostas&#8230;entra no mew blog e ai fala se tem ou nao ok?<br />
+flwss</p>
+<p><a href="https://dominiohacker.blogspot.com/" rel="nofollow">http://dominiohacker.blogspot.com</a></p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-52088">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">11 de Junho de 2008, 09:15</p>
+</div>
+<div class="text">
+<p>Podes fazer os links relativos em vez de os fazeres absolutos. Exemplo: &#8220;1/index.php&#8221; em vez de &#8220;Desktop/1/index.htm&#8221;. Para fazer um link para uma pasta anterior, basta fazer &#8220;../comandos.html&#8221;</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-72543">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/de5832fea7fc7edc5208c94391797234?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/de5832fea7fc7edc5208c94391797234?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://FutebolemPortugal.do.sapo.pt/' rel='external nofollow' class='url'>Carlos Bonaparte</a></p>
+<p class="author-date">28 de Outubro de 2008, 12:56</p>
+</div>
+<div class="text">
+<p>Olá,</p>
+<p>realmente, este post sem dúvida está interessante, até porque encontrei exatamente aquilo que queria para o meu site.. um menu onde possa mostrar certas coisas só quando o utilizador clicar nelas.</p>
+<p>Falta a parte de trocar um conteúdo por outro, quando o utilizador clica, mas isso são pormenores.</p>
+<p>Eu tenho é uma dúvida.<br />
+Em relação ao último comentário sobre os caminhos&#8230;</p>
+<p>Eu tenho um ficheiro dentro de uma pasta, vamos imaginar index.htm. e tenho outro na pasta anterior.<br />
+Então para passar do Index para o ficheiro da pasta anterior eu faço ../. Até aí tudo certo.<br />
+Mas tem jeito de eu passar para a pasta seguinte?<br />
+Imaginem.<br />
+Eu tenho 5 pastas. Todas elas contêm um ficheiro com um nome idêntico: noticias.htm<br />
+Tem jeito de eu fazer um link do ficheiro index para o ficheiro noticias, independente da past?<br />
+Ou seja, sem que eu especifique para que pasta está a ir?<br />
+A ideia é esta.</p>
+<p>3 pastas dentro do mesmo nível: Menus, Belenenses e Maritimo<br />
+Dentro das pastas Belenenses e Maritimo existe um ficheiro dentro de cada pasta com o nome Noticias.htm<br />
+Na pasta menus está o ficheiro 1liga.htm</p>
+<p>A ideia é criar um menu que possa colocar numa iframe, sem precisar de fazer um menu para cada clube. Bastaria com fazer um menu para todos os clubes da primeira divisão, segunda, terceira, distritais.<br />
+O que supostamente aconteceria era que na página principal da pasta Belenenses, Belenenses.htm e da pasta Maritimo, Maritimo.htm, teria uma iframe direcionando para este menu, algo do estilo<br />
+iframe src=&#8221;../Menus/1liga.htm&#8221;<br />
+especificações à parte.</p>
+<p>Até aí tudo certo&#8230; agora, como é que eu posso dizer ao HTML para ele me apresentar o ficheiro &#8220;noticias.htm&#8221; dentro daquela pasta, no ficheiro 1liga.htm?</p>
+<p>Isso é posível de fazer?</p>
+<p>Abraços a todos.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-73076">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">4 de Novembro de 2008, 15:25</p>
+</div>
+<div class="text">
+<p>Olá Carlos.<br />
+Em relação à sua dúvida, quando cria um link, tem de colocar sempre o endereço correcto para o ficheiro. Por isso, se o ficheiro está na pasta /ABCD/noticias.html, terá que usar essa informação para o link.<br />
+A única forma de não ter que escrever manualmente o nome da pasta seria usar um pouco de programação para identificar o nome do menu e substituir automaticamente pelo nome da pasta, mas sugiro que siga pelo caminho mais fácil, que é alterar o menu manualmente.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-73726">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/de5832fea7fc7edc5208c94391797234?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/de5832fea7fc7edc5208c94391797234?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://FutebolemPortugal.do.sapo.pt/' rel='external nofollow' class='url'>Carlos Bonaparte</a></p>
+<p class="author-date">11 de Novembro de 2008, 11:42</p>
+</div>
+<div class="text">
+<p>Olá, obrigado&#8230;<br />
+A questão é que, tendo em conta que o objetivo final é ter aproximadamente 2000 clubes, alterar no final da temporada 2000 menus&#8230; é muita coisa;</p>
+<p>eu já soube entretanto que isto se tem de fazer com PHP. Eu estou num curso universitário, onde apesar de não darem essa matéria, dão PHP, mas não me ajudam por aqui&#8230;</p>
+<p>Em Javascript creio que isso não é possível de fazer, só mesmo em PHP&#8230; se houver alguém que possa dar uma dica ao meu problema&#8230;</p>
+<p>Obrigado,</p>
+<p>Carlos Bonaparte</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-85046">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/8455a60d6a0a281c31703dac3729ef4a?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/8455a60d6a0a281c31703dac3729ef4a?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Carlos Fernando</p>
+<p class="author-date">26 de Março de 2009, 13:02</p>
+</div>
+<div class="text">
+<p>Grande post.<br />
+Mas, estou com uma dificuldade.<br />
+É possível abrir o script, a div, utilizando o php.<br />
+Gostaria de abrir a div dentro de um if do PHP.</p>
+<p>Obrigado.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-85325">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/18f1ade3755f5abdc76b6bac8e9850c7?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/18f1ade3755f5abdc76b6bac8e9850c7?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://internetparatodos.blogs.sapo.pt/' rel='external nofollow' class='url'>José Coelho</a></p>
+<p class="author-date">10 de Abril de 2009, 17:42</p>
+</div>
+<div class="text">
+<p>Olá ivo, boa tarde. Descobri o seu site que considero bastante útil. Tenho a dizer que não entendo nada nem de Javascript nem de CSS, mas gostaria imenso de ter um efeito no meu blog e pedia-lhe ajuda, nesse sentido. Gostaria de criar um efeito colorido nos links ao passar com o rato, o que em inglês se chama Flashing Links. Aqui nesta página japonesa pode ver o efeito que pretendo: <a href="http://celluloide.tistory.com/category/Future%20pop/EBM" rel="nofollow">http://celluloide.tistory.com/category/Future%20pop/EBM</a><br />
+Tenho um blog no Sapo que funciona em CSS, como posso adicionar este efeito colorido no meu blog? Pode-me ajudar? Obrigado pela atenção. Um abraço. José</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-85327">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">10 de Abril de 2009, 18:54</p>
+</div>
+<div class="text">
+<p>Olá José.<br />
+Não sei como fazer esse efeito, mas sugiro um muito mais simples, que muda apenas a cor do link ao passar com o rato por cima. O que me mostrou parece ser um pouco irritante se o site tiver muitos links e todos eles fizerem esse efeito ao passar com o rato. Além disso, seria necessário criar algo em JavaScript para esse efeito e não sei se os blogs do SAPO permitem que isso seja feito.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-87158">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/e420cda44f1c9f8b0d623ef67e9a86e9?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/e420cda44f1c9f8b0d623ef67e9a86e9?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Patricia</p>
+<p class="author-date">8 de Outubro de 2009, 16:10</p>
+</div>
+<div class="text">
+<p>Preciso de um help</p>
+<p>preciso fazer um link chamar uma pasta q esta dentro da outra pasta.</p>
+<p>ate entao eu estava usando </p>
+<p>../pasta/index.html</p>
+<p>so que agora nao funciona<br />
+esse codigo p chama pasta dentro de pasta 2x</p>
+<p>alguem pode me ajudar?</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-87505">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/45fde8a5f23b01228e400c8cdf7a4c3c?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/45fde8a5f23b01228e400c8cdf7a4c3c?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Jéssica</p>
+<p class="author-date">9 de Novembro de 2009, 17:31</p>
+</div>
+<div class="text">
+<p>oiie , preciso de uma ajudinha urgente por favor . como faço para mudar o fundo de uma página usando javascript . mas de forma qe altere o css . usar soment bgColor nao adianta por causa do css :/ preciso de outra alternativa . alguem sabe ? obrigada</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-87555">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/640b5a14576287a63c2b8edb86714bcd?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/640b5a14576287a63c2b8edb86714bcd?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">WESLLEY CLYTON</p>
+<p class="author-date">25 de Novembro de 2009, 13:18</p>
+</div>
+<div class="text">
+<p>ola!.. preciozo de uma ajuda.. vc poderia descrever como feez o exemplo 5?</p>
+<p>vlw</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-87556">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">25 de Novembro de 2009, 13:27</p>
+</div>
+<div class="text">
+<p>Olá. Basta fazer &#8220;View Source&#8221; e os passos estão todos explicados no código.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-87557">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/640b5a14576287a63c2b8edb86714bcd?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/640b5a14576287a63c2b8edb86714bcd?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">weslley clyton</p>
+<p class="author-date">25 de Novembro de 2009, 13:54</p>
+</div>
+<div class="text">
+<p>ops.. rsrs vlw.. na realidade nem tinha prestado a atenção..</p>
+<p>mas agora tenhu uma duvida de verdade..</p>
+<p>é o seguinte eu tenho uma div dinamica certo&#8230; assim o nome dela vai variar.</p>
+<p>como colocar na funça? pois a função exige um nome fixo..<br />
+pois se eu deixar a div com o nome fixo.. todas as div feitas pelo loop vao ter o mesmo nome. assim quando eu clicar no botão para aparecer vao aparecer todas e quando for fexchar vao fechar todas.. gostaria que cada botao fosse fechar apenas a sua div&#8230; vlww</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-88745">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/4911aed8ea5d74d7f291db78a9d7cd99?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/4911aed8ea5d74d7f291db78a9d7cd99?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.aquimais.com.br/' rel='external nofollow' class='url'>Wagner Cecatto</a></p>
+<p class="author-date">8 de Abril de 2010, 19:20</p>
+</div>
+<div class="text">
+<p>Prezados Amigos, excelente matéria, parabéns! Porém tenho uma dúvida e gostaria que vocês me ajudassem, baixei o código e o exemplo usando o jQuery, porém não estou conseguindo colocar mais de uma função na página, ou seja, com vários botões que tenham a tarefa de abrir/fechar conteúdo&#8230;podem me ajudar? grato pela atenção de todos!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-89221">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/3e5ecac34d8952b356a6379a46e2a10c?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/3e5ecac34d8952b356a6379a46e2a10c?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.rodrigoamorinn.zip.net/' rel='external nofollow' class='url'>RodrigoAmorinn</a></p>
+<p class="author-date">20 de Maio de 2010, 16:18</p>
+</div>
+<div class="text">
+<p>Cara, muito bom o seu artigo, gostei muito é realmente o que eu precisava, mas como agente coloca a direção para a div abrir? no meu caso eu gostaria que a div abrisse da esquerda para a direita.</p>
+<p>como que eu faço isso? </p>
+<p>help-me =D<br />
+abraços</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-89415">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/a31038fd26b8e8d456c322626ba6d62b?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/a31038fd26b8e8d456c322626ba6d62b?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Giuliano Fernandes</p>
+<p class="author-date">28 de Maio de 2010, 03:12</p>
+</div>
+<div class="text">
+<p>Caro colega, se pudesse me ahudar ficaria muito grato.</p>
+<p>Utilizei seu menu para separar em pastas os teste de ping que faço em alguns hosts, eu queria saber se tem um jeito de listar estes arquivos gerados dentro das pastas de forma dinamica sem que precise colocar os itens que quero visualizar no codigo. Até porque serão arquivos gerados através de um shell script(arquivos .txt).</p>
+<p>Obrigado!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-89492">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/cea5814d72e4a819d87d1506a485fd75?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/cea5814d72e4a819d87d1506a485fd75?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Flavio</p>
+<p class="author-date">1 de Junho de 2010, 22:46</p>
+</div>
+<div class="text">
+<p>Ivo parabéns são pessoas como vc que faz pessoas que não tem muito conhecimento procurar sempre aprender mais estas suas dicas são muito úteis</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-89583">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/0b6069d4aca1a00c7d311a67a987a403?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/0b6069d4aca1a00c7d311a67a987a403?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.impressoesonline.com.br/' rel='external nofollow' class='url'>Giovanni</a></p>
+<p class="author-date">12 de Junho de 2010, 14:03</p>
+</div>
+<div class="text">
+<p>Ivo, estou aprendendo JS e gostei muito dessa dica, gostaria de utiliza-la da seguinte forma:</p>
+<p>Imagine que tenho um menu ao lado esquerdo da pagina. Link1, Link2, Link3&#8230; Quando eu clicar no Link1 utilizando esse efeito vai surgir a imagem1, quando eu clicar no link2, a imagem1 fecha e aparece a imagem2, quando clicar no link3 a imagem1 ou imagem2 (depende daquela que o usuario esta) fecha e abre a imagem3, é possivel? você poderia me ajudar?</p>
+<p>parabens pelo blog, abraço</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-90287">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/85493f4ae32cf89958ce00307573e145?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/85493f4ae32cf89958ce00307573e145?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://mundovermelho.totalsfree.com/' rel='external nofollow' class='url'>Redton</a></p>
+<p class="author-date">26 de Agosto de 2010, 02:30</p>
+</div>
+<div class="text">
+<p>Rapaz tava procurando por algo assim a tempos!<br />
+Obrigado.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-90442">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/386ca0bdcdddbad6c9b1893d8e68dd80?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/386ca0bdcdddbad6c9b1893d8e68dd80?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.vejanomapa.com/df' rel='external nofollow' class='url'>Thiago</a></p>
+<p class="author-date">2 de Setembro de 2010, 16:04</p>
+</div>
+<div class="text">
+<p>Olá<br />
+Como faço para integrar esse código em um tema wordpress?</p>
+<p>Grato!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-91049">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/f59ee4a0d8d7ab297a1f876db336adbd?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/f59ee4a0d8d7ab297a1f876db336adbd?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">sidney suderio</p>
+<p class="author-date">16 de Outubro de 2010, 14:29</p>
+</div>
+<div class="text">
+<p>Muito bom o código, pretendo usá-lo para ler um texto criado em c++</p>
+<p>grato</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-91628">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/a05b7a93690ee1baad4e7ca3f573eeac?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/a05b7a93690ee1baad4e7ca3f573eeac?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://ragnaroker.tk/' rel='external nofollow' class='url'>Viniccios</a></p>
+<p class="author-date">15 de Novembro de 2010, 22:55</p>
+</div>
+<div class="text">
+<p>Amigo, não consegui usar o efeito no link, pode me ajudar?</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-93064">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/dd4772e960d807677d01c207736f5e28?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/dd4772e960d807677d01c207736f5e28?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href="https://carosamigos.wordpress.com/" rel='external nofollow' class='url'>João MArcos</a></p>
+<p class="author-date">15 de Fevereiro de 2011, 11:48</p>
+</div>
+<div class="text">
+<p>Vinicios, veja se esse site ajuda: <a href="https://carosamigos.wordpress.com/2009/02/11/abrir-e-fechar-div-com-sinal-de-menos-e-de-mais/" rel="nofollow">http://carosamigos.wordpress.com/2009/02/11/abrir-e-fechar-div-com-sinal-de-menos-e-de-mais/</a></p>
+<p>Neste post tem um link ensinando fazer em jquery tb.</p>
+<p>^^</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-96470">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/6b213cf5b0b4fd9338bb429571444672?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/6b213cf5b0b4fd9338bb429571444672?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.rodrigoaraujo92.xpg.com.br/' rel='external nofollow' class='url'>@rodrigoaraujo92</a></p>
+<p class="author-date">8 de Maio de 2011, 20:05</p>
+</div>
+<div class="text">
+<p>Perfeito cara era exatamente o que eu preucurava!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-100791">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/9a9a6788757ae9e649a380989a69c415?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/9a9a6788757ae9e649a380989a69c415?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Fábio Luiz Parizotto</p>
+<p class="author-date">18 de Agosto de 2011, 22:36</p>
+</div>
+<div class="text">
+<p>Valeu mesmo pelo esclareciemento. Mas eu ainda não sei como fazer um &#8220;id&#8221; com CSS para a div. Eu já vi modelos de idnos c´digos-fonte de vários outros sites que usam este recurso de abrir/fechar, e cada um tem um id diferente nas suas divs. Gostaria de saber exatamente como produzir esse CSS para os ids.<br />
+Grato!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-103191">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/574f8faf37106484197da963681c9096?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/574f8faf37106484197da963681c9096?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.bandaatrito.com.br/' rel='external nofollow' class='url'>Felipe Braga</a></p>
+<p class="author-date">5 de Outubro de 2011, 12:36</p>
+</div>
+<div class="text">
+<p>Gostaria de saber como eu faço para derrubar uma página aberta pelo Mozilla Firefox e reabrí-la automaticamente pelo IE, através de código. Se o cara já abiri pelo IE, nada acontece. Alguém poderia me ajudar ??</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-103212">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">6 de Outubro de 2011, 08:59</p>
+</div>
+<div class="text">
+<p>@Filipe Braga: Primeiro: nunca deverias fazer uma coisas dessas.<br />
+Segundo: não podes :P</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-103216">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/574f8faf37106484197da963681c9096?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/574f8faf37106484197da963681c9096?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.bandaatrito.com.br/' rel='external nofollow' class='url'>Felipe Braga</a></p>
+<p class="author-date">6 de Outubro de 2011, 13:08</p>
+</div>
+<div class="text">
+<p>Pois não é que achei um modo de fazer? Uso um shell com comandos DOS depois de GET URL atual e rodo no cliente, funciona, vou aprimorar e mando por aqui.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-105387">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/30743fd8e98b862119e3f87393601d73?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/30743fd8e98b862119e3f87393601d73?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.facenetgame.com/' rel='external nofollow' class='url'>Angel</a></p>
+<p class="author-date">14 de Novembro de 2011, 01:44</p>
+</div>
+<div class="text">
+<p>Simplesmente maravilhado com tanta coisa que vi. Pena nao ver o que realmente pretendo para o meu site. De qualquer forma impressionado mesmo.<br />
+Obrigado. ASS: Angel.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-108273">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/8fcac151fa49f6d313297121fb0844e3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/8fcac151fa49f6d313297121fb0844e3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href="https://aprenderpravalereassim.blogspot.com/" rel='external nofollow' class='url'>Lini</a></p>
+<p class="author-date">16 de Dezembro de 2011, 17:40</p>
+</div>
+<div class="text">
+<p>Estou iniciando no mundo dos blogs e gostaria de colocar em um post esta possibilidade de abrir e fechar clicando no link.<br />
+Tipo: num texto de dicas, colocar o texto e quando enumerar as dicas cada dica ter um link explicativo que ao clicar ela abra e depois clica novamente para ela fechar.</p>
+<p>Exemplo:</p>
+<p>Aproveite o tempo livre com as crianças com muita diversão, criatividade e aprendizagem&#8230;</p>
+<p>1) INCENTIVANDO À LEITURA:<br />
+O ideal é deixar sempre livros interessantes e atrativos ao alcance dos olhos e das mãos dos pequenos para que ele intercale as atividades do dia com a leitura ou mesmo visualização das ilustrações oferecidas no livro. Se você não tem este material disponível é interessante localizar a biblioteca mais próxima e tornar-se sócio, você e as crianças, para que possam pegar livros, gibis, revistas, revistinhas emprestados. Se o orçamento permitir adquirir alguns títulos é uma boa opção. Procure se informar quais os títulos adequados a faixa etária de seus filhos para não fazer escolhas erradas. Será que você está pronta ou pronto para estimular a leitura de seu filho(a). Faça o teste e confira.<br />
+P.S.: Quero criar o link neste texto de forma que ao clicar no ítem 1) INCENTIVANDO A LEITURA: O texto abaixo apareça se abrindo no próprio texto e após a leitura eu possa clicar novamente para ele sumir ou se fechar.<br />
+Se puder me orientar melhor fico muito grata.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-108501">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">19 de Dezembro de 2011, 14:40</p>
+</div>
+<div class="text">
+<p>@Lini: Coloquei o seu exemplo <a href="https://www.ivogomes.com/exemplos/js_openelements.html" rel="nofollow">aqui</a>. Não sei qual vai ser a estrutura do HTML no seu site, mas criei uma de exemplo com 2 links que abrem a respectiva descrição.<br />
+Se vir o código fonte, está lá a explicação de como funciona e pode adaptar como quiser.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-113575">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/e2e7f5fa0480709f04f6b461a7520362?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/e2e7f5fa0480709f04f6b461a7520362?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.fazeromeusite.com/' rel='external nofollow' class='url'>Dermeval Junior</a></p>
+<p class="author-date">11 de Janeiro de 2012, 17:47</p>
+</div>
+<div class="text">
+<p>Bom artigo.</p>
+<p>Só uma dica, se ao esconder o elemento, você quiser manter o espaço que ele ocupava antes, é só usar visibility:hidden ao invés de display:none desde que no elemento tenha sido definido altura e largura</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-116550">
+<div class="author">
+<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/23d83201cddc308cabb3194094cf09c4?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/23d83201cddc308cabb3194094cf09c4?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Andreza</p>
+<p class="author-date">13 de Março de 2012, 19:44</p>
+</div>
+<div class="text">
+<p>Olá,</p>
+<p>Gostei do seu site, muito bem explicado e me ajudou com muitas coisas, porém, agora estou com um problema e gostaria da sua ajuda, se puder: Criei um layout com css e agora precisaria que uma página já publicada executasse dentro desse layout, uma parde dele, eu consigo colocar o link e tal mas a pessoa tem que clicar para ver e nao é isso que eu quero, quero que quando ela entre já mostre, isso seria possível?</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-117617">
+<div class="author">
+<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/7db6595fb902319a9b7d02c917cad5ef?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/7db6595fb902319a9b7d02c917cad5ef?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.brunodemauro.com.br/' rel='external nofollow' class='url'>Bruno de MAuro</a></p>
+<p class="author-date">17 de Abril de 2012, 17:04</p>
+</div>
+<div class="text">
+<p>Procurei muito no Google e achei vocês!<br />
+Finalmente um código que funciona!</p>
+<p>Vlw!</p>
+<p>Abrs!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-123181">
+<div class="author">
+<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/37b8dce2b5f9398d3f30755eefccc7cb?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/37b8dce2b5f9398d3f30755eefccc7cb?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.valuti.com.br/' rel='external nofollow' class='url'>Alex Souza</a></p>
+<p class="author-date">15 de Março de 2013, 16:32</p>
+</div>
+<div class="text">
+<p>Boa tarde Ivo. </p>
+<p>Como a propriedade eu uso nesse exemplo do José Carlos. Para em vez de clicar para abrir, eu apenas colocar o mouse sobre ?. </p>
+<p>No código tem o bind &#8220;click&#8221; porém não sei o que colocar para &#8220;oumouseover&#8221; ou coisa do tipo. </p>
+<p>Fico no aguardo.<br />
+Qualquer coisa me manda no email. </p>
+<p>Grato,</p>
+</div>
+<div class="clear"></div>
+</li>
+</ol>
+<h3 id="trackbacks">Blogs que "linkam" para aqui</h2>
+<ol id="trackbacklist">
+<li id="comment-11714" class="fa fa-retweet">
+<a href="<a href='http://amref.wordpress.com/2007/03/16/abrirfechar-elementos-usando-javascript-e-css/' rel='external'>amref.wordpress.com/2007/03/16/abrirfechar-elementos-usando-javascript-e-css</a>" class="external" title="Link externo (abre numa nova janela)">Abrir/Fechar elementos usando Javascript e CSS &laquo; [REF]</a><br /><span class="small">16 de Março de 2007, 15:20 </li>
+<li id="comment-12529" class="fa fa-retweet">
+<a href="<a href='http://jf.eti.br/?p=360' rel='external'>jf.eti.br/?p=360</a>" class="external" title="Link externo (abre numa nova janela)">Abrir/Fechar elementos usando Javascript e CSS &laquo; Thunder-Boy</a><br /><span class="small">31 de Março de 2007, 16:31 </li>
+<li id="comment-28176" class="fa fa-retweet">
+<a href="<a href='http://blog.amendoim.net/2007/09/04/abrirfechar-conteudo-utilizando-javascript-e-css/' rel='external'>blog.amendoim.net/2007/09/04/abrirfechar-conteudo-utilizando-javascript-e-css</a>" class="external" title="Link externo (abre numa nova janela)">Blog do Amendoim&#8230; &raquo; Abrir/Fechar Conteúdo utilizando Javascript e CSS.</a><br /><span class="small">4 de Setembro de 2007, 16:10 </li>
+</ol>
+</section>
+<h2>Comente!</h2>
+<div class="desativado"><strong><span class="fa fa-ban"></span></strong> Os coment&aacute;rios a este artigo foram desativados.</div>
+</div></div>
+</div>
+</div>
+<footer>
+<div class="ink-grid">
+<p>Ivo Gomes</p>
+<div class="social">
+<ul>
+<li><a title="Facebook" class="fb" href="https://www.facebook.com/ivogomes"><span class="fa fa-facebook"></span><i>Facebook</i></a></li>
+<li><a title="Twitter" class="twitter" href="https://www.twitter.com/ivogomes"><span class="fa fa-twitter"></span><i>Twitter</i></a></li>
+<li><a title="Google+" class="gplus" href="https://google.com/+IvoGomes/?rel=author"><span class="fa fa-google-plus"></span><i>Google+</i></a></li>
+<li><a title="LinkedIn" class="lk" href="https://www.linkedin.com/in/ivogomes"><span class="fa fa-linkedin"></span><i>LinkedIn</i></a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script data-cfasync="false" src="http://www.ivogomes.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="http://www.ivogomes.com/js/ink-all.min.js"></script>
+<script type="text/javascript" src="http://www.ivogomes.com/js/autoload.js"></script>
+<script type="text/javascript" src="http://www.ivogomes.com/js/prism.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88368-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+/* Deffer loading CSS files */
+var giftofspeed = document.createElement('link');
+giftofspeed.rel = 'stylesheet';
+giftofspeed.href = '/css/ink.min.css';
+giftofspeed.type = 'text/css';
+var godefer = document.getElementsByTagName('link')[0];
+godefer.parentNode.insertBefore(giftofspeed, godefer);
+
+var giftofspeed2 = document.createElement('link');
+giftofspeed2.rel = 'stylesheet';
+giftofspeed2.href = '/css/font-awesome.min.css';
+giftofspeed2.type = 'text/css';
+var godefer2 = document.getElementsByTagName('link')[0];
+godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+
+var giftofspeed3 = document.createElement('link');
+giftofspeed3.rel = 'stylesheet';
+giftofspeed3.href = 'https://fonts.googleapis.com/css?family=Arvo%7CPacifico';
+giftofspeed3.type = 'text/css';
+var godefer3 = document.getElementsByTagName('link')[0];
+godefer3.parentNode.insertBefore(giftofspeed3, godefer3);
+</script>
+
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"Este site utiliza cookies para ajudar a disponibilizar os respetivos serviços e analisar o tráfego. Ao utilizar este site, concorda que o mesmo utilize cookies.","dismiss":"Entendi","learnMore":"Saiba mais","link":"","theme":"dark-bottom"};
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+
+</body>
+</html>

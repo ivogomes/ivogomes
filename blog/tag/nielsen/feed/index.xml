@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>nielsen &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/nielsen/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Sites mal concebidos podem provocar stress e ansiedade</title>
+		<link>/sites-mal-concebidos-podem-provocar-stress-e-ansiedade/</link>
+		<comments>/sites-mal-concebidos-podem-provocar-stress-e-ansiedade/#comments</comments>
+		<pubDate>Thu, 21 Dec 2006 10:41:44 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[lentidão]]></category>
+		<category><![CDATA[nielsen]]></category>
+		<category><![CDATA[raiva]]></category>
+		<category><![CDATA[stress]]></category>
+
+		<guid isPermaLink="false">/sites-mal-concebidos-podem-provocar-stress-e-ansiedade/</guid>
+		<description><![CDATA[<p>Um estudo publicado pelo Social Issues Research Centre concluiu que uma boa parte dos utilizadores da Internet sofrem do síndrome do "rato enraivecido" (Mouse Rage Syndrome).</p>
+<p>Já o Nielsen dizia há uns anos: se a página demorar mais do que 8 segundos a abrir, o utilizador começa a ficar impaciente e irritado.</p>
+<p>O conteúdo <a rel="nofollow" href="/sites-mal-concebidos-podem-provocar-stress-e-ansiedade/">Sites mal concebidos podem provocar stress e ansiedade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sites-mal-concebidos-podem-provocar-stress-e-ansiedade/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Donald Norman e os webstandards</title>
+		<link>/donald-norman-e-os-webstandards/</link>
+		<comments>/donald-norman-e-os-webstandards/#comments</comments>
+		<pubDate>Thu, 13 Oct 2005 19:06:27 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[apple]]></category>
+		<category><![CDATA[microsoft]]></category>
+		<category><![CDATA[nielsen]]></category>
+		<category><![CDATA[norman]]></category>
+		<category><![CDATA[web-standards]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=178</guid>
+		<description><![CDATA[<p>Donald Norman é juntamente com Jakob Nielsen fundador do Nielsen-Norman Group. Durante os últimos anos, Norman e Nielsen têm defendido a usabilidade na web e quer se queira quer não, foram eles que conseguiram fazer com que a usabilidade passasse a ser um factor importantíssimo no desenvolvimento de qualquer projecto web ou de software. No [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/donald-norman-e-os-webstandards/">Donald Norman e os webstandards</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/donald-norman-e-os-webstandards/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

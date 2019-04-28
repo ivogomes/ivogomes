@@ -1,0 +1,508 @@
+<!doctype html>
+<html amp lang="pt-PT">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title>Testes de Usabilidade: uma metodologia rápida e fácil - IvoGomes.com</title>
+		<link rel="canonical" href="/testes-de-usabilidade-uma-metodologia-rapida-e-facil/" />
+	<script type='text/javascript' src='https://cdn.ampproject.org/v0.js' async></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic"><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"IvoGomes.com"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/www.ivogomes.com\/blog\/testes-de-usabilidade-uma-metodologia-rapida-e-facil\/","headline":"Testes de Usabilidade: uma metodologia r\u00e1pida e f\u00e1cil","datePublished":"2008-12-05T15:02:28+00:00","dateModified":"2016-06-17T09:03:22+00:00","author":{"@type":"Person","name":"Ivo Gomes"},"image":{"@type":"ImageObject","url":"https:\/\/www.ivogomes.com\/blog\/wp-content\/uploads\/2008\/12\/picture-3.png","width":0,"height":0}}</script>
+	<meta name="generator" content="AMP Plugin v1.0.1; mode=classic">	<style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.amp-wp-unknown-size img {
+	/** Worst case scenario when we can't figure out dimensions for an image. **/
+	/** Force the image into a box of fixed dimensions and use object-fit to scale. **/
+	object-fit: contain;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #fff;
+	color: #353535;
+	font-family: 'Merriweather', 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #353535;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #353535;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Site Icon */
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #353535;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #353535;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #696969;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #c2c2c2;
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+amp-carousel {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #c2c2c2 url( /wp-content/plugins/amp/assets/images/placeholder-icon.png) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #c2c2c2;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #c2c2c2;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #696969;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style>
+</head>
+
+<body class="">
+
+<header id="top" class="amp-wp-header">
+	<div>
+		<a href="/">
+									<span class="amp-site-title">
+				IvoGomes.com			</span>
+		</a>
+	</div>
+</header>
+
+<article class="amp-wp-article">
+	<header class="amp-wp-article-header">
+		<h1 class="amp-wp-title">Testes de Usabilidade: uma metodologia rápida e fácil</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/5d965724123073222e4d321ab394f4c8?s=24&#038;d=mm&#038;r=r" alt="Ivo Gomes" width="24" height="24" layout="fixed"></amp-img>
+				<span class="amp-wp-author author vcard">Ivo Gomes</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2008-12-05T15:02:28+00:00">
+		10 anos ago	</time>
+</div>
+	</header>
+
+	
+	<div class="amp-wp-article-content">
+		<p>Os testes com utilizadores servem para validar um interface ou identificar problemas de usabilidade existentes recorrendo a um grupo de utilizadores que navegará no website. Podem ainda servir para identificar problemas que ainda não tenham identificados numa avaliação heurística prévia. </p>
+<p>Estes testes permitem identificar potenciais problemas de usabilidade e observar o comportamento dos utilizadores durante a navegação no website, bem como perceber o motivo pelo qual escolhem seguir determinados caminhos no website em detrimento dos caminhos considerados "normais". </p>
+<p>Alguns dos benefícios e vantagens dos testes de usabilidade em relação a outro tipo de testes são:</p>
+<ul><li>O comportamento dos utilizadores pode ser observado e comparado com os outros utilizadores que realizam a mesma tarefa;</li>
+<li>A compreensão das dificuldades sentidas pelo utilizador pode ser alcançada através do registo das verbalizações durante o teste.</li>
+</ul><h2>Metodologia</h2>
+<p>Basicamente, aquilo que procuramos saber com a realização de testes de usabilidade é se:</p>
+<ul><li>Os utilizadores foram capazes de realizar as tarefas em causa?</li>
+<li>A informação relevante foi encontrada?</li>
+<li>Quanto tempo demorou?</li>
+<li>Os caminhos seguidos foram os mais eficientes?</li>
+<li>Os utilizadores sabem o que estão a fazer?</li>
+<li>Que problemas encontraram? </li>
+</ul><p>Partindo do princípio que já temos um grupo de utilizadores para realizar os testes (<a href="http://www.useit.com/alertbox/20000319.html">mais informação sobre quantos utilizadores testar</a>), irei demonstrar a seguir alguns dos passos necessários para a realização de um teste de usabilidade:</p>
+<h3>Passo 1:</h3>
+<p>Informar os utilizadores sobre a confidencialidade dos dados que irão ser recolhidos:</p>
+<blockquote><p>A informação recolhida neste teste, assim como os seus dados pessoais serão tratados com confidencialidade e serão utilizados exclusivamente para este estudo. As tarefas realizadas são simuladas e não implicam nenhuma acção real. Posteriormente a informação confidencial será destruída.</p></blockquote>
+<h3>Passo 2:</h3>
+Fazer uma breve apresentação sobre o teste, explicando do que se trata, para que serve, e o que irá acontecer:
+<blockquote><p>Obrigado por participar neste teste que tem como objectivo verificar se o website XXX funciona adequadamente e se os utilizadores conseguem usá-lo facilmente.<br>
+Este website permite &lt;descrever aqui as principais funcionalidades do website&gt;.<br>
+Neste website você irá realizar uma série de tarefas que lhe serão apresentadas.<br>
+Não se preocupe se cometer algum erro, é normal. Não existem respostas boas nem más. Não o estamos a avaliar a si, mas sim o website XXX.</p></blockquote>
+<h3>Passo 3:</h3>
+<p>Fazer um pequeno questionário Pré-Teste de modo a recolher mais alguma informação sobre o nível de experiência dos utilizadores e se os mesmos já usaram serviços semelhantes ao que irá ser testado.</p>
+<p>Exemplos de algumas perguntas: </p>
+<blockquote><p>Idade; Sexo; Quantas horas por dia costuma navegar na Internet?; Conhece o website XXX?; Já alguma vez usou um website do tipo XXX?; etc...</p></blockquote>
+<p>Não convém fazer demasiadas perguntas porque aquilo que queremos testar realmente é o website. As respostas dadas pelos utilizadores podem servir para os separar por grupos (ex: os mais experientes e os mais inexperientes; separar por sexos; separar por grupos de idades; etc...).</p>
+<h3>Passo 4:</h3>
+<p>Criar um cenário. Os cenários especificam como os utilizadores devem realizar as suas tarefas num determinado contexto. Exemplo de um cenário:</p>
+<blockquote><p>Está a planear as suas férias da Páscoa e decidiu que vai viajar para Helsínquia. Os dias que tem livres são entre 10 e 17 de Abril, mas só pode admitir pequenas alterações a estas datas porque combinou as férias com um amigo seu que mora lá e quer aproveitar ao máximo os seus dias livres. Quer comprar um bilhete de avião para Helsínquia, mas também sabe que Estocolmo fica logo ali ao lado e se quiser pode comprar um bilhete para lá se os preços forem melhores e mais convidativos.</p></blockquote>
+<h3>Passo 5:</h3>
+<p>Pedir ao utilizador para realizar um conjunto de tarefas no website. Cada tarefa deve ter um critério de sucesso e um tempo estimado de conclusão. As tarefas devem ser fornecidas individualmente e só após a conclusão da primeira tarefa é que deve ser fornecida a segunda, e por aí adiante.</p>
+<p>Os critérios de sucesso normalmente utilizados nos testes são os seguintes:</p>
+<ul><li><strong>Sucesso (Fácil): </strong>O utilizador concluiu a tarefa na primeira tentativa, sem problemas;</li>
+<li><strong>Sucesso (Médio):</strong> O utilizador concluiu a tarefa na segunda ou terceira tentativa tendo ligeiras dificuldades;</li>
+<li><strong>Sucesso (Difícil): </strong>O utilizador concluiu a tarefa na terceira ou quarta tentativa com bastantes dificuldades;</li>
+<li><strong>Assistido:</strong> O utilizador terminou a tarefa mas teve de ser assistido para a completar. Este critério é considerado um insucesso;</li>
+<li><strong>Insucesso:</strong> O utilizador não conseguiu completar a tarefa no tempo máximo definido ou desistiu.</li>
+</ul><p>Normalmente são criadas 5 tarefas que os utilizadores têm que realizar no website. Com 5 tarefas os testes duram normalmente 1 hora (já incluindo os questionários iniciais e finais). Com mais de 5 tarefas estaríamos a "prender" o utilizador demasiado tempo e nas últimas tarefas é provável que o que ele queira mesmo é "despachar-se" o mais rapidamente possível porque já está farto de ali estar. Assim, não devemos testar mais do que 5 tarefas em cada teste.</p>
+<p>Juntamente com a realização das tarefas, é necessário indicar ao utilizador algumas instruções, entre elas a utilização do protocolo “Think Aloud”:</p>
+<blockquote><p>Por favor comente em voz alta aquilo que vai fazendo e porquê, como se pensasse em voz alta. Nós gostaríamos de conhecer as razões das suas escolhas, dúvidas, etc.<br>
+Não o iremos ajudar em nenhuma situação porque nos interessa saber como se desenvencilham os utilizadores sozinhos no website, no entanto é possível que em certas situações possamos fazer algum comentário ou pergunta</p></blockquote>
+<p>Esta é uma técnica bastante popular usada durante os testes de usabilidade. Consiste em pedir ao utilizador que verbalize todas as suas acções, pensamentos, sentimentos e opiniões enquanto interage com o sistema.</p>
+<p>O maior benefício que podemos ter do uso deste protocolo é um conhecimento do modelo mental do utilizador e a razão porque segue determinados caminhos. Além disso, poderemos ter outros benefícios, como por exemplo, a terminologia que o utilizador usa para expressar uma ideia ou função pode e deve ser incorporada na concepção do produto ou pelo menos na sua documentação.</p>
+<p>Durante a realização das tarefas convém apontar todos os passos dados pelo utilizador, bem como todos os seus comentários. Isto pode ser feito simplesmente com papel e lápis (requer que o avaliador consiga ser tremendamente rápido a escrever e que consiga ao mesmo tempo ver os passos dados pelo utilizador) ou usando alta tecnologia (várias câmaras de filmar, uma apontada ao utilizador, para gravar as expressões faciais e verbalizações; e outra apontada ao ecrã para gravar todos os passos realizados).</p>
+<p>Existe ainda uma outra opção, bem mais simples e muito menos intrusiva, que é usar um software que faz tudo isso sem ser necessário nenhum aparelho extra que possa distrair ou intimidar o utilizador (saber que estamos a ser filmados pode ser intimidante, principalmente quando temos um tipo ao lado a tirar apontamentos de tudo o que fazemos). Existem várias soluções no mercado, mas a mais simples de todas é o <a href="http://www.silverbackapp.com/">Silverback</a>.</p>
+<p>O <a href="http://www.silverbackapp.com/">Silverback</a> permite gravar simultaneamente os passos dados pelo utilizador, as suas expressões faciais (usando a câmara de filmar do computador) e as suas verbalizações (usando o microfone do computador). O software não é gratuito (custa cerca de $50 dólares), mas 10% do valor é doado a uma associação para ajudar a salvar os Gorilas no Congo.</p>
+<p>O único senão desta aplicação é  quantidade de espaço em disco necessária para guardar toda esta informação...<br><a href="/wp-content/uploads/2008/12/picture-3.png"><amp-img src="/wp-content/uploads/2008/12/picture-3.png" alt="" title="Espaço necessário em disco para o Silverback" width="298" height="56" class="alignnone size-full wp-image-671 amp-wp-enforced-sizes" layout="intrinsic"></amp-img></a></p>
+<p>Em baixo temos um exemplo de um vídeo gravado usando o <a href="http://www.silverbackapp.com/">Silverback</a>. Como se pode ver, é possível identificar os locais onde o utilizador clicou, bem como observar as suas expressões e comentários.<br></p>
+<p>No final de cada tarefa podemos fazer um mini-questionário, pedindo ao utilizador que nos indique numa escala o nível de dificuldade sentido ao realizar a tarefa.</p>
+<p>Além do Silverback, recomendo que usem também o <a href="http://www.userfocus.co.uk/resources/datalogger.html">Usability Test Data Logger</a> da <a href="http://www.userfocus.co.uk/">UserFocus</a> para registar os tempos e taxas de sucesso de cada tarefa. No final de todos os testes poderá ser uma ajuda preciosa para a criação de gráficos de desempenho, eficácia e eficiência.</p>
+<p><strong>Nota:</strong> O Data Logger é uma folha de cálculo em Excel e requer uma versão do Microsoft Office que suporte macros. </p>
+<h3>Passo 6:</h3>
+<p>Depois de realizadas todas as tarefas, podemos fazer um pequeno questionário pós-teste para conhecer a opinião do utilizador sobre o website que acabou de usar. Basicamente podemos perguntar quais as áreas que teve mais dificuldades, quais as que teve menos dificuldades, etc... Podemos também pedir ao utilizador para indicar numa escala o nível de dificuldade global que sentiu ao navegar no website.</p>
+<p>Podemos aproveitar este passo final para fazer uma avaliação subjectiva.<br>
+A avaliação subjectiva diz-nos como é que os utilizadores se sentem em relação ao sistema que acabaram de testar. Esta actividade foi aplicada imediatamente a seguir aos testes de usabilidade realizados pelo utilizador.</p>
+<p>Os principais benefícios que se podem recolher desta avaliação subjectiva são:</p>
+<ul><li>A satisfação do utilizador é provavelmente o factor mais importante para influenciar as suas decisões em relação à aprovação ou não do sistema (outros factores importantes são o preço, tecnologia e a lealdade à marca);</li>
+<li>Uma fraca satisfação pode levar a queixas dos utilizadores, mesmo que sejam por vezes infundadas;</li>
+<li>A avaliação subjectiva complementa os dados recolhidos nas tarefas realizadas;</li>
+</ul><p>Se usarem o <a href="http://www.userfocus.co.uk/resources/datalogger.html">Usability Test Data Logger</a> podem escolher um de dois modelos para o cálculo da avaliação subjectiva.</p>
+<h2>Resultados</h2>
+<p>Nos resultados devem identificar todos os pontos em que os utilizadores tiveram dificuldades. De preferência devem usar screenshots e, caso os utilizadores testados o permitam, fornecer os vídeos dos testes ao cliente.</p>
+<p>Além dos resultados dos testes, podem fazer várias variações usando os dados recolhidos nos questionários pré e pós-teste. Por exemplo, podem separar os utilizadores em grupos e fazer analises separadas por grupo.</p>
+<p>Com o <a href="http://www.userfocus.co.uk/resources/datalogger.html">Usability Test Data Logger</a> podem ainda criar gráficos de desempenho, eficácia e eficiência, com base nos tempos de conclusão e nível de dificuldade sentido pelos utilizadores em cada tarefa.</p>
+<p><amp-img src="/wp-content/uploads/2008/12/picture-4a.png" alt="" title="Desempenho" class="alignnone size-original wp-image-673 amp-wp-enforced-sizes" width="550" height="166" layout="intrinsic"></amp-img></p>
+<p><amp-img src="/wp-content/uploads/2008/12/picture-9a.png" alt="" title="Eficiência" class="alignnone size-original wp-image-676 amp-wp-enforced-sizes" width="550" height="169" layout="intrinsic"></amp-img></p>
+<p><amp-img src="/wp-content/uploads/2008/12/picture-5a.png" alt="" title="Eficácia" class="alignnone size-original wp-image-674 amp-wp-enforced-sizes" width="550" height="167" layout="intrinsic"></amp-img></p>
+<p><amp-img src="/wp-content/uploads/2008/12/picture-6a.png" alt="" title="Eficácia" class="alignnone size-original wp-image-675 amp-wp-enforced-sizes" width="550" height="169" layout="intrinsic"></amp-img></p>
+<p>E desta forma, sem equipamento especial e gastando pouco dinheiro, conseguimos fazer um teste de usabilidade de forma simples e rápida. É claro que podíamos ir um pouco mais longe e fazer um estudo mais detalhado, com análises demográficas, etc, mas com este simples teste conseguimos descobrir a maior parte dos problemas de usabilidade existentes.</p>
+	</div>
+
+	<footer class="amp-wp-article-footer">
+			<div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="/category/usabilidade/" rel="category tag">Usabilidade</a>	</div>
+
+	<div class="amp-wp-meta amp-wp-tax-tag">
+		Tags: <a href="/tag/metogolodia/" rel="tag">metogolodia</a>, <a href="/tag/silverback/" rel="tag">silverback</a>, <a href="/tag/testes/" rel="tag">testes</a>, <a href="/tag/usabilidade/" rel="tag">Usabilidade</a>, <a href="/tag/utilizadores/" rel="tag">utilizadores</a>	</div>
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="/testes-de-usabilidade-uma-metodologia-rapida-e-facil/#comments">
+			Leave a Comment		</a>
+	</div>
+	</footer>
+</article>
+
+<footer class="amp-wp-footer">
+	<div>
+		<h2>IvoGomes.com</h2>
+		<p>
+			<a href="https://wordpress.org/">
+				Powered by WordPress			</a>
+		</p>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer>
+
+
+
+</body>
+</html>

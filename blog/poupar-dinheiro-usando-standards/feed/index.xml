@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Poupar dinheiro usando standards</title>
+	<atom:link href="/poupar-dinheiro-usando-standards/feed/" rel="self" type="application/rss+xml" />
+	<link>/poupar-dinheiro-usando-standards/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-42084</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 19 Mar 2008 09:28:31 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-42084</guid>
+		<description><![CDATA[Olá MAC! Obrigado pelos seus comentários :)
+
+Tens razão quando dizes que um site que cumpre os webstandards não quer dizer que seja acessível ou usável. Basicamente, cumprir os webstandards quer dizer que não tem erros no código, o que faz com que seja mais fácil torná-lo acessível.
+
+Ao seguirmos as regras do WCAG (ou do WCAG Samurai) estamos a melhorar a acessibilidade e consequentemente também a usabilidade (apesar de se dizer que são coisas diferentes, uma influencía sempre a outra. Se é mais acessível, automaticamente também é mais usável porque pode ser usado por mais pessoas e supostamente de forma mais fácil).
+
+É sempre bom saber que os sites que concebemos são acessíveis. Apesar de ter sempre essa preocupação, normalmente não costumo ter nenhum feedback de pessoas com necessidades especiais que navegam nos meus sites. Felizmente, as poucas que comentam dão sempre um feedback positivo e fazem aumentar um pouco mais o meu ego :)
+Estarei sempre disponível para participar com algum artigo no seu novo website, que desde já desejo que tenha o maior sucesso.
+
+Abraço,
+Ivo]]></description>
+		<content:encoded><![CDATA[<p>Olá MAC! Obrigado pelos seus comentários :)</p>
+<p>Tens razão quando dizes que um site que cumpre os webstandards não quer dizer que seja acessível ou usável. Basicamente, cumprir os webstandards quer dizer que não tem erros no código, o que faz com que seja mais fácil torná-lo acessível.</p>
+<p>Ao seguirmos as regras do WCAG (ou do WCAG Samurai) estamos a melhorar a acessibilidade e consequentemente também a usabilidade (apesar de se dizer que são coisas diferentes, uma influencía sempre a outra. Se é mais acessível, automaticamente também é mais usável porque pode ser usado por mais pessoas e supostamente de forma mais fácil).</p>
+<p>É sempre bom saber que os sites que concebemos são acessíveis. Apesar de ter sempre essa preocupação, normalmente não costumo ter nenhum feedback de pessoas com necessidades especiais que navegam nos meus sites. Felizmente, as poucas que comentam dão sempre um feedback positivo e fazem aumentar um pouco mais o meu ego :)<br />
+Estarei sempre disponível para participar com algum artigo no seu novo website, que desde já desejo que tenha o maior sucesso.</p>
+<p>Abraço,<br />
+Ivo</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: MAQ</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-42065</link>
+		<dc:creator><![CDATA[MAQ]]></dc:creator>
+		<pubDate>Tue, 18 Mar 2008 19:27:41 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-42065</guid>
+		<description><![CDATA[É bom que se diga que desenvolver um site nos padrões web (webstandards) facilita bastante a acessibilidade de um site, mas não a garante. Um site verdadeiramente acessível está dentro dos padrões web, tem uma boa usabilidade, pois acessibilidade não garante usabilidade e vice-versa, e respeita os itens do WCAG, que são os &quot;pa´drões web&quot; de acessibilidade do W3C. O WCAG Samurai deu uma atualizada boa no WCAG 1.0, mas, de qualquer forma, temos de unir essas várias etapas em um projeto acessível. Tudo isso é cultura, ou seja, depois que se começa a fazer de determinada forma, acostuma-se, e fica fácil. De início é complicado.
+
+Quanto ao público alvo de um site, é complicado tirar as pessoas com deficiência de qualquer público. Sou cego e especialista em acessibilidade. As pessoas que possuem sites técnicos sobre design já pensaram que posso frequentar um site destes? Pois frequentto. Compro livros para amigos, mas em que livrarias virtuais? Poucas têm acessibilidade e, por isso mesmo, inundam de pessoas cegas como eu. Trabalhei minha vida inteira com processamento de dados no SERPRO, que processa as tarifas e tributos para o ministério da fazenda no Brasil. Sou um consumidor como outro qualquer. Montei minha casa para mim, esposa e filho. Comprei móveis, eletrodomésticos e muitas vezes quis saber de características técnicas de muitas coisas, inclusive de carros e não tive como por falta de acessibilidade. Como dizem, o concorrente está a um clique de distância! Quando alguém pensa que uma pessoa com deficiência não faz parte de seu público alvo, tem de prestar atenção se conhece bem seu público alvo e, assim,  se conhece bem pessoas com deficiência ou se apenas está imaginando que, se fosse elas, não seria público alvo de ninguém! Parabéns Ivo, por seu site... é acessível! Vou indicá-lo em meus sites, especialmente o que vou lançar proximamente: www.acessibilidadelegal.com Gostaria de ter um texto teu por lá, quem sabe conversamos a respeito e  o amigo me dá essa honra?
+
+Abraços inclusivos, acessíveis e fáceis de usar do MAQ.]]></description>
+		<content:encoded><![CDATA[<p>É bom que se diga que desenvolver um site nos padrões web (webstandards) facilita bastante a acessibilidade de um site, mas não a garante. Um site verdadeiramente acessível está dentro dos padrões web, tem uma boa usabilidade, pois acessibilidade não garante usabilidade e vice-versa, e respeita os itens do WCAG, que são os &#8220;pa´drões web&#8221; de acessibilidade do W3C. O WCAG Samurai deu uma atualizada boa no WCAG 1.0, mas, de qualquer forma, temos de unir essas várias etapas em um projeto acessível. Tudo isso é cultura, ou seja, depois que se começa a fazer de determinada forma, acostuma-se, e fica fácil. De início é complicado.</p>
+<p>Quanto ao público alvo de um site, é complicado tirar as pessoas com deficiência de qualquer público. Sou cego e especialista em acessibilidade. As pessoas que possuem sites técnicos sobre design já pensaram que posso frequentar um site destes? Pois frequentto. Compro livros para amigos, mas em que livrarias virtuais? Poucas têm acessibilidade e, por isso mesmo, inundam de pessoas cegas como eu. Trabalhei minha vida inteira com processamento de dados no SERPRO, que processa as tarifas e tributos para o ministério da fazenda no Brasil. Sou um consumidor como outro qualquer. Montei minha casa para mim, esposa e filho. Comprei móveis, eletrodomésticos e muitas vezes quis saber de características técnicas de muitas coisas, inclusive de carros e não tive como por falta de acessibilidade. Como dizem, o concorrente está a um clique de distância! Quando alguém pensa que uma pessoa com deficiência não faz parte de seu público alvo, tem de prestar atenção se conhece bem seu público alvo e, assim,  se conhece bem pessoas com deficiência ou se apenas está imaginando que, se fosse elas, não seria público alvo de ninguém! Parabéns Ivo, por seu site&#8230; é acessível! Vou indicá-lo em meus sites, especialmente o que vou lançar proximamente: <a href="http://www.acessibilidadelegal.com/" rel="nofollow">http://www.acessibilidadelegal.com/</a> Gostaria de ter um texto teu por lá, quem sabe conversamos a respeito e  o amigo me dá essa honra?</p>
+<p>Abraços inclusivos, acessíveis e fáceis de usar do MAQ.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Rodrigues</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-38700</link>
+		<dc:creator><![CDATA[Ivo Rodrigues]]></dc:creator>
+		<pubDate>Tue, 08 Jan 2008 23:29:41 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-38700</guid>
+		<description><![CDATA[ola colega o teu site e bastante importante e cria dizer que sou condonimo e para mim a schindler e a melhor empresa de elevadores tem os melhores produtos e modernizados que existem.o meu elevador e um 3300 não se o houve a trabalhar sem casa das maquinas etc...]]></description>
+		<content:encoded><![CDATA[<p>ola colega o teu site e bastante importante e cria dizer que sou condonimo e para mim a schindler e a melhor empresa de elevadores tem os melhores produtos e modernizados que existem.o meu elevador e um 3300 não se o houve a trabalhar sem casa das maquinas etc&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-4022</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 02 Jun 2006 13:02:45 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-4022</guid>
+		<description><![CDATA[A ESPN mudou apenas a homepage para uma programação web standard. Num website do tamanho da ESPN é complicado manter o código limpo, especialmente quando há muitas pessoas a produzir conteúdos e não tiveram formação para continuarem a utilizar os standars a partir do momento em que o site foi redesenhado. Infelizmente é normal um site ser lançado seguindo todos os standards e um ano depois apresenta vários erros de validação devido à falta de formação dos produtores de conteúdos.
+
+Em relação aos quase 2000 erros de validação XHTML existentes no site da ESPN, a grande maioria são relativos ao uso de links com o caracter &quot;&amp;&quot; que o validador XHTML não compreende e considera-o como uma variável, dando assim um erro. É possível evitar que o &quot;&amp;&quot; seja considerado uma variável através de uma linha de código no início da página, mas não é isso que faz com que o site deixe ou não de usar webstandards.
+
+É claro que além destes erros, também há erros de validação do código em si, mas a explicação para isso está dada em cima: falta de formação dos produtores de conteúdos.]]></description>
+		<content:encoded><![CDATA[<p>A ESPN mudou apenas a homepage para uma programação web standard. Num website do tamanho da ESPN é complicado manter o código limpo, especialmente quando há muitas pessoas a produzir conteúdos e não tiveram formação para continuarem a utilizar os standars a partir do momento em que o site foi redesenhado. Infelizmente é normal um site ser lançado seguindo todos os standards e um ano depois apresenta vários erros de validação devido à falta de formação dos produtores de conteúdos.</p>
+<p>Em relação aos quase 2000 erros de validação XHTML existentes no site da ESPN, a grande maioria são relativos ao uso de links com o caracter &#8220;&#038;&#8221; que o validador XHTML não compreende e considera-o como uma variável, dando assim um erro. É possível evitar que o &#8220;&#038;&#8221; seja considerado uma variável através de uma linha de código no início da página, mas não é isso que faz com que o site deixe ou não de usar webstandards.</p>
+<p>É claro que além destes erros, também há erros de validação do código em si, mas a explicação para isso está dada em cima: falta de formação dos produtores de conteúdos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rafael Dourado</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-4021</link>
+		<dc:creator><![CDATA[Rafael Dourado]]></dc:creator>
+		<pubDate>Fri, 02 Jun 2006 12:27:19 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-4021</guid>
+		<description><![CDATA[Pode-se dizer que um site com 2205 erros de valiação (ESPN) está seguindo os padrões? Ou eles simplesmente fizeram um site sem tabelas?]]></description>
+		<content:encoded><![CDATA[<p>Pode-se dizer que um site com 2205 erros de valiação (ESPN) está seguindo os padrões? Ou eles simplesmente fizeram um site sem tabelas?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: diego</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3793</link>
+		<dc:creator><![CDATA[diego]]></dc:creator>
+		<pubDate>Wed, 10 May 2006 21:28:32 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3793</guid>
+		<description><![CDATA[Amanha vou fazer parte de uma banca de um projeto de pos-graduação sobre acessibilidade. 
+
+Já contarei as novidades.
+
+abraço
+
+Diego
+
+obs: coloca a noticia no www.linkk.com.br , que vale a pena dar visibilidade a este tipo de coisas.]]></description>
+		<content:encoded><![CDATA[<p>Amanha vou fazer parte de uma banca de um projeto de pos-graduação sobre acessibilidade. </p>
+<p>Já contarei as novidades.</p>
+<p>abraço</p>
+<p>Diego</p>
+<p>obs: coloca a noticia no <a href="http://www.linkk.com.br/" rel="nofollow">http://www.linkk.com.br/</a> , que vale a pena dar visibilidade a este tipo de coisas.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rogério Morais &#187; Blog Archive &#187; Padrões web é bom, mas parece que o usuário não acha isso</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3791</link>
+		<dc:creator><![CDATA[Rogério Morais &#187; Blog Archive &#187; Padrões web é bom, mas parece que o usuário não acha isso]]></dc:creator>
+		<pubDate>Wed, 10 May 2006 16:26:48 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3791</guid>
+		<description><![CDATA[[...] O gasto com banda pode ser reduzido com o uso dos padrões. Poupe dinheiro usando eles. Já o custo com a manutenção pode ser reduzido, uma vez que ela fica muito mais fácil de ser feita quando o site está padronizado. Atualizações que antes levavam dias para serem feitas podem ser feitas em minutos! [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] O gasto com banda pode ser reduzido com o uso dos padrões. Poupe dinheiro usando eles. Já o custo com a manutenção pode ser reduzido, uma vez que ela fica muito mais fácil de ser feita quando o site está padronizado. Atualizações que antes levavam dias para serem feitas podem ser feitas em minutos! [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Blue muio:muio &#187; Blog Archive &#187; Padrões web, porquê?</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3720</link>
+		<dc:creator><![CDATA[Blue muio:muio &#187; Blog Archive &#187; Padrões web, porquê?]]></dc:creator>
+		<pubDate>Thu, 04 May 2006 00:21:40 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3720</guid>
+		<description><![CDATA[[...] Menor custos de manutenção do servidor. Aconselho a lerem o artigo do Ivo. [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Menor custos de manutenção do servidor. Aconselho a lerem o artigo do Ivo. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3702</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 02 May 2006 11:36:42 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3702</guid>
+		<description><![CDATA[Olá Bolota!
+
+Também já morei em Santo António dos Cavaleiros :)
+Espero sinceramente que seja construida a ciclovia, para melhorar a qualidade de vida dos milhares de pessoas que aí moram!]]></description>
+		<content:encoded><![CDATA[<p>Olá Bolota!</p>
+<p>Também já morei em Santo António dos Cavaleiros :)<br />
+Espero sinceramente que seja construida a ciclovia, para melhorar a qualidade de vida dos milhares de pessoas que aí moram!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: bolotavoadora</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3683</link>
+		<dc:creator><![CDATA[bolotavoadora]]></dc:creator>
+		<pubDate>Sat, 29 Apr 2006 14:12:33 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3683</guid>
+		<description><![CDATA[Amigo, gostei muito do teu blog. Divulgo e luto pela construção de ciclovias e passeios na minha freguesia, como meio de preservar o ambiente e a saúde. 
+Se conheceres alguem na minha freguesia e concelho, divulga o meu blog.
+Continua o bom trabalho.
+Um abraço.]]></description>
+		<content:encoded><![CDATA[<p>Amigo, gostei muito do teu blog. Divulgo e luto pela construção de ciclovias e passeios na minha freguesia, como meio de preservar o ambiente e a saúde.<br />
+Se conheceres alguem na minha freguesia e concelho, divulga o meu blog.<br />
+Continua o bom trabalho.<br />
+Um abraço.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Hugo Durães</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3680</link>
+		<dc:creator><![CDATA[Hugo Durães]]></dc:creator>
+		<pubDate>Sat, 29 Apr 2006 02:48:20 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3680</guid>
+		<description><![CDATA[Muito bom... só de saber o quanto se poupa em tráfego no servidor, é um incentivo enorme ao desenvolvimento de sites usando os standards.]]></description>
+		<content:encoded><![CDATA[<p>Muito bom&#8230; só de saber o quanto se poupa em tráfego no servidor, é um incentivo enorme ao desenvolvimento de sites usando os standards.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Claudio Pires</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3670</link>
+		<dc:creator><![CDATA[Claudio Pires]]></dc:creator>
+		<pubDate>Thu, 27 Apr 2006 12:12:25 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3670</guid>
+		<description><![CDATA[Parabens pelo artigo, Ivo.
+Sou o &#039;aglioeolio&#039; lá do Forum Simple Machines.
+
+É assustadora, realmente, a economia de transferencia. Vendo no caso na ESPN, que é simplesmente monstruosa, isso fica facil de entender.
+
+A Acessibilidade pra quem acessa a internet com Net Discada e Firefox em sites com CSS puro tambem é absurdamente melhorada.]]></description>
+		<content:encoded><![CDATA[<p>Parabens pelo artigo, Ivo.<br />
+Sou o &#8216;aglioeolio&#8217; lá do Forum Simple Machines.</p>
+<p>É assustadora, realmente, a economia de transferencia. Vendo no caso na ESPN, que é simplesmente monstruosa, isso fica facil de entender.</p>
+<p>A Acessibilidade pra quem acessa a internet com Net Discada e Firefox em sites com CSS puro tambem é absurdamente melhorada.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Mario</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3654</link>
+		<dc:creator><![CDATA[Mario]]></dc:creator>
+		<pubDate>Wed, 19 Apr 2006 11:34:41 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3654</guid>
+		<description><![CDATA[Sinceramente acho que eles identificam o publico alvo através das pessoas que lhes fazem grandes encomendas, normalmente grandes empresas, ou então pelas pessoas que aparecem nos stands deles nas exposições.]]></description>
+		<content:encoded><![CDATA[<p>Sinceramente acho que eles identificam o publico alvo através das pessoas que lhes fazem grandes encomendas, normalmente grandes empresas, ou então pelas pessoas que aparecem nos stands deles nas exposições.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3653</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 19 Apr 2006 07:46:50 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3653</guid>
+		<description><![CDATA[LOL
+
+Gostava de saber como é que identificaram o público alvo para poderem afirmar coisas como essas... E estão-se cagando para o resto dos utilizadores... Mas se calhar não sabem que, desses 99,9%, cerca de 25% terá algum tipo de incapacidade/deficiência física, mental ou técnica reduzindo assim o seu público alvo para 75% ou menos. E já para não falar no trabalho extra que irão ter no futuro para alterar alguma coisa no site. Com CSS basta alterar um ficheiro e em 5 minutos está feito.]]></description>
+		<content:encoded><![CDATA[<p>LOL</p>
+<p>Gostava de saber como é que identificaram o público alvo para poderem afirmar coisas como essas&#8230; E estão-se cagando para o resto dos utilizadores&#8230; Mas se calhar não sabem que, desses 99,9%, cerca de 25% terá algum tipo de incapacidade/deficiência física, mental ou técnica reduzindo assim o seu público alvo para 75% ou menos. E já para não falar no trabalho extra que irão ter no futuro para alterar alguma coisa no site. Com CSS basta alterar um ficheiro e em 5 minutos está feito.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Mario</title>
+		<link>/poupar-dinheiro-usando-standards/#comment-3652</link>
+		<dc:creator><![CDATA[Mario]]></dc:creator>
+		<pubDate>Wed, 19 Apr 2006 02:05:32 +0000</pubDate>
+		<guid isPermaLink="false">/poupar-dinheiro-usando-standards/#comment-3652</guid>
+		<description><![CDATA[No meu caso houve um cliente que pediu um site com tabelas porque não intendia css nem divs ao que, é obvio que ele já está a pensar em um dia mais tarde mexer no site.
+
+Falei nas vantagens de tableless e usar o css para &quot;estilar&quot; o site, ao que a resposta do cliente e de um profissional de comunicação foi 
+
+&quot;o publico alvo, pelo menos uns 99,9% usam pc. É irrelevante se funciona em telemoveis ou PDAs ou se é acessivel a pessoas com defeciencias porque esses não irão ver o site&quot;.
+
+E eu não tenho poder nenhum nem tempo para lhes andar a explicar ou mudar as ideias.
+
+Resumindo, acho que muita gente possa dizer sim a sites acessiveis mas em termos praticos se começar a dar prejuizo, levar mais tempo, etc vão literalmente borrifar-se para isso.]]></description>
+		<content:encoded><![CDATA[<p>No meu caso houve um cliente que pediu um site com tabelas porque não intendia css nem divs ao que, é obvio que ele já está a pensar em um dia mais tarde mexer no site.</p>
+<p>Falei nas vantagens de tableless e usar o css para &#8220;estilar&#8221; o site, ao que a resposta do cliente e de um profissional de comunicação foi </p>
+<p>&#8220;o publico alvo, pelo menos uns 99,9% usam pc. É irrelevante se funciona em telemoveis ou PDAs ou se é acessivel a pessoas com defeciencias porque esses não irão ver o site&#8221;.</p>
+<p>E eu não tenho poder nenhum nem tempo para lhes andar a explicar ou mudar as ideias.</p>
+<p>Resumindo, acho que muita gente possa dizer sim a sites acessiveis mas em termos praticos se começar a dar prejuizo, levar mais tempo, etc vão literalmente borrifar-se para isso.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

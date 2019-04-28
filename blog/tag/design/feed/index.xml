@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>design &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/design/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Revista Faz &#8211; desenho de interacção</title>
+		<link>/revista-faz-desenho-de-interaccao/</link>
+		<comments>/revista-faz-desenho-de-interaccao/#comments</comments>
+		<pubDate>Tue, 20 Nov 2007 09:50:12 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[interacção]]></category>
+		<category><![CDATA[revista]]></category>
+
+		<guid isPermaLink="false">/revista-faz-desenho-de-interaccao/</guid>
+		<description><![CDATA[<p>Foi lançado este mês o número 1 da <a href="http://revistafaz.org/">revista Faz</a>. A Faz é uma revista espanhola sobre desenho de interacção e é uma iniciativa da comunidade de profissionais de usabilidade espanhola, <a href="http://www.cadius.org/">CADIUS</a></p>
+<p><img src='/wp-content/uploads/2007/11/logo-faz.gif' alt='Revista Faz' class="img" /></p>
+<p>O conteúdo <a rel="nofollow" href="/revista-faz-desenho-de-interaccao/">Revista Faz &#8211; desenho de interacção</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/revista-faz-desenho-de-interaccao/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Teste comparativo de símbolos de informação</title>
+		<link>/teste-comparativo-de-simbolos-de-informacao/</link>
+		<comments>/teste-comparativo-de-simbolos-de-informacao/#comments</comments>
+		<pubDate>Tue, 22 May 2007 10:35:58 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Ergonomia]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[aiga]]></category>
+		<category><![CDATA[arte]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[pictogramas]]></category>
+		<category><![CDATA[símbolos]]></category>
+
+		<guid isPermaLink="false">/teste-comparativo-de-simbolos-de-informacao/</guid>
+		<description><![CDATA[<p>Um estudo efectuado por um estudante da Universidade de Arte e Design de Budapeste, Hungria, permitiu fazer uma comparação entre vários símbolos de informação utilizados em todo o mundo e saber quais são aqueles que melhor transmitem a informação. Como base para o estudo, ele pegou num conjunto de símbolos utilizados por várias entidades (Aeroportos, Caminhos de Ferro, Portos Marítimos) ou em eventos como Jogos Olímpicos ou Exposições Mundiais.</p>
+<p>O conteúdo <a rel="nofollow" href="/teste-comparativo-de-simbolos-de-informacao/">Teste comparativo de símbolos de informação</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/teste-comparativo-de-simbolos-de-informacao/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Soluções web centradas no utilizador</title>
+		<link>/solucoes-web-centradas-no-utilizador/</link>
+		<comments>/solucoes-web-centradas-no-utilizador/#comments</comments>
+		<pubDate>Fri, 14 Jul 2006 09:09:55 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[multimedia]]></category>
+		<category><![CDATA[soluções-web]]></category>
+		<category><![CDATA[user-centered]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">/solucoes-web-centradas-no-utilizador/</guid>
+		<description><![CDATA[<p>Fiz ontem, no I Encontro de Design Multimédia de Coimbra, uma apresentação sobre Soluções Web Centradas no Utilizador.<br />
+Podem fazer aqui o download dos slides da apresentação.</p>
+<p>O conteúdo <a rel="nofollow" href="/solucoes-web-centradas-no-utilizador/">Soluções web centradas no utilizador</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/solucoes-web-centradas-no-utilizador/feed/</wfw:commentRss>
+		<slash:comments>22</slash:comments>
+		</item>
+		<item>
+		<title>I Encontro de Design Multimédia</title>
+		<link>/i-encontro-de-design-multimedia/</link>
+		<comments>/i-encontro-de-design-multimedia/#comments</comments>
+		<pubDate>Fri, 07 Jul 2006 14:55:13 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[multimedia]]></category>
+		<category><![CDATA[soluções-web]]></category>
+		<category><![CDATA[user-centered]]></category>
+
+		<guid isPermaLink="false">/i-encontro-de-design-multimedia/</guid>
+		<description><![CDATA[<p>Vai realizar-se na próxima semana, dias 12 e 13 de Julho o I Encontro de Design Multimédia em Coimbra. A organização está a cargo dos alunos do 4º ano de Comunicação e Design Multimédia da Escola Superior de Educação de Coimbra e eu fui convidado para falar no dia 13 (quinta-feira) sobre Soluções Web Centradas no Utilizador.</p>
+<p>O conteúdo <a rel="nofollow" href="/i-encontro-de-design-multimedia/">I Encontro de Design Multimédia</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/i-encontro-de-design-multimedia/feed/</wfw:commentRss>
+		<slash:comments>21</slash:comments>
+		</item>
+	</channel>
+</rss>

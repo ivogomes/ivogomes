@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>hci &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/hci/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Mestrado em Human-Computer Interaction</title>
+		<link>/mestrado-em-human-computer-interaction/</link>
+		<comments>/mestrado-em-human-computer-interaction/#comments</comments>
+		<pubDate>Thu, 10 Jan 2008 12:44:27 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Ergonomia]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[hci]]></category>
+		<category><![CDATA[mestrado]]></category>
+
+		<guid isPermaLink="false">/mestrado-em-human-computer-interaction/</guid>
+		<description><![CDATA[<p>O "Human Computer Interaction Institute" (HCII) da Universidade de Carnegie Mellon e o Departamento de Matemática e Engenharias da Universidade da Madeira estão a promover um <a href="http://mhci.dme.uma.pt/">Mestrado em "Human-Computer Interaction"</a> (HCI). </p>
+<p><img src='/wp-content/uploads/2008/01/mhci.jpg' alt='Mestrado em HCI' class="img" /></p>
+<p>O conteúdo <a rel="nofollow" href="/mestrado-em-human-computer-interaction/">Mestrado em Human-Computer Interaction</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/mestrado-em-human-computer-interaction/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+<enclosure url="http://mhci.dme.uma.pt/HCIIvideo.mov" length="36717142" type="video/quicktime" />
+		</item>
+	</channel>
+</rss>

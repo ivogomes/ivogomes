@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: log@home</title>
+	<atom:link href="/loghome/feed/" rel="self" type="application/rss+xml" />
+	<link>/loghome/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: salgadation</title>
+		<link>/loghome/#comment-576</link>
+		<dc:creator><![CDATA[salgadation]]></dc:creator>
+		<pubDate>Mon, 07 Feb 2005 19:25:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=118#comment-576</guid>
+		<description><![CDATA[Conheço bem essa gripe! É uma vendida!;)
+PS: Espero que seja o 1º log@home de muitos.
+]]></description>
+		<content:encoded><![CDATA[<p>Conheço bem essa gripe! É uma vendida!;)<br />
+PS: Espero que seja o 1º log@home de muitos.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/loghome/#comment-552</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 04 Feb 2005 11:47:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=118#comment-552</guid>
+		<description><![CDATA[shhhh.
+
+Não digas nada. Olha se ela lê isto!!!]]></description>
+		<content:encoded><![CDATA[<p>shhhh.</p>
+<p>Não digas nada. Olha se ela lê isto!!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Pedro Custódio</title>
+		<link>/loghome/#comment-551</link>
+		<dc:creator><![CDATA[Pedro Custódio]]></dc:creator>
+		<pubDate>Fri, 04 Feb 2005 11:45:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=118#comment-551</guid>
+		<description><![CDATA[Hip! Hip! Urray!
+Acho q devias aproveitar mais vezes e para a próxima vê quem é que levas para casa.. essa gaja (&quot;Gripe&quot;) não é de confiança! 
+A tua namorada sabe disso?]]></description>
+		<content:encoded><![CDATA[<p>Hip! Hip! Urray!<br />
+Acho q devias aproveitar mais vezes e para a próxima vê quem é que levas para casa.. essa gaja (&#8220;Gripe&#8221;) não é de confiança!<br />
+A tua namorada sabe disso?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

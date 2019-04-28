@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>packard bell &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/packard-bell/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>AppleTV? Ou talvez não&#8230;</title>
+		<link>/appletv-ou-talvez-nao/</link>
+		<comments>/appletv-ou-talvez-nao/#comments</comments>
+		<pubDate>Sun, 14 Oct 2007 11:11:38 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[appletv]]></category>
+		<category><![CDATA[multimedia]]></category>
+		<category><![CDATA[packard bell]]></category>
+		<category><![CDATA[store&play]]></category>
+
+		<guid isPermaLink="false">/appletv-ou-talvez-nao/</guid>
+		<description><![CDATA[<p>Este fim-de-semana comprei um disco rígido multimédia. Basicamente, permite-me ver os filmes e séries que tenho em DivX na televisão da sala em vez do pequeno ecrã do portátil. Acabei por comprar o <a href="http://www.packardbell.co.uk/products/storage/store-and-play/store-and-play-3500-320gb/productsheet-C050500001-685.html"> Packard Bell Store&#038;Play</a> na <a href="http://www.fnac.pt/">FNAC</a> e até agora, estou bastante satisfeito. É claro que com todo o "hype" que existe à volta da <a href="http://www.apple.com/appletv/">AppleTV</a>, foi um bocado difícil escolher qual o modelo a comprar, no entanto acho que fiz a escolha certa.</p>
+<p>O conteúdo <a rel="nofollow" href="/appletv-ou-talvez-nao/">AppleTV? Ou talvez não&#8230;</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/appletv-ou-talvez-nao/feed/</wfw:commentRss>
+		<slash:comments>241</slash:comments>
+		</item>
+	</channel>
+</rss>

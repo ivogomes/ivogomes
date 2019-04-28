@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Emprego, Parte II</title>
+	<atom:link href="/emprego-parte-ii/feed/" rel="self" type="application/rss+xml" />
+	<link>/emprego-parte-ii/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Pedro Custódio</title>
+		<link>/emprego-parte-ii/#comment-10</link>
+		<dc:creator><![CDATA[Pedro Custódio]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:44:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=45#comment-10</guid>
+		<description><![CDATA[Bem Vindo à equipa IVO! 
+Espero que tenhamos a oportunidade de trabalhar em projectos juntos! Foi um primeiro dia fixe! :)]]></description>
+		<content:encoded><![CDATA[<p>Bem Vindo à equipa IVO!<br />
+Espero que tenhamos a oportunidade de trabalhar em projectos juntos! Foi um primeiro dia fixe! :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/emprego-parte-ii/#comment-9</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:44:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=45#comment-9</guid>
+		<description><![CDATA[Muito obrigado pelas boas vindas!
+Estou a sentir-me verdadeiramente em casa :)]]></description>
+		<content:encoded><![CDATA[<p>Muito obrigado pelas boas vindas!<br />
+Estou a sentir-me verdadeiramente em casa :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: salgadation</title>
+		<link>/emprego-parte-ii/#comment-8</link>
+		<dc:creator><![CDATA[salgadation]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:43:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=45#comment-8</guid>
+		<description><![CDATA[Bem-vindo a bordo e muita sorte.
+Cheers.]]></description>
+		<content:encoded><![CDATA[<p>Bem-vindo a bordo e muita sorte.<br />
+Cheers.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: André Ribeirinho</title>
+		<link>/emprego-parte-ii/#comment-7</link>
+		<dc:creator><![CDATA[André Ribeirinho]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:43:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=45#comment-7</guid>
+		<description><![CDATA[Bem vindo à log Ivo.
+Concordo contigo em relação à dificuldade em encontrar um lugar onde possamos trabalhar na área de usabilidade em Portugal. Penso que a log ao proporcionar-nos essa oportunidade dá um passo importante na área em Portugal. Existem de facto já alguns bons profissionais em Portugal e a criação de uma oferta especifica por parte de uma empresa como a log irá ajudar a crescer o conhecimento que existe sobre esta área tão importante para todas as empresas e não só de tecnologias de informação.
+Iremos, certamente, ter oportunidade de discutir estes e outros temas assim que eu voltar ao trabalho.
+Bom trabalho,
+André Ribeirinho]]></description>
+		<content:encoded><![CDATA[<p>Bem vindo à log Ivo.<br />
+Concordo contigo em relação à dificuldade em encontrar um lugar onde possamos trabalhar na área de usabilidade em Portugal. Penso que a log ao proporcionar-nos essa oportunidade dá um passo importante na área em Portugal. Existem de facto já alguns bons profissionais em Portugal e a criação de uma oferta especifica por parte de uma empresa como a log irá ajudar a crescer o conhecimento que existe sobre esta área tão importante para todas as empresas e não só de tecnologias de informação.<br />
+Iremos, certamente, ter oportunidade de discutir estes e outros temas assim que eu voltar ao trabalho.<br />
+Bom trabalho,<br />
+André Ribeirinho</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

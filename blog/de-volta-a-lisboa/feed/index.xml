@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: De volta a Lisboa</title>
+	<atom:link href="/de-volta-a-lisboa/feed/" rel="self" type="application/rss+xml" />
+	<link>/de-volta-a-lisboa/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Andrerib</title>
+		<link>/de-volta-a-lisboa/#comment-600</link>
+		<dc:creator><![CDATA[Andrerib]]></dc:creator>
+		<pubDate>Wed, 09 Mar 2005 19:24:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=128#comment-600</guid>
+		<description><![CDATA[Foi um grande fim-de-semana (em todos os sentidos). Foi extremamente cansativo mas muito interessante. Ainda bem que aproveitámos a oportunidade.]]></description>
+		<content:encoded><![CDATA[<p>Foi um grande fim-de-semana (em todos os sentidos). Foi extremamente cansativo mas muito interessante. Ainda bem que aproveitámos a oportunidade.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

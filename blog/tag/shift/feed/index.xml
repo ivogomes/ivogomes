@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>shift &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/shift/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>SHiFT&#8217;08 &#8211; Dia 1</title>
+		<link>/shift-08-dia-1/</link>
+		<comments>/shift-08-dia-1/#respond</comments>
+		<pubDate>Wed, 15 Oct 2008 10:36:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[shift]]></category>
+		<category><![CDATA[shift08]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=598</guid>
+		<description><![CDATA[<p><a href="http://www.shift.pt/" title="SHiFT - Social and Human Ideas For Technology"><img src="http://shift.pt/images/banners/300x100.jpg" border="0" alt="SHiFT - Social and Human Ideas For Technology" /></a></p>
+<p>Vou tentar fazer um acompanhamento em directo da SHiFT através do <a href="http://www.twitter.com/ivogomes">Twitter</a>.</p>
+<p>Se quiserem acompanhar, é só seguir <a href="http://www.twitter.com/ivogomes">aqui</a>. :)</p>
+<p>O conteúdo <a rel="nofollow" href="/shift-08-dia-1/">SHiFT&#8217;08 &#8211; Dia 1</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift-08-dia-1/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>SHiFT&#8217;08</title>
+		<link>/shift08/</link>
+		<comments>/shift08/#comments</comments>
+		<pubDate>Mon, 13 Oct 2008 11:44:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[guerrilla]]></category>
+		<category><![CDATA[shift]]></category>
+		<category><![CDATA[silverback]]></category>
+		<category><![CDATA[user experience]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=585</guid>
+		<description><![CDATA[<p><a href="http://www.shift.pt/" title="SHiFT - Social and Human Ideas For Technology"><img src="http://shift.pt/images/banners/336x280.jpg" border="0" alt="SHiFT - Social and Human Ideas For Technology" /></a></p>
+<p>É já esta semana (dias 15, 16 e 17 de Outubro) que se realiza a segunda edição da <a href="http://www.shift.pt/">SHiFT</a> (Social and Human Ideas For Technology) na <a href="http://shift.pt/page/practical">FIL</a> em Lisboa.</p>
+<p>O conteúdo <a rel="nofollow" href="/shift08/">SHiFT&#8217;08</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift08/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>SHiFT &#8211; dia 1</title>
+		<link>/shift-dia-1/</link>
+		<comments>/shift-dia-1/#comments</comments>
+		<pubDate>Fri, 29 Sep 2006 09:23:42 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[shift]]></category>
+
+		<guid isPermaLink="false">/shift-dia-1/</guid>
+		<description><![CDATA[<p>Está neste momento a decorrer o segundo dia da <a href="http://www.shift.pt/">SHiFT</a>, mas vou tentar fazer aqui um resumo do primeiro dia (pelo menos das comunicações a que assisti).</p>
+<p>O conteúdo <a rel="nofollow" href="/shift-dia-1/">SHiFT &#8211; dia 1</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift-dia-1/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Mais um que não funciona&#8230;</title>
+	<atom:link href="/mais-um-que-nao-funciona/feed/" rel="self" type="application/rss+xml" />
+	<link>/mais-um-que-nao-funciona/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/mais-um-que-nao-funciona/#comment-23901</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 23 Jul 2007 08:14:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=147#comment-23901</guid>
+		<description><![CDATA[Olá Miguel, obrigado pelo comentário.
+
+De facto eles disseram que iam passar a disponibilizar a informação de que o formulário não funcionava em Macintosh, mas tal não aconteceu (pelo menos durante a semana seguinte à minha reclamação, depois disso já não fui ver).
+
+Quanto ao facto de usar extensões, etc para dar a volta à questão, discordo. Como ergonomista que sou, tenho que defender que deve ser o sistema a adaptar-se ao utilizador e não o utilizador a ter que inventar &quot;esquemas&quot; para se adaptar ao sistema. Grande parte das pessoas que acedem a estes sites não têm grandes conhecimentos de informática e se por azar estiverem a usar um browser diferente (porque alguém lhes instalou o Firefox e definiu como browser default no Windows) simplesmente não conseguem aderir à promoção e não sabem a razão. Eu chamo a isso de descriminação tecnológica.]]></description>
+		<content:encoded><![CDATA[<p>Olá Miguel, obrigado pelo comentário.</p>
+<p>De facto eles disseram que iam passar a disponibilizar a informação de que o formulário não funcionava em Macintosh, mas tal não aconteceu (pelo menos durante a semana seguinte à minha reclamação, depois disso já não fui ver).</p>
+<p>Quanto ao facto de usar extensões, etc para dar a volta à questão, discordo. Como ergonomista que sou, tenho que defender que deve ser o sistema a adaptar-se ao utilizador e não o utilizador a ter que inventar &#8220;esquemas&#8221; para se adaptar ao sistema. Grande parte das pessoas que acedem a estes sites não têm grandes conhecimentos de informática e se por azar estiverem a usar um browser diferente (porque alguém lhes instalou o Firefox e definiu como browser default no Windows) simplesmente não conseguem aderir à promoção e não sabem a razão. Eu chamo a isso de descriminação tecnológica.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: miguel</title>
+		<link>/mais-um-que-nao-funciona/#comment-23393</link>
+		<dc:creator><![CDATA[miguel]]></dc:creator>
+		<pubDate>Tue, 17 Jul 2007 19:40:01 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=147#comment-23393</guid>
+		<description><![CDATA[Olá
+
+Bem li o mail que eles mandaram e não há nada de errado, repara no que disseram:
+
+&quot;Em relação à sua questão, informamos que passamos a apresentar a informação que nos solicitou, esclarecendo que não nos é efectivamente possível garantir, o correcto acesso ao site TMN em ambiente Macintosh.&quot;
+
+Não sei porquê dizes isto
+&quot;Alterar as definições do meu Internet Explorer? Eu uso um Mac8! Quem tem um Mac não usa o Internet Explorer (além de que o IE/Mac é totalmente diferente do IE/Win)&quot;, eles no mail disseram que não tem resposta para o teu problema de uma forma muito ao de leve..
+
+Quanto ao firefox, podem instalar o agent switcher e rodar numa tab algo compativel com o internet exlporer, normalmente isto resolve o problema, tb existe outra alternativa que agora não me lembro o nome, mas procurem por extensões ao firefox que existe soluções a esses problemas.
+
+Quanto ao facto de não darem a apoio ao mac tem haver com o mundo capitalista que vivemos, a microsoft compra tudo e todos, e nós meros utilizadores temos que nos safar com o que há. Eu sou utilizador do sistema GNU/linux, pois não gosto nem de produtos microsoft, nem de produtos da apple, porque fazem parte desse sistema capitalista, além do mais agora com os DRM&#039;s em força, é de odiar esse tipo de sistemas. prefiro pensar num mundo livre.
+E a única forma de mudar este mundo é não usar o que alimenta o que nós contestamos.
+
+Quanto ao caso da deco, vê lá se não assinalam no site que está optimizado para IE, se tiver nem a deco pode fazer nada, simplesmente mais um grão de areia no caso anti-truste.
+
+comprimentos e sejam livres, usando linux :P]]></description>
+		<content:encoded><![CDATA[<p>Olá</p>
+<p>Bem li o mail que eles mandaram e não há nada de errado, repara no que disseram:</p>
+<p>&#8220;Em relação à sua questão, informamos que passamos a apresentar a informação que nos solicitou, esclarecendo que não nos é efectivamente possível garantir, o correcto acesso ao site TMN em ambiente Macintosh.&#8221;</p>
+<p>Não sei porquê dizes isto<br />
+&#8220;Alterar as definições do meu Internet Explorer? Eu uso um Mac8! Quem tem um Mac não usa o Internet Explorer (além de que o IE/Mac é totalmente diferente do IE/Win)&#8221;, eles no mail disseram que não tem resposta para o teu problema de uma forma muito ao de leve..</p>
+<p>Quanto ao firefox, podem instalar o agent switcher e rodar numa tab algo compativel com o internet exlporer, normalmente isto resolve o problema, tb existe outra alternativa que agora não me lembro o nome, mas procurem por extensões ao firefox que existe soluções a esses problemas.</p>
+<p>Quanto ao facto de não darem a apoio ao mac tem haver com o mundo capitalista que vivemos, a microsoft compra tudo e todos, e nós meros utilizadores temos que nos safar com o que há. Eu sou utilizador do sistema GNU/linux, pois não gosto nem de produtos microsoft, nem de produtos da apple, porque fazem parte desse sistema capitalista, além do mais agora com os DRM&#8217;s em força, é de odiar esse tipo de sistemas. prefiro pensar num mundo livre.<br />
+E a única forma de mudar este mundo é não usar o que alimenta o que nós contestamos.</p>
+<p>Quanto ao caso da deco, vê lá se não assinalam no site que está optimizado para IE, se tiver nem a deco pode fazer nada, simplesmente mais um grão de areia no caso anti-truste.</p>
+<p>comprimentos e sejam livres, usando linux :P</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/mais-um-que-nao-funciona/#comment-2881</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Wed, 27 Jul 2005 14:03:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=147#comment-2881</guid>
+		<description><![CDATA[DECO com eles. De certeza que passa a funcionar no dia seguinte... A Deco tem cada vez mais peso...]]></description>
+		<content:encoded><![CDATA[<p>DECO com eles. De certeza que passa a funcionar no dia seguinte&#8230; A Deco tem cada vez mais peso&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: vitor azevedo.com &#187; Blog Archive &#187; Browsers Blacklist</title>
+		<link>/mais-um-que-nao-funciona/#comment-2876</link>
+		<dc:creator><![CDATA[vitor azevedo.com &#187; Blog Archive &#187; Browsers Blacklist]]></dc:creator>
+		<pubDate>Tue, 26 Jul 2005 16:38:20 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=147#comment-2876</guid>
+		<description><![CDATA[[...] Ivo Gomes also has some examples in his blog [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Ivo Gomes also has some examples in his blog [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/mais-um-que-nao-funciona/#comment-2864</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 15 Jul 2005 13:52:33 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=147#comment-2864</guid>
+		<description><![CDATA[Olá Gean!
+
+Infelizmente ainda há vários websites que só funcionam no Internet Explorer. O desenvolvimento web em Portugal está a melhorar, mas a grande maioria das empresas ainda faz a programação baseada no IE.
+
+Para os clientes, tanto lhes importa. Desde que o site funcione no PC deles (que usa IE) está bom! A grande maioria dos clientes não conhece o mundo da web e pagam só para ter um site online. Muitas das vezes são contratadas empresas de qualidade muito duvidosa (porque são mais baratas e fazem um site às &quot;3 pancadas&quot;) para fazer o trabalho e depois saem estas asneiras. 
+
+Felizmente já temos alguns clientes que se preocupam com o utilizador e pedem soluções centradas no utilizador, com testes de usabilidade e desenvolvimento segundo os webstandards. No entanto os prazos que nos pedem são os mesmos que pediriam a uma empresa para fazer um site às &quot;3 pancadas&quot;, e aí temos duas hipóteses: dizer que se querem uma coisa bem feita vai demorar mais tempo; ou cortar em algum sítio e tentar desenvolver de forma a poder ser usado por &quot;quase&quot; todos.
+
+Abraços e boa praia!!]]></description>
+		<content:encoded><![CDATA[<p>Olá Gean!</p>
+<p>Infelizmente ainda há vários websites que só funcionam no Internet Explorer. O desenvolvimento web em Portugal está a melhorar, mas a grande maioria das empresas ainda faz a programação baseada no IE.</p>
+<p>Para os clientes, tanto lhes importa. Desde que o site funcione no PC deles (que usa IE) está bom! A grande maioria dos clientes não conhece o mundo da web e pagam só para ter um site online. Muitas das vezes são contratadas empresas de qualidade muito duvidosa (porque são mais baratas e fazem um site às &#8220;3 pancadas&#8221;) para fazer o trabalho e depois saem estas asneiras. </p>
+<p>Felizmente já temos alguns clientes que se preocupam com o utilizador e pedem soluções centradas no utilizador, com testes de usabilidade e desenvolvimento segundo os webstandards. No entanto os prazos que nos pedem são os mesmos que pediriam a uma empresa para fazer um site às &#8220;3 pancadas&#8221;, e aí temos duas hipóteses: dizer que se querem uma coisa bem feita vai demorar mais tempo; ou cortar em algum sítio e tentar desenvolver de forma a poder ser usado por &#8220;quase&#8221; todos.</p>
+<p>Abraços e boa praia!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gean</title>
+		<link>/mais-um-que-nao-funciona/#comment-2863</link>
+		<dc:creator><![CDATA[Gean]]></dc:creator>
+		<pubDate>Fri, 15 Jul 2005 12:44:42 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=147#comment-2863</guid>
+		<description><![CDATA[Oi Ivo,
+
+Estou de ferias aqui em Portugal no momento (inclusive te enviei um e-mail, lembra?) e estou passando pela mesma situacao. O site da Rede-Expressos, que me permite fazer compras de bilhetes online so funciona com o IE. Outro que tambem nao consegui acessar de forma correta foi o da Vodafone. Instalei o Firefox no micro que estou porem infelizmente quase nada abria com ele &#062; e estou tendo que utilizar o IE para fazer alguma coisa em Portugal. Creio que muita coisa precisa ser feita em Portugal. Ao menos, o mercado me parece ser promissor. 
+
+Como voce ve a web aqui em Portugal, principalmente com desenvolvedores que utilizem os padroes web? As empresas ja abriram os olhos para isto tambem?
+
+Vou ali a praia de Quarteira curtir um solzinho e depois vejo suas respostas :)
+
+Abraco!]]></description>
+		<content:encoded><![CDATA[<p>Oi Ivo,</p>
+<p>Estou de ferias aqui em Portugal no momento (inclusive te enviei um e-mail, lembra?) e estou passando pela mesma situacao. O site da Rede-Expressos, que me permite fazer compras de bilhetes online so funciona com o IE. Outro que tambem nao consegui acessar de forma correta foi o da Vodafone. Instalei o Firefox no micro que estou porem infelizmente quase nada abria com ele &gt; e estou tendo que utilizar o IE para fazer alguma coisa em Portugal. Creio que muita coisa precisa ser feita em Portugal. Ao menos, o mercado me parece ser promissor. </p>
+<p>Como voce ve a web aqui em Portugal, principalmente com desenvolvedores que utilizem os padroes web? As empresas ja abriram os olhos para isto tambem?</p>
+<p>Vou ali a praia de Quarteira curtir um solzinho e depois vejo suas respostas :)</p>
+<p>Abraco!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Erik Granato</title>
+		<link>/mais-um-que-nao-funciona/#comment-2862</link>
+		<dc:creator><![CDATA[Erik Granato]]></dc:creator>
+		<pubDate>Thu, 14 Jul 2005 13:30:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=147#comment-2862</guid>
+		<description><![CDATA[Aqui no Brasil não é muito diferente não...
+
+Eu, por exemplo, tenho o Safari e o Firefox instalados em meu iMac porque certos sites só funcionam no Firefox. 
+
+Fora que aqui também tem aqueles sites que conseguem a proeza de não funcionar em nenhum browser que não seja o IE do Windows!
+
+Eu gostaria de só ter um mesmo ( Safari), mas usando Mac isso  é inviável.
+
+[ ]´s]]></description>
+		<content:encoded><![CDATA[<p>Aqui no Brasil não é muito diferente não&#8230;</p>
+<p>Eu, por exemplo, tenho o Safari e o Firefox instalados em meu iMac porque certos sites só funcionam no Firefox. </p>
+<p>Fora que aqui também tem aqueles sites que conseguem a proeza de não funcionar em nenhum browser que não seja o IE do Windows!</p>
+<p>Eu gostaria de só ter um mesmo ( Safari), mas usando Mac isso  é inviável.</p>
+<p>[ ]´s</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Sérgio Nunes</title>
+		<link>/mais-um-que-nao-funciona/#comment-2861</link>
+		<dc:creator><![CDATA[Sérgio Nunes]]></dc:creator>
+		<pubDate>Thu, 14 Jul 2005 13:01:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=147#comment-2861</guid>
+		<description><![CDATA[Assim é o desenvolvimento web em Portugal.]]></description>
+		<content:encoded><![CDATA[<p>Assim é o desenvolvimento web em Portugal.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

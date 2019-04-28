@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: O novo website da RTP</title>
+	<atom:link href="/o-novo-website-da-rtp/feed/" rel="self" type="application/rss+xml" />
+	<link>/o-novo-website-da-rtp/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Bruno Carlos</title>
+		<link>/o-novo-website-da-rtp/#comment-58278</link>
+		<dc:creator><![CDATA[Bruno Carlos]]></dc:creator>
+		<pubDate>Mon, 21 Jul 2008 13:04:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-58278</guid>
+		<description><![CDATA[Sim,
+Estou a par do comando para instalar as fontes Microsoft. Assim como das Liberation Fonts. No entanto não o pretendo fazer, pois não vejo necessidade de instalar essas fontes apenas para visualizar correctamente um site, nem a correcta visualização de um site tem de estar dependente de possuir fontes de um determinado sistema operativo.
+
+Fica apesar de tudo aqui um comando para corrigir algumas fontes do Ubuntu, altera a &quot;aparência&quot; de &quot;medium&quot; para &quot;slight&quot;:
+
+gconftool --type string --set /desktop/gnome/font_rendering/hinting &quot;slight&quot;
+
+É de louvar a vossa preocupação em estar atentos à opinião dos utilizadores no sentido de recolherem informação (preciosa) para poderem melhorar o vosso trabalho.]]></description>
+		<content:encoded><![CDATA[<p>Sim,<br />
+Estou a par do comando para instalar as fontes Microsoft. Assim como das Liberation Fonts. No entanto não o pretendo fazer, pois não vejo necessidade de instalar essas fontes apenas para visualizar correctamente um site, nem a correcta visualização de um site tem de estar dependente de possuir fontes de um determinado sistema operativo.</p>
+<p>Fica apesar de tudo aqui um comando para corrigir algumas fontes do Ubuntu, altera a &#8220;aparência&#8221; de &#8220;medium&#8221; para &#8220;slight&#8221;:</p>
+<p>gconftool &#8211;type string &#8211;set /desktop/gnome/font_rendering/hinting &#8220;slight&#8221;</p>
+<p>É de louvar a vossa preocupação em estar atentos à opinião dos utilizadores no sentido de recolherem informação (preciosa) para poderem melhorar o vosso trabalho.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Pedro Landeiro</title>
+		<link>/o-novo-website-da-rtp/#comment-58264</link>
+		<dc:creator><![CDATA[Pedro Landeiro]]></dc:creator>
+		<pubDate>Mon, 21 Jul 2008 12:28:48 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-58264</guid>
+		<description><![CDATA[Caro Bruno Carlos,
+
+Para instalar o suporte para as &quot;fonts MS&quot; execute o comando:
+
+sudo apt-get install mscorefonts
+
+Obrigado.]]></description>
+		<content:encoded><![CDATA[<p>Caro Bruno Carlos,</p>
+<p>Para instalar o suporte para as &#8220;fonts MS&#8221; execute o comando:</p>
+<p>sudo apt-get install mscorefonts</p>
+<p>Obrigado.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ricardo Jorge Tomé</title>
+		<link>/o-novo-website-da-rtp/#comment-58212</link>
+		<dc:creator><![CDATA[Ricardo Jorge Tomé]]></dc:creator>
+		<pubDate>Mon, 21 Jul 2008 09:08:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-58212</guid>
+		<description><![CDATA[Olá Bruno Carlos,
+
+também temos aqui uma pessoa que utiliza Ubunto e também o Firefox3.
+
+Vou reecaminhar o seu feedback para vermos o que se passa.
+
+OBRIGADO!]]></description>
+		<content:encoded><![CDATA[<p>Olá Bruno Carlos,</p>
+<p>também temos aqui uma pessoa que utiliza Ubunto e também o Firefox3.</p>
+<p>Vou reecaminhar o seu feedback para vermos o que se passa.</p>
+<p>OBRIGADO!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Carlos</title>
+		<link>/o-novo-website-da-rtp/#comment-57574</link>
+		<dc:creator><![CDATA[Bruno Carlos]]></dc:creator>
+		<pubDate>Sat, 19 Jul 2008 18:02:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-57574</guid>
+		<description><![CDATA[No meu portátil utilizo uma resolução de 1024x768, sistema operativo Ubuntu e browser Firefox 3.0.1.
+Devo dizer que a navegação horizontal no site da RTP é simplesmente horrível, parece totalmente desenquadrada do site, o link &quot;Grupo RTP&quot; e &quot;Teletexto&quot; ficam fora da secção de topo, sobrepondo-se à secção de &quot;Multimédia&quot;.
+Podem ver &lt;a href=&quot;http://www.brunocarlos.com/wp-content/uploads/2008/07/Screenshot.png&quot; rel=&quot;nofollow&quot;&gt;aqui um screenshot&lt;/a&gt;. 
+
+Isto deve-se ao facto de o tipo de letra &quot;Trebuchet MS&quot; obviamente não existir em Linux. Alterando para Microsoft Windows ou aumentando a resolução no Ubuntu o mesmo problema não se coloca.
+
+Um ponto muito negativo no site é não ser possível identificar visualmente um único link... Normalmente identificados através de palavras sublinhadas.]]></description>
+		<content:encoded><![CDATA[<p>No meu portátil utilizo uma resolução de 1024&#215;768, sistema operativo Ubuntu e browser Firefox 3.0.1.<br />
+Devo dizer que a navegação horizontal no site da RTP é simplesmente horrível, parece totalmente desenquadrada do site, o link &#8220;Grupo RTP&#8221; e &#8220;Teletexto&#8221; ficam fora da secção de topo, sobrepondo-se à secção de &#8220;Multimédia&#8221;.<br />
+Podem ver <a href="http://www.brunocarlos.com/wp-content/uploads/2008/07/Screenshot.png" rel="nofollow">aqui um screenshot</a>. </p>
+<p>Isto deve-se ao facto de o tipo de letra &#8220;Trebuchet MS&#8221; obviamente não existir em Linux. Alterando para Microsoft Windows ou aumentando a resolução no Ubuntu o mesmo problema não se coloca.</p>
+<p>Um ponto muito negativo no site é não ser possível identificar visualmente um único link&#8230; Normalmente identificados através de palavras sublinhadas.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/o-novo-website-da-rtp/#comment-55079</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 11 Jul 2008 15:35:45 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-55079</guid>
+		<description><![CDATA[Obrigado Ricardo pelo comentário. Falei da SIC porque estive de certa forma envolvido no desenvolvimento do novo website como consultor de usabilidade.
+É claro que o universo RTP é muito maior que o da SIC e compreendo o facto de terem que remodelar cada área de cada vez (também a BBC o está a fazer aos poucos). VOu ficar atento ao blog (já adicionei o RSS) para saber mais novidades e dar o meu contributo :)
+
+PS: Continuo a não gostar das tabs + navegação horizontal nas notícias :)]]></description>
+		<content:encoded><![CDATA[<p>Obrigado Ricardo pelo comentário. Falei da SIC porque estive de certa forma envolvido no desenvolvimento do novo website como consultor de usabilidade.<br />
+É claro que o universo RTP é muito maior que o da SIC e compreendo o facto de terem que remodelar cada área de cada vez (também a BBC o está a fazer aos poucos). VOu ficar atento ao blog (já adicionei o RSS) para saber mais novidades e dar o meu contributo :)</p>
+<p>PS: Continuo a não gostar das tabs + navegação horizontal nas notícias :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ricardo Jorge Tomé</title>
+		<link>/o-novo-website-da-rtp/#comment-55076</link>
+		<dc:creator><![CDATA[Ricardo Jorge Tomé]]></dc:creator>
+		<pubDate>Fri, 11 Jul 2008 15:22:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-55076</guid>
+		<description><![CDATA[Olá Ivo,
+somos colegas de &#039;métier&#039;, por isso, vamos deixar o você. =)
+
+Eu percebo e compreendo quando nos falam dessa questão, relativamente às mudanças graduais VS. totais do site, mas se compararmos a dimensão do nosso site com o da Sic é precisamente por aí que te digo que é completamente impossível um redesenhamento total. 
+Demoraríamos, com o estado actual, uns bons dois anos!
+
+Repara:
+CANAIS-CHAVE:
+-Homepage
+-Notícias
+-Desporto
+-Multimédia
+-Açores
+-Sítios&#038;Blogues
+-Entretenimento
+-Infantil
+-Mobile
+-Grupo RTP
+-TV
+-Rádio
+
+E repara que cada uma destas áreas é, como diria a minha personagem preferida do &quot;Coupling&quot;, simplesmente MASSIVE!
+
+
+Se abrirmos as áreas TV e Rádio, temos ainda:
+
+TV:
+- RTP1
+- RTP2
+- RTPi (europa, américa, ásia)
+- RTP África
+- RTP Açores
+- RTP Madeira
+- RTP N
+- RTP Memória
+- RTP Mobile
+
+Rádio:
+- Antena1
+- Antena2
+- Antena3
+- RDPi
+- RDP África
+- RDP Madeira
+- RDP Açores
+- Rádio Lusitânia
+
+
+Como vês, é um universo bastante amplo. E por isto muito dramático de se avançar em bloco. 
+
+Compreendo que a comparação entre os sites RTP e Sic possa surgir sempre, mas é preciso não esquecer que o site RTP é muito mais do que a RTP1 ou as Notícias.
+
+A Sic está a fazer um trabalho de mérito, bem estruturado e pensado a médio e longo-prazo. Nós não somos excepção. São simplesmente duas empresas que, convém não esquecermos, estão com estratégias e planos para a web aqui e acolá diferentes.
+
+A Sic está integrada no grupo Impresa, agora dentro da rede que adquiriu (AEIOU), sendo que a RTP se mantém independente de qualquer rede e grupo e mantém um conjunto vasto de parcerias.
+
+De qualquer forma, feedbacks como o teu e o dos visitantes deste site são sempre bem vindos.
+
+Também aí a nossa política é de total abertura e disponibilidade.
+
+Podes também ir comentando e sabendo mais novidades pelo blog do sítio RTP, em:
+http://www.rtp.pt/estadodositio
+
+Grande abraço e bom fim-de-semana!
+;)
+
+R.]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo,<br />
+somos colegas de &#8216;métier&#8217;, por isso, vamos deixar o você. =)</p>
+<p>Eu percebo e compreendo quando nos falam dessa questão, relativamente às mudanças graduais VS. totais do site, mas se compararmos a dimensão do nosso site com o da Sic é precisamente por aí que te digo que é completamente impossível um redesenhamento total.<br />
+Demoraríamos, com o estado actual, uns bons dois anos!</p>
+<p>Repara:<br />
+CANAIS-CHAVE:<br />
+-Homepage<br />
+-Notícias<br />
+-Desporto<br />
+-Multimédia<br />
+-Açores<br />
+-Sítios&amp;Blogues<br />
+-Entretenimento<br />
+-Infantil<br />
+-Mobile<br />
+-Grupo RTP<br />
+-TV<br />
+-Rádio</p>
+<p>E repara que cada uma destas áreas é, como diria a minha personagem preferida do &#8220;Coupling&#8221;, simplesmente MASSIVE!</p>
+<p>Se abrirmos as áreas TV e Rádio, temos ainda:</p>
+<p>TV:<br />
+&#8211; RTP1<br />
+&#8211; RTP2<br />
+&#8211; RTPi (europa, américa, ásia)<br />
+&#8211; RTP África<br />
+&#8211; RTP Açores<br />
+&#8211; RTP Madeira<br />
+&#8211; RTP N<br />
+&#8211; RTP Memória<br />
+&#8211; RTP Mobile</p>
+<p>Rádio:<br />
+&#8211; Antena1<br />
+&#8211; Antena2<br />
+&#8211; Antena3<br />
+&#8211; RDPi<br />
+&#8211; RDP África<br />
+&#8211; RDP Madeira<br />
+&#8211; RDP Açores<br />
+&#8211; Rádio Lusitânia</p>
+<p>Como vês, é um universo bastante amplo. E por isto muito dramático de se avançar em bloco. </p>
+<p>Compreendo que a comparação entre os sites RTP e Sic possa surgir sempre, mas é preciso não esquecer que o site RTP é muito mais do que a RTP1 ou as Notícias.</p>
+<p>A Sic está a fazer um trabalho de mérito, bem estruturado e pensado a médio e longo-prazo. Nós não somos excepção. São simplesmente duas empresas que, convém não esquecermos, estão com estratégias e planos para a web aqui e acolá diferentes.</p>
+<p>A Sic está integrada no grupo Impresa, agora dentro da rede que adquiriu (AEIOU), sendo que a RTP se mantém independente de qualquer rede e grupo e mantém um conjunto vasto de parcerias.</p>
+<p>De qualquer forma, feedbacks como o teu e o dos visitantes deste site são sempre bem vindos.</p>
+<p>Também aí a nossa política é de total abertura e disponibilidade.</p>
+<p>Podes também ir comentando e sabendo mais novidades pelo blog do sítio RTP, em:<br />
+<a href="http://www.rtp.pt/estadodositio" rel="nofollow">http://www.rtp.pt/estadodositio</a></p>
+<p>Grande abraço e bom fim-de-semana!<br />
+;)</p>
+<p>R.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/o-novo-website-da-rtp/#comment-55073</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 11 Jul 2008 14:55:12 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-55073</guid>
+		<description><![CDATA[@Ricardo Jorge Tomé: Obrigado pelo seu comentário! Não é todos os dias em que podemos conversar com as pessoas directamente envolvidas naquilo de que escrevemos :)
+
+Por um lado, não gosto muiot do &quot;redesign&quot; aos poucos, por uma questão de manter o site o mais estável e consistene possível. Por outro lado, em algumas circunstâncias, é preferível lançar logo a versão que temos e deixar que os utilizadores nos ajudem a definir quais as funcionaliddades que são realmente úteis e quais as que devem ser descartadas. No caso da RTP, acho que não deveriam optar por este método, uma vez que estamos habituados a que os conteudos da RTP tenham uma certa credibilidade e isso deveria transparecer na sua presença online (não estou a falar dos conteúdos em si, mas da sua apresentação).
+Veja-se o caso da SIC Online, que esteve em remodelação durante 1 ano e só depois de ter o site todo estruturado é que o lançou ao público (fazendo alguns pequenos ajustes depois disso).
+
+Quanto às notícias, apesar de dizer que a navegação por tabs foi consensual, eu penso que o facto de ter tabs + navegação horizontal dentro de cada tab é muito pouco intuitivo, daí o facto de dar a ideia de que existem poucos conteúdos. Mais uma vez vou dar o exemplo da SIC, em que os conteúdos noticiosos da página inicial não estão escondidos.
+
+Compreendo (e sei) que é difícil conciliar diferentes públicos alvo num único site, mas penso que ainda podem melhorar bastante esta nova versão da RTP Online.]]></description>
+		<content:encoded><![CDATA[<p>@Ricardo Jorge Tomé: Obrigado pelo seu comentário! Não é todos os dias em que podemos conversar com as pessoas directamente envolvidas naquilo de que escrevemos :)</p>
+<p>Por um lado, não gosto muiot do &#8220;redesign&#8221; aos poucos, por uma questão de manter o site o mais estável e consistene possível. Por outro lado, em algumas circunstâncias, é preferível lançar logo a versão que temos e deixar que os utilizadores nos ajudem a definir quais as funcionaliddades que são realmente úteis e quais as que devem ser descartadas. No caso da RTP, acho que não deveriam optar por este método, uma vez que estamos habituados a que os conteudos da RTP tenham uma certa credibilidade e isso deveria transparecer na sua presença online (não estou a falar dos conteúdos em si, mas da sua apresentação).<br />
+Veja-se o caso da SIC Online, que esteve em remodelação durante 1 ano e só depois de ter o site todo estruturado é que o lançou ao público (fazendo alguns pequenos ajustes depois disso).</p>
+<p>Quanto às notícias, apesar de dizer que a navegação por tabs foi consensual, eu penso que o facto de ter tabs + navegação horizontal dentro de cada tab é muito pouco intuitivo, daí o facto de dar a ideia de que existem poucos conteúdos. Mais uma vez vou dar o exemplo da SIC, em que os conteúdos noticiosos da página inicial não estão escondidos.</p>
+<p>Compreendo (e sei) que é difícil conciliar diferentes públicos alvo num único site, mas penso que ainda podem melhorar bastante esta nova versão da RTP Online.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ricardo Jorge Tomé</title>
+		<link>/o-novo-website-da-rtp/#comment-54782</link>
+		<dc:creator><![CDATA[Ricardo Jorge Tomé]]></dc:creator>
+		<pubDate>Tue, 08 Jul 2008 17:47:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-54782</guid>
+		<description><![CDATA[Olá Ivo e restantes visitantes!
+
+Desde já obrigado pelos sinceros e directos comentários. Como uma das partes envolvidas no redesenhamento da nova homepage, passo a responder a alguns tópicos aqui referidos.
+
+A) Inconsitência entre Páginas
+tal como referimos no nosso blog (www.rtp.pt/estadodositio) não mudámos o site; mudámos a homepage. O processo de reestruturação de todo o site está a ser feito de forma gradual. Tal como o guardian.co.uk, que desde há dois anos a esta parte vem reestruturando passo a passo, secção a secção, o seu site no todo.
+
+Como exemplo de um site já redesenhado tendo por base as novas linhas, consultem p.f. o site da antena3 (http://antena3.rtp.pt)./
+
+B) Notícias
+Não nos parece que a consulta das notícias seja confusa, nem que haja poucas.
+Pela análise que fizémos, a opção de tabs foi consensual (e usada e testada também em muitos outros sites); dessa forma temos &quot;à vista&quot; 2 dstks + 2 notícias em vídeo. Navegando pelas respectivas caixas há depois mais notícias e mais posts dos blogues de notícias e desporto.
+
+Estamos também a receber algum feedback ao nível da usabilidade, que são sempre importantes.
+
+C) Estrutura
+Para compreender melhor a nova estrutura da nova homepage, recomendo a leitura ao seguinte post do nosso blogue:
+http://ww1.rtp.pt/icmblogs/rtp/estadositio/?k=Nova-Homepage-RTPO-que-mudou---ESTRUTURA.rtp&#038;post=2383
+
+D) Links directos
+algo que aqui não é referido é que a página antiga não definia claramente o que é o site RTP. Cremos que isso agora fica muito mais claro.
+
+Reparem que desde logo, ao centro, estão disponíveis os vídeos e áudios on-demand mais recentes, bem como links directos a todas as emissões tv e rádio. Anteriormente eram necessários 3 cliques para chegar lá.
+
+
+
+De qualquer forma, tal como afirmámos, este é um work in progress, tal como todas as páginas. E tudo faremos para ir respeitando todas as necessidades dos vários tipos de público que acedem ao www.rtp.pt.
+
+Reparem,
+o www.rtp.pt recebe um rol de &quot;tipos&quot; de visitantes muito variado. Desde o aficionado pela RTP1 ou Antena 3, ao português emigrado nos USA ou Canadá, passando ainda pelo público infantil e ainda os que aqui vêm apenas para consultar as notícias do dia.
+
+Uma página consensual para todos estes vistantes é praticamente impossível, daí que novos modelos estejam a ser testados.
+
+-----
+
+Obrigado por este tempo e espaço de comentário,
+;)
+
+R.]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo e restantes visitantes!</p>
+<p>Desde já obrigado pelos sinceros e directos comentários. Como uma das partes envolvidas no redesenhamento da nova homepage, passo a responder a alguns tópicos aqui referidos.</p>
+<p>A) Inconsitência entre Páginas<br />
+tal como referimos no nosso blog (www.rtp.pt/estadodositio) não mudámos o site; mudámos a homepage. O processo de reestruturação de todo o site está a ser feito de forma gradual. Tal como o guardian.co.uk, que desde há dois anos a esta parte vem reestruturando passo a passo, secção a secção, o seu site no todo.</p>
+<p>Como exemplo de um site já redesenhado tendo por base as novas linhas, consultem p.f. o site da antena3 (<a href="http://antena3.rtp.pt/" rel="nofollow">http://antena3.rtp.pt/</a>).</p>
+<p>B) Notícias<br />
+Não nos parece que a consulta das notícias seja confusa, nem que haja poucas.<br />
+Pela análise que fizémos, a opção de tabs foi consensual (e usada e testada também em muitos outros sites); dessa forma temos &#8220;à vista&#8221; 2 dstks + 2 notícias em vídeo. Navegando pelas respectivas caixas há depois mais notícias e mais posts dos blogues de notícias e desporto.</p>
+<p>Estamos também a receber algum feedback ao nível da usabilidade, que são sempre importantes.</p>
+<p>C) Estrutura<br />
+Para compreender melhor a nova estrutura da nova homepage, recomendo a leitura ao seguinte post do nosso blogue:<br />
+<a href="http://ww1.rtp.pt/icmblogs/rtp/estadositio/?k=Nova-Homepage-RTPO-que-mudou---ESTRUTURA.rtp&#038;post=2383" rel="nofollow">http://ww1.rtp.pt/icmblogs/rtp/estadositio/?k=Nova-Homepage-RTPO-que-mudou&#8212;ESTRUTURA.rtp&#038;post=2383</a></p>
+<p>D) Links directos<br />
+algo que aqui não é referido é que a página antiga não definia claramente o que é o site RTP. Cremos que isso agora fica muito mais claro.</p>
+<p>Reparem que desde logo, ao centro, estão disponíveis os vídeos e áudios on-demand mais recentes, bem como links directos a todas as emissões tv e rádio. Anteriormente eram necessários 3 cliques para chegar lá.</p>
+<p>De qualquer forma, tal como afirmámos, este é um work in progress, tal como todas as páginas. E tudo faremos para ir respeitando todas as necessidades dos vários tipos de público que acedem ao <a href="http://www.rtp.pt/" rel="nofollow">http://www.rtp.pt/</a>.</p>
+<p>Reparem,<br />
+o <a href="http://www.rtp.pt/" rel="nofollow">http://www.rtp.pt/</a> recebe um rol de &#8220;tipos&#8221; de visitantes muito variado. Desde o aficionado pela RTP1 ou Antena 3, ao português emigrado nos USA ou Canadá, passando ainda pelo público infantil e ainda os que aqui vêm apenas para consultar as notícias do dia.</p>
+<p>Uma página consensual para todos estes vistantes é praticamente impossível, daí que novos modelos estejam a ser testados.</p>
+<p>&#8212;&#8211;</p>
+<p>Obrigado por este tempo e espaço de comentário,<br />
+;)</p>
+<p>R.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: João Silas</title>
+		<link>/o-novo-website-da-rtp/#comment-54495</link>
+		<dc:creator><![CDATA[João Silas]]></dc:creator>
+		<pubDate>Sat, 05 Jul 2008 23:27:45 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-54495</guid>
+		<description><![CDATA[Para ser sincero nem gostei muito. A outra era confusa mas esta também o é. Preferia a outra!]]></description>
+		<content:encoded><![CDATA[<p>Para ser sincero nem gostei muito. A outra era confusa mas esta também o é. Preferia a outra!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: RTP renova o site mas continua com mau SEO &#124; Mercado Blogger</title>
+		<link>/o-novo-website-da-rtp/#comment-54446</link>
+		<dc:creator><![CDATA[RTP renova o site mas continua com mau SEO &#124; Mercado Blogger]]></dc:creator>
+		<pubDate>Sat, 05 Jul 2008 13:00:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-54446</guid>
+		<description><![CDATA[[...] Ivo Gomes fez uma analise rápida ao novo layout e indicou algumas falhas que insistem em [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Ivo Gomes fez uma analise rápida ao novo layout e indicou algumas falhas que insistem em [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: diga cultura</title>
+		<link>/o-novo-website-da-rtp/#comment-54330</link>
+		<dc:creator><![CDATA[diga cultura]]></dc:creator>
+		<pubDate>Fri, 04 Jul 2008 18:33:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-54330</guid>
+		<description><![CDATA[&lt;strong&gt;O novo website da RTP...&lt;/strong&gt;
+
+Apesar de dizerem que é um “work in progess”, penso que a página piorou em relação à anterior....]]></description>
+		<content:encoded><![CDATA[<p><strong>O novo website da RTP&#8230;</strong></p>
+<p>Apesar de dizerem que é um “work in progess”, penso que a página piorou em relação à anterior&#8230;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Giu Vicente</title>
+		<link>/o-novo-website-da-rtp/#comment-54319</link>
+		<dc:creator><![CDATA[Giu Vicente]]></dc:creator>
+		<pubDate>Fri, 04 Jul 2008 17:20:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-54319</guid>
+		<description><![CDATA[Dou-te razão.
+Acredito que os argumentos da RTP são apenas palavras que os criadores do site utilizaram para defender sua idéia. Não houve um real comprovação do resultado.
+
+O que mais me desagrada são as cores e esse efeito do menu, em botões dentro de botões.... estranho demais.
+
+Abraços do Brasil.
+
+Atte.
+Giu Vicente.]]></description>
+		<content:encoded><![CDATA[<p>Dou-te razão.<br />
+Acredito que os argumentos da RTP são apenas palavras que os criadores do site utilizaram para defender sua idéia. Não houve um real comprovação do resultado.</p>
+<p>O que mais me desagrada são as cores e esse efeito do menu, em botões dentro de botões&#8230;. estranho demais.</p>
+<p>Abraços do Brasil.</p>
+<p>Atte.<br />
+Giu Vicente.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ricardo M Carvalho</title>
+		<link>/o-novo-website-da-rtp/#comment-54318</link>
+		<dc:creator><![CDATA[Ricardo M Carvalho]]></dc:creator>
+		<pubDate>Fri, 04 Jul 2008 17:16:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485#comment-54318</guid>
+		<description><![CDATA[Olá Ivo,
+
+Tem toda a razão. O novo sítio está uma verdadeira desgraça.. Mais um caso onde uma coisa que quanto mais se altera, mais se estraga!
+
+Já aconteceu o mesmo com o Jornal Público..
+
+Cumprimentos.]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo,</p>
+<p>Tem toda a razão. O novo sítio está uma verdadeira desgraça.. Mais um caso onde uma coisa que quanto mais se altera, mais se estraga!</p>
+<p>Já aconteceu o mesmo com o Jornal Público..</p>
+<p>Cumprimentos.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

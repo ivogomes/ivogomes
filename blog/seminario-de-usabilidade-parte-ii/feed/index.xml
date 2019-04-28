@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Seminário de Usabilidade &#8211; Parte II</title>
+	<atom:link href="/seminario-de-usabilidade-parte-ii/feed/" rel="self" type="application/rss+xml" />
+	<link>/seminario-de-usabilidade-parte-ii/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: &#187; A Usabilidade do Sistema de Votação Americano - IvoGomes.com</title>
+		<link>/seminario-de-usabilidade-parte-ii/#comment-26171</link>
+		<dc:creator><![CDATA[&#187; A Usabilidade do Sistema de Votação Americano - IvoGomes.com]]></dc:creator>
+		<pubDate>Fri, 10 Aug 2007 08:30:42 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=89#comment-26171</guid>
+		<description><![CDATA[[...] o Seminário de Usabilidade que ocorreu em Lisboa no mês passado, e do qual já falei aqui, aqui e aqui, houve uma apresentação que me chamou a atenção. Foi a do Professor Francisco Rebelo, [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] o Seminário de Usabilidade que ocorreu em Lisboa no mês passado, e do qual já falei aqui, aqui e aqui, houve uma apresentação que me chamou a atenção. Foi a do Professor Francisco Rebelo, [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Pedro Custódio</title>
+		<link>/seminario-de-usabilidade-parte-ii/#comment-99</link>
+		<dc:creator><![CDATA[Pedro Custódio]]></dc:creator>
+		<pubDate>Tue, 26 Oct 2004 10:15:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=89#comment-99</guid>
+		<description><![CDATA[Coloquei no meu blog as notas (http://www.patriciaepedro.com/pedro/blog/index.php?p=273) que tirei das apresentações se alguém quiser saber/ler o que por lá se falou.]]></description>
+		<content:encoded><![CDATA[<p>Coloquei no meu blog as notas (<a href="http://www.patriciaepedro.com/pedro/blog/index.php?p=273" rel="nofollow">http://www.patriciaepedro.com/pedro/blog/index.php?p=273</a>) que tirei das apresentações se alguém quiser saber/ler o que por lá se falou.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

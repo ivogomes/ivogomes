@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>leituras &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/leituras/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Comunicação de Leituras</title>
+		<link>/comunicacao-de-leituras/</link>
+		<comments>/comunicacao-de-leituras/#comments</comments>
+		<pubDate>Sat, 20 Sep 2008 15:19:39 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Ergonomia]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[leituras]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=554</guid>
+		<description><![CDATA[<p>Hoje dediquei alguns minutos para fazer a comunicação das leituras de água, electricidade e gás usando os sistemas de atendimento automático dos vários operadores. No caso da electricidade (EDP), usei o endereço web mencionado na factura, enquanto que para a água (EPAL) e gás (LisboaGás) usei o número de telefone indicado e o atendimento automático.</p>
+<p>Hoje não vou falar da experiência web, mas sim da experiência do atendimento automático e a sua usabilidade (ou falta dela).</p>
+<p>O conteúdo <a rel="nofollow" href="/comunicacao-de-leituras/">Comunicação de Leituras</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/comunicacao-de-leituras/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

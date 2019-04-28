@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>dicionário-aberto-webdesign &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/dicionario-aberto-webdesign/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Dicionário Aberto</title>
+		<link>/dicionario-aberto/</link>
+		<comments>/dicionario-aberto/#comments</comments>
+		<pubDate>Thu, 26 Jul 2007 15:39:57 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[dicionário-aberto-webdesign]]></category>
+
+		<guid isPermaLink="false">/dicionario-aberto/</guid>
+		<description><![CDATA[<p>O <a href="http://dicionario-aberto.net/">Dicionário Aberto</a> é um projecto para disponibilização na Internet de um dicionário de língua Portuguesa livre de direitos de autor.</p>
+<p>Com a ajuda da <a href="http://bn.pt/">Biblioteca Nacional</a>, digitalizou-se um dicionário de 1913, de Cândido de Figueiredo. Este dicionário está a servir de base para a construção deste dicionário aberto, de momento com grafia antiga, mas que no futuro passará a um formato <a href="http://pt.wikipedia.org/wiki/Wiki">Wiki</a> para que possa evoluir.</p>
+<p>Neste momento estão disponíveis as primeiras 15988 entradas (de "a" a "ázymo", ou seja, todas as palavras começadas pela letra "a") para consulta a partir do site do projecto em <a href="http://dicionario-aberto.net/">http://dicionario-aberto.net/</a></p>
+<p>O conteúdo <a rel="nofollow" href="/dicionario-aberto/">Dicionário Aberto</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/dicionario-aberto/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+	</channel>
+</rss>

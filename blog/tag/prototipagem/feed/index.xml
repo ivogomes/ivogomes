@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>prototipagem &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/prototipagem/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Como documentar e prototipar &#8220;Rich Internet Applications&#8221;?</title>
+		<link>/como-documentar-e-prototipar-rich-internet-applications/</link>
+		<comments>/como-documentar-e-prototipar-rich-internet-applications/#comments</comments>
+		<pubDate>Thu, 27 Dec 2007 13:08:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[prototipagem]]></category>
+		<category><![CDATA[ria]]></category>
+
+		<guid isPermaLink="false">/como-documentar-e-prototipar-rich-internet-applications/</guid>
+		<description><![CDATA[<p>A tecnologia AJAX e as "Rich Internet Applications (RIA's) revolucionaram a forma como os utilizadores interagem com os novos websites. Para quem desenha este tipo de websites, torna-se difícil documentar todas as funcionalidades que mudam consoante uma acção do utilizador, uma vez que numa mesma página, a informação pode ser disponibilizada de formas diferentes, dependendo [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/como-documentar-e-prototipar-rich-internet-applications/">Como documentar e prototipar &#8220;Rich Internet Applications&#8221;?</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/como-documentar-e-prototipar-rich-internet-applications/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Slides da apresentação no Seminário de Usabilidade</title>
+		<link>/slides-da-apresentacao-no-seminario-de-usabilidade/</link>
+		<comments>/slides-da-apresentacao-no-seminario-de-usabilidade/#comments</comments>
+		<pubDate>Thu, 05 Apr 2007 09:05:55 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[papel]]></category>
+		<category><![CDATA[prototipagem]]></category>
+		<category><![CDATA[seminário]]></category>
+
+		<guid isPermaLink="false">/slides-da-apresentacao-no-seminario-de-usabilidade/</guid>
+		<description><![CDATA[<p>Antes de mais, quero agradecer a todos os que estiveram presentes no seminário (e foram bastantes) e esperar que os próximos eventos tenham ainda mais gente a assistir e mais oradores (membros da APPU, cheguem-se à frente com possíveis temas que queiram apresentar!).</p>
+<p>O conteúdo <a rel="nofollow" href="/slides-da-apresentacao-no-seminario-de-usabilidade/">Slides da apresentação no Seminário de Usabilidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/slides-da-apresentacao-no-seminario-de-usabilidade/feed/</wfw:commentRss>
+		<slash:comments>14</slash:comments>
+		</item>
+		<item>
+		<title>É já hoje à tarde</title>
+		<link>/e-ja-hoje-a-tarde/</link>
+		<comments>/e-ja-hoje-a-tarde/#comments</comments>
+		<pubDate>Wed, 04 Apr 2007 09:40:22 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[papel]]></category>
+		<category><![CDATA[prototipagem]]></category>
+		<category><![CDATA[seminário]]></category>
+
+		<guid isPermaLink="false">/e-ja-hoje-a-tarde/</guid>
+		<description><![CDATA[<p>O 3º Seminário de Usabilidade arranca hoje à tarde, com lotação esgotada no Auditório da Microsoft.</p>
+<p>No final vou disponibilizar aqui a minha apresentação sobre prototipagem em papel. Fiz uma apresentação simples e com menos exemplos do que gostaria de ter (devido à falta de tempo para a preparar), mas espero que gostem.</p>
+<p>O conteúdo <a rel="nofollow" href="/e-ja-hoje-a-tarde/">É já hoje à tarde</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/e-ja-hoje-a-tarde/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>motorola &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/motorola/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Comparativo de Usabilidade entre 2 telemóveis</title>
+		<link>/comparativo-de-usabilidade-entre-2-telemoveis/</link>
+		<comments>/comparativo-de-usabilidade-entre-2-telemoveis/#comments</comments>
+		<pubDate>Tue, 15 Jan 2008 12:35:48 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[motorola]]></category>
+		<category><![CDATA[sony ericsson]]></category>
+		<category><![CDATA[telemóvel]]></category>
+
+		<guid isPermaLink="false">/comparativo-de-usabilidade-entre-2-telemoveis/</guid>
+		<description><![CDATA[<p>Neste artigo vou fazer um pequeno comparativo entre os dois telemóveis que uso no dia-a-dia. O primeiro é um <a href="http://www.motorola.com/consumer/v/index.jsp?vgnextoid=01972aa90930c010VgnVCM1000008206b00aRCRD&#038;show=featureCategoryHome">Motorola V360</a> (o pior telemóvel que já comprei) e o segundo é um <a href="http://www.sonyericsson.com/cws/products/mobilephones/overview/k610i?cc=pt&#038;lc=pt">Sony Ericsson K610i</a> (o melhor telemóvel que já tive).</p>
+<p><img src='/wp-content/uploads/2008/01/motovsse.png' alt='Motorola V360 vs. Sony Ericsson K610i' /></p>
+<p>O conteúdo <a rel="nofollow" href="/comparativo-de-usabilidade-entre-2-telemoveis/">Comparativo de Usabilidade entre 2 telemóveis</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/comparativo-de-usabilidade-entre-2-telemoveis/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+	</channel>
+</rss>

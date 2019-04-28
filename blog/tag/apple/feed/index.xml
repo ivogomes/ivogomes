@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>apple &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/apple/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Software que pensa como os humanos</title>
+		<link>/software-que-pensa-como-os-humanos/</link>
+		<comments>/software-que-pensa-como-os-humanos/#comments</comments>
+		<pubDate>Wed, 01 Feb 2006 12:19:38 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Ergonomia]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[apple]]></category>
+
+		<guid isPermaLink="false">/software-que-pensa-como-os-humanos/</guid>
+		<description><![CDATA[<p>Esta semana reparei numa coisa engraçada quando estava a consultar o meu e-mail.<br />
+Na aplicação que eu uso, o <a href="http://www.apple.com/macosx/features/mail/">Mail</a> (sim, a aplicação para ver o mail chama-se mesmo Mail) havia uma mensagem que tinha muitos anexos e em vez de aparecer a quantidade exacta dos anexos aparecia a palavra "lots" que significa "muitos" ou "montes deles" em português.</p>
+<p>O conteúdo <a rel="nofollow" href="/software-que-pensa-como-os-humanos/">Software que pensa como os humanos</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/software-que-pensa-como-os-humanos/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Donald Norman e os webstandards</title>
+		<link>/donald-norman-e-os-webstandards/</link>
+		<comments>/donald-norman-e-os-webstandards/#comments</comments>
+		<pubDate>Thu, 13 Oct 2005 19:06:27 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[apple]]></category>
+		<category><![CDATA[microsoft]]></category>
+		<category><![CDATA[nielsen]]></category>
+		<category><![CDATA[norman]]></category>
+		<category><![CDATA[web-standards]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=178</guid>
+		<description><![CDATA[<p>Donald Norman é juntamente com Jakob Nielsen fundador do Nielsen-Norman Group. Durante os últimos anos, Norman e Nielsen têm defendido a usabilidade na web e quer se queira quer não, foram eles que conseguiram fazer com que a usabilidade passasse a ser um factor importantíssimo no desenvolvimento de qualquer projecto web ou de software. No [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/donald-norman-e-os-webstandards/">Donald Norman e os webstandards</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/donald-norman-e-os-webstandards/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>O meu primeiro computador</title>
+		<link>/o-meu-primeiro-computador/</link>
+		<comments>/o-meu-primeiro-computador/#comments</comments>
+		<pubDate>Tue, 01 Feb 2005 16:16:27 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[apple]]></category>
+		<category><![CDATA[computador]]></category>
+		<category><![CDATA[mac_os_x]]></category>
+		<category><![CDATA[microsoft]]></category>
+		<category><![CDATA[sharp]]></category>
+		<category><![CDATA[windows]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=117</guid>
+		<description><![CDATA[<p>Foi neste velhinho Sharp MZ-721 que comecei a dar os meus primeiros passos no mundo da informática. A grande particularidade deste computador é que não vinha com sistema operativo instalado. O sistema operativo BASIC tinha que ser corrido através de uma cassete que demorava uns 10 minutos a carregar. Haviam várias versões do BASIC disponíveis [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/o-meu-primeiro-computador/">O meu primeiro computador</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/o-meu-primeiro-computador/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

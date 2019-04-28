@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Moo Cards</title>
+	<atom:link href="/moo-cards/feed/" rel="self" type="application/rss+xml" />
+	<link>/moo-cards/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Flavio Mendes</title>
+		<link>/moo-cards/#comment-70190</link>
+		<dc:creator><![CDATA[Flavio Mendes]]></dc:creator>
+		<pubDate>Tue, 23 Sep 2008 21:41:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=535#comment-70190</guid>
+		<description><![CDATA[Os cartões são bem legais!
+Assim como também a mesa :o)]]></description>
+		<content:encoded><![CDATA[<p>Os cartões são bem legais!<br />
+Assim como também a mesa :o)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: lfspaulo</title>
+		<link>/moo-cards/#comment-66095</link>
+		<dc:creator><![CDATA[lfspaulo]]></dc:creator>
+		<pubDate>Wed, 03 Sep 2008 15:01:43 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=535#comment-66095</guid>
+		<description><![CDATA[Epá, também queria uns :-( São mesmo fixes!!!
+
+cumps,
+lfspaulo (&lt;a href=&quot;http://hacenaslixadas.htuga.com&quot;/ title=&quot;Há cenas lixadas!&quot; rel=&quot;nofollow&quot;&gt;Há cenas lixadas!&lt;/a&gt;)]]></description>
+		<content:encoded><![CDATA[<p>Epá, também queria uns :-( São mesmo fixes!!!</p>
+<p>cumps,<br />
+lfspaulo (<a href="http://hacenaslixadas.htuga.com/" title="Há cenas lixadas!" rel="nofollow">Há cenas lixadas!</a>)</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

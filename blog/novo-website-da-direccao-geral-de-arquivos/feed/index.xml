@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Novo website da Direcção-Geral de Arquivos</title>
+	<atom:link href="/novo-website-da-direccao-geral-de-arquivos/feed/" rel="self" type="application/rss+xml" />
+	<link>/novo-website-da-direccao-geral-de-arquivos/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/#comment-77297</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 20 Jan 2009 18:22:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682#comment-77297</guid>
+		<description><![CDATA[Já foram lançados os restantes websites dos arquivos distritais e actualizei o post com links para todos os sites:
+&lt;a href=&quot;http://www.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Direcção-Geral de Arquivos&lt;/a&gt;
+&lt;a href=&quot;http://antt.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Nacional da Torre do Tombo&lt;/a&gt;
+&lt;a href=&quot;http://adavr.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Distrital de Aveiro&lt;/a&gt;
+&lt;a href=&quot;http://adbja.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Distrital de Beja&lt;/a&gt;
+&lt;a href=&quot;http://adctb.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Distrital de Castelo Branco&lt;/a&gt;
+&lt;a href=&quot;http://adevr.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Distrital de Évora&lt;/a&gt;
+&lt;a href=&quot;http://adlsb.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Distrital de Lisboa&lt;/a&gt;
+&lt;a href=&quot;http://adptg.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Distrital de Portalegre&lt;/a&gt;
+&lt;a href=&quot;http://adstr.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Distrital de Santarém&lt;/a&gt;
+&lt;a href=&quot;http://adstb.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Distrital de Setúbal&lt;/a&gt;
+&lt;a href=&quot;http://advct.dgarq.gov.pt/&quot; rel=&quot;nofollow&quot;&gt;Arquivo Distrital de Viana do Castelo&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>Já foram lançados os restantes websites dos arquivos distritais e actualizei o post com links para todos os sites:<br />
+<a href="http://www.dgarq.gov.pt/" rel="nofollow">Direcção-Geral de Arquivos</a><br />
+<a href="http://antt.dgarq.gov.pt/" rel="nofollow">Arquivo Nacional da Torre do Tombo</a><br />
+<a href="http://adavr.dgarq.gov.pt/" rel="nofollow">Arquivo Distrital de Aveiro</a><br />
+<a href="http://adbja.dgarq.gov.pt/" rel="nofollow">Arquivo Distrital de Beja</a><br />
+<a href="http://adctb.dgarq.gov.pt/" rel="nofollow">Arquivo Distrital de Castelo Branco</a><br />
+<a href="http://adevr.dgarq.gov.pt/" rel="nofollow">Arquivo Distrital de Évora</a><br />
+<a href="http://adlsb.dgarq.gov.pt/" rel="nofollow">Arquivo Distrital de Lisboa</a><br />
+<a href="http://adptg.dgarq.gov.pt/" rel="nofollow">Arquivo Distrital de Portalegre</a><br />
+<a href="http://adstr.dgarq.gov.pt/" rel="nofollow">Arquivo Distrital de Santarém</a><br />
+<a href="http://adstb.dgarq.gov.pt/" rel="nofollow">Arquivo Distrital de Setúbal</a><br />
+<a href="http://advct.dgarq.gov.pt/" rel="nofollow">Arquivo Distrital de Viana do Castelo</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/#comment-75820</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 24 Dec 2008 11:42:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682#comment-75820</guid>
+		<description><![CDATA[Olá Bruno.
+Obrigado pelo feedback. Infelizmente, quando adicionamos um plugin, ele adiciona algum código à página, que nem sempre é válido. Não é tanto um problema do WordPress, mas sim de quem faz os plugins.
+
+Poderiamos alterar o plugin para ele não incluir esse código inválido e manter a página limpa, mas imagina que amanhã sai uma nova versão do plugin e o cliente instala-a. Provavelmente não iria funcionar ou o site ficaria desfigurado porque não estávamos a usar a versão original do plugin, mas sim uma alterada por nós. Assim, é necessário criar um compromisso entre a validação completa e a possibilidade de evolução do software sem ser necessário fazer alterações ao layout sempre que sai uma nova versão (quer do WordPress, quer de algum plugin instalado).]]></description>
+		<content:encoded><![CDATA[<p>Olá Bruno.<br />
+Obrigado pelo feedback. Infelizmente, quando adicionamos um plugin, ele adiciona algum código à página, que nem sempre é válido. Não é tanto um problema do WordPress, mas sim de quem faz os plugins.</p>
+<p>Poderiamos alterar o plugin para ele não incluir esse código inválido e manter a página limpa, mas imagina que amanhã sai uma nova versão do plugin e o cliente instala-a. Provavelmente não iria funcionar ou o site ficaria desfigurado porque não estávamos a usar a versão original do plugin, mas sim uma alterada por nós. Assim, é necessário criar um compromisso entre a validação completa e a possibilidade de evolução do software sem ser necessário fazer alterações ao layout sempre que sai uma nova versão (quer do WordPress, quer de algum plugin instalado).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: facilidade.net &#187; Blog Archive &#187; Novo website da Direcção-Geral de Arquivos</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/#comment-75819</link>
+		<dc:creator><![CDATA[facilidade.net &#187; Blog Archive &#187; Novo website da Direcção-Geral de Arquivos]]></dc:creator>
+		<pubDate>Wed, 24 Dec 2008 11:06:57 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682#comment-75819</guid>
+		<description><![CDATA[[...] de Arquivos (antigo IAN/TT - Instituto dos Arquivos Nacionais / Torre do Veja o post completo clicando aqui.&#160;Post indexado de:  [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] de Arquivos (antigo IAN/TT &#8211; Instituto dos Arquivos Nacionais / Torre do Veja o post completo clicando aqui.&nbsp;Post indexado de:  [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Couto</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/#comment-75797</link>
+		<dc:creator><![CDATA[Bruno Couto]]></dc:creator>
+		<pubDate>Tue, 23 Dec 2008 15:38:08 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682#comment-75797</guid>
+		<description><![CDATA[Olá Ivo!
+
+Antes demais parabéns pelo novo trabalho. Vi o site, e sem querer discutir questões estéticas que são sempre um bocado redundantes e discutíveis, deixo-te aqui um ou outro promenor que penso que corrigidos podem melhorar já o bom trabalho existente:
+
+- Formulários de newsletter, esqueceste-te de onfocus limpar o value do campo e validar o mesmo, se está vazia retorna o value inicial, se preenchido valida e envia o mesmo;
+- O MailPress, penso que seja algum tipo de plugin usado para a newsletter, gera CSS dentro da div, isto apesar de funcionar, não é valido;
+- Não sei o que te gera os formulários, mas em muitos casos implementa o atributo &#039;aria-required&#039;, também não valida;
+Enfim são alguns promenores, muitos provavelmente causados pelo Wordpress que nem sempre faz um follow-up dos standards, mas são chamadas de atenção que também gosto de receber nos meus trabalhos, pois o que interessa sempre é que no fim esteja tudo o melhor possível, e achei por bem alertar-te.
+Bom Natal e continuação de um bom trabalho!]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo!</p>
+<p>Antes demais parabéns pelo novo trabalho. Vi o site, e sem querer discutir questões estéticas que são sempre um bocado redundantes e discutíveis, deixo-te aqui um ou outro promenor que penso que corrigidos podem melhorar já o bom trabalho existente:</p>
+<p>&#8211; Formulários de newsletter, esqueceste-te de onfocus limpar o value do campo e validar o mesmo, se está vazia retorna o value inicial, se preenchido valida e envia o mesmo;<br />
+&#8211; O MailPress, penso que seja algum tipo de plugin usado para a newsletter, gera CSS dentro da div, isto apesar de funcionar, não é valido;<br />
+&#8211; Não sei o que te gera os formulários, mas em muitos casos implementa o atributo &#8216;aria-required&#8217;, também não valida;<br />
+Enfim são alguns promenores, muitos provavelmente causados pelo WordPress que nem sempre faz um follow-up dos standards, mas são chamadas de atenção que também gosto de receber nos meus trabalhos, pois o que interessa sempre é que no fim esteja tudo o melhor possível, e achei por bem alertar-te.<br />
+Bom Natal e continuação de um bom trabalho!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dextro</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/#comment-75795</link>
+		<dc:creator><![CDATA[Dextro]]></dc:creator>
+		<pubDate>Tue, 23 Dec 2008 13:18:46 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682#comment-75795</guid>
+		<description><![CDATA[Muito bom como sempre. Limpo, atraente, accessivel... Gostei :)
+
+Quanto a isso do Wordpress: não dava para fazer um pequeno plugin para não introduzir essa div? Sendo wordpress não deve ser impossivel (nem muito dificil).]]></description>
+		<content:encoded><![CDATA[<p>Muito bom como sempre. Limpo, atraente, accessivel&#8230; Gostei :)</p>
+<p>Quanto a isso do WordPress: não dava para fazer um pequeno plugin para não introduzir essa div? Sendo wordpress não deve ser impossivel (nem muito dificil).</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sistemas &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/sistemas/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Pós-Graduação em Ergonomia no Design de Sistemas de Informação e Comunicação</title>
+		<link>/pos-graduacao-em-ergonomia-no-design-de-sistemas-de-informacao-e-comunicacao/</link>
+		<comments>/pos-graduacao-em-ergonomia-no-design-de-sistemas-de-informacao-e-comunicacao/#comments</comments>
+		<pubDate>Mon, 21 Aug 2006 20:32:49 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Ergonomia]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[comunicação]]></category>
+		<category><![CDATA[informação]]></category>
+		<category><![CDATA[pós-graduação]]></category>
+		<category><![CDATA[sistemas]]></category>
+
+		<guid isPermaLink="false">/pos-graduacao-em-ergonomia-no-design-de-sistemas-de-informacao-e-comunicacao/</guid>
+		<description><![CDATA[<p>Estão abertas as pré-inscrições para a Pós-Graduação em Ergonomia no Design de Sistemas de Informação e Comunicação. </p>
+<p>Tendo em conta que nos últimos anos não houve nenhuma edição desta pós-graduação, penso que agora poderá ser a altura certa para os interessados se registarem porque não sabemos se para o ano haverá mais uma edição. Eu já me inscrevi :)</p>
+<p>O conteúdo <a rel="nofollow" href="/pos-graduacao-em-ergonomia-no-design-de-sistemas-de-informacao-e-comunicacao/">Pós-Graduação em Ergonomia no Design de Sistemas de Informação e Comunicação</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/pos-graduacao-em-ergonomia-no-design-de-sistemas-de-informacao-e-comunicacao/feed/</wfw:commentRss>
+		<slash:comments>23</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Ergonomics in Design</title>
+	<atom:link href="/ergonomics-in-design/feed/" rel="self" type="application/rss+xml" />
+	<link>/ergonomics-in-design/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ergonomics in Design&#160;&#124;&#160;ExtraLibris</title>
+		<link>/ergonomics-in-design/#comment-86333</link>
+		<dc:creator><![CDATA[Ergonomics in Design&#160;&#124;&#160;ExtraLibris]]></dc:creator>
+		<pubDate>Mon, 20 Jul 2009 18:19:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=472#comment-86333</guid>
+		<description><![CDATA[[...] um evento de caráter acadêmico, e, segundo o site de Ivo Gomes: Está confirmada a presença do Professor Michael S. Wogalter, da North Carolina State University, [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] um evento de caráter acadêmico, e, segundo o site de Ivo Gomes: Está confirmada a presença do Professor Michael S. Wogalter, da North Carolina State University, [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/ergonomics-in-design/#comment-51129</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 29 May 2008 10:46:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=472#comment-51129</guid>
+		<description><![CDATA[Só assisti à apresentação do Prof. Wogalter e achei-a bastante interessante. 
+
+Basicamente ele falou como a sinaléticas e as mensagens de alerta são nterpretadas pelos humanos e quais as formas de as tornar mais explícitas e de froma a que as pessoas as leiam e não as ignorem. Como disse, foi bastante interessante.]]></description>
+		<content:encoded><![CDATA[<p>Só assisti à apresentação do Prof. Wogalter e achei-a bastante interessante. </p>
+<p>Basicamente ele falou como a sinaléticas e as mensagens de alerta são nterpretadas pelos humanos e quais as formas de as tornar mais explícitas e de froma a que as pessoas as leiam e não as ignorem. Como disse, foi bastante interessante.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rosa Cunha</title>
+		<link>/ergonomics-in-design/#comment-51034</link>
+		<dc:creator><![CDATA[Rosa Cunha]]></dc:creator>
+		<pubDate>Tue, 27 May 2008 10:24:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=472#comment-51034</guid>
+		<description><![CDATA[Como correu este evento ? Só vi este teu artigo, Ivo, ontem à tarde... :( .]]></description>
+		<content:encoded><![CDATA[<p>Como correu este evento ? Só vi este teu artigo, Ivo, ontem à tarde&#8230; :( .</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

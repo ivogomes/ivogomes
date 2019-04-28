@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Estilizando o RSS</title>
+	<atom:link href="/estilizando-o-rss/feed/" rel="self" type="application/rss+xml" />
+	<link>/estilizando-o-rss/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/estilizando-o-rss/#comment-3288</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 26 Jan 2006 09:30:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3288</guid>
+		<description><![CDATA[Acho que devias procurar no suporte do fórum que usas. EU quando quero saber alguma coisa sobre o &lt;a href=&quot;http://www.simplemachines.org&quot;/ rel=&quot;nofollow&quot;&gt;SMF&lt;/a&gt; (O fórum que uso) vou ao fórum de suporte e lá de certeza que tenho a resposta.
+
+Aqui estás a comentar num post que não está directamente relacionado com fóruns por isso é natural que não te respondam a essa pergunta...
+
+Fazendo uma breve pesquisa por &quot;Invision+RSS&quot; cheguei à página oficial do Invision onde estão identificadas as suas &lt;a href=&quot;http://www.invisionpower.com/ip.dynamic/products/board/features.html&quot; rel=&quot;nofollow&quot;&gt;funcionalidades&lt;/a&gt; e uma delas é o RSS (canto inferior direito da página).]]></description>
+		<content:encoded><![CDATA[<p>Acho que devias procurar no suporte do fórum que usas. EU quando quero saber alguma coisa sobre o <a href="http://www.simplemachines.org/" rel="nofollow">SMF</a> (O fórum que uso) vou ao fórum de suporte e lá de certeza que tenho a resposta.</p>
+<p>Aqui estás a comentar num post que não está directamente relacionado com fóruns por isso é natural que não te respondam a essa pergunta&#8230;</p>
+<p>Fazendo uma breve pesquisa por &#8220;Invision+RSS&#8221; cheguei à página oficial do Invision onde estão identificadas as suas <a href="http://www.invisionpower.com/ip.dynamic/products/board/features.html" rel="nofollow">funcionalidades</a> e uma delas é o RSS (canto inferior direito da página).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Nuno</title>
+		<link>/estilizando-o-rss/#comment-3279</link>
+		<dc:creator><![CDATA[Nuno]]></dc:creator>
+		<pubDate>Wed, 25 Jan 2006 20:45:11 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3279</guid>
+		<description><![CDATA[Estou a ver que ninguem sabe como é!!]]></description>
+		<content:encoded><![CDATA[<p>Estou a ver que ninguem sabe como é!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Nuno</title>
+		<link>/estilizando-o-rss/#comment-3243</link>
+		<dc:creator><![CDATA[Nuno]]></dc:creator>
+		<pubDate>Wed, 18 Jan 2006 18:53:15 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3243</guid>
+		<description><![CDATA[tenho um forum em php num servidor gratis, e um em invisionfree. Estava mais intereçado um por feeds no invisionfree. Nesse dá??
+Se nao der ponho no outro que tambem precisava k esta em php. Ja agora andr3 a pag k me indicaste nao abre.]]></description>
+		<content:encoded><![CDATA[<p>tenho um forum em php num servidor gratis, e um em invisionfree. Estava mais intereçado um por feeds no invisionfree. Nesse dá??<br />
+Se nao der ponho no outro que tambem precisava k esta em php. Ja agora andr3 a pag k me indicaste nao abre.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/estilizando-o-rss/#comment-3242</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 18 Jan 2006 08:45:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3242</guid>
+		<description><![CDATA[Se usares o &lt;a href=&quot;http://www.simplemachines.org&quot;/ rel=&quot;nofollow&quot;&gt;SMF&lt;/a&gt; essa funcionalidade já vem instalada. Basta activá-la na administração.]]></description>
+		<content:encoded><![CDATA[<p>Se usares o <a href="http://www.simplemachines.org/" rel="nofollow">SMF</a> essa funcionalidade já vem instalada. Basta activá-la na administração.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: andr3</title>
+		<link>/estilizando-o-rss/#comment-3241</link>
+		<dc:creator><![CDATA[andr3]]></dc:creator>
+		<pubDate>Wed, 18 Jan 2006 01:59:43 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3241</guid>
+		<description><![CDATA[Nuno,
+
+Esse teu fórum, é baseado no phpBB? Se sim, creio que &lt;a href=&quot;http://www.phpbb.com/phpBB/viewtopic.php?t=144548&quot; rel=&quot;nofollow&quot;&gt;isto&lt;/a&gt; é o que procuras.
+
+Senão, basta ter conhecimentos básicos na linguagem disponível (php, asp, etc...) para fazer uma query à base de dados. Claro que depende da plataforma que estás a usar, mas criar uma feed RSS não deverá ser muito complicado. ;) Diz qual a plataforma e qual a linguagem do teu fórum..]]></description>
+		<content:encoded><![CDATA[<p>Nuno,</p>
+<p>Esse teu fórum, é baseado no phpBB? Se sim, creio que <a href="http://www.phpbb.com/phpBB/viewtopic.php?t=144548" rel="nofollow">isto</a> é o que procuras.</p>
+<p>Senão, basta ter conhecimentos básicos na linguagem disponível (php, asp, etc&#8230;) para fazer uma query à base de dados. Claro que depende da plataforma que estás a usar, mas criar uma feed RSS não deverá ser muito complicado. ;) Diz qual a plataforma e qual a linguagem do teu fórum..</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Nuno</title>
+		<link>/estilizando-o-rss/#comment-3239</link>
+		<dc:creator><![CDATA[Nuno]]></dc:creator>
+		<pubDate>Tue, 17 Jan 2006 23:35:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3239</guid>
+		<description><![CDATA[Muito bom site mas tenho uma pergunta. Como posso criar feeds de um forum. Nao se arranja nenhum toturial que me diga isso. 
+Ps: sou admin desse forum.]]></description>
+		<content:encoded><![CDATA[<p>Muito bom site mas tenho uma pergunta. Como posso criar feeds de um forum. Nao se arranja nenhum toturial que me diga isso.<br />
+Ps: sou admin desse forum.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gean Fonseca</title>
+		<link>/estilizando-o-rss/#comment-3211</link>
+		<dc:creator><![CDATA[Gean Fonseca]]></dc:creator>
+		<pubDate>Fri, 23 Dec 2005 12:23:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3211</guid>
+		<description><![CDATA[Andr3, obrigado pelas dicas...estou fazendo testes com os processos de transformação q vc citou nesses 2 links.
+
+O q eu quero é criar uma página como se fosse um agregador de feeds, com portlets para cada rss, no estilo netvibes e windows live.
+
+Eu achei q o processo de &quot;mostrar&quot; o conteúdo dos rss fosse mais fácil, mas estou vendo q vou ter bastante trabalho para criar os xls para os diversos padrões de conteúdo (rss 1.0, 2.0, atom).
+
+Pergunto: é assim mesmo o processo? tenho q pegar os xml do rss e converter eles com xls? ou existe outra forma q não estou visualizando?
+
+Obrigado &quot;in advance&quot; pela ajuda,
+
+Gean.]]></description>
+		<content:encoded><![CDATA[<p>Andr3, obrigado pelas dicas&#8230;estou fazendo testes com os processos de transformação q vc citou nesses 2 links.</p>
+<p>O q eu quero é criar uma página como se fosse um agregador de feeds, com portlets para cada rss, no estilo netvibes e windows live.</p>
+<p>Eu achei q o processo de &#8220;mostrar&#8221; o conteúdo dos rss fosse mais fácil, mas estou vendo q vou ter bastante trabalho para criar os xls para os diversos padrões de conteúdo (rss 1.0, 2.0, atom).</p>
+<p>Pergunto: é assim mesmo o processo? tenho q pegar os xml do rss e converter eles com xls? ou existe outra forma q não estou visualizando?</p>
+<p>Obrigado &#8220;in advance&#8221; pela ajuda,</p>
+<p>Gean.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: andr3</title>
+		<link>/estilizando-o-rss/#comment-3208</link>
+		<dc:creator><![CDATA[andr3]]></dc:creator>
+		<pubDate>Thu, 22 Dec 2005 18:09:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3208</guid>
+		<description><![CDATA[Gean,
+
+Se o teu objectivo passa por mais do que ir estilizar as tags das feeds, podes usar linguagens server-side para aplicar folhas de estilo XSLT.
+
+http://pt.php.net/manual/en/ref.xslt.php
+http://www.sitepoint.com/print/transform-php-xslt
+
+Pode é precisar de instalação de um módulo adicional ao PHP. Mas também, não sei qual a linguagem que tu usas no teu sistema... Fica a recomendação. :)]]></description>
+		<content:encoded><![CDATA[<p>Gean,</p>
+<p>Se o teu objectivo passa por mais do que ir estilizar as tags das feeds, podes usar linguagens server-side para aplicar folhas de estilo XSLT.</p>
+<p><a href="http://pt.php.net/manual/en/ref.xslt.php" rel="nofollow">http://pt.php.net/manual/en/ref.xslt.php</a><br />
+<a href="http://www.sitepoint.com/print/transform-php-xslt" rel="nofollow">http://www.sitepoint.com/print/transform-php-xslt</a></p>
+<p>Pode é precisar de instalação de um módulo adicional ao PHP. Mas também, não sei qual a linguagem que tu usas no teu sistema&#8230; Fica a recomendação. :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gean Fonseca</title>
+		<link>/estilizando-o-rss/#comment-3205</link>
+		<dc:creator><![CDATA[Gean Fonseca]]></dc:creator>
+		<pubDate>Thu, 22 Dec 2005 13:08:46 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3205</guid>
+		<description><![CDATA[Perfeito Ivo, muito obrigado...era mais ou menos o q eu estava procurando...acho q vou conseguir fazer o q preciso agora.
+
+shift+[]´s]]></description>
+		<content:encoded><![CDATA[<p>Perfeito Ivo, muito obrigado&#8230;era mais ou menos o q eu estava procurando&#8230;acho q vou conseguir fazer o q preciso agora.</p>
+<p>shift+[]´s</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/estilizando-o-rss/#comment-3204</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 22 Dec 2005 12:57:36 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3204</guid>
+		<description><![CDATA[Olá Gean!
+
+Em vez da técnica do XSLT em que é necessário adicionar uma folha de estilos, podes usar a técnica do &lt;a href=&quot;http://fernando.dubtribe.com/archives/2005/05/14/rss-style-for-your-wp-feed/&quot; rel=&quot;nofollow&quot;&gt;Fernando&lt;/a&gt;.
+
+Cada feed RSS tem tags que podem ser estilizadas. Se definires um CSS com essas tags podes estilizar qualquer feed (desde que esteja bem formatada).
+
+Acho que o podes fazer seguindo &lt;a href=&quot;http://jade.mcli.dist.maricopa.edu/feed/index.php?s=style&quot; rel=&quot;nofollow&quot;&gt;estas instruções&lt;/a&gt;...]]></description>
+		<content:encoded><![CDATA[<p>Olá Gean!</p>
+<p>Em vez da técnica do XSLT em que é necessário adicionar uma folha de estilos, podes usar a técnica do <a href="http://fernando.dubtribe.com/archives/2005/05/14/rss-style-for-your-wp-feed/" rel="nofollow">Fernando</a>.</p>
+<p>Cada feed RSS tem tags que podem ser estilizadas. Se definires um CSS com essas tags podes estilizar qualquer feed (desde que esteja bem formatada).</p>
+<p>Acho que o podes fazer seguindo <a href="http://jade.mcli.dist.maricopa.edu/feed/index.php?s=style" rel="nofollow">estas instruções</a>&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gean Fonseca</title>
+		<link>/estilizando-o-rss/#comment-3203</link>
+		<dc:creator><![CDATA[Gean Fonseca]]></dc:creator>
+		<pubDate>Thu, 22 Dec 2005 12:44:14 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3203</guid>
+		<description><![CDATA[Ivo, eu li o seu artigo, o da Simone e o do Andr3, nesse link q vc passou acima.
+
+porém o q estou fazendo é contruir uma página onde eu faça leitura de várias fontes de rss e disponibilizo aos usuários, como se fosse um netvibes da vida.
+
+como não posso alterar o xml original q vem do site, não entendi como eu posso implementar folha de estilo ou converter as diversas fontes de noticias para um padrão meu, de apresentação no meu site.
+
+nos tutoriais o primeiro passo é adicionar/alterar a linha: 
+
+xml-stylesheet type=&quot;text/xsl&quot; href=&quot;transformations.xslt&quot; media=&quot;screen&quot;
+mas como fazer isso se não tenho acesso ao xml do rss original?
+
+desculpe perguntar a vc, mas esse tópico era o mais atual, e talvez vc possa me ajudar ou indicar algum lugar prá pesquisar isso.
+
+Obrigado,
+
+Gean.]]></description>
+		<content:encoded><![CDATA[<p>Ivo, eu li o seu artigo, o da Simone e o do Andr3, nesse link q vc passou acima.</p>
+<p>porém o q estou fazendo é contruir uma página onde eu faça leitura de várias fontes de rss e disponibilizo aos usuários, como se fosse um netvibes da vida.</p>
+<p>como não posso alterar o xml original q vem do site, não entendi como eu posso implementar folha de estilo ou converter as diversas fontes de noticias para um padrão meu, de apresentação no meu site.</p>
+<p>nos tutoriais o primeiro passo é adicionar/alterar a linha: </p>
+<p>xml-stylesheet type=&#8221;text/xsl&#8221; href=&#8221;transformations.xslt&#8221; media=&#8221;screen&#8221;<br />
+mas como fazer isso se não tenho acesso ao xml do rss original?</p>
+<p>desculpe perguntar a vc, mas esse tópico era o mais atual, e talvez vc possa me ajudar ou indicar algum lugar prá pesquisar isso.</p>
+<p>Obrigado,</p>
+<p>Gean.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/estilizando-o-rss/#comment-3072</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2005 14:57:38 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3072</guid>
+		<description><![CDATA[Bom, mais uma vez eu limitei-me a seguir &lt;a href=&quot;http://andr3.net/blog/post/11&quot; rel=&quot;nofollow&quot;&gt;estas instruções&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>Bom, mais uma vez eu limitei-me a seguir <a href="http://andr3.net/blog/post/11" rel="nofollow">estas instruções</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: William</title>
+		<link>/estilizando-o-rss/#comment-3071</link>
+		<dc:creator><![CDATA[William]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2005 14:32:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3071</guid>
+		<description><![CDATA[Bom gente, depois de tanto sofrimento eu descobri, não era bem o que eu queria, o que eu queria mesmo era criar algo que puxasse o xml de uma pagina e jogasse no browser automaticamente.. mas está bom vivendo e aprendendo, agora ivo eu gostaria de saber como você ver para incluir o arquivo xml no seu php, como mostra no arquivo depois do seu antes e depois.
+Obrigado,
+
+William]]></description>
+		<content:encoded><![CDATA[<p>Bom gente, depois de tanto sofrimento eu descobri, não era bem o que eu queria, o que eu queria mesmo era criar algo que puxasse o xml de uma pagina e jogasse no browser automaticamente.. mas está bom vivendo e aprendendo, agora ivo eu gostaria de saber como você ver para incluir o arquivo xml no seu php, como mostra no arquivo depois do seu antes e depois.<br />
+Obrigado,</p>
+<p>William</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: William</title>
+		<link>/estilizando-o-rss/#comment-3069</link>
+		<dc:creator><![CDATA[William]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2005 09:14:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3069</guid>
+		<description><![CDATA[Bom Dia, ou André você não quer me ajudar a fazer não cara, eu precisava ver um pronto, para depois conseguir fazer.. eu descobri um cara que chegou a fazer mas quando pedi os fontes pra ele, ele simplesmente me disse se vira você não é quadrado, ai q raiva.. rsrsrs, mas fazer o q né, cada um passa o que pode. qualquer coisa me envie um e-mail: williamcalsolari@hotmail.com
+Obrigado cara,
+
+William]]></description>
+		<content:encoded><![CDATA[<p>Bom Dia, ou André você não quer me ajudar a fazer não cara, eu precisava ver um pronto, para depois conseguir fazer.. eu descobri um cara que chegou a fazer mas quando pedi os fontes pra ele, ele simplesmente me disse se vira você não é quadrado, ai q raiva.. rsrsrs, mas fazer o q né, cada um passa o que pode. qualquer coisa me envie um e-mail: <a href="mailto:williamcalsolari@hotmail.com">williamcalsolari@hotmail.com</a><br />
+Obrigado cara,</p>
+<p>William</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/estilizando-o-rss/#comment-3068</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2005 08:28:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=159#comment-3068</guid>
+		<description><![CDATA[Também recomendo a leres o artigo do André!]]></description>
+		<content:encoded><![CDATA[<p>Também recomendo a leres o artigo do André!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

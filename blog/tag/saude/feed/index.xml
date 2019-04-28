@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>saúde &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/saude/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Novo website do Alto Comissariado da Saúde</title>
+		<link>/novo-website-do-alto-comissariado-da-saude/</link>
+		<comments>/novo-website-do-alto-comissariado-da-saude/#comments</comments>
+		<pubDate>Fri, 04 Jan 2008 12:01:34 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[alto]]></category>
+		<category><![CDATA[comissariado]]></category>
+		<category><![CDATA[saúde]]></category>
+
+		<guid isPermaLink="false">/novo-website-do-alto-comissariado-da-saude/</guid>
+		<description><![CDATA[<p>Acabou de ser lançado esta semana o novo website do Alto Comissariado da Saúde. Estive envolvido neste projecto, nomeadamente no que toca ao design dos layouts e da integração do WordPress com o mesmo, em detrimento do CMS anterior. Além do site principal, foi também redesenhado o microsite com as Metas e Indicadores do Plano [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-do-alto-comissariado-da-saude/">Novo website do Alto Comissariado da Saúde</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-do-alto-comissariado-da-saude/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+	</channel>
+</rss>

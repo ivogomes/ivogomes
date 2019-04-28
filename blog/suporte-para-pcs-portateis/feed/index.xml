@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Suporte para PCs Portáteis</title>
+	<atom:link href="/suporte-para-pcs-portateis/feed/" rel="self" type="application/rss+xml" />
+	<link>/suporte-para-pcs-portateis/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: antonio mota</title>
+		<link>/suporte-para-pcs-portateis/#comment-33734</link>
+		<dc:creator><![CDATA[antonio mota]]></dc:creator>
+		<pubDate>Tue, 06 Nov 2007 14:24:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=50#comment-33734</guid>
+		<description><![CDATA[Sou funcionário de uma escola e temos um PC HP7540 que não se consegue sair do ambiente de trabalho e o ícone Iniciar não aparece. Por favor , se possível, peço uma ajuda sobre este assunto. Sem mais, o meu muito obrigado desde já. 
+       ANTÓNIO MOTA]]></description>
+		<content:encoded><![CDATA[<p>Sou funcionário de uma escola e temos um PC HP7540 que não se consegue sair do ambiente de trabalho e o ícone Iniciar não aparece. Por favor , se possível, peço uma ajuda sobre este assunto. Sem mais, o meu muito obrigado desde já.<br />
+       ANTÓNIO MOTA</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/suporte-para-pcs-portateis/#comment-36</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 10 Sep 2004 17:17:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=50#comment-36</guid>
+		<description><![CDATA[Olá morgi! Penso que finalmente resolvi a questão dos links externos. Removi a &quot;caixinha&quot; e inseri em todos os links externos uma imagem de um &quot;globo&quot;, que significa que o link seguirá para um site externo a este. Automaticamente, todos os links com o &quot;globo&quot; abrirão numa nova janela.
+
+Penso que esta é a melhor solução.
+
+PS: no XHTML o atributo &quot;target&quot; é inválido, por isso os links numa nova janela são abertos através de javascript.]]></description>
+		<content:encoded><![CDATA[<p>Olá morgi! Penso que finalmente resolvi a questão dos links externos. Removi a &#8220;caixinha&#8221; e inseri em todos os links externos uma imagem de um &#8220;globo&#8221;, que significa que o link seguirá para um site externo a este. Automaticamente, todos os links com o &#8220;globo&#8221; abrirão numa nova janela.</p>
+<p>Penso que esta é a melhor solução.</p>
+<p>PS: no XHTML o atributo &#8220;target&#8221; é inválido, por isso os links numa nova janela são abertos através de javascript.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/suporte-para-pcs-portateis/#comment-13</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:47:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=50#comment-13</guid>
+		<description><![CDATA[Obrigado. 
+
+Normalmente, em termos de usabilidade os links devem abrir todos na mesma janela. O utilizador pode abrir os links numa nova janela se assim o preferir. Para tal, pode usar o botão direito do rato e seleccionar para abrir os links numa nova janela. Em contrapartida, existe uma opção na página que permite abrir todos os links externos numa nova janela, no entanto ainda não estudei bem a sua localização (e pelos vistos não está bem visível uma vez que não a encontraste facilmente). É uma questão a resolver :)]]></description>
+		<content:encoded><![CDATA[<p>Obrigado. </p>
+<p>Normalmente, em termos de usabilidade os links devem abrir todos na mesma janela. O utilizador pode abrir os links numa nova janela se assim o preferir. Para tal, pode usar o botão direito do rato e seleccionar para abrir os links numa nova janela. Em contrapartida, existe uma opção na página que permite abrir todos os links externos numa nova janela, no entanto ainda não estudei bem a sua localização (e pelos vistos não está bem visível uma vez que não a encontraste facilmente). É uma questão a resolver :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: morgi</title>
+		<link>/suporte-para-pcs-portateis/#comment-12</link>
+		<dc:creator><![CDATA[morgi]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:47:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=50#comment-12</guid>
+		<description><![CDATA[ola outra vez
+agora que cheguei ao artigo &quot;reloaded&quot; fiquei um pouco baralhada... aparentemente os links deveriam estar a abrir numa nova janela... continuei a ler e percebi k afinal teria que activar uma funcionalidade, finalmente andei à procura da dita funcionalidade, demorou um bocadinho mas lá a encontrei... bom tira as conclusões que quiseres ;)]]></description>
+		<content:encoded><![CDATA[<p>ola outra vez<br />
+agora que cheguei ao artigo &#8220;reloaded&#8221; fiquei um pouco baralhada&#8230; aparentemente os links deveriam estar a abrir numa nova janela&#8230; continuei a ler e percebi k afinal teria que activar uma funcionalidade, finalmente andei à procura da dita funcionalidade, demorou um bocadinho mas lá a encontrei&#8230; bom tira as conclusões que quiseres ;)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: morgi</title>
+		<link>/suporte-para-pcs-portateis/#comment-11</link>
+		<dc:creator><![CDATA[morgi]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:47:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=50#comment-11</guid>
+		<description><![CDATA[ola
+sou webdesigner e tb adoro usabilidade, por isso fica aqui a minha nota pessoal, sou da opinião que links para o exterior devem abrir sempre numa nova página, e isto é ainda mais importante no caso de blogs ou sites de notícias. Eu quero ver o link do post mas não quero perder a página original onde estava e aonde pretendo voltar e continuar a ler.]]></description>
+		<content:encoded><![CDATA[<p>ola<br />
+sou webdesigner e tb adoro usabilidade, por isso fica aqui a minha nota pessoal, sou da opinião que links para o exterior devem abrir sempre numa nova página, e isto é ainda mais importante no caso de blogs ou sites de notícias. Eu quero ver o link do post mas não quero perder a página original onde estava e aonde pretendo voltar e continuar a ler.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

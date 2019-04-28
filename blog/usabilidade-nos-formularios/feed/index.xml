@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Usabilidade nos formulários</title>
+	<atom:link href="/usabilidade-nos-formularios/feed/" rel="self" type="application/rss+xml" />
+	<link>/usabilidade-nos-formularios/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/usabilidade-nos-formularios/#comment-45873</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 11 Apr 2008 09:35:41 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-45873</guid>
+		<description><![CDATA[Olá Gil, não sabia que o facto de colocar o &lt;i&gt;input&lt;/i&gt; (campo do formulário) dentro do &lt;i&gt;label&lt;/i&gt; (rótulo) era uma boa prática. Já tenho visto isso em alguns sites e penso que também já o fiz em alguns projectos meus, mas sendo assim vou passar a fazê-lo sempre :)]]></description>
+		<content:encoded><![CDATA[<p>Olá Gil, não sabia que o facto de colocar o <i>input</i> (campo do formulário) dentro do <i>label</i> (rótulo) era uma boa prática. Já tenho visto isso em alguns sites e penso que também já o fiz em alguns projectos meus, mas sendo assim vou passar a fazê-lo sempre :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gil Porta</title>
+		<link>/usabilidade-nos-formularios/#comment-45773</link>
+		<dc:creator><![CDATA[Gil Porta]]></dc:creator>
+		<pubDate>Thu, 10 Apr 2008 19:12:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-45773</guid>
+		<description><![CDATA[Olá Ivo.
+
+Gostei da dica.
+Já vou colocar o cursor pointer no meu site. Muita gente não sabe que pode clicar no texto e fica apanhando do mouse pra acertar o checkbox :-)
+
+Vai aqui uma outra dica:
+No validador &quot;Examinator&quot; diz que devemos envolver o campo do formulário e o rótulo, ou seja, abrir a tag label antes do campo e fechá-la depois do rótulo. Com esse simples detalhe a gente ganha mais uns pontinhos na nota.]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo.</p>
+<p>Gostei da dica.<br />
+Já vou colocar o cursor pointer no meu site. Muita gente não sabe que pode clicar no texto e fica apanhando do mouse pra acertar o checkbox :-)</p>
+<p>Vai aqui uma outra dica:<br />
+No validador &#8220;Examinator&#8221; diz que devemos envolver o campo do formulário e o rótulo, ou seja, abrir a tag label antes do campo e fechá-la depois do rótulo. Com esse simples detalhe a gente ganha mais uns pontinhos na nota.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/usabilidade-nos-formularios/#comment-15452</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Sun, 06 May 2007 20:34:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-15452</guid>
+		<description><![CDATA[Obrigado pela dica. É mais um possível tema para escrever um artigo. Quanto ao Linux (Ubuntu), ainda só tive a oportunidade de experimentar por 10 minutos e gostei, mas não foi o suficiente para poder ter uma opinião.]]></description>
+		<content:encoded><![CDATA[<p>Obrigado pela dica. É mais um possível tema para escrever um artigo. Quanto ao Linux (Ubuntu), ainda só tive a oportunidade de experimentar por 10 minutos e gostei, mas não foi o suficiente para poder ter uma opinião.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rochester</title>
+		<link>/usabilidade-nos-formularios/#comment-15407</link>
+		<dc:creator><![CDATA[Rochester]]></dc:creator>
+		<pubDate>Sat, 05 May 2007 17:40:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-15407</guid>
+		<description><![CDATA[Acho que voce poderia falar sobre formularios em geral, e sobre mensagens de erro, sao mto comuns erros nessa parte.
+
+E sobre linux,o ubuntu (agora na versão 7) é bem simples (apt-get pra vida!) e eles mandam o cd na sua casa, free :D]]></description>
+		<content:encoded><![CDATA[<p>Acho que voce poderia falar sobre formularios em geral, e sobre mensagens de erro, sao mto comuns erros nessa parte.</p>
+<p>E sobre linux,o ubuntu (agora na versão 7) é bem simples (apt-get pra vida!) e eles mandam o cd na sua casa, free :D</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Claudia</title>
+		<link>/usabilidade-nos-formularios/#comment-6309</link>
+		<dc:creator><![CDATA[Claudia]]></dc:creator>
+		<pubDate>Wed, 06 Dec 2006 13:13:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-6309</guid>
+		<description><![CDATA[Muito bom! Adorei a dica.]]></description>
+		<content:encoded><![CDATA[<p>Muito bom! Adorei a dica.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Vitor</title>
+		<link>/usabilidade-nos-formularios/#comment-6148</link>
+		<dc:creator><![CDATA[Vitor]]></dc:creator>
+		<pubDate>Tue, 28 Nov 2006 12:34:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-6148</guid>
+		<description><![CDATA[O nome do atributo é &quot;for&quot; e não &quot;label&quot; como está escrito. Label é o nome da tag HTML que recebe o atributo for=&quot;iddocampo&quot;.]]></description>
+		<content:encoded><![CDATA[<p>O nome do atributo é &#8220;for&#8221; e não &#8220;label&#8221; como está escrito. Label é o nome da tag HTML que recebe o atributo for=&#8221;iddocampo&#8221;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Leonardo Procópio</title>
+		<link>/usabilidade-nos-formularios/#comment-6108</link>
+		<dc:creator><![CDATA[Leonardo Procópio]]></dc:creator>
+		<pubDate>Sat, 25 Nov 2006 17:15:11 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-6108</guid>
+		<description><![CDATA[Muito 10!!!]]></description>
+		<content:encoded><![CDATA[<p>Muito 10!!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/usabilidade-nos-formularios/#comment-436</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 13 Dec 2004 19:00:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-436</guid>
+		<description><![CDATA[Neste artigo apenas dei o exemplo das &quot;labels&quot; mas há muito mais coisas num formulário que podem ser melhoradas. Quanto às janelinhas, elas só funcionam depois de clicar no botão ENVIAR. Um formulário bem feito não precisa de janelas de alerta, só que as coisas têm que ser intuitivas, levar o utilizador a perceber o que deve ou não preencher.
+Acho que os campos de preenchimento obrigatório devem ter escrito à frente em parêntesis isso mesmo, ou então ter uma cor diferente e indicar explicitamente que os campos com essa cor são obrigatórios.
+Já vi sites que usam o * para marcar os campos obrigatórios, outros usam o * para marcar os não obrigatórios e outros usam o * para marcar os campos alternativos... Afinal em que é que ficamos?]]></description>
+		<content:encoded><![CDATA[<p>Neste artigo apenas dei o exemplo das &#8220;labels&#8221; mas há muito mais coisas num formulário que podem ser melhoradas. Quanto às janelinhas, elas só funcionam depois de clicar no botão ENVIAR. Um formulário bem feito não precisa de janelas de alerta, só que as coisas têm que ser intuitivas, levar o utilizador a perceber o que deve ou não preencher.<br />
+Acho que os campos de preenchimento obrigatório devem ter escrito à frente em parêntesis isso mesmo, ou então ter uma cor diferente e indicar explicitamente que os campos com essa cor são obrigatórios.<br />
+Já vi sites que usam o * para marcar os campos obrigatórios, outros usam o * para marcar os não obrigatórios e outros usam o * para marcar os campos alternativos&#8230; Afinal em que é que ficamos?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Leonardo Cidral</title>
+		<link>/usabilidade-nos-formularios/#comment-433</link>
+		<dc:creator><![CDATA[Leonardo Cidral]]></dc:creator>
+		<pubDate>Thu, 09 Dec 2004 18:34:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-433</guid>
+		<description><![CDATA[E como fica a validação do formulário?
+
+Particularmente acho melhor as ditas janelinhas de alerta para campos obrigatórios, já vi em alguns sites que o texto de aviso aparece embaixo do campo requerido ou inválido.
+
+Qual a opinião de vocês?
+
+Acredito que as janelas de alerta vão permanecer por um bom, ou já existe algo melhor?]]></description>
+		<content:encoded><![CDATA[<p>E como fica a validação do formulário?</p>
+<p>Particularmente acho melhor as ditas janelinhas de alerta para campos obrigatórios, já vi em alguns sites que o texto de aviso aparece embaixo do campo requerido ou inválido.</p>
+<p>Qual a opinião de vocês?</p>
+<p>Acredito que as janelas de alerta vão permanecer por um bom, ou já existe algo melhor?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/usabilidade-nos-formularios/#comment-37</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 10 Sep 2004 17:24:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-37</guid>
+		<description><![CDATA[Obrigado pelos links! 
+Nunca trabalhei com Linux, mas pelo que já ouvi falar, é um sistema muito pouco &quot;user-friendly&quot;... Mas não se pode esperar muito de um software open source. É preciso fazer uma coisa de cada vez...
+
+Aqui na &lt;a href=&quot;http://www.log.pt&quot;&gt;log&lt;/a&gt; só trabalhamos com software open source. É uma boa oportunidade para mim para poder aplicar os meus conhecimentos nesta área e tentar melhorar a interacção com estes sistemas, mas temos que ir com calma...
+
+Um abraço
+
+Ivo]]></description>
+		<content:encoded><![CDATA[<p>Obrigado pelos links!<br />
+Nunca trabalhei com Linux, mas pelo que já ouvi falar, é um sistema muito pouco &#8220;user-friendly&#8221;&#8230; Mas não se pode esperar muito de um software open source. É preciso fazer uma coisa de cada vez&#8230;</p>
+<p>Aqui na <a href="http://www.log.pt/">log</a> só trabalhamos com software open source. É uma boa oportunidade para mim para poder aplicar os meus conhecimentos nesta área e tentar melhorar a interacção com estes sistemas, mas temos que ir com calma&#8230;</p>
+<p>Um abraço</p>
+<p>Ivo</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Adriano Aires</title>
+		<link>/usabilidade-nos-formularios/#comment-5</link>
+		<dc:creator><![CDATA[Jorge Adriano Aires]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:37:46 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-5</guid>
+		<description><![CDATA[Olá, 
+Safari usa um fork de KHTML, a rendering engine desenvolvida para o browser Konqueror do Desktop Environment KDE (Linux e outros *nixes). De facto em KDE 3.2.3 não funciona, mas em KDE 3.3.0 já está ok, portanto já é suportado por versões mais recentes de KHTML.
+
+Jorge Adriano
+
+P.S.:
+Já agora Ivo, com o novo emprego (parabéns!) provavelmente deves andar bastante ocupado, de qualquer forma, já pensaste dar uma olhadela a alguns projectos de Software Livre? A equipa de KDE, por exemplo, tem vindo a esforçar-se para melhorar a usabilidade/acessibilidade da sua desktop e respectivas aplicações. Todo o feedback (especialmente de quem realmente percebe do assunto!) é bem vindo. 
+
+Aqui ficam alguns links:
+http://usability.kde.org/
+­http://accessibility.kde.org/
+
+Ah­,­ e mesmo para quem não quer instalar linux, há sempre a possibilidade de correr um Live CD (como Knoppix ou Slax). 
+
+Mais uma vez, parabéns pelo emprego/website. 
+Hmm e vim aqui parar por acaso e já me fartei de escrever, espero não ter sido aborrecido :)]]></description>
+		<content:encoded><![CDATA[<p>Olá,<br />
+Safari usa um fork de KHTML, a rendering engine desenvolvida para o browser Konqueror do Desktop Environment KDE (Linux e outros *nixes). De facto em KDE 3.2.3 não funciona, mas em KDE 3.3.0 já está ok, portanto já é suportado por versões mais recentes de KHTML.</p>
+<p>Jorge Adriano</p>
+<p>P.S.:<br />
+Já agora Ivo, com o novo emprego (parabéns!) provavelmente deves andar bastante ocupado, de qualquer forma, já pensaste dar uma olhadela a alguns projectos de Software Livre? A equipa de KDE, por exemplo, tem vindo a esforçar-se para melhorar a usabilidade/acessibilidade da sua desktop e respectivas aplicações. Todo o feedback (especialmente de quem realmente percebe do assunto!) é bem vindo. </p>
+<p>Aqui ficam alguns links:<br />
+<a href="http://usability.kde.org/" rel="nofollow">http://usability.kde.org/</a><br />
+­http://accessibility.kde.org/</p>
+<p>Ah­,­ e mesmo para quem não quer instalar linux, há sempre a possibilidade de correr um Live CD (como Knoppix ou Slax). </p>
+<p>Mais uma vez, parabéns pelo emprego/website.<br />
+Hmm e vim aqui parar por acaso e já me fartei de escrever, espero não ter sido aborrecido :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/usabilidade-nos-formularios/#comment-4</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:36:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-4</guid>
+		<description><![CDATA[Infelizmente nunca usei nenhum Mac e como tal não sei como ficam as coisas no Safari :(
+No meu PC tenho vários browsers instalados, mas é impossível ter o Safari, uma vez que só funciona em Mac.
+Pode ser que agora possa testar com os Macs lá no escritório :)
+
+Um abraço.]]></description>
+		<content:encoded><![CDATA[<p>Infelizmente nunca usei nenhum Mac e como tal não sei como ficam as coisas no Safari :(<br />
+No meu PC tenho vários browsers instalados, mas é impossível ter o Safari, uma vez que só funciona em Mac.<br />
+Pode ser que agora possa testar com os Macs lá no escritório :)</p>
+<p>Um abraço.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Pedro Custódio</title>
+		<link>/usabilidade-nos-formularios/#comment-3</link>
+		<dc:creator><![CDATA[Pedro Custódio]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 13:35:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-3</guid>
+		<description><![CDATA[Olá Ivo,
+achei interessante o teu post, mas no Safari (Mac) apesar de o cursos passar a ser uma &quot;maozinha&quot; ao clickar não acontece nada, para selecionar é mesmo preciso dar com a caixita! :(
+Provavelmente é mesmo culpa do Safari. :(]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo,<br />
+achei interessante o teu post, mas no Safari (Mac) apesar de o cursos passar a ser uma &#8220;maozinha&#8221; ao clickar não acontece nada, para selecionar é mesmo preciso dar com a caixita! :(<br />
+Provavelmente é mesmo culpa do Safari. :(</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Marcelo Linhares</title>
+		<link>/usabilidade-nos-formularios/#comment-2</link>
+		<dc:creator><![CDATA[Marcelo Linhares]]></dc:creator>
+		<pubDate>Mon, 06 Sep 2004 11:38:15 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=2#comment-2</guid>
+		<description><![CDATA[Muito boa a dica Ivo, eu já usava o Label para todos os formulários que desenvolvo, porém não usava o cursor: point.
+Seria interessante se os desenvolvedores passassem a utilizá-lo mais, apesar de consumir algumas linhas de códigos a mais vale a pena utilizá-lo.
+
+Abraços!]]></description>
+		<content:encoded><![CDATA[<p>Muito boa a dica Ivo, eu já usava o Label para todos os formulários que desenvolvo, porém não usava o cursor: point.<br />
+Seria interessante se os desenvolvedores passassem a utilizá-lo mais, apesar de consumir algumas linhas de códigos a mais vale a pena utilizá-lo.</p>
+<p>Abraços!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

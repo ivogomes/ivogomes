@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>IvoGomes.com</title>
+	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>PT MagicContact: uma aplicação para utilizadores com mobilidade reduzida</title>
+		<link>/pt-magiccontact-uma-aplicacao-para-utilizadores-com-mobilidade-reduzida/</link>
+		<comments>/pt-magiccontact-uma-aplicacao-para-utilizadores-com-mobilidade-reduzida/#respond</comments>
+		<pubDate>Fri, 20 Nov 2015 18:02:30 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">/?p=1545</guid>
+		<description><![CDATA[<p>Já imaginaram o que seria se apenas conseguissem usar o telemóvel para fazer chamadas de voz, limitadas a apenas alguns contactos? E se não conseguissem mesmo usá-lo e dependessem de terceiros para executar as tarefas básicas do dia-a-dia e precisassem de os contactar numa situação urgente?</p>
+<p>Nos últimos dois anos tenho estado a colaborar com a <a href="http://www.fundacao.telecom.pt/">Fundação PT</a> e em parceria com a <a href="http://www.magickey.ipg.pt/">MagicKey</a> no desenvolvimento do <a href="http://ptmagiccontact.pt/">PT MagicContact</a>, uma aplicação que permite o acesso a funcionalidades básicas do telemóvel para pessoas com mobilidade reduzida.</p>
+<p>O conteúdo <a rel="nofollow" href="/pt-magiccontact-uma-aplicacao-para-utilizadores-com-mobilidade-reduzida/">PT MagicContact: uma aplicação para utilizadores com mobilidade reduzida</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/pt-magiccontact-uma-aplicacao-para-utilizadores-com-mobilidade-reduzida/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Dia Mundial da Usabilidade 2015</title>
+		<link>/dia-mundial-da-usabilidade-2015/</link>
+		<comments>/dia-mundial-da-usabilidade-2015/#respond</comments>
+		<pubDate>Mon, 09 Nov 2015 12:03:19 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+
+		<guid isPermaLink="false">/?p=1538</guid>
+		<description><![CDATA[<p>Este ano, a 12 de novembro, celebra-se mais uma vez o Dia Mundial da Usabilidade (WUD). Neste dia vão decorrer vários eventos por todo o mundo para celebrar a usabilidade e juntar as comunidades de profissionais e de interessados na área. São eventos de entrada livre onde serão partilhadas ideias, conhecimentos e produtos e serviços [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/dia-mundial-da-usabilidade-2015/">Dia Mundial da Usabilidade 2015</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/dia-mundial-da-usabilidade-2015/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Navegação sem listas: um teste de acessibilidade</title>
+		<link>/navegacao-sem-listas-um-teste-de-acessibilidade/</link>
+		<comments>/navegacao-sem-listas-um-teste-de-acessibilidade/#respond</comments>
+		<pubDate>Fri, 06 Nov 2015 11:00:55 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+
+		<guid isPermaLink="false">/?p=1466</guid>
+		<description><![CDATA[<p>Durante anos o markup dos links de navegação tem sido sempre feito com recurso a listas. Será que existem soluções melhores a nível de acessibilidade?</p>
+<p>O conteúdo <a rel="nofollow" href="/navegacao-sem-listas-um-teste-de-acessibilidade/">Navegação sem listas: um teste de acessibilidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/navegacao-sem-listas-um-teste-de-acessibilidade/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>HTML5 e Acessibilidade</title>
+		<link>/html5-e-acessibilidade/</link>
+		<comments>/html5-e-acessibilidade/#respond</comments>
+		<pubDate>Thu, 08 May 2014 10:54:00 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">/?p=1446</guid>
+		<description><![CDATA[<p>Desde a chegada do HTML5, que a web está a tornar-se um pouco mais acessível, quase sem o notarmos. O facto de se usar simplesmente as tags &#60;header&#62; e &#60;footer&#62; para os cabeçalhos e rodapés e a tag &#60;nav&#62; para os menus acaba por ser uma grande ajuda para quem usa sistemas assistivos para navegar na [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/html5-e-acessibilidade/">HTML5 e Acessibilidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/html5-e-acessibilidade/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Testes de usabilidade em Touch Screens&#8230; em 1991</title>
+		<link>/testes-de-usabilidade-em-touch-screens-em-1991/</link>
+		<comments>/testes-de-usabilidade-em-touch-screens-em-1991/#respond</comments>
+		<pubDate>Tue, 08 Apr 2014 17:34:42 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+
+		<guid isPermaLink="false">/?p=1434</guid>
+		<description><![CDATA[<p>Ainda hoje temos por vezes problemas em mostrar um elemento no interface que tenha dois estados, e que seja fácil de identificar claramente o estado desse elemento. São os chamados botões de "toggle" ou "on/off". Parece simples, mas ate se chegar ao modelo mais comum que vemos nos actuais dispositivos de toque, houve um longo [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/testes-de-usabilidade-em-touch-screens-em-1991/">Testes de usabilidade em Touch Screens&#8230; em 1991</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/testes-de-usabilidade-em-touch-screens-em-1991/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Seminário e-Acessibilidade 2014</title>
+		<link>/seminario-e-acessibilidade-2014/</link>
+		<comments>/seminario-e-acessibilidade-2014/#comments</comments>
+		<pubDate>Tue, 01 Apr 2014 13:42:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">/?p=1422</guid>
+		<description><![CDATA[<p>Este fim-de-semana, dia 5 de Abril, vai decorrer o Seminário de e-Acessibilidade 2014 na Lousã, uma iniciativa da SUPERA (Sociedade Portuguesa de Engenharia de Reabilitação e Acessibilidade).</p>
+<p>Vou participar com uma pequena talk de 20 minutos sobre o impacto da acessibilidade nas empresas, mas mais virado, obviamente, para a acessibilidade web.</p>
+<p>O conteúdo <a rel="nofollow" href="/seminario-e-acessibilidade-2014/">Seminário e-Acessibilidade 2014</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/seminario-e-acessibilidade-2014/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Lista de problemas e bugs comuns de HTML/CSS</title>
+		<link>/lista-de-problemas-e-bugs-comuns-de-htmlcss/</link>
+		<comments>/lista-de-problemas-e-bugs-comuns-de-htmlcss/#respond</comments>
+		<pubDate>Mon, 24 Mar 2014 15:31:26 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[html]]></category>
+
+		<guid isPermaLink="false">/?p=1403</guid>
+		<description><![CDATA[<p>O site WTF, HTML and CSS? tem uma compilação de problemas comuns  de CSS com os quais de certeza todos nós já nos deparámos.  É sempre bom ter uma lista curada com dicas e soluções para evitar ou contornar esses problemas.</p>
+<p>O conteúdo <a rel="nofollow" href="/lista-de-problemas-e-bugs-comuns-de-htmlcss/">Lista de problemas e bugs comuns de HTML/CSS</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/lista-de-problemas-e-bugs-comuns-de-htmlcss/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>É outra vida</title>
+		<link>/e-outra-vida/</link>
+		<comments>/e-outra-vida/#comments</comments>
+		<pubDate>Sat, 22 Mar 2014 11:03:55 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+
+		<guid isPermaLink="false">/?p=1400</guid>
+		<description><![CDATA[<p>No mês em que este blog faz 10 anos, achei por bem dar-lhe uma nova vida. Ando há anos a pensar em remodelar o blog, mas a falta de tempo (e de vontade, diga-se) fez com que se arrastasse durante anos, já com páginas partidas e desactualizadas. No entanto, isso acabava por ser um cartão [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/e-outra-vida/">É outra vida</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/e-outra-vida/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>1º Encontro de Usabilidade no Porto</title>
+		<link>/1o-encontro-de-usabilidade-no-porto/</link>
+		<comments>/1o-encontro-de-usabilidade-no-porto/#respond</comments>
+		<pubDate>Mon, 30 Apr 2012 13:56:36 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1385</guid>
+		<description><![CDATA[<p>Para quem estiver interessado, na próxima sexta-feira, dia 4 de Maio vai realizar-se o primeiro encontro de usabilidade na cidade do Porto.</p>
+<p>Este será o primeiro de (espera-se) muitos encontros do género. A ideia é que as pessoas interessadas no tema se juntem uma vez por mês e façam 1 ou 2 apresentações à sua escolha, desde que sejam relacionadas com a usabilidade. O objectivo é trocar ideias, informações, divulgar o trabalho de cada um, divulgar ofertas e procura de emprego na área, etc.</p>
+<p>Nesta primeira edição vou falar sobre "<a href="/affordance/">Affordance</a>", algo sobre o qual já dei uma talk no Dia Mundial da Usabilidade em 2010.</p>
+<p>Se quiserem estar presentes, <a href="http://thinkoutloud.in/ux/">inscrevam-se aqui</a>, é grátis.</p>
+<p>O encontro vai ser às 17h no Parque de Ciência e Tecnologia da Universidade do Porto (UPTEC)</p>
+<p>O conteúdo <a rel="nofollow" href="/1o-encontro-de-usabilidade-no-porto/">1º Encontro de Usabilidade no Porto</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/1o-encontro-de-usabilidade-no-porto/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>3 anos de SAPO ao peito</title>
+		<link>/3-anos-de-sapo-ao-peito/</link>
+		<comments>/3-anos-de-sapo-ao-peito/#comments</comments>
+		<pubDate>Thu, 01 Mar 2012 10:20:07 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Pessoal]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1364</guid>
+		<description><![CDATA[<p>Faz hoje exactamente 3 anos que vim trabalhar para o <a href="http://www.sapo.pt/">SAPO</a>. Tal como todos os anos, vou fazer um balanço daquilo que aconteceu durante este último ano e como tem sido trabalhar no SAPO.</p>
+<p><a href="/wp-content/uploads/2012/03/403659_10150481256882684_557197683_9015307_672256210_n.jpeg"><img class="alignnone size-full wp-image-1365" title="Trabalhar no SAPO" src="/wp-content/uploads/2012/03/403659_10150481256882684_557197683_9015307_672256210_n.jpeg" alt="" width="600"  /></a></p>
+<p>O conteúdo <a rel="nofollow" href="/3-anos-de-sapo-ao-peito/">3 anos de SAPO ao peito</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/3-anos-de-sapo-ao-peito/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Curso Breve de Usabilidade (2ª Edição)</title>
+		<link>/curso-breve-de-usabilidade-2a-edicao/</link>
+		<comments>/curso-breve-de-usabilidade-2a-edicao/#comments</comments>
+		<pubDate>Tue, 21 Feb 2012 18:47:49 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1359</guid>
+		<description><![CDATA[<p>Estão abertas as <a href="http://www.fmh.utl.pt/usabilidade/">inscrições</a> para a segunda edição do <a href="http://www.fmh.utl.pt/usabilidade/">curso breve de usabilidade</a>.<br />
+Tem a duração de 24 horas (espalhadas ao longo de um mês) onde serão abordadas várias metodologias de usabilidade, incluindo alguns trabalhos práticos.</p>
+<p>O conteúdo <a rel="nofollow" href="/curso-breve-de-usabilidade-2a-edicao/">Curso Breve de Usabilidade (2ª Edição)</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/curso-breve-de-usabilidade-2a-edicao/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Processo de criação do MEO Kanal</title>
+		<link>/processo-de-criacao-do-meo-kanal/</link>
+		<comments>/processo-de-criacao-do-meo-kanal/#comments</comments>
+		<pubDate>Fri, 10 Feb 2012 11:45:09 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1351</guid>
+		<description><![CDATA[<p>NOTA: Este artigo foi também publicado no blog oficial de UX do SAPO O MEO Kanal surgiu há um ano e meio como uma simples ideia de poder dar aos clientes uma forma de partilharem os seus conteúdos na televisão criando um canal no MEO. Essencialmente, poderiamos fazer upload de vídeos e fotos e esse [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/processo-de-criacao-do-meo-kanal/">Processo de criação do MEO Kanal</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/processo-de-criacao-do-meo-kanal/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>33</title>
+		<link>/33/</link>
+		<comments>/33/#comments</comments>
+		<pubDate>Tue, 31 Jan 2012 00:01:41 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Pessoal]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1345</guid>
+		<description><![CDATA[<p>Mais um ano.<br />
+<a href="/wp-content/uploads/2012/01/5021039042_4fa9616e3d_z.jpg"><img class="aligncenter size-full wp-image-1346" title="33" src="/wp-content/uploads/2012/01/5021039042_4fa9616e3d_z.jpg" alt="" width="600"/></a><br />
+Foto: <a href="http://www.flickr.com/photos/evaekeblad/5021039042/">Eva the Weaver</a></p>
+<p>O conteúdo <a rel="nofollow" href="/33/">33</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/33/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Sobre a acessibilidade do portal do Governo</title>
+		<link>/sobre-a-acessibilidade-do-portal-do-governo/</link>
+		<comments>/sobre-a-acessibilidade-do-portal-do-governo/#comments</comments>
+		<pubDate>Fri, 13 Jan 2012 17:11:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1335</guid>
+		<description><![CDATA[<p>Foi ontem publicado um artigo no jornal Público a apontar a falta de acessibilidade do website do Portal do Governo. Nesse artigo, são citadas as opiniões de alguns especialistas, incluindo eu próprio.</p>
+<p>Apesar do artigo apontar apenas os problemas identificados e não apontar sugestões de melhoria, é natural que alguns leitores achem que estamos apenas a "mandar abaixo" e a "dizer mal" em vez de estarmos calados no nosso canto.</p>
+<p>Pessoalmente, custa-me que o artigo tenha apenas os pontos negativos e custa-me estar associado ao grupo de "velhos do restelo" que só dizem mal de tudo e de todos.</p>
+<p>O conteúdo <a rel="nofollow" href="/sobre-a-acessibilidade-do-portal-do-governo/">Sobre a acessibilidade do portal do Governo</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sobre-a-acessibilidade-do-portal-do-governo/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+		</item>
+		<item>
+		<title>Dicas de HTML e CSS para melhorar a Acessibilidade dos vossos websites</title>
+		<link>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/</link>
+		<comments>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/#comments</comments>
+		<pubDate>Mon, 14 Nov 2011 13:56:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1329</guid>
+		<description><![CDATA[<p>Foi este o título da minha talk no <a href="http://www.codebits.eu/">Codebits</a> deste ano. E <a href="http://www.slideshare.net/ivogomes/htmlcss-tips-to-improve-the-accessibility-of-your-websites">aqui estão os slides</a> para quem estiver interessado :)</p>
+<p><object id="__sse10153631" width="510" height="426"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=html-csstipsaccessibility-111114074426-phpapp01&#038;rel=0&#038;stripped_title=htmlcss-tips-to-improve-the-accessibility-of-your-websites&#038;userName=ivogomes" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse10153631" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=html-csstipsaccessibility-111114074426-phpapp01&#038;rel=0&#038;stripped_title=htmlcss-tips-to-improve-the-accessibility-of-your-websites&#038;userName=ivogomes" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="510" height="426"></embed></object></p>
+<p>O conteúdo <a rel="nofollow" href="/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/">Dicas de HTML e CSS para melhorar a Acessibilidade dos vossos websites</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

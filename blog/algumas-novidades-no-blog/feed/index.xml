@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Algumas novidades no blog</title>
+	<atom:link href="/algumas-novidades-no-blog/feed/" rel="self" type="application/rss+xml" />
+	<link>/algumas-novidades-no-blog/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: gutornelas</title>
+		<link>/algumas-novidades-no-blog/#comment-51377</link>
+		<dc:creator><![CDATA[gutornelas]]></dc:creator>
+		<pubDate>Mon, 02 Jun 2008 10:32:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-51377</guid>
+		<description><![CDATA[Muito bom, vou colocar no meu site para disposição dos usuários colocarem foto, queria entender um pouco mais o que você fez, caso possa me ajudar agradeço, gutojj2005@hotmail.com!]]></description>
+		<content:encoded><![CDATA[<p>Muito bom, vou colocar no meu site para disposição dos usuários colocarem foto, queria entender um pouco mais o que você fez, caso possa me ajudar agradeço, <a href="mailto:gutojj2005@hotmail.com">gutojj2005@hotmail.com</a>!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Verônica Fragoso</title>
+		<link>/algumas-novidades-no-blog/#comment-50994</link>
+		<dc:creator><![CDATA[Verônica Fragoso]]></dc:creator>
+		<pubDate>Mon, 26 May 2008 15:10:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-50994</guid>
+		<description><![CDATA[Valeu Ivo! Vou continuar minhas xeretices e ver no que dá.Beijo!Parabens pelo &#124;Blog]]></description>
+		<content:encoded><![CDATA[<p>Valeu Ivo! Vou continuar minhas xeretices e ver no que dá.Beijo!Parabens pelo |Blog</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/algumas-novidades-no-blog/#comment-50983</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 26 May 2008 08:39:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-50983</guid>
+		<description><![CDATA[Olá Verônica. Vejo que você usa o Blogspot e sendo assim não a posso ajudar porque não uso esse sistema, mas acho que eles não deixam alterar o layout dos blogs facilmente.]]></description>
+		<content:encoded><![CDATA[<p>Olá Verônica. Vejo que você usa o Blogspot e sendo assim não a posso ajudar porque não uso esse sistema, mas acho que eles não deixam alterar o layout dos blogs facilmente.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Verônica Fragoso</title>
+		<link>/algumas-novidades-no-blog/#comment-50882</link>
+		<dc:creator><![CDATA[Verônica Fragoso]]></dc:creator>
+		<pubDate>Sat, 24 May 2008 00:14:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-50882</guid>
+		<description><![CDATA[Oi Ivo, sou uma xereta que acaba de se apaixonar pelo mundo dos blogs.E como toda xereta, acho q consegui aprender alguma coisa...Bem, gostaria de saber de vc como faço para colocar arquivo de voz no meu blog e como mudar a cor de fundo por imagem.Valeu!Beijo]]></description>
+		<content:encoded><![CDATA[<p>Oi Ivo, sou uma xereta que acaba de se apaixonar pelo mundo dos blogs.E como toda xereta, acho q consegui aprender alguma coisa&#8230;Bem, gostaria de saber de vc como faço para colocar arquivo de voz no meu blog e como mudar a cor de fundo por imagem.Valeu!Beijo</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/algumas-novidades-no-blog/#comment-5204</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Sun, 16 Jul 2006 18:32:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-5204</guid>
+		<description><![CDATA[O facto das traduções terem vários ficheiros é porque o falbum e o wordpress usam o gettext para fazer a tradução dos textos. Assim, existe um ficheiro com o texto simples (.po e .pot) e outro com o texto compilado (.mo - o que é usado pelo gettext).
+
+Aqui tem os meus ficheiros (&lt;a href=&quot;https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.po&quot; rel=&quot;nofollow&quot;&gt;PO&lt;/a&gt;) (&lt;a href=&quot;https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.pot&quot; rel=&quot;nofollow&quot;&gt;POT&lt;/a&gt;) (&lt;a href=&quot;https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.mo&quot; rel=&quot;nofollow&quot;&gt;MO&lt;/a&gt;)]]></description>
+		<content:encoded><![CDATA[<p>O facto das traduções terem vários ficheiros é porque o falbum e o wordpress usam o gettext para fazer a tradução dos textos. Assim, existe um ficheiro com o texto simples (.po e .pot) e outro com o texto compilado (.mo &#8211; o que é usado pelo gettext).</p>
+<p>Aqui tem os meus ficheiros (<a href="https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.po" rel="nofollow">PO</a>) (<a href="https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.pot" rel="nofollow">POT</a>) (<a href="https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.mo" rel="nofollow">MO</a>)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Maikel Neris</title>
+		<link>/algumas-novidades-no-blog/#comment-5203</link>
+		<dc:creator><![CDATA[Maikel Neris]]></dc:creator>
+		<pubDate>Sat, 15 Jul 2006 18:56:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-5203</guid>
+		<description><![CDATA[Legal Ivo... se vc puder disponibilizar a sua tradução eu agradeço... eu mesmo traduziria, mas naum estou entendendo o pq das traduções terem tantos arquivos (.mo, .mot, e mais outro tanto... rsss)
+
+Valeu!]]></description>
+		<content:encoded><![CDATA[<p>Legal Ivo&#8230; se vc puder disponibilizar a sua tradução eu agradeço&#8230; eu mesmo traduziria, mas naum estou entendendo o pq das traduções terem tantos arquivos (.mo, .mot, e mais outro tanto&#8230; rsss)</p>
+<p>Valeu!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/algumas-novidades-no-blog/#comment-5183</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 14 Jul 2006 08:22:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-5183</guid>
+		<description><![CDATA[Obrigado! :)
+
+Para trocar de idioma, tem que usar um idioma já existente do plugin (/falbum/lang/idioma) ou então traduzir o inglês para português (se quiser posso disponibilizar a minha tradução).
+
+Quanto à página não encontrada, penso que tem que ter uma página falbum.php no seu tema...]]></description>
+		<content:encoded><![CDATA[<p>Obrigado! :)</p>
+<p>Para trocar de idioma, tem que usar um idioma já existente do plugin (/falbum/lang/idioma) ou então traduzir o inglês para português (se quiser posso disponibilizar a minha tradução).</p>
+<p>Quanto à página não encontrada, penso que tem que ter uma página falbum.php no seu tema&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Maikel Neris</title>
+		<link>/algumas-novidades-no-blog/#comment-5175</link>
+		<dc:creator><![CDATA[Maikel Neris]]></dc:creator>
+		<pubDate>Wed, 12 Jul 2006 21:05:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-5175</guid>
+		<description><![CDATA[Ivo, primeiro, parabéns pelo site...
+
+Estava procurando exetamente uma maneira mais fácil de implementar uma API do flicker, e esse sistema Falbum para o wordpress caiu como uma luva. Adicinha qual site apareceu primeiro no google? O seu claro! Só tenho alguma dúvidas: como faço pra trocar de idioma? Outra coisa que não está funcinando direito é o acesso ao álbum... quando eu clico pra visualizar um álbum, ele pede uma url chamada /../falbum-wp.php?album=XXXXXXXXXXXX, só que esse arquivo falbum-wp.php naum existe no plugin... como resolver? Acredito que seja simples, mas não consigo achar este arquivo...
+
+Obrigado!]]></description>
+		<content:encoded><![CDATA[<p>Ivo, primeiro, parabéns pelo site&#8230;</p>
+<p>Estava procurando exetamente uma maneira mais fácil de implementar uma API do flicker, e esse sistema Falbum para o wordpress caiu como uma luva. Adicinha qual site apareceu primeiro no google? O seu claro! Só tenho alguma dúvidas: como faço pra trocar de idioma? Outra coisa que não está funcinando direito é o acesso ao álbum&#8230; quando eu clico pra visualizar um álbum, ele pede uma url chamada /../falbum-wp.php?album=XXXXXXXXXXXX, só que esse arquivo falbum-wp.php naum existe no plugin&#8230; como resolver? Acredito que seja simples, mas não consigo achar este arquivo&#8230;</p>
+<p>Obrigado!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/algumas-novidades-no-blog/#comment-3091</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2005 08:55:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-3091</guid>
+		<description><![CDATA[&lt;b&gt;Pedro:&lt;/b&gt; o arquivo já vem com os estilos também praticamente feitos, só mudei as cores e pouco mais. Quanto às fotos, tive pena de não usar o do Sapo mas quando meto uma coisa na cabeça é para fazer na hora! O facto do plugin para o Flickr já estar desenvolvido e pronto a instalar também foi um factor decisivo na minha escolha. Não sei como vai ser a API do Sapo mas se tiverem uma espécie de plugins pré-feitos penso que o pessoal vai aderir. Caso contrário, se forem como eu que não sabem programar, têm que pedir a alguém para o fazer ou então considerar outras hipóteses... É claro que no meu caso tinha parte da equipa do &lt;a href=&quot;http://fotos.sapo.pt&quot;/ rel=&quot;nofollow&quot;&gt;fotos.sapo.pt&lt;/a&gt; para me ajudar :) E quanto ao pagamento, 20€ por ano... o Google paga-me muito mais que isso por mês :D
+
+&lt;b&gt;Mário:&lt;/b&gt; De facto não é preciso ser-se programador, mas convém saber desenrascar-se quando se olha para o código, nem que seja para o poder estilizar à nossa maneira :) Quanto aos smilies, vou pensar nisso. Só preciso de encontrar uns que se enquadrem com as cores do site.]]></description>
+		<content:encoded><![CDATA[<p><b>Pedro:</b> o arquivo já vem com os estilos também praticamente feitos, só mudei as cores e pouco mais. Quanto às fotos, tive pena de não usar o do Sapo mas quando meto uma coisa na cabeça é para fazer na hora! O facto do plugin para o Flickr já estar desenvolvido e pronto a instalar também foi um factor decisivo na minha escolha. Não sei como vai ser a API do Sapo mas se tiverem uma espécie de plugins pré-feitos penso que o pessoal vai aderir. Caso contrário, se forem como eu que não sabem programar, têm que pedir a alguém para o fazer ou então considerar outras hipóteses&#8230; É claro que no meu caso tinha parte da equipa do <a href="http://fotos.sapo.pt/" rel="nofollow">fotos.sapo.pt</a> para me ajudar :) E quanto ao pagamento, 20€ por ano&#8230; o Google paga-me muito mais que isso por mês :D</p>
+<p><b>Mário:</b> De facto não é preciso ser-se programador, mas convém saber desenrascar-se quando se olha para o código, nem que seja para o poder estilizar à nossa maneira :) Quanto aos smilies, vou pensar nisso. Só preciso de encontrar uns que se enquadrem com as cores do site.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Mario</title>
+		<link>/algumas-novidades-no-blog/#comment-3090</link>
+		<dc:creator><![CDATA[Mario]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2005 02:10:33 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-3090</guid>
+		<description><![CDATA[Me gusta si. O facto de ser tão simples como instalar um plugin é optimo. Como referiste não é necessário ser-se programador para ter um blog fantastico. Só te faltam smiles aqui nos comentários :p
+
+Nice work although]]></description>
+		<content:encoded><![CDATA[<p>Me gusta si. O facto de ser tão simples como instalar um plugin é optimo. Como referiste não é necessário ser-se programador para ter um blog fantastico. Só te faltam smiles aqui nos comentários :p</p>
+<p>Nice work although</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Pedro Custódio</title>
+		<link>/algumas-novidades-no-blog/#comment-3089</link>
+		<dc:creator><![CDATA[Pedro Custódio]]></dc:creator>
+		<pubDate>Mon, 07 Nov 2005 23:50:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-3089</guid>
+		<description><![CDATA[Ivo, o arquivo está um expectáculo! Curti mesmo muito! Imagino que o styling da coisa tenhas sido tu, e por isso mesmo imagino que seja um pouco mais complicado do que instalar um plugin! ;)
+
+Quando às fotos, acho que fizeste mal, sinceramente! O fotos vai disponibilizar a API em breve, tudo passou pela revisão que se tudo correr bem entra daqui a pouco e vai estabilizar a plataforma, primeiro viram os clientes de upload para as plataformas e depois a explicação da API. Pelo menos não tinhas que pagar! E sempre tinhas um canal privilegiado com os autores, right?]]></description>
+		<content:encoded><![CDATA[<p>Ivo, o arquivo está um expectáculo! Curti mesmo muito! Imagino que o styling da coisa tenhas sido tu, e por isso mesmo imagino que seja um pouco mais complicado do que instalar um plugin! ;)</p>
+<p>Quando às fotos, acho que fizeste mal, sinceramente! O fotos vai disponibilizar a API em breve, tudo passou pela revisão que se tudo correr bem entra daqui a pouco e vai estabilizar a plataforma, primeiro viram os clientes de upload para as plataformas e depois a explicação da API. Pelo menos não tinhas que pagar! E sempre tinhas um canal privilegiado com os autores, right?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: d3x7r0</title>
+		<link>/algumas-novidades-no-blog/#comment-3087</link>
+		<dc:creator><![CDATA[d3x7r0]]></dc:creator>
+		<pubDate>Mon, 07 Nov 2005 16:33:37 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-3087</guid>
+		<description><![CDATA[Realmente o sistema dos arquivos está muito bom mesmo, se calhar arrisco-me a meter no meu blog também :D]]></description>
+		<content:encoded><![CDATA[<p>Realmente o sistema dos arquivos está muito bom mesmo, se calhar arrisco-me a meter no meu blog também :D</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/algumas-novidades-no-blog/#comment-3086</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 07 Nov 2005 15:46:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-3086</guid>
+		<description><![CDATA[Olá Marco!
+O tempo que demorei a passar de um sistema para o outro foi uma manhã! Não é muito complicado e até é fácil de customizar :)]]></description>
+		<content:encoded><![CDATA[<p>Olá Marco!<br />
+O tempo que demorei a passar de um sistema para o outro foi uma manhã! Não é muito complicado e até é fácil de customizar :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Marco Gomes</title>
+		<link>/algumas-novidades-no-blog/#comment-3085</link>
+		<dc:creator><![CDATA[Marco Gomes]]></dc:creator>
+		<pubDate>Mon, 07 Nov 2005 15:38:38 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186#comment-3085</guid>
+		<description><![CDATA[Como sempre implementando/testando os recursos mais recentes da Web hein!
+
+Estou pensando seriamente em migrar meu sistema de fotos para Flickr também, mas isso reque tempo, algo que não tenho...
+
+Um dia eu consigo manter um website pessoal tão legal quanto o seu, enquanto isso vou enganando com o meu atual mesmo...]]></description>
+		<content:encoded><![CDATA[<p>Como sempre implementando/testando os recursos mais recentes da Web hein!</p>
+<p>Estou pensando seriamente em migrar meu sistema de fotos para Flickr também, mas isso reque tempo, algo que não tenho&#8230;</p>
+<p>Um dia eu consigo manter um website pessoal tão legal quanto o seu, enquanto isso vou enganando com o meu atual mesmo&#8230;</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

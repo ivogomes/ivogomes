@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>jornal &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/jornal/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>O novo website do jornal Record</title>
+		<link>/o-novo-website-do-jornal-record/</link>
+		<comments>/o-novo-website-do-jornal-record/#comments</comments>
+		<pubDate>Mon, 01 Oct 2007 09:09:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[jornal]]></category>
+
+		<guid isPermaLink="false">/o-novo-website-do-jornal-record/</guid>
+		<description><![CDATA[<p>O <a href="http://www.record.pt/">Jornal Record</a> renovou o seu website há algumas semanas atrás. Além de terem piorado no grafismo (o site parece um <a href="/wireframes">wireframe</a>), também pioraram na acessibilidade dos conteúdos. Em relação à usabilidade, continua tão má como antes (continuo a ter grandes dificuldades a distinguir o que é link e o que não é).</p>
+<p>O conteúdo <a rel="nofollow" href="/o-novo-website-do-jornal-record/">O novo website do jornal Record</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/o-novo-website-do-jornal-record/feed/</wfw:commentRss>
+		<slash:comments>22</slash:comments>
+		</item>
+		<item>
+		<title>Jornal Destak com novo website</title>
+		<link>/jornal-destakpt-com-novo-website/</link>
+		<comments>/jornal-destakpt-com-novo-website/#comments</comments>
+		<pubDate>Mon, 07 May 2007 08:52:52 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[jornal]]></category>
+		<category><![CDATA[web-standards]]></category>
+
+		<guid isPermaLink="false">/jornal-destakpt-com-novo-website/</guid>
+		<description><![CDATA[<p>O Jornal diário gratuito Destak lançou um novo website. Até aqui nada de novo, no entanto coloco aqui a notícia por uma razão muito simples: todo o website foi desenvolvido segundo os webstandards e houve uma tentativa louvável de tornar o código o mais acessível possível.</p>
+<p>O conteúdo <a rel="nofollow" href="/jornal-destakpt-com-novo-website/">Jornal Destak com novo website</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/jornal-destakpt-com-novo-website/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+	</channel>
+</rss>

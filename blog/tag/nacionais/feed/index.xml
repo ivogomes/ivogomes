@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>nacionais &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/nacionais/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Usabilidade dos Museus Online</title>
+		<link>/usabilidade-dos-museus-online/</link>
+		<comments>/usabilidade-dos-museus-online/#comments</comments>
+		<pubDate>Mon, 28 Jan 2008 16:51:10 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[digital]]></category>
+		<category><![CDATA[museus]]></category>
+		<category><![CDATA[nacionais]]></category>
+		<category><![CDATA[publico]]></category>
+
+		<guid isPermaLink="false">/usabilidade-dos-museus-online/</guid>
+		<description><![CDATA[<p>Fui convidado pelo caderno <a href="http://digital.publico.pt/">Digital</a> do <a href="http://www.publico.pt/">Público</a> para dar a minha opinião sobre um grupo de sites de Museus Nacionais. A minha opinião foi então agregada às opiniões de mais quatro webdesigners e no final foi elaborada uma lista dos melhores e dos piores sites de Museus Nacionais.</p>
+<p>A minha análise centrou-se essencialmente na usabilidade e acessibilidade dos sites e não tanto em aspectos gráficos ou de webdesign (que penso ter sido a perspectiva dos restantes 4 webdesigners). </p>
+<p>O conteúdo <a rel="nofollow" href="/usabilidade-dos-museus-online/">Usabilidade dos Museus Online</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/usabilidade-dos-museus-online/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+	</channel>
+</rss>

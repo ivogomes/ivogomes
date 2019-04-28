@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>gestão &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/gestao/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>myTVShows 3: As Novidades</title>
+		<link>/mytvshows-3-as-novidades/</link>
+		<comments>/mytvshows-3-as-novidades/#comments</comments>
+		<pubDate>Thu, 05 Jun 2008 14:58:40 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[gestão]]></category>
+		<category><![CDATA[mytvshows]]></category>
+		<category><![CDATA[séries]]></category>
+		<category><![CDATA[tv]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=475</guid>
+		<description><![CDATA[<p><a href="http://www.mytvshows.org/"><img class="imgartigo alignnone size-full wp-image-476" title="myTVShows" src="/wp-content/uploads/2008/06/mytvshows.png" alt="" width="200" height="100" /></a>Após alguns meses de desenvolvimento da nova versão do <a title="myTVShows" href="http://www.mytvshows.org/">myTVShows</a>, chegou a hora de a disponibilizar publicamente. Esta versão já tinha sido divulgada mas apenas para alguns utilizadores, de modo a poder ter algum feedback sobre as novidades, bugs, novas funcionalidades, etc...</p>
+<p>Esta nova versão ainda está longe de ser finalizada. Ainda há algumas funcionalidades em processo de desenvovimento, outras ainda só no papel. Uma vez que foram introduzidas muitas novas funcionalidades, é possível que ainda hajam alguns bugs (apesar de termos feito muitos testes durante a fase em que a aplicação esteve disponível apenas a um conjunto restrito de pessoas).</p>
+<p>O conteúdo <a rel="nofollow" href="/mytvshows-3-as-novidades/">myTVShows 3: As Novidades</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/mytvshows-3-as-novidades/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>My TV Shows &#8211; Gestão de Séries Online</title>
+		<link>/my-tv-shows-gestao-de-series-online/</link>
+		<comments>/my-tv-shows-gestao-de-series-online/#comments</comments>
+		<pubDate>Wed, 30 Jan 2008 09:56:29 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[gestão]]></category>
+		<category><![CDATA[mytvshows]]></category>
+		<category><![CDATA[séries]]></category>
+		<category><![CDATA[tvshows]]></category>
+
+		<guid isPermaLink="false">/my-tv-shows-gestao-de-series-online/</guid>
+		<description><![CDATA[<p>Já está online deste o fim-de-semana, mas só agora faço o anúncio oficial. O antigo <a href="/tv-shows-10-aplicacao-de-gestao-de-series-de-tv/">TV Shows</a> passa agora a chamar-se <a href="http://www.mytvshows.org/?lang=pt_PT">My TV Shows</a> (não foi fácil arranjar um URL que envolvesse as palavras "TV" e "Shows", mas lá consegui: <a href="http://www.mytvshows.org/?lang=pt_PT">http://www.mytvshows.org/</a>) e passa também a ser um serviço online em vez de ter que ser instalado localmente no computador de cada um.</p>
+<p><a href="http://www.mytvshows.org/?lang=pt_PT"><img style="border:none" src="https://www.ivogomes.com/lib/images/mtvshows.png" alt="My TV Shows" /></a></p>
+<p>O conteúdo <a rel="nofollow" href="/my-tv-shows-gestao-de-series-online/">My TV Shows &#8211; Gestão de Séries Online</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/my-tv-shows-gestao-de-series-online/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+	</channel>
+</rss>

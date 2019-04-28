@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>dmu06 &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/dmu06/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Vida Fácil</title>
+		<link>/vida-facil/</link>
+		<comments>/vida-facil/#comments</comments>
+		<pubDate>Tue, 14 Nov 2006 20:51:53 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[dia-mundial]]></category>
+		<category><![CDATA[dmu06]]></category>
+		<category><![CDATA[vida-fácil]]></category>
+		<category><![CDATA[wud06]]></category>
+
+		<guid isPermaLink="false">/vida-facil/</guid>
+		<description><![CDATA[<p>Nas comemorações do Dia Mundial da Usabilidade em Portugal, a Associação Portuguesa de Profissionais de Usabilidade lançou o site <a href="http://vidafacil.usabilidade.org/">Vida Fácil</a>.</p>
+<p>O conceito é simples, queremos com este site dar a possibilidade de qualquer pessoa poder relatar situações que lhe facilitem ou dificultem a vida. Para tal basta enviar um e-mail para <a href="mailto:vidafacil@usabilidade.org">vidafacil@usabilidade.org</a> com fotografias ou imagens da situação e uma descrição com as razões pelas quais acham que essa situação tem uma boa ou má usabilidade.</p>
+<p>O conteúdo <a rel="nofollow" href="/vida-facil/">Vida Fácil</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/vida-facil/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Dia Mundial da Usabilidade 2006</title>
+		<link>/dia-mundial-da-usabilidade-2006/</link>
+		<comments>/dia-mundial-da-usabilidade-2006/#comments</comments>
+		<pubDate>Mon, 13 Nov 2006 09:45:12 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[dia-mundial]]></category>
+		<category><![CDATA[dmu06]]></category>
+		<category><![CDATA[wud06]]></category>
+
+		<guid isPermaLink="false">/dia-mundial-da-usabilidade-2006/</guid>
+		<description><![CDATA[<p>Comemora-se no dia 14 de Novembro o 2º Dia Mundial da Usabilidade. Por todo o mundo, mais de 200 eventos terão lugar em 40 países, sob o tema “Tornando a Vida Mais Fácil”. Em Portugal, a <a href="http://www.usabilidade.org/">Associação Portuguesa de Profissionais de Usabilidade</a> vai comemorar o dia com um evento que terá lugar pelas 16h30 no Anfiteatro 1 da Faculdade de Motricidade Humana da Universidade Técnica de Lisboa. O evento é de entrada livre.</p>
+<p>O conteúdo <a rel="nofollow" href="/dia-mundial-da-usabilidade-2006/">Dia Mundial da Usabilidade 2006</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/dia-mundial-da-usabilidade-2006/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

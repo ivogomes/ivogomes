@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>emprego &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/emprego/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Emprego: procura-se webdesigner estagiário e outros&#8230;</title>
+		<link>/emprego-procura-se-webdesigner-estagiario-e-outros/</link>
+		<comments>/emprego-procura-se-webdesigner-estagiario-e-outros/#comments</comments>
+		<pubDate>Thu, 21 Feb 2008 12:53:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[emprego]]></category>
+		<category><![CDATA[estágio]]></category>
+		<category><![CDATA[log]]></category>
+
+		<guid isPermaLink="false">/emprego-procura-se-webdesigner-estagiario-e-outros/</guid>
+		<description><![CDATA[<p>Na <a href="http://www.log.pt/">log</a> estamos à procura de um <a href="http://www.log.pt/emprego/estagio-webdesign">webdesigner (estagiário)</a> que esteja interessado em juntar-se a mim no departamento de Usabilidade e Acessibilidade. Para tal basta ter alguma experiência em XHTML e CSS e ter interesse pela usabilidade e acessibilidade e pelo desenvolvimento web segundo os webstandards.</p>
+<p>Infelizmente para já apenas podemos abrir esta vaga em forma de estágio, mas existe uma boa possibilidade de integração futura na empresa :)</p>
+<p>Se estão interessados ou se quiserem saber um pouco mais, podem ver aqui o anúncio: <a href="http://www.log.pt/emprego/estagio-webdesign">Estágio em Webdesign na log</a>.</p>
+<p>O conteúdo <a rel="nofollow" href="/emprego-procura-se-webdesigner-estagiario-e-outros/">Emprego: procura-se webdesigner estagiário e outros&#8230;</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/emprego-procura-se-webdesigner-estagiario-e-outros/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Novos sites do governo: NetEmprego</title>
+		<link>/novos-sites-do-governo-netemprego/</link>
+		<comments>/novos-sites-do-governo-netemprego/#comments</comments>
+		<pubDate>Tue, 04 Jul 2006 15:50:40 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[emprego]]></category>
+		<category><![CDATA[governo]]></category>
+		<category><![CDATA[netemprego]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+
+		<guid isPermaLink="false">/novos-sites-do-governo-netemprego/</guid>
+		<description><![CDATA[<p>Continuando a análise <a href="/novos-sites-do-governo-viactt/">iniciada no artigo anterior</a> sobre os dois novos sites do governo, o <a href="http://www.viactt.pt/">ViaCTT</a> e o <a href="http://www.netemprego.gov.pt/">NetEmprego</a>, vou agora fazer uma breve análise sobre este último que tem como objectivo ser um ponto de partida para os cidadãos à procura de emprego.</p>
+<p>O conteúdo <a rel="nofollow" href="/novos-sites-do-governo-netemprego/">Novos sites do governo: NetEmprego</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novos-sites-do-governo-netemprego/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

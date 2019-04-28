@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>survs &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/survs/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Survs &#8211; ferramenta para criação e gestão de inquéritos online</title>
+		<link>/survs-ferramenta-para-criacao-e-gestao-de-inqueritos-online/</link>
+		<comments>/survs-ferramenta-para-criacao-e-gestao-de-inqueritos-online/#comments</comments>
+		<pubDate>Mon, 26 Jan 2009 11:02:45 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[survs]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=715</guid>
+		<description><![CDATA[<p>O <a href="http://www.survs.com/">Survs</a> é uma aplicação web colaborativa que permite construir, distribuir e analisar inquéritos online. Possibilita, ainda, a partilha de resultados, templates e estilos gráficos dos inquéritos. É uma aplicação desenvolvida 100% em Portugal e compete com os restantes websites de criação de inquéritos online apostando muito forte na componente de usabilidade e facilidade de uso.</p>
+<p><a href="http://www.survs.com/"><img src="/wp-content/uploads/2009/01/survssurveys.jpg" alt="Survs" title="Survs" width="440" height="244" class="img alignnone size-full wp-image-718" /></a></p>
+<p>O conteúdo <a rel="nofollow" href="/survs-ferramenta-para-criacao-e-gestao-de-inqueritos-online/">Survs &#8211; ferramenta para criação e gestão de inquéritos online</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/survs-ferramenta-para-criacao-e-gestao-de-inqueritos-online/feed/</wfw:commentRss>
+		<slash:comments>30</slash:comments>
+		</item>
+	</channel>
+</rss>

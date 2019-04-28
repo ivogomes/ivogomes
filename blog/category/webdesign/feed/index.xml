@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Webdesign &#8211; IvoGomes.com</title>
+	<atom:link href="/category/webdesign/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>HTML5 e Acessibilidade</title>
+		<link>/html5-e-acessibilidade/</link>
+		<comments>/html5-e-acessibilidade/#respond</comments>
+		<pubDate>Thu, 08 May 2014 10:54:00 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">/?p=1446</guid>
+		<description><![CDATA[<p>Desde a chegada do HTML5, que a web está a tornar-se um pouco mais acessível, quase sem o notarmos. O facto de se usar simplesmente as tags &#60;header&#62; e &#60;footer&#62; para os cabeçalhos e rodapés e a tag &#60;nav&#62; para os menus acaba por ser uma grande ajuda para quem usa sistemas assistivos para navegar na [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/html5-e-acessibilidade/">HTML5 e Acessibilidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/html5-e-acessibilidade/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Lista de problemas e bugs comuns de HTML/CSS</title>
+		<link>/lista-de-problemas-e-bugs-comuns-de-htmlcss/</link>
+		<comments>/lista-de-problemas-e-bugs-comuns-de-htmlcss/#respond</comments>
+		<pubDate>Mon, 24 Mar 2014 15:31:26 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[html]]></category>
+
+		<guid isPermaLink="false">/?p=1403</guid>
+		<description><![CDATA[<p>O site WTF, HTML and CSS? tem uma compilação de problemas comuns  de CSS com os quais de certeza todos nós já nos deparámos.  É sempre bom ter uma lista curada com dicas e soluções para evitar ou contornar esses problemas.</p>
+<p>O conteúdo <a rel="nofollow" href="/lista-de-problemas-e-bugs-comuns-de-htmlcss/">Lista de problemas e bugs comuns de HTML/CSS</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/lista-de-problemas-e-bugs-comuns-de-htmlcss/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>E já lá vão 11 anos!</title>
+		<link>/e-ja-la-vao-11-anos/</link>
+		<comments>/e-ja-la-vao-11-anos/#comments</comments>
+		<pubDate>Thu, 09 Sep 2010 14:02:35 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1176</guid>
+		<description><![CDATA[<p>Há exactamente onze anos atrás, estava eu a lançar o meu primeiro website, o <a href="http://www.portaldascuriosidades.com/">Portal das Curiosidades</a> (nascido numa data curiosa: 9/9/99). Tirando alguns contratempos há alguns anos atrás, tem-se mantido ininterruptamente online desde então.</p>
+<p><a href="http://www.portaldascuriosidades.com/"><img src="/wp-content/uploads/2010/09/Screen-shot-2010-09-09-at-14.41.39.png" alt="" title="Portal das Curiosidades" width="228" height="98" class="alignleft size-full wp-image-1177" /></a></p>
+<p>O conteúdo <a rel="nofollow" href="/e-ja-la-vao-11-anos/">E já lá vão 11 anos!</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/e-ja-la-vao-11-anos/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Nova homepage do SAPO</title>
+		<link>/nova-homepage-do-sapo/</link>
+		<comments>/nova-homepage-do-sapo/#comments</comments>
+		<pubDate>Fri, 11 Dec 2009 17:40:16 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=963</guid>
+		<description><![CDATA[<p>Os últimos meses têm sido de trabalho intensivo para preparar o lançamento da<a href="http://www.sapo.pt/"> nova homepage do SAPO</a> (entre "n" outros projectos que foram desenvolvidos em paralelo).</p>
+<p>Para a nova homepage desenvolvemos várias metodologias de usabilidade cujos resultados podem ser consultados em detalhe no blog oficial da Homepage:</p>
+<ul>
+<li><a href="http://homepage.blogs.sapo.pt/2216.html">Estatísticas, Inquéritos, Brainstorming, Testes de Usabilidade e Eyetracking</a></li>
+<li><a href="http://homepage.blogs.sapo.pt/2476.html">Wireframes</a></li>
+<li><a href="http://homepage.blogs.sapo.pt/2628.html">Versão Beta e os resultados dos inquéritos aos utilizadores</a></li>
+</ul>
+<p>O conteúdo <a rel="nofollow" href="/nova-homepage-do-sapo/">Nova homepage do SAPO</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/nova-homepage-do-sapo/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Novo website da Direcção-Geral de Arquivos</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/</link>
+		<comments>/novo-website-da-direccao-geral-de-arquivos/#comments</comments>
+		<pubDate>Tue, 23 Dec 2008 11:23:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[dgarq]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682</guid>
+		<description><![CDATA[<p>Nos últimos meses estive a trabalhar na remodelação do website da Direcção-Geral de Arquivos. Os requisitos principais para a remodelação prendiam-se com a necessidade de ter um website mais acessível (nível de acessibilidade AA) e mais leve (evitando o uso de imagens pesadas e elementos gráficos desnecessários). Todos estes requisitos vieram do próprio cliente que explicitou muito bem todos estes pontos.</p>
+<p>A Direcção-Geral de Arquivos (antigo IAN/TT - Instituto dos Arquivos Nacionais / Torre do Tombo), devido às mudanças que houveram na instituição, passou a estar separada da Torre do Tombo. Assim, hoje temos a Direcção-Geral de Arquivos e o Arquivo Nacional da Torre do Tombo. Desta forma, teríamos que desenvolver dois websites distintos, mas mantendo a mesma linha gráfica.</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-da-direccao-geral-de-arquivos/">Novo website da Direcção-Geral de Arquivos</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-da-direccao-geral-de-arquivos/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>SHiFT&#8217;08</title>
+		<link>/shift08/</link>
+		<comments>/shift08/#comments</comments>
+		<pubDate>Mon, 13 Oct 2008 11:44:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[guerrilla]]></category>
+		<category><![CDATA[shift]]></category>
+		<category><![CDATA[silverback]]></category>
+		<category><![CDATA[user experience]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=585</guid>
+		<description><![CDATA[<p><a href="http://www.shift.pt/" title="SHiFT - Social and Human Ideas For Technology"><img src="http://shift.pt/images/banners/336x280.jpg" border="0" alt="SHiFT - Social and Human Ideas For Technology" /></a></p>
+<p>É já esta semana (dias 15, 16 e 17 de Outubro) que se realiza a segunda edição da <a href="http://www.shift.pt/">SHiFT</a> (Social and Human Ideas For Technology) na <a href="http://shift.pt/page/practical">FIL</a> em Lisboa.</p>
+<p>O conteúdo <a rel="nofollow" href="/shift08/">SHiFT&#8217;08</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift08/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>&#8220;Bonjour&#8221; e outras novidades no My TV Shows</title>
+		<link>/bonjour-e-outras-novidades-no-my-tv-shows/</link>
+		<comments>/bonjour-e-outras-novidades-no-my-tv-shows/#comments</comments>
+		<pubDate>Mon, 29 Sep 2008 12:46:30 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[mytvshows]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=562</guid>
+		<description><![CDATA[<p>Depois de resolvidos os problemas de lentidão no site, está na altura de começar a introduzir algumas novas funcionalidades :)</p>
+<p>Neste fim-de-semana estive a implementar uma das funcionalidades mais pedidas nos últimos tempos para o My TV Shows: a pesquisa de novos episódios para todas as séries. Assim, em vez de ter que ir série a série ver se há novos episódios, passou a existir uma nova secção no site que procura por novos episódios em todas as minhas séries não arquivadas.</p>
+<p>O conteúdo <a rel="nofollow" href="/bonjour-e-outras-novidades-no-my-tv-shows/">&#8220;Bonjour&#8221; e outras novidades no My TV Shows</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/bonjour-e-outras-novidades-no-my-tv-shows/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>myTVShows: Mais Novidades</title>
+		<link>/mytvshows-mais-novidades/</link>
+		<comments>/mytvshows-mais-novidades/#comments</comments>
+		<pubDate>Sat, 12 Jul 2008 09:57:15 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[mytvshows]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=495</guid>
+		<description><![CDATA[<p><img class="alignnone img size-full wp-image-497" title="página da série" src="/wp-content/uploads/2008/07/picture-2.png" alt="Página da Série" width="500" height="172" /></p>
+<p>Após o lançamento da versão 3 do myTVShows que continha <a href="/mytvshows-3-as-novidades/">um número considerável de novidades</a>, faço agora um novo ponto de situação para acrescentar mais novidades ainda!</p>
+<p>O conteúdo <a rel="nofollow" href="/mytvshows-mais-novidades/">myTVShows: Mais Novidades</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/mytvshows-mais-novidades/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Novo website do Instituto de Meteorologia</title>
+		<link>/novo-website-do-instituto-de-meteorologia/</link>
+		<comments>/novo-website-do-instituto-de-meteorologia/#comments</comments>
+		<pubDate>Fri, 11 Jul 2008 14:43:42 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=492</guid>
+		<description><![CDATA[<p>Há uns meses atrás fomos convidados para apresentar uma proposta para a remodelação do novo website do Instituto de Meteorologia. Infelizmente a nossa proposta não ganhou.</p>
+<p>Hoje vejo que já têm um novo site, mais bonito e mais "clean" que o anterior (em termos visuais). No entanto há alguns aspectos menos positivos nesta nova versão.</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-do-instituto-de-meteorologia/">Novo website do Instituto de Meteorologia</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-do-instituto-de-meteorologia/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>O novo website da RTP</title>
+		<link>/o-novo-website-da-rtp/</link>
+		<comments>/o-novo-website-da-rtp/#comments</comments>
+		<pubDate>Fri, 04 Jul 2008 15:54:28 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[rtp]]></category>
+		<category><![CDATA[tv]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485</guid>
+		<description><![CDATA[<p>Esta semana a RTP anunciou que remodelou a página inicial do site.</p>
+<p>Apesar de dizerem que é um "work in progess", penso que a página piorou em relação à anterior. Há quase 2 anos atrás fiz um pequeno comparativo entre os websites dos canais generalistas nacionais onde podem ver os comentários que fiz em relação à página inicial a RTP, e alguns dos problemas mantêm-se.</p>
+<p>O conteúdo <a rel="nofollow" href="/o-novo-website-da-rtp/">O novo website da RTP</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/o-novo-website-da-rtp/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+		<item>
+		<title>myTVShows 3: As Novidades</title>
+		<link>/mytvshows-3-as-novidades/</link>
+		<comments>/mytvshows-3-as-novidades/#comments</comments>
+		<pubDate>Thu, 05 Jun 2008 14:58:40 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[gestão]]></category>
+		<category><![CDATA[mytvshows]]></category>
+		<category><![CDATA[séries]]></category>
+		<category><![CDATA[tv]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=475</guid>
+		<description><![CDATA[<p><a href="http://www.mytvshows.org/"><img class="imgartigo alignnone size-full wp-image-476" title="myTVShows" src="/wp-content/uploads/2008/06/mytvshows.png" alt="" width="200" height="100" /></a>Após alguns meses de desenvolvimento da nova versão do <a title="myTVShows" href="http://www.mytvshows.org/">myTVShows</a>, chegou a hora de a disponibilizar publicamente. Esta versão já tinha sido divulgada mas apenas para alguns utilizadores, de modo a poder ter algum feedback sobre as novidades, bugs, novas funcionalidades, etc...</p>
+<p>Esta nova versão ainda está longe de ser finalizada. Ainda há algumas funcionalidades em processo de desenvovimento, outras ainda só no papel. Uma vez que foram introduzidas muitas novas funcionalidades, é possível que ainda hajam alguns bugs (apesar de termos feito muitos testes durante a fase em que a aplicação esteve disponível apenas a um conjunto restrito de pessoas).</p>
+<p>O conteúdo <a rel="nofollow" href="/mytvshows-3-as-novidades/">myTVShows 3: As Novidades</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/mytvshows-3-as-novidades/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Internet Explorer 8</title>
+		<link>/internet-explorer-8/</link>
+		<comments>/internet-explorer-8/#comments</comments>
+		<pubDate>Thu, 06 Mar 2008 08:47:07 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[explorer]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[ie]]></category>
+		<category><![CDATA[internet]]></category>
+		<category><![CDATA[webstandards]]></category>
+
+		<guid isPermaLink="false">/internet-explorer-8/</guid>
+		<description><![CDATA[<p>Esta semana foi lançada a primeira <a href="http://www.microsoft.com/windows/products/winfamily/ie/ie8/default.mspx">versão Beta do Internet Explorer 8</a>. Este é um grande passo da Microsoft para tornar o seu browser mais compatível com os web standards e fazer com que no futuro os webdesigners não tenham que passar horas e horas a fio a tentar corrigir bugs de interpretação de CSS.</p>
+<p><img src='/wp-content/uploads/2008/03/picture-1.png' alt='IE8' class="img" /></p>
+<p>O conteúdo <a rel="nofollow" href="/internet-explorer-8/">Internet Explorer 8</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/internet-explorer-8/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+		</item>
+		<item>
+		<title>Emprego: procura-se webdesigner estagiário e outros&#8230;</title>
+		<link>/emprego-procura-se-webdesigner-estagiario-e-outros/</link>
+		<comments>/emprego-procura-se-webdesigner-estagiario-e-outros/#comments</comments>
+		<pubDate>Thu, 21 Feb 2008 12:53:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[emprego]]></category>
+		<category><![CDATA[estágio]]></category>
+		<category><![CDATA[log]]></category>
+
+		<guid isPermaLink="false">/emprego-procura-se-webdesigner-estagiario-e-outros/</guid>
+		<description><![CDATA[<p>Na <a href="http://www.log.pt/">log</a> estamos à procura de um <a href="http://www.log.pt/emprego/estagio-webdesign">webdesigner (estagiário)</a> que esteja interessado em juntar-se a mim no departamento de Usabilidade e Acessibilidade. Para tal basta ter alguma experiência em XHTML e CSS e ter interesse pela usabilidade e acessibilidade e pelo desenvolvimento web segundo os webstandards.</p>
+<p>Infelizmente para já apenas podemos abrir esta vaga em forma de estágio, mas existe uma boa possibilidade de integração futura na empresa :)</p>
+<p>Se estão interessados ou se quiserem saber um pouco mais, podem ver aqui o anúncio: <a href="http://www.log.pt/emprego/estagio-webdesign">Estágio em Webdesign na log</a>.</p>
+<p>O conteúdo <a rel="nofollow" href="/emprego-procura-se-webdesigner-estagiario-e-outros/">Emprego: procura-se webdesigner estagiário e outros&#8230;</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/emprego-procura-se-webdesigner-estagiario-e-outros/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>TV Shows 1.0 &#8211; Aplicação de Gestão de Séries de TV</title>
+		<link>/tv-shows-10-aplicacao-de-gestao-de-series-de-tv/</link>
+		<comments>/tv-shows-10-aplicacao-de-gestao-de-series-de-tv/#comments</comments>
+		<pubDate>Fri, 18 Jan 2008 09:58:38 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[episódios]]></category>
+		<category><![CDATA[séries]]></category>
+		<category><![CDATA[tv]]></category>
+		<category><![CDATA[tvshows]]></category>
+
+		<guid isPermaLink="false">/tv-shows-10-aplicacao-de-gestao-de-series-de-tv/</guid>
+		<description><![CDATA[<p><a href="/codebits-e-series-de-tv/">Já aqui falei</a> ao de leve sobre este meu projecto de gestão de Séries de TV. Basicamente, o <strong>TV Shows</strong> permite gerir os episódios das séries de TV que costumamos ver. </p>
+<p>Através desta aplicação podemos manter um registo de todas as séries que acompanhamos, quais os episódios que já vimos (e os que faltam ver) e também se temos (ou não) um ficheiro com as legendas para cada episódio.</p>
+<p><img src='/wp-content/uploads/2007/12/tvshows.jpg' alt='TV Shows' /></p>
+<p>O conteúdo <a rel="nofollow" href="/tv-shows-10-aplicacao-de-gestao-de-series-de-tv/">TV Shows 1.0 &#8211; Aplicação de Gestão de Séries de TV</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/tv-shows-10-aplicacao-de-gestao-de-series-de-tv/feed/</wfw:commentRss>
+		<slash:comments>15</slash:comments>
+		</item>
+		<item>
+		<title>Novo website do Alto Comissariado da Saúde</title>
+		<link>/novo-website-do-alto-comissariado-da-saude/</link>
+		<comments>/novo-website-do-alto-comissariado-da-saude/#comments</comments>
+		<pubDate>Fri, 04 Jan 2008 12:01:34 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[alto]]></category>
+		<category><![CDATA[comissariado]]></category>
+		<category><![CDATA[saúde]]></category>
+
+		<guid isPermaLink="false">/novo-website-do-alto-comissariado-da-saude/</guid>
+		<description><![CDATA[<p>Acabou de ser lançado esta semana o novo website do Alto Comissariado da Saúde. Estive envolvido neste projecto, nomeadamente no que toca ao design dos layouts e da integração do WordPress com o mesmo, em detrimento do CMS anterior. Além do site principal, foi também redesenhado o microsite com as Metas e Indicadores do Plano [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-do-alto-comissariado-da-saude/">Novo website do Alto Comissariado da Saúde</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-do-alto-comissariado-da-saude/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+	</channel>
+</rss>

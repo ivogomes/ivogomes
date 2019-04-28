@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Resolução de Ecrãs</title>
+	<atom:link href="/resolucao-de-ecras/feed/" rel="self" type="application/rss+xml" />
+	<link>/resolucao-de-ecras/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: d3x7r0</title>
+		<link>/resolucao-de-ecras/#comment-3028</link>
+		<dc:creator><![CDATA[d3x7r0]]></dc:creator>
+		<pubDate>Thu, 20 Oct 2005 16:04:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3028</guid>
+		<description><![CDATA[Sim eu sei mas prefiro deixar o tamanho do texto ao criterio do browser... [ctrl] + [+] costuma funcionar para aumentar o texto em quase todos os browsers salvo erro...]]></description>
+		<content:encoded><![CDATA[<p>Sim eu sei mas prefiro deixar o tamanho do texto ao criterio do browser&#8230; [ctrl] + [+] costuma funcionar para aumentar o texto em quase todos os browsers salvo erro&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/resolucao-de-ecras/#comment-3025</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 20 Oct 2005 08:58:08 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3025</guid>
+		<description><![CDATA[O javascript é usado para activar o CSS correspondente. Mas se não queres usar JS podes fazê-lo com PHP ou ASP, etc... A única diferença é que com JS a página não precisa de ser carregada novamente para que as alterações façam efeito.]]></description>
+		<content:encoded><![CDATA[<p>O javascript é usado para activar o CSS correspondente. Mas se não queres usar JS podes fazê-lo com PHP ou ASP, etc&#8230; A única diferença é que com JS a página não precisa de ser carregada novamente para que as alterações façam efeito.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: d3x7r0</title>
+		<link>/resolucao-de-ecras/#comment-3024</link>
+		<dc:creator><![CDATA[d3x7r0]]></dc:creator>
+		<pubDate>Wed, 19 Oct 2005 22:45:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3024</guid>
+		<description><![CDATA[onfocus=&quot;setActiveStyleSheet(&#039;normal&#039;); return false;&quot;
+
+Não me pareçe ser CSS isto...]]></description>
+		<content:encoded><![CDATA[<p>onfocus=&#8221;setActiveStyleSheet(&#8216;normal&#8217;); return false;&#8221;</p>
+<p>Não me pareçe ser CSS isto&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rui Moura</title>
+		<link>/resolucao-de-ecras/#comment-3022</link>
+		<dc:creator><![CDATA[Rui Moura]]></dc:creator>
+		<pubDate>Wed, 19 Oct 2005 15:07:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3022</guid>
+		<description><![CDATA[Qual javascript ?
+É puro CSS ....]]></description>
+		<content:encoded><![CDATA[<p>Qual javascript ?<br />
+É puro CSS &#8230;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: d3x7r0</title>
+		<link>/resolucao-de-ecras/#comment-3020</link>
+		<dc:creator><![CDATA[d3x7r0]]></dc:creator>
+		<pubDate>Tue, 18 Oct 2005 22:27:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3020</guid>
+		<description><![CDATA[Sim mas o proprio browser já tem os seus tamanhos padrão ajustados á resolução (ou se não tem devia ter) portanto a questão de se tornar pequeno demais não se deveria colocar ;)
+
+E sim já vi esse sistema mas pessoalmente não gosto muito de javascript :P]]></description>
+		<content:encoded><![CDATA[<p>Sim mas o proprio browser já tem os seus tamanhos padrão ajustados á resolução (ou se não tem devia ter) portanto a questão de se tornar pequeno demais não se deveria colocar ;)</p>
+<p>E sim já vi esse sistema mas pessoalmente não gosto muito de javascript :P</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/resolucao-de-ecras/#comment-3018</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 18 Oct 2005 20:18:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3018</guid>
+		<description><![CDATA[Não, as letras não aumentam de tamanho se eu aumentar a largura da janela... Experimenta e vais ver :)
+O facto de serem definidas em percentagens permite que possas escolher no browser se queres ter o texto maior ou menor, no entanto, a maior parte dos utilizadores nem sequer sabe que isso é possível fazer... portanto o mais fácil é disponibilizares no próprio site um sistema que permita aumentar o tamanho do texto (vê o canto superior direito desta página).
+Nunca o texto vai aumentar em função do tamanho da janela.]]></description>
+		<content:encoded><![CDATA[<p>Não, as letras não aumentam de tamanho se eu aumentar a largura da janela&#8230; Experimenta e vais ver :)<br />
+O facto de serem definidas em percentagens permite que possas escolher no browser se queres ter o texto maior ou menor, no entanto, a maior parte dos utilizadores nem sequer sabe que isso é possível fazer&#8230; portanto o mais fácil é disponibilizares no próprio site um sistema que permita aumentar o tamanho do texto (vê o canto superior direito desta página).<br />
+Nunca o texto vai aumentar em função do tamanho da janela.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: d3x7r0</title>
+		<link>/resolucao-de-ecras/#comment-3017</link>
+		<dc:creator><![CDATA[d3x7r0]]></dc:creator>
+		<pubDate>Tue, 18 Oct 2005 18:54:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3017</guid>
+		<description><![CDATA[Esqueçem-se que o tamanho das letras também é uma percentagem que aumenta e diminui na mesmo proporção do resto do layout... HEHE :mrgreen:]]></description>
+		<content:encoded><![CDATA[<p>Esqueçem-se que o tamanho das letras também é uma percentagem que aumenta e diminui na mesmo proporção do resto do layout&#8230; HEHE :mrgreen:</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rui Moura</title>
+		<link>/resolucao-de-ecras/#comment-3016</link>
+		<dc:creator><![CDATA[Rui Moura]]></dc:creator>
+		<pubDate>Tue, 18 Oct 2005 15:40:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3016</guid>
+		<description><![CDATA[Tem sempre que se ter em atenção ao desenvolver um site/blog/whatever estas estatísticas em relação ás resoluções mais utilizadas. É um facto que a maior parte dos utilizadores de computadores ainda usam a resolução 1024px*768px , que possivelmente vai evoluir quando os tft&#039;s se estabelecerem mais (a rtesolução nativa de um tft de 17 polegadas, os mais acessíveis, é de 1280px*1024px).
+No meu caso, projectei o blog para se apresentar &quot;dignamente&quot; tanto a 800px*600px como a 1024px*768px. Quem tiver resoluções mais altas vai ter que fazer um esforço e aumentar o tamanho da letra ;). 
+Com o uso das percentagens, provavelmente se o blog fo-se visto num ecrã a 1600px*1200px o resultado ia ser catastrófico, porque ia dar cabo do layout ... Mas essa é a minha ideia ...]]></description>
+		<content:encoded><![CDATA[<p>Tem sempre que se ter em atenção ao desenvolver um site/blog/whatever estas estatísticas em relação ás resoluções mais utilizadas. É um facto que a maior parte dos utilizadores de computadores ainda usam a resolução 1024px*768px , que possivelmente vai evoluir quando os tft&#8217;s se estabelecerem mais (a rtesolução nativa de um tft de 17 polegadas, os mais acessíveis, é de 1280px*1024px).<br />
+No meu caso, projectei o blog para se apresentar &#8220;dignamente&#8221; tanto a 800px*600px como a 1024px*768px. Quem tiver resoluções mais altas vai ter que fazer um esforço e aumentar o tamanho da letra ;).<br />
+Com o uso das percentagens, provavelmente se o blog fo-se visto num ecrã a 1600px*1200px o resultado ia ser catastrófico, porque ia dar cabo do layout &#8230; Mas essa é a minha ideia &#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/resolucao-de-ecras/#comment-3015</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 18 Oct 2005 14:01:08 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3015</guid>
+		<description><![CDATA[Estás a falar de degradação para ecrãs pequenos, mas e se eu usar um ecrã com uma largura de 2000 pixels? Provavelmente o layout vai-se esticar tanto que irá ser difícil ler uma linha enorme de texto. Também temos que contar com a legibilidade em ecrãs de grandes dimensões.
+
+Há estudos que comprovam que por linha não devem haver mais do que 65 caracteres para se poder ler um texto de forma rápida e eficiente.]]></description>
+		<content:encoded><![CDATA[<p>Estás a falar de degradação para ecrãs pequenos, mas e se eu usar um ecrã com uma largura de 2000 pixels? Provavelmente o layout vai-se esticar tanto que irá ser difícil ler uma linha enorme de texto. Também temos que contar com a legibilidade em ecrãs de grandes dimensões.</p>
+<p>Há estudos que comprovam que por linha não devem haver mais do que 65 caracteres para se poder ler um texto de forma rápida e eficiente.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: d3x7r0</title>
+		<link>/resolucao-de-ecras/#comment-3014</link>
+		<dc:creator><![CDATA[d3x7r0]]></dc:creator>
+		<pubDate>Tue, 18 Oct 2005 13:51:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3014</guid>
+		<description><![CDATA[Ou então porque não usar simples CSS e usar percentagens em vez de tamanhos fixos? É simples, é pratico, é equiparavel em varias resoluções e é possivel defenir o &quot;overflow&quot; de imagens para estas serem exibidas correctamente em varias resoluções...
+
+E obviamente que em teoria o uso de percentagens permite sites praticamente identicos em ecrãs tão pequenos como telemoveis ou tão grandes como ecrãs de alta definição... Claro que é uma mera teoria especialmente no que toca aos telemoveis mas vale a pena insistir nos conteudos relativos na minha opinião...]]></description>
+		<content:encoded><![CDATA[<p>Ou então porque não usar simples CSS e usar percentagens em vez de tamanhos fixos? É simples, é pratico, é equiparavel em varias resoluções e é possivel defenir o &#8220;overflow&#8221; de imagens para estas serem exibidas correctamente em varias resoluções&#8230;</p>
+<p>E obviamente que em teoria o uso de percentagens permite sites praticamente identicos em ecrãs tão pequenos como telemoveis ou tão grandes como ecrãs de alta definição&#8230; Claro que é uma mera teoria especialmente no que toca aos telemoveis mas vale a pena insistir nos conteudos relativos na minha opinião&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: João Bordalo</title>
+		<link>/resolucao-de-ecras/#comment-3013</link>
+		<dc:creator><![CDATA[João Bordalo]]></dc:creator>
+		<pubDate>Tue, 18 Oct 2005 11:59:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=180#comment-3013</guid>
+		<description><![CDATA[Em primeiro lugar, os meus parabéns pelo site, é excelente. 
+
+Quanto ao tema do post, acredito piamente não serem necessários tantos pixeis para uma aplicação web. Com o advento do ajax, novas funcionalidades ou opções podem aparecer apenas quando fazem sentido, ou seja, apenas quando estão em contexto. 
+
+Por outro lado, uma aproximação aos mini wizards poderá ajudar também à redução do espaço necessário, um pouco como funcionam as opções em Mac que têm reticências.]]></description>
+		<content:encoded><![CDATA[<p>Em primeiro lugar, os meus parabéns pelo site, é excelente. </p>
+<p>Quanto ao tema do post, acredito piamente não serem necessários tantos pixeis para uma aplicação web. Com o advento do ajax, novas funcionalidades ou opções podem aparecer apenas quando fazem sentido, ou seja, apenas quando estão em contexto. </p>
+<p>Por outro lado, uma aproximação aos mini wizards poderá ajudar também à redução do espaço necessário, um pouco como funcionam as opções em Mac que têm reticências.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

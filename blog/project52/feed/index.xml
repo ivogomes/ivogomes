@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Project 52</title>
+	<atom:link href="/project52/feed/" rel="self" type="application/rss+xml" />
+	<link>/project52/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Project 52 (se calhar não vou conseguir) &#124; IvoGomes.com</title>
+		<link>/project52/#comment-88256</link>
+		<dc:creator><![CDATA[Project 52 (se calhar não vou conseguir) &#124; IvoGomes.com]]></dc:creator>
+		<pubDate>Wed, 24 Feb 2010 10:26:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=976#comment-88256</guid>
+		<description><![CDATA[[...] início do ano escrevi sobre o Project 52, um desafio pessoal colocado aos bloggers para publicarem pelos menos 1 artigo por semana, durante [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] início do ano escrevi sobre o Project 52, um desafio pessoal colocado aos bloggers para publicarem pelos menos 1 artigo por semana, durante [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rogério Pereira</title>
+		<link>/project52/#comment-87941</link>
+		<dc:creator><![CDATA[Rogério Pereira]]></dc:creator>
+		<pubDate>Sat, 09 Jan 2010 15:01:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=976#comment-87941</guid>
+		<description><![CDATA[Gostei muito da ideia de publicar pelo menos uma vez por semana. 
+
+Vou colocar isso em prática no meu blog esse ano.]]></description>
+		<content:encoded><![CDATA[<p>Gostei muito da ideia de publicar pelo menos uma vez por semana. </p>
+<p>Vou colocar isso em prática no meu blog esse ano.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Carlos Martins</title>
+		<link>/project52/#comment-87935</link>
+		<dc:creator><![CDATA[Carlos Martins]]></dc:creator>
+		<pubDate>Fri, 08 Jan 2010 11:27:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=976#comment-87935</guid>
+		<description><![CDATA[Ui... eu é que deveria seguir o teu exemplo e aderir a isso, já que ao longo destes anos me tenho auto-imposto a postar pelo menos 1x... por dia! :)
+
+Project365, I guess...]]></description>
+		<content:encoded><![CDATA[<p>Ui&#8230; eu é que deveria seguir o teu exemplo e aderir a isso, já que ao longo destes anos me tenho auto-imposto a postar pelo menos 1x&#8230; por dia! :)</p>
+<p>Project365, I guess&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Marco Rodrigues</title>
+		<link>/project52/#comment-87934</link>
+		<dc:creator><![CDATA[Marco Rodrigues]]></dc:creator>
+		<pubDate>Fri, 08 Jan 2010 11:06:08 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=976#comment-87934</guid>
+		<description><![CDATA[Que tal falares um pouco dos livros que compras e o seu conteúdo e se realmente são bons.
+
+Por exemplo, eu gostava de encontrar um bom livro sobre montagem de layouts em XHTML+CSS e as tretas da compatibilidade entre browsers. Sei que existem alguns, mas nada melhor que ser um conhecedor da área a recomendar :)]]></description>
+		<content:encoded><![CDATA[<p>Que tal falares um pouco dos livros que compras e o seu conteúdo e se realmente são bons.</p>
+<p>Por exemplo, eu gostava de encontrar um bom livro sobre montagem de layouts em XHTML+CSS e as tretas da compatibilidade entre browsers. Sei que existem alguns, mas nada melhor que ser um conhecedor da área a recomendar :)</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

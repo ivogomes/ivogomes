@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Novamente sobre o tamanho do texto</title>
+	<atom:link href="/novamente-sobre-o-tamanho-do-texto/feed/" rel="self" type="application/rss+xml" />
+	<link>/novamente-sobre-o-tamanho-do-texto/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3876</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 19 May 2006 07:56:21 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3876</guid>
+		<description><![CDATA[Eu também costumo usar &#039;em&#039; ou &#039;%&#039;. Com esta técnica do Yahoo! também se usam &#039;%&#039; por isso o texto é sempre escalável. 
+
+A grande diferença é que tens uma tabela base em que podes definir com bastante exactidão que um texto com 152% de tamanho fica exactamente do mesmo tamanho que um texto definido para 20px. Com a diferença que é escalável enquanto que o &#039;px&#039; não é (só no Internet Explorer é que não é).
+
+Acessibilidade não significa usabilidade, nem usabilidade significa acessibilidade. Podes ter um site 100% acessível e pouco ou nada usável, e vice-versa.]]></description>
+		<content:encoded><![CDATA[<p>Eu também costumo usar &#8216;em&#8217; ou &#8216;%&#8217;. Com esta técnica do Yahoo! também se usam &#8216;%&#8217; por isso o texto é sempre escalável. </p>
+<p>A grande diferença é que tens uma tabela base em que podes definir com bastante exactidão que um texto com 152% de tamanho fica exactamente do mesmo tamanho que um texto definido para 20px. Com a diferença que é escalável enquanto que o &#8216;px&#8217; não é (só no Internet Explorer é que não é).</p>
+<p>Acessibilidade não significa usabilidade, nem usabilidade significa acessibilidade. Podes ter um site 100% acessível e pouco ou nada usável, e vice-versa.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3874</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Fri, 19 May 2006 03:01:45 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3874</guid>
+		<description><![CDATA[Eu continuo a usar `em´ porque px não deixam o texto escalável...
+Onde está a acessibilidade? Acessibilidade  não é também uma forma de usabilidade ?]]></description>
+		<content:encoded><![CDATA[<p>Eu continuo a usar `em´ porque px não deixam o texto escalável&#8230;<br />
+Onde está a acessibilidade? Acessibilidade  não é também uma forma de usabilidade ?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jonathan Aantos</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3861</link>
+		<dc:creator><![CDATA[Jonathan Aantos]]></dc:creator>
+		<pubDate>Wed, 17 May 2006 15:47:23 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3861</guid>
+		<description><![CDATA[Eu gosto de usar body { font-size: 62.5%; } que vi no &lt;a href=&quot;http://www.maratz.com/blog/archives/2005/10/21/typetesters-base-font-size/&quot; rel=&quot;nofollow&quot;&gt;Typetester’s base font size&lt;/a&gt; através do &lt;a href=&quot;http://typetester.maratz.com/&quot; rel=&quot;nofollow&quot;&gt;Typetester – Compare fonts for the screen – Compare fonts for the screen&lt;/a&gt;.]]></description>
+		<content:encoded><![CDATA[<p>Eu gosto de usar body { font-size: 62.5%; } que vi no <a href="http://www.maratz.com/blog/archives/2005/10/21/typetesters-base-font-size/" rel="nofollow">Typetester’s base font size</a> através do <a href="http://typetester.maratz.com/" rel="nofollow">Typetester – Compare fonts for the screen – Compare fonts for the screen</a>.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Mateus Neves</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3823</link>
+		<dc:creator><![CDATA[Mateus Neves]]></dc:creator>
+		<pubDate>Fri, 12 May 2006 17:27:20 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3823</guid>
+		<description><![CDATA[Uma ótima solução, não imaginava que fosse simples assim. Obrigado pela dica.]]></description>
+		<content:encoded><![CDATA[<p>Uma ótima solução, não imaginava que fosse simples assim. Obrigado pela dica.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Claudio Franco</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3822</link>
+		<dc:creator><![CDATA[Claudio Franco]]></dc:creator>
+		<pubDate>Fri, 12 May 2006 16:04:58 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3822</guid>
+		<description><![CDATA[Os &quot;em&quot; são valores que trabalham acima de uma base, tipo %... se é que me fiz entender :&#124;]]></description>
+		<content:encoded><![CDATA[<p>Os &#8220;em&#8221; são valores que trabalham acima de uma base, tipo %&#8230; se é que me fiz entender :|</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: andr3</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3821</link>
+		<dc:creator><![CDATA[andr3]]></dc:creator>
+		<pubDate>Fri, 12 May 2006 15:54:17 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3821</guid>
+		<description><![CDATA[A grande utilidade deste pacote é que remove as incoerências de tamanho entre browsers. Bom trabalho, yahoo-folks. :)
+
+Acho é que falta aí nessa tabela a resolução.
+&quot;Se quiser tamanho de 10px [numa resolução 800x600] ...&quot; para ter uma referência. Não?
+
+E o mesmo pode ser aplicado por ems. 1em não é igual a 100%, pergunto eu?]]></description>
+		<content:encoded><![CDATA[<p>A grande utilidade deste pacote é que remove as incoerências de tamanho entre browsers. Bom trabalho, yahoo-folks. :)</p>
+<p>Acho é que falta aí nessa tabela a resolução.<br />
+&#8220;Se quiser tamanho de 10px [numa resolução 800&#215;600] &#8230;&#8221; para ter uma referência. Não?</p>
+<p>E o mesmo pode ser aplicado por ems. 1em não é igual a 100%, pergunto eu?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3812</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 11 May 2006 18:00:32 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3812</guid>
+		<description><![CDATA[Só usando &quot;px&quot; é que o texto não é escalável.]]></description>
+		<content:encoded><![CDATA[<p>Só usando &#8220;px&#8221; é que o texto não é escalável.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Claudio Franco</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3811</link>
+		<dc:creator><![CDATA[Claudio Franco]]></dc:creator>
+		<pubDate>Thu, 11 May 2006 17:53:23 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3811</guid>
+		<description><![CDATA[Posso estar errado, mas usando &quot;em&quot; o texto continua a ficar escalável.
+
+Penso eu de que...]]></description>
+		<content:encoded><![CDATA[<p>Posso estar errado, mas usando &#8220;em&#8221; o texto continua a ficar escalável.</p>
+<p>Penso eu de que&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Abilio Santos</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3810</link>
+		<dc:creator><![CDATA[Abilio Santos]]></dc:creator>
+		<pubDate>Thu, 11 May 2006 17:26:58 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3810</guid>
+		<description><![CDATA[Quer dizer... A não ser que o cliente tenha outra opinião... Ele normalmente tem razão.]]></description>
+		<content:encoded><![CDATA[<p>Quer dizer&#8230; A não ser que o cliente tenha outra opinião&#8230; Ele normalmente tem razão.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Abilio Santos</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3809</link>
+		<dc:creator><![CDATA[Abilio Santos]]></dc:creator>
+		<pubDate>Thu, 11 May 2006 17:20:51 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3809</guid>
+		<description><![CDATA[É essencialmente por isso que, normalmente, tento não mexer no tamanho default da letra e defino estilos relativamente a esse default via %.
+Os únicos prejudicados são os utilizadores que não sabem trabalhar com o browser e os demasiado preguiçosos para o fazer (tipo eu).
+Tem a enorme vantagem, na minha pesrspectiva, de que aqueles utilizadores que se importaram o suficiente (ou precisam de se importar) com o default do tamanho da fonte não sairem defraudados.]]></description>
+		<content:encoded><![CDATA[<p>É essencialmente por isso que, normalmente, tento não mexer no tamanho default da letra e defino estilos relativamente a esse default via %.<br />
+Os únicos prejudicados são os utilizadores que não sabem trabalhar com o browser e os demasiado preguiçosos para o fazer (tipo eu).<br />
+Tem a enorme vantagem, na minha pesrspectiva, de que aqueles utilizadores que se importaram o suficiente (ou precisam de se importar) com o default do tamanho da fonte não sairem defraudados.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3808</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 11 May 2006 17:19:55 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3808</guid>
+		<description><![CDATA[Se conceberes um site definindo o tamanho do texto em pixels também te acontece a mesma coisa... E a maior parte dos sites têm o tamanho do texto definido dessa maneira, impedindo que os utilizadores (do Internet Explorer) consigam aumentar ou reduzir o tamanho do texto.
+
+Em qualquer outro browser podes alterar o tamanho do texto usando a combinação de teclas CTRL+ e CTRL-.
+O uso de percentagens permite que os utilizadores do IE também possam fazer o mesmo, no entanto nem todos os browsers usam a mesma escala, por isso um texto definido a 120% no IE é diferente de um texto definido a 120% no Firefox.
+
+O que esta técnica faz é normalizar estes valores para que 120% seja igual em todos os browsers.]]></description>
+		<content:encoded><![CDATA[<p>Se conceberes um site definindo o tamanho do texto em pixels também te acontece a mesma coisa&#8230; E a maior parte dos sites têm o tamanho do texto definido dessa maneira, impedindo que os utilizadores (do Internet Explorer) consigam aumentar ou reduzir o tamanho do texto.</p>
+<p>Em qualquer outro browser podes alterar o tamanho do texto usando a combinação de teclas CTRL+ e CTRL-.<br />
+O uso de percentagens permite que os utilizadores do IE também possam fazer o mesmo, no entanto nem todos os browsers usam a mesma escala, por isso um texto definido a 120% no IE é diferente de um texto definido a 120% no Firefox.</p>
+<p>O que esta técnica faz é normalizar estes valores para que 120% seja igual em todos os browsers.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Abilio Santos</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3807</link>
+		<dc:creator><![CDATA[Abilio Santos]]></dc:creator>
+		<pubDate>Thu, 11 May 2006 17:12:47 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3807</guid>
+		<description><![CDATA[Esse sistema tem o problema de, para utilizadores que definem um tamanho de letra no browser, por defeito e não por pagina, esse default não vai ser respeitado.
+E para o bem ou para o mal o utilizador tem o direito, que devemos respeitar, de definir os seus defaults.
+Por exemplo: um utilizador com pouca acuidade visual que defina o tamanho de letra no seu browser para x-large no IE ou pra 26px no firefox para conseguir ver o texto vai reclamar com esse site...]]></description>
+		<content:encoded><![CDATA[<p>Esse sistema tem o problema de, para utilizadores que definem um tamanho de letra no browser, por defeito e não por pagina, esse default não vai ser respeitado.<br />
+E para o bem ou para o mal o utilizador tem o direito, que devemos respeitar, de definir os seus defaults.<br />
+Por exemplo: um utilizador com pouca acuidade visual que defina o tamanho de letra no seu browser para x-large no IE ou pra 26px no firefox para conseguir ver o texto vai reclamar com esse site&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rui Moura</title>
+		<link>/novamente-sobre-o-tamanho-do-texto/#comment-3806</link>
+		<dc:creator><![CDATA[Rui Moura]]></dc:creator>
+		<pubDate>Thu, 11 May 2006 16:58:14 +0000</pubDate>
+		<guid isPermaLink="false">/novamente-sobre-o-tamanho-do-texto/#comment-3806</guid>
+		<description><![CDATA[Estes amigos da Yahoo estão a ser porreiros. Têm mandado cá para fora umas coisas interessantes, e esta é uma delas.]]></description>
+		<content:encoded><![CDATA[<p>Estes amigos da Yahoo estão a ser porreiros. Têm mandado cá para fora umas coisas interessantes, e esta é uma delas.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

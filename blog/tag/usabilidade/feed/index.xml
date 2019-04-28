@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Usabilidade &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/usabilidade/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Problema de Usabilidade no homebanking do BBVA</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/</link>
+		<comments>/problema-de-usabilidade-no-homebanking-do-bbva/#comments</comments>
+		<pubDate>Wed, 03 Mar 2010 10:50:07 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Homebanking]]></category>
+		<category><![CDATA[Project 52]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042</guid>
+		<description><![CDATA[<p>Recentemente criei uma conta no <a href="http://www.bbva.pt/">BBVA</a> e ontem tive acesso pela primeira vez ao serviço de homebanking deles. O começo não poderia ser pior...</p>
+<p>Na primeira vez que se acede ao sistema, é-nos pedido para definir uma password de acesso e uma password de operações. Como se pode ver na imagem em baixo, os campos para inserir a password de operações estão desactivados, sendo necessário clicar numa checkbox em cima para os activar e preencher com a password pretendida.</p>
+<p>O conteúdo <a rel="nofollow" href="/problema-de-usabilidade-no-homebanking-do-bbva/">Problema de Usabilidade no homebanking do BBVA</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/problema-de-usabilidade-no-homebanking-do-bbva/feed/</wfw:commentRss>
+		<slash:comments>14</slash:comments>
+		</item>
+		<item>
+		<title>UX Lx: User Experience Lisbon</title>
+		<link>/ux-lx-user-experience-lisbon/</link>
+		<comments>/ux-lx-user-experience-lisbon/#comments</comments>
+		<pubDate>Wed, 24 Feb 2010 10:45:49 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[Project 52]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1030</guid>
+		<description><![CDATA[<p>Nos próximos dias <strong>12 a 14 de Maio</strong>, vai decorrer a Conferência Internacional "<a href="http://www.ux-lx.com/">UX Lx: User Experience Lisbon</a>", que terá lugar no Centro de Reuniões da FIL, no Parque das Nações em Lisboa.</p>
+<p><a href="http://www.ux-lx.com/"><img src="/wp-content/uploads/2010/02/Screen-shot-2010-02-24-at-10.40.23.png" alt="" title="UX LX logo" width="303" height="73" class="alignleft size-full wp-image-1036" /></a></p>
+<p>A UX Lx será o maior evento alguma vez realizado em Portugal (e quem sabe, até na Europa) sobre usabilidade e user experience, com <a href="http://www.ux-lx.com/workshops.html">workshops</a> bastante interessantes e um <a href="http://www.ux-lx.com/programme.html">programa</a> ainda mais aliciante, contando com <a href="http://www.ux-lx.com/speakers.html">profissionais</a> de renome da área.</p>
+<p>O conteúdo <a rel="nofollow" href="/ux-lx-user-experience-lisbon/">UX Lx: User Experience Lisbon</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/ux-lx-user-experience-lisbon/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>A importância da usabilidade na fase inicial de um projecto</title>
+		<link>/a-importancia-da-usabilidade-na-fase-inicial-de-um-projecto/</link>
+		<comments>/a-importancia-da-usabilidade-na-fase-inicial-de-um-projecto/#comments</comments>
+		<pubDate>Tue, 26 Jan 2010 17:19:48 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Project 52]]></category>
+		<category><![CDATA[ROI]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=483</guid>
+		<description><![CDATA[<p>Há cerca de 1 ano e meio atrás fui abordado para ajudar no desenvolvimento de um grande portal. A ideia seria torná-lo o melhor portal do género em Portugal em termos de usabilidade, facilidade de uso, e de conteúdos. Convém dizer que não se trata de um portal generalista como o Clix ou o SAPO, mas sim de um portal com conteúdos muito específicos numa área com bastante procura por parte dos utilizadores (infelizmente não posso adiantar já qual é). Já existem outros grandes sites (inclusivé o maior competidor é um canal do SAPO) o que faz com que a concorrência seja muita e daí a necessidade de termos o melhor produto no mercado.</p>
+<p>O conteúdo <a rel="nofollow" href="/a-importancia-da-usabilidade-na-fase-inicial-de-um-projecto/">A importância da usabilidade na fase inicial de um projecto</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/a-importancia-da-usabilidade-na-fase-inicial-de-um-projecto/feed/</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+		<item>
+		<title>Formação em Técnicas e Metodologias de Usabilidade</title>
+		<link>/formacao-em-tecnicas-e-metodologias-de-usabilidade/</link>
+		<comments>/formacao-em-tecnicas-e-metodologias-de-usabilidade/#comments</comments>
+		<pubDate>Tue, 26 May 2009 10:36:22 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[formação]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=819</guid>
+		<description><![CDATA[<p>Na próxima Sexta-feira, dia 29 de Maio, da parte da manhã, vou dar uma formação no SAPO uma formação sobre Técnicas e Metodologias de Usabilidade para Designers e Developers.</p>
+<p>O conteúdo <a rel="nofollow" href="/formacao-em-tecnicas-e-metodologias-de-usabilidade/">Formação em Técnicas e Metodologias de Usabilidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/formacao-em-tecnicas-e-metodologias-de-usabilidade/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>WordPress recruta moderadores e participantes para testes de usabilidade</title>
+		<link>/wordpress-recruta-moderadores-e-participantes-para-testes-de-usabilidade/</link>
+		<comments>/wordpress-recruta-moderadores-e-participantes-para-testes-de-usabilidade/#comments</comments>
+		<pubDate>Mon, 04 May 2009 22:31:17 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[wordpress]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=807</guid>
+		<description><![CDATA[<p>A equipa do WordPress <a href="http://wordpress.org/development/2009/05/testing-opps/">está a recrutar participantes e moderadores</a> voluntários para conduzirem testes de usabilidade ao interface de administração do WordPress. Os moderadores terão que ter já alguma experiência na condução de testes de usabilidade mas os participantes poderão ser qualquer pessoa que use o WordPress.</p>
+<p>O conteúdo <a rel="nofollow" href="/wordpress-recruta-moderadores-e-participantes-para-testes-de-usabilidade/">WordPress recruta moderadores e participantes para testes de usabilidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/wordpress-recruta-moderadores-e-participantes-para-testes-de-usabilidade/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Testes de Usabilidade: uma metodologia rápida e fácil</title>
+		<link>/testes-de-usabilidade-uma-metodologia-rapida-e-facil/</link>
+		<comments>/testes-de-usabilidade-uma-metodologia-rapida-e-facil/#comments</comments>
+		<pubDate>Fri, 05 Dec 2008 15:02:28 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[metogolodia]]></category>
+		<category><![CDATA[silverback]]></category>
+		<category><![CDATA[testes]]></category>
+		<category><![CDATA[utilizadores]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=648</guid>
+		<description><![CDATA[<p>Os testes com utilizadores servem para validar um interface ou identificar problemas de usabilidade existentes recorrendo a um grupo de utilizadores que navegará no website. Podem ainda servir para identificar problemas que ainda não tenham identificados numa avaliação heurística prévia. </p>
+<p>Estes testes permitem identificar potenciais problemas de usabilidade e observar o comportamento dos utilizadores durante a navegação no website, bem como perceber o motivo pelo qual escolhem seguir determinados caminhos no website em detrimento dos caminhos considerados "normais". </p>
+<p>O conteúdo <a rel="nofollow" href="/testes-de-usabilidade-uma-metodologia-rapida-e-facil/">Testes de Usabilidade: uma metodologia rápida e fácil</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/testes-de-usabilidade-uma-metodologia-rapida-e-facil/feed/</wfw:commentRss>
+		<slash:comments>24</slash:comments>
+		</item>
+		<item>
+		<title>Dia Mundial da Usabilidade 2008</title>
+		<link>/dia-mundial-da-usabilidade-2008/</link>
+		<comments>/dia-mundial-da-usabilidade-2008/#comments</comments>
+		<pubDate>Thu, 13 Nov 2008 12:50:46 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[2008]]></category>
+		<category><![CDATA[dia]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[mundial]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=640</guid>
+		<description><![CDATA[<p>Celebra-se hoje o <a href="http://www.worldusabilityday.org/">Dia Mundial da Usabilidade 2008</a>, este ano dedicado à usabilidade nos transportes.</p>
+<p><a href="http://www.worldusabilityday.org/"><img src="/wp-content/uploads/2008/11/wud2008.png" alt="" title="Dia Mundial da Usabilidade 2008" width="500" height="153" class="alignnone size-full wp-image-642 img" /></a></p>
+<p>O conteúdo <a rel="nofollow" href="/dia-mundial-da-usabilidade-2008/">Dia Mundial da Usabilidade 2008</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/dia-mundial-da-usabilidade-2008/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>SHiFT&#8217;08</title>
+		<link>/shift08/</link>
+		<comments>/shift08/#comments</comments>
+		<pubDate>Mon, 13 Oct 2008 11:44:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[guerrilla]]></category>
+		<category><![CDATA[shift]]></category>
+		<category><![CDATA[silverback]]></category>
+		<category><![CDATA[user experience]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=585</guid>
+		<description><![CDATA[<p><a href="http://www.shift.pt/" title="SHiFT - Social and Human Ideas For Technology"><img src="http://shift.pt/images/banners/336x280.jpg" border="0" alt="SHiFT - Social and Human Ideas For Technology" /></a></p>
+<p>É já esta semana (dias 15, 16 e 17 de Outubro) que se realiza a segunda edição da <a href="http://www.shift.pt/">SHiFT</a> (Social and Human Ideas For Technology) na <a href="http://shift.pt/page/practical">FIL</a> em Lisboa.</p>
+<p>O conteúdo <a rel="nofollow" href="/shift08/">SHiFT&#8217;08</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift08/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Bill Gates envia e-mail a queixar-se da usabilidade do Windows</title>
+		<link>/bill-gates-envia-e-mail-a-queixar-se-da-usabilidade-do-windows/</link>
+		<comments>/bill-gates-envia-e-mail-a-queixar-se-da-usabilidade-do-windows/#comments</comments>
+		<pubDate>Sun, 03 Aug 2008 08:50:58 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[windows]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=519</guid>
+		<description><![CDATA[<p>Em 2003 Bill Gates enviou um e-mail interno a alguns colaboradores da microsoft a queixar-se da usabilidade do Windows do website da Microsoft.</p>
+<p>Neste e-mail, Gates dá um exemplo real em que não consegue realizar uma tarefa simples tal como fazer o download do software de criação de filmes da Microsoft, o MovieMaker, tarefa que não conseguiu completar após quase 1 hora de tentativas e seguindo todos os passos (confusos) que o sistema lhe dizia para fazer.</p>
+<p>O conteúdo <a rel="nofollow" href="/bill-gates-envia-e-mail-a-queixar-se-da-usabilidade-do-windows/">Bill Gates envia e-mail a queixar-se da usabilidade do Windows</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/bill-gates-envia-e-mail-a-queixar-se-da-usabilidade-do-windows/feed/</wfw:commentRss>
+		<slash:comments>20</slash:comments>
+		</item>
+		<item>
+		<title>ISO 20282: standard para a usabilidade de objectos do dia-a-dia</title>
+		<link>/iso-20282-standard-para-a-usabilidade-de-objectos-do-dia-a-dia/</link>
+		<comments>/iso-20282-standard-para-a-usabilidade-de-objectos-do-dia-a-dia/#respond</comments>
+		<pubDate>Sat, 02 Aug 2008 08:33:10 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[standard]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=516</guid>
+		<description><![CDATA[<p>Após alguns anos de esboços e revisões, finalmente saiu a norma ISO 20282, o standard para a usabilidade dos objectos do dia-a-dia, tais como máquinas de venda de bilhetes, telemóveis ou câmeras fotográficas digitais.</p>
+<p>O conteúdo <a rel="nofollow" href="/iso-20282-standard-para-a-usabilidade-de-objectos-do-dia-a-dia/">ISO 20282: standard para a usabilidade de objectos do dia-a-dia</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/iso-20282-standard-para-a-usabilidade-de-objectos-do-dia-a-dia/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Cálculo de percursos dos transportes de Lisboa</title>
+		<link>/calculo-de-percursos-dos-transportes-de-lisboa/</link>
+		<comments>/calculo-de-percursos-dos-transportes-de-lisboa/#comments</comments>
+		<pubDate>Mon, 21 Jul 2008 16:56:37 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=506</guid>
+		<description><![CDATA[<p>Na semana passada precisei de consultar qual seria o melhor percurso de transportes públicos de Santos (Av. D. Carlos I) para o Saldanha. Para tal, consultei o Transporlis, o website que engloba todos os transportes da Grande Lisboa.</p>
+<p>O conteúdo <a rel="nofollow" href="/calculo-de-percursos-dos-transportes-de-lisboa/">Cálculo de percursos dos transportes de Lisboa</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/calculo-de-percursos-dos-transportes-de-lisboa/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>O novo website da RTP</title>
+		<link>/o-novo-website-da-rtp/</link>
+		<comments>/o-novo-website-da-rtp/#comments</comments>
+		<pubDate>Fri, 04 Jul 2008 15:54:28 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[rtp]]></category>
+		<category><![CDATA[tv]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=485</guid>
+		<description><![CDATA[<p>Esta semana a RTP anunciou que remodelou a página inicial do site.</p>
+<p>Apesar de dizerem que é um "work in progess", penso que a página piorou em relação à anterior. Há quase 2 anos atrás fiz um pequeno comparativo entre os websites dos canais generalistas nacionais onde podem ver os comentários que fiz em relação à página inicial a RTP, e alguns dos problemas mantêm-se.</p>
+<p>O conteúdo <a rel="nofollow" href="/o-novo-website-da-rtp/">O novo website da RTP</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/o-novo-website-da-rtp/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+		<item>
+		<title>SAPO Unplugged 08</title>
+		<link>/sapo-unplugged-08/</link>
+		<comments>/sapo-unplugged-08/#comments</comments>
+		<pubDate>Tue, 13 May 2008 14:11:40 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[sapo]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=470</guid>
+		<description><![CDATA[<p><a href="/sapo-unplugged-08/"><img class="alignnone size-full wp-image-471" title="SAPO Unplugged" src="/wp-content/uploads/2008/05/picture-6.png" alt="SAPO Unplugged" width="442" height="332" /></a></p>
+<p>O conteúdo <a rel="nofollow" href="/sapo-unplugged-08/">SAPO Unplugged 08</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sapo-unplugged-08/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Seminário de Usabilidade 2008 &#8211; Programa e Inscrições</title>
+		<link>/seminario-de-usabilidade-2008-programa-e-inscricoes/</link>
+		<comments>/seminario-de-usabilidade-2008-programa-e-inscricoes/#comments</comments>
+		<pubDate>Wed, 12 Mar 2008 10:14:39 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[appu]]></category>
+		<category><![CDATA[seminário]]></category>
+
+		<guid isPermaLink="false">/seminario-de-usabilidade-2008-programa-e-inscricoes/</guid>
+		<description><![CDATA[<p>Realiza-se no próximo dia 25 de Março pelas 15h a quarta edição do evento anual da Associação Portuguesa de Profissionais de Usabilidade, o “Seminário de Usabilidade 2008”. O Seminário voltará este ano a contar com o apoio da Microsoft, que nos cederá o seu Auditório no Taguspark, em Oeiras (como chegar lá?). Programa Desenvolvimento de [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/seminario-de-usabilidade-2008-programa-e-inscricoes/">Seminário de Usabilidade 2008 &#8211; Programa e Inscrições</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/seminario-de-usabilidade-2008-programa-e-inscricoes/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Seminário de Usabilidade 2008</title>
+		<link>/seminario-de-usabilidade-2008/</link>
+		<comments>/seminario-de-usabilidade-2008/#comments</comments>
+		<pubDate>Wed, 27 Feb 2008 10:37:59 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[appu]]></category>
+		<category><![CDATA[seminário]]></category>
+
+		<guid isPermaLink="false">/seminario-de-usabilidade-2008/</guid>
+		<description><![CDATA[<p>Realiza-se no próximo dia <strong>25 de Março</strong> pelas <strong>15h</strong> a quarta edição do evento anual da <a href="http://usabilidade.org/">Associação Portuguesa de Profissionais de Usabilidade</a>, o “Seminário de Usabilidade 2008”.</p>
+<p>Este ano a APPU irá abrir a participação a todos os <strong>membros efectivos</strong>. Os membros interessados em fazer uma apresentação podem enviar as suas propostas até ao final do dia <strong>10 de Março</strong> para o e-mail <a href="mailto:info@usabilidade.org">info@usabilidade.org</a>.</p>
+<p>O conteúdo <a rel="nofollow" href="/seminario-de-usabilidade-2008/">Seminário de Usabilidade 2008</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/seminario-de-usabilidade-2008/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Algumas alterações</title>
+	<atom:link href="/algumas-alteraes/feed/" rel="self" type="application/rss+xml" />
+	<link>/algumas-alteraes/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/algumas-alteraes/#comment-128</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 12 Nov 2004 10:40:58 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=96#comment-128</guid>
+		<description><![CDATA[Obrigado, vou seguir o link e tentar fazer mais algumas (pequenas) alterações no layout.]]></description>
+		<content:encoded><![CDATA[<p>Obrigado, vou seguir o link e tentar fazer mais algumas (pequenas) alterações no layout.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Frederick van Amstel</title>
+		<link>/algumas-alteraes/#comment-123</link>
+		<dc:creator><![CDATA[Frederick van Amstel]]></dc:creator>
+		<pubDate>Tue, 09 Nov 2004 11:17:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=96#comment-123</guid>
+		<description><![CDATA[Ivo, você já tentou aquele método de pegar uma paleta de cortes à partir de uma foto? Depois de fazer alguns exercícios, consegui obter resultados muito bons. Você tem fotos tão bonitas lá no header, elas poderiam estar mais integradas com o resto do layout. Neste post tem os links para maiores informações:
+
+http://www.usabilidoido.com.br/esquema_de_cores.html]]></description>
+		<content:encoded><![CDATA[<p>Ivo, você já tentou aquele método de pegar uma paleta de cortes à partir de uma foto? Depois de fazer alguns exercícios, consegui obter resultados muito bons. Você tem fotos tão bonitas lá no header, elas poderiam estar mais integradas com o resto do layout. Neste post tem os links para maiores informações:</p>
+<p><a href="http://www.usabilidoido.com.br/esquema_de_cores.html" rel="nofollow">http://www.usabilidoido.com.br/esquema_de_cores.html</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/algumas-alteraes/#comment-122</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 09 Nov 2004 10:43:41 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=96#comment-122</guid>
+		<description><![CDATA[He he, é um efeito simples para dar mais relevo à informação, dando a ilusão de que está mais próximo. Quanto à barra da direita, estive a fazer alguns testes com outras cores, mas não consegui. Não tenho jeito para as cores :)]]></description>
+		<content:encoded><![CDATA[<p>He he, é um efeito simples para dar mais relevo à informação, dando a ilusão de que está mais próximo. Quanto à barra da direita, estive a fazer alguns testes com outras cores, mas não consegui. Não tenho jeito para as cores :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Frederick van Amstel</title>
+		<link>/algumas-alteraes/#comment-121</link>
+		<dc:creator><![CDATA[Frederick van Amstel]]></dc:creator>
+		<pubDate>Mon, 08 Nov 2004 22:04:12 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=96#comment-121</guid>
+		<description><![CDATA[Nossa, Ivo, parece que seu blog está &quot;saltando&quot; da tela! Só acho que o cinza da coluna da direita atenua um pouco esse efeito, na medida em que rolo a tela. Mas, de qualquer forma, é uma boa releitura desse efeito de dropshadow, tão usado pelos designers que adotam webstandards.]]></description>
+		<content:encoded><![CDATA[<p>Nossa, Ivo, parece que seu blog está &#8220;saltando&#8221; da tela! Só acho que o cinza da coluna da direita atenua um pouco esse efeito, na medida em que rolo a tela. Mas, de qualquer forma, é uma boa releitura desse efeito de dropshadow, tão usado pelos designers que adotam webstandards.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

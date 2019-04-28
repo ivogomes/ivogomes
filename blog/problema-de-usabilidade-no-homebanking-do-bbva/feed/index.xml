@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Problema de Usabilidade no homebanking do BBVA</title>
+	<atom:link href="/problema-de-usabilidade-no-homebanking-do-bbva/feed/" rel="self" type="application/rss+xml" />
+	<link>/problema-de-usabilidade-no-homebanking-do-bbva/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: ddc</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-97997</link>
+		<dc:creator><![CDATA[ddc]]></dc:creator>
+		<pubDate>Sat, 04 Jun 2011 12:31:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-97997</guid>
+		<description><![CDATA[Boas
+
+Não é necessario um keylogger, acredita....
+
+O esquema do telemovel e da sms, resulta muito melhor que o do multibanco.
+
+Além disso, o esquema do multibanco envolve um seguro, friso, um seguro dos cartões.
+
+No homebanking não existem seguros, é total a responsabilidade do cliente.
+
+Cumps]]></description>
+		<content:encoded><![CDATA[<p>Boas</p>
+<p>Não é necessario um keylogger, acredita&#8230;.</p>
+<p>O esquema do telemovel e da sms, resulta muito melhor que o do multibanco.</p>
+<p>Além disso, o esquema do multibanco envolve um seguro, friso, um seguro dos cartões.</p>
+<p>No homebanking não existem seguros, é total a responsabilidade do cliente.</p>
+<p>Cumps</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-97989</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Sat, 04 Jun 2011 11:11:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-97989</guid>
+		<description><![CDATA[@ddc: se fores por aí, não há nenhuma forma segura de guardar o teu dinheiro.
+
+Em relação aos dois pontos que mencionas: para obter o cartão matriz é preciso que haja algum keylogger instalado no computador de modo a registar as teclas pressionadas. Além disso, depois seria necessário associar as teclas às coordenadas do cartão que são pedidas. Não é trivial. A única forma de obterem a matriz completa é através de phishing, enganando o utilizador a preencher a matriz completa do cartão pensando que é o banco que lhe está a pedir isso.
+
+Quanto ao telemóvel, o SMS recebido só funciona para a operação em causa uma vez que é comparado com um token de segurança único para cada operação. Para se aproveitar do telemóvel, seria necessário ter também acesso aos dados da conta do banco, para poder gerar um SMS correspondente a uma operação realizada no homebanking.
+
+É claro que tudo isto pode ser ultrapassado com maior ou menor dificuldade, mas é como tudo na vida, não é apenas por estarmos a usar tecnologia.
+
+Por exemplo, se não usares homebanking também podes ser atacado, ex:
+
+Multibanco: é fácil colocarem um leitor de cartões e cloná-los directamente nas caixas multibanco. Isto é muito mais fácil de fazer do que tentar aceder aos dados de acesso e SMS no homebanking]]></description>
+		<content:encoded><![CDATA[<p>@ddc: se fores por aí, não há nenhuma forma segura de guardar o teu dinheiro.</p>
+<p>Em relação aos dois pontos que mencionas: para obter o cartão matriz é preciso que haja algum keylogger instalado no computador de modo a registar as teclas pressionadas. Além disso, depois seria necessário associar as teclas às coordenadas do cartão que são pedidas. Não é trivial. A única forma de obterem a matriz completa é através de phishing, enganando o utilizador a preencher a matriz completa do cartão pensando que é o banco que lhe está a pedir isso.</p>
+<p>Quanto ao telemóvel, o SMS recebido só funciona para a operação em causa uma vez que é comparado com um token de segurança único para cada operação. Para se aproveitar do telemóvel, seria necessário ter também acesso aos dados da conta do banco, para poder gerar um SMS correspondente a uma operação realizada no homebanking.</p>
+<p>É claro que tudo isto pode ser ultrapassado com maior ou menor dificuldade, mas é como tudo na vida, não é apenas por estarmos a usar tecnologia.</p>
+<p>Por exemplo, se não usares homebanking também podes ser atacado, ex:</p>
+<p>Multibanco: é fácil colocarem um leitor de cartões e cloná-los directamente nas caixas multibanco. Isto é muito mais fácil de fazer do que tentar aceder aos dados de acesso e SMS no homebanking</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: ddc</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-97930</link>
+		<dc:creator><![CDATA[ddc]]></dc:creator>
+		<pubDate>Fri, 03 Jun 2011 17:56:38 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-97930</guid>
+		<description><![CDATA[Só dois aspectos:
+
+&lt;b&gt;Cartão matriz: Inseguro&lt;/b&gt;
+Basta quem quiser captar todas as combinações, ou uma grande parte delas, ir registando aquilo que o utilizador vai digitando e assim &quot;copiará&quot; o cartão 
+
+&lt;b&gt;Telemóvel: inseguro&lt;/b&gt; 
+Neste momento existem inumeras formas de alguém aceder em simultaneo ás sms que recebemos, mais que isso, pode-se até clonar o cartão Sim ou ainda com um pequeno programa instalado no telemovel, reemcaminhar as sms sem o dono dar conta que elas passaram por lá.
+
+Usar as condições dos pin&#039;s de 4 digitos ou de 50 digitos é igual, o risco de estar a ser expiado é enorme, ainda mais se utiliza algum programa freeware ou não original (ou sabe todas as linhas de comando de cada programa ou crack?)
+
+&lt;b&gt;Além disto, notem que o homebanking não tem seguro incluido para roubos, como os cartões (alguns) de débito ou crédito.&lt;/b&gt;
+
+Pensem nisso antes de utilizarem as novas tecnologias.
+
+Um Abraço]]></description>
+		<content:encoded><![CDATA[<p>Só dois aspectos:</p>
+<p><b>Cartão matriz: Inseguro</b><br />
+Basta quem quiser captar todas as combinações, ou uma grande parte delas, ir registando aquilo que o utilizador vai digitando e assim &#8220;copiará&#8221; o cartão </p>
+<p><b>Telemóvel: inseguro</b><br />
+Neste momento existem inumeras formas de alguém aceder em simultaneo ás sms que recebemos, mais que isso, pode-se até clonar o cartão Sim ou ainda com um pequeno programa instalado no telemovel, reemcaminhar as sms sem o dono dar conta que elas passaram por lá.</p>
+<p>Usar as condições dos pin&#8217;s de 4 digitos ou de 50 digitos é igual, o risco de estar a ser expiado é enorme, ainda mais se utiliza algum programa freeware ou não original (ou sabe todas as linhas de comando de cada programa ou crack?)</p>
+<p><b>Além disto, notem que o homebanking não tem seguro incluido para roubos, como os cartões (alguns) de débito ou crédito.</b></p>
+<p>Pensem nisso antes de utilizarem as novas tecnologias.</p>
+<p>Um Abraço</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Fernandes</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88514</link>
+		<dc:creator><![CDATA[Bruno Fernandes]]></dc:creator>
+		<pubDate>Tue, 23 Mar 2010 10:25:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88514</guid>
+		<description><![CDATA[Boas...Eu tb aderi ao BBVA recentemente... e realmente acho q o site de homebanking deles é uma completa vergonha...mais arcaico q o raio!.. Acedo ao homebanking do BCP, CGD e BIG, e estes encontram-se a léguas do site do BBVA.. espero q realmente mudem esta situação.. Até algumas funcionalidades - hj em dia básicas - como sejam autorizações e anulações de débitos directos, se encontram em falta no site de homebanking.. Acho estranho q um banco com o tamanho do BBVA (pelo menos em Espanha) não tenha um site de homebanking de jeito...
+
+Cumprimentos,
+Bruno]]></description>
+		<content:encoded><![CDATA[<p>Boas&#8230;Eu tb aderi ao BBVA recentemente&#8230; e realmente acho q o site de homebanking deles é uma completa vergonha&#8230;mais arcaico q o raio!.. Acedo ao homebanking do BCP, CGD e BIG, e estes encontram-se a léguas do site do BBVA.. espero q realmente mudem esta situação.. Até algumas funcionalidades &#8211; hj em dia básicas &#8211; como sejam autorizações e anulações de débitos directos, se encontram em falta no site de homebanking.. Acho estranho q um banco com o tamanho do BBVA (pelo menos em Espanha) não tenha um site de homebanking de jeito&#8230;</p>
+<p>Cumprimentos,<br />
+Bruno</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Magda Joana Silva</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88350</link>
+		<dc:creator><![CDATA[Magda Joana Silva]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 18:39:14 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88350</guid>
+		<description><![CDATA[Olha, eu uso 3 netbanking: millennium, totta e CGD. para mim, o mais eficiente é o do millennium. Os outros dois não funcionam a 100%, podiam ter mais informação e existem certas funcionalidades que necessitam de password desnecessariamente (como por exemplo no totta precisar do código de autorização apenas para consultar o nib da conta).]]></description>
+		<content:encoded><![CDATA[<p>Olha, eu uso 3 netbanking: millennium, totta e CGD. para mim, o mais eficiente é o do millennium. Os outros dois não funcionam a 100%, podiam ter mais informação e existem certas funcionalidades que necessitam de password desnecessariamente (como por exemplo no totta precisar do código de autorização apenas para consultar o nib da conta).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Silva</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88348</link>
+		<dc:creator><![CDATA[Bruno Silva]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 14:15:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88348</guid>
+		<description><![CDATA[Eles ainda não usam cartão matriz ou telemóvel para confirmação das operações?]]></description>
+		<content:encoded><![CDATA[<p>Eles ainda não usam cartão matriz ou telemóvel para confirmação das operações?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: vitorsilva</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88347</link>
+		<dc:creator><![CDATA[vitorsilva]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 14:13:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88347</guid>
+		<description><![CDATA[confesso que também não vejo grande valor em ter 2 pins...]]></description>
+		<content:encoded><![CDATA[<p>confesso que também não vejo grande valor em ter 2 pins&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rogério Pereira</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88344</link>
+		<dc:creator><![CDATA[Rogério Pereira]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 12:24:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88344</guid>
+		<description><![CDATA[Outro problema grande de usabilidade é ver a programação em empresas de TV por assinatura. 
+
+Ainda vou fazer uma proposta que seja mais fácil de usar também.
+
+Nós profissionais de usabilidade temos que tomar essas atitudes por interfaces mais fáceis de serem usadas.]]></description>
+		<content:encoded><![CDATA[<p>Outro problema grande de usabilidade é ver a programação em empresas de TV por assinatura. </p>
+<p>Ainda vou fazer uma proposta que seja mais fácil de usar também.</p>
+<p>Nós profissionais de usabilidade temos que tomar essas atitudes por interfaces mais fáceis de serem usadas.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Silva</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88341</link>
+		<dc:creator><![CDATA[Bruno Silva]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 11:33:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88341</guid>
+		<description><![CDATA[Ok. Isso então é parvo...]]></description>
+		<content:encoded><![CDATA[<p>Ok. Isso então é parvo&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88340</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 11:31:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88340</guid>
+		<description><![CDATA[Neste momento nem sequer os meus dados pessoais consigo mudar sem a password de operações, por isso, basicamente só posso ver, não posso alterar nada.]]></description>
+		<content:encoded><![CDATA[<p>Neste momento nem sequer os meus dados pessoais consigo mudar sem a password de operações, por isso, basicamente só posso ver, não posso alterar nada.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Silva</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88339</link>
+		<dc:creator><![CDATA[Bruno Silva]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 11:30:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88339</guid>
+		<description><![CDATA[Para fins de consulta, e eventualmente subscrição de serviços ou assim, depende da definição deles de &quot;operações monetárias&quot; lol.
+
+Mas sim, concordo. Se calhar é um bocado parvo, concordo. Ter e-banking só para consulta.]]></description>
+		<content:encoded><![CDATA[<p>Para fins de consulta, e eventualmente subscrição de serviços ou assim, depende da definição deles de &#8220;operações monetárias&#8221; lol.</p>
+<p>Mas sim, concordo. Se calhar é um bocado parvo, concordo. Ter e-banking só para consulta.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88338</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 11:27:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88338</guid>
+		<description><![CDATA[Era a mesma coisa que teres um cartão MultiBanco que só dá para ver o saldo e mais nada.]]></description>
+		<content:encoded><![CDATA[<p>Era a mesma coisa que teres um cartão MultiBanco que só dá para ver o saldo e mais nada.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88337</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 11:27:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88337</guid>
+		<description><![CDATA[E para que é que eu precisaria do homebanking sem a possibilidade de realizar operações monetárias?]]></description>
+		<content:encoded><![CDATA[<p>E para que é que eu precisaria do homebanking sem a possibilidade de realizar operações monetárias?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno Silva</title>
+		<link>/problema-de-usabilidade-no-homebanking-do-bbva/#comment-88334</link>
+		<dc:creator><![CDATA[Bruno Silva]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2010 10:54:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1042#comment-88334</guid>
+		<description><![CDATA[Mas com essa alteração perdeste a possibilidade de optar por não permitir operações monetárias no e-banking, a não ser que assumas que pin de operações vazio seja não definido, o que não me parece muito bem.
+
+O que acho que deveria ter acontecido, é ao clicar na checkbox não te devia ter permitido submeter sem preencher os pins de operações.]]></description>
+		<content:encoded><![CDATA[<p>Mas com essa alteração perdeste a possibilidade de optar por não permitir operações monetárias no e-banking, a não ser que assumas que pin de operações vazio seja não definido, o que não me parece muito bem.</p>
+<p>O que acho que deveria ter acontecido, é ao clicar na checkbox não te devia ter permitido submeter sem preencher os pins de operações.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

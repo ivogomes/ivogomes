@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: SHiFT</title>
+	<atom:link href="/shift/feed/" rel="self" type="application/rss+xml" />
+	<link>/shift/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Pedro Custódio</title>
+		<link>/shift/#comment-5217</link>
+		<dc:creator><![CDATA[Pedro Custódio]]></dc:creator>
+		<pubDate>Fri, 21 Jul 2006 16:58:31 +0000</pubDate>
+		<guid isPermaLink="false">/shift/#comment-5217</guid>
+		<description><![CDATA[Obrigado Ivo pelo apoio!]]></description>
+		<content:encoded><![CDATA[<p>Obrigado Ivo pelo apoio!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Andre Ribeirinho</title>
+		<link>/shift/#comment-5215</link>
+		<dc:creator><![CDATA[Andre Ribeirinho]]></dc:creator>
+		<pubDate>Fri, 21 Jul 2006 15:28:54 +0000</pubDate>
+		<guid isPermaLink="false">/shift/#comment-5215</guid>
+		<description><![CDATA[Ivo, cool support :)
+
+Dextro: Com a qualidade e quantidade dos oradores convidados o preço de 125 euros é, a meu ver, uma pechincha.
+
+Trazer a Lisboa alguns oradores de qualidade e organizar um evento deste tipo custa dinheiro.
+
+Think this in another way. Quanto é que custaria uma viagem e alojamento para ver estes oradores (considerando que estão todos no mesmo lugar) ? :)]]></description>
+		<content:encoded><![CDATA[<p>Ivo, cool support :)</p>
+<p>Dextro: Com a qualidade e quantidade dos oradores convidados o preço de 125 euros é, a meu ver, uma pechincha.</p>
+<p>Trazer a Lisboa alguns oradores de qualidade e organizar um evento deste tipo custa dinheiro.</p>
+<p>Think this in another way. Quanto é que custaria uma viagem e alojamento para ver estes oradores (considerando que estão todos no mesmo lugar) ? :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dextro</title>
+		<link>/shift/#comment-5214</link>
+		<dc:creator><![CDATA[Dextro]]></dc:creator>
+		<pubDate>Fri, 21 Jul 2006 11:41:54 +0000</pubDate>
+		<guid isPermaLink="false">/shift/#comment-5214</guid>
+		<description><![CDATA[125 euros? :shock: Bem é mais uma a que não vou :oops:]]></description>
+		<content:encoded><![CDATA[<p>125 euros? :shock: Bem é mais uma a que não vou :oops:</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

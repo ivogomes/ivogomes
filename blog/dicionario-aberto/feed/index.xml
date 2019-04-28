@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Dicionário Aberto</title>
+	<atom:link href="/dicionario-aberto/feed/" rel="self" type="application/rss+xml" />
+	<link>/dicionario-aberto/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/dicionario-aberto/#comment-25327</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 03 Aug 2007 13:58:19 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-25327</guid>
+		<description><![CDATA[O link para o PDF ficou um pouco grande sim, mas uma vez que o dicionário não está todo disponível no site (ainda só vai na letra B), o link para o PDF tem o destaque suficiente para que as pessoas possam fazer o download de TODO o dicionário.
+
+Quanto às páginas de introdução/abreviaturas, elas já eram assim mesmo. Eu só alterei o CSS, uma vez que o HTML se mantém praticamente o mesmo.]]></description>
+		<content:encoded><![CDATA[<p>O link para o PDF ficou um pouco grande sim, mas uma vez que o dicionário não está todo disponível no site (ainda só vai na letra B), o link para o PDF tem o destaque suficiente para que as pessoas possam fazer o download de TODO o dicionário.</p>
+<p>Quanto às páginas de introdução/abreviaturas, elas já eram assim mesmo. Eu só alterei o CSS, uma vez que o HTML se mantém praticamente o mesmo.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gaspar</title>
+		<link>/dicionario-aberto/#comment-25326</link>
+		<dc:creator><![CDATA[Gaspar]]></dc:creator>
+		<pubDate>Fri, 03 Aug 2007 13:44:26 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-25326</guid>
+		<description><![CDATA[Acho que está muito bom. Simples e funcional.
+
+To TIm: Quanto ao link para o PDF secalhar é mesmo para ter importancia, senão talvez se podesse diminuir um pouco.
+
+Mas não é isso que tira a beleza do site. 
+
+Gosto muito da página dos resultados.
+Ma acho que a informação em 
+# Introdução
+# Abreviaturas
+
+Muito extensa, mas secalhar não é mesmo para ler.
+
+Mas acho que ficou 5*s]]></description>
+		<content:encoded><![CDATA[<p>Acho que está muito bom. Simples e funcional.</p>
+<p>To TIm: Quanto ao link para o PDF secalhar é mesmo para ter importancia, senão talvez se podesse diminuir um pouco.</p>
+<p>Mas não é isso que tira a beleza do site. </p>
+<p>Gosto muito da página dos resultados.<br />
+Ma acho que a informação em<br />
+# Introdução<br />
+# Abreviaturas</p>
+<p>Muito extensa, mas secalhar não é mesmo para ler.</p>
+<p>Mas acho que ficou 5*s</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/dicionario-aberto/#comment-25062</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Wed, 01 Aug 2007 23:42:58 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-25062</guid>
+		<description><![CDATA[Ivo,
+Fizeste aquilo bem. Só falta o doctype...
+Quanto aos elementos desalinhados... não sei onde andam... é que a mim tudo me parece bem alinhado ou melhor, bem pensado.
+O olhar é bem guiado, a acessibilidade existe, e a usabilidade também.
+Deve ser defeito do meu browser... ou então não percebo pevas disto... deve ser isso... LOL]]></description>
+		<content:encoded><![CDATA[<p>Ivo,<br />
+Fizeste aquilo bem. Só falta o doctype&#8230;<br />
+Quanto aos elementos desalinhados&#8230; não sei onde andam&#8230; é que a mim tudo me parece bem alinhado ou melhor, bem pensado.<br />
+O olhar é bem guiado, a acessibilidade existe, e a usabilidade também.<br />
+Deve ser defeito do meu browser&#8230; ou então não percebo pevas disto&#8230; deve ser isso&#8230; LOL</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Roberto</title>
+		<link>/dicionario-aberto/#comment-24905</link>
+		<dc:creator><![CDATA[Roberto]]></dc:creator>
+		<pubDate>Tue, 31 Jul 2007 20:01:04 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-24905</guid>
+		<description><![CDATA[Conhecem o &lt;strong&gt;&lt;a href=&quot;http://www.dicionarioinformal.com.br/&quot; rel=&quot;nofollow&quot;&gt;Dicionário inFormal&lt;/a&gt;&lt;/strong&gt; ?
+esse vale a pena conferir:
+&lt;strong&gt;&lt;a href=&quot;http://www.dicionarioinformal.com.br/&quot; rel=&quot;nofollow&quot;&gt;http://www.dicionarioinformal.com.br/&lt;/a&gt;&lt;/strong&gt;]]></description>
+		<content:encoded><![CDATA[<p>Conhecem o <strong><a href="http://www.dicionarioinformal.com.br/" rel="nofollow">Dicionário inFormal</a></strong> ?<br />
+esse vale a pena conferir:<br />
+<strong><a href="http://www.dicionarioinformal.com.br/" rel="nofollow">http://www.dicionarioinformal.com.br/</a></strong></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Tim</title>
+		<link>/dicionario-aberto/#comment-24739</link>
+		<dc:creator><![CDATA[Tim]]></dc:creator>
+		<pubDate>Mon, 30 Jul 2007 20:17:38 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-24739</guid>
+		<description><![CDATA[No sítio do Dicionário aberto há elementos não alinhados, o link para a versão em PDF está demasiadamente grande, rouba atenção. O logo (ou não) enfim..
+O que eu quero dizer é que não se pode desculpar com o tal chavão: &quot;ah! é mesmo assim, é p&#039;ra ser simples&quot;. O design clean ou simples pode e deve na minha opinião ser atractivo, independemente se é para promover produtos ou não. 
+
+@Jose: &quot;Fantástico aspecto do site?&quot; Bom para ti que não estejas no ramo.
+
+Não obstante o projecto é sem duvida louvável, venham mais..]]></description>
+		<content:encoded><![CDATA[<p>No sítio do Dicionário aberto há elementos não alinhados, o link para a versão em PDF está demasiadamente grande, rouba atenção. O logo (ou não) enfim..<br />
+O que eu quero dizer é que não se pode desculpar com o tal chavão: &#8220;ah! é mesmo assim, é p&#8217;ra ser simples&#8221;. O design clean ou simples pode e deve na minha opinião ser atractivo, independemente se é para promover produtos ou não. </p>
+<p>@Jose: &#8220;Fantástico aspecto do site?&#8221; Bom para ti que não estejas no ramo.</p>
+<p>Não obstante o projecto é sem duvida louvável, venham mais..</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/dicionario-aberto/#comment-24696</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 30 Jul 2007 08:03:43 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-24696</guid>
+		<description><![CDATA[@Jorge Laranjo: Tens razão. Vou avisá-los disso.
+
+@Tim: Eu não sou designer e por vezes também gostava de conseguir fazer algo mais colorido, ou com mais arte, mas também gosto das coisas simples e neste caso até acho que ficou bastante bom. É um dicionário, não é o site de apresentação de um produto! O objectivo é o de facilitar a pesquisa e quanto menos distrações houver, melhor.]]></description>
+		<content:encoded><![CDATA[<p>@Jorge Laranjo: Tens razão. Vou avisá-los disso.</p>
+<p>@Tim: Eu não sou designer e por vezes também gostava de conseguir fazer algo mais colorido, ou com mais arte, mas também gosto das coisas simples e neste caso até acho que ficou bastante bom. É um dicionário, não é o site de apresentação de um produto! O objectivo é o de facilitar a pesquisa e quanto menos distrações houver, melhor.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: José Carlos</title>
+		<link>/dicionario-aberto/#comment-24664</link>
+		<dc:creator><![CDATA[José Carlos]]></dc:creator>
+		<pubDate>Mon, 30 Jul 2007 01:27:26 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-24664</guid>
+		<description><![CDATA[@Tim: mas... o que há de errado com o fantástico aspecto do site? Garrido não significa bom. Atendendo à natureza do site, acho muito boa a escolha de cores.]]></description>
+		<content:encoded><![CDATA[<p>@Tim: mas&#8230; o que há de errado com o fantástico aspecto do site? Garrido não significa bom. Atendendo à natureza do site, acho muito boa a escolha de cores.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Tim</title>
+		<link>/dicionario-aberto/#comment-24655</link>
+		<dc:creator><![CDATA[Tim]]></dc:creator>
+		<pubDate>Sun, 29 Jul 2007 22:05:18 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-24655</guid>
+		<description><![CDATA[Acho que devias pedir ajuda a um designer para te dar um jeitinho nisso. A simplicidade não tem que ser &quot;pálida&quot;.
+
+Abraço, excelente Blog!]]></description>
+		<content:encoded><![CDATA[<p>Acho que devias pedir ajuda a um designer para te dar um jeitinho nisso. A simplicidade não tem que ser &#8220;pálida&#8221;.</p>
+<p>Abraço, excelente Blog!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/dicionario-aberto/#comment-24361</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Fri, 27 Jul 2007 20:59:05 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-24361</guid>
+		<description><![CDATA[Excelente! E ainda por cima da UMinho! Mas falta o Doctype em http://dicionario-aberto.net/bin/dic.pl]]></description>
+		<content:encoded><![CDATA[<p>Excelente! E ainda por cima da UMinho! Mas falta o Doctype em <a href="http://dicionario-aberto.net/bin/dic.pl" rel="nofollow">http://dicionario-aberto.net/bin/dic.pl</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Paulo A. Silva</title>
+		<link>/dicionario-aberto/#comment-24245</link>
+		<dc:creator><![CDATA[Paulo A. Silva]]></dc:creator>
+		<pubDate>Thu, 26 Jul 2007 18:08:28 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-24245</guid>
+		<description><![CDATA[É sem dúvida um trabalho de louvar, tanto o de quem está a fazer a transcrição como o teu: parabéns a ambos.
+
+No entanto notei que a transcrição está a ser feita a preceito, quero com isto dizer que em 1913 se escrevia poss&lt;strong&gt;ô&lt;/strong&gt;a no entanto o acento acabou por cair com as convenções da língua. Será que essas rectificações ficam para o fim!?
+
+Novamente felicitações!]]></description>
+		<content:encoded><![CDATA[<p>É sem dúvida um trabalho de louvar, tanto o de quem está a fazer a transcrição como o teu: parabéns a ambos.</p>
+<p>No entanto notei que a transcrição está a ser feita a preceito, quero com isto dizer que em 1913 se escrevia poss<strong>ô</strong>a no entanto o acento acabou por cair com as convenções da língua. Será que essas rectificações ficam para o fim!?</p>
+<p>Novamente felicitações!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Walmar Andrade</title>
+		<link>/dicionario-aberto/#comment-24224</link>
+		<dc:creator><![CDATA[Walmar Andrade]]></dc:creator>
+		<pubDate>Thu, 26 Jul 2007 17:25:42 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-24224</guid>
+		<description><![CDATA[Quando se tornar um wiki, terão que ser hábeis em lidar com as diferenças do português de Portugal, do Brasil e de Angola.]]></description>
+		<content:encoded><![CDATA[<p>Quando se tornar um wiki, terão que ser hábeis em lidar com as diferenças do português de Portugal, do Brasil e de Angola.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: José Carlos</title>
+		<link>/dicionario-aberto/#comment-24209</link>
+		<dc:creator><![CDATA[José Carlos]]></dc:creator>
+		<pubDate>Thu, 26 Jul 2007 16:31:23 +0000</pubDate>
+		<guid isPermaLink="false">/dicionario-aberto/#comment-24209</guid>
+		<description><![CDATA[Mais um excelente trabalho Ivo. Parabéns, o layout está muito agradável.
+
+O projecto parece-me bastante interessante.]]></description>
+		<content:encoded><![CDATA[<p>Mais um excelente trabalho Ivo. Parabéns, o layout está muito agradável.</p>
+<p>O projecto parece-me bastante interessante.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

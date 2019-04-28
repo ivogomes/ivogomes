@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: WCAG Samurai</title>
+	<atom:link href="/wcag-samurai/feed/" rel="self" type="application/rss+xml" />
+	<link>/wcag-samurai/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/wcag-samurai/#comment-44459</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 04 Apr 2008 17:30:59 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-44459</guid>
+		<description><![CDATA[É sempre bom ter comentários de pessoas que infelizmente sofrem na pele os problemas de acessibilidade dos sites. Só o facto de testarmos as nossas aplicações e websites em sistemas automáticos e tentarmos ao máximo ter todos os cuidados com a acessibilidade por vezes pode não ser suficiente. 
+
+É com utilizadores reais que vemos realmente que o nosso trabalho pode fazer a diferença.
+
+Obrigado @MAQ :)]]></description>
+		<content:encoded><![CDATA[<p>É sempre bom ter comentários de pessoas que infelizmente sofrem na pele os problemas de acessibilidade dos sites. Só o facto de testarmos as nossas aplicações e websites em sistemas automáticos e tentarmos ao máximo ter todos os cuidados com a acessibilidade por vezes pode não ser suficiente. </p>
+<p>É com utilizadores reais que vemos realmente que o nosso trabalho pode fazer a diferença.</p>
+<p>Obrigado @MAQ :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: MAQ</title>
+		<link>/wcag-samurai/#comment-43672</link>
+		<dc:creator><![CDATA[MAQ]]></dc:creator>
+		<pubDate>Mon, 31 Mar 2008 18:05:59 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-43672</guid>
+		<description><![CDATA[Bem, amigos, eu utilizo o html strict em um site e o xhtml em outro, ambos strict. A vantagem para mim que sou cego de utilizar o xhtml strict é que ele aponta erros de acessibilidade, como a ausência do atributo alt, a presença de targets na validação do markup  do W3C... já facilitando a coisa para nós cegos. Quanto ao Samurai, quase esquecido nos comentários, quando é dito para não se utilizar a prioridade 3 do WCAG 1.0, tem-se de tomar cuidado em se ler todo o documento para se entender que existem muitas ressalvas em que se utiliza tal prioridade. Um exemplo é que no elemento htm a utilização do atributo lang deve ser usado, menos quando a página possua inúmeros idiomas e não se consiga definir  qual deles é o heterogênio para ser utilizado. A colocação do idioma no atributo lang é importante para  as abreviações do display Braille. Mas isso é uma outra história que daria um tutorial  por aqui! De uma forma geral o WCAG Samurai vem preencher uma lacuna já há muito vazia e reavivar o implemento de acessibilidade no desenvolvimento de páginas, usabilidade e arquitetura da informação dos sites. Abraços acessíveis a todos... html e xhtml zeiros da web!]]></description>
+		<content:encoded><![CDATA[<p>Bem, amigos, eu utilizo o html strict em um site e o xhtml em outro, ambos strict. A vantagem para mim que sou cego de utilizar o xhtml strict é que ele aponta erros de acessibilidade, como a ausência do atributo alt, a presença de targets na validação do markup  do W3C&#8230; já facilitando a coisa para nós cegos. Quanto ao Samurai, quase esquecido nos comentários, quando é dito para não se utilizar a prioridade 3 do WCAG 1.0, tem-se de tomar cuidado em se ler todo o documento para se entender que existem muitas ressalvas em que se utiliza tal prioridade. Um exemplo é que no elemento htm a utilização do atributo lang deve ser usado, menos quando a página possua inúmeros idiomas e não se consiga definir  qual deles é o heterogênio para ser utilizado. A colocação do idioma no atributo lang é importante para  as abreviações do display Braille. Mas isso é uma outra história que daria um tutorial  por aqui! De uma forma geral o WCAG Samurai vem preencher uma lacuna já há muito vazia e reavivar o implemento de acessibilidade no desenvolvimento de páginas, usabilidade e arquitetura da informação dos sites. Abraços acessíveis a todos&#8230; html e xhtml zeiros da web!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Acessibilidade e o WCAG Samurai &#187; Revolução Etc</title>
+		<link>/wcag-samurai/#comment-26773</link>
+		<dc:creator><![CDATA[Acessibilidade e o WCAG Samurai &#187; Revolução Etc]]></dc:creator>
+		<pubDate>Sat, 18 Aug 2007 20:36:51 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-26773</guid>
+		<description><![CDATA[[...] contexto e não pelo assunto em si. Talvez seja por isso que praticamente nada (com exceção do texto do Ivo Gomes) que está em Portugal) tenha sido escrito em português sobre a errata do WCAG Samurai. Nada. [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] contexto e não pelo assunto em si. Talvez seja por isso que praticamente nada (com exceção do texto do Ivo Gomes) que está em Portugal) tenha sido escrito em português sobre a errata do WCAG Samurai. Nada. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: chulapa</title>
+		<link>/wcag-samurai/#comment-23595</link>
+		<dc:creator><![CDATA[chulapa]]></dc:creator>
+		<pubDate>Thu, 19 Jul 2007 14:10:24 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-23595</guid>
+		<description><![CDATA[nossa, d+ o seu blog, muito conteudo bom e como sou da area da informatica entao, um prato cheio...um abraco e muito sucesso pra vc parceiro]]></description>
+		<content:encoded><![CDATA[<p>nossa, d+ o seu blog, muito conteudo bom e como sou da area da informatica entao, um prato cheio&#8230;um abraco e muito sucesso pra vc parceiro</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gaspar</title>
+		<link>/wcag-samurai/#comment-21737</link>
+		<dc:creator><![CDATA[Gaspar]]></dc:creator>
+		<pubDate>Wed, 04 Jul 2007 08:57:53 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21737</guid>
+		<description><![CDATA[Eu pessoalmente não gosto muito do Ajax quando este é usado para meramente renovar conteudo, enquanto conteudo. Caso este meramente sejam mensagens de aviso ou informação que não constitua o nucleo central da informação.
+
+Penso que não justifica o uso de AJAX somente para renovar informação sem o reload da página. Penso que isso já se fazia nos anos 90s via framesets.]]></description>
+		<content:encoded><![CDATA[<p>Eu pessoalmente não gosto muito do Ajax quando este é usado para meramente renovar conteudo, enquanto conteudo. Caso este meramente sejam mensagens de aviso ou informação que não constitua o nucleo central da informação.</p>
+<p>Penso que não justifica o uso de AJAX somente para renovar informação sem o reload da página. Penso que isso já se fazia nos anos 90s via framesets.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/wcag-samurai/#comment-21735</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 04 Jul 2007 07:59:01 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21735</guid>
+		<description><![CDATA[A única diferença entre o código que escrevo em HTML 4.1 Strict e XHTML é não usar o &quot;/&gt;&quot; no final das tags que não têm a correspondente tag de fecho. Fora isso, só muda o DOCTYPE e mais nada. Assim posso facilmente mudar de HTML para XHTML sem grandes dificuldades. A maior parte das regras usadas no XHTML podem ser aplicadas no HTML.]]></description>
+		<content:encoded><![CDATA[<p>A única diferença entre o código que escrevo em HTML 4.1 Strict e XHTML é não usar o &#8220;/>&#8221; no final das tags que não têm a correspondente tag de fecho. Fora isso, só muda o DOCTYPE e mais nada. Assim posso facilmente mudar de HTML para XHTML sem grandes dificuldades. A maior parte das regras usadas no XHTML podem ser aplicadas no HTML.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dextro</title>
+		<link>/wcag-samurai/#comment-21703</link>
+		<dc:creator><![CDATA[Dextro]]></dc:creator>
+		<pubDate>Tue, 03 Jul 2007 21:50:41 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21703</guid>
+		<description><![CDATA[Quanto aquele link que o Ivo deixou aqui nos comentários preciso de deixar uma resalva: Não vejo porque é que os iframes continuam a ser tão importantes? Não é possível fazer o mesmo com CSS e a propriedade overflow? AJAX serve para renovar o conteúdo...
+
+Claro que com tanta gente a alegar a redundância que que não se deve usar xHTML porque ainda não é muito usado vai manter as coisas como estão...
+
+Eu pessoalmente gosto do xHTML, tudo o que obrigue um web developer a ter de abrir e fechar os elementos tal como em qualquer linguagem de programação é bom a meu ver, mesmo que pareça ser algo picuinhas.]]></description>
+		<content:encoded><![CDATA[<p>Quanto aquele link que o Ivo deixou aqui nos comentários preciso de deixar uma resalva: Não vejo porque é que os iframes continuam a ser tão importantes? Não é possível fazer o mesmo com CSS e a propriedade overflow? AJAX serve para renovar o conteúdo&#8230;</p>
+<p>Claro que com tanta gente a alegar a redundância que que não se deve usar xHTML porque ainda não é muito usado vai manter as coisas como estão&#8230;</p>
+<p>Eu pessoalmente gosto do xHTML, tudo o que obrigue um web developer a ter de abrir e fechar os elementos tal como em qualquer linguagem de programação é bom a meu ver, mesmo que pareça ser algo picuinhas.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: ponto</title>
+		<link>/wcag-samurai/#comment-21702</link>
+		<dc:creator><![CDATA[ponto]]></dc:creator>
+		<pubDate>Tue, 03 Jul 2007 21:39:52 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21702</guid>
+		<description><![CDATA[ui candidatos a marcadores no browser (:]]></description>
+		<content:encoded><![CDATA[<p>ui candidatos a marcadores no browser (:</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/wcag-samurai/#comment-21658</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Tue, 03 Jul 2007 11:29:42 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21658</guid>
+		<description><![CDATA[Já agora deixo um link para um artigo que compara as diversas versões do HTML e XHTML.
+Espero que seja útil.
+&lt;a href=&quot;http://meiert.com/en/indices/html-elements/&quot; title=&quot;Artigo HTML elements index&quot; rel=&quot;nofollow&quot;&gt;HTML elements index&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>Já agora deixo um link para um artigo que compara as diversas versões do HTML e XHTML.<br />
+Espero que seja útil.<br />
+<a href="http://meiert.com/en/indices/html-elements/" title="Artigo HTML elements index" rel="nofollow">HTML elements index</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gaspar</title>
+		<link>/wcag-samurai/#comment-21656</link>
+		<dc:creator><![CDATA[Gaspar]]></dc:creator>
+		<pubDate>Tue, 03 Jul 2007 10:54:36 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21656</guid>
+		<description><![CDATA[Completando a informação desta discussão.
+
+&lt;blockquote cite=&quot;http://www.clickmaujor.com/w3c/html-pressrelease-pt-br.html&quot;&gt;A primeira recomendação XHTML completa foi publicada no início de 2000. Contudo devido ao maciço legado do conteúdo Web, baseado em variações do HTML, os fabricantes de navegadores começaram vagarosamente a adotar o XHTML. Isto resultou em pouca motivação para os desenvolvedores de conteúdos adotar o XHTML em seu ambiente tradicional de desenvolvimento. Expoentes das comunidades de desenvolvedores e de design apelaram ao W3C para a necessidade urgente de uma revisão dos seus compromissos com o HTML&lt;/blockquote&gt; 
+
+&lt;blockquote cite=&quot;http://brunotorres.net/xhtml-pensando-no-futuro&quot;&gt;
+A primeira coisa que você deve saber é que o Internet Explorer 6 (e versões anteriores) não suporta XHTML. Ponto. Na verdade ele nem chega a suportar o HTML completamente. Seu XHTML funciona bem mesmo sendo enviado como se fosse HTML porque você aprendeu a escrever XHTML cumprindo as regras descritas no &lt;a href=&quot;http://www.w3.org/TR/xhtml1/#guidelines&quot; title=&quot;regras de compatibilidade entre XHTML 1.0 e HTML 4.01&quot; rel=&quot;nofollow&quot;&gt;apêndice C&lt;/a&gt; da especificação do XHTML 1.0, mesmo que inconscientemente.
+&lt;/blockquote&gt;
+
+&lt;blockquote cite=&quot;http://brunotorres.net/xhtml-pensando-no-futuro&quot;&gt;
+O &lt;a href=&quot;http://www.w3.org/TR/xhtml1/#guidelines&quot; title=&quot;regras de compatibilidade entre XHTML 1.0 e HTML 4.01&quot; rel=&quot;nofollow&quot;&gt;apêndice C&lt;/a&gt; define as regras de compatibilidade entre XHTML 1.0 e HTML 4.01. São as regras que você deve seguir para poder enviar seus documentos XHTML como text/html e assegurar que os UAs atuais consigam renderizá-lo a contento.
+&lt;/blockquote&gt;
+
+&lt;blockquote cite=&quot;http://www.clickmaujor.com/w3c/html-pressrelease-pt-br.html&quot;&gt;O XHTML provou seu valor em outros mercados como o mercado de dispositivos móveis, em aplicações empresariais, no lado do servidor e em um crescente número de aplicações Web tal como os software para Blogs. Por exemplo: O Grupo de Trabalho para Práticas Web para Dispositivos Móveis, incluiu o módulo XHTML Basic como uma pedra angular nas Boas Práticas para Web Móvel porque softwares rodando com memória reduzida suportam aquele módulo. O mercado para XML é vasto e está crescendo, assim o W3C definirá a sintaxe XML para o novo HTML como complemento a sintaxe HTML tradicional.&lt;/blockquote&gt;
+
+
+Pelo que eu vejo pela web fora existe muitas dúvidas, entre os experts, acerca se é correcto ou não usar o XHTML enquanto txt/html.
+
+Eu por vezes uso outras não depende se pretende usar alguns atributos ou não.]]></description>
+		<content:encoded><![CDATA[<p>Completando a informação desta discussão.</p>
+<blockquote cite="http://www.clickmaujor.com/w3c/html-pressrelease-pt-br.html"><p>A primeira recomendação XHTML completa foi publicada no início de 2000. Contudo devido ao maciço legado do conteúdo Web, baseado em variações do HTML, os fabricantes de navegadores começaram vagarosamente a adotar o XHTML. Isto resultou em pouca motivação para os desenvolvedores de conteúdos adotar o XHTML em seu ambiente tradicional de desenvolvimento. Expoentes das comunidades de desenvolvedores e de design apelaram ao W3C para a necessidade urgente de uma revisão dos seus compromissos com o HTML</p></blockquote>
+<blockquote cite="http://brunotorres.net/xhtml-pensando-no-futuro"><p>
+A primeira coisa que você deve saber é que o Internet Explorer 6 (e versões anteriores) não suporta XHTML. Ponto. Na verdade ele nem chega a suportar o HTML completamente. Seu XHTML funciona bem mesmo sendo enviado como se fosse HTML porque você aprendeu a escrever XHTML cumprindo as regras descritas no <a href="http://www.w3.org/TR/xhtml1/#guidelines" title="regras de compatibilidade entre XHTML 1.0 e HTML 4.01" rel="nofollow">apêndice C</a> da especificação do XHTML 1.0, mesmo que inconscientemente.
+</p></blockquote>
+<blockquote cite="http://brunotorres.net/xhtml-pensando-no-futuro"><p>
+O <a href="http://www.w3.org/TR/xhtml1/#guidelines" title="regras de compatibilidade entre XHTML 1.0 e HTML 4.01" rel="nofollow">apêndice C</a> define as regras de compatibilidade entre XHTML 1.0 e HTML 4.01. São as regras que você deve seguir para poder enviar seus documentos XHTML como text/html e assegurar que os UAs atuais consigam renderizá-lo a contento.
+</p></blockquote>
+<blockquote cite="http://www.clickmaujor.com/w3c/html-pressrelease-pt-br.html"><p>O XHTML provou seu valor em outros mercados como o mercado de dispositivos móveis, em aplicações empresariais, no lado do servidor e em um crescente número de aplicações Web tal como os software para Blogs. Por exemplo: O Grupo de Trabalho para Práticas Web para Dispositivos Móveis, incluiu o módulo XHTML Basic como uma pedra angular nas Boas Práticas para Web Móvel porque softwares rodando com memória reduzida suportam aquele módulo. O mercado para XML é vasto e está crescendo, assim o W3C definirá a sintaxe XML para o novo HTML como complemento a sintaxe HTML tradicional.</p></blockquote>
+<p>Pelo que eu vejo pela web fora existe muitas dúvidas, entre os experts, acerca se é correcto ou não usar o XHTML enquanto txt/html.</p>
+<p>Eu por vezes uso outras não depende se pretende usar alguns atributos ou não.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/wcag-samurai/#comment-21614</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Mon, 02 Jul 2007 15:21:51 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21614</guid>
+		<description><![CDATA[Mas fará sentido ter tudo pronto para o XHTML para quando ele for suportado? A este ritmo não vejo o XHTML a ser suportado mas pelo menos o código já estava conforme... É um pau de dois bicos. Tenho usado XHTML e servido como HTML, sim mas não será melhor para o futuro ter isso assim pronto?
+
+A W3C não está a ajudar com estas lutas internas.]]></description>
+		<content:encoded><![CDATA[<p>Mas fará sentido ter tudo pronto para o XHTML para quando ele for suportado? A este ritmo não vejo o XHTML a ser suportado mas pelo menos o código já estava conforme&#8230; É um pau de dois bicos. Tenho usado XHTML e servido como HTML, sim mas não será melhor para o futuro ter isso assim pronto?</p>
+<p>A W3C não está a ajudar com estas lutas internas.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/wcag-samurai/#comment-21613</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 02 Jul 2007 14:58:15 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21613</guid>
+		<description><![CDATA[No problem. As discussões são sempre boas quando as duas partes têm pontos de vista diferentes e tentam explicá-los educadamente. Quando se começa a  baixar o nível é que é pior.
+
+Vou só dar a minha opinião sobre o XHTML vs. HTML: Não acho que o HTML já não se use, antes pelo contrário. Aqui há 1 ou 2 anos o XHTML estava na moda, mas rapidamente está-se a voltar ao HTML 4 Strict em vez do XHTML. Isso prende-se com o facto do XHTML não suportar grande parte das funcionalidades de XML para as quais ele foi desenvolvido e porque vários browsers (IE) não reconhecem o mime/type xhtml. Assim estás a servir XHTML mas estás a dizer ao browser que o mime/type é text/html (&lt;a href=&quot;http://hixie.ch/advocacy/xhtml&quot; rel=&quot;nofollow&quot;&gt;http://hixie.ch/advocacy/xhtml&lt;/a&gt;). Ora, isso assim não faz sentido.
+
+Tens aqui mais algumas razões porque não se deve usar (ainda) XHTML: &lt;a href=&quot;http://codinginparadise.org/weblog/2005/08/xhtml-considered-harmful.html&quot; rel=&quot;nofollow&quot;&gt;http://codinginparadise.org/weblog/2005/08/xhtml-considered-harmful.html&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>No problem. As discussões são sempre boas quando as duas partes têm pontos de vista diferentes e tentam explicá-los educadamente. Quando se começa a  baixar o nível é que é pior.</p>
+<p>Vou só dar a minha opinião sobre o XHTML vs. HTML: Não acho que o HTML já não se use, antes pelo contrário. Aqui há 1 ou 2 anos o XHTML estava na moda, mas rapidamente está-se a voltar ao HTML 4 Strict em vez do XHTML. Isso prende-se com o facto do XHTML não suportar grande parte das funcionalidades de XML para as quais ele foi desenvolvido e porque vários browsers (IE) não reconhecem o mime/type xhtml. Assim estás a servir XHTML mas estás a dizer ao browser que o mime/type é text/html (<a href="http://hixie.ch/advocacy/xhtml" rel="nofollow">http://hixie.ch/advocacy/xhtml</a>). Ora, isso assim não faz sentido.</p>
+<p>Tens aqui mais algumas razões porque não se deve usar (ainda) XHTML: <a href="http://codinginparadise.org/weblog/2005/08/xhtml-considered-harmful.html" rel="nofollow">http://codinginparadise.org/weblog/2005/08/xhtml-considered-harmful.html</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/wcag-samurai/#comment-21612</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Mon, 02 Jul 2007 14:07:19 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21612</guid>
+		<description><![CDATA[Tens o link para a minha homepage e tens lá o contacto. Podemos continuar esta troca de ideias via e-mail.
+
+PS: Desculpa lá Ivo por termos invadido assim a tua “casa” na web :)]]></description>
+		<content:encoded><![CDATA[<p>Tens o link para a minha homepage e tens lá o contacto. Podemos continuar esta troca de ideias via e-mail.</p>
+<p>PS: Desculpa lá Ivo por termos invadido assim a tua “casa” na web :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gaspar</title>
+		<link>/wcag-samurai/#comment-21611</link>
+		<dc:creator><![CDATA[Gaspar]]></dc:creator>
+		<pubDate>Mon, 02 Jul 2007 14:01:20 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21611</guid>
+		<description><![CDATA[Também acho este não é o local indicado para discutir este assunto. 
+
+Apesar de achar estas discussões enriquecedoras e é com este intuito que participo nas mesmas.
+
+Espero noutra altura num lugar mais apropriado possamos discutir este aprofundar este assunto. Garanto-te que vou insvestigar um pouco mais a acessibilidade nos PDFs.
+
+ps.
+Quanto ao html acredita que se usa e cada vez mais gente vai renunciando ao (x)HTML.]]></description>
+		<content:encoded><![CDATA[<p>Também acho este não é o local indicado para discutir este assunto. </p>
+<p>Apesar de achar estas discussões enriquecedoras e é com este intuito que participo nas mesmas.</p>
+<p>Espero noutra altura num lugar mais apropriado possamos discutir este aprofundar este assunto. Garanto-te que vou insvestigar um pouco mais a acessibilidade nos PDFs.</p>
+<p>ps.<br />
+Quanto ao html acredita que se usa e cada vez mais gente vai renunciando ao (x)HTML.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/wcag-samurai/#comment-21610</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Mon, 02 Jul 2007 13:53:58 +0000</pubDate>
+		<guid isPermaLink="false">/wcag-samurai/#comment-21610</guid>
+		<description><![CDATA[BTW, quando falo em HTML refiro-me ao HTML 4. O HTML 5 ainda não existe com a sua forma definitiva (e longe estará de o ser...)
+
+Portanto a não ser que esteja a ver mal as coisas, HTML já não se usa (até ver).]]></description>
+		<content:encoded><![CDATA[<p>BTW, quando falo em HTML refiro-me ao HTML 4. O HTML 5 ainda não existe com a sua forma definitiva (e longe estará de o ser&#8230;)</p>
+<p>Portanto a não ser que esteja a ver mal as coisas, HTML já não se usa (até ver).</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Dia Mundial da Usabilidade</title>
+	<atom:link href="/dia-mundial-da-usabilidade/feed/" rel="self" type="application/rss+xml" />
+	<link>/dia-mundial-da-usabilidade/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Rodrigues Comandolli</title>
+		<link>/dia-mundial-da-usabilidade/#comment-5818</link>
+		<dc:creator><![CDATA[Rodrigues Comandolli]]></dc:creator>
+		<pubDate>Tue, 07 Nov 2006 20:23:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=169#comment-5818</guid>
+		<description><![CDATA[No Rio Grande do Sul - Brasil o evento ocorrerá a partir das 9h na Unisinos. Este ano Renato Rosa, arquiteto de informação da Globo.com, palestra &quot;Usabilidade: conceito, aplicações e testes&quot;.
+
+O &lt;a href=&quot;http://www.wud-rs.com.br&quot;/ rel=&quot;nofollow&quot;&gt;website do evento&lt;/a&gt; já está on-line e fazendo sua pré-inscrição você concorre a um ingresso para o II Fórum de Internet Corporativa.
+
+
+Abraços!]]></description>
+		<content:encoded><![CDATA[<p>No Rio Grande do Sul &#8211; Brasil o evento ocorrerá a partir das 9h na Unisinos. Este ano Renato Rosa, arquiteto de informação da Globo.com, palestra &#8220;Usabilidade: conceito, aplicações e testes&#8221;.</p>
+<p>O <a href="http://www.wud-rs.com.br/" rel="nofollow">website do evento</a> já está on-line e fazendo sua pré-inscrição você concorre a um ingresso para o II Fórum de Internet Corporativa.</p>
+<p>Abraços!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

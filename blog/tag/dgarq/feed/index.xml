@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>dgarq &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/dgarq/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Novo website da Direcção-Geral de Arquivos</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/</link>
+		<comments>/novo-website-da-direccao-geral-de-arquivos/#comments</comments>
+		<pubDate>Tue, 23 Dec 2008 11:23:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[dgarq]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682</guid>
+		<description><![CDATA[<p>Nos últimos meses estive a trabalhar na remodelação do website da Direcção-Geral de Arquivos. Os requisitos principais para a remodelação prendiam-se com a necessidade de ter um website mais acessível (nível de acessibilidade AA) e mais leve (evitando o uso de imagens pesadas e elementos gráficos desnecessários). Todos estes requisitos vieram do próprio cliente que explicitou muito bem todos estes pontos.</p>
+<p>A Direcção-Geral de Arquivos (antigo IAN/TT - Instituto dos Arquivos Nacionais / Torre do Tombo), devido às mudanças que houveram na instituição, passou a estar separada da Torre do Tombo. Assim, hoje temos a Direcção-Geral de Arquivos e o Arquivo Nacional da Torre do Tombo. Desta forma, teríamos que desenvolver dois websites distintos, mas mantendo a mesma linha gráfica.</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-da-direccao-geral-de-arquivos/">Novo website da Direcção-Geral de Arquivos</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-da-direccao-geral-de-arquivos/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Javascript &#8211; IvoGomes.com</title>
+	<atom:link href="/category/javascript/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>SAPO Sessions #2 &#8211; Javascript</title>
+		<link>/sapo-sessions-2-javascript/</link>
+		<comments>/sapo-sessions-2-javascript/#comments</comments>
+		<pubDate>Wed, 18 Mar 2009 15:56:01 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Javascript]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=769</guid>
+		<description><![CDATA[<p>Na sequência da<a href="/sapo-sessions/"> primeira SAPO Sessions dedicada a HTML, CSS e Acessibilidade</a>, hoje decorreu a segunda edição, desta vez dedicada ao JavaScript.</p>
+<p>Hoje tivémos o prazer de assistir às seguintes apresentações:</p>
+<ul>
+<li>Javascript for Beginners, por Pedro Eugénio</li>
+<li>JavaScript done right, por ANdré Luís</li>
+<li>Prototype &#038; LibSAPO.js, por Cláudio Gamboa</li>
+</ul>
+<p>O conteúdo <a rel="nofollow" href="/sapo-sessions-2-javascript/">SAPO Sessions #2 &#8211; Javascript</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sapo-sessions-2-javascript/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>myTVShows 3: As Novidades</title>
+		<link>/mytvshows-3-as-novidades/</link>
+		<comments>/mytvshows-3-as-novidades/#comments</comments>
+		<pubDate>Thu, 05 Jun 2008 14:58:40 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[gestão]]></category>
+		<category><![CDATA[mytvshows]]></category>
+		<category><![CDATA[séries]]></category>
+		<category><![CDATA[tv]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=475</guid>
+		<description><![CDATA[<p><a href="http://www.mytvshows.org/"><img class="imgartigo alignnone size-full wp-image-476" title="myTVShows" src="/wp-content/uploads/2008/06/mytvshows.png" alt="" width="200" height="100" /></a>Após alguns meses de desenvolvimento da nova versão do <a title="myTVShows" href="http://www.mytvshows.org/">myTVShows</a>, chegou a hora de a disponibilizar publicamente. Esta versão já tinha sido divulgada mas apenas para alguns utilizadores, de modo a poder ter algum feedback sobre as novidades, bugs, novas funcionalidades, etc...</p>
+<p>Esta nova versão ainda está longe de ser finalizada. Ainda há algumas funcionalidades em processo de desenvovimento, outras ainda só no papel. Uma vez que foram introduzidas muitas novas funcionalidades, é possível que ainda hajam alguns bugs (apesar de termos feito muitos testes durante a fase em que a aplicação esteve disponível apenas a um conjunto restrito de pessoas).</p>
+<p>O conteúdo <a rel="nofollow" href="/mytvshows-3-as-novidades/">myTVShows 3: As Novidades</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/mytvshows-3-as-novidades/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Workshop de AJAX. Quem está interessado?</title>
+		<link>/workshop-de-ajax-quem-esta-interessado/</link>
+		<comments>/workshop-de-ajax-quem-esta-interessado/#comments</comments>
+		<pubDate>Mon, 14 Apr 2008 14:05:24 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[ajax]]></category>
+		<category><![CDATA[workshop]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=468</guid>
+		<description><![CDATA[<p>Aqui na <a href="http://www.log.pt/">log</a> estamos a pensar fazer um Workshop de AJAX e convidar um orador bastante conhecido nesta área para dar a formação (<a href="http://www.clearleft.com/about/jeremy/">Jeremy Keith</a>, autor dos livros "<a href="http://bulletproofajax.com/">Bulletproof AJAX</a>" e "<a href="http://domscripting.com/book/">DOM Scripting</a>"). </p>
+<p>O conteúdo <a rel="nofollow" href="/workshop-de-ajax-quem-esta-interessado/">Workshop de AJAX. Quem está interessado?</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/workshop-de-ajax-quem-esta-interessado/feed/</wfw:commentRss>
+		<slash:comments>18</slash:comments>
+		</item>
+		<item>
+		<title>Abrir/Fechar elementos usando Javascript e CSS</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/</link>
+		<comments>/abrirfechar-elementos-usando-javascript-e-css/#comments</comments>
+		<pubDate>Wed, 14 Mar 2007 12:14:26 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/</guid>
+		<description><![CDATA[<p>Basicamente, através de um pequeno código Javascript e uma linha de CSS conseguimos fazer com que um determinado elemento se abra ou feche mediante um clique. Por exemplo, podemos querer ter alguma informação na página que é acedida apenas quando o utilizador clica num link. Isto faz com que essa informação apareça sem ter que recarregar a página (no fundo, a informação está lá, mas está escondida).</p>
+<p>O conteúdo <a rel="nofollow" href="/abrirfechar-elementos-usando-javascript-e-css/">Abrir/Fechar elementos usando Javascript e CSS</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/abrirfechar-elementos-usando-javascript-e-css/feed/</wfw:commentRss>
+		<slash:comments>62</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Abrir/Fechar elementos usando Javascript e CSS</title>
+	<atom:link href="/abrirfechar-elementos-usando-javascript-e-css/feed/" rel="self" type="application/rss+xml" />
+	<link>/abrirfechar-elementos-usando-javascript-e-css/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Alex Souza</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-123181</link>
+		<dc:creator><![CDATA[Alex Souza]]></dc:creator>
+		<pubDate>Fri, 15 Mar 2013 16:32:33 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-123181</guid>
+		<description><![CDATA[Boa tarde Ivo. 
+
+Como a propriedade eu uso nesse exemplo do José Carlos. Para em vez de clicar para abrir, eu apenas colocar o mouse sobre ?. 
+
+No código tem o bind &quot;click&quot; porém não sei o que colocar para &quot;oumouseover&quot; ou coisa do tipo. 
+
+Fico no aguardo. 
+Qualquer coisa me manda no email. 
+
+Grato,]]></description>
+		<content:encoded><![CDATA[<p>Boa tarde Ivo. </p>
+<p>Como a propriedade eu uso nesse exemplo do José Carlos. Para em vez de clicar para abrir, eu apenas colocar o mouse sobre ?. </p>
+<p>No código tem o bind &#8220;click&#8221; porém não sei o que colocar para &#8220;oumouseover&#8221; ou coisa do tipo. </p>
+<p>Fico no aguardo.<br />
+Qualquer coisa me manda no email. </p>
+<p>Grato,</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Bruno de MAuro</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-117617</link>
+		<dc:creator><![CDATA[Bruno de MAuro]]></dc:creator>
+		<pubDate>Tue, 17 Apr 2012 17:04:12 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-117617</guid>
+		<description><![CDATA[Procurei muito no Google e achei vocês!
+Finalmente um código que funciona!
+
+Vlw!
+
+Abrs!]]></description>
+		<content:encoded><![CDATA[<p>Procurei muito no Google e achei vocês!<br />
+Finalmente um código que funciona!</p>
+<p>Vlw!</p>
+<p>Abrs!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Andreza</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-116550</link>
+		<dc:creator><![CDATA[Andreza]]></dc:creator>
+		<pubDate>Tue, 13 Mar 2012 19:44:39 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-116550</guid>
+		<description><![CDATA[Olá,
+
+Gostei do seu site, muito bem explicado e me ajudou com muitas coisas, porém, agora estou com um problema e gostaria da sua ajuda, se puder: Criei um layout com css e agora precisaria que uma página  já publicada executasse dentro desse layout, uma parde dele, eu consigo colocar o link e tal mas a pessoa tem que clicar para ver e nao é isso que eu quero, quero que quando ela entre já mostre, isso seria possível?]]></description>
+		<content:encoded><![CDATA[<p>Olá,</p>
+<p>Gostei do seu site, muito bem explicado e me ajudou com muitas coisas, porém, agora estou com um problema e gostaria da sua ajuda, se puder: Criei um layout com css e agora precisaria que uma página  já publicada executasse dentro desse layout, uma parde dele, eu consigo colocar o link e tal mas a pessoa tem que clicar para ver e nao é isso que eu quero, quero que quando ela entre já mostre, isso seria possível?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dermeval Junior</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-113575</link>
+		<dc:creator><![CDATA[Dermeval Junior]]></dc:creator>
+		<pubDate>Wed, 11 Jan 2012 17:47:45 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-113575</guid>
+		<description><![CDATA[Bom artigo.
+
+Só uma dica, se ao esconder o elemento, você quiser manter o espaço que ele ocupava antes, é só usar visibility:hidden ao invés de display:none desde que no elemento tenha sido definido altura e largura]]></description>
+		<content:encoded><![CDATA[<p>Bom artigo.</p>
+<p>Só uma dica, se ao esconder o elemento, você quiser manter o espaço que ele ocupava antes, é só usar visibility:hidden ao invés de display:none desde que no elemento tenha sido definido altura e largura</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-108501</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 19 Dec 2011 14:40:03 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-108501</guid>
+		<description><![CDATA[@Lini: Coloquei o seu exemplo &lt;a href=&quot;https://www.ivogomes.com/exemplos/js_openelements.html&quot; rel=&quot;nofollow&quot;&gt;aqui&lt;/a&gt;. Não sei qual vai ser a estrutura do HTML no seu site, mas criei uma de exemplo com 2 links que abrem a respectiva descrição.
+Se vir o código fonte, está lá a explicação de como funciona e pode adaptar como quiser.]]></description>
+		<content:encoded><![CDATA[<p>@Lini: Coloquei o seu exemplo <a href="https://www.ivogomes.com/exemplos/js_openelements.html" rel="nofollow">aqui</a>. Não sei qual vai ser a estrutura do HTML no seu site, mas criei uma de exemplo com 2 links que abrem a respectiva descrição.<br />
+Se vir o código fonte, está lá a explicação de como funciona e pode adaptar como quiser.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Lini</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-108273</link>
+		<dc:creator><![CDATA[Lini]]></dc:creator>
+		<pubDate>Fri, 16 Dec 2011 17:40:48 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-108273</guid>
+		<description><![CDATA[Estou iniciando no mundo dos blogs e gostaria de colocar em um post esta possibilidade de abrir e fechar clicando no link. 
+Tipo: num texto de dicas, colocar o texto e quando enumerar as dicas cada dica ter um link explicativo que ao clicar ela abra e depois clica novamente para ela fechar.
+
+Exemplo:
+ 
+Aproveite o tempo livre com as crianças com muita diversão, criatividade e aprendizagem...
+
+1) INCENTIVANDO À LEITURA:
+O ideal é deixar sempre livros interessantes e atrativos ao alcance dos olhos e das mãos dos pequenos para que ele intercale as atividades do dia com a leitura ou mesmo visualização das ilustrações oferecidas no livro. Se você não tem este material disponível é interessante localizar a biblioteca mais próxima e tornar-se sócio, você e as crianças, para que possam pegar livros, gibis, revistas, revistinhas emprestados. Se o orçamento permitir adquirir alguns títulos é uma boa opção. Procure se informar quais os títulos adequados a faixa etária de seus filhos para não fazer escolhas erradas. Será que você está pronta ou pronto para estimular a leitura de seu filho(a). Faça o teste e confira.
+P.S.: Quero criar o link neste texto de forma que ao clicar no ítem 1) INCENTIVANDO A LEITURA: O texto abaixo apareça se abrindo no próprio texto e após a leitura eu possa clicar novamente para ele sumir ou se fechar. 
+Se puder me orientar melhor fico muito grata.]]></description>
+		<content:encoded><![CDATA[<p>Estou iniciando no mundo dos blogs e gostaria de colocar em um post esta possibilidade de abrir e fechar clicando no link.<br />
+Tipo: num texto de dicas, colocar o texto e quando enumerar as dicas cada dica ter um link explicativo que ao clicar ela abra e depois clica novamente para ela fechar.</p>
+<p>Exemplo:</p>
+<p>Aproveite o tempo livre com as crianças com muita diversão, criatividade e aprendizagem&#8230;</p>
+<p>1) INCENTIVANDO À LEITURA:<br />
+O ideal é deixar sempre livros interessantes e atrativos ao alcance dos olhos e das mãos dos pequenos para que ele intercale as atividades do dia com a leitura ou mesmo visualização das ilustrações oferecidas no livro. Se você não tem este material disponível é interessante localizar a biblioteca mais próxima e tornar-se sócio, você e as crianças, para que possam pegar livros, gibis, revistas, revistinhas emprestados. Se o orçamento permitir adquirir alguns títulos é uma boa opção. Procure se informar quais os títulos adequados a faixa etária de seus filhos para não fazer escolhas erradas. Será que você está pronta ou pronto para estimular a leitura de seu filho(a). Faça o teste e confira.<br />
+P.S.: Quero criar o link neste texto de forma que ao clicar no ítem 1) INCENTIVANDO A LEITURA: O texto abaixo apareça se abrindo no próprio texto e após a leitura eu possa clicar novamente para ele sumir ou se fechar.<br />
+Se puder me orientar melhor fico muito grata.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Angel</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-105387</link>
+		<dc:creator><![CDATA[Angel]]></dc:creator>
+		<pubDate>Mon, 14 Nov 2011 01:44:36 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-105387</guid>
+		<description><![CDATA[Simplesmente maravilhado com tanta coisa que vi. Pena nao ver o que realmente pretendo para o meu site. De qualquer forma impressionado mesmo.
+Obrigado. ASS: Angel.]]></description>
+		<content:encoded><![CDATA[<p>Simplesmente maravilhado com tanta coisa que vi. Pena nao ver o que realmente pretendo para o meu site. De qualquer forma impressionado mesmo.<br />
+Obrigado. ASS: Angel.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Felipe Braga</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-103216</link>
+		<dc:creator><![CDATA[Felipe Braga]]></dc:creator>
+		<pubDate>Thu, 06 Oct 2011 13:08:57 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-103216</guid>
+		<description><![CDATA[Pois não é que achei um modo de fazer? Uso um shell com comandos DOS depois de GET URL atual e rodo no cliente, funciona, vou aprimorar e mando por aqui.]]></description>
+		<content:encoded><![CDATA[<p>Pois não é que achei um modo de fazer? Uso um shell com comandos DOS depois de GET URL atual e rodo no cliente, funciona, vou aprimorar e mando por aqui.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-103212</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 06 Oct 2011 08:59:11 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-103212</guid>
+		<description><![CDATA[@Filipe Braga: Primeiro: nunca deverias fazer uma coisas dessas. 
+Segundo: não podes :P]]></description>
+		<content:encoded><![CDATA[<p>@Filipe Braga: Primeiro: nunca deverias fazer uma coisas dessas.<br />
+Segundo: não podes :P</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Felipe Braga</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-103191</link>
+		<dc:creator><![CDATA[Felipe Braga]]></dc:creator>
+		<pubDate>Wed, 05 Oct 2011 12:36:07 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-103191</guid>
+		<description><![CDATA[Gostaria de saber como eu faço para derrubar uma página aberta pelo Mozilla Firefox e reabrí-la automaticamente pelo IE, através de código. Se o cara já abiri pelo IE, nada acontece. Alguém poderia me ajudar ??]]></description>
+		<content:encoded><![CDATA[<p>Gostaria de saber como eu faço para derrubar uma página aberta pelo Mozilla Firefox e reabrí-la automaticamente pelo IE, através de código. Se o cara já abiri pelo IE, nada acontece. Alguém poderia me ajudar ??</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Fábio Luiz Parizotto</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-100791</link>
+		<dc:creator><![CDATA[Fábio Luiz Parizotto]]></dc:creator>
+		<pubDate>Thu, 18 Aug 2011 22:36:24 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-100791</guid>
+		<description><![CDATA[Valeu mesmo pelo esclareciemento. Mas eu ainda não sei como fazer um &quot;id&quot; com CSS para a div. Eu já vi modelos de idnos c´digos-fonte de vários outros sites que usam este recurso de abrir/fechar, e cada um tem um id diferente nas suas divs. Gostaria de saber exatamente como produzir esse CSS para os ids.
+ Grato!]]></description>
+		<content:encoded><![CDATA[<p>Valeu mesmo pelo esclareciemento. Mas eu ainda não sei como fazer um &#8220;id&#8221; com CSS para a div. Eu já vi modelos de idnos c´digos-fonte de vários outros sites que usam este recurso de abrir/fechar, e cada um tem um id diferente nas suas divs. Gostaria de saber exatamente como produzir esse CSS para os ids.<br />
+ Grato!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: @rodrigoaraujo92</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-96470</link>
+		<dc:creator><![CDATA[@rodrigoaraujo92]]></dc:creator>
+		<pubDate>Sun, 08 May 2011 20:05:40 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-96470</guid>
+		<description><![CDATA[Perfeito cara era exatamente o que eu preucurava!]]></description>
+		<content:encoded><![CDATA[<p>Perfeito cara era exatamente o que eu preucurava!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: João MArcos</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-93064</link>
+		<dc:creator><![CDATA[João MArcos]]></dc:creator>
+		<pubDate>Tue, 15 Feb 2011 11:48:46 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-93064</guid>
+		<description><![CDATA[Vinicios, veja se esse site ajuda: http://carosamigos.wordpress.com/2009/02/11/abrir-e-fechar-div-com-sinal-de-menos-e-de-mais/
+
+Neste post tem um link ensinando fazer em jquery tb.
+
+^^]]></description>
+		<content:encoded><![CDATA[<p>Vinicios, veja se esse site ajuda: <a href="http://carosamigos.wordpress.com/2009/02/11/abrir-e-fechar-div-com-sinal-de-menos-e-de-mais/" rel="nofollow">http://carosamigos.wordpress.com/2009/02/11/abrir-e-fechar-div-com-sinal-de-menos-e-de-mais/</a></p>
+<p>Neste post tem um link ensinando fazer em jquery tb.</p>
+<p>^^</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Viniccios</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-91628</link>
+		<dc:creator><![CDATA[Viniccios]]></dc:creator>
+		<pubDate>Mon, 15 Nov 2010 22:55:52 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-91628</guid>
+		<description><![CDATA[Amigo, não consegui usar o efeito no link, pode me ajudar?]]></description>
+		<content:encoded><![CDATA[<p>Amigo, não consegui usar o efeito no link, pode me ajudar?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: sidney suderio</title>
+		<link>/abrirfechar-elementos-usando-javascript-e-css/#comment-91049</link>
+		<dc:creator><![CDATA[sidney suderio]]></dc:creator>
+		<pubDate>Sat, 16 Oct 2010 14:29:03 +0000</pubDate>
+		<guid isPermaLink="false">/abrirfechar-elementos-usando-javascript-e-css/#comment-91049</guid>
+		<description><![CDATA[Muito bom o código, pretendo usá-lo para ler um texto criado em c++
+
+grato]]></description>
+		<content:encoded><![CDATA[<p>Muito bom o código, pretendo usá-lo para ler um texto criado em c++</p>
+<p>grato</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

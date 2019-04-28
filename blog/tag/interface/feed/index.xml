@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>interface &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/interface/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>O novo Multibanco</title>
+		<link>/o-novo-multibanco/</link>
+		<comments>/o-novo-multibanco/#comments</comments>
+		<pubDate>Tue, 07 Oct 2008 11:47:37 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[interface]]></category>
+		<category><![CDATA[multibanco]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=572</guid>
+		<description><![CDATA[<p><img class="alignnone wp-image-573 imgartigo" title="Multibanco" src="/wp-content/uploads/2008/10/mb-logo.png" alt="" width="282" height="74" />A <a href="http://www.sibs.pt/">SIBS</a> apresentou este mês um novo interface para o Multibanco.<br />
+Durante 25 anos estivémos habituados ao aspecto simpático dos ecrãs do Multibanco e 25 anos é muito tempo, por isso, haverá sempre um pouco de resistência à mudança. No entanto, sou só eu, ou o novo interface do multibanco é pior do que o anterior?</p>
+<p>O conteúdo <a rel="nofollow" href="/o-novo-multibanco/">O novo Multibanco</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/o-novo-multibanco/feed/</wfw:commentRss>
+		<slash:comments>19</slash:comments>
+		</item>
+		<item>
+		<title>User Interface Workshop</title>
+		<link>/user-interface-workshop/</link>
+		<comments>/user-interface-workshop/#comments</comments>
+		<pubDate>Thu, 20 Sep 2007 14:20:59 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[interface]]></category>
+		<category><![CDATA[madrid]]></category>
+		<category><![CDATA[workshop]]></category>
+
+		<guid isPermaLink="false">/user-interface-workshop/</guid>
+		<description><![CDATA[<p>Nos próximos dias 22 a 26 de Outubro vai decorrer a quarta edição do <a href="http://www.evolucy.com/esp/usability/user_interface_workshop_madrid.html">User Interface Workshop</a> em Madrid (Universidad Complutense de Madrid - <a href="http://www.evolucy.com/esp/usability/lugar_user_interface_workshop_madrid.html">Facultad de Informática</a>).</p>
+<p>O objectivo deste Workshop é proporcionar uma base teórica e prática para o desenvolvimento de interfaces de utilizador.</p>
+<p>O conteúdo <a rel="nofollow" href="/user-interface-workshop/">User Interface Workshop</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/user-interface-workshop/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Interface Gestual Multi-Toque</title>
+		<link>/interface-gestual-multi-toque/</link>
+		<comments>/interface-gestual-multi-toque/#comments</comments>
+		<pubDate>Fri, 03 Mar 2006 12:16:00 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Ergonomia]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[gestual]]></category>
+		<category><![CDATA[interface]]></category>
+		<category><![CDATA[multi-touch]]></category>
+
+		<guid isPermaLink="false">/interface-gestual-multi-toque/</guid>
+		<description><![CDATA[<p>Apesar de já existirem interfaces em que podemos interagir com o ecrã através do toque, ainda não existia nenhuma tecnologia que permitisse interagir com vários dedos ou mãos ao mesmo tempo. A interface Multi-Toque permite usar vários dedos e várias mãos (pode ser mais do que uma pessoa a interagir) em simultâneo. </p>
+<p>O conteúdo <a rel="nofollow" href="/interface-gestual-multi-toque/">Interface Gestual Multi-Toque</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/interface-gestual-multi-toque/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+	</channel>
+</rss>

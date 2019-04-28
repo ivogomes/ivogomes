@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: MEO Interactivo</title>
+	<atom:link href="/meo-interactivo/feed/" rel="self" type="application/rss+xml" />
+	<link>/meo-interactivo/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: 2 anos de SAPO: Retrospectiva - IvoGomes.com</title>
+		<link>/meo-interactivo/#comment-161591</link>
+		<dc:creator><![CDATA[2 anos de SAPO: Retrospectiva - IvoGomes.com]]></dc:creator>
+		<pubDate>Fri, 17 Jun 2016 09:01:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1168#comment-161591</guid>
+		<description><![CDATA[[&#8230;] passar os conteúdos da Internet para a TV, e sobre o qual podem obter mais alguma informação aqui sobre como decorreu todo o processo de especificações); e várias aplicações nativas para [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] passar os conteúdos da Internet para a TV, e sobre o qual podem obter mais alguma informação aqui sobre como decorreu todo o processo de especificações); e várias aplicações nativas para [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Paulo A. Silva</title>
+		<link>/meo-interactivo/#comment-90504</link>
+		<dc:creator><![CDATA[Paulo A. Silva]]></dc:creator>
+		<pubDate>Wed, 08 Sep 2010 19:44:39 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1168#comment-90504</guid>
+		<description><![CDATA[Muito bom Ivo.
+Nota-se um verdadeiro trabalho de equipa.]]></description>
+		<content:encoded><![CDATA[<p>Muito bom Ivo.<br />
+Nota-se um verdadeiro trabalho de equipa.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

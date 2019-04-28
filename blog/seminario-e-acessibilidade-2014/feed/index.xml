@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Seminário e-Acessibilidade 2014</title>
+	<atom:link href="/seminario-e-acessibilidade-2014/feed/" rel="self" type="application/rss+xml" />
+	<link>/seminario-e-acessibilidade-2014/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Rui Teles (Ese/Porto)</title>
+		<link>/seminario-e-acessibilidade-2014/#comment-130842</link>
+		<dc:creator><![CDATA[Rui Teles (Ese/Porto)]]></dc:creator>
+		<pubDate>Mon, 07 Apr 2014 22:47:19 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1422#comment-130842</guid>
+		<description><![CDATA[Parabéns Ivo.
+Uma apresentação com muito bom gosto e cheia de pormenores que desconhecia (e não sabia...).
+Já sei a quem recorrer para as questões da acessibilidade na web até porque, por vezes, damos formação a grupos de cegos que conhecem bem essa realidade.
+Cumprimentos
+Rui Teles]]></description>
+		<content:encoded><![CDATA[<p>Parabéns Ivo.<br />
+Uma apresentação com muito bom gosto e cheia de pormenores que desconhecia (e não sabia&#8230;).<br />
+Já sei a quem recorrer para as questões da acessibilidade na web até porque, por vezes, damos formação a grupos de cegos que conhecem bem essa realidade.<br />
+Cumprimentos<br />
+Rui Teles</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/seminario-e-acessibilidade-2014/#comment-130833</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 07 Apr 2014 07:36:58 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1422#comment-130833</guid>
+		<description><![CDATA[Obrigado eu pelo convite ;)]]></description>
+		<content:encoded><![CDATA[<p>Obrigado eu pelo convite ;)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: António Mendes dos Santos</title>
+		<link>/seminario-e-acessibilidade-2014/#comment-130829</link>
+		<dc:creator><![CDATA[António Mendes dos Santos]]></dc:creator>
+		<pubDate>Mon, 07 Apr 2014 01:20:40 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1422#comment-130829</guid>
+		<description><![CDATA[Enquanto &quot;mestre de cerimónias&quot; do Seminário, testemunho com gosto o muito interesse que a sua intervenção suscitou -- não só a mim -- bem expresso nas questões que depois lhe foram dirigidas por várias pessoas... OBRIGADO !]]></description>
+		<content:encoded><![CDATA[<p>Enquanto &#8220;mestre de cerimónias&#8221; do Seminário, testemunho com gosto o muito interesse que a sua intervenção suscitou &#8212; não só a mim &#8212; bem expresso nas questões que depois lhe foram dirigidas por várias pessoas&#8230; OBRIGADO !</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

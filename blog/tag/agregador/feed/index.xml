@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>agregador &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/agregador/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Print Screen &#8211; capturing the buzz</title>
+		<link>/print-screen-capturing-the-buzz/</link>
+		<comments>/print-screen-capturing-the-buzz/#comments</comments>
+		<pubDate>Fri, 08 Jun 2007 11:42:00 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[agregador]]></category>
+		<category><![CDATA[asterisco]]></category>
+		<category><![CDATA[buzz]]></category>
+		<category><![CDATA[planeta]]></category>
+		<category><![CDATA[print-screen]]></category>
+
+		<guid isPermaLink="false">/print-screen-capturing-the-buzz/</guid>
+		<description><![CDATA[<p>Já é oficial! O antigo agregador de blogs Planeta Asterisco (ao qual eu também estou agregado) mudou de nome e passou a chamar-se <a href="http://prt.sc/">Print Screen</a> (ou Prt.Sc). </p>
+<p><img src="http://www.prt.sc/media/images/logo4.png" alt="Print Screen"></p>
+<p>O conteúdo <a rel="nofollow" href="/print-screen-capturing-the-buzz/">Print Screen &#8211; capturing the buzz</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/print-screen-capturing-the-buzz/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

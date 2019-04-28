@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Ajax e Usabilidade</title>
+	<atom:link href="/ajax-e-usabilidade/feed/" rel="self" type="application/rss+xml" />
+	<link>/ajax-e-usabilidade/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/ajax-e-usabilidade/#comment-3662</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 25 Apr 2006 21:06:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-3662</guid>
+		<description><![CDATA[Uma vez que, para experimentar o leilão é preciso criar uma conta no site, removi o endereço do comentário anterior por suspeita de SPAM. Caso esteja errado, por favor informem-me e volto a colocar o link.]]></description>
+		<content:encoded><![CDATA[<p>Uma vez que, para experimentar o leilão é preciso criar uma conta no site, removi o endereço do comentário anterior por suspeita de SPAM. Caso esteja errado, por favor informem-me e volto a colocar o link.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Maurício</title>
+		<link>/ajax-e-usabilidade/#comment-3661</link>
+		<dc:creator><![CDATA[Maurício]]></dc:creator>
+		<pubDate>Tue, 25 Apr 2006 20:55:46 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-3661</guid>
+		<description><![CDATA[Convido todos para verificar nossa aplicação AJAX que desenvolvemos...
+Entrem em aualquer leilão e na barra de navegação no canto direito, existe as telas de lance, dai é só clicar no link e (por favor), me enviem críticas.. são sempre bem vindas, sejam boas ou ruins...
+Valeu pessoal!]]></description>
+		<content:encoded><![CDATA[<p>Convido todos para verificar nossa aplicação AJAX que desenvolvemos&#8230;<br />
+Entrem em aualquer leilão e na barra de navegação no canto direito, existe as telas de lance, dai é só clicar no link e (por favor), me enviem críticas.. são sempre bem vindas, sejam boas ou ruins&#8230;<br />
+Valeu pessoal!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/ajax-e-usabilidade/#comment-3597</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 03 Apr 2006 08:56:15 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-3597</guid>
+		<description><![CDATA[Neste memomento não conheço nenhum livro sobre AJAX e penso que o melhor local para obter informação é pesquisar na net. Existem milhares de sites sobre isso e com vários exemplos disponíveis para download e testar...]]></description>
+		<content:encoded><![CDATA[<p>Neste memomento não conheço nenhum livro sobre AJAX e penso que o melhor local para obter informação é pesquisar na net. Existem milhares de sites sobre isso e com vários exemplos disponíveis para download e testar&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Taranto</title>
+		<link>/ajax-e-usabilidade/#comment-3593</link>
+		<dc:creator><![CDATA[Taranto]]></dc:creator>
+		<pubDate>Fri, 31 Mar 2006 01:36:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-3593</guid>
+		<description><![CDATA[oi, eu estou no ultimo ano de sistemas de informação e vou fazer o meu TCC sobre AJAX gostaria de saber se vc sabe de algum livro ou artigo cientifico que possa nos ajudar no desenvolvimento do mesmo
+
+obrigado
+
+Ps. o artigo esta muito bom e tirou muitas das minhas duvidas.]]></description>
+		<content:encoded><![CDATA[<p>oi, eu estou no ultimo ano de sistemas de informação e vou fazer o meu TCC sobre AJAX gostaria de saber se vc sabe de algum livro ou artigo cientifico que possa nos ajudar no desenvolvimento do mesmo</p>
+<p>obrigado</p>
+<p>Ps. o artigo esta muito bom e tirou muitas das minhas duvidas.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Edgar</title>
+		<link>/ajax-e-usabilidade/#comment-3502</link>
+		<dc:creator><![CDATA[Edgar]]></dc:creator>
+		<pubDate>Thu, 16 Mar 2006 19:36:42 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-3502</guid>
+		<description><![CDATA[Alguém pode me ajudar a fazer uma página PHP(&quot;Content-type: image/png&quot;) que gera uma imagem carregar numa TAG &quot;img&quot; utilizando AJAX ?!!
+
+Hoje utilizo assim:
+
+ mas o problema tenho que dar &quot;refresh&quot; pra carregar outra imagem !!
+
+Grato pela ajuda...
+
+&lt;a href=&quot;mailto:edgarleite@edgarleite.com.br&quot; rel=&quot;nofollow&quot;&gt;Envie um email&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>Alguém pode me ajudar a fazer uma página PHP(&#8220;Content-type: image/png&#8221;) que gera uma imagem carregar numa TAG &#8220;img&#8221; utilizando AJAX ?!!</p>
+<p>Hoje utilizo assim:</p>
+<p> mas o problema tenho que dar &#8220;refresh&#8221; pra carregar outra imagem !!</p>
+<p>Grato pela ajuda&#8230;</p>
+<p><a href="mailto:edgarleite@edgarleite.com.br" rel="nofollow">Envie um email</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: robson.junior 2.0 &#187; Juntão de Ajax</title>
+		<link>/ajax-e-usabilidade/#comment-3233</link>
+		<dc:creator><![CDATA[robson.junior 2.0 &#187; Juntão de Ajax]]></dc:creator>
+		<pubDate>Thu, 12 Jan 2006 11:37:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-3233</guid>
+		<description><![CDATA[[...] AJAX e Usabilidade [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] AJAX e Usabilidade [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Paulo Rogério</title>
+		<link>/ajax-e-usabilidade/#comment-3023</link>
+		<dc:creator><![CDATA[Paulo Rogério]]></dc:creator>
+		<pubDate>Wed, 19 Oct 2005 16:41:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-3023</guid>
+		<description><![CDATA[Tenho usado o Ajax em um sistema meu de leilão.
+Tenho uma função que chamava uma página asp em 5 em 5 segundos.
+Eu chamava a página em um frame escondido e que carregava o meu div no frame principal.
+O site funcionou normalmente.
+Só que a barrinha do IE vivia carregando.
+Depois que apliquei o ajax no sistema ficou show de bola.
+Eu não via mais o refresh acontecer. e ficou muito legal.]]></description>
+		<content:encoded><![CDATA[<p>Tenho usado o Ajax em um sistema meu de leilão.<br />
+Tenho uma função que chamava uma página asp em 5 em 5 segundos.<br />
+Eu chamava a página em um frame escondido e que carregava o meu div no frame principal.<br />
+O site funcionou normalmente.<br />
+Só que a barrinha do IE vivia carregando.<br />
+Depois que apliquei o ajax no sistema ficou show de bola.<br />
+Eu não via mais o refresh acontecer. e ficou muito legal.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ricardo Augusto</title>
+		<link>/ajax-e-usabilidade/#comment-2945</link>
+		<dc:creator><![CDATA[Ricardo Augusto]]></dc:creator>
+		<pubDate>Thu, 01 Sep 2005 01:02:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-2945</guid>
+		<description><![CDATA[Aqui no Brasil essa moda ainda não pegou... mas já ouvimos falar dela...
+
+para os amigos de plantão: http://alexbosworth.backpackit.com/pub/67688 - sobre os erros comuns possíveis de acontecer quando desenvolvemos um ajax.]]></description>
+		<content:encoded><![CDATA[<p>Aqui no Brasil essa moda ainda não pegou&#8230; mas já ouvimos falar dela&#8230;</p>
+<p>para os amigos de plantão: <a href="http://alexbosworth.backpackit.com/pub/67688" rel="nofollow">http://alexbosworth.backpackit.com/pub/67688</a> &#8211; sobre os erros comuns possíveis de acontecer quando desenvolvemos um ajax.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Carlos Soler</title>
+		<link>/ajax-e-usabilidade/#comment-2913</link>
+		<dc:creator><![CDATA[Carlos Soler]]></dc:creator>
+		<pubDate>Tue, 09 Aug 2005 16:54:20 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-2913</guid>
+		<description><![CDATA[Excelente.]]></description>
+		<content:encoded><![CDATA[<p>Excelente.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/ajax-e-usabilidade/#comment-2882</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Wed, 27 Jul 2005 14:07:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-2882</guid>
+		<description><![CDATA[Bom artigo. Corrige só a frase &quot;não conceguem aceder &quot; por &quot;não conSeguem aceder&quot;]]></description>
+		<content:encoded><![CDATA[<p>Bom artigo. Corrige só a frase &#8220;não conceguem aceder &#8221; por &#8220;não conSeguem aceder&#8221;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Juan Gómez</title>
+		<link>/ajax-e-usabilidade/#comment-2879</link>
+		<dc:creator><![CDATA[Juan Gómez]]></dc:creator>
+		<pubDate>Wed, 27 Jul 2005 13:43:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-2879</guid>
+		<description><![CDATA[Ajax e Usabilidade VS AJAX y Usabilidad... volta Clara, estás perdoada!]]></description>
+		<content:encoded><![CDATA[<p>Ajax e Usabilidade VS AJAX y Usabilidad&#8230; volta Clara, estás perdoada!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/ajax-e-usabilidade/#comment-2878</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 26 Jul 2005 18:35:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-2878</guid>
+		<description><![CDATA[Estou a fazer algumas experiências com AJAX e irei disponibilizar tudo aqui no site. Fique atento! :)]]></description>
+		<content:encoded><![CDATA[<p>Estou a fazer algumas experiências com AJAX e irei disponibilizar tudo aqui no site. Fique atento! :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rodrigo Luiz Soares</title>
+		<link>/ajax-e-usabilidade/#comment-2877</link>
+		<dc:creator><![CDATA[Rodrigo Luiz Soares]]></dc:creator>
+		<pubDate>Tue, 26 Jul 2005 18:33:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-2877</guid>
+		<description><![CDATA[gostaria de ler um artigo com exemplos de códigos do ajax]]></description>
+		<content:encoded><![CDATA[<p>gostaria de ler um artigo com exemplos de códigos do ajax</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: salgadation</title>
+		<link>/ajax-e-usabilidade/#comment-2704</link>
+		<dc:creator><![CDATA[salgadation]]></dc:creator>
+		<pubDate>Fri, 08 Jul 2005 19:17:46 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=146#comment-2704</guid>
+		<description><![CDATA[USEful ;-)
+A ter em conta.]]></description>
+		<content:encoded><![CDATA[<p>USEful ;-)<br />
+A ter em conta.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

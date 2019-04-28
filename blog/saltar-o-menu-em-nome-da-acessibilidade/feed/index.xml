@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Saltar o menu: em nome da acessibilidade</title>
+	<atom:link href="/saltar-o-menu-em-nome-da-acessibilidade/feed/" rel="self" type="application/rss+xml" />
+	<link>/saltar-o-menu-em-nome-da-acessibilidade/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/saltar-o-menu-em-nome-da-acessibilidade/#comment-45867</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 11 Apr 2008 08:57:14 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=59#comment-45867</guid>
+		<description><![CDATA[Realmente já costumo ver alguns sites com o link &quot;saltar para os conteúdos&quot; visível no topo. Pode ser uma medida de acessibilidade não só para os utilizadores de screen readers, mas também para todos os outros, tal como dizes.
+
+Vou ver se começo a aplicar isso nos próximos projectos :)]]></description>
+		<content:encoded><![CDATA[<p>Realmente já costumo ver alguns sites com o link &#8220;saltar para os conteúdos&#8221; visível no topo. Pode ser uma medida de acessibilidade não só para os utilizadores de screen readers, mas também para todos os outros, tal como dizes.</p>
+<p>Vou ver se começo a aplicar isso nos próximos projectos :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: MAQ</title>
+		<link>/saltar-o-menu-em-nome-da-acessibilidade/#comment-44973</link>
+		<dc:creator><![CDATA[MAQ]]></dc:creator>
+		<pubDate>Sun, 06 Apr 2008 19:34:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=59#comment-44973</guid>
+		<description><![CDATA[Bem, o que eu posso comentar é que não se fazem mais links de saltos para a mesma página invisíveis, do jeito que o amigo sugere. Existem pessoas que enxergam e que não utilizam leitores de tela, mas que precisam de navegar por via do teclado. Alguns tetraplégicos que não se utilizam de mouses especiais, por exemplo. Assim, essas pessoas não tendo destreza manual suficiente para se utilizar do mouse, ou mesmo no uso de navegação por dispositivos móveis, como os celulares, toda a navegação é por via do teclado. Se os saltos ficarem invisíveis, só servirão para pessoas como eu, deficientes visuais que se utilizam de leitores de tela, para vocês écrã. Parabéns pelas dicas, a acessibilidade agradece! Ver algo em www.acessibilidadelegal.com/13-saltos.php
+ MAQ.]]></description>
+		<content:encoded><![CDATA[<p>Bem, o que eu posso comentar é que não se fazem mais links de saltos para a mesma página invisíveis, do jeito que o amigo sugere. Existem pessoas que enxergam e que não utilizam leitores de tela, mas que precisam de navegar por via do teclado. Alguns tetraplégicos que não se utilizam de mouses especiais, por exemplo. Assim, essas pessoas não tendo destreza manual suficiente para se utilizar do mouse, ou mesmo no uso de navegação por dispositivos móveis, como os celulares, toda a navegação é por via do teclado. Se os saltos ficarem invisíveis, só servirão para pessoas como eu, deficientes visuais que se utilizam de leitores de tela, para vocês écrã. Parabéns pelas dicas, a acessibilidade agradece! Ver algo em <a href="http://www.acessibilidadelegal.com/13-saltos.php" rel="nofollow">http://www.acessibilidadelegal.com/13-saltos.php</a><br />
+ MAQ.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

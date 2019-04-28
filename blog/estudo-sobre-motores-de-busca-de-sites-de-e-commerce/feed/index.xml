@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Estudo sobre motores de busca de sites de e-commerce</title>
+	<atom:link href="/estudo-sobre-motores-de-busca-de-sites-de-e-commerce/feed/" rel="self" type="application/rss+xml" />
+	<link>/estudo-sobre-motores-de-busca-de-sites-de-e-commerce/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/estudo-sobre-motores-de-busca-de-sites-de-e-commerce/#comment-2950</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 08 Sep 2005 16:47:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=167#comment-2950</guid>
+		<description><![CDATA[O artigo foi publicado pela 37signals e os seus conteúdos são da inteira responsabilidade da 37signals. Eu apenas disponibilizo o link. Não me parece que haja este artigo em português nem em outra lingua que não seja o inglês, e a tradução do mesmo sem autorização é considerado crime.
+
+Como tal, é-me impossível disponibilizar este artigo em português.]]></description>
+		<content:encoded><![CDATA[<p>O artigo foi publicado pela 37signals e os seus conteúdos são da inteira responsabilidade da 37signals. Eu apenas disponibilizo o link. Não me parece que haja este artigo em português nem em outra lingua que não seja o inglês, e a tradução do mesmo sem autorização é considerado crime.</p>
+<p>Como tal, é-me impossível disponibilizar este artigo em português.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Marcelo Pedro</title>
+		<link>/estudo-sobre-motores-de-busca-de-sites-de-e-commerce/#comment-2949</link>
+		<dc:creator><![CDATA[Marcelo Pedro]]></dc:creator>
+		<pubDate>Thu, 08 Sep 2005 16:29:12 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=167#comment-2949</guid>
+		<description><![CDATA[Você tem este artigo em português, pode ser que muitas pessoas que acessam o seu site não entendam inglês...]]></description>
+		<content:encoded><![CDATA[<p>Você tem este artigo em português, pode ser que muitas pessoas que acessam o seu site não entendam inglês&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/estudo-sobre-motores-de-busca-de-sites-de-e-commerce/#comment-2926</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Fri, 12 Aug 2005 11:51:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=167#comment-2926</guid>
+		<description><![CDATA[Mais uma vez um excelente artigo, mesmo que já tenha 2 anos e meio.]]></description>
+		<content:encoded><![CDATA[<p>Mais uma vez um excelente artigo, mesmo que já tenha 2 anos e meio.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

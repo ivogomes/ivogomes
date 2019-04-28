@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ajax &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/ajax/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Workshop de AJAX. Quem está interessado?</title>
+		<link>/workshop-de-ajax-quem-esta-interessado/</link>
+		<comments>/workshop-de-ajax-quem-esta-interessado/#comments</comments>
+		<pubDate>Mon, 14 Apr 2008 14:05:24 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[ajax]]></category>
+		<category><![CDATA[workshop]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=468</guid>
+		<description><![CDATA[<p>Aqui na <a href="http://www.log.pt/">log</a> estamos a pensar fazer um Workshop de AJAX e convidar um orador bastante conhecido nesta área para dar a formação (<a href="http://www.clearleft.com/about/jeremy/">Jeremy Keith</a>, autor dos livros "<a href="http://bulletproofajax.com/">Bulletproof AJAX</a>" e "<a href="http://domscripting.com/book/">DOM Scripting</a>"). </p>
+<p>O conteúdo <a rel="nofollow" href="/workshop-de-ajax-quem-esta-interessado/">Workshop de AJAX. Quem está interessado?</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/workshop-de-ajax-quem-esta-interessado/feed/</wfw:commentRss>
+		<slash:comments>18</slash:comments>
+		</item>
+		<item>
+		<title>Algumas novidades no blog</title>
+		<link>/algumas-novidades-no-blog/</link>
+		<comments>/algumas-novidades-no-blog/#comments</comments>
+		<pubDate>Mon, 07 Nov 2005 11:15:33 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[ajax]]></category>
+		<category><![CDATA[arquivo]]></category>
+		<category><![CDATA[flickr]]></category>
+		<category><![CDATA[fotos]]></category>
+		<category><![CDATA[sapo]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=186</guid>
+		<description><![CDATA[<p>Este fim-de-semana aproveitei para testar algumas coisas novas aqui no blog.<br />
+Mudei o meu sistema de gestão de fotos antigo e passei a usar a API do Flickr juntamente com o WordPress para gerir as minhas fotos.<br />
+Mudei também o sistema de arquivo do blog e passei a usar um novo sistema que usa tecnologia AJAX. Finalmente, adicionei uma pré-visualização automática dos comentários ao formulário de comentários aos artigos.</p>
+<p>O conteúdo <a rel="nofollow" href="/algumas-novidades-no-blog/">Algumas novidades no blog</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/algumas-novidades-no-blog/feed/</wfw:commentRss>
+		<slash:comments>14</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: SHiFT &#8211; dia 1</title>
+	<atom:link href="/shift-dia-1/feed/" rel="self" type="application/rss+xml" />
+	<link>/shift-dia-1/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/shift-dia-1/#comment-5400</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Sat, 30 Sep 2006 10:14:58 +0000</pubDate>
+		<guid isPermaLink="false">/shift-dia-1/#comment-5400</guid>
+		<description><![CDATA[A comunicação do Jared, por ser através de videoconferência, foi feita como se fosse uma entrevista. Foram feitas 5 ou 6 questões e durante meia hora ele foi respondendo sobre qual o papel e a importância da usabilidade e a simplicidade do design quando se trata de desenvolver algo para os utilizadores.]]></description>
+		<content:encoded><![CDATA[<p>A comunicação do Jared, por ser através de videoconferência, foi feita como se fosse uma entrevista. Foram feitas 5 ou 6 questões e durante meia hora ele foi respondendo sobre qual o papel e a importância da usabilidade e a simplicidade do design quando se trata de desenvolver algo para os utilizadores.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: adaptive path &#187; blog &#187; blog archive &#187; Stop Designing Products&#8230;</title>
+		<link>/shift-dia-1/#comment-5399</link>
+		<dc:creator><![CDATA[adaptive path &#187; blog &#187; blog archive &#187; Stop Designing Products&#8230;]]></dc:creator>
+		<pubDate>Sat, 30 Sep 2006 08:30:18 +0000</pubDate>
+		<guid isPermaLink="false">/shift-dia-1/#comment-5399</guid>
+		<description><![CDATA[[...] Read Ivo Gomes&#8217; write up of Day 1 (in Portuguese). [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Read Ivo Gomes&#8217; write up of Day 1 (in Portuguese). [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Eugenio Grigolon</title>
+		<link>/shift-dia-1/#comment-5398</link>
+		<dc:creator><![CDATA[Eugenio Grigolon]]></dc:creator>
+		<pubDate>Fri, 29 Sep 2006 11:13:02 +0000</pubDate>
+		<guid isPermaLink="false">/shift-dia-1/#comment-5398</guid>
+		<description><![CDATA[Poderia nos falar mais sobre a vídeoconferência de Jared Spool?
+
+O que houve durante a transmissão?]]></description>
+		<content:encoded><![CDATA[<p>Poderia nos falar mais sobre a vídeoconferência de Jared Spool?</p>
+<p>O que houve durante a transmissão?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

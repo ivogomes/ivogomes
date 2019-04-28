@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Refreshed</title>
+	<atom:link href="/refreshed/feed/" rel="self" type="application/rss+xml" />
+	<link>/refreshed/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: ivogomes.com &#187; Deixem de usar CSS Hacks!</title>
+		<link>/refreshed/#comment-2994</link>
+		<dc:creator><![CDATA[ivogomes.com &#187; Deixem de usar CSS Hacks!]]></dc:creator>
+		<pubDate>Fri, 14 Oct 2005 09:14:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2994</guid>
+		<description><![CDATA[[...] Durante os meus últimos projectos que envolveram webdesign (incluindo a remodelação do meu site) tentei ao máximo não usar Hacks. Em vez disso, há outras formas de dar a volta aos bugs do IE. Segundo esta técnica, o desenvolvimento do código CSS pode ser feito da seguinte forma: [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Durante os meus últimos projectos que envolveram webdesign (incluindo a remodelação do meu site) tentei ao máximo não usar Hacks. Em vez disso, há outras formas de dar a volta aos bugs do IE. Segundo esta técnica, o desenvolvimento do código CSS pode ser feito da seguinte forma: [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/refreshed/#comment-2985</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 10 Oct 2005 10:53:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2985</guid>
+		<description><![CDATA[Não sei que mais dicas posso dar em relação a este tema.
+A maior parte das funcionalidades que o AJAX permite fazer estão disponíveis gratuitamente na Internet sem necessidade de ter conhecimentos muito avançados de programação. No entanto, para um conhecimento mais aprofundado do uso do AJAX sugiro que comece a estudar programação Ruby (há quem diga que o Ruby é a linguagem de programação mais usável de sempre).
+
+Apesar de haver uma enorme euforia com a introdução do AJAX, não nos podemos esquecer que isso pode implicar vários problemas de usabilidade porque há situações em que o utilizador espera determinados comportamentos típicos do ambiente web e o AJAX pode tornar a experiência completamente diferente. Para tal é sempre necessário dar &quot;feedback&quot; ao utilizador do que está a acontecer.
+
+Num ambiente web, quando se clica em algo, espera-se que seja carregada uma nova página com as alterações. Com o AJAX não aconcete esse novo carregamento da página e como tal é necessário informar o utilizador que algo mudou em consequência do seu clique.
+
+Mais informações sobre Ruby no site &lt;a href=&quot;http://www.rubyonrails.org/&quot; rel=&quot;nofollow&quot;&gt;Ruby on Rails&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>Não sei que mais dicas posso dar em relação a este tema.<br />
+A maior parte das funcionalidades que o AJAX permite fazer estão disponíveis gratuitamente na Internet sem necessidade de ter conhecimentos muito avançados de programação. No entanto, para um conhecimento mais aprofundado do uso do AJAX sugiro que comece a estudar programação Ruby (há quem diga que o Ruby é a linguagem de programação mais usável de sempre).</p>
+<p>Apesar de haver uma enorme euforia com a introdução do AJAX, não nos podemos esquecer que isso pode implicar vários problemas de usabilidade porque há situações em que o utilizador espera determinados comportamentos típicos do ambiente web e o AJAX pode tornar a experiência completamente diferente. Para tal é sempre necessário dar &#8220;feedback&#8221; ao utilizador do que está a acontecer.</p>
+<p>Num ambiente web, quando se clica em algo, espera-se que seja carregada uma nova página com as alterações. Com o AJAX não aconcete esse novo carregamento da página e como tal é necessário informar o utilizador que algo mudou em consequência do seu clique.</p>
+<p>Mais informações sobre Ruby no site <a href="http://www.rubyonrails.org/" rel="nofollow">Ruby on Rails</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: wallace</title>
+		<link>/refreshed/#comment-2984</link>
+		<dc:creator><![CDATA[wallace]]></dc:creator>
+		<pubDate>Mon, 10 Oct 2005 10:12:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2984</guid>
+		<description><![CDATA[A dica que me dá é insuficiente.
+Não tem mais?
+Agradecia dicas variadas.]]></description>
+		<content:encoded><![CDATA[<p>A dica que me dá é insuficiente.<br />
+Não tem mais?<br />
+Agradecia dicas variadas.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/refreshed/#comment-2983</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 10 Oct 2005 09:12:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2983</guid>
+		<description><![CDATA[Para quem quiser ter um blog concebido em Ruby e AJAX, pode testar o &lt;a href=&quot;http://typo.leetsoft.com/trac/&quot; rel=&quot;nofollow&quot;&gt;Typo&lt;/a&gt;. Tem aqui um &lt;a href=&quot;http://www.leetsoft.com/rails/typo_ajax.mov&quot; rel=&quot;nofollow&quot;&gt;demo&lt;/a&gt;.]]></description>
+		<content:encoded><![CDATA[<p>Para quem quiser ter um blog concebido em Ruby e AJAX, pode testar o <a href="http://typo.leetsoft.com/trac/" rel="nofollow">Typo</a>. Tem aqui um <a href="http://www.leetsoft.com/rails/typo_ajax.mov" rel="nofollow">demo</a>.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Wallace</title>
+		<link>/refreshed/#comment-2982</link>
+		<dc:creator><![CDATA[Wallace]]></dc:creator>
+		<pubDate>Mon, 10 Oct 2005 08:44:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2982</guid>
+		<description><![CDATA[Muito bom!
+No bem caminho da vanguarda do AJAX!
+Bravo.]]></description>
+		<content:encoded><![CDATA[<p>Muito bom!<br />
+No bem caminho da vanguarda do AJAX!<br />
+Bravo.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Sérgio Jardim</title>
+		<link>/refreshed/#comment-2966</link>
+		<dc:creator><![CDATA[Sérgio Jardim]]></dc:creator>
+		<pubDate>Fri, 30 Sep 2005 19:13:42 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2966</guid>
+		<description><![CDATA[Ivo, você pode usar a borda superior para demarcar os acrônimos. Ou mesmo, uma cor de fundo bem clara, e com um ícone de informação (um ! por exemplo) à direita do termo.
+
+Apenas sugestão. Não vejo problemas neste aspecto  já que você já usa o cursos em forma de ?.
+
+Abraços.]]></description>
+		<content:encoded><![CDATA[<p>Ivo, você pode usar a borda superior para demarcar os acrônimos. Ou mesmo, uma cor de fundo bem clara, e com um ícone de informação (um ! por exemplo) à direita do termo.</p>
+<p>Apenas sugestão. Não vejo problemas neste aspecto  já que você já usa o cursos em forma de ?.</p>
+<p>Abraços.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/refreshed/#comment-2918</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 10 Aug 2005 18:14:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2918</guid>
+		<description><![CDATA[Eu penso que só o IE é que ainda não suporta pontilhados nem tracejados e substitui por uma linha contínua...]]></description>
+		<content:encoded><![CDATA[<p>Eu penso que só o IE é que ainda não suporta pontilhados nem tracejados e substitui por uma linha contínua&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/refreshed/#comment-2917</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Wed, 10 Aug 2005 18:11:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2917</guid>
+		<description><![CDATA[Então Gustavo, actualize a sua cópia do Firefox.
+Eu estou a usar a 1.0.6 para Mac OS X e o pontilhado fica pontilhado. Não fica contínuo.]]></description>
+		<content:encoded><![CDATA[<p>Então Gustavo, actualize a sua cópia do Firefox.<br />
+Eu estou a usar a 1.0.6 para Mac OS X e o pontilhado fica pontilhado. Não fica contínuo.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gustavo Moura</title>
+		<link>/refreshed/#comment-2916</link>
+		<dc:creator><![CDATA[Gustavo Moura]]></dc:creator>
+		<pubDate>Wed, 10 Aug 2005 17:48:08 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2916</guid>
+		<description><![CDATA[Então esté explicado, acessei o site com o FireFox, e o subilinhado ficou contínuo]]></description>
+		<content:encoded><![CDATA[<p>Então esté explicado, acessei o site com o FireFox, e o subilinhado ficou contínuo</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/refreshed/#comment-2915</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 10 Aug 2005 15:53:58 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2915</guid>
+		<description><![CDATA[Olá Gustavo!
+
+As palavras auto-explicativas, ou acrónimos e abreviações, têm o sublinhado pontilhado. Que browser usou para navegar no site?
+
+Este tipo de configuração já é usado em muitos outros sites. Quanto à confusão com os links, eles são sempre verdes enquanto que os acrónimos são da cor do texto com sublinhado pontilhado.
+
+Concordo que o utilizador que veja algo sublinhado associe a um link, mas ainda não encontrei melhor forma de dar destaque a este tipo de conteúdos.
+
+Alguma sugestão?]]></description>
+		<content:encoded><![CDATA[<p>Olá Gustavo!</p>
+<p>As palavras auto-explicativas, ou acrónimos e abreviações, têm o sublinhado pontilhado. Que browser usou para navegar no site?</p>
+<p>Este tipo de configuração já é usado em muitos outros sites. Quanto à confusão com os links, eles são sempre verdes enquanto que os acrónimos são da cor do texto com sublinhado pontilhado.</p>
+<p>Concordo que o utilizador que veja algo sublinhado associe a um link, mas ainda não encontrei melhor forma de dar destaque a este tipo de conteúdos.</p>
+<p>Alguma sugestão?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gustavo Moura</title>
+		<link>/refreshed/#comment-2914</link>
+		<dc:creator><![CDATA[Gustavo Moura]]></dc:creator>
+		<pubDate>Tue, 09 Aug 2005 17:27:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2914</guid>
+		<description><![CDATA[Oi Ivo,
+
+Seu novo layout ficou muito bom, também sou um grande &quot;fã&quot; do verde! Parabéns.
+
+Só uma coisa que me chamou atenção, quando vi as palavras auto-explicativas, com o cursor do mouse sobre aparece uma hint explicando o significado das mesmas, elas me pareceram links e cheguei a clicar em algumas e o comportamento que eu esperava do browser não aconteceu, só aí pude observar melhor e enteder a idéia do hint explicativo.
+
+Mas será que elas não estão muito parecidas com links? Você já tentou usar outra configuração? eu acho que derrepente um subilhado pontilhado poderia ser uma solução, fica a sugestão..  ;-)
+
+Abraços,
+
+Gustavo
+&lt;a href=&quot;http://www.gmoura.com&quot;/ rel=&quot;nofollow&quot;&gt;www.gmoura.com&lt;/a&gt;]]></description>
+		<content:encoded><![CDATA[<p>Oi Ivo,</p>
+<p>Seu novo layout ficou muito bom, também sou um grande &#8220;fã&#8221; do verde! Parabéns.</p>
+<p>Só uma coisa que me chamou atenção, quando vi as palavras auto-explicativas, com o cursor do mouse sobre aparece uma hint explicando o significado das mesmas, elas me pareceram links e cheguei a clicar em algumas e o comportamento que eu esperava do browser não aconteceu, só aí pude observar melhor e enteder a idéia do hint explicativo.</p>
+<p>Mas será que elas não estão muito parecidas com links? Você já tentou usar outra configuração? eu acho que derrepente um subilhado pontilhado poderia ser uma solução, fica a sugestão..  ;-)</p>
+<p>Abraços,</p>
+<p>Gustavo<br />
+<a href="http://www.gmoura.com/" rel="nofollow">http://www.gmoura.com/</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Pedro Custódio</title>
+		<link>/refreshed/#comment-2911</link>
+		<dc:creator><![CDATA[Pedro Custódio]]></dc:creator>
+		<pubDate>Mon, 08 Aug 2005 10:26:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2911</guid>
+		<description><![CDATA[5 estrelas IVO! 
+Está super porreiro o novo layout.
+;)]]></description>
+		<content:encoded><![CDATA[<p>5 estrelas IVO!<br />
+Está super porreiro o novo layout.<br />
+;)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/refreshed/#comment-2908</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Sun, 07 Aug 2005 10:56:21 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2908</guid>
+		<description><![CDATA[Jorge:
+No meu Safari (v2.0) as caixas de texto e os botões não são alteráveis e aparecem sempre com o aspecto default, tanto no meu site como no badboy.ro... Quanto às técnicas utilizadas, podes usar à vontade, não fui eu que as criei e elas são de uso livre porque estão disponíveis para download nos sites dos seus criadores.
+
+Marco:
+Conheço o Y!Q, mas optei por não utilizar porque já começava a ser código a mais. Sei de um blog que usa o LiveSearch + Y!Q, mas aqui optei por usar apenas o LiveSearch.
+
+A todos os outros:
+Obrigado por visitarem o site e pelos elogios!!]]></description>
+		<content:encoded><![CDATA[<p>Jorge:<br />
+No meu Safari (v2.0) as caixas de texto e os botões não são alteráveis e aparecem sempre com o aspecto default, tanto no meu site como no badboy.ro&#8230; Quanto às técnicas utilizadas, podes usar à vontade, não fui eu que as criei e elas são de uso livre porque estão disponíveis para download nos sites dos seus criadores.</p>
+<p>Marco:<br />
+Conheço o Y!Q, mas optei por não utilizar porque já começava a ser código a mais. Sei de um blog que usa o LiveSearch + Y!Q, mas aqui optei por usar apenas o LiveSearch.</p>
+<p>A todos os outros:<br />
+Obrigado por visitarem o site e pelos elogios!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: MarcoGomes</title>
+		<link>/refreshed/#comment-2906</link>
+		<dc:creator><![CDATA[MarcoGomes]]></dc:creator>
+		<pubDate>Sat, 06 Aug 2005 18:48:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2906</guid>
+		<description><![CDATA[Cara, como sempre sendo dos desbravadores de novos recursos da Web.
+
+Seu site está formidável, quem sabe algum dia eu implemente algumas ferramentas parecidas no meu website.
+
+Já conhece o Y!Q? trata-se de uma ferramenta de pesquisa contextual do Yahoo, muito legal.
+
+Parabéns, até mais.]]></description>
+		<content:encoded><![CDATA[<p>Cara, como sempre sendo dos desbravadores de novos recursos da Web.</p>
+<p>Seu site está formidável, quem sabe algum dia eu implemente algumas ferramentas parecidas no meu website.</p>
+<p>Já conhece o Y!Q? trata-se de uma ferramenta de pesquisa contextual do Yahoo, muito legal.</p>
+<p>Parabéns, até mais.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Jorge Laranjo</title>
+		<link>/refreshed/#comment-2905</link>
+		<dc:creator><![CDATA[Jorge Laranjo]]></dc:creator>
+		<pubDate>Sat, 06 Aug 2005 16:31:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=156#comment-2905</guid>
+		<description><![CDATA[Ah! Já agora, pelo menos no Safari que eu tenho (1.3 v312) o site http://www.badboy.ro/assets/articles/niceforms/niceforms.html funciona bem e o teu também parece estar a funcionar correctamente...]]></description>
+		<content:encoded><![CDATA[<p>Ah! Já agora, pelo menos no Safari que eu tenho (1.3 v312) o site <a href="http://www.badboy.ro/assets/articles/niceforms/niceforms.html" rel="nofollow">http://www.badboy.ro/assets/articles/niceforms/niceforms.html</a> funciona bem e o teu também parece estar a funcionar correctamente&#8230;</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

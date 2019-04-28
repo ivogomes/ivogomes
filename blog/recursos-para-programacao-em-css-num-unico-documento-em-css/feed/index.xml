@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Recursos para programação em CSS num único documento PDF</title>
+	<atom:link href="/recursos-para-programacao-em-css-num-unico-documento-em-css/feed/" rel="self" type="application/rss+xml" />
+	<link>/recursos-para-programacao-em-css-num-unico-documento-em-css/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/recursos-para-programacao-em-css-num-unico-documento-em-css/#comment-59</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Fri, 17 Sep 2004 14:59:08 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=83#comment-59</guid>
+		<description><![CDATA[Bem, todas não. 
+De certeza que há por aí algumas técnicas menos conhecidas. No entanto, se quiserem mais informações, basta lerem o post do autor do documento &lt;a href=&quot;http://www.veerle.duoh.com/comments.php?id=243_0_2_0_C&quot;&gt;aqui&lt;/a&gt;.]]></description>
+		<content:encoded><![CDATA[<p>Bem, todas não.<br />
+De certeza que há por aí algumas técnicas menos conhecidas. No entanto, se quiserem mais informações, basta lerem o post do autor do documento <a href="http://www.veerle.duoh.com/comments.php?id=243_0_2_0_C">aqui</a>.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Humberto Oliveira</title>
+		<link>/recursos-para-programacao-em-css-num-unico-documento-em-css/#comment-58</link>
+		<dc:creator><![CDATA[Humberto Oliveira]]></dc:creator>
+		<pubDate>Fri, 17 Sep 2004 13:32:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=83#comment-58</guid>
+		<description><![CDATA[Gostei da dica, bastante útil manter uma lista de todas estas técnicas.
+
+Parabéns pelo ótimo site Ivo.]]></description>
+		<content:encoded><![CDATA[<p>Gostei da dica, bastante útil manter uma lista de todas estas técnicas.</p>
+<p>Parabéns pelo ótimo site Ivo.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Sérgio</title>
+		<link>/recursos-para-programacao-em-css-num-unico-documento-em-css/#comment-57</link>
+		<dc:creator><![CDATA[Sérgio]]></dc:creator>
+		<pubDate>Fri, 17 Sep 2004 12:39:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=83#comment-57</guid>
+		<description><![CDATA[Todas? Mesmo todas? :)]]></description>
+		<content:encoded><![CDATA[<p>Todas? Mesmo todas? :)</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

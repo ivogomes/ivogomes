@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>shift06 &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/shift06/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>SHiFT &#8211; dia 2</title>
+		<link>/shift-dia-2/</link>
+		<comments>/shift-dia-2/#comments</comments>
+		<pubDate>Sat, 30 Sep 2006 11:13:24 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[shift06]]></category>
+
+		<guid isPermaLink="false">/shift-dia-2/</guid>
+		<description><![CDATA[<p>O segundo dia da <a href="http://www.shift.pt/">SHiFT</a>, a meu ver, não foi tão interessante como o primeiro. Houve algumas comunicações boas e achei original o facto de estar a decorrer um workshop sobre Ruby on Rails no lobby com o pessoal deitado em puffs :)</p>
+<p>O conteúdo <a rel="nofollow" href="/shift-dia-2/">SHiFT &#8211; dia 2</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift-dia-2/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>A SHiFT é já esta semana</title>
+		<link>/a-shift-e-ja-esta-semana/</link>
+		<comments>/a-shift-e-ja-esta-semana/#comments</comments>
+		<pubDate>Tue, 26 Sep 2006 07:15:10 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[applications]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[shift06]]></category>
+		<category><![CDATA[web]]></category>
+		<category><![CDATA[workshops]]></category>
+
+		<guid isPermaLink="false">/a-shift-e-ja-esta-semana/</guid>
+		<description><![CDATA[<p>A SHiFT (Social and Human Ideas For Technology) é uma conferência sobre tecnologia que irá decorrer esta semana, nos dias 28 e 29 de Setembro em Lisboa. Além da conferência, o dia 27 é dedicado a alguns WorkShops.</p>
+<p>O conteúdo <a rel="nofollow" href="/a-shift-e-ja-esta-semana/">A SHiFT é já esta semana</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/a-shift-e-ja-esta-semana/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>SHiFT</title>
+		<link>/shift/</link>
+		<comments>/shift/#comments</comments>
+		<pubDate>Fri, 21 Jul 2006 11:11:20 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[shift06]]></category>
+		<category><![CDATA[social]]></category>
+		<category><![CDATA[tecnologia]]></category>
+
+		<guid isPermaLink="false">/shift/</guid>
+		<description><![CDATA[<p>A SHiFT (Social and Human Ideas For Technology) é uma conferência sobre tecnologia que irá decorrer nos dias 28 e 29 de Setembro em Lisboa.<br />
+A SHiFT deseja ser uma celebração tecnológica, auxiliando na criação de um espaço de encontro, informal e descontraído, onde se possam cruzar indivíduos com diferentes experiências e vivências sobre tecnologia.</p>
+<p>O conteúdo <a rel="nofollow" href="/shift/">SHiFT</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>muscular &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/muscular/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Acessibilidade&#8230; na ponta do polegar</title>
+		<link>/acessibilidade-na-ponta-do-polegar/</link>
+		<comments>/acessibilidade-na-ponta-do-polegar/#comments</comments>
+		<pubDate>Sat, 29 Sep 2007 08:43:44 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[assistivos]]></category>
+		<category><![CDATA[atrofia]]></category>
+		<category><![CDATA[espinhal]]></category>
+		<category><![CDATA[muscular]]></category>
+
+		<guid isPermaLink="false">/acessibilidade-na-ponta-do-polegar/</guid>
+		<description><![CDATA[<p><a href="http://www.assistiveware.com/michael.php">Mike Phillips</a> é um jovem que gosta de jogar jogos de computador e é também um jornalista freelancer sobre tecnologia. Nada disto parece fora do normal, excepto o facto de que Mike sofre de <a href="http://www.fsma.org/portug/">Atrofia Muscular Espinhal (SMA)</a>. A SMA afecta os músculos voluntários para actividades tais como gatinhar, caminhar, o controlo do pescoço e a deglutição. Esta doença afecta inicialmente os músculos mais próximos ao tronco. Geralmente causam debilidade nas pernas e nos braços e alguma anormalidade nos movimentos da língua. A actividade intelectual não é afectada. Para além do mais observa-se que os doentes com SMA são inteligentes e sociáveis.</p>
+<p>O conteúdo <a rel="nofollow" href="/acessibilidade-na-ponta-do-polegar/">Acessibilidade&#8230; na ponta do polegar</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/acessibilidade-na-ponta-do-polegar/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

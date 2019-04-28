@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: UX Lx &#8211; Dia 1</title>
+	<atom:link href="/ux-lx-dia-1/feed/" rel="self" type="application/rss+xml" />
+	<link>/ux-lx-dia-1/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/ux-lx-dia-1/#comment-89152</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Thu, 13 May 2010 19:01:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1118#comment-89152</guid>
+		<description><![CDATA[Hello James, thanks for your comment. I&#039;m eager to see the slides for the second part of your workshop :)]]></description>
+		<content:encoded><![CDATA[<p>Hello James, thanks for your comment. I&#8217;m eager to see the slides for the second part of your workshop :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: James Page</title>
+		<link>/ux-lx-dia-1/#comment-89148</link>
+		<dc:creator><![CDATA[James Page]]></dc:creator>
+		<pubDate>Thu, 13 May 2010 16:50:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1118#comment-89148</guid>
+		<description><![CDATA[Hi, 
+
+As you missed the second workshop on &lt;a href=&quot;http://webnographer.com&quot;/ rel=&quot;nofollow&quot;&gt; Webnographer&lt;/a&gt;, We will post our slidedeck from the 2nd workshops online, and if you have any questions just get back to us. 
+
+All the best 
+
+James]]></description>
+		<content:encoded><![CDATA[<p>Hi, </p>
+<p>As you missed the second workshop on <a href="http://webnographer.com/" rel="nofollow"> Webnographer</a>, We will post our slidedeck from the 2nd workshops online, and if you have any questions just get back to us. </p>
+<p>All the best </p>
+<p>James</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Rosa Cunha</title>
+		<link>/ux-lx-dia-1/#comment-89145</link>
+		<dc:creator><![CDATA[Rosa Cunha]]></dc:creator>
+		<pubDate>Thu, 13 May 2010 14:19:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1118#comment-89145</guid>
+		<description><![CDATA[Amanhã, lá estarei! :) :)]]></description>
+		<content:encoded><![CDATA[<p>Amanhã, lá estarei! :) :)</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

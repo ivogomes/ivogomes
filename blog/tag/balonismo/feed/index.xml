@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>balonismo &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/balonismo/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Voando pelo Alentejo</title>
+		<link>/voando-pelo-alentejo/</link>
+		<comments>/voando-pelo-alentejo/#comments</comments>
+		<pubDate>Wed, 15 Sep 2004 20:36:23 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[alentejo]]></category>
+		<category><![CDATA[aniversário]]></category>
+		<category><![CDATA[balonismo]]></category>
+		<category><![CDATA[formação]]></category>
+		<category><![CDATA[fotos]]></category>
+		<category><![CDATA[log]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=81</guid>
+		<description><![CDATA[<p>Durante os últimos dois dias (13 e 14 de Setembro), para festejar o aniversário da empresa (log), fizémos uma viagem até Arraiolos, no Alentejo. No primeiro dia tivémos uma acção de formação sobre a melhor forma de lidarmos com os clientes, excelentemente leccionada pela nossa colega Ivone Silva. Eu aproveitei para dar uma breve formação [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/voando-pelo-alentejo/">Voando pelo Alentejo</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/voando-pelo-alentejo/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

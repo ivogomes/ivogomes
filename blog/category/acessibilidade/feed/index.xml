@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Acessibilidade &#8211; IvoGomes.com</title>
+	<atom:link href="/category/acessibilidade/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>PT MagicContact: uma aplicação para utilizadores com mobilidade reduzida</title>
+		<link>/pt-magiccontact-uma-aplicacao-para-utilizadores-com-mobilidade-reduzida/</link>
+		<comments>/pt-magiccontact-uma-aplicacao-para-utilizadores-com-mobilidade-reduzida/#respond</comments>
+		<pubDate>Fri, 20 Nov 2015 18:02:30 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">/?p=1545</guid>
+		<description><![CDATA[<p>Já imaginaram o que seria se apenas conseguissem usar o telemóvel para fazer chamadas de voz, limitadas a apenas alguns contactos? E se não conseguissem mesmo usá-lo e dependessem de terceiros para executar as tarefas básicas do dia-a-dia e precisassem de os contactar numa situação urgente?</p>
+<p>Nos últimos dois anos tenho estado a colaborar com a <a href="http://www.fundacao.telecom.pt/">Fundação PT</a> e em parceria com a <a href="http://www.magickey.ipg.pt/">MagicKey</a> no desenvolvimento do <a href="http://ptmagiccontact.pt/">PT MagicContact</a>, uma aplicação que permite o acesso a funcionalidades básicas do telemóvel para pessoas com mobilidade reduzida.</p>
+<p>O conteúdo <a rel="nofollow" href="/pt-magiccontact-uma-aplicacao-para-utilizadores-com-mobilidade-reduzida/">PT MagicContact: uma aplicação para utilizadores com mobilidade reduzida</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/pt-magiccontact-uma-aplicacao-para-utilizadores-com-mobilidade-reduzida/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Navegação sem listas: um teste de acessibilidade</title>
+		<link>/navegacao-sem-listas-um-teste-de-acessibilidade/</link>
+		<comments>/navegacao-sem-listas-um-teste-de-acessibilidade/#respond</comments>
+		<pubDate>Fri, 06 Nov 2015 11:00:55 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+
+		<guid isPermaLink="false">/?p=1466</guid>
+		<description><![CDATA[<p>Durante anos o markup dos links de navegação tem sido sempre feito com recurso a listas. Será que existem soluções melhores a nível de acessibilidade?</p>
+<p>O conteúdo <a rel="nofollow" href="/navegacao-sem-listas-um-teste-de-acessibilidade/">Navegação sem listas: um teste de acessibilidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/navegacao-sem-listas-um-teste-de-acessibilidade/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>HTML5 e Acessibilidade</title>
+		<link>/html5-e-acessibilidade/</link>
+		<comments>/html5-e-acessibilidade/#respond</comments>
+		<pubDate>Thu, 08 May 2014 10:54:00 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">/?p=1446</guid>
+		<description><![CDATA[<p>Desde a chegada do HTML5, que a web está a tornar-se um pouco mais acessível, quase sem o notarmos. O facto de se usar simplesmente as tags &#60;header&#62; e &#60;footer&#62; para os cabeçalhos e rodapés e a tag &#60;nav&#62; para os menus acaba por ser uma grande ajuda para quem usa sistemas assistivos para navegar na [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/html5-e-acessibilidade/">HTML5 e Acessibilidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/html5-e-acessibilidade/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Seminário e-Acessibilidade 2014</title>
+		<link>/seminario-e-acessibilidade-2014/</link>
+		<comments>/seminario-e-acessibilidade-2014/#comments</comments>
+		<pubDate>Tue, 01 Apr 2014 13:42:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">/?p=1422</guid>
+		<description><![CDATA[<p>Este fim-de-semana, dia 5 de Abril, vai decorrer o Seminário de e-Acessibilidade 2014 na Lousã, uma iniciativa da SUPERA (Sociedade Portuguesa de Engenharia de Reabilitação e Acessibilidade).</p>
+<p>Vou participar com uma pequena talk de 20 minutos sobre o impacto da acessibilidade nas empresas, mas mais virado, obviamente, para a acessibilidade web.</p>
+<p>O conteúdo <a rel="nofollow" href="/seminario-e-acessibilidade-2014/">Seminário e-Acessibilidade 2014</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/seminario-e-acessibilidade-2014/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Sobre a acessibilidade do portal do Governo</title>
+		<link>/sobre-a-acessibilidade-do-portal-do-governo/</link>
+		<comments>/sobre-a-acessibilidade-do-portal-do-governo/#comments</comments>
+		<pubDate>Fri, 13 Jan 2012 17:11:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1335</guid>
+		<description><![CDATA[<p>Foi ontem publicado um artigo no jornal Público a apontar a falta de acessibilidade do website do Portal do Governo. Nesse artigo, são citadas as opiniões de alguns especialistas, incluindo eu próprio.</p>
+<p>Apesar do artigo apontar apenas os problemas identificados e não apontar sugestões de melhoria, é natural que alguns leitores achem que estamos apenas a "mandar abaixo" e a "dizer mal" em vez de estarmos calados no nosso canto.</p>
+<p>Pessoalmente, custa-me que o artigo tenha apenas os pontos negativos e custa-me estar associado ao grupo de "velhos do restelo" que só dizem mal de tudo e de todos.</p>
+<p>O conteúdo <a rel="nofollow" href="/sobre-a-acessibilidade-do-portal-do-governo/">Sobre a acessibilidade do portal do Governo</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sobre-a-acessibilidade-do-portal-do-governo/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+		</item>
+		<item>
+		<title>Dicas de HTML e CSS para melhorar a Acessibilidade dos vossos websites</title>
+		<link>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/</link>
+		<comments>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/#comments</comments>
+		<pubDate>Mon, 14 Nov 2011 13:56:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1329</guid>
+		<description><![CDATA[<p>Foi este o título da minha talk no <a href="http://www.codebits.eu/">Codebits</a> deste ano. E <a href="http://www.slideshare.net/ivogomes/htmlcss-tips-to-improve-the-accessibility-of-your-websites">aqui estão os slides</a> para quem estiver interessado :)</p>
+<p><object id="__sse10153631" width="510" height="426"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=html-csstipsaccessibility-111114074426-phpapp01&#038;rel=0&#038;stripped_title=htmlcss-tips-to-improve-the-accessibility-of-your-websites&#038;userName=ivogomes" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse10153631" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=html-csstipsaccessibility-111114074426-phpapp01&#038;rel=0&#038;stripped_title=htmlcss-tips-to-improve-the-accessibility-of-your-websites&#038;userName=ivogomes" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="510" height="426"></embed></object></p>
+<p>O conteúdo <a rel="nofollow" href="/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/">Dicas de HTML e CSS para melhorar a Acessibilidade dos vossos websites</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/dicas-de-html-e-css-para-melhorar-a-acessibilidade-dos-vossos-websites/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Sobre a Acessibilidade: quantas pessoas com necessidades especiais há em Portugal?</title>
+		<link>/sobre-a-acessibilidade-quantas-pessoas-com-necessidades-especiais-ha-em-portugal/</link>
+		<comments>/sobre-a-acessibilidade-quantas-pessoas-com-necessidades-especiais-ha-em-portugal/#comments</comments>
+		<pubDate>Thu, 14 Jan 2010 11:14:07 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Project 52]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=984</guid>
+		<description><![CDATA[<p>Os responsáveis pelos sites de comércio electrónico e os comerciais dos grandes portais passam bastante tempo a olhar para as estatísticas dos seus sites. Tentam ver quem são os seus visitantes, quais os produtos em que estão interessados, e como chegam a esses produtos. É costume ouvir estes responsáveis dizer que não precisam de se [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/sobre-a-acessibilidade-quantas-pessoas-com-necessidades-especiais-ha-em-portugal/">Sobre a Acessibilidade: quantas pessoas com necessidades especiais há em Portugal?</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sobre-a-acessibilidade-quantas-pessoas-com-necessidades-especiais-ha-em-portugal/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Nova homepage do SAPO</title>
+		<link>/nova-homepage-do-sapo/</link>
+		<comments>/nova-homepage-do-sapo/#comments</comments>
+		<pubDate>Fri, 11 Dec 2009 17:40:16 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=963</guid>
+		<description><![CDATA[<p>Os últimos meses têm sido de trabalho intensivo para preparar o lançamento da<a href="http://www.sapo.pt/"> nova homepage do SAPO</a> (entre "n" outros projectos que foram desenvolvidos em paralelo).</p>
+<p>Para a nova homepage desenvolvemos várias metodologias de usabilidade cujos resultados podem ser consultados em detalhe no blog oficial da Homepage:</p>
+<ul>
+<li><a href="http://homepage.blogs.sapo.pt/2216.html">Estatísticas, Inquéritos, Brainstorming, Testes de Usabilidade e Eyetracking</a></li>
+<li><a href="http://homepage.blogs.sapo.pt/2476.html">Wireframes</a></li>
+<li><a href="http://homepage.blogs.sapo.pt/2628.html">Versão Beta e os resultados dos inquéritos aos utilizadores</a></li>
+</ul>
+<p>O conteúdo <a rel="nofollow" href="/nova-homepage-do-sapo/">Nova homepage do SAPO</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/nova-homepage-do-sapo/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Encontro Internacional de Tecnologia e Inovação para Pessoas com Deficiência</title>
+		<link>/encontro-internacional-de-tecnologia-e-inovacao-para-pessoas-com-deficiencia/</link>
+		<comments>/encontro-internacional-de-tecnologia-e-inovacao-para-pessoas-com-deficiencia/#respond</comments>
+		<pubDate>Wed, 02 Dec 2009 15:16:38 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=937</guid>
+		<description><![CDATA[<p>Para os visitantes brasileiros, foi-me pedido para divulgar o Encontro Internacional de Tecnologia e Inovação para Pessoas com Deficiência que irá decorrer entre 8 e 10 de Dezembro em São Paulo, Brasil.</p>
+<p>O conteúdo <a rel="nofollow" href="/encontro-internacional-de-tecnologia-e-inovacao-para-pessoas-com-deficiencia/">Encontro Internacional de Tecnologia e Inovação para Pessoas com Deficiência</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/encontro-internacional-de-tecnologia-e-inovacao-para-pessoas-com-deficiencia/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Relatório Acessibilidade Web &#8211; Ponto de Situação das Maiores Empresas Portuguesas</title>
+		<link>/relatorio-acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/</link>
+		<comments>/relatorio-acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/#comments</comments>
+		<pubDate>Mon, 21 Sep 2009 14:56:50 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=920</guid>
+		<description><![CDATA[<p>No passado dia 17 de Setembro foi apresentado um relatório sobre a acessibilidade web dos websites das 1000 maiores empresas portuguesas. O estudo foi realizado pelo Grupo de Trabalho Permanente "Negócio Electrónico" da <a href="http://www.apdsi.pt/">APDSI</a>.</p>
+<p>Durante a apresentação foram mostrados alguns dados bastante interessantes.</p>
+<p class="download"><a href='/wp-content/uploads/2009/09/Acessibilidade_web_APDSI.pdf'>Relatório Acessibilidade Web da APDSI</a> (PDF - 672KB)</p>
+<p>O conteúdo <a rel="nofollow" href="/relatorio-acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/">Relatório Acessibilidade Web &#8211; Ponto de Situação das Maiores Empresas Portuguesas</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/relatorio-acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Conferência &#8220;Accessibility 2.0&#8221;</title>
+		<link>/conferencia-accessibility-2-0/</link>
+		<comments>/conferencia-accessibility-2-0/#respond</comments>
+		<pubDate>Fri, 18 Sep 2009 09:28:27 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=911</guid>
+		<description><![CDATA[<p>No próximo dia 22 de Setembro, em Londres vai decorrer a segunda edição da conferência sobre acessibilidade: Accessibility 2.0. Esta é uma conferência para todos os profissionais web que querem criar aplicações e sites que funcionem para toda a gente e em todas as circunstâncias. Os participantes são convidados a desenvolver "hacks" para tornar acessíveis [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/conferencia-accessibility-2-0/">Conferência &#8220;Accessibility 2.0&#8221;</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/conferencia-accessibility-2-0/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Acessibilidade Web &#8211; ponto de situação das maiores empresas portuguesas</title>
+		<link>/acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/</link>
+		<comments>/acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/#comments</comments>
+		<pubDate>Tue, 15 Sep 2009 13:57:58 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=898</guid>
+		<description><![CDATA[<p>A <a href="http://www.apdsi.pt/">APDSI</a> (Associação para a Promoção e Desenvolvimento da Sociedade da Informação) irá fazer a apresentação pública de um <a href="http://www.apdsi.pt/main.php?srvacr=pages_167&#038;mode=public&#038;template=frontoffice&#038;layout=layout&#038;id_page=271">relatório sobre a Acessibilidade Web em Portugal</a>, com ênfase nos serviços web das maiores empresas portuguesas.</p>
+<p>O conteúdo <a rel="nofollow" href="/acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/">Acessibilidade Web &#8211; ponto de situação das maiores empresas portuguesas</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/acessibilidade-web-ponto-de-situacao-das-maiores-empresas-portuguesas/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Apresentação: Acessibilidade na Web</title>
+		<link>/apresentacao-acessibilidade-na-web/</link>
+		<comments>/apresentacao-acessibilidade-na-web/#comments</comments>
+		<pubDate>Thu, 19 Mar 2009 09:00:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=777</guid>
+		<description><![CDATA[<p>Já está disponível online (slides e vídeo) a apresentação que fiz no <a href="/sapo-sessions/">SAPO Sessions #1</a> intitulada: <strong>Acessibilidade na Web</strong>.</p>
+<p><img src="http://fotos.sapo.pt/vSiuZ90htSBFzZg8NAwi/x435" alt="Acessibilidade na Web" /></p>
+<p>Basicamente falei um pouco sobre o que é a acessibilidade, a quem se destina e dei alguns exemplos dos principais problemas de acessibilidade que costumamos encontrar e como os resolver. Nada de muito aprofundado, foi apenas para dar a ideia de que não é difícil fazer um website acessível, basta ter atenção apenas a alguns detalhes e ter o mínimo de preocupação em criar HTML limpo e semântico.</p>
+<p>O conteúdo <a rel="nofollow" href="/apresentacao-acessibilidade-na-web/">Apresentação: Acessibilidade na Web</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/apresentacao-acessibilidade-na-web/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>SAPO Sessions</title>
+		<link>/sapo-sessions/</link>
+		<comments>/sapo-sessions/#comments</comments>
+		<pubDate>Thu, 05 Mar 2009 11:19:36 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[sapo]]></category>
+		<category><![CDATA[sessions]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=755</guid>
+		<description><![CDATA[<p>Ontem teve início a primeira edição do SAPO Sessions. Na primeira e na terceira Quarta-feira de cada mês o <a href="http://www.sapo.pt/">SAPO</a> organizará um destes eventos, que consiste numa manhã com várias apresentações dentro de um mesmo tema.</p>
+<p>O conteúdo <a rel="nofollow" href="/sapo-sessions/">SAPO Sessions</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sapo-sessions/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Novo website da Direcção-Geral de Arquivos</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/</link>
+		<comments>/novo-website-da-direccao-geral-de-arquivos/#comments</comments>
+		<pubDate>Tue, 23 Dec 2008 11:23:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[dgarq]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682</guid>
+		<description><![CDATA[<p>Nos últimos meses estive a trabalhar na remodelação do website da Direcção-Geral de Arquivos. Os requisitos principais para a remodelação prendiam-se com a necessidade de ter um website mais acessível (nível de acessibilidade AA) e mais leve (evitando o uso de imagens pesadas e elementos gráficos desnecessários). Todos estes requisitos vieram do próprio cliente que explicitou muito bem todos estes pontos.</p>
+<p>A Direcção-Geral de Arquivos (antigo IAN/TT - Instituto dos Arquivos Nacionais / Torre do Tombo), devido às mudanças que houveram na instituição, passou a estar separada da Torre do Tombo. Assim, hoje temos a Direcção-Geral de Arquivos e o Arquivo Nacional da Torre do Tombo. Desta forma, teríamos que desenvolver dois websites distintos, mas mantendo a mesma linha gráfica.</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-da-direccao-geral-de-arquivos/">Novo website da Direcção-Geral de Arquivos</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-da-direccao-geral-de-arquivos/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

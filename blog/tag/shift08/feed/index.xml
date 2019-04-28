@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>shift08 &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/shift08/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>SHiFT&#8217;08 &#8211; Dia 3</title>
+		<link>/shift08-dia-3/</link>
+		<comments>/shift08-dia-3/#respond</comments>
+		<pubDate>Fri, 17 Oct 2008 11:00:48 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[shift08]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=606</guid>
+		<description><![CDATA[<p>Hoje, tal como ontem vai ser um dia dedicado a apresentações. O dia de ontem correu bastante bem (principalmente da parte da tarde) e acabou em beleza com a apresentação do Andy Budd sobre "<a href="http://shift.pt/session/show/14">Designing the User Experience Curve</a>".</p>
+<p>Mais uma vez, tal como nos outros dois dias, vou tentar fazer um pequeno seguimento do evento via <a href="http://www.twitter.com/ivogomes">Twitter</a>.</p>
+<p>O conteúdo <a rel="nofollow" href="/shift08-dia-3/">SHiFT&#8217;08 &#8211; Dia 3</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift08-dia-3/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>SHiFT&#8217;08 &#8211; Dia 2</title>
+		<link>/shift08-dia-2/</link>
+		<comments>/shift08-dia-2/#respond</comments>
+		<pubDate>Thu, 16 Oct 2008 11:54:16 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[shift08]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=601</guid>
+		<description><![CDATA[<p><a href="http://www.shift.pt/" title="SHiFT - Social and Human Ideas For Technology"><img src="http://shift.pt/images/banners/180x150.jpg" border="0" alt="SHiFT - Social and Human Ideas For Technology" class="imgartigo"/></a>Hoje e amanhã vão ser dias dedicados a apresentações sobre vários temas. Tal como fiz ontem, vou tentar fazer o seguimento do evento através do <a href="http://www.twitter.com/ivogomes">Twitter</a>. Assim, se estiverem interessados em seguir, podem fazê-lo <a href="http://www.twitter.com/ivogomes">aqui</a>. :)</p>
+<p>O conteúdo <a rel="nofollow" href="/shift08-dia-2/">SHiFT&#8217;08 &#8211; Dia 2</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift08-dia-2/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>SHiFT&#8217;08 &#8211; Dia 1</title>
+		<link>/shift-08-dia-1/</link>
+		<comments>/shift-08-dia-1/#respond</comments>
+		<pubDate>Wed, 15 Oct 2008 10:36:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[shift]]></category>
+		<category><![CDATA[shift08]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=598</guid>
+		<description><![CDATA[<p><a href="http://www.shift.pt/" title="SHiFT - Social and Human Ideas For Technology"><img src="http://shift.pt/images/banners/300x100.jpg" border="0" alt="SHiFT - Social and Human Ideas For Technology" /></a></p>
+<p>Vou tentar fazer um acompanhamento em directo da SHiFT através do <a href="http://www.twitter.com/ivogomes">Twitter</a>.</p>
+<p>Se quiserem acompanhar, é só seguir <a href="http://www.twitter.com/ivogomes">aqui</a>. :)</p>
+<p>O conteúdo <a rel="nofollow" href="/shift-08-dia-1/">SHiFT&#8217;08 &#8211; Dia 1</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/shift-08-dia-1/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

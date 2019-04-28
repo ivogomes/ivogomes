@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Emprego em HCI (Human Computer Interaction)</title>
+	<atom:link href="/emprego-em-hci-human-computer-interaction/feed/" rel="self" type="application/rss+xml" />
+	<link>/emprego-em-hci-human-computer-interaction/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Rosa Cunha</title>
+		<link>/emprego-em-hci-human-computer-interaction/#comment-33421</link>
+		<dc:creator><![CDATA[Rosa Cunha]]></dc:creator>
+		<pubDate>Wed, 31 Oct 2007 13:51:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=70#comment-33421</guid>
+		<description><![CDATA[Neste momento, conhecem alguma oportunidade de emprego ou mesmo de estágio nesta área?]]></description>
+		<content:encoded><![CDATA[<p>Neste momento, conhecem alguma oportunidade de emprego ou mesmo de estágio nesta área?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

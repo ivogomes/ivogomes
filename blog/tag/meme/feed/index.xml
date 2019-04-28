@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>meme &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/meme/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Book meme</title>
+		<link>/book-meme/</link>
+		<comments>/book-meme/#comments</comments>
+		<pubDate>Wed, 12 Nov 2008 11:15:00 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[meme]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=635</guid>
+		<description><![CDATA[<blockquote><p>Normalmente, um consumidor decide comprar um sofá em exposição considerando apenas o aspecto estético e, eventualmente, o conforto que experimenta quando se senta nele durante uns segundos.</p></blockquote>
+<p>— Rebelo, F. (2004). Ergonomia no dia a dia. Lisboa: Ed. Sílabo. ISBN: 9726183286</p>
+<ol>
+<li>Pega no livro mais próximo.</li>
+<li>Abre na página 56.</li>
+<li>Procura a quinta frase.</li>
+<li>Coloca um post no teu blog com o texto e seguido destas instruções.</li>
+<li>Não escolhas o teu livro favorito, o mais cool ou o mais intelectual: apenas o mais PRÓXIMO.</li>
+</ol>
+<p>O conteúdo <a rel="nofollow" href="/book-meme/">Book meme</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/book-meme/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Webdesign &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/webdesign/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>SAPO Sessions</title>
+		<link>/sapo-sessions/</link>
+		<comments>/sapo-sessions/#comments</comments>
+		<pubDate>Thu, 05 Mar 2009 11:19:36 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[sapo]]></category>
+		<category><![CDATA[sessions]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=755</guid>
+		<description><![CDATA[<p>Ontem teve início a primeira edição do SAPO Sessions. Na primeira e na terceira Quarta-feira de cada mês o <a href="http://www.sapo.pt/">SAPO</a> organizará um destes eventos, que consiste numa manhã com várias apresentações dentro de um mesmo tema.</p>
+<p>O conteúdo <a rel="nofollow" href="/sapo-sessions/">SAPO Sessions</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sapo-sessions/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Novo website da Direcção-Geral de Arquivos</title>
+		<link>/novo-website-da-direccao-geral-de-arquivos/</link>
+		<comments>/novo-website-da-direccao-geral-de-arquivos/#comments</comments>
+		<pubDate>Tue, 23 Dec 2008 11:23:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[dgarq]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=682</guid>
+		<description><![CDATA[<p>Nos últimos meses estive a trabalhar na remodelação do website da Direcção-Geral de Arquivos. Os requisitos principais para a remodelação prendiam-se com a necessidade de ter um website mais acessível (nível de acessibilidade AA) e mais leve (evitando o uso de imagens pesadas e elementos gráficos desnecessários). Todos estes requisitos vieram do próprio cliente que explicitou muito bem todos estes pontos.</p>
+<p>A Direcção-Geral de Arquivos (antigo IAN/TT - Instituto dos Arquivos Nacionais / Torre do Tombo), devido às mudanças que houveram na instituição, passou a estar separada da Torre do Tombo. Assim, hoje temos a Direcção-Geral de Arquivos e o Arquivo Nacional da Torre do Tombo. Desta forma, teríamos que desenvolver dois websites distintos, mas mantendo a mesma linha gráfica.</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-da-direccao-geral-de-arquivos/">Novo website da Direcção-Geral de Arquivos</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-da-direccao-geral-de-arquivos/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Novo website do Instituto de Meteorologia</title>
+		<link>/novo-website-do-instituto-de-meteorologia/</link>
+		<comments>/novo-website-do-instituto-de-meteorologia/#comments</comments>
+		<pubDate>Fri, 11 Jul 2008 14:43:42 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=492</guid>
+		<description><![CDATA[<p>Há uns meses atrás fomos convidados para apresentar uma proposta para a remodelação do novo website do Instituto de Meteorologia. Infelizmente a nossa proposta não ganhou.</p>
+<p>Hoje vejo que já têm um novo site, mais bonito e mais "clean" que o anterior (em termos visuais). No entanto há alguns aspectos menos positivos nesta nova versão.</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-do-instituto-de-meteorologia/">Novo website do Instituto de Meteorologia</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-do-instituto-de-meteorologia/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>myTVShows 3: As Novidades</title>
+		<link>/mytvshows-3-as-novidades/</link>
+		<comments>/mytvshows-3-as-novidades/#comments</comments>
+		<pubDate>Thu, 05 Jun 2008 14:58:40 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Projectos]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[gestão]]></category>
+		<category><![CDATA[mytvshows]]></category>
+		<category><![CDATA[séries]]></category>
+		<category><![CDATA[tv]]></category>
+
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=475</guid>
+		<description><![CDATA[<p><a href="http://www.mytvshows.org/"><img class="imgartigo alignnone size-full wp-image-476" title="myTVShows" src="/wp-content/uploads/2008/06/mytvshows.png" alt="" width="200" height="100" /></a>Após alguns meses de desenvolvimento da nova versão do <a title="myTVShows" href="http://www.mytvshows.org/">myTVShows</a>, chegou a hora de a disponibilizar publicamente. Esta versão já tinha sido divulgada mas apenas para alguns utilizadores, de modo a poder ter algum feedback sobre as novidades, bugs, novas funcionalidades, etc...</p>
+<p>Esta nova versão ainda está longe de ser finalizada. Ainda há algumas funcionalidades em processo de desenvovimento, outras ainda só no papel. Uma vez que foram introduzidas muitas novas funcionalidades, é possível que ainda hajam alguns bugs (apesar de termos feito muitos testes durante a fase em que a aplicação esteve disponível apenas a um conjunto restrito de pessoas).</p>
+<p>O conteúdo <a rel="nofollow" href="/mytvshows-3-as-novidades/">myTVShows 3: As Novidades</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/mytvshows-3-as-novidades/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Emprego: procura-se webdesigner estagiário e outros&#8230;</title>
+		<link>/emprego-procura-se-webdesigner-estagiario-e-outros/</link>
+		<comments>/emprego-procura-se-webdesigner-estagiario-e-outros/#comments</comments>
+		<pubDate>Thu, 21 Feb 2008 12:53:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[emprego]]></category>
+		<category><![CDATA[estágio]]></category>
+		<category><![CDATA[log]]></category>
+
+		<guid isPermaLink="false">/emprego-procura-se-webdesigner-estagiario-e-outros/</guid>
+		<description><![CDATA[<p>Na <a href="http://www.log.pt/">log</a> estamos à procura de um <a href="http://www.log.pt/emprego/estagio-webdesign">webdesigner (estagiário)</a> que esteja interessado em juntar-se a mim no departamento de Usabilidade e Acessibilidade. Para tal basta ter alguma experiência em XHTML e CSS e ter interesse pela usabilidade e acessibilidade e pelo desenvolvimento web segundo os webstandards.</p>
+<p>Infelizmente para já apenas podemos abrir esta vaga em forma de estágio, mas existe uma boa possibilidade de integração futura na empresa :)</p>
+<p>Se estão interessados ou se quiserem saber um pouco mais, podem ver aqui o anúncio: <a href="http://www.log.pt/emprego/estagio-webdesign">Estágio em Webdesign na log</a>.</p>
+<p>O conteúdo <a rel="nofollow" href="/emprego-procura-se-webdesigner-estagiario-e-outros/">Emprego: procura-se webdesigner estagiário e outros&#8230;</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/emprego-procura-se-webdesigner-estagiario-e-outros/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Novo website do Alto Comissariado da Saúde</title>
+		<link>/novo-website-do-alto-comissariado-da-saude/</link>
+		<comments>/novo-website-do-alto-comissariado-da-saude/#comments</comments>
+		<pubDate>Fri, 04 Jan 2008 12:01:34 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[alto]]></category>
+		<category><![CDATA[comissariado]]></category>
+		<category><![CDATA[saúde]]></category>
+
+		<guid isPermaLink="false">/novo-website-do-alto-comissariado-da-saude/</guid>
+		<description><![CDATA[<p>Acabou de ser lançado esta semana o novo website do Alto Comissariado da Saúde. Estive envolvido neste projecto, nomeadamente no que toca ao design dos layouts e da integração do WordPress com o mesmo, em detrimento do CMS anterior. Além do site principal, foi também redesenhado o microsite com as Metas e Indicadores do Plano [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/novo-website-do-alto-comissariado-da-saude/">Novo website do Alto Comissariado da Saúde</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/novo-website-do-alto-comissariado-da-saude/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+		<item>
+		<title>O novo website do jornal Record</title>
+		<link>/o-novo-website-do-jornal-record/</link>
+		<comments>/o-novo-website-do-jornal-record/#comments</comments>
+		<pubDate>Mon, 01 Oct 2007 09:09:32 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[jornal]]></category>
+
+		<guid isPermaLink="false">/o-novo-website-do-jornal-record/</guid>
+		<description><![CDATA[<p>O <a href="http://www.record.pt/">Jornal Record</a> renovou o seu website há algumas semanas atrás. Além de terem piorado no grafismo (o site parece um <a href="/wireframes">wireframe</a>), também pioraram na acessibilidade dos conteúdos. Em relação à usabilidade, continua tão má como antes (continuo a ter grandes dificuldades a distinguir o que é link e o que não é).</p>
+<p>O conteúdo <a rel="nofollow" href="/o-novo-website-do-jornal-record/">O novo website do jornal Record</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/o-novo-website-do-jornal-record/feed/</wfw:commentRss>
+		<slash:comments>22</slash:comments>
+		</item>
+		<item>
+		<title>Print Screen &#8211; capturing the buzz</title>
+		<link>/print-screen-capturing-the-buzz/</link>
+		<comments>/print-screen-capturing-the-buzz/#comments</comments>
+		<pubDate>Fri, 08 Jun 2007 11:42:00 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[agregador]]></category>
+		<category><![CDATA[asterisco]]></category>
+		<category><![CDATA[buzz]]></category>
+		<category><![CDATA[planeta]]></category>
+		<category><![CDATA[print-screen]]></category>
+
+		<guid isPermaLink="false">/print-screen-capturing-the-buzz/</guid>
+		<description><![CDATA[<p>Já é oficial! O antigo agregador de blogs Planeta Asterisco (ao qual eu também estou agregado) mudou de nome e passou a chamar-se <a href="http://prt.sc/">Print Screen</a> (ou Prt.Sc). </p>
+<p><img src="http://www.prt.sc/media/images/logo4.png" alt="Print Screen"></p>
+<p>O conteúdo <a rel="nofollow" href="/print-screen-capturing-the-buzz/">Print Screen &#8211; capturing the buzz</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/print-screen-capturing-the-buzz/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Renovação do website do Jornal Meios &#038; Publicidade</title>
+		<link>/renovacao-do-website-do-jornal-meios-publicidade/</link>
+		<comments>/renovacao-do-website-do-jornal-meios-publicidade/#comments</comments>
+		<pubDate>Thu, 31 May 2007 21:42:24 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[meios&publicidade]]></category>
+		<category><![CDATA[user-centered]]></category>
+		<category><![CDATA[web-standards]]></category>
+
+		<guid isPermaLink="false">/renovacao-do-website-do-jornal-meios-publicidade/</guid>
+		<description><![CDATA[<p>Foi hoje lançada a nova versão do website do Jornal <a href="http://www.meiosepublicidade.pt/">Meios &#038; Publicidade</a>. A remodelação foi feita pela <a href="http://www.log.pt/">log</a> (o layout foi feito por mim) e incluiu a migração do antigo CMS para um novo, mais fácil de utilizar para os jornalistas. </p>
+<p>O conteúdo <a rel="nofollow" href="/renovacao-do-website-do-jornal-meios-publicidade/">Renovação do website do Jornal Meios &#038; Publicidade</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/renovacao-do-website-do-jornal-meios-publicidade/feed/</wfw:commentRss>
+		<slash:comments>25</slash:comments>
+		</item>
+		<item>
+		<title>SIC lança website renovado</title>
+		<link>/sic-lanca-website-renovado/</link>
+		<comments>/sic-lanca-website-renovado/#comments</comments>
+		<pubDate>Thu, 24 May 2007 09:29:08 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[sic]]></category>
+
+		<guid isPermaLink="false">/sic-lanca-website-renovado/</guid>
+		<description><![CDATA[<p>Hoje a <a href="http://www.sic.pt/">SIC</a> lançou um novo website. Esta notícia interessa-me porque estive envolvido de certa forma no desenvolvimento deste projecto. Há uns meses atrás fui contratado (através da <a href="http://www.log.pt/">log</a>) para ajudar a equipa de design no desenvolvimento do novo website. A minha participação seria fazer testes e análises de usabilidade aos layouts que eles iam propondo. O objectivo era indicar-lhes quais os problemas encontrados e fornecer soluções mais usáveis.</p>
+<p>O conteúdo <a rel="nofollow" href="/sic-lanca-website-renovado/">SIC lança website renovado</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/sic-lanca-website-renovado/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Jornal Destak com novo website</title>
+		<link>/jornal-destakpt-com-novo-website/</link>
+		<comments>/jornal-destakpt-com-novo-website/#comments</comments>
+		<pubDate>Mon, 07 May 2007 08:52:52 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[jornal]]></category>
+		<category><![CDATA[web-standards]]></category>
+
+		<guid isPermaLink="false">/jornal-destakpt-com-novo-website/</guid>
+		<description><![CDATA[<p>O Jornal diário gratuito Destak lançou um novo website. Até aqui nada de novo, no entanto coloco aqui a notícia por uma razão muito simples: todo o website foi desenvolvido segundo os webstandards e houve uma tentativa louvável de tornar o código o mais acessível possível.</p>
+<p>O conteúdo <a rel="nofollow" href="/jornal-destakpt-com-novo-website/">Jornal Destak com novo website</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/jornal-destakpt-com-novo-website/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+		<item>
+		<title>Primeiro Portugal, depois o Brasil&#8230; agora o Mundo</title>
+		<link>/primeiro-portugal-depois-o-brasil-agora-o-mundo/</link>
+		<comments>/primeiro-portugal-depois-o-brasil-agora-o-mundo/#comments</comments>
+		<pubDate>Mon, 30 Apr 2007 15:39:37 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Pessoal]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[curiosidades]]></category>
+		<category><![CDATA[forum]]></category>
+		<category><![CDATA[portal]]></category>
+
+		<guid isPermaLink="false">/primeiro-portugal-depois-o-brasil-agora-o-mundo/</guid>
+		<description><![CDATA[<p>Está oficializado o lançamento da versão internacional do <a href="http://www.portaldascuriosidades.com/">Portal das Curiosidades</a>. Senhoras e senhores, apresento-vos o <a href="http://www.curious-forum.com/">Curious Forum</a>!</p>
+<p><a href="http://www.curious-forum.com/"><img src='/wp-content/uploads/2007/04/curious-forum.png' alt='Curious Forum' class="img"/></a></p>
+<p>O conteúdo <a rel="nofollow" href="/primeiro-portugal-depois-o-brasil-agora-o-mundo/">Primeiro Portugal, depois o Brasil&#8230; agora o Mundo</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/primeiro-portugal-depois-o-brasil-agora-o-mundo/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Soluções web centradas no utilizador</title>
+		<link>/solucoes-web-centradas-no-utilizador/</link>
+		<comments>/solucoes-web-centradas-no-utilizador/#comments</comments>
+		<pubDate>Fri, 14 Jul 2006 09:09:55 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[multimedia]]></category>
+		<category><![CDATA[soluções-web]]></category>
+		<category><![CDATA[user-centered]]></category>
+		<category><![CDATA[Webdesign]]></category>
+
+		<guid isPermaLink="false">/solucoes-web-centradas-no-utilizador/</guid>
+		<description><![CDATA[<p>Fiz ontem, no I Encontro de Design Multimédia de Coimbra, uma apresentação sobre Soluções Web Centradas no Utilizador.<br />
+Podem fazer aqui o download dos slides da apresentação.</p>
+<p>O conteúdo <a rel="nofollow" href="/solucoes-web-centradas-no-utilizador/">Soluções web centradas no utilizador</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/solucoes-web-centradas-no-utilizador/feed/</wfw:commentRss>
+		<slash:comments>22</slash:comments>
+		</item>
+		<item>
+		<title>I Encontro de Design Multimédia</title>
+		<link>/i-encontro-de-design-multimedia/</link>
+		<comments>/i-encontro-de-design-multimedia/#comments</comments>
+		<pubDate>Fri, 07 Jul 2006 14:55:13 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[multimedia]]></category>
+		<category><![CDATA[soluções-web]]></category>
+		<category><![CDATA[user-centered]]></category>
+
+		<guid isPermaLink="false">/i-encontro-de-design-multimedia/</guid>
+		<description><![CDATA[<p>Vai realizar-se na próxima semana, dias 12 e 13 de Julho o I Encontro de Design Multimédia em Coimbra. A organização está a cargo dos alunos do 4º ano de Comunicação e Design Multimédia da Escola Superior de Educação de Coimbra e eu fui convidado para falar no dia 13 (quinta-feira) sobre Soluções Web Centradas no Utilizador.</p>
+<p>O conteúdo <a rel="nofollow" href="/i-encontro-de-design-multimedia/">I Encontro de Design Multimédia</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/i-encontro-de-design-multimedia/feed/</wfw:commentRss>
+		<slash:comments>21</slash:comments>
+		</item>
+		<item>
+		<title>Conferência @media 2006 &#8211; Dia 2</title>
+		<link>/conferencia-media-2006-dia-2/</link>
+		<comments>/conferencia-media-2006-dia-2/#comments</comments>
+		<pubDate>Fri, 16 Jun 2006 11:30:36 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[@media2006]]></category>
+		<category><![CDATA[atmedia]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[londres]]></category>
+
+		<guid isPermaLink="false">/conferencia-media-2006-dia-2/</guid>
+		<description><![CDATA[<p>Começou o segundo e último dia da @media 2006. A qualidade das comunicações continua tão boa como as do primeiro dia. Vou tentar fazer o resumo do que aconteceu neste dia.</p>
+<p>O conteúdo <a rel="nofollow" href="/conferencia-media-2006-dia-2/">Conferência @media 2006 &#8211; Dia 2</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/conferencia-media-2006-dia-2/feed/</wfw:commentRss>
+		<slash:comments>17</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Microsoft aposta nos CSS</title>
+	<atom:link href="/microsoft-aposta-nos-css/feed/" rel="self" type="application/rss+xml" />
+	<link>/microsoft-aposta-nos-css/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: jose reis</title>
+		<link>/microsoft-aposta-nos-css/#comment-550</link>
+		<dc:creator><![CDATA[jose reis]]></dc:creator>
+		<pubDate>Thu, 03 Feb 2005 14:52:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=116#comment-550</guid>
+		<description><![CDATA[já agora podias tb falar do (novo e) melhorado motor de busca  da microsoft msn....e tb dos boatas que correr da associação da equipa da mozzila que se associaram à google para fazer um novo browser concorrente ao msexplorer...sei que não se enquadra neste assunto, mas não enconrei melhor sitio para fazer este comentario
+abraço e parabéns atrasados]]></description>
+		<content:encoded><![CDATA[<p>já agora podias tb falar do (novo e) melhorado motor de busca  da microsoft msn&#8230;.e tb dos boatas que correr da associação da equipa da mozzila que se associaram à google para fazer um novo browser concorrente ao msexplorer&#8230;sei que não se enquadra neste assunto, mas não enconrei melhor sitio para fazer este comentario<br />
+abraço e parabéns atrasados</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: MarcoGomes.com</title>
+		<link>/microsoft-aposta-nos-css/#comment-544</link>
+		<dc:creator><![CDATA[MarcoGomes.com]]></dc:creator>
+		<pubDate>Tue, 01 Feb 2005 12:35:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=116#comment-544</guid>
+		<description><![CDATA[Será que com o &quot;apoio&quot; da Microsoft os webstandards vão finalmente ganhar 100% dos desenvolvedores? Sim, pois, os únicos que não acatavam o tableless eram os FrontPagers malucos.
+
+Agora vai!]]></description>
+		<content:encoded><![CDATA[<p>Será que com o &#8220;apoio&#8221; da Microsoft os webstandards vão finalmente ganhar 100% dos desenvolvedores? Sim, pois, os únicos que não acatavam o tableless eram os FrontPagers malucos.</p>
+<p>Agora vai!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

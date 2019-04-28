@@ -1,0 +1,628 @@
+<!doctype html>
+<html amp lang="pt-PT">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title>Usabilidade dos Museus Online - IvoGomes.com</title>
+		<link rel="canonical" href="/usabilidade-dos-museus-online/" />
+	<script type='text/javascript' src='https://cdn.ampproject.org/v0.js' async></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic"><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"IvoGomes.com"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/www.ivogomes.com\/blog\/usabilidade-dos-museus-online\/","headline":"Usabilidade dos Museus Online","datePublished":"2008-01-28T16:51:10+00:00","dateModified":"2016-06-17T09:03:49+00:00","author":{"@type":"Person","name":"Ivo Gomes"}}</script>
+	<meta name="generator" content="AMP Plugin v1.0.1; mode=classic">	<style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.amp-wp-unknown-size img {
+	/** Worst case scenario when we can't figure out dimensions for an image. **/
+	/** Force the image into a box of fixed dimensions and use object-fit to scale. **/
+	object-fit: contain;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #fff;
+	color: #353535;
+	font-family: 'Merriweather', 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #353535;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #353535;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Site Icon */
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #353535;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #353535;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #696969;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #c2c2c2;
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+amp-carousel {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #c2c2c2 url( /wp-content/plugins/amp/assets/images/placeholder-icon.png) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #c2c2c2;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #c2c2c2;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #696969;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style>
+</head>
+
+<body class="">
+
+<header id="top" class="amp-wp-header">
+	<div>
+		<a href="/">
+									<span class="amp-site-title">
+				IvoGomes.com			</span>
+		</a>
+	</div>
+</header>
+
+<article class="amp-wp-article">
+	<header class="amp-wp-article-header">
+		<h1 class="amp-wp-title">Usabilidade dos Museus Online</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/5d965724123073222e4d321ab394f4c8?s=24&#038;d=mm&#038;r=r" alt="Ivo Gomes" width="24" height="24" layout="fixed"></amp-img>
+				<span class="amp-wp-author author vcard">Ivo Gomes</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2008-01-28T16:51:10+00:00">
+		11 anos ago	</time>
+</div>
+	</header>
+
+	
+	<div class="amp-wp-article-content">
+		<p>Já escrevo este post com mais de uma semana de atraso, mas mais vale tarde que nunca. No passado Sábado (19 de Janeiro) fui convidado pelo caderno <a href="http://digital.publico.pt/">Digital</a> do <a href="http://www.publico.pt/">Público</a> para dar a minha opinião sobre um grupo de sites de Museus Nacionais. A minha opinião foi então agregada às opiniões de mais quatro webdesigners e no final foi elaborada uma lista dos melhores e dos piores sites de Museus Nacionais.</p>
+<p>A minha análise centrou-se essencialmente na usabilidade e acessibilidade dos sites e não tanto em aspectos gráficos ou de webdesign (que penso ter sido a perspectiva dos restantes 4 webdesigners).<br>
+Além dos comentários sobre as principais falhas e virtudes de cada museu, tentei criar uma escala mais quantitativa para poder no final ordenar os museus de acordo com a classificação obtida nos seguintes pontos:</p>
+<ul><li><strong>Navegabilidade:</strong> facilidade de navegar pelos menus e sub-menus do site, feedback sobre a localização do utilizador e acesso aos conteúdos;</li>
+<li><strong>Usabilidade:</strong> com base em algumas regras básicas (heurísticas) de usabilidade, foi feita uma análise muito superficial de alguns problemas encontrados;</li>
+<li><strong>Acessibilidade:</strong> através de uma análise automática e de verificação superficial do código do site, foram identificados os principais problemas de acessibilidade do mesmo</li>
+<li><strong>Conteúdos:</strong> a usabilidade de um site não se mede apenas pela sua navegabilidade. Existe também a usabilidade dos conteúdos, o que nos permite saber se os mesmos corresponderem às necessidades do utilizador (se consegue, ou não, encontrar o que procura e se a informação mais relevante para o utilizador é aquela que lhe é mostrada no site);</li>
+<li><strong>Disponibilização da Informação:</strong> análise da forma como os conteúdos são disponibilizados na página: localização dos menus, localização e estruturação dos textos, etc...</li>
+</ul><p>E aqui está a lista, tal e qual como a enviei para o Público. Achei que seria interessante partilhar convosco:</p>
+<h2>Museu Nacional dos Coches (<a href="http://www.museudoscoches-ipmuseus.pt/">http://www.museudoscoches-ipmuseus.pt</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- Página de entrada inútil e sem qualquer link ou informação relevante, que após alguns segundos, abre a página inicial do site.<br>
+- Menus em flash poderão limitar um pouco a interacção em alguns utilizadores.<br>
+- Apesar de ostentar o símbolo de acessibilidade web, o site possui vários erros de prioridade 1 e prioridade 2 que dificultam a sua navegabilidade para utilizadores com incapacidade visual.<br>
+- Em algumas páginas (ex: informações; agenda; loja) não é totalmente perceptível que existe mais informação além da que está escrita na página, uma vez que os links para a informação relacionada com o texto se encontram na barra abaixo do menu e não como seria de esperar, após o texto introdutório. </p>
+<p><strong>VIRTUDES:</strong><br>
+- Bastante informação sobre cada um dos elementos da colecção do museu</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 3<br>
+Usabilidade: 4<br>
+Acessibilidade: 5<br>
+Conteúdos: 7<br>
+Disponibilização da Informação: 3<br>
+Total: 22</p>
+<h2>Museu Monográfico de Coimbra - Conímbriga (<a href="http://www.conimbriga.pt/">http://www.conimbriga.pt/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- Pouco contraste entre o texto cinza claro e o fundo branco.<br>
+- Os links existentes ao longo das várias páginas não são facilmente distinguíveis do resto do texto uma vez que são da mesma cor e a única característica que os identifica como sendo link  (apenas em algumas páginas) é o facto de terem o símbolo "&gt;&gt;" a seguir ao texto.<br>
+- O pequeno menu de topo contém apenas ícones sem nenhuma informação textual sobre para que servem. É necessário passar o rato por cima dos ícones para mostrar o texto e identificar para que servem. Este facto viola uma das principais regras de usabilidade que indica que a informação não deve estar escondida do utilizador, principalmente quando se tratam de links para outras páginas.<br>
+- A loja do site funciona de forma pouco usual. Apesar dos produtos estarem bem organizados e com o título e preço bem visíveis, a compra dos mesmos não é assim tão simples porque ao clicar num produto apenas nos é mostrada uma fotografia em ponto grande, sem mais nenhuma informação. Para comprar um produto é necessário clicar num pequeno ícone com o título "info" que nos leva para uma página de ajuda, que por sua vez nos direcciona para um formulário onde se podem seleccionar quais os produtos a comprar, no entanto, aqui os produtos não têm foto.</p>
+<p><strong>VIRTUDES:</strong><br>
+- Bastantes informações úteis sobre o museu e horários de abertura.<br>
+- Mapa do local e visitas virtuais com bastantes fotos e vistas em 360º<br>
+- Glossário bastante completo e útil para que esteja interessado em aprofundar mais os seus conhecimentos de arqueologia romana.</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 5<br>
+Usabilidade: 5<br>
+Acessibilidade: 7<br>
+Conteúdos: 8<br>
+Disponibilização da Informação: 6<br>
+Total: 31</p>
+<h2>Museu Nacional de Arqueologia (<a href="http://www.mnarqueologia-ipmuseus.pt/">http://www.mnarqueologia-ipmuseus.pt/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- Apesar do menu de topo estar bem identificado e organizado de forma perceptível, não existe nenhum feedback quando o utilizador passa o rato por cima dos vários items (apenas aparece uma pequena seta, mas só se o rato permanecer cerca de 1 segundo em cima de cada item).<br>
+- A disponibilização dos conteúdos em páginas com duas colunas que por vezes se transforma em uma coluna e de seguida volta a ter duas colunas, pode tornar a leitura um pouco mais confusa para quem está habituado a ler conteúdos de uma forma mais linear.</p>
+<p><strong>VIRTUDES:</strong><br>
+- Boa organização e estruturação do menu de navegação principal<br>
+- Existe uma boa identificação sobre a localização do utilizador no site e, regra geral, a navegabilidade está bastante perceptível. Apenas nos menus de navegação secundários não aparece seleccionada a área em visualização (ex: exposições -&gt; antiguidades egípcias)<br>
+- Página com a selecção da peça do mês (poderá ser útil para chamar a atenção dos visitantes de forma dinâmica, mostrando um pouco daquilo que o museu tem para oferecer)</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 6<br>
+Usabilidade: 6<br>
+Acessibilidade: 8<br>
+Conteúdos: 9<br>
+Disponibilização da Informação: 5<br>
+Total: 34</p>
+<h2>Museu Nacional de Arte Antiga (<a href="http://www.mnarteantiga-ipmuseus.pt/">http://www.mnarteantiga-ipmuseus.pt/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- Os links existentes ao longo das várias páginas não são facilmente distinguíveis do resto do texto uma vez que são da mesma cor que os títulos de algumas secções (verde).<br>
+- A navegação entre as várias páginas é pouco intuitiva. Quando se entra numa secção do menu, o mesmo desaparece e é necessário voltar sempre à página inicial do site para aceder às restantes áreas disponíveis (o menu está disponível no código, mas escondido da página).<br>
+- Ainda no menu, por exemplo clicando no item "links" abre um sub-menu com outro item "links" em vez de abrir logo a página de links no primeiro clique.<br>
+- Apesar de não possuir erros graves de acessibilidade, a forma como foi concebido o menu de navegação torna confusa a sua navegabilidade. Um utilizador que esteja a utilizar um "screen-reader" (normalmente utilizado por utilizadores com incapacidade visual) irá ouvir o menu e poderá navegar entre as várias páginas sem voltar à página inicial, no entanto, para um utilizador "normal", o menu está escondido. A acessibilidade não é só para pessoas com incapacidade, mas sim para facilitar a utilização do sistema por TODOS os utilizadores. Sendo assim, nota negativa para a acessibilidade.<br>
+- A informação das páginas está disponibilizada de forma pouco intuitiva e é necessário clicar em links "anterior | seguinte" para ver todas as informações disponíveis em certas páginas.</p>
+<p><strong>VIRTUDES:</strong><br>
+- Disponibilização de algumas imagens e textos (em PDF) sobre 10 obras de referência do museu</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 2<br>
+Usabilidade: 2<br>
+Acessibilidade: 4<br>
+Conteúdos: 6<br>
+Disponibilização da Informação: 3<br>
+Total: 17</p>
+<h2>Museu Nacional do Azulejo (<a href="http://www.mnazulejo-ipmuseus.pt/">http://www.mnazulejo-ipmuseus.pt/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- A página inicial tem dois links para entrar no site, um link para entrar na versão gráfica e outro para entrar na versão texto. Provavelmente foi criada uma versão de texto porque a versão gráfica não é facilmente navegável por utilizadores com necessidades especiais. No entanto, na versão de texto do site, os links não possuem qualquer tipo de separação entre eles, tornando mais confusa a navegação utilizando um "screen-reader".<br>
+- A versão gráfica do site abre numa pequena janela "popup", o que, por um lado limita a área visível do site (e retira o controlo do utilizador) e por outro pode ser bloqueada pelos browsers mais recentes com protecção "anti-popup".<br>
+- A navegabilidade está muito má e em alguns sub-links do menu abrem novas janelas popup por cima do popup que é o site.<br>
+- Devido às reduzidas dimensões da janela popup que contém o site, e uma vez que existe uma imagem no "header" que ocupa 50% da altura da janela, os conteúdos ficam reduzidos a uma área muito pequena. Assim, quando existe mais texto do que o espaço disponível permite, existem dois pequenos botões para fazer scroll para cima e para baixo. Esta forma de interacção é pouco intuitiva porque o utilizador está habituado a utilizar barras de scroll, que são mais fáceis de operar do que ter que encontrar e clicar em dois pequenos botões (para utilizadores com menor precisão manual no uso do rato (ex: idosos), acertar nestes botões pode ser complicado).</p>
+<p><strong>VIRTUDES:</strong><br>
+- Nenhuma</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 1<br>
+Usabilidade: 1<br>
+Acessibilidade: 4<br>
+Conteúdos: 2<br>
+Disponibilização da Informação: 1<br>
+Total: 9</p>
+<h2>Museu Virtual da Imprensa (<a href="http://www.imultimedia.pt/museuvirtpress/">http://www.imultimedia.pt/museuvirtpress/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- A música que acompanha o site pode tornar-se bastante irritante e é completamente desnecessária<br>
+- É difícil perceber o menu, uma vez que os links estão escondidos e só aparecem depois de passar o rato por cima. Em termos de navegabilidade, perde-se caso seja necessário, por exemplo, saber os horários do museu, é necessário percorrer todos os items à procura de qual deles nos leva a essa página. Talvez conscientes desta limitação, por baixo do menu existe um segundo menu exactamente com os mesmos links, mas em versão de texto. Sendo assim, temos uma duplicação de menus que pode confundir quem estiver a aceder ao site usando um "screen-reader".<br>
+- Ao entrar numa das páginas do menu, o aspecto gráfico do site muda e perde-se a consistência em relação à página inicial. Uma das regras principais de usabilidade indica que devemos manter a consistência gráfica em todas as páginas ao longo do site para não dar a sensação que fomos levados para um outro site diferente.<br>
+- O aspecto gráfico da página não inspira a confiança e a sobriedade inerente a um museu. Parece mais uma página pessoal do que a página de um museu.<br>
+- A visita virtual só funciona com um plugin que não é especificado no site (no Firefox não é possível efectuar a visita virtual)</p>
+<p><strong>VIRTUDES:</strong><br>
+- Bastante informação sobre os equipamentos, alfabetos e personalidades da imprensa.</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 4<br>
+Usabilidade: 4<br>
+Acessibilidade: 2<br>
+Conteúdos: 6<br>
+Disponibilização da Informação: 4<br>
+Total: 20</p>
+<h2>Museu Nacional de Soares dos Reis (<a href="http://www.mnsr-ipmuseus.pt/">http://www.mnsr-ipmuseus.pt/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- Muitos dos textos (menus, sub-menus, títulos de páginas, texto da página inicial) são apenas imagens com o texto escrito. No browser apenas se vê o texto se as imagens forem carregadas. Para utilizadores com necessidades especiais que usem um "screen-reader", os textos das imagens serão invisíveis. Apesar de todas as imagens do site terem um texto descritivo, deveria ser fornecida uma forma alternativa (em texto) para navegar no site.<br>
+- No menu exposições, toda a navegação é feita com imagens e sem texto alternativo.<br>
+- Ao aceder a um dos itens do menu, o conteúdo central da página fica em branco até ser seleccionado um sub-menu. O esperado seria que fosse carregado o conteúdo do primeiro sub-menu da área seleccionada. </p>
+<p><strong>VIRTUDES:</strong><br>
+- Galeria fotográfica (por temas) de vários objectos em exposição no museu</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 4<br>
+Usabilidade: 4<br>
+Acessibilidade: 1<br>
+Conteúdos: 6<br>
+Disponibilização da Informação: 7<br>
+Total: 22</p>
+<h2>Museu Berardo (<a href="http://www.berardocollection.com/">http://www.berardocollection.com/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- Não existe informação visual sobre a localização do utilizador na página (ex: menu seleccionado), uma vez que por vezes o título da página não é suficiente. Apenas existe esta informação de localização quando se entra numa das colecções (na forma de "breadcrumbs" no topo da página).<br>
+- Pouco contraste entre o texto (cinza) e o fundo (branco).</p>
+<p><strong>VIRTUDES:</strong><br>
+- Existe uma boa consistência gráfica ao longo de todo o site e os elementos comportam-se sempre da mesma maneira, evitando-se assim surpresas inesperadas para os utilizadores.<br>
+- Videos que complementam a informação escrita sobre cada elemento do site.</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 6<br>
+Usabilidade: 7<br>
+Acessibilidade: 6<br>
+Conteúdos: 9<br>
+Disponibilização da Informação: 8<br>
+Total: 36</p>
+<h2>Museu do Brinquedo (<a href="http://www.museu-do-brinquedo.pt/">http://www.museu-do-brinquedo.pt/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- Página inicial desnecessária para selecção do idioma<br>
+- A navegação é feita através de imagens com texto escrito. Nenhuma das imagens possui um texto alternativo e não existe nenhuma forma alternativa de navegação no site para utilizadores que não consigam visualizar as imagens.</p>
+<p><strong>VIRTUDES:</strong><br>
+- Boa navegabilidade, com acesso rápido às informações que o público normalmente procura (ex: horários), mas os conteúdos são fracos e em alguns casos (exposições) não existe nenhuma informação no site.</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 6<br>
+Usabilidade: 5<br>
+Acessibilidade: 1<br>
+Conteúdos: 3<br>
+Disponibilização da Informação: 7<br>
+Total: 22</p>
+<h2>Museu do Neo-Realismo (<a href="http://www.museudoneorealismo.pt/">http://www.museudoneorealismo.pt/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- Uma vez que o site se encontra dentro do site da câmara municipal de v.f.xira, por vezes algumas páginas vão parar ao site da câmara (ex: resultados da pesquisa).</p>
+<p><strong>VIRTUDES:</strong><br>
+- Boa informação sobre a localização do utilizador (através de highligh dos menus)</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 5<br>
+Usabilidade: 5<br>
+Acessibilidade: 5<br>
+Conteúdos: 5<br>
+Disponibilização da Informação: 5<br>
+Total: 20</p>
+<h2>Museu de Serralves (<a href="http://www.serralves.pt/">http://www.serralves.pt/</a>)</h2>
+<p><strong>FALHAS:</strong><br>
+- O tamanho to texto poderá ser demasiado pequeno para ser lido confortavelmente por alguns utilizadores<br>
+- O funcionamento do calendário é confuso. Ao seleccionar um dia (já na página com o calendário), os resultados da pesquisa são actualizados, mas o calendário mantém-se sempre no dia actual (ex: ao seleccionar um dia em fevereiro de 2008, os eventos mudam para a data seleccionada, ams o calendário mantém-se em dezembro de 2007)</p>
+<p><strong>VIRTUDES:</strong><br>
+- Boa navegabilidade e feedback sobre a área seleccionada.<br>
+- Boa separação entre os conteúdos (texto) e a apresentação (layout) através do uso de filhas de estilo.<br>
+- Área interactiva para crianças<br>
+- Visita virtual ao parque de serralves e à colecção do museu (se bem que limitada apenas a algumas salas)<br>
+- Bastantes imagens sobre cada uma das áreas do museu</p>
+<h3>Pontuação (de 1 a 10):</h3>
+<p>Navegabilidade: 7<br>
+Usabilidade: 5<br>
+Acessibilidade: 8<br>
+Conteúdos: 9<br>
+Disponibilização da Informação: 7<br>
+Total: 36</p>
+<h2>Classificação final (de 0 a 50):</h2>
+<ol><li>Museu de Serralves: 36</li>
+<li>Museu Berardo: 36</li>
+<li>Museu Nacional de Arqueologia: 34</li>
+<li>Museu Monográfico de Coimbra - Conimbriga: 31</li>
+<li>Museu Nacional dos Coches: 22</li>
+<li>Museu Nacional de Soares dos Reis: 22</li>
+<li>Museu do Brinquedo: 22</li>
+<li>Museu do Neo-Realismo: 20</li>
+<li>Museu Virtual da Imprensa: 20</li>
+<li>Museu Nacional de Arte Antiga: 17</li>
+<li>Museu Nacional do Azulejo: 9</li>
+</ol><p>Esta foi a classificação que eu apresentei ao jornalista do Público e ao que parece corresponde à classificação final agregando todos os webdesigners contactados. <del datetime="2008-01-29T11:59:30+00:00">Infelizmente perdi a minha cópia do jornal (foi para o lixo por engano) mas sei que o primeiro lugar foi atribuído ao Museu de Serralves e ao Museu Berardo e o último lugar foi atribuído ao Museu Nacional do Azulejo (tal e qual como tenho na minha listagem). Quanto aos que ficaram a meio da tabela, só saberei assim que tiver uma cópia do jornal que já me foi prometida há mais de 1 semana (não foi <a href="http://www.salgadation.com/">Susana</a>?)</del></p>
+<p>Quanto à minha classificação, é de salientar que apenas 5 museus tiveram nota positiva (acima de 25 pontos).</p>
+<p>Esta classificação é bastante subjectiva, uma vez que a análise efectuada a cada um dos sites foi bastante superficial, no entanto, já dá para fazer uma comparação entre cada um deles (em termos de usabilidade e acessibilidade).</p>
+<p><strong>Actualização:</strong> Já tenho uma cópia do jornal e podem fazer download aqui (páginas 8 e 9):</p>
+<p class="download"><a href="/wp-content/uploads/2008/01/publicodigital_1201001698.pdf" title="Público Digital - 19/01/2008">Público Digital - 19/01/2008</a></p>
+<p>Ao que parece, um dos webdesigners contactados <a href="http://blog.karlus.net/archives/2008/01/28/1878">afinal não era webdesigner</a>, mas sim a directora de comunicação da empresa que desenvolveu o site que ficou em primeiro lugar (Museu de Serralves). Isto não quer dizer que o site não tenha o seu mérito (eu próprio classifiquei-o em primeiro, juntamente com o Museu Berardo), mas não deixa de ser pouco ético para um jornal como o Público...</p>
+	</div>
+
+	<footer class="amp-wp-article-footer">
+			<div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="/category/usabilidade/" rel="category tag">Usabilidade</a>	</div>
+
+	<div class="amp-wp-meta amp-wp-tax-tag">
+		Tags: <a href="/tag/digital/" rel="tag">digital</a>, <a href="/tag/museus/" rel="tag">museus</a>, <a href="/tag/nacionais/" rel="tag">nacionais</a>, <a href="/tag/publico/" rel="tag">publico</a>, <a href="/tag/usabilidade/" rel="tag">Usabilidade</a>	</div>
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="/usabilidade-dos-museus-online/#comments">
+			Leave a Comment		</a>
+	</div>
+	</footer>
+</article>
+
+<footer class="amp-wp-footer">
+	<div>
+		<h2>IvoGomes.com</h2>
+		<p>
+			<a href="https://wordpress.org/">
+				Powered by WordPress			</a>
+		</p>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer>
+
+
+
+</body>
+</html>

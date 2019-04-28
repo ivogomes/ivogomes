@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: &#8220;Captchas&#8221; e Acessibilidade</title>
+	<atom:link href="/captchas-e-acessibilidade/feed/" rel="self" type="application/rss+xml" />
+	<link>/captchas-e-acessibilidade/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/captchas-e-acessibilidade/#comment-103475</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 11 Oct 2011 16:17:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-103475</guid>
+		<description><![CDATA[O problema é que a maioria dos sistemas de captcha existentes foram desenvolvidos por empresas estrangeiras, e como tal, apenas fornecem o audio em inglês
+
+Por isso é que quando se implementa este sistema, deve ser tido em conta o público alvo. Não faz sentido ter um captcha em inglês num site escrito em português.]]></description>
+		<content:encoded><![CDATA[<p>O problema é que a maioria dos sistemas de captcha existentes foram desenvolvidos por empresas estrangeiras, e como tal, apenas fornecem o audio em inglês</p>
+<p>Por isso é que quando se implementa este sistema, deve ser tido em conta o público alvo. Não faz sentido ter um captcha em inglês num site escrito em português.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Daiane Janing</title>
+		<link>/captchas-e-acessibilidade/#comment-103461</link>
+		<dc:creator><![CDATA[Daiane Janing]]></dc:creator>
+		<pubDate>Tue, 11 Oct 2011 14:33:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-103461</guid>
+		<description><![CDATA[Sou deficiente visual, e com certeza inserir os captcha sonoros foi uma
+ótima solução. Más, o problema é que não consigo compreendê-los, já que
+eles são pronunciados em inglês. Será que tem um jeito de pronuncia-los
+em português? Eu não sei, pois descobri os captchas sonoros a pouco
+tempo, e os sites que visitei pronunciam os captchas em inglês.]]></description>
+		<content:encoded><![CDATA[<p>Sou deficiente visual, e com certeza inserir os captcha sonoros foi uma<br />
+ótima solução. Más, o problema é que não consigo compreendê-los, já que<br />
+eles são pronunciados em inglês. Será que tem um jeito de pronuncia-los<br />
+em português? Eu não sei, pois descobri os captchas sonoros a pouco<br />
+tempo, e os sites que visitei pronunciam os captchas em inglês.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: MAQ</title>
+		<link>/captchas-e-acessibilidade/#comment-87298</link>
+		<dc:creator><![CDATA[MAQ]]></dc:creator>
+		<pubDate>Fri, 16 Oct 2009 18:18:15 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-87298</guid>
+		<description><![CDATA[Oi Dina.
+Nós, seres humanos, temos facilidade em somar números, ainda mais tão pequenos. Entretanto, robots e spammers não têm tanta facilidade assim. Em meu blog eu tenho essa soma e, por ele não fazer parte dos interesses dos robots mais sofisticados, não tenho recebido spams e nada mais que não onão me interesse. A grande questão é que essa conta é apresentada no formato texto e não em uma imagem. Meus leitores de tela não lêem imagens, a não ser que seja feita a acessibilidade adequada com o atributo ALT, que o sistema OCR poderia capturar pelo robot. Assim, sendo em texto, sendo obrigado a fazer contas, essa pequena tecnologia consegue acalmar aquela avalanche de spams. Entretanto, caso o robot experimente todos os números de 1 a 8, acabará tendo a resposta, mas não são todos,  aliás, muito poucos fazem isso. Eu leio a pergunta e escrevo a resposta com tranquilidade sendo cego, ok?
+
+Espero que tenha conseguido te explicar.
+
+Mais sobre captchas em: http://www.acessibilidadelegal.com/13-captchas.php
+
+Abraços acessíveis e fáceis de usar. MAQ.]]></description>
+		<content:encoded><![CDATA[<p>Oi Dina.<br />
+Nós, seres humanos, temos facilidade em somar números, ainda mais tão pequenos. Entretanto, robots e spammers não têm tanta facilidade assim. Em meu blog eu tenho essa soma e, por ele não fazer parte dos interesses dos robots mais sofisticados, não tenho recebido spams e nada mais que não onão me interesse. A grande questão é que essa conta é apresentada no formato texto e não em uma imagem. Meus leitores de tela não lêem imagens, a não ser que seja feita a acessibilidade adequada com o atributo ALT, que o sistema OCR poderia capturar pelo robot. Assim, sendo em texto, sendo obrigado a fazer contas, essa pequena tecnologia consegue acalmar aquela avalanche de spams. Entretanto, caso o robot experimente todos os números de 1 a 8, acabará tendo a resposta, mas não são todos,  aliás, muito poucos fazem isso. Eu leio a pergunta e escrevo a resposta com tranquilidade sendo cego, ok?</p>
+<p>Espero que tenha conseguido te explicar.</p>
+<p>Mais sobre captchas em: <a href="http://www.acessibilidadelegal.com/13-captchas.php" rel="nofollow">http://www.acessibilidadelegal.com/13-captchas.php</a></p>
+<p>Abraços acessíveis e fáceis de usar. MAQ.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: dina</title>
+		<link>/captchas-e-acessibilidade/#comment-86734</link>
+		<dc:creator><![CDATA[dina]]></dc:creator>
+		<pubDate>Mon, 24 Aug 2009 12:26:39 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-86734</guid>
+		<description><![CDATA[Desculpe, ms gostara de entender a captca de somas como por exemplo: 7+1 é obvio que é 8, ma quero entender o porque que não passa qual o segredo?]]></description>
+		<content:encoded><![CDATA[<p>Desculpe, ms gostara de entender a captca de somas como por exemplo: 7+1 é obvio que é 8, ma quero entender o porque que não passa qual o segredo?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Tony</title>
+		<link>/captchas-e-acessibilidade/#comment-73753</link>
+		<dc:creator><![CDATA[Tony]]></dc:creator>
+		<pubDate>Tue, 11 Nov 2008 17:08:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-73753</guid>
+		<description><![CDATA[Gostei muito do comentário do amigo MAQ. Achei mais interessante, em específico, a parte que ele disse: 
+&quot;A maior parte de vocês, amigos, podem comprar o que quiserem sem saírem de vossas cadeiras, eu que me locomovo com mais dificuldade, tenho de pegar minha bengala e sair para comprar!&quot;
+
+Bem, minha opinião a respeito do uso de captchas visuais é com certeza contra seu uso. O que penso que deve ser feito é pesquisar maneiras alternativas, maneiras estas que preferencialmente não necessitem da interação do usuário para identificar quem realmente está acessando ou tentando usar determinado recurso da web. Já pesquisei alguma coisa sobre isso, os resultados não foram nada agradáveis. O que temos atualmente não é nada eficiente o suficiente para extinguir a necessidade do uso de captchas mais interativas com o usuário. Mas fica um porém: &quot;Pisar na lua era algo dito impossível por muitos, e hoje já sabemos que muitas pessoas deixaram suas pegadas lá&quot;. Alguém deve investir em pesquisas nesta área, seja quem for, inclusive o governo poderia contribuir com isso, afinal, é um direto de todos os cidadãos terem acesso &quot;íntegro&quot; à internet.]]></description>
+		<content:encoded><![CDATA[<p>Gostei muito do comentário do amigo MAQ. Achei mais interessante, em específico, a parte que ele disse:<br />
+&#8220;A maior parte de vocês, amigos, podem comprar o que quiserem sem saírem de vossas cadeiras, eu que me locomovo com mais dificuldade, tenho de pegar minha bengala e sair para comprar!&#8221;</p>
+<p>Bem, minha opinião a respeito do uso de captchas visuais é com certeza contra seu uso. O que penso que deve ser feito é pesquisar maneiras alternativas, maneiras estas que preferencialmente não necessitem da interação do usuário para identificar quem realmente está acessando ou tentando usar determinado recurso da web. Já pesquisei alguma coisa sobre isso, os resultados não foram nada agradáveis. O que temos atualmente não é nada eficiente o suficiente para extinguir a necessidade do uso de captchas mais interativas com o usuário. Mas fica um porém: &#8220;Pisar na lua era algo dito impossível por muitos, e hoje já sabemos que muitas pessoas deixaram suas pegadas lá&#8221;. Alguém deve investir em pesquisas nesta área, seja quem for, inclusive o governo poderia contribuir com isso, afinal, é um direto de todos os cidadãos terem acesso &#8220;íntegro&#8221; à internet.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: MAQ</title>
+		<link>/captchas-e-acessibilidade/#comment-52510</link>
+		<dc:creator><![CDATA[MAQ]]></dc:creator>
+		<pubDate>Mon, 16 Jun 2008 20:25:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-52510</guid>
+		<description><![CDATA[Captchas, para nós cegos, realmente é uma barreira intransponível quando feito somente por imagem. Quando a UOL começou, no Brasil, a colocar captchas sonoros foi uma alegria para pessoas como eu. No entanto, se pensarmos em desenho universal, os surdocegos acabam ficando com o mesmo problema. A solução da soma dos números, para sites médios consegue resolver. No entanto, ainda acho que a solução universal e definitiva sejam perguntas que requeiram a inteligência humana para serem respondidas e que, por sinal, sejam também inteligentemente preparadas para que não  possam ser adivinhadas. O W3C também já se pronunciou a respeito, mas solução que é boa, por onde precisamos passar, ainda não foi implementada.
+
+O fato é que ainda não acreditam que possamos ser consumidores de verdade e muitos ainda, apesar de estarmos na web praticamente há tanto ttempo quanto a web existe (eu estou desde 1995, mas tenho amigos cegos desde 1994), nossa passagem pelos sites e e-mails da vida não são marcados: &quot;passou um cego por aqui&quot;, ou &quot;passou um surdo por aqui&quot;. Nunca estamos nos públicos alvos dos projetos de AI e não somos público alvo específico ao mesmo tempo. Posso comprar uma televisão, como as tenho em casa, como posso comprar uma peça para meu micro, como esse que me faz teclar aqui e estar nesse post. Mas sabem em quantos lugares na web me permitem comprar daqui o que desejo? Pouquíssimos. A maior parte de vocês, amigos, podem comprar o que quiserem sem saírem de vossas cadeiras, eu que me locomovo com mais dificuldade, tenho de pegar minha bengala e sair para comprar!
+Vejam algo em: www.acessibilidadelegal.com , ok?
+
+Abraços acessíveis do MAQ.]]></description>
+		<content:encoded><![CDATA[<p>Captchas, para nós cegos, realmente é uma barreira intransponível quando feito somente por imagem. Quando a UOL começou, no Brasil, a colocar captchas sonoros foi uma alegria para pessoas como eu. No entanto, se pensarmos em desenho universal, os surdocegos acabam ficando com o mesmo problema. A solução da soma dos números, para sites médios consegue resolver. No entanto, ainda acho que a solução universal e definitiva sejam perguntas que requeiram a inteligência humana para serem respondidas e que, por sinal, sejam também inteligentemente preparadas para que não  possam ser adivinhadas. O W3C também já se pronunciou a respeito, mas solução que é boa, por onde precisamos passar, ainda não foi implementada.</p>
+<p>O fato é que ainda não acreditam que possamos ser consumidores de verdade e muitos ainda, apesar de estarmos na web praticamente há tanto ttempo quanto a web existe (eu estou desde 1995, mas tenho amigos cegos desde 1994), nossa passagem pelos sites e e-mails da vida não são marcados: &#8220;passou um cego por aqui&#8221;, ou &#8220;passou um surdo por aqui&#8221;. Nunca estamos nos públicos alvos dos projetos de AI e não somos público alvo específico ao mesmo tempo. Posso comprar uma televisão, como as tenho em casa, como posso comprar uma peça para meu micro, como esse que me faz teclar aqui e estar nesse post. Mas sabem em quantos lugares na web me permitem comprar daqui o que desejo? Pouquíssimos. A maior parte de vocês, amigos, podem comprar o que quiserem sem saírem de vossas cadeiras, eu que me locomovo com mais dificuldade, tenho de pegar minha bengala e sair para comprar!<br />
+Vejam algo em: <a href="http://www.acessibilidadelegal.com/" rel="nofollow">http://www.acessibilidadelegal.com/</a> , ok?</p>
+<p>Abraços acessíveis do MAQ.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/captchas-e-acessibilidade/#comment-3009</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Mon, 17 Oct 2005 08:20:33 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-3009</guid>
+		<description><![CDATA[Tal como o André explicou, há software OCR que consegue ler texto de uma imagem. Ao distorcer as imagens tenta-se evitar que elas possam ser lidas por uma máquina e só possam ser lidas por um humano.
+
+Contudo também já há várias técnicas para ultrapassar isto, pelo que o uso de &quot;captchas&quot; não é 100% seguro.]]></description>
+		<content:encoded><![CDATA[<p>Tal como o André explicou, há software OCR que consegue ler texto de uma imagem. Ao distorcer as imagens tenta-se evitar que elas possam ser lidas por uma máquina e só possam ser lidas por um humano.</p>
+<p>Contudo também já há várias técnicas para ultrapassar isto, pelo que o uso de &#8220;captchas&#8221; não é 100% seguro.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: andr3</title>
+		<link>/captchas-e-acessibilidade/#comment-3007</link>
+		<dc:creator><![CDATA[andr3]]></dc:creator>
+		<pubDate>Mon, 17 Oct 2005 06:17:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-3007</guid>
+		<description><![CDATA[Mario,
+
+Porque da mesma maneira que há funções para criar texto dentro de uma imagem, também há funções para tentar ler texto a partir de uma. Se não estiver distorcida é &quot;menos dificil&quot; para os bots indentificar o texto na imagem..
+
+É isso que os programas de OCR fazem, quando se scana a folha de um texto o programa tenta reconhecer o texto na imagem. ;)]]></description>
+		<content:encoded><![CDATA[<p>Mario,</p>
+<p>Porque da mesma maneira que há funções para criar texto dentro de uma imagem, também há funções para tentar ler texto a partir de uma. Se não estiver distorcida é &#8220;menos dificil&#8221; para os bots indentificar o texto na imagem..</p>
+<p>É isso que os programas de OCR fazem, quando se scana a folha de um texto o programa tenta reconhecer o texto na imagem. ;)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Mario</title>
+		<link>/captchas-e-acessibilidade/#comment-3006</link>
+		<dc:creator><![CDATA[Mario]]></dc:creator>
+		<pubDate>Mon, 17 Oct 2005 03:05:04 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-3006</guid>
+		<description><![CDATA[Já agora uma pequena duvida, porque é que distorcem  as palavras nas imagens?]]></description>
+		<content:encoded><![CDATA[<p>Já agora uma pequena duvida, porque é que distorcem  as palavras nas imagens?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Usabilidoido</title>
+		<link>/captchas-e-acessibilidade/#comment-2993</link>
+		<dc:creator><![CDATA[Usabilidoido]]></dc:creator>
+		<pubDate>Thu, 13 Oct 2005 16:31:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-2993</guid>
+		<description><![CDATA[&lt;strong&gt;AntiSpam do UOL ficou teimoso demais&lt;/strong&gt;
+
+]]></description>
+		<content:encoded><![CDATA[<p><strong>AntiSpam do UOL ficou teimoso demais</strong></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Leo Cabral</title>
+		<link>/captchas-e-acessibilidade/#comment-2992</link>
+		<dc:creator><![CDATA[Leo Cabral]]></dc:creator>
+		<pubDate>Thu, 13 Oct 2005 15:28:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-2992</guid>
+		<description><![CDATA[O uso do &quot;Turing reverso&quot; (a separar computadores de humanos) na Internet ainda é pouco conhecido. Um exemplo disso é o pequeno número de soluções desenvolvidas com o uso do CSS aural aliado ao &quot;Captcha&quot; e de navegadores que permitam tais soluções.
+
+Para o usuário, isso é apenas algo que surge após um erro de entrada de dado em algum formulário (talvez daí venha a resistência que ele cria em alguns usuários).]]></description>
+		<content:encoded><![CDATA[<p>O uso do &#8220;Turing reverso&#8221; (a separar computadores de humanos) na Internet ainda é pouco conhecido. Um exemplo disso é o pequeno número de soluções desenvolvidas com o uso do CSS aural aliado ao &#8220;Captcha&#8221; e de navegadores que permitam tais soluções.</p>
+<p>Para o usuário, isso é apenas algo que surge após um erro de entrada de dado em algum formulário (talvez daí venha a resistência que ele cria em alguns usuários).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Gustavo Moura</title>
+		<link>/captchas-e-acessibilidade/#comment-2991</link>
+		<dc:creator><![CDATA[Gustavo Moura]]></dc:creator>
+		<pubDate>Thu, 13 Oct 2005 13:26:55 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-2991</guid>
+		<description><![CDATA[]]></description>
+		<content:encoded><![CDATA[<p>Gostei da solução sonora, pode ser uma boa saída tanto para acessibilidade quanto para ajudar o entendimento dos caracteres apresentados ao usuário..</p>
+<p>Quanto os “captchas�? usam palavras associadas como &#8220;blue&#8221; , &#8220;house&#8221; etc.. são bem mais compreensíveis.. já vi aplicativos que usam uma combinação de letras e números [ ! ]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: andr3</title>
+		<link>/captchas-e-acessibilidade/#comment-2990</link>
+		<dc:creator><![CDATA[andr3]]></dc:creator>
+		<pubDate>Thu, 13 Oct 2005 12:38:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=176#comment-2990</guid>
+		<description><![CDATA[A solução sonora parece-me bem (devia vir em vários formatos: flash, mp3, wav?). A imagem serve para utilizadores ditos &quot;normais&quot; e sem capacidade de audição (surdos) e o som para os utilizadores invisuais (cegos). A coisa complica-se se forem cegos e surdos.. :-\]]></description>
+		<content:encoded><![CDATA[<p>A solução sonora parece-me bem (devia vir em vários formatos: flash, mp3, wav?). A imagem serve para utilizadores ditos &#8220;normais&#8221; e sem capacidade de audição (surdos) e o som para os utilizadores invisuais (cegos). A coisa complica-se se forem cegos e surdos.. :-\</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

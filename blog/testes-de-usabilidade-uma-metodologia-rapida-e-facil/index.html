@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# profile: https://ogp.me/ns/profile#">
+<title>
+	    Testes de Usabilidade: uma metodologia rápida e fácil - IvoGomes.com
+	</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Ivo Gomes">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+<link rel="shortcut icon" href="https://www.ivogomes.com/img/favicon.ico">
+<link rel="icon" sizes="196x196" href="https://www.ivogomes.com/img/icon-highres.png">
+<link rel="icon" sizes="128x128" href="https://www.ivogomes.com/img/icon.png">
+<link rel="apple-touch-icon" href="https://www.ivogomes.com/img/touch-icon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.ivogomes.com/img/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.ivogomes.com/img/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.ivogomes.com/img/touch-icon-ipad-retina.png">
+<meta name="mobile-web-app-capable" content="yes">
+<noscript>
+      <link rel="stylesheet" type="text/css" href="https://www.ivogomes.com/css/ink.min.css">
+      <link rel="stylesheet" type="text/css" href="https://www.ivogomes.com/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo%7CPacifico">
+    </noscript>
+<link rel="stylesheet" type="text/css" href="https://www.ivogomes.com/css/styles.min.css">
+<link rel="alternate" type="application/rss+xml" title="Feed RSS dos artigos do blog IvoGomes.com" href="/feed/" />
+<!--[if IE lte 8 ]>
+    <link rel="stylesheet" type="text/css" href="/css/ink-ie.min.css">
+    <![endif]-->
+<link href="https://plus.google.com/+IvoGomes/" rel="author" />
+<meta property="fb:admins" content="557197683" />
+<link rel="pingback" href="/xmlrpc.php">
+
+<link rel="canonical" href="/testes-de-usabilidade-uma-metodologia-rapida-e-facil/" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Testes de Usabilidade: uma metodologia rápida e fácil - IvoGomes.com" />
+<meta property="og:description" content="Os testes com utilizadores servem para validar um interface ou identificar problemas de usabilidade existentes recorrendo a um grupo de utilizadores que navegará no website. Podem ainda servir para identificar problemas que ainda não tenham identificados numa avaliação heurística prévia. Estes testes permitem identificar potenciais problemas de usabilidade e observar o comportamento dos utilizadores durante a navegação no website, bem como perceber o motivo pelo qual escolhem seguir determinados caminhos no website em detrimento dos caminhos considerados &quot;normais&quot;." />
+<meta property="og:url" content="https://www.ivogomes.com/blog/testes-de-usabilidade-uma-metodologia-rapida-e-facil/" />
+<meta property="og:site_name" content="IvoGomes.com" />
+<meta property="article:publisher" content="http://www.facebook.com/ivogomes" />
+<meta property="article:author" content="http://facebook.com/ivogomes" />
+<meta property="article:tag" content="metogolodia" />
+<meta property="article:tag" content="silverback" />
+<meta property="article:tag" content="testes" />
+<meta property="article:tag" content="Usabilidade" />
+<meta property="article:tag" content="utilizadores" />
+<meta property="article:section" content="Usabilidade" />
+<meta property="article:published_time" content="2008-12-05T15:02:28+00:00" />
+<meta property="article:modified_time" content="2016-06-17T09:03:22+00:00" />
+<meta property="og:updated_time" content="2016-06-17T09:03:22+00:00" />
+<meta property="og:image" content="https://www.ivogomes.com/blog/wp-content/uploads/2008/12/picture-3.png" />
+<meta property="og:image:secure_url" content="https://www.ivogomes.com/blog/wp-content/uploads/2008/12/picture-3.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Os testes com utilizadores servem para validar um interface ou identificar problemas de usabilidade existentes recorrendo a um grupo de utilizadores que navegará no website. Podem ainda servir para identificar problemas que ainda não tenham identificados numa avaliação heurística prévia.   Estes testes permitem identificar potenciais problemas de usabilidade e observar o comportamento dos utilizadores durante a navegação no website, bem como perceber o motivo pelo qual escolhem seguir determinados caminhos no website em detrimento dos caminhos considerados &quot;normais&quot;." />
+<meta name="twitter:title" content="Testes de Usabilidade: uma metodologia rápida e fácil - IvoGomes.com" />
+<meta name="twitter:site" content="@ivogomes" />
+<meta name="twitter:image" content="https://www.ivogomes.com/blog/wp-content/uploads/2008/12/picture-3.png" />
+<meta name="twitter:creator" content="@ivogomes" />
+<script type='application/ld+json'>{"@context":"https://schema.org","@type":"Person","url":"https://www.ivogomes.com/blog/","sameAs":["http://www.facebook.com/ivogomes","https://instagram.com/ivogomes/","http://www.linkedin.com/in/ivogomes","https://www.youtube.com/user/ivogomes","https://twitter.com/ivogomes"],"@id":"#person","name":"Ivo Gomes"}</script>
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários de IvoGomes.com &raquo; Testes de Usabilidade: uma metodologia rápida e fácil" href="/testes-de-usabilidade-uma-metodologia-rapida-e-facil/feed/" />
+<link rel='stylesheet' id='wp-block-library-css' href='/wp-includes/css/dist/block-library/style.min.css?ver=5.0.4' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='/?p=648' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ivogomes.com%2Fblog%2Ftestes-de-usabilidade-uma-metodologia-rapida-e-facil%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ivogomes.com%2Fblog%2Ftestes-de-usabilidade-uma-metodologia-rapida-e-facil%2F&#038;format=xml" />
+<link rel="amphtml" href="/testes-de-usabilidade-uma-metodologia-rapida-e-facil/amp/"></head>
+<body id="blog">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v2.4&appId=634518223269818";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+<!--[if IE lte 8 ]>
+    <div class="ie-warning">
+        <div class="ink-grid">
+            <p><strong>AVISO: Está a usar uma versão desactualizada do Internet Explorer.</strong><br />Para poder ter uma mehor experiência de navegação neste site, por favor actualize para um navegador mais moderno como o <a href="https://google.com/chrome">Chrome</a>, <a href="https://apple.com/safari">Safari</a>, <a href="getfirefox.com">Firefox</a> ou o <a href="https://windows.microsoft.com/en-us/internet-explorer/ie-10-worldwide-languages">Internet Explorer 10</a>.</p>
+        </div>
+    </div>
+<![endif]-->
+<nav class="a11y"><a href="#contents">Saltar para os conteúdos</a></nav>
+<header id="top">
+<div class="ink-grid">
+<div class="column-group">
+<div class="all-30 small-100 tiny-100 align-left">
+<h1>IvoGomes.com</h1>
+</div>
+<div class="all-70 small-100 tiny-100 align-right">
+<form method="get" class="ink-form" id="searchform" action="/">
+<div class="control-group push-right">
+<label for="s">Pesquisar no blog</label>
+<div class="control">
+<input type="search" id="s" name="s" placeholder="Pesquisar no blog" value="">
+<button class="ink-button" type="submit"><span class="fa fa-search"></span><span class="hide-all"> Pesquisar</span></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</header>
+<nav class="ink-navigation ink-sticky" id="main-menu">
+<div class="ink-grid">
+<ul class="menu horizontal" role="menubar">
+<li role="menuitem" class="home"><a href="https://www.ivogomes.com/#top" title="Voltar ao topo">IG</a></li>
+<li role="menuitem"><a href="https://www.ivogomes.com/#about">Sobre<span class="hide-large hide-medium"> Mim</span></a></li>
+<li role="menuitem" class="hide-small hide-tiny"><a href="https://www.ivogomes.com/#work">Trabalho</a></li>
+<li role="menuitem" class="hide-small hide-tiny"><a href="https://www.ivogomes.com/#training">Formações<span class="hide-medium"> e Workshops</span></a></li>
+
+<li role="menuitem" class="hide-small hide-tiny"><a href="https://www.ivogomes.com/#contact">Contactos</a></li>
+<li role="menuitem" class="push-right active"><a href="/"><span class="hide-small hide-tiny"></span>Blog</a></li>
+</ul>
+</div>
+</nav>
+<div id="contents">
+<div class="ink-grid">
+<div class="column-group gutters">
+<div class="all-15 medium-10 hide-small hide-tiny">
+<p></p>
+</div>
+<div class="all-70 medium-80 small-100 tiny-100">
+<p><a href=""><span class="fa fa-arrow-left"></span> Voltar ao início</a></p>
+<article itemscope itemtype="http://schema.org/Article">
+<h1 id="post-648" itemprop="name">Testes de Usabilidade: uma metodologia rápida e fácil</h1>
+<p class="author-date">Por <strong itemprop="author" itemscope itemtype="http://schema.org/Person">Ivo Gomes</strong>, em <span itemprop="datePublished" content="2008-12-5">Sexta-feira, 5 de Dezembro de 2008</span> | <a href="#comments-list" title="Coment&aacute;rios para: Testes de Usabilidade: uma metodologia rápida e fácil"><span class="fa fa-comment"></span> 24 Coment&aacute;rios</a></p>
+<meta itemprop="interactionCount" content="UserComments:24" />
+<div itemprop="articleBody">
+<p>Os testes com utilizadores servem para validar um interface ou identificar problemas de usabilidade existentes recorrendo a um grupo de utilizadores que navegará no website. Podem ainda servir para identificar problemas que ainda não tenham identificados numa avaliação heurística prévia. </p>
+<p>Estes testes permitem identificar potenciais problemas de usabilidade e observar o comportamento dos utilizadores durante a navegação no website, bem como perceber o motivo pelo qual escolhem seguir determinados caminhos no website em detrimento dos caminhos considerados "normais". </p>
+<p>Alguns dos benefícios e vantagens dos testes de usabilidade em relação a outro tipo de testes são:</p>
+<ul>
+<li>O comportamento dos utilizadores pode ser observado e comparado com os outros utilizadores que realizam a mesma tarefa;</li>
+<li>A compreensão das dificuldades sentidas pelo utilizador pode ser alcançada através do registo das verbalizações durante o teste.</li>
+</ul>
+<h2>Metodologia</h2>
+<p>Basicamente, aquilo que procuramos saber com a realização de testes de usabilidade é se:</p>
+<ul>
+<li>Os utilizadores foram capazes de realizar as tarefas em causa?</li>
+<li>A informação relevante foi encontrada?</li>
+<li>Quanto tempo demorou?</li>
+<li>Os caminhos seguidos foram os mais eficientes?</li>
+<li>Os utilizadores sabem o que estão a fazer?</li>
+<li>Que problemas encontraram? </li>
+</ul>
+<p>Partindo do princípio que já temos um grupo de utilizadores para realizar os testes (<a href="http://www.useit.com/alertbox/20000319.html">mais informação sobre quantos utilizadores testar</a>), irei demonstrar a seguir alguns dos passos necessários para a realização de um teste de usabilidade:</p>
+<h3>Passo 1:</h3>
+<p>Informar os utilizadores sobre a confidencialidade dos dados que irão ser recolhidos:</p>
+<blockquote><p>A informação recolhida neste teste, assim como os seus dados pessoais serão tratados com confidencialidade e serão utilizados exclusivamente para este estudo. As tarefas realizadas são simuladas e não implicam nenhuma acção real. Posteriormente a informação confidencial será destruída.</p></blockquote>
+<h3>Passo 2:</h3>
+Fazer uma breve apresentação sobre o teste, explicando do que se trata, para que serve, e o que irá acontecer:</p>
+<blockquote><p>Obrigado por participar neste teste que tem como objectivo verificar se o website XXX funciona adequadamente e se os utilizadores conseguem usá-lo facilmente.<br />
+Este website permite &lt;descrever aqui as principais funcionalidades do website&gt;.<br />
+Neste website você irá realizar uma série de tarefas que lhe serão apresentadas.<br />
+Não se preocupe se cometer algum erro, é normal. Não existem respostas boas nem más. Não o estamos a avaliar a si, mas sim o website XXX.</p></blockquote>
+<h3>Passo 3:</h3>
+<p>Fazer um pequeno questionário Pré-Teste de modo a recolher mais alguma informação sobre o nível de experiência dos utilizadores e se os mesmos já usaram serviços semelhantes ao que irá ser testado.</p>
+<p>Exemplos de algumas perguntas: </p>
+<blockquote><p>Idade; Sexo; Quantas horas por dia costuma navegar na Internet?; Conhece o website XXX?; Já alguma vez usou um website do tipo XXX?; etc...</p></blockquote>
+<p>Não convém fazer demasiadas perguntas porque aquilo que queremos testar realmente é o website. As respostas dadas pelos utilizadores podem servir para os separar por grupos (ex: os mais experientes e os mais inexperientes; separar por sexos; separar por grupos de idades; etc...).</p>
+<h3>Passo 4:</h3>
+<p>Criar um cenário. Os cenários especificam como os utilizadores devem realizar as suas tarefas num determinado contexto. Exemplo de um cenário:</p>
+<blockquote><p>Está a planear as suas férias da Páscoa e decidiu que vai viajar para Helsínquia. Os dias que tem livres são entre 10 e 17 de Abril, mas só pode admitir pequenas alterações a estas datas porque combinou as férias com um amigo seu que mora lá e quer aproveitar ao máximo os seus dias livres. Quer comprar um bilhete de avião para Helsínquia, mas também sabe que Estocolmo fica logo ali ao lado e se quiser pode comprar um bilhete para lá se os preços forem melhores e mais convidativos.</p></blockquote>
+<h3>Passo 5:</h3>
+<p>Pedir ao utilizador para realizar um conjunto de tarefas no website. Cada tarefa deve ter um critério de sucesso e um tempo estimado de conclusão. As tarefas devem ser fornecidas individualmente e só após a conclusão da primeira tarefa é que deve ser fornecida a segunda, e por aí adiante.</p>
+<p>Os critérios de sucesso normalmente utilizados nos testes são os seguintes:</p>
+<ul>
+<li><strong>Sucesso (Fácil): </strong>O utilizador concluiu a tarefa na primeira tentativa, sem problemas;</li>
+<li><strong>Sucesso (Médio):</strong> O utilizador concluiu a tarefa na segunda ou terceira tentativa tendo ligeiras dificuldades;</li>
+<li><strong>Sucesso (Difícil): </strong>O utilizador concluiu a tarefa na terceira ou quarta tentativa com bastantes dificuldades;</li>
+<li><strong>Assistido:</strong> O utilizador terminou a tarefa mas teve de ser assistido para a completar. Este critério é considerado um insucesso;</li>
+<li><strong>Insucesso:</strong> O utilizador não conseguiu completar a tarefa no tempo máximo definido ou desistiu.</li>
+</ul>
+<p>Normalmente são criadas 5 tarefas que os utilizadores têm que realizar no website. Com 5 tarefas os testes duram normalmente 1 hora (já incluindo os questionários iniciais e finais). Com mais de 5 tarefas estaríamos a "prender" o utilizador demasiado tempo e nas últimas tarefas é provável que o que ele queira mesmo é "despachar-se" o mais rapidamente possível porque já está farto de ali estar. Assim, não devemos testar mais do que 5 tarefas em cada teste.</p>
+<p>Juntamente com a realização das tarefas, é necessário indicar ao utilizador algumas instruções, entre elas a utilização do protocolo “Think Aloud”:</p>
+<blockquote><p>Por favor comente em voz alta aquilo que vai fazendo e porquê, como se pensasse em voz alta. Nós gostaríamos de conhecer as razões das suas escolhas, dúvidas, etc.<br />
+Não o iremos ajudar em nenhuma situação porque nos interessa saber como se desenvencilham os utilizadores sozinhos no website, no entanto é possível que em certas situações possamos fazer algum comentário ou pergunta</p></blockquote>
+<p>Esta é uma técnica bastante popular usada durante os testes de usabilidade. Consiste em pedir ao utilizador que verbalize todas as suas acções, pensamentos, sentimentos e opiniões enquanto interage com o sistema.</p>
+<p>O maior benefício que podemos ter do uso deste protocolo é um conhecimento do modelo mental do utilizador e a razão porque segue determinados caminhos. Além disso, poderemos ter outros benefícios, como por exemplo, a terminologia que o utilizador usa para expressar uma ideia ou função pode e deve ser incorporada na concepção do produto ou pelo menos na sua documentação.</p>
+<p>Durante a realização das tarefas convém apontar todos os passos dados pelo utilizador, bem como todos os seus comentários. Isto pode ser feito simplesmente com papel e lápis (requer que o avaliador consiga ser tremendamente rápido a escrever e que consiga ao mesmo tempo ver os passos dados pelo utilizador) ou usando alta tecnologia (várias câmaras de filmar, uma apontada ao utilizador, para gravar as expressões faciais e verbalizações; e outra apontada ao ecrã para gravar todos os passos realizados).</p>
+<p>Existe ainda uma outra opção, bem mais simples e muito menos intrusiva, que é usar um software que faz tudo isso sem ser necessário nenhum aparelho extra que possa distrair ou intimidar o utilizador (saber que estamos a ser filmados pode ser intimidante, principalmente quando temos um tipo ao lado a tirar apontamentos de tudo o que fazemos). Existem várias soluções no mercado, mas a mais simples de todas é o <a href="http://www.silverbackapp.com/">Silverback</a>.</p>
+<p>O <a href="http://www.silverbackapp.com/">Silverback</a> permite gravar simultaneamente os passos dados pelo utilizador, as suas expressões faciais (usando a câmara de filmar do computador) e as suas verbalizações (usando o microfone do computador). O software não é gratuito (custa cerca de $50 dólares), mas 10% do valor é doado a uma associação para ajudar a salvar os Gorilas no Congo.</p>
+<p>O único senão desta aplicação é quantidade de espaço em disco necessária para guardar toda esta informação...<br />
+<a href="/wp-content/uploads/2008/12/picture-3.png"><img src="/wp-content/uploads/2008/12/picture-3.png" alt="" title="Espaço necessário em disco para o Silverback" width="298" height="56" class="alignnone size-full wp-image-671" /></a></p>
+<p>Em baixo temos um exemplo de um vídeo gravado usando o <a href="http://www.silverbackapp.com/">Silverback</a>. Como se pode ver, é possível identificar os locais onde o utilizador clicou, bem como observar as suas expressões e comentários.<br />
+<object width="550" height="344"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=990568&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="https://vimeo.com/moogaloop.swf?clip_id=990568&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="550" height="344"></embed></object></p>
+<p>No final de cada tarefa podemos fazer um mini-questionário, pedindo ao utilizador que nos indique numa escala o nível de dificuldade sentido ao realizar a tarefa.</p>
+<p>Além do Silverback, recomendo que usem também o <a href="http://www.userfocus.co.uk/resources/datalogger.html">Usability Test Data Logger</a> da <a href="http://www.userfocus.co.uk/">UserFocus</a> para registar os tempos e taxas de sucesso de cada tarefa. No final de todos os testes poderá ser uma ajuda preciosa para a criação de gráficos de desempenho, eficácia e eficiência.</p>
+<p><strong>Nota:</strong> O Data Logger é uma folha de cálculo em Excel e requer uma versão do Microsoft Office que suporte macros. </p>
+<h3>Passo 6:</h3>
+<p>Depois de realizadas todas as tarefas, podemos fazer um pequeno questionário pós-teste para conhecer a opinião do utilizador sobre o website que acabou de usar. Basicamente podemos perguntar quais as áreas que teve mais dificuldades, quais as que teve menos dificuldades, etc... Podemos também pedir ao utilizador para indicar numa escala o nível de dificuldade global que sentiu ao navegar no website.</p>
+<p>Podemos aproveitar este passo final para fazer uma avaliação subjectiva.<br />
+A avaliação subjectiva diz-nos como é que os utilizadores se sentem em relação ao sistema que acabaram de testar. Esta actividade foi aplicada imediatamente a seguir aos testes de usabilidade realizados pelo utilizador.</p>
+<p>Os principais benefícios que se podem recolher desta avaliação subjectiva são:</p>
+<ul>
+<li>A satisfação do utilizador é provavelmente o factor mais importante para influenciar as suas decisões em relação à aprovação ou não do sistema (outros factores importantes são o preço, tecnologia e a lealdade à marca);</li>
+<li>Uma fraca satisfação pode levar a queixas dos utilizadores, mesmo que sejam por vezes infundadas;</li>
+<li>A avaliação subjectiva complementa os dados recolhidos nas tarefas realizadas;</li>
+</ul>
+<p>Se usarem o <a href="http://www.userfocus.co.uk/resources/datalogger.html">Usability Test Data Logger</a> podem escolher um de dois modelos para o cálculo da avaliação subjectiva.</p>
+<h2>Resultados</h2>
+<p>Nos resultados devem identificar todos os pontos em que os utilizadores tiveram dificuldades. De preferência devem usar screenshots e, caso os utilizadores testados o permitam, fornecer os vídeos dos testes ao cliente.</p>
+<p>Além dos resultados dos testes, podem fazer várias variações usando os dados recolhidos nos questionários pré e pós-teste. Por exemplo, podem separar os utilizadores em grupos e fazer analises separadas por grupo.</p>
+<p>Com o <a href="http://www.userfocus.co.uk/resources/datalogger.html">Usability Test Data Logger</a> podem ainda criar gráficos de desempenho, eficácia e eficiência, com base nos tempos de conclusão e nível de dificuldade sentido pelos utilizadores em cada tarefa.</p>
+<p><img src="/wp-content/uploads/2008/12/picture-4a.png" alt="" title="Desempenho" class="alignnone size-original wp-image-673" /></p>
+<p><img src="/wp-content/uploads/2008/12/picture-9a.png" alt="" title="Eficiência" class="alignnone size-original wp-image-676" /></p>
+<p><img src="/wp-content/uploads/2008/12/picture-5a.png" alt="" title="Eficácia" class="alignnone size-original wp-image-674" /></p>
+<p><img src="/wp-content/uploads/2008/12/picture-6a.png" alt="" title="Eficácia" class="alignnone size-original wp-image-675" /></p>
+<p>E desta forma, sem equipamento especial e gastando pouco dinheiro, conseguimos fazer um teste de usabilidade de forma simples e rápida. É claro que podíamos ir um pouco mais longe e fazer um estudo mais detalhado, com análises demográficas, etc, mas com este simples teste conseguimos descobrir a maior parte dos problemas de usabilidade existentes.</p>
+</div>
+<div class="fb-like" data-href="https://www.ivogomes.com/blog/testes-de-usabilidade-uma-metodologia-rapida-e-facil/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</article>
+<div class="column-group more-articles">
+<div class="all-50 medium-50 small-100 tiny-100">
+<p><span class="fa fa-arrow-left"></span> Artigo Anterior<br /><a href="/dia-mundial-da-usabilidade-2008/">Dia Mundial da Usabilidade 2008</a></p>
+</div>
+<div class="all-50 medium-50 small-100 tiny-100">
+<p class="align-right">Artigo Seguinte <span class="fa fa-arrow-right"></span><br /><a href="/novo-website-da-direccao-geral-de-arquivos/">Novo website da Direcção-Geral de Arquivos</a></p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="column-group gutters">
+<div class="all-20 medium-10 hide-small hide-tiny">
+<p></p>
+</div>
+<div class="all-60 medium-80 small-100 tiny-100">
+<section id="comments-list">
+<h2 class="align-center"><span class="fa fa-comment fa-2x"></span><br &>24 Coment&aacute;rios</h2>
+<p class="comente align-center"><a href="#comment">Comente este artigo!</a></p>
+<ol class="unstyled">
+<li class="comentario" id="comment-75052">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/81b85ae6ff2276aa714331ca92a684a5?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/81b85ae6ff2276aa714331ca92a684a5?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.inovazi.com/' rel='external nofollow' class='url'>João Fernandes</a></p>
+<p class="author-date">5 de Dezembro de 2008, 15:37</p>
+</div>
+<div class="text">
+<p>Boas,</p>
+<p>escrevo apenas a dar os parabéns pelo post. Apesar de já conhecer a maioria das técnicas, está muito bem explicado e simples. Bom trabalho!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-75068">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/fa9c718b42116a96a59f56848c36e09f?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/fa9c718b42116a96a59f56848c36e09f?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Bruno Figueiredo</p>
+<p class="author-date">5 de Dezembro de 2008, 22:04</p>
+</div>
+<div class="text">
+<p>Só não percebo o porquê de ser &#8220;rápido e fácil&#8221;. A metodologia que descreves é a metodologia normal, quase ipsis verbis, utilizada em testes de usabilidade. Só digo isto porque existem métodos mais rápidos que este.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-75070">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/a7cec3317570f0b0e5a6fa2f99a685f1?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/a7cec3317570f0b0e5a6fa2f99a685f1?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://desfocado.net/blog' rel='external nofollow' class='url'>Miguel David</a></p>
+<p class="author-date">6 de Dezembro de 2008, 00:10</p>
+</div>
+<div class="text">
+<p>Olá, fizeste uma excelente descrição do que deve ser um teste de usabilidade, parece mesmo retirado do &#8220;Handheld Usability&#8221; :)<br />
+Só um pormenor, os testes de usabilidade podem servir para muito mais que páginas web. ;)</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-75071">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">6 de Dezembro de 2008, 00:12</p>
+</div>
+<div class="text">
+<p>Falo em metodologia fácil e rápida porque, apesar de listar todos os passos, é possível realizar os testes usando um simples portátil e um ficheiro Excel, não sendo necessário ter um laboratório completo para isso.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-75072">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">6 de Dezembro de 2008, 00:22</p>
+</div>
+<div class="text">
+<p>@Miguel David: Claro que sim Miguel. Podemos fazer testes de usabilidade em qualquer tipo de produto. O que muda é a forma como se recolhe os dados, mas a metodologia é basicamente a mesma.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-75082">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/fa9c718b42116a96a59f56848c36e09f?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/fa9c718b42116a96a59f56848c36e09f?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Bruno Figueiredo</p>
+<p class="author-date">6 de Dezembro de 2008, 07:56</p>
+</div>
+<div class="text">
+<p>Ah OK. Sinceramente nunca fui grande apologista de laboratorios para o efeito. Ja fiz testes num e acho que so servem para deixar os utilizadores mais nervosos. O ideal é que o ambiente seja o mais informal possivel.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-75930">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/96fc923031cbec3fe58b7535229a179b?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/96fc923031cbec3fe58b7535229a179b?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.chrisb.com.br/blog' rel='external nofollow' class='url'>Chris Benseler</a></p>
+<p class="author-date">30 de Dezembro de 2008, 13:57</p>
+</div>
+<div class="text">
+<p>Eu queria muito, mesmo, que as empresas de web &#8211; na sua maioria &#8211; dessem o tempo necessário para os projetos terem testes de usabilidade (bem como análise de usabilidade antes do projeto começar).<br />
+Mas, o que eu mais vejo infelizmente é esse tempo ser cortado em quase todos os projetos :-/<br />
+Parabéns pelo blog!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-75931">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/fa9c718b42116a96a59f56848c36e09f?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/fa9c718b42116a96a59f56848c36e09f?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Bruno Figueiredo</p>
+<p class="author-date">30 de Dezembro de 2008, 14:49</p>
+</div>
+<div class="text">
+<p>@Chris: A usabilidade não deve estar antes nem depois do core do projecto. Deve ser uma preocupação constante e parte integrada do processo de desenvolvimento. Daí que empresas que pensam na usabilidade como patches (como o que descreves) nunca acabam por os conseguir aplicar.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-75932">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/96fc923031cbec3fe58b7535229a179b?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/96fc923031cbec3fe58b7535229a179b?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.chrisb.com.br/blog' rel='external nofollow' class='url'>Chris Benseler</a></p>
+<p class="author-date">30 de Dezembro de 2008, 15:34</p>
+</div>
+<div class="text">
+<p>Bruno, no caso da análise de usabilidade antes do projeto, esse não é um patch (ao meu ver). Mas, concordo contigo que deve fazer parte do procese inteiro de desenvolvimento.<br />
+Acontece que se quando o projeto é concebido, se quem gerencia e arquiteta o mesmo não se preocupa com esse quesito (a usabilidade) dificilmente os desenvolvedores, que normalmente são pessoas mais técnicas e não possuem uma visão global do projeto, conseguirão dar a devida importância a esse item.<br />
+Abraço!</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-75935">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/fa9c718b42116a96a59f56848c36e09f?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/fa9c718b42116a96a59f56848c36e09f?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Bruno Figueiredo</p>
+<p class="author-date">30 de Dezembro de 2008, 18:33</p>
+</div>
+<div class="text">
+<p>@Chris: Sim, tens razão no que dizes. No início do projecto não se pode considerar bem patch. E sim, a filosofia de desenvolvimento tem de ser abraçada por todos senão não vale de nada.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-86105">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/e87c4282f2203c55e8ce0772375f3b06?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/e87c4282f2203c55e8ce0772375f3b06?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.contabilidademantiqueira.com.br/' rel='external nofollow' class='url'>Neimar</a></p>
+<p class="author-date">18 de Junho de 2009, 14:51</p>
+</div>
+<div class="text">
+<p>Muito bom o post, bem explicado&#8230;<br />
+Valeu por compartilhar esse conhecimento com todos&#8230;<br />
+Visita meu site: contabilidademantiqueira.com.br desenvolvvido pela namp.com.br</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-86879">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/92e8881df524025069b2ab500f8349e5?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/92e8881df524025069b2ab500f8349e5?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://alexandrecolucci.eti.br/' rel='external nofollow' class='url'>Alexandre Colucci</a></p>
+<p class="author-date">4 de Setembro de 2009, 14:30</p>
+</div>
+<div class="text">
+<p>Infelizmente o Silverback só tem pra Mac, o que traz alguns inconvenientes: a maioria dos websites e sistemas web são para PCs, assim, devem ser testados em PCs, correto?</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentarioi" id="comment-86889">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+<p class="author-date">5 de Setembro de 2009, 08:55</p>
+</div>
+<div class="text">
+<p>@Alexandre Colucci: Diz-me um website que tenha sido desenvolvido para PC&#8230; Ou diz-me um website que não funcione no Mac&#8230;</p>
+<p>A única diferença entre os Macs e os PCs (neste caso vamos apenas comparar com os PC que tenham Windows instalado) é que no Mac não existe Internet Explorer (graças a Deus). De resto, os websites (se forem bem feitos) funcionam em qualquer browser. Se não funcionarem correctamente num determinado browser (por exemplo o Firefox, que cada vez tem mais utilizadores) então o site tem um problema de usabilidade e de acessibilidade.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-86965">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/92e8881df524025069b2ab500f8349e5?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/92e8881df524025069b2ab500f8349e5?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://alexandrecolucci.eti.br/' rel='external nofollow' class='url'>Alexandre Colucci</a></p>
+<p class="author-date">16 de Setembro de 2009, 19:04</p>
+</div>
+<div class="text">
+<p>Ok, fiz uma colocação errada. Tem toda a razão. De qualquer maneira, o Silverback só tem pra Mac. Procurei por softwares semelhantes para PC e não encontrei nada parecido. O melhor é o Morae, que é absurdamente caro, inviabilizando seu uso para pequenas/médias empresas que utilizem a plataforma PC (essa é realidade no Brasil, infelizmente).</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-87772">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/af5d49764de334d0ada90efa81344c02?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/af5d49764de334d0ada90efa81344c02?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name">Eisenhower Rebelo Silva</p>
+<p class="author-date">14 de Dezembro de 2009, 22:31</p>
+</div>
+<div class="text">
+<p>Alexandre, pra pc´s eu utilizo o Easy Screen Recorder (esr1) que também captura a tela, grava o audio e também da feedback de onde o usuário clicou e se esse click foi com o botao dereito ou esquerdo do mouse.</p>
+<p>Ivo, parabéns pelo post, bem esplicado, esclarecedor e icentivados de mais pesquisas na área.</p>
+<p>Ja passei como referencia para os meus alunos.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-100905">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/11e338aa141fc20b3766406ab0d8a036?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/11e338aa141fc20b3766406ab0d8a036?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://loja.carioquez.com.br/' rel='external nofollow' class='url'>Felipe</a></p>
+<p class="author-date">23 de Agosto de 2011, 23:08</p>
+</div>
+<div class="text">
+<p>Normalmente não deixo comentarios em blogs e cia.<br />
+Mas você está de PARABÉNS!<br />
+Excelente artigo.</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-100906">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/11e338aa141fc20b3766406ab0d8a036?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/11e338aa141fc20b3766406ab0d8a036?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://loja.carioquez.com.br/' rel='external nofollow' class='url'>Felipe</a></p>
+<p class="author-date">23 de Agosto de 2011, 23:38</p>
+</div>
+<div class="text">
+<p>QUal a alternativa ao silverback para o windows??</p>
+<p>Grato</p>
+</div>
+<div class="clear"></div>
+</li>
+<li class="comentario" id="comment-122033">
+<div class="author">
+<div class="push-left"><img alt='' src='https://secure.gravatar.com/avatar/d162177b620bb9ee3b05cde21dc4f374?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r' srcset='https://secure.gravatar.com/avatar/d162177b620bb9ee3b05cde21dc4f374?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
+<p class="author-name"><a href='http://www.testaisso.com.br/' rel='external nofollow' class='url'>Tales</a></p>
+<p class="author-date">10 de Janeiro de 2013, 21:09</p>
+</div>
+<div class="text">
+<p>Ivo, belo post muito informativo. O site testaisso.com.br presta um serviço muito útil para realização de testes de usabilidade rápida e totalmente online. Vale a pena conferir pois ele soluciona diversos problemas enfrentados pelos usuários do seu blog. Abs e sucesso!</p>
+</div>
+<div class="clear"></div>
+</li>
+</ol>
+<h3 id="trackbacks">Blogs que "linkam" para aqui</h2>
+<ol id="trackbacklist">
+<li id="comment-75084" class="fa fa-retweet">
+<a href="<a href='http://pedrotrindade.com/2008/12/05/daily-digest-for-2008-12-05/' rel='external'>pedrotrindade.com/2008/12/05/daily-digest-for-2008-12-05</a>" class="external" title="Link externo (abre numa nova janela)">Daily Digest for 2008-12-05 | Pedro Trindade</a><br /><span class="small">6 de Dezembro de 2008, 08:18 </li>
+<li id="comment-75210" class="fa fa-retweet">
+<a href="<a href='http://agenciainclusive.wordpress.com/2008/12/09/novidades-do-dia-09122008-ano-iv/' rel='external'>agenciainclusive.wordpress.com/2008/12/09/novidades-do-dia-09122008-ano-iv</a>" class="external" title="Link externo (abre numa nova janela)">Novidades do dia 09/12/2008 &#8211; Ano IV &laquo; agência para promoção da inclusão</a><br /><span class="small">9 de Dezembro de 2008, 11:11 </li>
+<li id="comment-75818" class="fa fa-retweet">
+<a href="<a href='http://confidencia.lidade.net/2008/12/23/testes-de-usabilidade-uma-metodologia-rapida-e-facil/' rel='external'>confidencia.lidade.net/2008/12/23/testes-de-usabilidade-uma-metodologia-rapida-e-facil</a>" class="external" title="Link externo (abre numa nova janela)">confidencialidade.net &raquo; Blog Archive &raquo; Testes de Usabilidade: uma metodologia rápida e fácil</a><br /><span class="small">24 de Dezembro de 2008, 11:04 </li>
+<li id="comment-76081" class="fa fa-retweet">
+<a href="<a href='http://david.ragingnexus.com/blog/2009/01/06/links-for-2009-01-06/' rel='external'>david.ragingnexus.com/blog/2009/01/06/links-for-2009-01-06</a>" class="external" title="Link externo (abre numa nova janela)">David&#8217;s Raging Nexus &raquo; Blog Archive &raquo; &raquo; links for 2009-01-06</a><br /><span class="small">6 de Janeiro de 2009, 22:01 </li>
+<li id="comment-86966" class="fa fa-retweet">
+<a href="<a href='http://www.inclusive.org.br/?p=2522' rel='external'>inclusive.org.br/?p=2522</a>" class="external" title="Link externo (abre numa nova janela)">Novidades do dia 09/12/2008 &#8211; Ano IV | Inclusive</a><br /><span class="small">16 de Setembro de 2009, 19:15 </li>
+<li id="comment-87174" class="fa fa-retweet">
+<a href="<a href='http://alternativacoletiva.com/blog/?p=202' rel='external'>alternativacoletiva.com/blog/?p=202</a>" class="external" title="Link externo (abre numa nova janela)">Alternativa Links #7 | Alternativa Coletiva</a><br /><span class="small">10 de Outubro de 2009, 01:23 </li>
+</ol>
+</section>
+<div id="comment">
+<h2>Comente!</h2>
+<form class="ink-form" method="post" id="commentform" action="/wp-comments-post.php" onsubmit="return Ink.UI.FormValidator_1.validate(this);">
+<fieldset>
+<div class="control-group required validation">
+<label for="author">Nome</label>
+<div class="control">
+<input id="author" name="author" value="" class="ink-fv-required" type="text" placeholder="O seu nome">
+<input type="hidden" name="comment_post_ID" value="648">
+ <input type="hidden" name="redirect_to" value="/blog/testes-de-usabilidade-uma-metodologia-rapida-e-facil/">
+</div>
+<p class="tip">* Campo obrigatório, de modo a aparecer o seu nome como autor do comentário</p>
+</div>
+<div class="control-group required validation">
+<label for="email">E-Mail</label>
+<div class="control append-symbol">
+<span>
+<input id="email" name="email" value="" type="email" class="ink-fv-required ink-fv-email" placeholder="O seu endereço de e-mail">
+<i class="fa fa-envelope-o"></i>
+</span>
+</div>
+<p class="tip">* Campo obrigatório, mas não será mostrado no site</p>
+</div>
+<div class="control-group">
+<label for="url">Website</label>
+<div class="control append-symbol">
+<span>
+<input id="url" name="url" value="" type="text" class="" placeholder="Se tiver um site pessoal, indique aqui">
+<i class="fa fa-globe"></i>
+</span>
+</div>
+</div>
+<div class="control-group required validation">
+<label for="comment.text">Comentário</label>
+<div class="control">
+<textarea id="comment-text" rows="10" name="comment" class="ink-fv-required"></textarea>
+</div>
+<p class="tip">* Campo obrigatório, convém escrever alguma coisa ;)</p>
+<p class="tip">São permitidas algumas tags HTML, como<br />
+<code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt;
+&lt;abbr title=&quot;&quot;&gt;
+&lt;acronym title=&quot;&quot;&gt;
+&lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt;
+&lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt;
+&lt;strong&gt;</code>
+</p>
+</div>
+</fieldset>
+<p style="clear: both;" class="subscribe-to-comments">
+<input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" />
+<label for="subscribe">Notificar-me por e-mail de novos comentários a este artigo</label>
+</p>
+<button class="button" type="submit"><span class="fa fa-comment"></span> Comentar</button>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="da59c1c36e" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="47" /></p> </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="ink-grid">
+<p>Ivo Gomes</p>
+<div class="social">
+<ul>
+<li><a title="Facebook" class="fb" href="https://www.facebook.com/ivogomes"><span class="fa fa-facebook"></span><i>Facebook</i></a></li>
+<li><a title="Twitter" class="twitter" href="https://www.twitter.com/ivogomes"><span class="fa fa-twitter"></span><i>Twitter</i></a></li>
+<li><a title="Google+" class="gplus" href="https://google.com/+IvoGomes/?rel=author"><span class="fa fa-google-plus"></span><i>Google+</i></a></li>
+<li><a title="LinkedIn" class="lk" href="https://www.linkedin.com/in/ivogomes"><span class="fa fa-linkedin"></span><i>LinkedIn</i></a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script type="text/javascript" src="https://www.ivogomes.com/js/ink-all.min.js"></script>
+<script type="text/javascript" src="https://www.ivogomes.com/js/autoload.js"></script>
+<script type="text/javascript" src="https://www.ivogomes.com/js/prism.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88368-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+/* Deffer loading CSS files */
+var giftofspeed = document.createElement('link');
+giftofspeed.rel = 'stylesheet';
+giftofspeed.href = '/css/ink.min.css';
+giftofspeed.type = 'text/css';
+var godefer = document.getElementsByTagName('link')[0];
+godefer.parentNode.insertBefore(giftofspeed, godefer);
+
+var giftofspeed2 = document.createElement('link');
+giftofspeed2.rel = 'stylesheet';
+giftofspeed2.href = '/css/font-awesome.min.css';
+giftofspeed2.type = 'text/css';
+var godefer2 = document.getElementsByTagName('link')[0];
+godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+
+var giftofspeed3 = document.createElement('link');
+giftofspeed3.rel = 'stylesheet';
+giftofspeed3.href = 'https://fonts.googleapis.com/css?family=Arvo%7CPacifico';
+giftofspeed3.type = 'text/css';
+var godefer3 = document.getElementsByTagName('link')[0];
+godefer3.parentNode.insertBefore(giftofspeed3, godefer3);
+</script>
+
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"Este site utiliza cookies para ajudar a disponibilizar os respetivos serviços e analisar o tráfego. Ao utilizar este site, concorda que o mesmo utilize cookies.","dismiss":"Entendi","learnMore":"Saiba mais","link":"","theme":"dark-bottom"};
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+
+</body>
+</html>

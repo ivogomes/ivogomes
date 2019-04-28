@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Firefox 1.0</title>
+	<atom:link href="/firefox10/feed/" rel="self" type="application/rss+xml" />
+	<link>/firefox10/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/firefox10/#comment-3533</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Sat, 25 Mar 2006 11:48:15 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=99#comment-3533</guid>
+		<description><![CDATA[Eu normalmente recuso-me a usar aplicações/sites que requeiram o uso de um browser específico... Se pedem isso, não uso e vou experimentar outro. No entanto, no seu caso, parece ser uma ferramenta de trabalho à qual não pode simplesmente recusar trabalhar (mas pode e deve reclamar)...
+
+Entretanto existe uma extensão para o Firefox que permite &quot;enganar&quot; essas aplicações/sites e dizer que estamos a usar o IE em vez do Firefox...
+Pode fazer o download no site:
+&lt;a href=&quot;http://chrispederick.com/work/useragentswitcher/&quot; rel=&quot;nofollow&quot;&gt;http://chrispederick.com/work/useragentswitcher/&lt;/a&gt;
+
+Espero que ajude!]]></description>
+		<content:encoded><![CDATA[<p>Eu normalmente recuso-me a usar aplicações/sites que requeiram o uso de um browser específico&#8230; Se pedem isso, não uso e vou experimentar outro. No entanto, no seu caso, parece ser uma ferramenta de trabalho à qual não pode simplesmente recusar trabalhar (mas pode e deve reclamar)&#8230;</p>
+<p>Entretanto existe uma extensão para o Firefox que permite &#8220;enganar&#8221; essas aplicações/sites e dizer que estamos a usar o IE em vez do Firefox&#8230;<br />
+Pode fazer o download no site:<br />
+<a href="http://chrispederick.com/work/useragentswitcher/" rel="nofollow">http://chrispederick.com/work/useragentswitcher/</a></p>
+<p>Espero que ajude!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Eduardo Polita</title>
+		<link>/firefox10/#comment-3532</link>
+		<dc:creator><![CDATA[Eduardo Polita]]></dc:creator>
+		<pubDate>Fri, 24 Mar 2006 17:28:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=99#comment-3532</guid>
+		<description><![CDATA[Prezado Ivo,
+Sou representante comercial e instalaram um sistema de pedidos via webtrade. O problema é que quando tento entrar com o Firefox v.1.5.0.1 dá o erro: Versão de browser não suportada. O sistema requer Internet Explorer® 5.5 ou superior.
+
+Há algo que possa fazer (algum plugin, atualização) ou vou ter que continuar com o I.E. ?]]></description>
+		<content:encoded><![CDATA[<p>Prezado Ivo,<br />
+Sou representante comercial e instalaram um sistema de pedidos via webtrade. O problema é que quando tento entrar com o Firefox v.1.5.0.1 dá o erro: Versão de browser não suportada. O sistema requer Internet Explorer® 5.5 ou superior.</p>
+<p>Há algo que possa fazer (algum plugin, atualização) ou vou ter que continuar com o I.E. ?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

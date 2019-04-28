@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Voltei!!</title>
+	<atom:link href="/voltei/feed/" rel="self" type="application/rss+xml" />
+	<link>/voltei/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: sergio</title>
+		<link>/voltei/#comment-69035</link>
+		<dc:creator><![CDATA[sergio]]></dc:creator>
+		<pubDate>Wed, 17 Sep 2008 19:20:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=53#comment-69035</guid>
+		<description><![CDATA[achei interessante ter, muito mais coisas sobre ergonometria eu que estou começando agora após 28 a. de fisioterapeuta. Parabens. (se deletar se email é porque vou achar que é virus.
+Um abraço]]></description>
+		<content:encoded><![CDATA[<p>achei interessante ter, muito mais coisas sobre ergonometria eu que estou começando agora após 28 a. de fisioterapeuta. Parabens. (se deletar se email é porque vou achar que é virus.<br />
+Um abraço</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

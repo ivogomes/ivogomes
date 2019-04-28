@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>w3c &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/w3c/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Nova Resolução do Conselho de Ministros para a Acessibilidade Web</title>
+		<link>/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/</link>
+		<comments>/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/#comments</comments>
+		<pubDate>Wed, 10 Oct 2007 16:14:50 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[directivas]]></category>
+		<category><![CDATA[governo]]></category>
+		<category><![CDATA[w3c]]></category>
+
+		<guid isPermaLink="false">/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/</guid>
+		<description><![CDATA[<p>A <a href="http://www.acessibilidade.net/web/RCM155-2007.pdf">Resolução do Conselho de Ministros 155/2007</a>, de 2 de Outubro de 2007, estabelece os requisitos mínimos de acessibilidade que devem respeitar os sítios da Internet do Governo e dos serviços e organismos públicos da Administração Central, adoptando os níveis de conformidade das <a href="http://www.utad.pt/wai/wai-pageauth.html">directrizes sobre a acessibilidade do conteúdo da Internet</a> desenvolvidas pelo <a href="http://www.w3.org/wai">World Wide Web Consortium (W3C)</a>. </p>
+<p>O conteúdo <a rel="nofollow" href="/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/">Nova Resolução do Conselho de Ministros para a Acessibilidade Web</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+	</channel>
+</rss>

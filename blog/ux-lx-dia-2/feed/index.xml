@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: UX Lx &#8211; Dia 2</title>
+	<atom:link href="/ux-lx-dia-2/feed/" rel="self" type="application/rss+xml" />
+	<link>/ux-lx-dia-2/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.2</generator>
+	<item>
+		<title>Por: Paulo Lameira</title>
+		<link>/ux-lx-dia-2/#comment-89160</link>
+		<dc:creator><![CDATA[Paulo Lameira]]></dc:creator>
+		<pubDate>Fri, 14 May 2010 09:21:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=1129#comment-89160</guid>
+		<description><![CDATA[Olá Ivo,
+O meu nome é &lt;a href=&quot;http://pt.linkedin.com/pub/paulo-lameira/15/824/907&quot; rel=&quot;nofollow&quot;&gt;Paulo Lameira&lt;/a&gt;, sou new media designer, e tambem me interesso bastante por estes assuntos(UX, Usabilidade,etc...). Infelizmente não pude estar presente no UXLx e agradeço-te o facto de partilhares a tua experiencia no evento.]]></description>
+		<content:encoded><![CDATA[<p>Olá Ivo,<br />
+O meu nome é <a href="http://pt.linkedin.com/pub/paulo-lameira/15/824/907" rel="nofollow">Paulo Lameira</a>, sou new media designer, e tambem me interesso bastante por estes assuntos(UX, Usabilidade,etc&#8230;). Infelizmente não pude estar presente no UXLx e agradeço-te o facto de partilhares a tua experiencia no evento.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

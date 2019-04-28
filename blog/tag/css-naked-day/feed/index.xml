@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>css-naked-day &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/css-naked-day/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>CSS Naked Day</title>
+		<link>/css-naked-day/</link>
+		<comments>/css-naked-day/#comments</comments>
+		<pubDate>Wed, 05 Apr 2006 00:01:23 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[css-naked-day]]></category>
+
+		<guid isPermaLink="false">/css-naked-day/</guid>
+		<description><![CDATA[<p>Pergunta: Porque é que hoje o blog está tão feio? Resposta: O site está a ser apresentado sem folhas de estilo, ou seja, nu! Hoje, dia 5 de Abril é o CSS Naked Day, e em todo o mundo, milhares de sites e blogs estão a participar para mostrar que é possível navegar num site [&#8230;]</p>
+<p>O conteúdo <a rel="nofollow" href="/css-naked-day/">CSS Naked Day</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/css-naked-day/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

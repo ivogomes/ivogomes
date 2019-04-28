@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>boletim &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/boletim/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Má usabilidade causa problemas em eleições no Reino Unido</title>
+		<link>/ma-usabilidade-causa-problemas-em-eleicoes-no-reino-unido/</link>
+		<comments>/ma-usabilidade-causa-problemas-em-eleicoes-no-reino-unido/#comments</comments>
+		<pubDate>Thu, 09 Aug 2007 17:56:53 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[boletim]]></category>
+		<category><![CDATA[eleições]]></category>
+		<category><![CDATA[escócia]]></category>
+		<category><![CDATA[florida]]></category>
+		<category><![CDATA[votação]]></category>
+
+		<guid isPermaLink="false">/ma-usabilidade-causa-problemas-em-eleicoes-no-reino-unido/</guid>
+		<description><![CDATA[<p>Um em cada vinte votos teve de ser eliminado nas eleições parlamentares na Escócia em Maio de 2007. Os eleitores não leram as instruções e compreenderam erradamente o sistema de votação.</p>
+<p>Os eleitores depararam-se com dois sistemas de votação completamente diferentes, o que causou confusão e levou a que usassem apenas um sistema (o mais comum) para marcar ambos os boletins.</p>
+<p>O conteúdo <a rel="nofollow" href="/ma-usabilidade-causa-problemas-em-eleicoes-no-reino-unido/">Má usabilidade causa problemas em eleições no Reino Unido</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/ma-usabilidade-causa-problemas-em-eleicoes-no-reino-unido/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>workshops &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/workshops/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>A SHiFT é já esta semana</title>
+		<link>/a-shift-e-ja-esta-semana/</link>
+		<comments>/a-shift-e-ja-esta-semana/#comments</comments>
+		<pubDate>Tue, 26 Sep 2006 07:15:10 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[Acessibilidade]]></category>
+		<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Geral]]></category>
+		<category><![CDATA[Usabilidade]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[applications]]></category>
+		<category><![CDATA[conferência]]></category>
+		<category><![CDATA[shift06]]></category>
+		<category><![CDATA[web]]></category>
+		<category><![CDATA[workshops]]></category>
+
+		<guid isPermaLink="false">/a-shift-e-ja-esta-semana/</guid>
+		<description><![CDATA[<p>A SHiFT (Social and Human Ideas For Technology) é uma conferência sobre tecnologia que irá decorrer esta semana, nos dias 28 e 29 de Setembro em Lisboa. Além da conferência, o dia 27 é dedicado a alguns WorkShops.</p>
+<p>O conteúdo <a rel="nofollow" href="/a-shift-e-ja-esta-semana/">A SHiFT é já esta semana</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/a-shift-e-ja-esta-semana/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

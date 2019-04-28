@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: A revolução dos conteúdos! XML, RSS Feed, etc&#8230;</title>
+	<atom:link href="/a-revolucao-dos-conteudos-xml-rss-feed-etc/feed/" rel="self" type="application/rss+xml" />
+	<link>/a-revolucao-dos-conteudos-xml-rss-feed-etc/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Tue, 22 Jan 2019 19:44:58 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/a-revolucao-dos-conteudos-xml-rss-feed-etc/#comment-27</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 14:19:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=61#comment-27</guid>
+		<description><![CDATA[Obrigado! Também sou leitor do seu blog e acho-o bastante interessante!
+
+Acabei de colocar online esta nova versão, mas ainda faltam &quot;limar algumas arestas&quot;, nomeadamente na compatibilidade com o Mozilla e o Opera, mas fora isso, está quase pronto.
+
+Em relação à opção de abrir os links numa nova janela, vi isto num outro blog e achei que era uma excelente ideia. Fiz uma pesquisa pelo script e encontrei. Depois foi só aplicar!
+
+Um abraço,
+
+Ivo]]></description>
+		<content:encoded><![CDATA[<p>Obrigado! Também sou leitor do seu blog e acho-o bastante interessante!</p>
+<p>Acabei de colocar online esta nova versão, mas ainda faltam &#8220;limar algumas arestas&#8221;, nomeadamente na compatibilidade com o Mozilla e o Opera, mas fora isso, está quase pronto.</p>
+<p>Em relação à opção de abrir os links numa nova janela, vi isto num outro blog e achei que era uma excelente ideia. Fiz uma pesquisa pelo script e encontrei. Depois foi só aplicar!</p>
+<p>Um abraço,</p>
+<p>Ivo</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Fred van Amstel</title>
+		<link>/a-revolucao-dos-conteudos-xml-rss-feed-etc/#comment-26</link>
+		<dc:creator><![CDATA[Fred van Amstel]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2004 14:18:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.ivogomes.com/?p=61#comment-26</guid>
+		<description><![CDATA[Sou leitor assíduo do seu feed desde que foi lançado Ivo! A propósito, parabéns pelo excelente conteúdo e mais ainda pelo layout do site. A última versão já era boa, agora está ainda melhor. 
+
+Esse lance de escolher se você quer abrir os links em novas páginas foi uma solução muito engenhosa. No meu blog, logo que comecei a recebe reclamações dos leitores por não colocar _blank, preferi deixar um aviso claro para manter pressionado o botão Shift ou Control.]]></description>
+		<content:encoded><![CDATA[<p>Sou leitor assíduo do seu feed desde que foi lançado Ivo! A propósito, parabéns pelo excelente conteúdo e mais ainda pelo layout do site. A última versão já era boa, agora está ainda melhor. </p>
+<p>Esse lance de escolher se você quer abrir os links em novas páginas foi uma solução muito engenhosa. No meu blog, logo que comecei a recebe reclamações dos leitores por não colocar _blank, preferi deixar um aviso claro para manter pressionado o botão Shift ou Control.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

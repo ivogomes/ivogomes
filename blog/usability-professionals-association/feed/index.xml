@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Usability Professionals Association</title>
+	<atom:link href="/usability-professionals-association/feed/" rel="self" type="application/rss+xml" />
+	<link>/usability-professionals-association/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Eugenio Grigolon</title>
+		<link>/usability-professionals-association/#comment-5413</link>
+		<dc:creator><![CDATA[Eugenio Grigolon]]></dc:creator>
+		<pubDate>Tue, 03 Oct 2006 12:08:21 +0000</pubDate>
+		<guid isPermaLink="false">/usability-professionals-association/#comment-5413</guid>
+		<description><![CDATA[É possível ser membro de paises da América Latina?]]></description>
+		<content:encoded><![CDATA[<p>É possível ser membro de paises da América Latina?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Sérgio Rebelo</title>
+		<link>/usability-professionals-association/#comment-5407</link>
+		<dc:creator><![CDATA[Sérgio Rebelo]]></dc:creator>
+		<pubDate>Mon, 02 Oct 2006 18:10:49 +0000</pubDate>
+		<guid isPermaLink="false">/usability-professionals-association/#comment-5407</guid>
+		<description><![CDATA[Upa Upa!
+
+Podes usar os conselhos do Bruno Amaral para a comunidade de usabilidade ;)]]></description>
+		<content:encoded><![CDATA[<p>Upa Upa!</p>
+<p>Podes usar os conselhos do Bruno Amaral para a comunidade de usabilidade ;)</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

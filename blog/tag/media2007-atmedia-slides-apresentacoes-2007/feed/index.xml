@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>@media2007-atmedia-slides-apresentações-2007 &#8211; IvoGomes.com</title>
+	<atom:link href="/tag/media2007-atmedia-slides-apresentacoes-2007/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Thu, 21 Dec 2017 17:49:49 +0000</lastBuildDate>
+	<language>pt-PT</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>@media 2007, os slides</title>
+		<link>/media-2007-os-slides/</link>
+		<comments>/media-2007-os-slides/#comments</comments>
+		<pubDate>Sun, 22 Jul 2007 13:33:34 +0000</pubDate>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+				<category><![CDATA[CSS & Webstandards]]></category>
+		<category><![CDATA[Webdesign]]></category>
+		<category><![CDATA[@media2007-atmedia-slides-apresentações-2007]]></category>
+
+		<guid isPermaLink="false">/media-2007-os-slides/</guid>
+		<description><![CDATA[<p>Já foram publicadas as apresentações da @media2007 (slides e podcasts), que este ano decorreu entre 7 e 8 de Junho em Londres (edição europeia).</p>
+<p>Mais uma vez, a @media conseguiu reunir os grandes nomes do desenvolvimento web mundial e  porporcionar a quem esteve presente (e também a quem não pôde ir, agora com os slides) um conjunto de apresentações de grande nível.</p>
+<p>O conteúdo <a rel="nofollow" href="/media-2007-os-slides/">@media 2007, os slides</a> aparece primeiro em <a rel="nofollow" href="">IvoGomes.com</a>.</p>
+]]></description>
+		<wfw:commentRss>/media-2007-os-slides/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

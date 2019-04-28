@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comentários em: Testes com utilizadores</title>
+	<atom:link href="/testes-com-utilizadores/feed/" rel="self" type="application/rss+xml" />
+	<link>/testes-com-utilizadores/</link>
+	<description>Usabilidade, Acessibilidade &#38; User Experience</description>
+	<lastBuildDate>Mon, 12 Nov 2018 21:56:22 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.3</generator>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/testes-com-utilizadores/#comment-31857</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 10 Oct 2007 15:33:23 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-31857</guid>
+		<description><![CDATA[Ana, se o objectivo é fazer investigação sobre testes de usabilidade, então recomendo que procure por livros de Jakob Nielsen (ou visite o seu site em &lt;a href=&quot;http://www.useit.com&quot;/ rel=&quot;nofollow&quot;&gt;http://www.useit.com&lt;/a&gt;).
+Além disso, se pesquisar nos sites relacionados com esta área irá encontrar bastante informação, desde as metodologias utilizadas até ao número de utilizadores a testar em cada caso.]]></description>
+		<content:encoded><![CDATA[<p>Ana, se o objectivo é fazer investigação sobre testes de usabilidade, então recomendo que procure por livros de Jakob Nielsen (ou visite o seu site em <a href="http://www.useit.com/" rel="nofollow">http://www.useit.com/</a>).<br />
+Além disso, se pesquisar nos sites relacionados com esta área irá encontrar bastante informação, desde as metodologias utilizadas até ao número de utilizadores a testar em cada caso.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ana santos</title>
+		<link>/testes-com-utilizadores/#comment-30864</link>
+		<dc:creator><![CDATA[Ana santos]]></dc:creator>
+		<pubDate>Sat, 29 Sep 2007 16:58:27 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-30864</guid>
+		<description><![CDATA[peço desculpa pois não vou comentar o seu artigo.
+Eu estou a fazer investigação nesta e gostaria, se pudesse, quais os livros ou revistas onde eu possa melhorar os meus conecimentos.
+Obrigado
+Ana]]></description>
+		<content:encoded><![CDATA[<p>peço desculpa pois não vou comentar o seu artigo.<br />
+Eu estou a fazer investigação nesta e gostaria, se pudesse, quais os livros ou revistas onde eu possa melhorar os meus conecimentos.<br />
+Obrigado<br />
+Ana</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/testes-com-utilizadores/#comment-4088</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2006 14:12:44 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-4088</guid>
+		<description><![CDATA[Para os testes com utilizadores não precisas de te basear em padrões. Deves sim seguir uma metodologia correcta.
+
+Primeiro que tudo, deves estudar o interface e criar cenários de utilização. Os cenários devem ser o mais reais possíveis e depois deves criar um conjunto de tarefas que os utilizadores têm que desempenhar no interface. Cada tarefa deve ter um tempo estimado de conclusão e quais os critérios de sucesso.
+
+Depois pegas num grupo de utilizadores da população alvo e pedes-lhes para executarem estas tarefas. Durante a realização dos testes convém que os utilizadores vão pensando em voz alta para saberes porque razão executam determinadas acções (só com a observação não se consegue compreender o modelo mental dos utilizadores).
+
+Antes e depois da realização das tarefas podes fazer pequenos questionários. Pré-teste: dados pessoais e experiência de utilização de ferramentas similares; Pós-teste: quais as dificuldades sentidas, dúvidas, quais os pontos fortes, etc...
+
+Escusado será dizer que deves anotar todos os passos e verbalizações dos utilizadores ao navegarem pelo interface. O uso de uma camera de filmar facilita bastante nesta fase.
+
+Isto é apenas um resumo daquilo que é necessário fazer, mas penso que já dá para te dar uma ideia :)]]></description>
+		<content:encoded><![CDATA[<p>Para os testes com utilizadores não precisas de te basear em padrões. Deves sim seguir uma metodologia correcta.</p>
+<p>Primeiro que tudo, deves estudar o interface e criar cenários de utilização. Os cenários devem ser o mais reais possíveis e depois deves criar um conjunto de tarefas que os utilizadores têm que desempenhar no interface. Cada tarefa deve ter um tempo estimado de conclusão e quais os critérios de sucesso.</p>
+<p>Depois pegas num grupo de utilizadores da população alvo e pedes-lhes para executarem estas tarefas. Durante a realização dos testes convém que os utilizadores vão pensando em voz alta para saberes porque razão executam determinadas acções (só com a observação não se consegue compreender o modelo mental dos utilizadores).</p>
+<p>Antes e depois da realização das tarefas podes fazer pequenos questionários. Pré-teste: dados pessoais e experiência de utilização de ferramentas similares; Pós-teste: quais as dificuldades sentidas, dúvidas, quais os pontos fortes, etc&#8230;</p>
+<p>Escusado será dizer que deves anotar todos os passos e verbalizações dos utilizadores ao navegarem pelo interface. O uso de uma camera de filmar facilita bastante nesta fase.</p>
+<p>Isto é apenas um resumo daquilo que é necessário fazer, mas penso que já dá para te dar uma ideia :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Luís Daniel Cunha</title>
+		<link>/testes-com-utilizadores/#comment-4087</link>
+		<dc:creator><![CDATA[Luís Daniel Cunha]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2006 13:59:44 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-4087</guid>
+		<description><![CDATA[Ivo li o teu post desta semana e quanto ao que foi dito aqui há muito pouco a acrescentar... o que eu realmente gostaria de saber era em que te baseias para fazer estes testes... padrões dos utilizadores, tipo que critérios é que normalmente são exigidos aos utilizadores. Pergunto isto porque tmabém gostaria de começar a fazer pequenos testes de usabilidade nos sites que construo, mas como não tive formação na área gostaria, se pudesses é claro, que me desses umas dicas... obrigado!]]></description>
+		<content:encoded><![CDATA[<p>Ivo li o teu post desta semana e quanto ao que foi dito aqui há muito pouco a acrescentar&#8230; o que eu realmente gostaria de saber era em que te baseias para fazer estes testes&#8230; padrões dos utilizadores, tipo que critérios é que normalmente são exigidos aos utilizadores. Pergunto isto porque tmabém gostaria de começar a fazer pequenos testes de usabilidade nos sites que construo, mas como não tive formação na área gostaria, se pudesses é claro, que me desses umas dicas&#8230; obrigado!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Moisés Ribeiro</title>
+		<link>/testes-com-utilizadores/#comment-4083</link>
+		<dc:creator><![CDATA[Moisés Ribeiro]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2006 12:35:19 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-4083</guid>
+		<description><![CDATA[Há alguns dias, em um trabalho interno aqui da empresa, solicitei que uma colega me explicasse um ícone que eu mesmo havia desenhado. Para minha surpresa, ela não falou nada daquilo que eu esperava. :-o
+
+Foi importante, porque apontou deficiências que eu mesmo não enxergava no trabalho (nem as outras pessoas que estavam trabalhando comigo no projeto). Considerei os aspectos de uso e aprendizagem ao pensar a interface (como no seu caso, é uma extranet), mas acabei esquecendo da evasão e constrangimento dos usuários/utilizadores ao se depararem com algo que não entendem.
+
+Como é um projeto complexo, previ uma área de ajuda (infelizmente nem todos os projetos têm uma dessas...). Lá, poderei fazer referência às legendas de ícones que eu utilizar. Mesmo assim, espero fazer testes com os utilizadores no final do projeto, ainda mais se tratando de um público interno. :-p
+
+Abraços, e êxito no teu trabalho!]]></description>
+		<content:encoded><![CDATA[<p>Há alguns dias, em um trabalho interno aqui da empresa, solicitei que uma colega me explicasse um ícone que eu mesmo havia desenhado. Para minha surpresa, ela não falou nada daquilo que eu esperava. :-o</p>
+<p>Foi importante, porque apontou deficiências que eu mesmo não enxergava no trabalho (nem as outras pessoas que estavam trabalhando comigo no projeto). Considerei os aspectos de uso e aprendizagem ao pensar a interface (como no seu caso, é uma extranet), mas acabei esquecendo da evasão e constrangimento dos usuários/utilizadores ao se depararem com algo que não entendem.</p>
+<p>Como é um projeto complexo, previ uma área de ajuda (infelizmente nem todos os projetos têm uma dessas&#8230;). Lá, poderei fazer referência às legendas de ícones que eu utilizar. Mesmo assim, espero fazer testes com os utilizadores no final do projeto, ainda mais se tratando de um público interno. :-p</p>
+<p>Abraços, e êxito no teu trabalho!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Ivo Gomes</title>
+		<link>/testes-com-utilizadores/#comment-4081</link>
+		<dc:creator><![CDATA[Ivo Gomes]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2006 11:23:04 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-4081</guid>
+		<description><![CDATA[É verdade. Já nem me lembrava. Fui eu que desenhei o interface (o que tem o botão com o texto e não o que tem o ícone) :)
+
+Daí os bons resultados obtidos nos testes :D]]></description>
+		<content:encoded><![CDATA[<p>É verdade. Já nem me lembrava. Fui eu que desenhei o interface (o que tem o botão com o texto e não o que tem o ícone) :)</p>
+<p>Daí os bons resultados obtidos nos testes :D</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: salgadation</title>
+		<link>/testes-com-utilizadores/#comment-4080</link>
+		<dc:creator><![CDATA[salgadation]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2006 11:16:58 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-4080</guid>
+		<description><![CDATA[Parece que estamos perante um interface sem grandes problemas, no entanto. Talvez seja fruto de ter sido contruído por um profissionalda área? ;-)]]></description>
+		<content:encoded><![CDATA[<p>Parece que estamos perante um interface sem grandes problemas, no entanto. Talvez seja fruto de ter sido contruído por um profissionalda área? ;-)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: Dextro</title>
+		<link>/testes-com-utilizadores/#comment-4079</link>
+		<dc:creator><![CDATA[Dextro]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2006 11:15:48 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-4079</guid>
+		<description><![CDATA[Hehe também tinha noção que isso poderia acontecer e a verdade é que quando estamos a criar o interfaçe raramente nos lembramos que outras pessoas podem não ser tão fluentes naquelas lides como nós logo tendemos a cair no erro de pensar que os outros têm de saber...
+
+Ao menos assim ficaste com a noção bastante clara de que essa parte do interfaçe precisa de melhor esclareçimento :)]]></description>
+		<content:encoded><![CDATA[<p>Hehe também tinha noção que isso poderia acontecer e a verdade é que quando estamos a criar o interfaçe raramente nos lembramos que outras pessoas podem não ser tão fluentes naquelas lides como nós logo tendemos a cair no erro de pensar que os outros têm de saber&#8230;</p>
+<p>Ao menos assim ficaste com a noção bastante clara de que essa parte do interfaçe precisa de melhor esclareçimento :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: malabaru</title>
+		<link>/testes-com-utilizadores/#comment-4078</link>
+		<dc:creator><![CDATA[malabaru]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2006 10:34:06 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-4078</guid>
+		<description><![CDATA[Está mal ... em vez de esperares pelo responsável, davas um carolo no utilizador e dizias algo como:
+
+&quot;&#039;Da-se! Abre os olhos, rapaz! Estás a dormir?&quot;
+
+Mesmo antes do responsável fazer alguma coisa.]]></description>
+		<content:encoded><![CDATA[<p>Está mal &#8230; em vez de esperares pelo responsável, davas um carolo no utilizador e dizias algo como:</p>
+<p>&#8220;&#8216;Da-se! Abre os olhos, rapaz! Estás a dormir?&#8221;</p>
+<p>Mesmo antes do responsável fazer alguma coisa.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Por: malabaru</title>
+		<link>/testes-com-utilizadores/#comment-4077</link>
+		<dc:creator><![CDATA[malabaru]]></dc:creator>
+		<pubDate>Wed, 07 Jun 2006 10:29:46 +0000</pubDate>
+		<guid isPermaLink="false">/testes-com-utilizadores/#comment-4077</guid>
+		<description><![CDATA[So Fucking What?]]></description>
+		<content:encoded><![CDATA[<p>So Fucking What?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
