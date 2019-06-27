@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/ivogomes
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ivogomes.com
+  * I am ivogomes (https://keybase.io/ivogomes) on keybase.
+  * I have a public key ASCI7JE0VeGZH9OeBHFsvN9WYreZDuKVdu8gMROmf22rogo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012088ec913455e1991fd39e04716cbcdf5662b7990ee29576ef203113a67f6daba20a",
+      "host": "keybase.io",
+      "kid": "012088ec913455e1991fd39e04716cbcdf5662b7990ee29576ef203113a67f6daba20a",
+      "uid": "37eac95994ff7de570219a75dad93519",
+      "username": "ivogomes"
+    },
+    "merkle_root": {
+      "ctime": 1561654774,
+      "hash": "61ef3e4d45af8eee859c9aa8b9ba10b0afe16b9b4a6076732d8d8becfa9c50cd55f98f3e1d5f543ceeb2dcf75dfbe24c5b421da266d05268bf6ae538ca435c7d",
+      "hash_meta": "eab91440727d1d3cd9dd46a6db87b1fec9e6b66e1682b7487bd580b857711777",
+      "seqno": 5651081
+    },
+    "service": {
+      "entropy": "vjnLmMeM8RJ462QddBgnj3tY",
+      "hostname": "ivogomes.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.1.0"
+  },
+  "ctime": 1561654786,
+  "expire_in": 504576000,
+  "prev": "1a179ed22182edc363b5f939a5a808a74468be2ae9cacc5e565c7e027d2ea7a3",
+  "seqno": 12,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgiOyRNFXhmR/TngRxbLzfVmK3mQ7ilXbvIDETpn9tq6IKp3BheWxvYWTESpcCDMQgGhee0iGC7cNjtfk5pagIp0RovirpysxeVlx+An0up6PEIIRqE0GeoWVHu2rX5ZA/3dC54MWy6O1nCCX0hl3HrryLAgHCo3NpZ8RATiDqX1xsVT0m3pJjvU20Cuotc2hh8o/XnJYV9mAliC5YXCiJiEGkHwQzrtT3qdzNqfl4tQyFxJxjhbtoaKVgB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIITpq9zXGUqAi79QWwm+crfupuF7KwaxvLv2IRogiPwIo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ivogomes
+
+==================================================================
