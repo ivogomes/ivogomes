@@ -34,14 +34,6 @@
 <script type="text/babel" data-presets="react">
   const { useState, useEffect } = React;
 
-  function getInitial(key, fallback) {
-    try {
-      const stored = localStorage.getItem('ivogomes.' + key);
-      if (stored) return stored;
-    } catch(e) {}
-    return (window.__DEFAULTS && window.__DEFAULTS[key]) || fallback;
-  }
-
   function parseHash() {
     const h = window.location.hash || '';
     const m = h.match(/^#\/project\/([a-z0-9-]+)/i);
@@ -49,32 +41,12 @@
   }
 
   function App() {
-    const [theme, setTheme] = useState(() => getInitial('theme', 'light'));
     const [projectId, setProjectId] = useState(() => parseHash());
-
-    useEffect(() => {
-      document.documentElement.dataset.theme = theme;
-      try { localStorage.setItem('ivogomes.theme', theme); } catch(e) {}
-      document.querySelectorAll('#theme-toggle button').forEach(b => {
-        b.classList.toggle('active', b.dataset.theme === theme);
-      });
-      window.parent.postMessage({type: '__edit_mode_set_keys', edits: {theme}}, '*');
-    }, [theme]);
 
     useEffect(() => {
       const onHash = () => setProjectId(parseHash());
       window.addEventListener('hashchange', onHash);
       return () => window.removeEventListener('hashchange', onHash);
-    }, []);
-
-    useEffect(() => {
-      const themeEl = document.getElementById('theme-toggle');
-      const onTheme = (e) => {
-        const b = e.target.closest('button[data-theme]');
-        if (b) setTheme(b.dataset.theme);
-      };
-      themeEl.addEventListener('click', onTheme);
-      return () => themeEl.removeEventListener('click', onTheme);
     }, []);
 
     const openProject = (id) => {
@@ -103,16 +75,6 @@
 
     return <window.EditorialDirection data={window.IVO_DATA} onOpenProject={openProject} />;
   }
-
-  window.addEventListener('message', (e) => {
-    if (!e.data || typeof e.data !== 'object') return;
-    if (e.data.type === '__activate_edit_mode') {
-      document.getElementById('tweaks').classList.add('open');
-    } else if (e.data.type === '__deactivate_edit_mode') {
-      document.getElementById('tweaks').classList.remove('open');
-    }
-  });
-  window.parent.postMessage({type: '__edit_mode_available'}, '*');
 
   ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 </script>

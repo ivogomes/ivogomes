@@ -16,7 +16,8 @@
   --shadow: 0 1px 0 #1F1A1410;
 }
 
-[data-theme="dark"] {
+@media (prefers-color-scheme: dark) {
+  :root {
   --cream: #1A1814;
   --cream-2: #221F1A;
   --paper: #14110D;
@@ -31,6 +32,7 @@
   --bg: var(--cream);
   --surface: var(--paper);
   --shadow: 0 1px 0 #00000030;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -40,7 +42,6 @@ body {
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background 200ms ease, color 200ms ease;
 }
 a { color: inherit; }
 img { max-width: 100%; display: block; }
