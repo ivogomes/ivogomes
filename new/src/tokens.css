@@ -1,0 +1,47 @@
+/* Warm neutrals — shared across all three directions */
+:root {
+  --cream: #F3EDE1;
+  --cream-2: #EBE3D3;
+  --paper: #FBF7EE;
+  --ink: #1F1A14;
+  --ink-soft: #2D2721;
+  --text: #1F1A14;
+  --text-muted: #6E6558;
+  --text-quiet: #8D8374;
+  --rule: #1F1A1420;
+  --rule-strong: #1F1A1450;
+  --accent: #C8361A; /* vivid vermillion */
+  --bg: var(--cream);
+  --surface: var(--paper);
+  --shadow: 0 1px 0 #1F1A1410;
+}
+
+[data-theme="dark"] {
+  --cream: #1A1814;
+  --cream-2: #221F1A;
+  --paper: #14110D;
+  --ink: #F3EDE1;
+  --ink-soft: #E6DFCF;
+  --text: #EDE6D6;
+  --text-muted: #9A9081;
+  --text-quiet: #6E6558;
+  --rule: #EDE6D620;
+  --rule-strong: #EDE6D650;
+  --accent: #F2825A;
+  --bg: var(--cream);
+  --surface: var(--paper);
+  --shadow: 0 1px 0 #00000030;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 200ms ease, color 200ms ease;
+}
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+::selection { background: var(--ink); color: var(--cream); }
