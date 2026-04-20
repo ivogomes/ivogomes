@@ -65,40 +65,57 @@ function EditorialDirection({ data, onOpenProject }) {
           ))}
         </div>
 
-        <div className="ed-section-label">Portfolio</div>
-        <window.PortfolioGrid projects={data.projects} direction="editorial" onOpenProject={onOpenProject} />
-
-        <div className="ed-section-label">Work experience</div>
+        <div className="ed-section-label">Work</div>
         <div className="ed-jobs">
-          {data.work.map(job => (
-            <div key={job.id} className="ed-job">
-              <div className="ed-job-years">{job.years}</div>
-              <div>
-                <h3 className="ed-job-company">{job.company}</h3>
-                <p className="ed-job-role">{job.role}</p>
-                <p className="ed-job-summary">{job.summary}</p>
-                {job.highlights.length > 0 && (
-                  <ul className="ed-highlights">
-                    {job.highlights.map((h, i) => (
-                      <li key={i} className="ed-highlight">
-                        <span>—</span>
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+          {data.work.map(job => {
+            const jobProjects = data.projects.filter(p => p.workId === job.id);
+            return (
+              <div key={job.id} className="ed-job">
+                <div className="ed-job-years">{job.years}</div>
+                <div>
+                  <h3 className="ed-job-company">{job.company}</h3>
+                  <p className="ed-job-role">{job.role}</p>
+                  <p className="ed-job-summary">{job.summary}</p>
+                  {job.highlights.length > 0 && (
+                    <ul className="ed-highlights">
+                      {job.highlights.map((h, i) => (
+                        <li key={i} className="ed-highlight">
+                          <span>—</span>
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {jobProjects.length > 0 && (
+                    <div className="pg-cards" style={{marginTop: "1.5rem"}}>
+                      {jobProjects.map(project => (
+                        <a
+                          key={project.id}
+                          href={`#/project/${project.id}`}
+                          onClick={(e) => { e.preventDefault(); onOpenProject && onOpenProject(project.id); }}
+                          className="project-card"
+                        >
+                          <window.ProjectTile project={project} size="md" />
+                          <div className="pg-card-info">
+                            <div className="pg-card-title">{project.title}</div>
+                            <div className="pg-card-tag">{project.tag}</div>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <div className="ed-section-label">Elsewhere</div>
         <div className="ed-links">
           <div className="ed-link-col">
-            <a href={data.links.linkedin}>LinkedIn</a>
+            <a href={data.links.linkedin}><i className="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
           </div>
           <div className="ed-link-col">
-            <a href={data.links.instagram}>Instagram</a>
+            <a href={data.links.instagram}><i className="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
           </div>
           <div className="ed-link-col">
             <a href={data.links.cv}>CV (PDF)</a>

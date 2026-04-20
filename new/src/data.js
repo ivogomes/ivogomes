@@ -83,6 +83,7 @@ window.IVO_DATA = {
   projects: [
     {
       id: "dashlane-ds",
+      workId: "dashlane",
       company: "Dashlane",
       title: "Dashlane Design System",
       year: "2023 — Present",
@@ -107,6 +108,7 @@ window.IVO_DATA = {
     },
     {
       id: "dashlane-health",
+      workId: "dashlane",
       company: "Dashlane",
       title: "Password Health Score",
       year: "2023 — Present",
@@ -129,6 +131,7 @@ window.IVO_DATA = {
     },
     {
       id: "talkdesk-agent",
+      workId: "talkdesk",
       company: "Talkdesk",
       title: "Agent Experience",
       year: "2017 — 2023",
@@ -154,6 +157,7 @@ window.IVO_DATA = {
     },
     {
       id: "talkdesk-cobalt",
+      workId: "talkdesk",
       company: "Talkdesk",
       title: "Cobalt — Talkdesk Design System",
       year: "2017 — 2023",
@@ -176,6 +180,7 @@ window.IVO_DATA = {
     },
     {
       id: "grafly",
+      workId: "brightpixel",
       company: "Bright Pixel",
       title: "Graf.ly",
       year: "2016 — 2017",
@@ -199,6 +204,7 @@ window.IVO_DATA = {
     },
     {
       id: "sapo-homepage",
+      workId: "sapo",
       company: "SAPO",
       title: "SAPO.PT Homepage",
       year: "2009 — 2015",
@@ -220,6 +226,7 @@ window.IVO_DATA = {
     },
     {
       id: "meo-pt",
+      workId: "sapo",
       company: "Portugal Telecom",
       title: "MEO.PT & PT Empresas",
       year: "2012 — 2015",
@@ -242,6 +249,7 @@ window.IVO_DATA = {
     },
     {
       id: "meo-selfservice",
+      workId: "sapo",
       company: "Portugal Telecom",
       title: "MEO Customer Self-Service",
       year: "2013 — 2015",
@@ -265,6 +273,7 @@ window.IVO_DATA = {
     },
     {
       id: "sapo-ux",
+      workId: "sapo",
       company: "SAPO",
       title: "SAPO UX — Guidelines",
       year: "2009 — ongoing",
@@ -287,6 +296,7 @@ window.IVO_DATA = {
     },
     {
       id: "mytvshows",
+      workId: "earlier",
       company: "Personal",
       title: "MyTVShows",
       year: "2007 — 2016",
