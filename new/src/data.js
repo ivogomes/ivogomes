@@ -310,7 +310,7 @@ window.IVO_DATA = {
 
   side: [
     { name: "MyTVShows", years: "2007 — 2016", note: "Pet project — tracked what episodes you'd watched, years before Trakt.tv. Built the whole thing solo: PHP, HTML, CSS, JS." },
-    { name: "Portuguese UX Pro. Association", years: "2005 — 2017", note: "Founder and board member." },
+    { name: "Portuguese Usability Professionals Association", years: "2005 — 2017", note: "Founder and board member." },
     { name: "Ringing avatar animation", years: "codepen", note: "Because sometimes the best way to explain an interaction is to build it.", href: "https://codepen.io/ivogomes/pen/vMLvVW" }
   ],
 
@@ -318,7 +318,7 @@ window.IVO_DATA = {
     linkedin: "https://linkedin.com/in/ivogomes",
     instagram: "https://instagram.com/ivogomes",
     email: "ivogomes@gmail.com",
-    cv: "assets/cv.pdf",
-    portfolio: "assets/portfolio.pdf"
+    cv: "/cv/cv.pdf",
+    portfolio: "/portfolio/portfolio.pdf"
   }
 };
