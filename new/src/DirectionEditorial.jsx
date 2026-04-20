@@ -3,26 +3,12 @@
 function HeroArt() {
   return (
     <React.Fragment>
-      <svg aria-hidden="true" style={{position:"absolute", inset:0, width:"100%", height:"100%", opacity: 0.16}}>
-        <defs>
-          <pattern id="hero-dots-fs" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.4" fill="#2A1A08" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hero-dots-fs)" />
-      </svg>
-      <svg aria-hidden="true" style={{position:"absolute", inset:0, width:"100%", height:"100%"}}>
-        <circle cx="8%" cy="82%" r="90" fill="#6A4AA8" opacity="0.75" />
-        <circle cx="92%" cy="18%" r="64" fill="#2E6F5E" opacity="0.8" />
-        <circle cx="78%" cy="78%" r="36" fill="#F6ECFF" opacity="0.6" />
-        <circle cx="22%" cy="14%" r="22" fill="#FFF8E8" opacity="0.7" />
-        <circle cx="60%" cy="40%" r="14" fill="#FFF8E8" opacity="0.35" />
-      </svg>
-      <div style={{
-        position: "absolute", inset: 0,
-        background: "radial-gradient(ellipse at 50% 105%, rgba(42,26,8,0.22), transparent 55%)",
-        pointerEvents: "none",
-      }} />
+      <img
+        aria-hidden="true"
+        src="assets/bg.jpg"
+        style={{position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover"}}
+      />
+      <div aria-hidden="true" style={{position:"absolute", inset:0, background:"rgba(0,0,0,0.35)"}} />
     </React.Fragment>
   );
 }
@@ -82,7 +68,7 @@ function EditorialDirection({ data, onOpenProject }) {
         <div className="ed-section-label">Portfolio</div>
         <window.PortfolioGrid projects={data.projects} direction="editorial" onOpenProject={onOpenProject} />
 
-        <div className="ed-section-label">Selected Work</div>
+        <div className="ed-section-label">Work experience</div>
         <div className="ed-jobs">
           {data.work.map(job => (
             <div key={job.id} className="ed-job">
