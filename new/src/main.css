@@ -801,3 +801,31 @@ a:hover { color: var(--accent); }
   color: #C97B5A;
   opacity: 0.85;
 }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .ed-job {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .ed-job-years {
+    padding-top: 0;
+    margin-bottom: 4px;
+  }
+
+  .pp-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pp-meta {
+    order: -1;
+    border-left: none;
+    border-top: 1px solid var(--rule);
+    padding-left: 0;
+    padding-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+  }
+  .pp-meta-group { margin-bottom: 0; }
+}
