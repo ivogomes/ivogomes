@@ -1,0 +1,11 @@
+{
+  "name": "Ivo Gomes",
+  "short_name": "Ivo",
+  "icons": [
+    { "src": "assets/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "assets/favicon.png",        "sizes": "any",   "type": "image/png" }
+  ],
+  "theme_color": "#F3EDE1",
+  "background_color": "#F3EDE1",
+  "display": "standalone"
+}
