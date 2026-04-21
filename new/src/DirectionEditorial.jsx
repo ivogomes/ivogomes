@@ -123,7 +123,7 @@ function EditorialDirection({ data, onOpenProject }) {
         </div>
 
         <footer className="ed-footer">
-          <span>© Ivo Gomes, 2026</span>
+          <span>© Ivo Gomes, {new Date().getFullYear()}</span>
           <span>Made with ❤️, in Lisbon 🇵🇹</span>
         </footer>
       </div>
