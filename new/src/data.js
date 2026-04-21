@@ -37,7 +37,7 @@ window.IVO_DATA = {
       company: "Bright Pixel / Graf.ly",
       years: "2016 — 2017",
       role: "UX Lead · Co-founder & CEO",
-      summary: "Led a team of 5 working on media projects with <a href='https://publico.pt'>Público</a> and the <a href='https://newsinitiative.withgoogle.com/'>Google Digital News Initiative</a>. Spun one project off into Graf.ly — a content-creation tool for journalists.",
+      summary: "Led a team of 5 working on media projects with <a href='https://publico.pt' target='_blank' rel='noopener noreferrer'>Público</a> and the <a href='https://newsinitiative.withgoogle.com/' target='_blank' rel='noopener noreferrer'>Google Digital News Initiative</a>. Spun one project off into Graf.ly — a content-creation tool for journalists.",
       highlights: [
         "As Graf.ly's CEO, owned product, UX, design, most of the HTML/CSS — and pitched to investors and clients.",
         "Winner of Road2WebSummit and Lisbon Challenge. Exhibited at Web Summit as an Alpha start-up."
@@ -53,7 +53,7 @@ window.IVO_DATA = {
       highlights: [
         "Owned usability, accessibility and UX for the SAPO.PT homepage from 2009 to 2015 including all of its subportals (sports, news, videos, blogs, etc).",
         "Led the overhaul of MEO.PT, MEO Empresas, and customer self service portal — specs, wireframes, user testing, card sorting.",
-        "Wrote <a href='https://ux.sapo.pt'>ux.sapo.pt</a> — internal usability guidelines later adopted as a source for the <a href='ama.gov.pt'>Portuguese government's public-sector</a> guidelines."
+        "Wrote <a href='https://ux.sapo.pt' target='_blank' rel='noopener noreferrer'>ux.sapo.pt</a> — internal usability guidelines later adopted as a source for the <a href='https://ama.gov.pt' target='_blank' rel='noopener noreferrer'>Portuguese government's public-sector</a> guidelines."
       ],
       tag: "UX Leadership · Web, Mobile, IPTV · Accessibility"
     },
@@ -62,9 +62,9 @@ window.IVO_DATA = {
       company: "Earlier",
       years: "2002 — 2009",
       role: "Log, Ergolab, IconMedialab, Volkswagen Autoeuropa",
-      summary: "Usability consultant and interaction designer for the web; ergonomics research; HCI consulting. Helped design the <a href='https://antt.dglab.gov.pt/'>Portuguese National Archives</a> sites (still online 20 years later) and ran an ergonomic study of Volkswagen's paint line.",
+      summary: "Usability consultant and interaction designer for the web; ergonomics research; HCI consulting. Helped design the <a href='https://antt.dglab.gov.pt/' target='_blank' rel='noopener noreferrer'>Portuguese National Archives</a> sites (still online 20 years later) and ran an ergonomic study of Volkswagen's paint line.",
       highlights: [
-        "Check my <a href='https://www.linkedin.com/in/ivogomes/'>LinkedIn</a> for more details."
+        "Check my <a href='https://www.linkedin.com/in/ivogomes/' target='_blank' rel='noopener noreferrer'>LinkedIn</a> for more details."
       ],
       tag: "Usability · HCI · Ergonomics"
     }

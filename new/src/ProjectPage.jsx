@@ -63,9 +63,9 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
 
       {shots.length > 0 && (
         <section className="pp-shots">
-          <div className="pp-shots-label">
+          <h2 className="pp-shots-label">
             {isMono ? "// screenshots" : "Screenshots"}
-          </div>
+          </h2>
           <div className={`pp-shots-grid${shots.length < 3 ? " pp-shots-grid--pair" : ""}`}>
             {shots.map((s, i) => (
               <button key={i} className="pp-shot-btn" onClick={() => setLightboxIdx(i)} aria-label={`View ${s.label} full size`}>

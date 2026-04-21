@@ -1,6 +1,12 @@
 html { background: var(--bg); min-height: 100%; }
 body { font-family: 'Inter', system-ui, sans-serif; min-height: 100%; }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 body::-webkit-scrollbar { width: 10px; }
 body::-webkit-scrollbar-thumb { background: var(--rule-strong); border-radius: 10px; }
 
@@ -43,6 +49,7 @@ a:hover { color: var(--accent); }
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 600;
 }
+.scroll-cue:focus-visible { outline: 2px solid #FFF8E8; outline-offset: 6px; border-radius: 2px; }
 
 /* ── Editorial Direction ─────────────────────────────────────── */
 .ed-hero {
@@ -445,6 +452,7 @@ a:hover { color: var(--accent); }
   line-height: 1;
 }
 .pp-lightbox-close:hover { opacity: 1; }
+.pp-lightbox-close:focus-visible { outline: 2px solid #fff; outline-offset: 4px; border-radius: 2px; }
 .pp-lightbox-nav {
   display: flex;
   align-items: center;
@@ -464,6 +472,7 @@ a:hover { color: var(--accent); }
 }
 .pp-lightbox-nav-btn:hover { opacity: 1; }
 .pp-lightbox-nav-btn:disabled { opacity: 0.2; cursor: default; }
+.pp-lightbox-nav-btn:focus-visible { outline: 2px solid #fff; outline-offset: 4px; border-radius: 2px; }
 .pp-lightbox-counter {
   color: #fff;
   font-size: 13px;
