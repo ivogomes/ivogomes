@@ -29,7 +29,7 @@ function ProjectTile({ project, size = "lg", showText = true, style = {} }) {
       )}
 
       {project.tileImg && (
-        <img src={isHero ? project.tileImg : (project.tileImgThumb || project.tileImg)} alt={project.title} className="tile-img" />
+        <img src={isHero ? project.tileImg : (project.tileImgThumb || project.tileImg)} alt={project.title} className="tile-img" loading="lazy" />
       )}
 
       {showText && !project.tileImg && (
@@ -51,7 +51,7 @@ function ProjectShot({ project, shot, style = {}, showNote = false, thumb = fals
     <div className="shot" style={{background: project.tileColor, color: project.tileInk, ...style}}>
       {shot.img ? (
         <>
-          <img src={thumb ? (shot.imgThumb || shot.img) : shot.img} alt={shot.label} className="shot-img" />
+          <img src={thumb ? (shot.imgThumb || shot.img) : shot.img} alt={shot.label} className="shot-img" loading="lazy" />
           <div className="shot-shade" />
         </>
       ) : (
