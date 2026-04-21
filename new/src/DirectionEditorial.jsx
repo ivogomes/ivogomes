@@ -124,7 +124,7 @@ function EditorialDirection({ data, onOpenProject }) {
 
         <footer className="ed-footer">
           <span>© Ivo Gomes, 2026</span>
-          <span>Made with care, in Lisbon</span>
+          <span>Made with ❤️, in Lisbon 🇵🇹</span>
         </footer>
       </div>
     </React.Fragment>
