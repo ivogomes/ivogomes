@@ -10,29 +10,34 @@ function ProjectTile({ project, size = "lg", showText = true, style = {} }) {
       className={`tile tile--${size}`}
       style={{background: project.tileColor, color: project.tileInk, ...style}}
     >
-      <svg className="tile-texture" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <pattern id={`stripes-${project.id}`} x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
-            <rect x="0" y="0" width="14" height="14" fill="transparent" />
-            <rect x="0" y="0" width="1" height="14" fill={project.tileInk} />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill={`url(#stripes-${project.id})`} />
-      </svg>
+      {!project.tileImg && (
+        <svg className="tile-texture" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <pattern id={`stripes-${project.id}`} x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+              <rect x="0" y="0" width="14" height="14" fill="transparent" />
+              <rect x="0" y="0" width="1" height="14" fill={project.tileInk} />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill={`url(#stripes-${project.id})`} />
+        </svg>
+      )}
 
-      <div className={`tile-initials tile-initials--${size}`} style={{color: project.tileInk}}>
-        {project.initials}
-      </div>
+      {!project.tileImg && (
+        <div className={`tile-initials tile-initials--${size}`} style={{color: project.tileInk}}>
+          {project.initials}
+        </div>
+      )}
 
-      {showText && (
+      {project.tileImg && (
+        <img src={project.tileImg} alt={project.title} className="tile-img" />
+      )}
+
+      {showText && !project.tileImg && (
         <>
           <div className={`tile-meta${isHero ? " tile-meta--hero" : ""}`}>
             {project.company} · {project.year}
           </div>
           <div className="tile-bottom">
-            <div className={`tile-placeholder${isHero ? " tile-placeholder--hero" : ""}`}>
-              placeholder · drop screenshot here
-            </div>
             <div className={titleClass}>{project.title}</div>
           </div>
         </>
@@ -44,15 +49,20 @@ function ProjectTile({ project, size = "lg", showText = true, style = {} }) {
 function ProjectShot({ project, shot, style = {} }) {
   return (
     <div className="shot" style={{background: project.tileColor, color: project.tileInk, ...style}}>
-      <svg className="shot-texture" aria-hidden="true">
-        <defs>
-          <pattern id={`shot-s-${project.id}-${shot.label}`} x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="0.6" fill={project.tileInk} />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill={`url(#shot-s-${project.id}-${shot.label})`} />
-      </svg>
-      <div className="shot-caption">screenshot placeholder</div>
+      {shot.img ? (
+        <img src={shot.img} alt={shot.label} className="shot-img" />
+      ) : (
+        <>
+          <svg className="shot-texture" aria-hidden="true">
+            <defs>
+              <pattern id={`shot-s-${project.id}-${shot.label}`} x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+                <circle cx="1" cy="1" r="0.6" fill={project.tileInk} />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill={`url(#shot-s-${project.id}-${shot.label})`} />
+          </svg>
+        </>
+      )}
       <div className="shot-footer">
         <div className="shot-label">{shot.label}</div>
         <div className="shot-note">{shot.note}</div>

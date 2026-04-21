@@ -5,27 +5,17 @@ window.IVO_DATA = {
   company: "Dashlane",
   location: "Lisbon, Portugal",
 
-  intro: {
-    short: "Hi, I'm Ivo.",
-    oneLiner: "Product design leader based in Lisbon. Currently Director of Product Design at Dashlane.",
-    paragraphs: [
-      "I'm passionate about minimalist, functional design — the kind where nothing's out of place and everything earns its spot.",
-      "Today I lead the Product Design team at Dashlane, where we're making the internet a safer place by protecting credentials and secrets from breaches and phishing. Before that, I helped grow Talkdesk's design team from 4 to nearly 70, and built Cobalt — their design system — from scratch.",
-      "I'm a fan of design systems, a sometime speaker and mentor, and I still like to get my hands dirty with HTML and CSS when the mood strikes."
-    ]
-  },
-
   work: [
     {
       id: "dashlane",
       company: "Dashlane",
       years: "2023 — Present",
       role: "Director of Product Design",
-      summary: "Leading the Expansion (core product) and Platform (design system, UX architecture) design teams. Working in a triad with Product and Engineering to set the vision and strategy for Dashlane.",
+      summary: "Leading the End-User and Platform (design system, UX architecture) design teams. Working in a triad with Product and Engineering to set the vision and strategy for Dashlane.",
       highlights: [
-        "Grew the Design System from 5 components with low adoption to a multi-platform system covering 95%+ of every page — across Figma, Web, iOS and Android.",
+        "Helped grow the Design System from 5 components with low adoption to a multi-platform system covering 95%+ of every screen — across Figma, Web, iOS and Android.",
         "Shifted the team from silo'd designers to a true practice: shared critiques, design studio hours, pair-designing across triads.",
-        "Now focusing on UX Architecture & Patterns — pre-built recipes for the bigger moves (bulk actions, filtering, navigation)."
+        "Now focusing on other horizontal topics, like accessibility, localisation, and AI."
       ],
       tag: "Leadership · Design Systems · B2C/B2B Security"
     },
@@ -33,12 +23,12 @@ window.IVO_DATA = {
       id: "talkdesk",
       company: "Talkdesk",
       years: "2017 — 2023",
-      role: "Senior Product Designer → Director of Product Designer",
-      summary: "Led the CCaaS design team (up to 11 direct reports). Helped grow the wider design team from 4 to nearly 70 across the world.",
+      role: "Senior Product Designer → Director of Product Design",
+      summary: "Led the CCaaS (Contact Center as a Service) design team (11 direct reports). Helped grow the wider design team from 4 to nearly 70 across multiple locations around the world.",
       highlights: [
-        "Lead designer for Talkdesk's new agent experience — the responsive web/desktop app contact-center agents use every day for calls, voicemails, and activity.",
+        "Lead designer for Talkdesk's agent experience — the responsive web/desktop app contact-center agents use every day for calls, voicemails, and activity.",
         "Built Cobalt — Talkdesk's design system — from scratch. Wrote early HTML/CSS for components to get the accessibility right.",
-        "Lots of field research: shadowing agents in contact centers pre-COVID, Zoom sessions and design sprints after."
+        "Lots of field research: shadowing agents in contact centers, learning from their workflows and pain points."
       ],
       tag: "Leadership · Agent Experience · Design Systems"
     },
@@ -47,12 +37,12 @@ window.IVO_DATA = {
       company: "Bright Pixel / Graf.ly",
       years: "2016 — 2017",
       role: "UX Lead · Co-founder & CEO",
-      summary: "Led a team of 5 working on media projects with Público and the Google Digital News Initiative. Spun one project off into Graf.ly — a content-creation tool for journalists.",
+      summary: "Led a team of 5 working on media projects with <a href='https://publico.pt'>Público</a> and the <a href='https://newsinitiative.withgoogle.com/'>Google Digital News Initiative</a>. Spun one project off into Graf.ly — a content-creation tool for journalists.",
       highlights: [
         "As Graf.ly's CEO, owned product, UX, design, most of the HTML/CSS — and pitched to investors and clients.",
         "Winner of Road2WebSummit and Lisbon Challenge. Exhibited at Web Summit as an Alpha start-up."
       ],
-      tag: "Leadership · Startup · Newsroom tools"
+      tag: "Leadership · Startups · CMS for journalists"
     },
     {
       id: "sapo",
@@ -61,9 +51,9 @@ window.IVO_DATA = {
       role: "Head of UX & QA",
       summary: "Managed a UX and QA team at the most-visited website in Portugal at the time. Worked across web, mobile, and IPTV (MEO TV).",
       highlights: [
-        "Owned usability, accessibility and UX for the SAPO.PT homepage from 2009 to 2015.",
-        "Led the overhaul of MEO.PT and the PT Empresas enterprise site — specs, wireframes, user testing, card sorting.",
-        "Wrote ux.sapo.pt — internal usability guidelines later adopted as a source for the Portuguese government's (ama.gov.pt) public-sector guidelines."
+        "Owned usability, accessibility and UX for the SAPO.PT homepage from 2009 to 2015 including all of its subportals (sports, news, videos, blogs, etc).",
+        "Led the overhaul of MEO.PT, MEO Empresas, and customer self service portal — specs, wireframes, user testing, card sorting.",
+        "Wrote <a href='https://ux.sapo.pt'>ux.sapo.pt</a> — internal usability guidelines later adopted as a source for the <a href='ama.gov.pt'>Portuguese government's public-sector</a> guidelines."
       ],
       tag: "UX Leadership · Web, Mobile, IPTV · Accessibility"
     },
@@ -72,8 +62,10 @@ window.IVO_DATA = {
       company: "Earlier",
       years: "2002 — 2009",
       role: "Log, Ergolab, IconMedialab, Volkswagen Autoeuropa",
-      summary: "Usability consultant and interaction designer for the web; ergonomics research; HCI consulting. Helped design the Portuguese National Archives sites (still online 20 years later) and ran an ergonomic study of Volkswagen's paint line.",
-      highlights: [],
+      summary: "Usability consultant and interaction designer for the web; ergonomics research; HCI consulting. Helped design the <a href='https://antt.dglab.gov.pt/'>Portuguese National Archives</a> sites (still online 20 years later) and ran an ergonomic study of Volkswagen's paint line.",
+      highlights: [
+        "Check my <a href='https://www.linkedin.com/in/ivogomes/'>LinkedIn</a> for more details."
+      ],
       tag: "Usability · HCI · Ergonomics"
     }
   ],
@@ -93,6 +85,7 @@ window.IVO_DATA = {
       tileColor: "#E8553D",  // terracotta
       tileInk: "#FFF8E8",
       initials: "DS",
+      tileImg: "assets/projects/dashlane-ds.png",
       sections: [
         { h: "Context", p: "I'm a huge fan of Design Systems and love building them. When I joined Dashlane, the Design System was in its early stages: 5 components, very low adoption from designers and engineers, and a slow development process that required each component to ship for all 4 platforms (Figma, Web, iOS, Android) before any release." },
         { h: "Strategy", p: "Shortly after taking over, I set up a strategy to build the base components users would need for 80+% of all pages in the product, and changed how we delivered to our users. We started publishing early for designers in Figma as soon as components were ready — this boosted adoption and design consistency." },
@@ -100,7 +93,7 @@ window.IVO_DATA = {
         { h: "Now", p: "We're focusing our efforts on UX Architecture and Patterns — pre-built recipes for larger interactions (bulk actions, filtering, navigation) — and have moved to a hybrid model where our users are now the main contributors to the DS, validated by the UX Architecture Working Group." }
       ],
       shots: [
-        { label: "Component library", note: "Figma — core set" },
+        { label: "Component library", note: "Figma — core set", img: "assets/projects/dashlane-ds.png" },
         { label: "Tokens", note: "color · spacing · type" },
         { label: "Patterns", note: "recipes / interactions" },
         { label: "Docs", note: "guidance site" }
@@ -135,7 +128,7 @@ window.IVO_DATA = {
       company: "Talkdesk",
       title: "Agent Experience",
       year: "2017 — 2023",
-      role: "Lead Product Designer → Director",
+      role: "Lead Product Designer",
       tag: "Core product · Framework",
       blurb: "The web/desktop app contact-center agents use every day. Designed as a framework that extends with first-party or third-party add-ons.",
       tileColor: "#C8361A",  // rust
@@ -163,6 +156,29 @@ window.IVO_DATA = {
       year: "2017 — 2023",
       role: "Senior Product Designer",
       tag: "Design System · From scratch",
+      blurb: "Built Talkdesk's design system from the ground up. In the early days, also hand-wrote HTML/CSS for the components to nail accessibility.",
+      tileColor: "#2E6F5E",  // walnut
+      tileInk: "#E6F5EC",
+      initials: "Co",
+      sections: [
+        { h: "Context", p: "I helped build Talkdesk's Design System from scratch. In the early days I also helped on the front-end (HTML/CSS) of components to include accessibility features and make sure the experience matched what we had imagined in the design style guide. That was in parallel with the Sketch (later Figma) component library." },
+        { h: "Handoff", p: "By the time I left the company, there was a dedicated team of developers and designers working on the design system — but about 80% of the Figma components were still using my original assets." },
+        { h: "More", p: "I wrote a blog post about how we built it in 2020 — it covers the decisions, the gotchas, and the team shape." }
+      ],
+      shots: [
+        { label: "Core components", note: "first wave" },
+        { label: "Tokens", note: "color & type" },
+        { label: "Accessibility", note: "a11y-first" }
+      ]
+    },
+    {
+      id: "talkdesk-hyergrowth",
+      workId: "talkdesk",
+      company: "Talkdesk",
+      title: "Growing a design team from 4 to 70",
+      year: "2017 — 2023",
+      role: "Director of Product Design",
+      tag: "Leadership · Design Team Growth",
       blurb: "Built Talkdesk's design system from the ground up. In the early days, also hand-wrote HTML/CSS for the components to nail accessibility.",
       tileColor: "#2E6F5E",  // walnut
       tileInk: "#E6F5EC",

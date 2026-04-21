@@ -60,9 +60,9 @@ function EditorialDirection({ data, onOpenProject }) {
         </p>
 
         <div className="ed-bio">
-          {data.intro.paragraphs.slice(1).map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+            <p>Today I lead the Product Design team at <a href="https://dashlane.com">Dashlane</a>, where we're making the internet a safer place by protecting companies and individuals' credentials and secrets from breaches and phishing. Before that, I helped grow <a href="https://talkdesk.com">Talkdesk</a>'s design team from 4 to nearly 70, and helped build Cobalt — their design system — from scratch.</p>
+            <p>I'm a fan of design systems, a sometime speaker and mentor, and I still like to get my hands dirty with the code when the mood strikes.</p>
+            <p>Lately I've been exploring how AI is shifting the way we design and build products, and how to make the most of it while keeping the human touch.</p>
         </div>
 
         <div className="ed-section-label">Work</div>
@@ -75,13 +75,13 @@ function EditorialDirection({ data, onOpenProject }) {
                 <div>
                   <h3 className="ed-job-company">{job.company}</h3>
                   <p className="ed-job-role">{job.role}</p>
-                  <p className="ed-job-summary">{job.summary}</p>
+                  <p className="ed-job-summary" dangerouslySetInnerHTML={{__html: job.summary}} />
                   {job.highlights.length > 0 && (
                     <ul className="ed-highlights">
                       {job.highlights.map((h, i) => (
                         <li key={i} className="ed-highlight">
                           <span>—</span>
-                          {h}
+                          <span dangerouslySetInnerHTML={{__html: h}} />
                         </li>
                       ))}
                     </ul>
@@ -118,7 +118,7 @@ function EditorialDirection({ data, onOpenProject }) {
             <a href={data.links.instagram}><i className="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
           </div>
           <div className="ed-link-col">
-            <a href={data.links.cv}>CV (PDF)</a>
+            <a href={data.links.cv}>Download my CV (PDF)</a>
           </div>
         </div>
 

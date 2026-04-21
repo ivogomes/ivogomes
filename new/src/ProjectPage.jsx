@@ -2,6 +2,14 @@
 
 function ProjectPage({ project, direction = "editorial", allProjects = [], onBack, onNavigate }) {
   const idx = allProjects.findIndex(p => p.id === project.id);
+  const [lightboxShot, setLightboxShot] = React.useState(null);
+
+  React.useEffect(() => {
+    if (!lightboxShot) return;
+    const onKey = (e) => { if (e.key === "Escape") setLightboxShot(null); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxShot]);
   const prev = idx > 0 ? allProjects[idx - 1] : null;
   const next = idx < allProjects.length - 1 ? allProjects[idx + 1] : null;
 
@@ -55,10 +63,21 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
           </div>
           <div className={`pp-shots-grid${project.shots.length < 3 ? " pp-shots-grid--pair" : ""}`}>
             {project.shots.map((s, i) => (
-              <window.ProjectShot key={i} project={project} shot={s} />
+              <button key={i} className="pp-shot-btn" onClick={() => setLightboxShot(s)} aria-label={`View ${s.label} full size`}>
+                <window.ProjectShot project={project} shot={s} />
+              </button>
             ))}
           </div>
         </section>
+      )}
+
+      {lightboxShot && (
+        <div className="pp-lightbox" role="dialog" aria-modal="true" onClick={() => setLightboxShot(null)}>
+          <div className="pp-lightbox-inner" onClick={(e) => e.stopPropagation()}>
+            <button className="pp-lightbox-close" onClick={() => setLightboxShot(null)} aria-label="Close">✕</button>
+            <window.ProjectShot project={project} shot={lightboxShot} style={{width: "100%", aspectRatio: "16/10"}} />
+          </div>
+        </div>
       )}
 
       <div className="pp-narrative">
