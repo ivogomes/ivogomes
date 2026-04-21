@@ -1,77 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio — Ivo Gomes</title>
+<meta name="description" content="Download the portfolio of Ivo Gomes, Director of Product Design at Dashlane." />
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Ivo Gomes' Portfolio</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon"  href="/assets/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<meta name="theme-color" content="#F3EDE1" />
 
-    <!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link href="../assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="/src/tokens.css" />
+<link rel="stylesheet" href="/src/main.css" />
+</head>
+<body>
 
-    <!-- Stylesheets -->
+<div class="pp-wrap">
+  <div class="pp-nav">
+    <a href="/" class="pp-nav-back">
+      <span class="pp-nav-back-arrow">←</span> Back to the homepage
+    </a>
+    <span>Ivo Gomes</span>
+  </div>
 
-    <link href="../assets/bootstrap.css" rel="stylesheet">
-
-    <link href="../assets/styles.css" rel="stylesheet">
-
-    <link href="../assets/responsive.css" rel="stylesheet">
-
-  </head>
-
-  <body data-gr-c-s-loaded="true" class="vsc-initialized">
-
-    <div class="main-area">
-      <div class="container full-height position-static">
-
-        <section class="left-section full-height">
-
-          <a class="logo" href="/">
-            <strong>IvoGomes</strong>.com</a>
-
-          <div class="display-table">
-            <div class="display-table-cell">
-              <div class="main-content">
-                <h1 class="title">
-                  <strong>Download my Portfolio</strong>
-                </h1>
-                <p>My Portfolio can be downloaded from the link below. Alternatively, <a href="/cv/">check my CV here</a>.<br><br></p>               
-                <p><a href="portfolio.pdf" download>Download (PDF)</a></p>
-              </div>
-              <!-- main-content -->
-            </div>
-          </div>
-
-        </section>
-        <!-- left-section -->
-
-        <section class="right-section" style="background-image: url(../assets/bg.jpg)">
-
-        </section>
-        <!-- right-section -->
-
-      </div>
-      <!-- container -->
+  <div class="pp-header" style="margin-top: 48px;">
+    <div>
+      <h1 class="pp-title">Portfolio</h1>
+      <p class="pp-blurb">A selection of projects from my years in product design. For my full background, <a href="/cv/">download my CV</a> or find me on <a href="https://linkedin.com/in/ivogomes" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+      <a href="portfolio.pdf" download class="pp-download-btn">Download Portfolio (PDF)</a>
     </div>
-    <!-- main-area -->
+  </div>
+</div>
 
-    <!-- SCIPTS -->
+<style>
+  .pp-download-btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 12px 24px;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: opacity 0.15s;
+  }
+  .pp-download-btn:hover { opacity: 0.75; color: var(--bg); }
+</style>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-88368-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', 'UA-88368-2');
-    </script>
-
-  </body>
-
+</body>
 </html>

@@ -228,6 +228,7 @@ a:hover { color: var(--accent); }
   flex-wrap: wrap;
   gap: 0 40px;
 }
+.ed-link-col:last-child { margin-left: auto; }
 .ed-link-col {
   font-family: Georgia, serif;
   font-size: 16px;

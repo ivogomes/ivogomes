@@ -1,83 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ivo Gomes — Director of Product Design</title>
+<meta name="description" content="Personal site of Ivo Gomes, Director of Product Design at Dashlane. Based in Lisbon." />
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ivogomes.com</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon"  href="assets/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="assets/site.webmanifest" />
+<meta name="theme-color" content="#F3EDE1" />
 
-    <!-- Font -->
+<!-- Fonts: Inter -->
+<link rel="preload" href="assets/bg.webp" as="image" type="image/webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link href="./assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="src/tokens.css?v=7" />
+<link rel="stylesheet" href="src/main.css?v=7" />
 
-    <!-- Stylesheets -->
+</head>
 
-    <link href="./assets/bootstrap.css" rel="stylesheet">
+<body>
 
-    <link href="./assets/styles.css" rel="stylesheet">
+<main id="root"></main>
 
-    <link href="./assets/responsive.css" rel="stylesheet">
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-  </head>
+<script src="src/data.js?v=5"></script>
+<script type="text/babel" data-presets="react" src="src/Tile.jsx?v=5"></script>
+<script type="text/babel" data-presets="react" src="src/ProjectPage.jsx?v=5"></script>
+<script type="text/babel" data-presets="react" src="src/DirectionEditorial.jsx?v=5"></script>
 
-  <body data-gr-c-s-loaded="true" class="vsc-initialized">
+<script type="text/babel" data-presets="react">
+  const { useState, useEffect } = React;
 
-    <div class="main-area">
-      <div class="container full-height position-static">
+  function parseHash() {
+    const h = window.location.hash || '';
+    const m = h.match(/^#\/project\/([a-z0-9-]+)/i);
+    return m ? m[1] : null;
+  }
 
-        <section class="left-section full-height">
+  function App() {
+    const [projectId, setProjectId] = useState(() => parseHash());
 
-          <a class="logo" href="/">
-            <strong>IvoGomes</strong>.com</a>
+    useEffect(() => {
+      const onHash = () => setProjectId(parseHash());
+      window.addEventListener('hashchange', onHash);
+      return () => window.removeEventListener('hashchange', onHash);
+    }, []);
 
-          <div class="display-table">
-            <div class="display-table-cell">
-              <div class="main-content">
-                <h1 class="title">
-                  <strong>Coming Soon</strong>
-                </h1>
-                <p>My website is currently undergoing a major update. It should be back in a few weeks. Thank you for your patience.</p>
-                <p>In the meantime you can check my <a href="/cv">CV</a> or head directly to my <a href="https://www.linkedin.com/in/ivogomes/">LinkedIn</a> page.</p>
+    const openProject = (id) => {
+      window.location.hash = '#/project/' + id;
+      setProjectId(id);
+      window.scrollTo({top: 0, behavior: 'instant'});
+    };
+    const backToHome = () => {
+      window.location.hash = '';
+      setProjectId(null);
+      window.scrollTo({top: 0, behavior: 'instant'});
+    };
 
-                
-
-              </div>
-              <!-- main-content -->
-            </div>
-            <!-- display-table-cell -->
-          </div>
-          <!-- display-table -->
-
-        </section>
-        <!-- left-section -->
-
-        <section class="right-section" style="background-image: url(assets/bg.jpg)">
-
-         
-        </section>
-        <!-- right-section -->
-
-      </div>
-      <!-- container -->
-    </div>
-    <!-- main-area -->
-
-    <!-- SCIPTS -->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-88368-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
+    if (projectId) {
+      const project = window.IVO_DATA.projects.find(p => p.id === projectId);
+      if (project) {
+        return <window.ProjectPage
+          project={project}
+          direction="editorial"
+          allProjects={window.IVO_DATA.projects}
+          onBack={backToHome}
+          onNavigate={openProject}
+        />;
       }
-      gtag('js', new Date());
+    }
 
-      gtag('config', 'UA-88368-2');
-    </script>
+    return <window.EditorialDirection data={window.IVO_DATA} onOpenProject={openProject} />;
+  }
 
-  </body>
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
 
+</body>
 </html>
