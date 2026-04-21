@@ -5,7 +5,7 @@ function HeroArt() {
     <React.Fragment>
       <img
         aria-hidden="true"
-        src="assets/bg.jpg"
+        src="assets/bg.webp"
         style={{position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover"}}
       />
       <div aria-hidden="true" style={{position:"absolute", inset:0, background:"rgba(0,0,0,0.35)"}} />
