@@ -85,7 +85,8 @@ window.IVO_DATA = {
       tileColor: "#E8553D",  // terracotta
       tileInk: "#FFF8E8",
       initials: "DS",
-      tileImg: "assets/projects/dashlane-ds.png",
+      tileImg: "assets/projects/dashlane-ds.png",  // 1600x1000
+      tileImgThumb: "assets/projects/dashlane-ds-thumb.png",  // 600x375
       sections: [
         { h: "Context", p: "I'm a huge fan of Design Systems and love building them. When I joined Dashlane, the Design System was in its early stages: 5 components, very low adoption from designers and engineers, and a slow development process that required each component to ship for all 4 platforms (Figma, Web, iOS, Android) before any release." },
         { h: "Strategy", p: "Shortly after taking over, I set up a strategy to build the base components users would need for 80+% of all pages in the product, and changed how we delivered to our users. We started publishing early for designers in Figma as soon as components were ready — this boosted adoption and design consistency." },
@@ -93,7 +94,7 @@ window.IVO_DATA = {
         { h: "Now", p: "We're focusing our efforts on UX Architecture and Patterns — pre-built recipes for larger interactions (bulk actions, filtering, navigation) — and have moved to a hybrid model where our users are now the main contributors to the DS, validated by the UX Architecture Working Group." }
       ],
       shots: [
-        { label: "Component library", note: "Figma — core set", img: "assets/projects/dashlane-ds.png" },
+        { label: "Component library", note: "Figma — core set", img: "assets/projects/dashlane-ds.png", imgThumb: "assets/projects/dashlane-ds-thumb.png" },
         { label: "Tokens", note: "color · spacing · type" },
         { label: "Patterns", note: "recipes / interactions" },
         { label: "Docs", note: "guidance site" }
@@ -111,6 +112,8 @@ window.IVO_DATA = {
       tileColor: "#F0A830",  // amber
       tileInk: "#2A1A08",
       initials: "PH",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "Context", p: "Dashlane's job is to protect credentials from breaches and phishing. But the hardest part isn't storage — it's getting people to act on weak, reused, or compromised passwords." },
         { h: "Approach", p: "We worked with Product and Engineering to reframe 'security' from a scary audit into a coachable score. The design needed to feel supportive, specific, and actionable — not alarmist." },
@@ -134,6 +137,8 @@ window.IVO_DATA = {
       tileColor: "#C8361A",  // rust
       tileInk: "#FFF4E2",
       initials: "AX",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "Context", p: "I was the lead product designer for the new agent experience at Talkdesk — specifically for the voice channel. This is the web/desktop app contact-center agents use every day to make and receive calls, manage contacts, listen to voicemails, and check their activity." },
         { h: "The product", p: "A responsive web app that runs in a browser or as a desktop app. Agents usually juggle many tools at once, so they prefer running it in a tiny desktop window — which meant every pixel had to earn its place." },
@@ -160,6 +165,8 @@ window.IVO_DATA = {
       tileColor: "#2E6F5E",  // walnut
       tileInk: "#E6F5EC",
       initials: "Co",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "Context", p: "I helped build Talkdesk's Design System from scratch. In the early days I also helped on the front-end (HTML/CSS) of components to include accessibility features and make sure the experience matched what we had imagined in the design style guide. That was in parallel with the Sketch (later Figma) component library." },
         { h: "Handoff", p: "By the time I left the company, there was a dedicated team of developers and designers working on the design system — but about 80% of the Figma components were still using my original assets." },
@@ -183,6 +190,8 @@ window.IVO_DATA = {
       tileColor: "#2E6F5E",  // walnut
       tileInk: "#E6F5EC",
       initials: "Co",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "Context", p: "I helped build Talkdesk's Design System from scratch. In the early days I also helped on the front-end (HTML/CSS) of components to include accessibility features and make sure the experience matched what we had imagined in the design style guide. That was in parallel with the Sketch (later Figma) component library." },
         { h: "Handoff", p: "By the time I left the company, there was a dedicated team of developers and designers working on the design system — but about 80% of the Figma components were still using my original assets." },
@@ -206,6 +215,8 @@ window.IVO_DATA = {
       tileColor: "#E28A2B",  // camel
       tileInk: "#2A1A08",
       initials: "Gr",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "Why", p: "Current newsroom tools are hard to use and inefficient. Journalists have to wrestle complicated content-management systems when they should be focused on creating great content." },
         { h: "What", p: "Graf.ly provided a simple workflow and an immersive writing experience. It was a Content API that could publish content anywhere — web, mobile, print — and I was responsible for the entire product: specs, features, UX, design, and most of the HTML/CSS." },
@@ -230,6 +241,8 @@ window.IVO_DATA = {
       tileColor: "#6A4AA8",  // tan
       tileInk: "#F6ECFF",
       initials: "PT",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "Scope", p: "SAPO.PT — what we used to call the Portuguese Yahoo! At the time, the most visited webpage in Portugal. I was responsible for the usability, accessibility and overall user experience of the homepage from 2009 to 2015." },
         { h: "What I did", p: "Specifications, sketches, wireframes, user testing, eye-tracking, card sorting, interviews, questionnaires, and other usability methodologies. Also some HTML/CSS." }
@@ -252,6 +265,8 @@ window.IVO_DATA = {
       tileColor: "#1E4E8C",  // olive-brown
       tileInk: "#E6F0FF",
       initials: "MO",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "MEO.PT", p: "From 2012 to 2015 I was responsible for the overall user experience of MEO's website — the main 3P (TV, Internet, Voice/Mobile) player in Portugal." },
         { h: "PT Empresas", p: "After that, the enterprise website (PT Empresas) was revamped using the same specifications and wireframes — with adaptations — from what we had designed for MEO." },
@@ -275,6 +290,8 @@ window.IVO_DATA = {
       tileColor: "#D9504A",  // toffee
       tileInk: "#FFF4E8",
       initials: "SS",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "Goal", p: "Deliver an easy way for clients to do simple tasks or changes on their products and subscriptions without having to call support." },
         { h: "Process", p: "We used personas and ran multiple usability tests with users throughout the process before the final version." },
@@ -299,6 +316,8 @@ window.IVO_DATA = {
       tileColor: "#D4B026",  // mustard-brown
       tileInk: "#2A200A",
       initials: "UX",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "Why", p: "The SAPO UX website was created to help designers and developers build more usable and accessible websites and applications." },
         { h: "Scope", p: "These guidelines were used internally at SAPO since 2009 (when I wrote the first draft) and we shared them publicly to try to make the (Portuguese) web a better one — free advice on usability, accessibility and SEO." },
@@ -322,6 +341,8 @@ window.IVO_DATA = {
       tileColor: "#385AA8",  // mocha
       tileInk: "#E6ECFF",
       initials: "TV",
+      tileImg: "",
+      tileImgThumb: "",
       sections: [
         { h: "What", p: "One of my pet projects for years. MyTVShows was a place where you could keep track of the TV shows you were watching. I started it as a way to practice PHP and it grew quickly into one of the most useful websites for people who watched multiple TV shows." },
         { h: "Solo build", p: "I developed the entire website by myself: UI, UX, PHP, HTML/CSS, JavaScript. Today, most media centers already tell you which episodes you've watched — but when I started it, there was no alternative." },

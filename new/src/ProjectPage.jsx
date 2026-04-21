@@ -2,14 +2,19 @@
 
 function ProjectPage({ project, direction = "editorial", allProjects = [], onBack, onNavigate }) {
   const idx = allProjects.findIndex(p => p.id === project.id);
-  const [lightboxShot, setLightboxShot] = React.useState(null);
+  const [lightboxIdx, setLightboxIdx] = React.useState(null);
+  const shots = project.shots || [];
 
   React.useEffect(() => {
-    if (!lightboxShot) return;
-    const onKey = (e) => { if (e.key === "Escape") setLightboxShot(null); };
+    if (lightboxIdx === null) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setLightboxIdx(null);
+      if (e.key === "ArrowRight") setLightboxIdx(i => i < shots.length - 1 ? i + 1 : i);
+      if (e.key === "ArrowLeft")  setLightboxIdx(i => i > 0 ? i - 1 : i);
+    };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [lightboxShot]);
+  }, [lightboxIdx, shots.length]);
   const prev = idx > 0 ? allProjects[idx - 1] : null;
   const next = idx < allProjects.length - 1 ? allProjects[idx + 1] : null;
 
@@ -56,26 +61,33 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
         </dl>
       </div>
 
-      {project.shots && project.shots.length > 0 && (
+      {shots.length > 0 && (
         <section className="pp-shots">
           <div className="pp-shots-label">
             {isMono ? "// screenshots" : "Screenshots"}
           </div>
-          <div className={`pp-shots-grid${project.shots.length < 3 ? " pp-shots-grid--pair" : ""}`}>
-            {project.shots.map((s, i) => (
-              <button key={i} className="pp-shot-btn" onClick={() => setLightboxShot(s)} aria-label={`View ${s.label} full size`}>
-                <window.ProjectShot project={project} shot={s} />
+          <div className={`pp-shots-grid${shots.length < 3 ? " pp-shots-grid--pair" : ""}`}>
+            {shots.map((s, i) => (
+              <button key={i} className="pp-shot-btn" onClick={() => setLightboxIdx(i)} aria-label={`View ${s.label} full size`}>
+                <window.ProjectShot project={project} shot={s} thumb={true} />
               </button>
             ))}
           </div>
         </section>
       )}
 
-      {lightboxShot && (
-        <div className="pp-lightbox" role="dialog" aria-modal="true" onClick={() => setLightboxShot(null)}>
+      {lightboxIdx !== null && (
+        <div className="pp-lightbox" role="dialog" aria-modal="true" onClick={() => setLightboxIdx(null)}>
           <div className="pp-lightbox-inner" onClick={(e) => e.stopPropagation()}>
-            <button className="pp-lightbox-close" onClick={() => setLightboxShot(null)} aria-label="Close">✕</button>
-            <window.ProjectShot project={project} shot={lightboxShot} style={{width: "100%", aspectRatio: "16/10"}} />
+            <button className="pp-lightbox-close" onClick={() => setLightboxIdx(null)} aria-label="Close">✕</button>
+            <window.ProjectShot project={project} shot={shots[lightboxIdx]} showNote={true} style={{width: "100%", aspectRatio: "16/10"}} />
+            {shots.length > 1 && (
+              <div className="pp-lightbox-nav">
+                <button className="pp-lightbox-nav-btn" onClick={() => setLightboxIdx(i => i > 0 ? i - 1 : i)} disabled={lightboxIdx === 0} aria-label="Previous">←</button>
+                <span className="pp-lightbox-counter">{lightboxIdx + 1} / {shots.length}</span>
+                <button className="pp-lightbox-nav-btn" onClick={() => setLightboxIdx(i => i < shots.length - 1 ? i + 1 : i)} disabled={lightboxIdx === shots.length - 1} aria-label="Next">→</button>
+              </div>
+            )}
           </div>
         </div>
       )}

@@ -29,7 +29,7 @@ function ProjectTile({ project, size = "lg", showText = true, style = {} }) {
       )}
 
       {project.tileImg && (
-        <img src={project.tileImg} alt={project.title} className="tile-img" />
+        <img src={isHero ? project.tileImg : (project.tileImgThumb || project.tileImg)} alt={project.title} className="tile-img" />
       )}
 
       {showText && !project.tileImg && (
@@ -46,11 +46,14 @@ function ProjectTile({ project, size = "lg", showText = true, style = {} }) {
   );
 }
 
-function ProjectShot({ project, shot, style = {} }) {
+function ProjectShot({ project, shot, style = {}, showNote = false, thumb = false }) {
   return (
     <div className="shot" style={{background: project.tileColor, color: project.tileInk, ...style}}>
       {shot.img ? (
-        <img src={shot.img} alt={shot.label} className="shot-img" />
+        <>
+          <img src={thumb ? (shot.imgThumb || shot.img) : shot.img} alt={shot.label} className="shot-img" />
+          <div className="shot-shade" />
+        </>
       ) : (
         <>
           <svg className="shot-texture" aria-hidden="true">
@@ -65,7 +68,7 @@ function ProjectShot({ project, shot, style = {} }) {
       )}
       <div className="shot-footer">
         <div className="shot-label">{shot.label}</div>
-        <div className="shot-note">{shot.note}</div>
+        {showNote && <div className="shot-note">{shot.note}</div>}
       </div>
     </div>
   );
