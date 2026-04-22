@@ -111,7 +111,7 @@ window.IVO_DATA = {
       tileImg: "",
       tileImgThumb: "",
       sections: [
-        { h: "Context", p: "Dashlane's job is to protect credentials from breaches and phishing. But the hardest part isn't storage — it's getting people to act on weak, reused, or compromised passwords." },
+        { h: "Context", p: "Dashlane's job is to protect credentials from breaches and phishing. Authentication is also shifting towards passkeys — a much safer, phishing-resistant alternative — and we're part of the FIDO Alliance alongside Google, Apple, and 1Password, helping define the interoperability standards. But the hardest part isn't storage — it's getting people to act on weak, reused, or compromised passwords." },
         { h: "Approach", p: "We worked with Product and Engineering to reframe 'security' from a scary audit into a coachable score. The design needed to feel supportive, specific, and actionable — not alarmist." },
         { h: "What I did", p: "Led the design direction from vision through to ship: framing sessions, pair-designing with the triad, design critiques, and on-the-ground reviews. I don't do IC work daily, but I'm close to every call that shapes the product surface." }
       ],
@@ -139,7 +139,9 @@ window.IVO_DATA = {
         { h: "Context", p: "I was the lead product designer for the new agent experience at Talkdesk — specifically for the voice channel. This is the web/desktop app contact-center agents use every day to make and receive calls, manage contacts, listen to voicemails, and check their activity." },
         { h: "The product", p: "A responsive web app that runs in a browser or as a desktop app. Agents usually juggle many tools at once, so they prefer running it in a tiny desktop window — which meant every pixel had to earn its place." },
         { h: "Research", p: "Lots of user research — agent shadowing and customer discovery as we visited contact centers around the world to observe and get feedback. We also ran design sprints that helped shape the product." },
-        { h: "Framework thinking", p: "The experience was designed as a framework that could be extended by internal features or third-party add-ons — so the agent experience can differ for inbound vs. outbound, sales vs. tech support, and different customers could build their own custom cards." }
+        { h: "Framework thinking", p: "The experience was designed as a framework that could be extended by internal features or third-party add-ons — so the agent experience can differ for inbound vs. outbound, sales vs. tech support, and different customers could build their own custom cards." },
+        { h: "Digital channels", p: "On top of voice, we then added digital channels to the agent experience — SMS, live chat, FB Messenger, WhatsApp — taking advantage of the framework architecture we'd built from day one." },
+        { h: "Prototyping in code", p: "I like to put my hands in the code sometimes. It helps me convey the experience I want — like the <a href='https://codepen.io/ivogomes/pen/vMLvVW' target='_blank' rel='noopener noreferrer'>ringing-avatar animation</a> I prototyped on CodePen." }
       ],
       shots: [
         { label: "Idle state", note: "Conversations app" },
@@ -189,14 +191,14 @@ window.IVO_DATA = {
       tileImg: "",
       tileImgThumb: "",
       sections: [
-        { h: "Context", p: "I helped build Talkdesk's Design System from scratch. In the early days I also helped on the front-end (HTML/CSS) of components to include accessibility features and make sure the experience matched what we had imagined in the design style guide. That was in parallel with the Sketch (later Figma) component library." },
-        { h: "Handoff", p: "By the time I left the company, there was a dedicated team of developers and designers working on the design system — but about 80% of the Figma components were still using my original assets." },
-        { h: "More", p: "I wrote a blog post about how we built it in 2020 — it covers the decisions, the gotchas, and the team shape." }
+        { h: "Context", p: "I was leading the CCaaS design team with 11 direct reports — ranging from junior to senior product designers and UX researchers, all in Portugal, fully remote. I was also leading strategy and operations for other design teams in the USA and China that didn't report directly to me." },
+        { h: "Growth", p: "I was a key element in Talkdesk's product design growth — helping the team go from 4 to almost 70 designers around the world, divided into 6 business units." },
+        { h: "Culture", p: "We built a culture of sharing and working together. Even though each designer was assigned to specific scrum teams, we ran our own ceremonies: design critiques, weekly shares, retrospectives, design all-hands, and pair-designing sessions." }
       ],
       shots: [
-        { label: "Core components", note: "first wave" },
-        { label: "Tokens", note: "color & type" },
-        { label: "Accessibility", note: "a11y-first" }
+        { label: "Team", note: "org structure" },
+        { label: "Ceremonies", note: "design culture" },
+        { label: "Growth", note: "4 → 70" }
       ]
     },
     {
@@ -241,7 +243,9 @@ window.IVO_DATA = {
       tileImgThumb: "",
       sections: [
         { h: "Scope", p: "SAPO.PT — what we used to call the Portuguese Yahoo! At the time, the most visited webpage in Portugal. I was responsible for the usability, accessibility and overall user experience of the homepage from 2009 to 2015." },
-        { h: "What I did", p: "Specifications, sketches, wireframes, user testing, eye-tracking, card sorting, interviews, questionnaires, and other usability methodologies. Also some HTML/CSS." }
+        { h: "What I did", p: "Specifications, sketches, wireframes, user testing, eye-tracking, card sorting, interviews, questionnaires, and other usability methodologies. Also some HTML/CSS." },
+        { h: "Sub-products", p: "Beyond the homepage I worked across most SAPO sub-products: SAPO Desporto (sports), SAPO Jornais (news aggregator — still one of the most visited sites in Portugal), SAPO Biz (e-commerce backoffice), and SAPO Mag / SAPO Lifestyle (magazine-style content aimed at younger audiences)." },
+        { h: "MEO & IPTV", p: "As part of Portugal Telecom, we also worked on MEO products: MEO Interativo (the IPTV apps marketplace — one of the first TV UI projects I worked on, before SmartTVs were a thing), MEO Kanal (a platform for MEO clients to create and broadcast their own TV channel), and MEO Music (a Spotify alternative for Portugal before Spotify launched here)." }
       ],
       shots: [
         { label: "Homepage", note: "main layout" },
@@ -342,7 +346,7 @@ window.IVO_DATA = {
       sections: [
         { h: "What", p: "One of my pet projects for years. MyTVShows was a place where you could keep track of the TV shows you were watching. I started it as a way to practice PHP and it grew quickly into one of the most useful websites for people who watched multiple TV shows." },
         { h: "Solo build", p: "I developed the entire website by myself: UI, UX, PHP, HTML/CSS, JavaScript. Today, most media centers already tell you which episodes you've watched — but when I started it, there was no alternative." },
-        { h: "The end", p: "Fun while it lasted, but I had to shut it down due to lack of time and a scalability problem — too many users for a service that wasn't designed for that kind of traffic. I wrote a blog post about the whole thing." }
+        { h: "The end", p: "Fun while it lasted, but I had to shut it down due to lack of time and a scalability problem — too many users for a service that wasn't designed for that kind of traffic. I wrote a <a href='https://ivogomes.medium.com/mytvshows-is-dead-long-live-mytvshows-18907bbc4a47' target='_blank' rel='noopener noreferrer'>blog post</a> about the whole thing." }
       ],
       shots: [
         { label: "Tracker", note: "episode list" },
