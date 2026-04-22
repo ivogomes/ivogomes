@@ -3,6 +3,14 @@
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius: 2px;
+
+  --hero-ink: #FFF8E8;
+
+  --z-above: 2;
+  --z-hero: 3;
+  --z-modal: 1000;
   --cream: #F3EDE1;
   --cream-2: #EBE3D3;
   --paper: #FBF7EE;
