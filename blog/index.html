@@ -45,6 +45,11 @@
     </div>
   </div>
 
+  <div class="blog-search-wrap">
+    <input class="blog-search" type="search" placeholder="Search posts…" aria-label="Search blog posts" autocomplete="off" />
+  </div>
+  <p class="blog-search-empty" hidden>No posts match your search.</p>
+
   <div class="blog-posts">
     <a class="blog-post" href="/blog/pt-magiccontact-uma-aplicacao-para-utilizadores-com-mobilidade-reduzida/">
       <span class="blog-post-date">20 Nov 2015</span>
@@ -1347,6 +1352,35 @@
 </div>
 
 <style>
+  .blog-search-wrap {
+    max-width: 640px;
+    margin: 32px auto 0;
+    padding: 0 24px;
+  }
+  .blog-search {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .blog-search::placeholder { color: var(--text-muted); }
+  .blog-search:focus { border-color: var(--ink); }
+  .blog-search-empty {
+    max-width: 640px;
+    margin: 24px auto 0;
+    padding: 0 24px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
   .blog-posts {
     max-width: 640px;
     margin: 48px auto 0;
@@ -1384,5 +1418,22 @@
   }
 </style>
 
+<script>
+  const input = document.querySelector('.blog-search');
+  const posts = document.querySelectorAll('.blog-post');
+  const empty = document.querySelector('.blog-search-empty');
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    let visible = 0;
+    posts.forEach(post => {
+      const title = post.querySelector('.blog-post-title').textContent.toLowerCase();
+      const match = !q || title.includes(q);
+      post.hidden = !match;
+      if (match) visible++;
+    });
+    empty.hidden = visible > 0;
+  });
+</script>
 </body>
 </html>
