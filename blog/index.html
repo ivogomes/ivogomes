@@ -1429,7 +1429,7 @@
     posts.forEach(post => {
       const title = post.querySelector('.blog-post-title').textContent.toLowerCase();
       const match = !q || title.includes(q);
-      post.hidden = !match;
+      post.style.display = match ? '' : 'none';
       if (match) visible++;
     });
     empty.hidden = visible > 0;
