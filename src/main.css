@@ -837,7 +837,7 @@ a:hover { color: var(--accent); }
   max-width: 720px;
   font-family: Georgia, serif;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.75;
   color: var(--text);
 }
@@ -866,8 +866,21 @@ a:hover { color: var(--accent); }
   margin: 1.6em 0;
   border-radius: 2px;
 }
+.blog-archive-notice {
+  max-width: 720px;
+  margin: 32px auto 0;
+  padding: 14px 18px;
+  background: var(--cream-2);
+  border-left: 3px solid var(--rule-strong);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  border-radius: 0 3px 3px 0;
+}
 .blog-article a { color: var(--ink); }
 .blog-article a:hover { opacity: 0.65; }
+.blog-article strong { font-weight: 700; }
 .blog-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
