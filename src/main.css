@@ -865,6 +865,7 @@ a:hover { color: var(--accent); }
   display: block;
   margin: 1.6em 0;
   border-radius: 2px;
+  border: 1px solid var(--rule);
 }
 .blog-archive-notice {
   max-width: 720px;
