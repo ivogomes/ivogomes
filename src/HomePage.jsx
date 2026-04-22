@@ -26,7 +26,6 @@ function EditorialDirection({ data, onOpenProject }) {
 
         <div className="ed-hero-top-bar">
           <span>Ivo Gomes</span>
-          <span>{"\n"}</span>
         </div>
 
         <div className="ed-hero-center">

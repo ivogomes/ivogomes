@@ -4,13 +4,34 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
   const idx = allProjects.findIndex(p => p.id === project.id);
   const [lightboxIdx, setLightboxIdx] = React.useState(null);
   const shots = project.shots || [];
+  const lightboxRef = React.useRef(null);
+  const lightboxOpen = lightboxIdx !== null;
+
+  React.useEffect(() => {
+    if (!lightboxOpen || !lightboxRef.current) return;
+    const btn = lightboxRef.current.querySelector("button");
+    if (btn) btn.focus();
+  }, [lightboxOpen]);
 
   React.useEffect(() => {
     if (lightboxIdx === null) return;
     const onKey = (e) => {
-      if (e.key === "Escape") setLightboxIdx(null);
+      if (e.key === "Escape") { setLightboxIdx(null); return; }
       if (e.key === "ArrowRight") setLightboxIdx(i => i < shots.length - 1 ? i + 1 : i);
       if (e.key === "ArrowLeft")  setLightboxIdx(i => i > 0 ? i - 1 : i);
+      if (e.key === "Tab") {
+        const el = lightboxRef.current;
+        if (!el) return;
+        const focusable = [...el.querySelectorAll("button:not([disabled])")];
+        if (focusable.length < 2) return;
+        if (e.shiftKey && document.activeElement === focusable[0]) {
+          e.preventDefault();
+          focusable[focusable.length - 1].focus();
+        } else if (!e.shiftKey && document.activeElement === focusable[focusable.length - 1]) {
+          e.preventDefault();
+          focusable[0].focus();
+        }
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -77,8 +98,8 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
       )}
 
       {lightboxIdx !== null && (
-        <div className="pp-lightbox" role="dialog" aria-modal="true" onClick={() => setLightboxIdx(null)}>
-          <div className="pp-lightbox-inner" onClick={(e) => e.stopPropagation()}>
+        <div className="pp-lightbox" role="dialog" aria-modal="true" aria-label={shots[lightboxIdx]?.label} onClick={() => setLightboxIdx(null)}>
+          <div className="pp-lightbox-inner" ref={lightboxRef} onClick={(e) => e.stopPropagation()}>
             <button className="pp-lightbox-close" onClick={() => setLightboxIdx(null)} aria-label="Close">✕</button>
             <window.ProjectShot project={project} shot={shots[lightboxIdx]} showNote={true} style={{width: "100%", aspectRatio: "16/10"}} />
             {shots.length > 1 && (

@@ -51,7 +51,7 @@ function ProjectShot({ project, shot, style = {}, showNote = false, thumb = fals
     <figure className="shot" style={{background: project.tileColor, color: project.tileInk, ...style}}>
       {shot.img ? (
         <>
-          <img src={thumb ? (shot.imgThumb || shot.img) : shot.img} alt={shot.label} className="shot-img" loading="lazy" />
+          <img src={thumb ? (shot.imgThumb || shot.img) : shot.img} alt={`${project.title} — ${shot.label}`} className="shot-img" loading="lazy" />
           <div className="shot-shade" />
         </>
       ) : (
