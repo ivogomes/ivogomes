@@ -98,7 +98,7 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
             <h2 className={sectionHClass}>
               {isMono ? `// ${s.h.toLowerCase()}` : s.h}
             </h2>
-            <p className={sectionPClass}>{s.p}</p>
+            <p className={sectionPClass} dangerouslySetInnerHTML={{__html: s.p}} />
           </section>
         ))}
       </div>

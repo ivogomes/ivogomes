@@ -65,7 +65,7 @@ function EditorialDirection({ data, onOpenProject }) {
             <p>Lately I've been exploring how AI is shifting the way we design and build products, and how to make the most of it while keeping the human touch.</p>
         </div>
 
-        <h2 className="ed-section-label">Work</h2>
+        <h2 className="ed-section-label" id="work">Work</h2>
         <div className="ed-jobs">
           {data.work.map(job => {
             const jobProjects = data.projects.filter(p => p.workId === job.id);
@@ -73,7 +73,7 @@ function EditorialDirection({ data, onOpenProject }) {
               <div key={job.id} className="ed-job">
                 <div className="ed-job-years">{job.years}</div>
                 <div>
-                  <h3 className="ed-job-company">{job.company}</h3>
+                  <h3 className="ed-job-company" id={job.id}>{job.company}</h3>
                   <p className="ed-job-role">{job.role}</p>
                   <p className="ed-job-summary" dangerouslySetInnerHTML={{__html: job.summary}} />
                   {job.highlights.length > 0 && (
