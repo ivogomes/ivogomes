@@ -1,5 +1,8 @@
 /* Warm neutrals — shared across all three directions */
 :root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   --cream: #F3EDE1;
   --cream-2: #EBE3D3;
   --paper: #FBF7EE;
