@@ -14,6 +14,7 @@
 <title>Tipos de fontes para webdesign — Ivo Gomes</title>
 <meta name="description" content="Quem faz webdesign sabe que só há um determinado número de tipos de letra que podem ser utilizados na criação de um website. Os tipos de letra que podemos usar são apenas aqueles que sabemos que existem em todos os computadores, ou seja: Arial, Verdana, Times New Roman... Sempre que queremos incluir um texto com …" />
 <meta property="og:title" content="Tipos de fontes para webdesign" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Quem faz webdesign sabe que só há um determinado número de tipos de letra que podem ser utilizados na criação de um website. Os tipos de letra que podemos usar são apenas aqueles que sabemos que existem em todos os computadores, ou seja: Arial, Verdana, Times New Roman... Sempre que queremos incluir um texto com …" />
 <meta property="article:published_time" content="2004-11-19T10:05:10+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/tipos-de-fontes-para-webdesign/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>19 Nov 2004</span>
+    <time datetime="2004-11-19">19 Nov 2004</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -51,33 +53,33 @@
 
   <article class="blog-article">
 <p>Quem faz webdesign sabe que só há um determinado número de tipos de letra que podem ser utilizados na criação de um website. Os tipos de letra que podemos usar são apenas aqueles que sabemos que existem em todos os computadores, ou seja: Arial, Verdana, Times New Roman...</p>
-<p>Sempre que queremos incluir um texto com um tipo de letra diferente do habitual, temos que o fazer através da inclusão de uma imagem no HTML. No entanto, neste momento já é possível fazê-lo apenas com CSS usando uma técnica que se chama <a href="http://www.alistapart.com/articles/fir/">FIR</a> (Fahrner Image Replacement). Há <a href="http://www.mezzoblue.com/tests/revised-image-replacement/">várias técnicas</a> para fazer isto, mas a FIR é a mais conhecida.</p>
-<p>Mas, se não quisermos usar imagens, então temos mesmo que utilizar aqueles tipos de letra que toda a gente conhece. E aqui surge uma dúvida: será que no Mac existem os mesmos tipos de letra que no Windows? A resposta está <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html">nesta tabela</a> que mostra os tipos de letra existentes em Windows e Mac (Windows em preto e a versão Mac em azul).</p>
+<p>Sempre que queremos incluir um texto com um tipo de letra diferente do habitual, temos que o fazer através da inclusão de uma imagem no HTML. No entanto, neste momento já é possível fazê-lo apenas com CSS usando uma técnica que se chama <a href="http://www.alistapart.com/articles/fir/" rel="noopener noreferrer">FIR</a> (Fahrner Image Replacement). Há <a href="http://www.mezzoblue.com/tests/revised-image-replacement/" rel="noopener noreferrer">várias técnicas</a> para fazer isto, mas a FIR é a mais conhecida.</p>
+<p>Mas, se não quisermos usar imagens, então temos mesmo que utilizar aqueles tipos de letra que toda a gente conhece. E aqui surge uma dúvida: será que no Mac existem os mesmos tipos de letra que no Windows? A resposta está <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html" rel="noopener noreferrer">nesta tabela</a> que mostra os tipos de letra existentes em Windows e Mac (Windows em preto e a versão Mac em azul).</p>
 <p>Alguns tipos de letra têm o mesmo nome nas duas plataformas, mas às vezes um tipo de letra igual tem nomes diferentes, como é o caso da letra <em>Impact </em>que se chama <em>Charcoal </em>em Mac. Quando isto acontece, temos que declarar no CSS o código da seguinte maneira:</p>
 <ol class="code">
 <li><code>{font-family: Impact, Charcoal, sans-serif;}</code></li>
 </ol>
 <p>O que este código faz é: procura no sistema pelo tipo de letra <em>Impact</em>. Se não existir, então procura por <em>Charcoal</em>, e finalmente, se não encontra nenhum dos tipos de letra anteriores abre o tipo de letra <em>default sans-serif</em>.</p>
 <p><strong>Usando o Flash</strong><br />
-Há pouco tempo surgiu outra técnica para substituir o tipo de letra das páginas web. A nova revolução chama-se <a href="http://www.mikeindustries.com/blog/archive/2004/08/sifr">sIFR</a> (scalable Inman Flash Replacement).<br />
-Com esta nova técnica é possível usar virtualmente qualquer tipo de letra sem nenhuma restrição. É a forma mais rápida e fácil de substituir texto em XHTML por uma versão melhorada (ver <a href="http://www.mezzoblue.com/tests/revised-image-replacement/">outras técnicas</a> de substituição de texto).<br />
+Há pouco tempo surgiu outra técnica para substituir o tipo de letra das páginas web. A nova revolução chama-se <a href="http://www.mikeindustries.com/blog/archive/2004/08/sifr" rel="noopener noreferrer">sIFR</a> (scalable Inman Flash Replacement).<br />
+Com esta nova técnica é possível usar virtualmente qualquer tipo de letra sem nenhuma restrição. É a forma mais rápida e fácil de substituir texto em XHTML por uma versão melhorada (ver <a href="http://www.mezzoblue.com/tests/revised-image-replacement/" rel="noopener noreferrer">outras técnicas</a> de substituição de texto).<br />
 As vantagens são enormes (texto escalável, script não-intrusivo, possibilidade de usar mais tipos de fontes), mas também tem os seus inconvenientes. Se o utilizador não tiver o Flash instalado e tiver o JavaScript desactivado no seu computador, esta técnica não funciona.</h2>
 <p><strong>Tamanho do texto</strong><br />
 Que técnica usar para definir o tamanho do texto? Usando a propriedade <code>font-size</code> podemos definir o tamanho do texto em <strong>px</strong>, <strong>%</strong>, <strong>em</strong>, <strong>ex</strong>, <strong>pt</strong> ou <strong>xx-small</strong> a <strong>xx-large</strong>. O problema é que ao contrário de definirmos o texto em <strong>px</strong>, se usarmos uma das outras técnicas, o texto vai ficar diferente em todos os browsers. Em alguns fica maior em outros fica menor (e às vezes fica tão pequeno que é ilegível).</h2>
 <p>Qual a solução? Se queremos tornar o nosso site mais acessível, devemos definir o tamanho do texto em <strong>em</strong>. Com esta técnica, o texto é escalável e o seu tamanho é definido a partir do <em>default </em>do browser: 1em = <em>default </em>do browser. O problema é que nem todos os browsers usam o mesmo tamanho de letra <em>default</em>. Isto fará com que o texto apareça diferente em todos eles.</p>
-<p>Se quisermos ter o controlo do tamanho do texto no site, então temos que definir o tamanho em <strong>pixels</strong>. O único problema de usar esta técnica é que o Internet Explorer (todas as versões) não permite escalar o tamanho do texto usando a opção do browser. Desta forma o utilizador não consegue aumentar ou diminuir o texto, o que se torna um problema de acessibilidade. No entanto, nos browsers modernos como o <a href="https://www.mozilla.org/products/firefox/">Firefox</a> isso já não é problema porque o texto é sempre escalável...</p>
+<p>Se quisermos ter o controlo do tamanho do texto no site, então temos que definir o tamanho em <strong>pixels</strong>. O único problema de usar esta técnica é que o Internet Explorer (todas as versões) não permite escalar o tamanho do texto usando a opção do browser. Desta forma o utilizador não consegue aumentar ou diminuir o texto, o que se torna um problema de acessibilidade. No entanto, nos browsers modernos como o <a href="https://www.mozilla.org/products/firefox/" rel="noopener noreferrer">Firefox</a> isso já não é problema porque o texto é sempre escalável...</p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">16 comentários</h2>
     <div class="blog-comment" id="comment-141">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/00b761d4ea0a57d2b36aa599839e0083?s=72&d=mp&r=r" alt="Carlos Santos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/00b761d4ea0a57d2b36aa599839e0083?s=72&d=mp&r=r" alt="Carlos Santos" />
       <div>
         <p class="blog-comment-author">Carlos Santos</p>
         <p class="blog-comment-date">20 de Novembro de 2004, 15:18</p>
         <div class="blog-comment-text"><p>Também é possível utilizar outros tipos de fontes, convertendo-as para para ficheiros *.eot utlilizando o Microsoft WEFT. Penso que não se trata de um standard e apenas funciona em browsers IE</p>
 <p>A ideia é converter as fontes ttf para ficheiros eot e disponibilizá-los no servidor tal com se faz com os css.</p>
-<p>Ainda não sei muito acerca desta tecnologia, apenas me despertou a curiosidade da fonte utilizada no site espanhol da cocacola, <a href="http://www.cocacola.es/" title="" rel="">http://www.cocacola.es</a>.</p>
+<p>Ainda não sei muito acerca desta tecnologia, apenas me despertou a curiosidade da fonte utilizada no site espanhol da cocacola, <a href="http://www.cocacola.es/" title="" rel=" noopener noreferrer">http://www.cocacola.es</a>.</p>
 <p>Fica aqui um pequno exemplo e desafio para explorarem mais o tema.</p>
 <p>Cumps</p>
 <p><code><br />
@@ -91,45 +93,45 @@ src: url(hooge0.eot);<br />
       </div>
     </div>
     <div class="blog-comment" id="comment-142">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">20 de Novembro de 2004, 17:45</p>
         <div class="blog-comment-text"><p>Pois, o problema é que dessa forma só funciona no Internet Explorer. Eu uso Firefox e o site fico horrível com o tipo de letra que aparece.<br />
-No entanto li no <a href="http://www.alistapart.com/">A List Apart</a> há uns tempos uma maneira de importar tipos de letra true type através de um script, já não me lembro se era em PHP ou JavaScript&#8230; até cheguei a experimentar usar mas já não me lembro porque é que apaguei. E também não vi ninguém a falar disso em mais sítio nenhum&#8230;</p></div>
+No entanto li no <a href="http://www.alistapart.com/" rel="noopener noreferrer">A List Apart</a> há uns tempos uma maneira de importar tipos de letra true type através de um script, já não me lembro se era em PHP ou JavaScript&#8230; até cheguei a experimentar usar mas já não me lembro porque é que apaguei. E também não vi ninguém a falar disso em mais sítio nenhum&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-431">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/860c73301c131191847568ab2219bb0e?s=72&d=mp&r=r" alt="Maxwel Leite" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/860c73301c131191847568ab2219bb0e?s=72&d=mp&r=r" alt="Maxwel Leite" />
       <div>
         <p class="blog-comment-author">Maxwel Leite</p>
         <p class="blog-comment-date">7 de Dezembro de 2004, 16:18</p>
         <div class="blog-comment-text"><p>Acho bem melhor e mais prático usar o metodo em que o PHP gera as imagens, vejam os artigos:<br />
-<a href="http://axisfive.net/aboutsiir/" rel="nofollow">http://axisfive.net/aboutsiir/</a><br />
-<a href="http://www.alistapart.com/articles/dynatext/" rel="nofollow">http://www.alistapart.com/articles/dynatext/</a></p></div>
+<a href="http://axisfive.net/aboutsiir/" rel="nofollow noopener noreferrer">http://axisfive.net/aboutsiir/</a><br />
+<a href="http://www.alistapart.com/articles/dynatext/" rel="nofollow noopener noreferrer">http://www.alistapart.com/articles/dynatext/</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-432">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">7 de Dezembro de 2004, 17:29</p>
         <div class="blog-comment-text"><p>Obrigado pelos links. Só tive oportunidade de conhecer esse método precisamente esta semana. :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2955">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ea859429e19c09179723e573805e7540?s=72&d=mp&r=r" alt="Ruben de Oliveira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ea859429e19c09179723e573805e7540?s=72&d=mp&r=r" alt="Ruben de Oliveira" />
       <div>
         <p class="blog-comment-author">Ruben de Oliveira</p>
         <p class="blog-comment-date">17 de Setembro de 2005, 19:06</p>
         <div class="blog-comment-text"><p>Concordo com o Maxwel Leite.<br />
-No entanto, no link <a href="http://www.alistapart.com/articles/dynatext/" rel="nofollow">http://www.alistapart.com/articles/dynatext/</a> (que ele sugeriu) está disponibilizado um script em PHP que, para quem o experimentar e verificar que o texto fica com contornos brancos, pode resolver o problema substituindo a linha 79 ($background_rgb = hex_to_rgb($background_color)) por:<br />
+No entanto, no link <a href="http://www.alistapart.com/articles/dynatext/" rel="nofollow noopener noreferrer">http://www.alistapart.com/articles/dynatext/</a> (que ele sugeriu) está disponibilizado um script em PHP que, para quem o experimentar e verificar que o texto fica com contornos brancos, pode resolver o problema substituindo a linha 79 ($background_rgb = hex_to_rgb($background_color)) por:<br />
 $background_rgb = $background_color;</h2>
 <p>Também me parece que o script tem código a mais com funções que não são absolutamente necessárias, mas é só a minha impressão.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2956">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ea859429e19c09179723e573805e7540?s=72&d=mp&r=r" alt="Ruben de Oliveira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ea859429e19c09179723e573805e7540?s=72&d=mp&r=r" alt="Ruben de Oliveira" />
       <div>
         <p class="blog-comment-author">Ruben de Oliveira</p>
         <p class="blog-comment-date">17 de Setembro de 2005, 19:46</p>
@@ -139,41 +141,41 @@ $background_rgb = $background_color;</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-2968">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5cb2747dff956b177b287bb92835b928?s=72&d=mp&r=r" alt="Lefebvre" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5cb2747dff956b177b287bb92835b928?s=72&d=mp&r=r" alt="Lefebvre" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.saboya.org/' rel='external nofollow' class='url'>Lefebvre</a></p>
+        <p class="blog-comment-author"><a href='http://www.saboya.org/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Lefebvre</a></p>
         <p class="blog-comment-date">3 de Outubro de 2005, 22:17</p>
         <div class="blog-comment-text"><p>Estou usando um IR, mas a fonte não possui o til e alguns sinais gráficos para português. </p>
 <p>Qual fonte pode ser usada nessa técnica?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2970">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Outubro de 2005, 07:50</p>
         <div class="blog-comment-text"><p>Há fontes que não têm todos os caracteres (incluíndo as letras com acentos ou cedilhas). Para isso terá que usar uma fonte que tenha todos os caracteres (deve experimentar primeiro no seu computador para ver quais as fontes que têm acentos e quais as que não têm)&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2976">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5cb2747dff956b177b287bb92835b928?s=72&d=mp&r=r" alt="Lefebvre" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5cb2747dff956b177b287bb92835b928?s=72&d=mp&r=r" alt="Lefebvre" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.saboya.org/' rel='external nofollow' class='url'>Lefebvre</a></p>
+        <p class="blog-comment-author"><a href='http://www.saboya.org/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Lefebvre</a></p>
         <p class="blog-comment-date">4 de Outubro de 2005, 13:13</p>
         <div class="blog-comment-text"><p>Foi exatamente isso que fiz. O problema foi que algumas ttf que eu tinha no computador não funcionaram.</p>
 <p>Obrigado.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2977">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Outubro de 2005, 13:25</p>
         <div class="blog-comment-text"><p>Isso poderá ser problema do script utilizado que não contempla todos os caracteres, independentemente do tipo de fonte.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-5775">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/87d6c5e9b0b150cbf11cdf4e1e0d2b40?s=72&d=mp&r=r" alt="Manuela" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/87d6c5e9b0b150cbf11cdf4e1e0d2b40?s=72&d=mp&r=r" alt="Manuela" />
       <div>
         <p class="blog-comment-author">Manuela</p>
         <p class="blog-comment-date">4 de Novembro de 2006, 22:20</p>
@@ -185,7 +187,7 @@ Beijão</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-5776">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/87d6c5e9b0b150cbf11cdf4e1e0d2b40?s=72&d=mp&r=r" alt="Manuela" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/87d6c5e9b0b150cbf11cdf4e1e0d2b40?s=72&d=mp&r=r" alt="Manuela" />
       <div>
         <p class="blog-comment-author">Manuela</p>
         <p class="blog-comment-date">4 de Novembro de 2006, 22:22</p>
@@ -193,16 +195,16 @@ Beijão</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-5777">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/860c73301c131191847568ab2219bb0e?s=72&d=mp&r=r" alt="Maxwel Leite" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/860c73301c131191847568ab2219bb0e?s=72&d=mp&r=r" alt="Maxwel Leite" />
       <div>
         <p class="blog-comment-author">Maxwel Leite</p>
         <p class="blog-comment-date">4 de Novembro de 2006, 22:55</p>
         <div class="blog-comment-text"><p>Loki Cola?<br />
-<a href="http://smackbomb.com/famousfonts/fonts/cocacola.html" rel="nofollow">http://smackbomb.com/famousfonts/fonts/cocacola.html</a></p></div>
+<a href="http://smackbomb.com/famousfonts/fonts/cocacola.html" rel="nofollow noopener noreferrer">http://smackbomb.com/famousfonts/fonts/cocacola.html</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-29157">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/194b7a65901efa88910cb627ec6aeda1?s=72&d=mp&r=r" alt="Josy" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/194b7a65901efa88910cb627ec6aeda1?s=72&d=mp&r=r" alt="Josy" />
       <div>
         <p class="blog-comment-author">Josy</p>
         <p class="blog-comment-date">14 de Setembro de 2007, 13:58</p>
@@ -219,24 +221,24 @@ Callegrapher-Normal(Ocidental)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-91543">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4de6dc4201fd1b96089e5bb699e4977b?s=72&d=mp&r=r" alt="Melo.k hematozinah" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4de6dc4201fd1b96089e5bb699e4977b?s=72&d=mp&r=r" alt="Melo.k hematozinah" />
       <div>
-        <p class="blog-comment-author"><a href='http://hiphopangolano.webs.com/' rel='external nofollow' class='url'>Melo.k hematozinah</a></p>
+        <p class="blog-comment-author"><a href='http://hiphopangolano.webs.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Melo.k hematozinah</a></p>
         <p class="blog-comment-date">10 de Novembro de 2010, 22:29</p>
         <div class="blog-comment-text"><p>Grande site valeu mano!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-117782">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9783ee08cb9989e4dd5fd3fc1e53a3d4?s=72&d=mp&r=r" alt="DukayGata" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9783ee08cb9989e4dd5fd3fc1e53a3d4?s=72&d=mp&r=r" alt="DukayGata" />
       <div>
-        <p class="blog-comment-author"><a href="https://sexoilicito.blogspot.com.br/" rel='external nofollow' class='url'>DukayGata</a></p>
+        <p class="blog-comment-author"><a href="https://sexoilicito.blogspot.com.br/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>DukayGata</a></p>
         <p class="blog-comment-date">27 de Abril de 2012, 13:26</p>
         <div class="blog-comment-text"><p>Muito bom to procurando um modo de diferenciar um pouco minhas fontes do convencional sem sair das fontes padrões , ajudou vlw.</p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/criar-formulrios-acessveis/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -250,7 +252,7 @@ Callegrapher-Normal(Ocidental)</p></div>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

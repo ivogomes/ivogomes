@@ -14,6 +14,7 @@
 <title>Navegação sem listas: um teste de acessibilidade — Ivo Gomes</title>
 <meta name="description" content="Durante anos o markup dos links de navegação tem sido sempre feito com recurso a listas. Será que existem soluções melhores a nível de acessibilidade?" />
 <meta property="og:title" content="Navegação sem listas: um teste de acessibilidade" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Durante anos o markup dos links de navegação tem sido sempre feito com recurso a listas. Será que existem soluções melhores a nível de acessibilidade?" />
 <meta property="article:published_time" content="2015-11-06T11:00:55+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/navegacao-sem-listas-um-teste-de-acessibilidade/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>06 Nov 2015</span>
+    <time datetime="2015-11-06">06 Nov 2015</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -69,7 +71,7 @@
    &lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre>
-<p>Na melhoria contínua de acessibilidade, passou a ser <a href="https://www.w3.org/WAI/GL/wiki/Using_HTML5_nav_element">recomendado</a> adicionar um "<a href="https://www.w3.org/TR/wai-aria/roles">ARIA role</a>" à navegação, para que os browsers que não tenham ainda suporte total para as novas tags possam reconhecer o seu significado semântico. Assim, o <code class="language-markup">&lt;nav&gt;</code> passou a ser acompanhado, de forma redundante, pelo seu "role" <code class="language-markup">&lt;nav role="navigation"&gt;</code>, assim:</p>
+<p>Na melhoria contínua de acessibilidade, passou a ser <a href="https://www.w3.org/WAI/GL/wiki/Using_HTML5_nav_element" rel="noopener noreferrer">recomendado</a> adicionar um "<a href="https://www.w3.org/TR/wai-aria/roles" rel="noopener noreferrer">ARIA role</a>" à navegação, para que os browsers que não tenham ainda suporte total para as novas tags possam reconhecer o seu significado semântico. Assim, o <code class="language-markup">&lt;nav&gt;</code> passou a ser acompanhado, de forma redundante, pelo seu "role" <code class="language-markup">&lt;nav role="navigation"&gt;</code>, assim:</p>
 <pre><code class="language-markup">&lt;nav role="navigation"&gt;
    &lt;ul&gt;
       &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
@@ -78,7 +80,7 @@
    &lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre>
-<p>No entanto, em todo os browsers que testei, com ou sem "role" o elemento de navegação era corretamente identificado pelos leitores de ecrã. Apenas em browsers mais antigos (ex: <abbr title="Internet Explorer 8">IE8</abbr>) ele é ignorado, mas se vamos usar tags de HTML5 e queremos na mesma dar suporte a browsers antigos, usamos o <a href="https://github.com/afarkas/html5shiv">HTML5Shiv</a>, um script que permite que browsers antigos interpretem corretamente as novas tags de HTML.</p>
+<p>No entanto, em todo os browsers que testei, com ou sem "role" o elemento de navegação era corretamente identificado pelos leitores de ecrã. Apenas em browsers mais antigos (ex: <abbr title="Internet Explorer 8">IE8</abbr>) ele é ignorado, mas se vamos usar tags de HTML5 e queremos na mesma dar suporte a browsers antigos, usamos o <a href="https://github.com/afarkas/html5shiv" rel="noopener noreferrer">HTML5Shiv</a>, um script que permite que browsers antigos interpretem corretamente as novas tags de HTML.</p>
 <p>Com este script, até o <abbr title="Internet Explorer 8">IE8</abbr> interpretou corretamente o bloco de navegação no leitor de ecrã, o que indica que não é necessário ter a redundância do "role" quando o próprio elemento <code class="language-markup">&lt;nav&gt;</code> já tem esse significado de forma intrínseca.</p>
 <p>Nos últimos anos tem sido assim que a maior parte dos blocos de navegação tem sido escrito pelos web designers, em nome da acessibilidade e da semântica das novas tags HTML5. Mas será assim tão melhor do que o método antigo?</p>
 <h2>Como os leitores de ecrã interpretam os dois tipos de navegação?</h2>
@@ -89,9 +91,9 @@
 <thead>
 <tr>
 <th scope="col">Tipo de navegação</th>
-<th scope="col"><a href="http://www.freedomscientific.com/Products/Blindness/JAWS">JAWS</a></th>
-<th scope="col"><a href="https://www.apple.com/pt/accessibility/osx/voiceover/">VoiceOver</a></th>
-<th scope="col"><a href="http://www.nvaccess.org/">NVDA</a></th>
+<th scope="col"><a href="http://www.freedomscientific.com/Products/Blindness/JAWS" rel="noopener noreferrer">JAWS</a></th>
+<th scope="col"><a href="https://www.apple.com/pt/accessibility/osx/voiceover/" rel="noopener noreferrer">VoiceOver</a></th>
+<th scope="col"><a href="http://www.nvaccess.org/" rel="noopener noreferrer">NVDA</a></th>
 </tr>
 </thead>
 <tbody>
@@ -118,7 +120,7 @@
    &lt;a href="#"&gt;...&lt;/a&gt;
 &lt;/nav&gt;
 </code></pre>
-<p>Olhando para este markup podem achar que isto não faz sentido, mas se formos ler as <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-nav-element">especificações do HTML5 para o <code class="language-markup">&lt;nav&gt;</code></a>, isto é uma solução válida.</p>
+<p>Olhando para este markup podem achar que isto não faz sentido, mas se formos ler as <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-nav-element" rel="noopener noreferrer">especificações do HTML5 para o <code class="language-markup">&lt;nav&gt;</code></a>, isto é uma solução válida.</p>
 <blockquote cite="https://html.spec.whatwg.org/multipage/semantics.html#the-nav-element"><p>A nav element doesn't have to contain a list, it can contain other kinds of content as well. In this navigation block, links are provided in prose.</p></blockquote>
 <p>Adicionalmente, podemos ter outros elementos (que sejam ARIA landmarks) que podem ter navegação própria sem esta estar contida numa lista.</p>
 <blockquote cite="https://html.spec.whatwg.org/multipage/semantics.html#the-nav-element"><p>Not all groups of links on a page need to be in a nav element — the element is primarily intended for sections that consist of major navigation blocks. In particular, it is common for footers to have a short list of links to various pages of a site, such as the terms of service, the home page, and a copyright page. The footer element alone is sufficient for such cases; while a nav element can be used in such cases, it is usually unnecessary.</p></blockquote>
@@ -136,9 +138,9 @@
 <thead>
 <tr>
 <th scope="col">Tipo de navegação</th>
-<th scope="col"><a href="http://www.freedomscientific.com/Products/Blindness/JAWS">JAWS</a></th>
-<th scope="col"><a href="https://www.apple.com/pt/accessibility/osx/voiceover/">VoiceOver</a></th>
-<th scope="col"><a href="http://www.nvaccess.org/">NVDA</a></th>
+<th scope="col"><a href="http://www.freedomscientific.com/Products/Blindness/JAWS" rel="noopener noreferrer">JAWS</a></th>
+<th scope="col"><a href="https://www.apple.com/pt/accessibility/osx/voiceover/" rel="noopener noreferrer">VoiceOver</a></th>
+<th scope="col"><a href="http://www.nvaccess.org/" rel="noopener noreferrer">NVDA</a></th>
 </tr>
 </thead>
 <tbody>
@@ -174,7 +176,7 @@
 &lt;/nav&gt;
 </code></pre>
 <p>Infelizmente, o uso do elemento <code class="language-markup">&lt;nav&gt;</code> não contempla (de forma semântica) o aninhamento de sub-navegações. Qualquer combinação de <code class="language-css">nav &gt; nav</code> resulta numa confusão por parte dos leitores de ecrã, que não percebem que é uma navegação dentro de outra navegação, e tratam-na como duas navegações iguais, uma a meio da outra.</p>
-<p>Uma possível solução é usar o atributo <code class="language-markup">aria-owns</code> para dar esse significado hierárquico. Segundo as <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-owns">especificações</a>, podemos criar uma relação "pai/filho" entre dois elementos no DOM usando este atributo, assim:</p>
+<p>Uma possível solução é usar o atributo <code class="language-markup">aria-owns</code> para dar esse significado hierárquico. Segundo as <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-owns" rel="noopener noreferrer">especificações</a>, podemos criar uma relação "pai/filho" entre dois elementos no DOM usando este atributo, assim:</p>
 <pre><code class="language-markup">&lt;nav role="navigation"&gt;
    &lt;a href="#"&gt;Link 1&lt;/a&gt;
    &lt;a href="#" aria-owns="SubLink2"&gt;Link 2&lt;/a&gt;
@@ -215,7 +217,7 @@
 <p><strong>Atualização:</strong> O capítulo sobre os sub-menus foi rescrito para testar o atributo <code class="language-markup">aria-owns</code>.</p>
   </article>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/html5-e-acessibilidade/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -229,7 +231,7 @@
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

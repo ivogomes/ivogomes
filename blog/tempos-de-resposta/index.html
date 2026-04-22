@@ -14,6 +14,7 @@
 <title>Tempos de resposta — Ivo Gomes</title>
 <meta name="description" content="Neste fim-de-semana estive a experimentar um método para comprimir os ficheiros CSS do site. A folha de estilos principal tem cerca de 24KB, o que é muito! Fui aos meus arquivos desorganizados e encontrei este artigo: &quot;Gzipping your CSS with PHP&quot; com duas técnicas para comprimir a folha de estilos até 75%. Experimentei e... funciona! …" />
 <meta property="og:title" content="Tempos de resposta" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Neste fim-de-semana estive a experimentar um método para comprimir os ficheiros CSS do site. A folha de estilos principal tem cerca de 24KB, o que é muito! Fui aos meus arquivos desorganizados e encontrei este artigo: &quot;Gzipping your CSS with PHP&quot; com duas técnicas para comprimir a folha de estilos até 75%. Experimentei e... funciona! …" />
 <meta property="article:published_time" content="2004-11-15T11:18:23+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/tempos-de-resposta/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>15 Nov 2004</span>
+    <time datetime="2004-11-15">15 Nov 2004</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -51,44 +53,44 @@
 
   <article class="blog-article">
 <p>Neste fim-de-semana estive a experimentar um método para comprimir os ficheiros CSS do site. A folha de estilos principal tem cerca de 24KB, o que é muito!</p>
-<p>Fui aos meus arquivos desorganizados e encontrei este artigo: "<a href="http://www.fiftyfoureleven.com/sandbox/weblog/2004/feb/gzipping-your-css-with-php/">Gzipping your CSS with PHP</a>" com duas técnicas para comprimir a folha de estilos até 75%. Experimentei e... funciona! O ficheiro CSS comprimido ficou com apenas 4,9KB, ou seja, consegui uma compressão de quase 80%. Provavelmente ainda posso comprimir muito mais se remover os comentários do ficheiro, mas às vezes dão-me jeito para saber o que estou a alterar.</p>
+<p>Fui aos meus arquivos desorganizados e encontrei este artigo: "<a href="http://www.fiftyfoureleven.com/sandbox/weblog/2004/feb/gzipping-your-css-with-php/" rel="noopener noreferrer">Gzipping your CSS with PHP</a>" com duas técnicas para comprimir a folha de estilos até 75%. Experimentei e... funciona! O ficheiro CSS comprimido ficou com apenas 4,9KB, ou seja, consegui uma compressão de quase 80%. Provavelmente ainda posso comprimir muito mais se remover os comentários do ficheiro, mas às vezes dão-me jeito para saber o que estou a alterar.</p>
 <p><strong>Página Principal:</strong><br />
 Em termos de HTML, a página principal do site tem 14KB. Aqui não há muito mais a fazer.</h2>
 <p>Quanto às imagens... são 96KB na primeira página!! São muitos KB, mas é devido às imagens de todos os artigos que aparecem. No entanto vou tentar fazer uma optimização de todas as imagens para lhes reduzir o tamanho. Supostamente, uma página não deve ter mais de 15kB de imagens...</p>
 <p>No global, a primeira página do site tem 114KB, que é uma coisa gigantesca, no entanto temos que considerar que esta página abre os 10 artigos mais recentes, portanto é uma página muito extensa <del>(talvez altere para abrir apenas os 5 mais recentes)</del>.</p>
 <p><strong>Página de artigo:</strong><br />
-Para comparar, fiz o mesmo teste à página do <a href="https://www.ivogomes.com/index.php?p=101">último artigo publicado</a> no site. Os resultados foram muito mais animadores: HTML (6,5KB), imagens (7,8KB), CSS (4,9KB), o que dá um total de 19,3KB! Excelente!! Uma página web com menos de 20KB consegue abrir em 8 segundos numa ligação de 56K.</h2>
-<p>Segundo <a href="http://www.useit.com/">Jakob Nielsen</a>, os utilizadores começam a ficar frustrados quando uma página demora mais de 10 segundos a abrir.</p>
+Para comparar, fiz o mesmo teste à página do <a href="https://www.ivogomes.com/index.php?p=101" rel="noopener noreferrer">último artigo publicado</a> no site. Os resultados foram muito mais animadores: HTML (6,5KB), imagens (7,8KB), CSS (4,9KB), o que dá um total de 19,3KB! Excelente!! Uma página web com menos de 20KB consegue abrir em 8 segundos numa ligação de 56K.</h2>
+<p>Segundo <a href="http://www.useit.com/" rel="noopener noreferrer">Jakob Nielsen</a>, os utilizadores começam a ficar frustrados quando uma página demora mais de 10 segundos a abrir.</p>
 <p><strong>O Teste:</strong><br />
-Como foi feito o teste? Simples! Basta escrever o endereço do vosso site no <em><a href="http://www.websiteoptimization.com/services/analyze/">Web Page Analyzer</a></em> e os resultados falam por si.</h2>
+Como foi feito o teste? Simples! Basta escrever o endereço do vosso site no <em><a href="http://www.websiteoptimization.com/services/analyze/" rel="noopener noreferrer">Web Page Analyzer</a></em> e os resultados falam por si.</h2>
 <p class="nota"><strong>ACTUALIZAÇÃO:</strong></p>
 <p>Já alterei a página inicial para mostrar apenas os 3 artigos mais recentes e uma lista com os restantes 7 (10 no total). Isto permite que a página não fique tão comprida e pesada.<br />
-Ainda relacionado com este artigo, vou começar a ler o livro "<a href="https://www.amazon.com/exec/obidos/ASIN/0735713243/ref%3Dnosim/websiteoptimi-20/102-6229847-6660135">Speed Up Your Site: Web Site Optimization</a>"...</h2>
+Ainda relacionado com este artigo, vou começar a ler o livro "<a href="https://www.amazon.com/exec/obidos/ASIN/0735713243/ref%3Dnosim/websiteoptimi-20/102-6229847-6660135" rel="noopener noreferrer">Speed Up Your Site: Web Site Optimization</a>"...</h2>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">7 comentários</h2>
     <div class="blog-comment" id="comment-133">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://lesi.host.sk/fueg0/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://lesi.host.sk/fueg0/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">16 de Novembro de 2004, 15:03</p>
-        <div class="blog-comment-text"><p>Acho que o artigo que referes é <a href="http://www.fiftyfoureleven.com/sandbox/weblog/2004/feb/gzipping-your-css-with-php/">este</a></p></div>
+        <div class="blog-comment-text"><p>Acho que o artigo que referes é <a href="http://www.fiftyfoureleven.com/sandbox/weblog/2004/feb/gzipping-your-css-with-php/" rel="noopener noreferrer">este</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-136">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">16 de Novembro de 2004, 16:15</p>
         <div class="blog-comment-text"><p>Obrigado. </p>
 <p>Já corrigi o link.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-137">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9e659512c98aa34390b9973071840185?s=72&d=mp&r=r" alt="Frederick van Amstel" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9e659512c98aa34390b9973071840185?s=72&d=mp&r=r" alt="Frederick van Amstel" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.usabilidoido.com.br/' rel='external nofollow' class='url'>Frederick van Amstel</a></p>
+        <p class="blog-comment-author"><a href='http://www.usabilidoido.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Frederick van Amstel</a></p>
         <p class="blog-comment-date">17 de Novembro de 2004, 04:03</p>
         <div class="blog-comment-text"><p>Valeu pela dica, Ivo! Já tinha visto esse truque de gzip, mas como só servia para sites dinâmicos, não testei. Cunca tinha pensado em aplicar em CSS. Testei no Usabilidoido e consegui reduzir para um terço do tamanho as folhas de estilos. Também apliquei a dica nos Javascripts. </p>
 <p>Uma dica boa para criar códigos compactos com CSS é aplicar duas ou mais classes a um mesmo elemento, por exemplo:</p>
@@ -97,17 +99,17 @@ Ainda relacionado com este artigo, vou começar a ler o livro "<a href="https://
       </div>
     </div>
     <div class="blog-comment" id="comment-138">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">18 de Novembro de 2004, 10:05</p>
         <div class="blog-comment-text"><p>Também apliquei o gzip nos Javascripts e nota-se que a página carrega muito mais depressa. A velocidade de carregamento das páginas também é usabilidade!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-139">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/52d88389b6839f59685303eb11e619f3?s=72&d=mp&r=r" alt="Chefe" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/52d88389b6839f59685303eb11e619f3?s=72&d=mp&r=r" alt="Chefe" />
       <div>
-        <p class="blog-comment-author"><a href='http://cinefilos.interativo.org/' rel='external nofollow' class='url'>Chefe</a></p>
+        <p class="blog-comment-author"><a href='http://cinefilos.interativo.org/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Chefe</a></p>
         <p class="blog-comment-date">18 de Novembro de 2004, 15:20</p>
         <div class="blog-comment-text"><p>Ivo,</p>
 <p>também uso o WordPress e queria saber como você fez este esquema de colocar apenas os 3 primeiros posts e os outros 7 apenas como link.</p>
@@ -116,11 +118,11 @@ Ainda relacionado com este artigo, vou começar a ler o livro "<a href="https://
       </div>
     </div>
     <div class="blog-comment" id="comment-140">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">18 de Novembro de 2004, 16:31</p>
-        <div class="blog-comment-text"><p>Não foi fácil. Primeiro usei o código disponível no site &#8220;Left Justified&#8221; (<a href="http://leftjustified.net/journal/2004/10/13/ver15/" rel="nofollow">http://leftjustified.net/journal/2004/10/13/ver15/</a>), mas tive de alterar um pouco a template porque isto só funciona na primeria página. No meu caso, o ficheiro index.php faz tudo, ou seja, é a primeira página, é a página que abre os artigos, é a página que mostra os resultados das pesquisas, etc&#8230; Com o código do Left Justified, sempre que clicava para abrir todos os artigos de um mês, ou sempre que fazia uma pesquisa, o site ficava todo deslocado porque aparecia sempre a tabela em baixo com os links mais antigos em todas as páginas. </p>
+        <div class="blog-comment-text"><p>Não foi fácil. Primeiro usei o código disponível no site &#8220;Left Justified&#8221; (<a href="http://leftjustified.net/journal/2004/10/13/ver15/" rel="nofollow noopener noreferrer">http://leftjustified.net/journal/2004/10/13/ver15/</a>), mas tive de alterar um pouco a template porque isto só funciona na primeria página. No meu caso, o ficheiro index.php faz tudo, ou seja, é a primeira página, é a página que abre os artigos, é a página que mostra os resultados das pesquisas, etc&#8230; Com o código do Left Justified, sempre que clicava para abrir todos os artigos de um mês, ou sempre que fazia uma pesquisa, o site ficava todo deslocado porque aparecia sempre a tabela em baixo com os links mais antigos em todas as páginas. </p>
 <p>Então fiz uma pequena (grande) alteração ao código do &#8220;Left Justified&#8221;:</p>
 <p>No WordPress, sempre que se clica num mês do calendário, o endereço do site fica assim: &#8220;index.php?m=#&#8221;, quando se clica para mostrar todos os artigos de uma categoria, o endereço fica: &#8220;index.php?cat=#&#8221;, e sempre que se faz uma pesquisa o endereço fica assim: &#8220;index.php?s=#&#8221;.</p>
 <p>Então fiz uma pequena alteração no código PHP que simplesmente diz: Se $m diferente de &#8220;&#8221; ou $cat diferente de &#8220;&#8221; ou $s diferente de &#8220;&#8221; , então mostra a template X (a template normal), caso contrário mostra a template Y (a template com o código do &#8220;Left Justified&#8221; que tem a tabela com os últimos posts). </p>
@@ -128,16 +130,16 @@ Ainda relacionado com este artigo, vou começar a ler o livro "<a href="https://
       </div>
     </div>
     <div class="blog-comment" id="comment-9450">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8c60445f4fb5e3217ee51646b563e6ad?s=72&d=mp&r=r" alt="Luciano" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8c60445f4fb5e3217ee51646b563e6ad?s=72&d=mp&r=r" alt="Luciano" />
       <div>
-        <p class="blog-comment-author"><a href='http://lucianoindex.no-ip.org:8090/' rel='external nofollow' class='url'>Luciano</a></p>
+        <p class="blog-comment-author"><a href='http://lucianoindex.no-ip.org:8090/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Luciano</a></p>
         <p class="blog-comment-date">11 de Fevereiro de 2007, 04:09</p>
-        <div class="blog-comment-text"><p>aew eu fiz esse site <a href="http://lucianoindex.no-ip.org:8090/" rel="nofollow">http://lucianoindex.no-ip.org:8090</a> so q qeria montar imagens nele colocar botoes para clicarem mas so aparece site index of/ e os programa q coloquei para baixarem</p></div>
+        <div class="blog-comment-text"><p>aew eu fiz esse site <a href="http://lucianoindex.no-ip.org:8090/" rel="nofollow noopener noreferrer">http://lucianoindex.no-ip.org:8090</a> so q qeria montar imagens nele colocar botoes para clicarem mas so aparece site index of/ e os programa q coloquei para baixarem</p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/gerador-de-esquemas-de-cores/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -151,7 +153,7 @@ Ainda relacionado com este artigo, vou começar a ler o livro "<a href="https://
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

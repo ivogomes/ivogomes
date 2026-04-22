@@ -14,6 +14,7 @@
 <title>Ajax e Usabilidade — Ivo Gomes</title>
 <meta name="description" content="O AJAX está na moda. Não, não é o clube de futebol nem é o detergente. O AJAX significa &quot;Asynchronous JavaScript + XML&quot; antigamente chamado XMLHttpRequest. O AJAX não é uma tecnologia, é um conjunto de tecnologias que se juntaram e formaram uma poderosa ferramenta para criação de aplicações web. As tecnologias que o AJAX …" />
 <meta property="og:title" content="Ajax e Usabilidade" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="O AJAX está na moda. Não, não é o clube de futebol nem é o detergente. O AJAX significa &quot;Asynchronous JavaScript + XML&quot; antigamente chamado XMLHttpRequest. O AJAX não é uma tecnologia, é um conjunto de tecnologias que se juntaram e formaram uma poderosa ferramenta para criação de aplicações web. As tecnologias que o AJAX …" />
 <meta property="article:published_time" content="2005-07-06T11:08:16+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/ajax-e-usabilidade/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>06 Jul 2005</span>
+    <time datetime="2005-07-06">06 Jul 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,7 +52,7 @@
   </div>
 
   <article class="blog-article">
-<p>O AJAX está na moda. Não, não é o <a href="http://www.ajax.nl/">clube de futebol</a> nem é o <a href="http://www.cumparaturionline.com/images/ajax_floralfiesta_universal.jpg">detergente</a>. O AJAX significa "Asynchronous JavaScript + XML" antigamente chamado <a href="https://en.wikipedia.org/wiki/XMLHttpRequest">XMLHttpRequest</a>. </p>
+<p>O AJAX está na moda. Não, não é o <a href="http://www.ajax.nl/" rel="noopener noreferrer">clube de futebol</a> nem é o <a href="http://www.cumparaturionline.com/images/ajax_floralfiesta_universal.jpg" rel="noopener noreferrer">detergente</a>. O AJAX significa "Asynchronous JavaScript + XML" antigamente chamado <a href="https://en.wikipedia.org/wiki/XMLHttpRequest" rel="noopener noreferrer">XMLHttpRequest</a>. </p>
 <p>O AJAX não é uma tecnologia, é um conjunto de tecnologias que se juntaram e formaram uma poderosa ferramenta para criação de aplicações web. As tecnologias que o AJAX incorpora são:</p>
 <ul>
 <li>Apresentação de conteúdos baseada nos standards do W3C usando XHTML e CSS;</li>
@@ -69,43 +71,43 @@
 </ul>
 <h2>Formulários</h2>
 <p>Todas estas vantagens parecem muito boas, mas estamo-nos a esquecer de uma coisa muito importante: a experiência dos utilizadores. Quem navega na web já sabe como as coisas funcionam. Vou continuar a dar o exemplo dos formulários: preenchemos os campos que nos são pedidos através das caixas existentes para o efeito e no final clicamos num botão para "gravar" ou "enviar", dependendo do formulário.</p>
-<p>Ora, com o AJAX não há caixas para preencher. Simplesmente clicamos por cima do texto e como que por magia ele se transforma numa caixa de texto (experimentem este <a href="https://www.baekdal.com/x/xmlhttprequest/">formulário de exemplo</a> feito pelo <a href="https://www.baekdal.com/">Thomas Baekdal</a>). Num formulário normal é fácil ver o que é editável e o que não é. Com o AJAX é preciso passar com o rato por cima dos objectos para saber se são editáveis e a primeira coisa que o utilizador faz é procurar o botão "Editar".</p>
+<p>Ora, com o AJAX não há caixas para preencher. Simplesmente clicamos por cima do texto e como que por magia ele se transforma numa caixa de texto (experimentem este <a href="https://www.baekdal.com/x/xmlhttprequest/" rel="noopener noreferrer">formulário de exemplo</a> feito pelo <a href="https://www.baekdal.com/" rel="noopener noreferrer">Thomas Baekdal</a>). Num formulário normal é fácil ver o que é editável e o que não é. Com o AJAX é preciso passar com o rato por cima dos objectos para saber se são editáveis e a primeira coisa que o utilizador faz é procurar o botão "Editar".</p>
 <p>Uma vez editados os campos num formulário, os mesmos só são gravados após uma acção do utilizador. Como AJAX os dados são gravados automaticamente depois de terem sido preenchidos. A maior parte dos utilizadores não acredita que os dados foram gravados porque o processo foi muito rápido (instantâneo) e não abriu nenhuma página a seguir...</p>
 <p>Estas dificuldades podem ser ultrapassadas através de uma melhoria do interface gráfico, indicando claramente quais os campos editávies e fornecer feedback de que os dados foram gravados (tal como no formulário de exemplo indicado mais atrás).</p>
 <h2>Abusos</h2>
 <p>No entanto, tal como qualquer nova tecnologia, há quem abuse.<br />
-O AJAX está na moda e os programadores gostam de brincar com as novas tecnologias, mas o AJAX é uma ferramenta e não um brinquedo. Há quem desenvolva aplicações em AJAX... só porque é possível. No entanto se as aplicações não tiverem uma verdadeira utilidade não faz sentido serem desenvolvidas em AJAX. Faz-me lembrar o <a href="https://www.macromedia.com/software/flash/">Flash</a> há uns anos atrás... </h2>
+O AJAX está na moda e os programadores gostam de brincar com as novas tecnologias, mas o AJAX é uma ferramenta e não um brinquedo. Há quem desenvolva aplicações em AJAX... só porque é possível. No entanto se as aplicações não tiverem uma verdadeira utilidade não faz sentido serem desenvolvidas em AJAX. Faz-me lembrar o <a href="https://www.macromedia.com/software/flash/" rel="noopener noreferrer">Flash</a> há uns anos atrás... </h2>
 <p>Quando saiu o Flash havia pessoas (e ainda há) a fazerem sites inteiros em Flash. O Flash é uma ferramenta bastante útil no desenvolvimento de aplicações interactivas, mas não deve ser usada para o desenvolvimento de websites que não têm nada de interactivo. Faziam em Flash... só porque era possível. Os websites devem ser concebidos em HTML e sempre que for necessária alguma zona de maior interactividade, aí sim podemos usar o Flash ou o AJAX.</p>
 <h2>Bons Exemplos</h2>
-<p>Um bom exemplo do uso do AJAX são as aplicações do <a href="https://www.google.com/">Google</a>: <a href="https://www.google.com/maps">Google Maps</a> (navegação fluida no mapa sem carregamento de uma nova página) e <a href="https://www.google.com/gmail">GMail</a> (vários links abrem instantaneamente na mesma página sem esperar pelo tempo de carregamento de uma nova página, ex: pesquisa avançada; preenchimento do nome do destinatário de uma mensagem).</p>
+<p>Um bom exemplo do uso do AJAX são as aplicações do <a href="https://www.google.com/" rel="noopener noreferrer">Google</a>: <a href="https://www.google.com/maps" rel="noopener noreferrer">Google Maps</a> (navegação fluida no mapa sem carregamento de uma nova página) e <a href="https://www.google.com/gmail" rel="noopener noreferrer">GMail</a> (vários links abrem instantaneamente na mesma página sem esperar pelo tempo de carregamento de uma nova página, ex: pesquisa avançada; preenchimento do nome do destinatário de uma mensagem).</p>
 <h2>Acessibilidade</h2>
 <p>Em termos de acessibilidade, o AJAX ainda está pouco desenvolvido. Objectos como telemóveis, PDA's, leitores de ecrã e motores de busca não conseguem usar o XMLHttpRequest. Como tal, os utilizadores destas plataformas não conseguem aceder a websites concebidos unicamente em AJAX. Tal como já disse anteriormente, só devemos usar estas tecnologias caso seja mesmo necessário fornecer uma experiência interactiva ao utilizador. Caso contrário, deve-se usar o HTML...</p>
 <h2>Links</h2>
 <p>Há muito mais para falar sobre o AJAX e muito que já foi dito. Aqui estão alguns links para quem estiver interessado:</p>
 <ul>
-<li><a href="http://www.adaptivepath.com/publications/essays/archives/000385.php">Ajax: A New Approach to Web Applications</a> - uma introdução ao AJAX por Jesse James Garret da <a href="http://www.adaptivepath.com/">Adaptive Path</a>;</li>
-<li><a href="https://usalo.blogspot.com/2005/07/ajax-y-usabilidad.html">AJAX y Usabilidad</a> - excelente artigo do Juan Gómez no <a href="https://usalo.blogspot.com/">Úsalo</a>;</li>
-<li><a href="http://sourcelabs.com/ajb/archives/2005/05/ajax_mistakes.html">AJAX Mistakes</a> - identificação das maiores falhas existentes no AJAX por Alex Bosworth;</li>
-<li><a href="http://www.usabilidoido.com.br/ajax_vai_desifentar_o_flash.html">Ajax vai desifentar o Flash?</a> - Comparação entre AJAX e Flash feita pelo Fred do <a href="http://www.usabilidoido.com.br/">Usabilidoido</a>;</li>
-<li><a href="https://www.baekdal.com/articles/Usability/usable-XMLHttpRequest/">Usable XMLHttpRequest in Practice</a> - usabilidade dos formulários em AJAX por Thomas Baekdal;</li>
-<li><a href="https://www.baekdal.com/articles/Usability/XMLHttpRequest-guidelines/">XMLHttpRequest Usability Guidelines</a> - regras de usabilidade para o AJAX por Thomas Baekdal;</li>
-<li><a href="https://blogdeusabilidade.blogspot.com/2005/06/ajax-construindo-usabilidade.html">Ajax - construindo usabilidade</a> - vantagens do AJAX por Isabel Lofgren.</li>
+<li><a href="http://www.adaptivepath.com/publications/essays/archives/000385.php" rel="noopener noreferrer">Ajax: A New Approach to Web Applications</a> - uma introdução ao AJAX por Jesse James Garret da <a href="http://www.adaptivepath.com/" rel="noopener noreferrer">Adaptive Path</a>;</li>
+<li><a href="https://usalo.blogspot.com/2005/07/ajax-y-usabilidad.html" rel="noopener noreferrer">AJAX y Usabilidad</a> - excelente artigo do Juan Gómez no <a href="https://usalo.blogspot.com/" rel="noopener noreferrer">Úsalo</a>;</li>
+<li><a href="http://sourcelabs.com/ajb/archives/2005/05/ajax_mistakes.html" rel="noopener noreferrer">AJAX Mistakes</a> - identificação das maiores falhas existentes no AJAX por Alex Bosworth;</li>
+<li><a href="http://www.usabilidoido.com.br/ajax_vai_desifentar_o_flash.html" rel="noopener noreferrer">Ajax vai desifentar o Flash?</a> - Comparação entre AJAX e Flash feita pelo Fred do <a href="http://www.usabilidoido.com.br/" rel="noopener noreferrer">Usabilidoido</a>;</li>
+<li><a href="https://www.baekdal.com/articles/Usability/usable-XMLHttpRequest/" rel="noopener noreferrer">Usable XMLHttpRequest in Practice</a> - usabilidade dos formulários em AJAX por Thomas Baekdal;</li>
+<li><a href="https://www.baekdal.com/articles/Usability/XMLHttpRequest-guidelines/" rel="noopener noreferrer">XMLHttpRequest Usability Guidelines</a> - regras de usabilidade para o AJAX por Thomas Baekdal;</li>
+<li><a href="https://blogdeusabilidade.blogspot.com/2005/06/ajax-construindo-usabilidade.html" rel="noopener noreferrer">Ajax - construindo usabilidade</a> - vantagens do AJAX por Isabel Lofgren.</li>
 </ul>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">13 comentários</h2>
     <div class="blog-comment" id="comment-2704">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4d500f7351f5c0046dfd847dc5d83a6f?s=72&d=mp&r=r" alt="salgadation" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4d500f7351f5c0046dfd847dc5d83a6f?s=72&d=mp&r=r" alt="salgadation" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.salgadation.com/' rel='external nofollow' class='url'>salgadation</a></p>
+        <p class="blog-comment-author"><a href='http://www.salgadation.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>salgadation</a></p>
         <p class="blog-comment-date">8 de Julho de 2005, 19:17</p>
         <div class="blog-comment-text"><p>USEful ;-)<br />
 A ter em conta.</h2></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2877">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/fdcb7ef1d56b824cd3e575d853f635c3?s=72&d=mp&r=r" alt="Rodrigo Luiz Soares" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/fdcb7ef1d56b824cd3e575d853f635c3?s=72&d=mp&r=r" alt="Rodrigo Luiz Soares" />
       <div>
         <p class="blog-comment-author">Rodrigo Luiz Soares</p>
         <p class="blog-comment-date">26 de Julho de 2005, 18:33</p>
@@ -113,31 +115,31 @@ A ter em conta.</h2></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2878">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">26 de Julho de 2005, 18:35</p>
         <div class="blog-comment-text"><p>Estou a fazer algumas experiências com AJAX e irei disponibilizar tudo aqui no site. Fique atento! :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2879">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/843f985b1775280894a8b1a43402bcfa?s=72&d=mp&r=r" alt="Juan Gómez" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/843f985b1775280894a8b1a43402bcfa?s=72&d=mp&r=r" alt="Juan Gómez" />
       <div>
-        <p class="blog-comment-author"><a href="https://usalo.blogspot.com/2005/07/ajax-y-usabilidad.html" rel='external nofollow' class='url'>Juan Gómez</a></p>
+        <p class="blog-comment-author"><a href="https://usalo.blogspot.com/2005/07/ajax-y-usabilidad.html" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Juan Gómez</a></p>
         <p class="blog-comment-date">27 de Julho de 2005, 13:43</p>
         <div class="blog-comment-text"><p>Ajax e Usabilidade VS AJAX y Usabilidad&#8230; volta Clara, estás perdoada!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2882">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://thetaoofwebdesign.tk/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://thetaoofwebdesign.tk/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">27 de Julho de 2005, 14:07</p>
         <div class="blog-comment-text"><p>Bom artigo. Corrige só a frase &#8220;não conceguem aceder &#8221; por &#8220;não conSeguem aceder&#8221;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2913">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1f3795f00ec8da5a1d7eba613e75c8c9?s=72&d=mp&r=r" alt="Carlos Soler" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1f3795f00ec8da5a1d7eba613e75c8c9?s=72&d=mp&r=r" alt="Carlos Soler" />
       <div>
         <p class="blog-comment-author">Carlos Soler</p>
         <p class="blog-comment-date">9 de Agosto de 2005, 16:54</p>
@@ -145,16 +147,16 @@ A ter em conta.</h2></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2945">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5f1656d8571c20dabab1440b76400882?s=72&d=mp&r=r" alt="Ricardo Augusto" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5f1656d8571c20dabab1440b76400882?s=72&d=mp&r=r" alt="Ricardo Augusto" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.desvelare.com/' rel='external nofollow' class='url'>Ricardo Augusto</a></p>
+        <p class="blog-comment-author"><a href='http://www.desvelare.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ricardo Augusto</a></p>
         <p class="blog-comment-date">1 de Setembro de 2005, 01:02</p>
         <div class="blog-comment-text"><p>Aqui no Brasil essa moda ainda não pegou&#8230; mas já ouvimos falar dela&#8230;</p>
-<p>para os amigos de plantão: <a href="http://alexbosworth.backpackit.com/pub/67688" rel="nofollow">http://alexbosworth.backpackit.com/pub/67688</a> &#8211; sobre os erros comuns possíveis de acontecer quando desenvolvemos um ajax.</p></div>
+<p>para os amigos de plantão: <a href="http://alexbosworth.backpackit.com/pub/67688" rel="nofollow noopener noreferrer">http://alexbosworth.backpackit.com/pub/67688</a> &#8211; sobre os erros comuns possíveis de acontecer quando desenvolvemos um ajax.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3023">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/52e646b8cd13f89f4106ff82f4472e77?s=72&d=mp&r=r" alt="Paulo Rogério" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/52e646b8cd13f89f4106ff82f4472e77?s=72&d=mp&r=r" alt="Paulo Rogério" />
       <div>
         <p class="blog-comment-author">Paulo Rogério</p>
         <p class="blog-comment-date">19 de Outubro de 2005, 16:41</p>
@@ -168,19 +170,19 @@ Eu não via mais o refresh acontecer. e ficou muito legal.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3502">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/98658449a6baa9ef95eedb3617cfd04d?s=72&d=mp&r=r" alt="Edgar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/98658449a6baa9ef95eedb3617cfd04d?s=72&d=mp&r=r" alt="Edgar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.bionetwork.com.br/' rel='external nofollow' class='url'>Edgar</a></p>
+        <p class="blog-comment-author"><a href='http://www.bionetwork.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Edgar</a></p>
         <p class="blog-comment-date">16 de Março de 2006, 19:36</p>
         <div class="blog-comment-text"><p>Alguém pode me ajudar a fazer uma página PHP(&#8220;Content-type: image/png&#8221;) que gera uma imagem carregar numa TAG &#8220;img&#8221; utilizando AJAX ?!!</p>
 <p>Hoje utilizo assim:</p>
 <p> mas o problema tenho que dar &#8220;refresh&#8221; pra carregar outra imagem !!</p>
 <p>Grato pela ajuda&#8230;</p>
-<p><a href="https://www.ivogomes.com/cdn-cgi/l/email-protection#4e2b2a292f3c222b273a2b0e2b2a292f3c222b273a2b602d2123602c3c" rel="nofollow">Envie um email</a></p></div>
+<p><a href="https://www.ivogomes.com/cdn-cgi/l/email-protection#4e2b2a292f3c222b273a2b0e2b2a292f3c222b273a2b602d2123602c3c" rel="nofollow noopener noreferrer">Envie um email</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3593">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/538b96ce34ae139c2471ff863f92d0a1?s=72&d=mp&r=r" alt="Taranto" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/538b96ce34ae139c2471ff863f92d0a1?s=72&d=mp&r=r" alt="Taranto" />
       <div>
         <p class="blog-comment-author">Taranto</p>
         <p class="blog-comment-date">31 de Março de 2006, 01:36</p>
@@ -190,15 +192,15 @@ Eu não via mais o refresh acontecer. e ficou muito legal.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3597">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">3 de Abril de 2006, 08:56</p>
         <div class="blog-comment-text"><p>Neste memomento não conheço nenhum livro sobre AJAX e penso que o melhor local para obter informação é pesquisar na net. Existem milhares de sites sobre isso e com vários exemplos disponíveis para download e testar&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3661">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/?s=72&d=mp&r=r" alt="Maurício" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/?s=72&d=mp&r=r" alt="Maurício" />
       <div>
         <p class="blog-comment-author">Maurício</p>
         <p class="blog-comment-date">25 de Abril de 2006, 20:55</p>
@@ -208,16 +210,16 @@ Valeu pessoal!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3662">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">25 de Abril de 2006, 21:06</p>
         <div class="blog-comment-text"><p>Uma vez que, para experimentar o leilão é preciso criar uma conta no site, removi o endereço do comentário anterior por suspeita de SPAM. Caso esteja errado, por favor informem-me e volto a colocar o link.</p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/manifestacao-contra-as-patentes-de-software/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -231,7 +233,7 @@ Valeu pessoal!</p></div>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

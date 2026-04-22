@@ -14,6 +14,7 @@
 <title>WCAG Samurai — Ivo Gomes</title>
 <meta name="description" content="O que é o WCAG? Esta sigla significa &quot;Web Content Accessibility Guidelines&quot;, ou seja, é um conjunto de regras para assegurar que os conteúdos disponibilizados na Internet são acessíveis. O WCAG 1.0 foi publicado em 1999 e, com o evoluir das tecnologias e da própria Internet, as suas regras e recomendações estão já um pouco desactualizadas. Assim, há alguns anos começou-se a trabalhar no WCAG 2.0 que supostamente viria substituir a versão anterior e traria a devida actualização às regras e recomendações de acessibilidade." />
 <meta property="og:title" content="WCAG Samurai" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="O que é o WCAG? Esta sigla significa &quot;Web Content Accessibility Guidelines&quot;, ou seja, é um conjunto de regras para assegurar que os conteúdos disponibilizados na Internet são acessíveis. O WCAG 1.0 foi publicado em 1999 e, com o evoluir das tecnologias e da própria Internet, as suas regras e recomendações estão já um pouco desactualizadas. Assim, há alguns anos começou-se a trabalhar no WCAG 2.0 que supostamente viria substituir a versão anterior e traria a devida actualização às regras e recomendações de acessibilidade." />
 <meta property="article:published_time" content="2007-06-26T10:59:42+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/wcag-samurai/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>26 Jun 2007</span>
+    <time datetime="2007-06-26">26 Jun 2007</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,12 +52,12 @@
   </div>
 
   <article class="blog-article">
-<p>O que é o WCAG? Esta sigla significa "Web Content Accessibility Guidelines", ou seja, é um conjunto de regras para assegurar que os conteúdos disponibilizados na Internet são acessíveis. O <a href="https://www.w3.org/TR/WCAG/">WCAG 1.0</a> foi publicado em 1999 e, com o evoluir das tecnologias e da própria Internet, as suas regras e recomendações estão já um pouco desactualizadas. Assim, há alguns anos começou-se a trabalhar no <a href="https://www.w3.org/TR/WCAG20/">WCAG 2.0</a> que supostamente viria substituir a versão anterior e traria a devida actualização às regras e recomendações de acessibilidade.</p>
-<p>No entanto, nem tudo são rosas. O WCAG 2.0 está ainda em fase de revisão e muitos afirmam que as regras e recomendações disponibilizadas não são fáceis de compreender porque estão escritas de uma forma demasiado genérica. Numa entrevista no Podcast <a href="http://www.uxpod.com/">UXPod</a>, <a href="http://www.uxpod.com/index.php?post_id=224459">Gerry Gaffney entrevistou Gian Sampson-Wild</a>, uma antiga colaboradora do projecto que deu um bom exemplo das diferenças de linguagem entre o WCAG 1.0 e o WCAG 2.0. </p>
+<p>O que é o WCAG? Esta sigla significa "Web Content Accessibility Guidelines", ou seja, é um conjunto de regras para assegurar que os conteúdos disponibilizados na Internet são acessíveis. O <a href="https://www.w3.org/TR/WCAG/" rel="noopener noreferrer">WCAG 1.0</a> foi publicado em 1999 e, com o evoluir das tecnologias e da própria Internet, as suas regras e recomendações estão já um pouco desactualizadas. Assim, há alguns anos começou-se a trabalhar no <a href="https://www.w3.org/TR/WCAG20/" rel="noopener noreferrer">WCAG 2.0</a> que supostamente viria substituir a versão anterior e traria a devida actualização às regras e recomendações de acessibilidade.</p>
+<p>No entanto, nem tudo são rosas. O WCAG 2.0 está ainda em fase de revisão e muitos afirmam que as regras e recomendações disponibilizadas não são fáceis de compreender porque estão escritas de uma forma demasiado genérica. Numa entrevista no Podcast <a href="http://www.uxpod.com/" rel="noopener noreferrer">UXPod</a>, <a href="http://www.uxpod.com/index.php?post_id=224459" rel="noopener noreferrer">Gerry Gaffney entrevistou Gian Sampson-Wild</a>, uma antiga colaboradora do projecto que deu um bom exemplo das diferenças de linguagem entre o WCAG 1.0 e o WCAG 2.0. </p>
 [audio:http://media27a.libsyn.com/podcasts/c18ba704e5d627034e371d7200d3c053/4680eb53/uxpod/Web_Accessibility_Guidelines_-_an_Interview_with_GIan_Sampson-Wild.mp3]
 <p>Por exemplo, na versão 1.0 é dito que "as Frames devem ter um título que as identifique e facilite a sua navegação". No WCAG 2.0, a mesma recomendação é dita da seguinte maneira: "O destino de cada referência programática para outra unidade de entrega deve ser identificado por palavras ou frases que ocorrem no texto ou que podem ser programaticamente determinadas" (tradução livre).<br />
-Basicamente, o que se tentou fazer na versão 2.0 foi torná-la tecnologiamente neutra, ou seja, as recomendações devem ser aplicadas a vários tipos de elementos, não só aos "frames", mas a outros elementos semelhantes que possam aparecer no futuro. No entanto, isto dificulta bastante a própria percepção das recomendações e é por isso que muitos autores desistiram do WCAG 2.0 e formaram um outro grupo, o <a href="http://wcagsamurai.org/">WCAG Samurai</a>.</h2>
-<p>A ideia por detrás do WCAG Samurai é a de criar uma <a href="http://wcagsamurai.org/errata/">Errata</a> para o WCAG 1.0 de modo a que possamos continuar a usar essa versão do documento, mas adaptada à tecnologia actual. No passado dia 7 de Junho foi lançada a primeira versão da <a href="http://wcagsamurai.org/errata/">Errata</a> e aqui estão as principais alterações efectuadas ao WCAG 1.0:</p>
+Basicamente, o que se tentou fazer na versão 2.0 foi torná-la tecnologiamente neutra, ou seja, as recomendações devem ser aplicadas a vários tipos de elementos, não só aos "frames", mas a outros elementos semelhantes que possam aparecer no futuro. No entanto, isto dificulta bastante a própria percepção das recomendações e é por isso que muitos autores desistiram do WCAG 2.0 e formaram um outro grupo, o <a href="http://wcagsamurai.org/" rel="noopener noreferrer">WCAG Samurai</a>.</h2>
+<p>A ideia por detrás do WCAG Samurai é a de criar uma <a href="http://wcagsamurai.org/errata/" rel="noopener noreferrer">Errata</a> para o WCAG 1.0 de modo a que possamos continuar a usar essa versão do documento, mas adaptada à tecnologia actual. No passado dia 7 de Junho foi lançada a primeira versão da <a href="http://wcagsamurai.org/errata/" rel="noopener noreferrer">Errata</a> e aqui estão as principais alterações efectuadas ao WCAG 1.0:</p>
 <ul>
 <li>Foram eliminados termos como "evite usar..." e passou a usar-se uma linguagem mais agressiva como "não use..." ou "é obrigatório ter...";</li>
 <li>Eliminação das regras de Prioridade 3, por serem praticamente impraticáveis;</li>
@@ -65,7 +67,7 @@ Basicamente, o que se tentou fazer na versão 2.0 foi torná-la tecnologiamente 
 <li>Fim do noscript. Todos os scripts e applets (mais conhecidos como Ajax e Flash na maioria dos casos) devem ser directamente acessíveis em vez de se usar a técnica do noscript;</li>
 <li>Não devem ser usados PDFs. Tudo o que estiver disponível em PDF deve também estar disponível em HTML;</li>
 <li>Todos os vídeos com som devem ter legendas ou audio descrição (dependendo dos conteúdos);</li>
-<li>Entre outras recomendações que estão disponíveis na <a href="http://wcagsamurai.org/errata/">Errata</a>.</li>
+<li>Entre outras recomendações que estão disponíveis na <a href="http://wcagsamurai.org/errata/" rel="noopener noreferrer">Errata</a>.</li>
 </ul>
 <p>O aparecimento desta errata é um grande passo para a melhoria da acessibilidade na web. Veremos como vai ser o futuro deste WCAG Samurai e se vamos ver os validadores automáticos adoptar estas novas regras.</p>
   </article>
@@ -73,33 +75,33 @@ Basicamente, o que se tentou fazer na versão 2.0 foi torná-la tecnologiamente 
   <section class="blog-comments">
     <h2 class="blog-comments-title">34 comentários</h2>
     <div class="blog-comment" id="comment-20943">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1c450e30ee2ef6607ed2d4c6b1e7aac2?s=72&d=mp&r=r" alt="Walmar Andrade" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1c450e30ee2ef6607ed2d4c6b1e7aac2?s=72&d=mp&r=r" alt="Walmar Andrade" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.fatorw.com/' rel='external nofollow' class='url'>Walmar Andrade</a></p>
+        <p class="blog-comment-author"><a href='http://www.fatorw.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Walmar Andrade</a></p>
         <p class="blog-comment-date">26 de Junho de 2007, 12:44</p>
         <div class="blog-comment-text"><p>Boas informações, Ivo. Não tinha conhecimento do WCAG Samurai&#8230; renovaram-se minhas esperanças quanto ao WCAG 2.0 :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-20946">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel='external nofollow' class='url'>Dextro</a></p>
+        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dextro</a></p>
         <p class="blog-comment-date">26 de Junho de 2007, 13:25</p>
         <div class="blog-comment-text"><p>Desconhecia mas agora vou fazer os possíveis para cumprir os requisitos do WCAG Samurai :D</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21029">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/82f347185f6709342cb9002699b6a777?s=72&d=mp&r=r" alt="João Martins" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/82f347185f6709342cb9002699b6a777?s=72&d=mp&r=r" alt="João Martins" />
       <div>
-        <p class="blog-comment-author"><a href='http://joaomartins.entropiadesign.org/' rel='external nofollow' class='url'>João Martins</a></p>
+        <p class="blog-comment-author"><a href='http://joaomartins.entropiadesign.org/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>João Martins</a></p>
         <p class="blog-comment-date">27 de Junho de 2007, 00:22</p>
-        <div class="blog-comment-text"><p>Se me permite uma nota acerca da acessibilidade nos PDFs, acho que, independentemente do que diz o WCAG Samurai, vale a pena ler o <a href="http://www.alistapart.com/articles/pdf_accessibility" title="Facts and Opinions about PDF Accessibility" rel="nofollow">artigo de Joe Clark de 2005, reeditado no último número de A List Apart, sobre a acessibilidade de PDFs</a>.</p></div>
+        <div class="blog-comment-text"><p>Se me permite uma nota acerca da acessibilidade nos PDFs, acho que, independentemente do que diz o WCAG Samurai, vale a pena ler o <a href="http://www.alistapart.com/articles/pdf_accessibility" title="Facts and Opinions about PDF Accessibility" rel="nofollow noopener noreferrer">artigo de Joe Clark de 2005, reeditado no último número de A List Apart, sobre a acessibilidade de PDFs</a>.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21096">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">27 de Junho de 2007, 17:58</p>
         <div class="blog-comment-text"><p>Excelente artigo Ivo.<br />
 Mas concordo com o João Martins porque diga o que disser o WCAG por vezes o PDF é o formato indicado.</h2>
@@ -107,17 +109,17 @@ Mas concordo com o João Martins porque diga o que disser o WCAG por vezes o PDF
       </div>
     </div>
     <div class="blog-comment" id="comment-21243">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">29 de Junho de 2007, 15:20</p>
         <div class="blog-comment-text"><p>O Joe Clark é um dos principais impulsionadores do WCAG Samurai, logo, ele é que disse para evitar o uso de PDF. No artigo na Lista Apart, ele diz a mesma coisa: O que existe em PDF deveria existir também em HTML. E se for mesmo necessário usar um PDF, então devem ser usadas tags no documento para estruturar a informação.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21245">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">29 de Junho de 2007, 15:35</p>
         <div class="blog-comment-text"><p>O que eu queria dizer é que é ridículo manter duas versões ainda que automáticas.<br />
 Claro que se estiver disponível em PDF deverá estar em formato acessível.<br />
@@ -127,17 +129,17 @@ Neste ponto discordo do que ele diz, salvaguardando que o PDF deve ser 100% aces
       </div>
     </div>
     <div class="blog-comment" id="comment-21247">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">29 de Junho de 2007, 16:00</p>
         <div class="blog-comment-text"><p>Do meu ponto de vista, o PDF foi feito para documentos impressos, ou seja, é um método de partilha de documentos mantendo a sua formatação original, mas são documentos que estão formatados para impressão e não para leitura num site.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21265">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">29 de Junho de 2007, 22:25</p>
         <div class="blog-comment-text"><p>Embora concorde que o PDF tenha sido feito com o propósito da impressão já havia também o “post-script”.<br />
 Acho que o PDF é uma forma de ter um documento devidamente formatado e pronto para impressão, com a vantagem dessa impressão ser igual em qualquer lugar onde se abra esse PDF.<br />
@@ -148,9 +150,9 @@ Numa época em que se diz para poupar papel acho que o PDF é um bom formato par
       </div>
     </div>
     <div class="blog-comment" id="comment-21517">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/92ca195e5b6ce87a069835cd380c38f4?s=72&d=mp&r=r" alt="Gaspar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/92ca195e5b6ce87a069835cd380c38f4?s=72&d=mp&r=r" alt="Gaspar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.artideias.com/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-author"><a href='http://www.artideias.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gaspar</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 00:18</p>
         <div class="blog-comment-text"><p>Eu acho que o PDF nunca irá ser melhor do que uma página em HTML para ser lida online.</p>
 <p>Sem me debruçar muito sobre o assunto não temos o controle do tamanho do texto, a navegabilidade é limitada, controle de imagens, actualização do conteúdo. </p>
@@ -159,9 +161,9 @@ Numa época em que se diz para poupar papel acho que o PDF é um bom formato par
       </div>
     </div>
     <div class="blog-comment" id="comment-21531">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 02:04</p>
         <div class="blog-comment-text"><p>Atenção que o que é dito é que <em> Tudo o que estiver disponível em PDF deve também estar disponível em HTML;</em></p>
 <p>O que eu digo é que nem tudo o que está disponível em PDF tem necessariamente de o estar em XHTML.</p>
@@ -175,18 +177,18 @@ Numa época em que se diz para poupar papel acho que o PDF é um bom formato par
       </div>
     </div>
     <div class="blog-comment" id="comment-21558">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gaspar</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 10:57</p>
         <div class="blog-comment-text"><p>Eu quando disse &#8220;quase&#8221; tudo pensei nesses PDFs tipo formulários onde tu podes gravar o PDF para o disco e preenche-lo e posteriormente enviar. Também existe o caso dos relatórios e outros com muito gráficos. E existem N funções que poderás usar com o PDF em que não conseguirás o mesmo desempenho com o (X)HTML.<br />
 Agora tipo o anteior formulário poderias ter uma versão em (X)HTML e possibilitar o envio dos dados.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21562">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 11:04</p>
         <div class="blog-comment-text"><p>No que diz respeito a formulários: valerá a pena (será viável financeiramente) colocar online um formulário interactivo se esse mesmo formulário já estiver num PDF e o PDF for acessível?<br />
 Claro que falo de formulários que estarão online durante relativamente pouco tempo, porque se fosse para o “longo prazo” então seria viável colocar o XHTML. Mas no curto prazo e até mesmo médio prazo, será viável?</h2>
@@ -194,9 +196,9 @@ Claro que falo de formulários que estarão online durante relativamente pouco t
       </div>
     </div>
     <div class="blog-comment" id="comment-21563">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gaspar</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 11:13</p>
         <div class="blog-comment-text"><p>Financeiramente! Bom para mim que quisesse que pelo menos 10 pessoas preenchessem o tal formulário era o suficiente para justificar a criação do formulário em (X)HTML.<br />
 Não seu que despesas poderás vir a ter com um formulário? Não te é assim tão dispendioso.</h2>
@@ -204,9 +206,9 @@ Não seu que despesas poderás vir a ter com um formulário? Não te é assim t�
       </div>
     </div>
     <div class="blog-comment" id="comment-21565">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 11:20</p>
         <div class="blog-comment-text"><p>Não te custa nada, criar o formulário se não tiveres uma empresa a sério.<br />
 Mas se tiveres de deslocar um designer para o desenhar (partindo do principio que o formulário não está desenhado e nem tem “css”) e um programador para dizer à framework que mostre o formulário e o valide, acho que isso já representa custos, pois essas pessoas vão estar a fazer essa tarefa e não outra qualquer.</h2>
@@ -215,18 +217,18 @@ Na vida real isso já não é bem assim e cada hora tem de ser rentabilizada ao 
       </div>
     </div>
     <div class="blog-comment" id="comment-21570">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gaspar</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 12:59</p>
         <div class="blog-comment-text"><p>Sim mas penso que o mesmo se passa com a criação de PDFs formulários minimamente acessiveis. Depois desses formulários vais criar uma base de dados? Tens modo de extrarir a informação do PDF de um modo rápido? </p>
 <p>Um formulário simples a acessivel não custa muito a criar, existem N scripts que fazem a devida validação.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21572">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 13:12</p>
         <div class="blog-comment-text"><p>A questão é que se o PDF já existir porque haveremos de criar um XHTML?</p>
 <p>Outro problema seria a integração de scripts que andam na net. Mais uma vez, a integração desses scripts custa tempo ao programador.</p>
@@ -237,9 +239,9 @@ Então seria melhor criar a versão XHTML e apagar a PDF mas por vezes o PDF é 
       </div>
     </div>
     <div class="blog-comment" id="comment-21600">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gaspar</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 14:07</p>
         <div class="blog-comment-text"><p>1º ponto estou de acordo contigo não será sempre mas quase sempre e este &#8220;quase sempre&#8221; seria quando um PDF for mais mais eficiente (segurança, navegabilidade, acessibilidade, etc). O que eu não consigo encontrar não quer dizer que tal não exista.</p>
 <p>Claro que quando comparo uma página em (X)HTML e um PDF parto do principio que ambos tem foram criados com o o mesmo nivel de acessibilidade, etc.</p>
@@ -249,9 +251,9 @@ Então seria melhor criar a versão XHTML e apagar a PDF mas por vezes o PDF é 
       </div>
     </div>
     <div class="blog-comment" id="comment-21601">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 14:12</p>
         <div class="blog-comment-text"><p><em>“E se mesmo nestas não consegues garantir uma eficiencia a 100% nos PDF muito menos.”</em></p>
 <p>Não concordo. Até acho que é bem mais fácil conseguir a acessibilidade total nos PDF do que no XHTML. Isto porque o XHTML foi feito para documento e não tanto para design. E é por isso que ainda temos problemas de acessibilidade&#8230; ou pelo menos isso ajuda à festa.</p>
@@ -260,11 +262,11 @@ Então seria melhor criar a versão XHTML e apagar a PDF mas por vezes o PDF é 
       </div>
     </div>
     <div class="blog-comment" id="comment-21607">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gaspar</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 14:39</p>
-        <div class="blog-comment-text"><p>HTML já não se usa! Tás redondamente enganado! Podes ver que <a href="https://www.w3.org/html/wg/" title="Grupo de trabalho HTML" rel="nofollow"> o grupo de trabalho HTML da W3</a>m podes dizer que foi abandonado até ao início deste ano mas o HTML 5 está a ser pensado agora, assim como o (X)HTML 2. Existem muitas divergencias e falhas com o XHTML para o HTML morrer.</p>
+        <div class="blog-comment-text"><p>HTML já não se usa! Tás redondamente enganado! Podes ver que <a href="https://www.w3.org/html/wg/" title="Grupo de trabalho HTML" rel="nofollow noopener noreferrer"> o grupo de trabalho HTML da W3</a>m podes dizer que foi abandonado até ao início deste ano mas o HTML 5 está a ser pensado agora, assim como o (X)HTML 2. Existem muitas divergencias e falhas com o XHTML para o HTML morrer.</p>
 <p>Quanto á acessibilidade no PDF e (x)HTML já criei formulários em PDF há uns anos e não é tão fácil, reparei que o CS2 incorpora uma ferramenta nova somente para PDFs (não experimentei) mas garanto-te que sem saberes muito com o dreamweaver ou mesmo frontpage<br />
 basta seguires 2 ou 3 regras básicas e tens um formulário totalmente acessível.<br />
 E sim o HTML assim como o (x)html são meramente estruturais para o design ou apresentação tens o CSS.</h2>
@@ -272,9 +274,9 @@ E sim o HTML assim como o (x)html são meramente estruturais para o design ou ap
       </div>
     </div>
     <div class="blog-comment" id="comment-21608">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 14:50</p>
         <div class="blog-comment-text"><p>O HTML5 ainda não é definitivo logo continuo a ter razão: O HTML já não se usa, pelo menos até sair o HTML5 (se sair).</p>
 <p>Dream-quê? Ah, isso da Adobe. Não sei, não uso. Não uso ferramentas Adobe para ter acessibilidade. Não preciso.<br />
@@ -285,18 +287,18 @@ Primeiro porque a experiência não é “ao quilo” e depois porque nesse camp
       </div>
     </div>
     <div class="blog-comment" id="comment-21610">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 14:53</p>
         <div class="blog-comment-text"><p>BTW, quando falo em HTML refiro-me ao HTML 4. O HTML 5 ainda não existe com a sua forma definitiva (e longe estará de o ser&#8230;)</p>
 <p>Portanto a não ser que esteja a ver mal as coisas, HTML já não se usa (até ver).</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21611">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gaspar</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 15:01</p>
         <div class="blog-comment-text"><p>Também acho este não é o local indicado para discutir este assunto. </p>
 <p>Apesar de achar estas discussões enriquecedoras e é com este intuito que participo nas mesmas.</p>
@@ -306,45 +308,45 @@ Quanto ao html acredita que se usa e cada vez mais gente vai renunciando ao (x)H
       </div>
     </div>
     <div class="blog-comment" id="comment-21612">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 15:07</p>
         <div class="blog-comment-text"><p>Tens o link para a minha homepage e tens lá o contacto. Podemos continuar esta troca de ideias via e-mail.</p>
 <p>PS: Desculpa lá Ivo por termos invadido assim a tua “casa” na web :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21613">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 15:58</p>
         <div class="blog-comment-text"><p>No problem. As discussões são sempre boas quando as duas partes têm pontos de vista diferentes e tentam explicá-los educadamente. Quando se começa a baixar o nível é que é pior.</p>
-<p>Vou só dar a minha opinião sobre o XHTML vs. HTML: Não acho que o HTML já não se use, antes pelo contrário. Aqui há 1 ou 2 anos o XHTML estava na moda, mas rapidamente está-se a voltar ao HTML 4 Strict em vez do XHTML. Isso prende-se com o facto do XHTML não suportar grande parte das funcionalidades de XML para as quais ele foi desenvolvido e porque vários browsers (IE) não reconhecem o mime/type xhtml. Assim estás a servir XHTML mas estás a dizer ao browser que o mime/type é text/html (<a href="http://hixie.ch/advocacy/xhtml" rel="nofollow">http://hixie.ch/advocacy/xhtml</a>). Ora, isso assim não faz sentido.</p>
-<p>Tens aqui mais algumas razões porque não se deve usar (ainda) XHTML: <a href="http://codinginparadise.org/weblog/2005/08/xhtml-considered-harmful.html" rel="nofollow">http://codinginparadise.org/weblog/2005/08/xhtml-considered-harmful.html</a></p></div>
+<p>Vou só dar a minha opinião sobre o XHTML vs. HTML: Não acho que o HTML já não se use, antes pelo contrário. Aqui há 1 ou 2 anos o XHTML estava na moda, mas rapidamente está-se a voltar ao HTML 4 Strict em vez do XHTML. Isso prende-se com o facto do XHTML não suportar grande parte das funcionalidades de XML para as quais ele foi desenvolvido e porque vários browsers (IE) não reconhecem o mime/type xhtml. Assim estás a servir XHTML mas estás a dizer ao browser que o mime/type é text/html (<a href="http://hixie.ch/advocacy/xhtml" rel="nofollow noopener noreferrer">http://hixie.ch/advocacy/xhtml</a>). Ora, isso assim não faz sentido.</p>
+<p>Tens aqui mais algumas razões porque não se deve usar (ainda) XHTML: <a href="http://codinginparadise.org/weblog/2005/08/xhtml-considered-harmful.html" rel="nofollow noopener noreferrer">http://codinginparadise.org/weblog/2005/08/xhtml-considered-harmful.html</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21614">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">2 de Julho de 2007, 16:21</p>
         <div class="blog-comment-text"><p>Mas fará sentido ter tudo pronto para o XHTML para quando ele for suportado? A este ritmo não vejo o XHTML a ser suportado mas pelo menos o código já estava conforme&#8230; É um pau de dois bicos. Tenho usado XHTML e servido como HTML, sim mas não será melhor para o futuro ter isso assim pronto?</p>
 <p>A W3C não está a ajudar com estas lutas internas.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21656">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gaspar</a></p>
         <p class="blog-comment-date">3 de Julho de 2007, 11:54</p>
         <div class="blog-comment-text"><p>Completando a informação desta discussão.</p>
 <blockquote cite="http://www.clickmaujor.com/w3c/html-pressrelease-pt-br.html"><p>A primeira recomendação XHTML completa foi publicada no início de 2000. Contudo devido ao maciço legado do conteúdo Web, baseado em variações do HTML, os fabricantes de navegadores começaram vagarosamente a adotar o XHTML. Isto resultou em pouca motivação para os desenvolvedores de conteúdos adotar o XHTML em seu ambiente tradicional de desenvolvimento. Expoentes das comunidades de desenvolvedores e de design apelaram ao W3C para a necessidade urgente de uma revisão dos seus compromissos com o HTML</p></blockquote>
 <blockquote cite="http://brunotorres.net/xhtml-pensando-no-futuro"><p>
-A primeira coisa que você deve saber é que o Internet Explorer 6 (e versões anteriores) não suporta XHTML. Ponto. Na verdade ele nem chega a suportar o HTML completamente. Seu XHTML funciona bem mesmo sendo enviado como se fosse HTML porque você aprendeu a escrever XHTML cumprindo as regras descritas no <a href="https://www.w3.org/TR/xhtml1/#guidelines" title="regras de compatibilidade entre XHTML 1.0 e HTML 4.01" rel="nofollow">apêndice C</a> da especificação do XHTML 1.0, mesmo que inconscientemente.
+A primeira coisa que você deve saber é que o Internet Explorer 6 (e versões anteriores) não suporta XHTML. Ponto. Na verdade ele nem chega a suportar o HTML completamente. Seu XHTML funciona bem mesmo sendo enviado como se fosse HTML porque você aprendeu a escrever XHTML cumprindo as regras descritas no <a href="https://www.w3.org/TR/xhtml1/#guidelines" title="regras de compatibilidade entre XHTML 1.0 e HTML 4.01" rel="nofollow noopener noreferrer">apêndice C</a> da especificação do XHTML 1.0, mesmo que inconscientemente.
 </p></blockquote>
 <blockquote cite="http://brunotorres.net/xhtml-pensando-no-futuro"><p>
-O <a href="https://www.w3.org/TR/xhtml1/#guidelines" title="regras de compatibilidade entre XHTML 1.0 e HTML 4.01" rel="nofollow">apêndice C</a> define as regras de compatibilidade entre XHTML 1.0 e HTML 4.01. São as regras que você deve seguir para poder enviar seus documentos XHTML como text/html e assegurar que os UAs atuais consigam renderizá-lo a contento.
+O <a href="https://www.w3.org/TR/xhtml1/#guidelines" title="regras de compatibilidade entre XHTML 1.0 e HTML 4.01" rel="nofollow noopener noreferrer">apêndice C</a> define as regras de compatibilidade entre XHTML 1.0 e HTML 4.01. São as regras que você deve seguir para poder enviar seus documentos XHTML como text/html e assegurar que os UAs atuais consigam renderizá-lo a contento.
 </p></blockquote>
 <blockquote cite="http://www.clickmaujor.com/w3c/html-pressrelease-pt-br.html"><p>O XHTML provou seu valor em outros mercados como o mercado de dispositivos móveis, em aplicações empresariais, no lado do servidor e em um crescente número de aplicações Web tal como os software para Blogs. Por exemplo: O Grupo de Trabalho para Práticas Web para Dispositivos Móveis, incluiu o módulo XHTML Basic como uma pedra angular nas Boas Práticas para Web Móvel porque softwares rodando com memória reduzida suportam aquele módulo. O mercado para XML é vasto e está crescendo, assim o W3C definirá a sintaxe XML para o novo HTML como complemento a sintaxe HTML tradicional.</p></blockquote>
 <p>Pelo que eu vejo pela web fora existe muitas dúvidas, entre os experts, acerca se é correcto ou não usar o XHTML enquanto txt/html.</p>
@@ -352,27 +354,27 @@ O <a href="https://www.w3.org/TR/xhtml1/#guidelines" title="regras de compatibil
       </div>
     </div>
     <div class="blog-comment" id="comment-21658">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">3 de Julho de 2007, 12:29</p>
         <div class="blog-comment-text"><p>Já agora deixo um link para um artigo que compara as diversas versões do HTML e XHTML.<br />
 Espero que seja útil.<br />
-<a href="http://meiert.com/en/indices/html-elements/" title="Artigo HTML elements index" rel="nofollow">HTML elements index</a></p></div>
+<a href="http://meiert.com/en/indices/html-elements/" title="Artigo HTML elements index" rel="nofollow noopener noreferrer">HTML elements index</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21702">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e6470df4ee8aa5563dc27a777ef9a46b?s=72&d=mp&r=r" alt="ponto" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e6470df4ee8aa5563dc27a777ef9a46b?s=72&d=mp&r=r" alt="ponto" />
       <div>
-        <p class="blog-comment-author"><a href='http://weblog.bitela.net/2007/07/03/the-last-ripper/' rel='external nofollow' class='url'>ponto</a></p>
+        <p class="blog-comment-author"><a href='http://weblog.bitela.net/2007/07/03/the-last-ripper/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>ponto</a></p>
         <p class="blog-comment-date">3 de Julho de 2007, 22:39</p>
         <div class="blog-comment-text"><p>ui candidatos a marcadores no browser (:</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21703">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel='external nofollow' class='url'>Dextro</a></p>
+        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dextro</a></p>
         <p class="blog-comment-date">3 de Julho de 2007, 22:50</p>
         <div class="blog-comment-text"><p>Quanto aquele link que o Ivo deixou aqui nos comentários preciso de deixar uma resalva: Não vejo porque é que os iframes continuam a ser tão importantes? Não é possível fazer o mesmo com CSS e a propriedade overflow? AJAX serve para renovar o conteúdo&#8230;</p>
 <p>Claro que com tanta gente a alegar a redundância que que não se deve usar xHTML porque ainda não é muito usado vai manter as coisas como estão&#8230;</p>
@@ -380,42 +382,42 @@ Espero que seja útil.<br />
       </div>
     </div>
     <div class="blog-comment" id="comment-21735">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Julho de 2007, 08:59</p>
         <div class="blog-comment-text"><p>A única diferença entre o código que escrevo em HTML 4.1 Strict e XHTML é não usar o &#8220;/>&#8221; no final das tags que não têm a correspondente tag de fecho. Fora isso, só muda o DOCTYPE e mais nada. Assim posso facilmente mudar de HTML para XHTML sem grandes dificuldades. A maior parte das regras usadas no XHTML podem ser aplicadas no HTML.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-21737">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a3fc730391ffb262da743b51b6d4b38a?s=72&d=mp&r=r" alt="Gaspar" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-author"><a href='http://www.gaspar.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gaspar</a></p>
         <p class="blog-comment-date">4 de Julho de 2007, 09:57</p>
         <div class="blog-comment-text"><p>Eu pessoalmente não gosto muito do Ajax quando este é usado para meramente renovar conteudo, enquanto conteudo. Caso este meramente sejam mensagens de aviso ou informação que não constitua o nucleo central da informação.</p>
 <p>Penso que não justifica o uso de AJAX somente para renovar informação sem o reload da página. Penso que isso já se fazia nos anos 90s via framesets.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-23595">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/64d24813814c67624a936057252dc9ae?s=72&d=mp&r=r" alt="chulapa" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/64d24813814c67624a936057252dc9ae?s=72&d=mp&r=r" alt="chulapa" />
       <div>
-        <p class="blog-comment-author"><a href='http://chulapalin.blog.uol.com.br/' rel='external nofollow' class='url'>chulapa</a></p>
+        <p class="blog-comment-author"><a href='http://chulapalin.blog.uol.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>chulapa</a></p>
         <p class="blog-comment-date">19 de Julho de 2007, 15:10</p>
         <div class="blog-comment-text"><p>nossa, d+ o seu blog, muito conteudo bom e como sou da area da informatica entao, um prato cheio&#8230;um abraco e muito sucesso pra vc parceiro</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-43672">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/37637c5641b1132086ce148b49a22c7a?s=72&d=mp&r=r" alt="MAQ" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/37637c5641b1132086ce148b49a22c7a?s=72&d=mp&r=r" alt="MAQ" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.bengalalegal.com/' rel='external nofollow' class='url'>MAQ</a></p>
+        <p class="blog-comment-author"><a href='http://www.bengalalegal.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>MAQ</a></p>
         <p class="blog-comment-date">31 de Março de 2008, 18:05</p>
         <div class="blog-comment-text"><p>Bem, amigos, eu utilizo o html strict em um site e o xhtml em outro, ambos strict. A vantagem para mim que sou cego de utilizar o xhtml strict é que ele aponta erros de acessibilidade, como a ausência do atributo alt, a presença de targets na validação do markup do W3C&#8230; já facilitando a coisa para nós cegos. Quanto ao Samurai, quase esquecido nos comentários, quando é dito para não se utilizar a prioridade 3 do WCAG 1.0, tem-se de tomar cuidado em se ler todo o documento para se entender que existem muitas ressalvas em que se utiliza tal prioridade. Um exemplo é que no elemento htm a utilização do atributo lang deve ser usado, menos quando a página possua inúmeros idiomas e não se consiga definir qual deles é o heterogênio para ser utilizado. A colocação do idioma no atributo lang é importante para as abreviações do display Braille. Mas isso é uma outra história que daria um tutorial por aqui! De uma forma geral o WCAG Samurai vem preencher uma lacuna já há muito vazia e reavivar o implemento de acessibilidade no desenvolvimento de páginas, usabilidade e arquitetura da informação dos sites. Abraços acessíveis a todos&#8230; html e xhtml zeiros da web!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-44459">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Abril de 2008, 17:30</p>
         <div class="blog-comment-text"><p>É sempre bom ter comentários de pessoas que infelizmente sofrem na pele os problemas de acessibilidade dos sites. Só o facto de testarmos as nossas aplicações e websites em sistemas automáticos e tentarmos ao máximo ter todos os cuidados com a acessibilidade por vezes pode não ser suficiente. </p>
 <p>É com utilizadores reais que vemos realmente que o nosso trabalho pode fazer a diferença.</p>
@@ -424,7 +426,7 @@ Espero que seja útil.<br />
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/cnn-prestes-a-lancar-novo-website/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -438,7 +440,7 @@ Espero que seja útil.<br />
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

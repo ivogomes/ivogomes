@@ -14,6 +14,7 @@
 <title>Deixem de usar CSS Hacks! — Ivo Gomes</title>
 <meta name="description" content="&quot;Deixem de usar CSS Hacks&quot; foi este o pedido da equipa que está a desenvolver o novo Internet Explorer 7. Os &quot;hacks&quot; são formas de contornar os problemas de renderização de CSS existentes nas versões 5, 5.5 e 6 do Internet Explorer. Normalmente quando se programa um website usando os webstandards é preciso fazer pequenos …" />
 <meta property="og:title" content="Deixem de usar CSS Hacks!" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="&quot;Deixem de usar CSS Hacks&quot; foi este o pedido da equipa que está a desenvolver o novo Internet Explorer 7. Os &quot;hacks&quot; são formas de contornar os problemas de renderização de CSS existentes nas versões 5, 5.5 e 6 do Internet Explorer. Normalmente quando se programa um website usando os webstandards é preciso fazer pequenos …" />
 <meta property="article:published_time" content="2005-10-14T09:11:50+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/deixem-de-usar-css-hacks/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>14 Out 2005</span>
+    <time datetime="2005-10-14">14 Out 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,19 +52,19 @@
   </div>
 
   <article class="blog-article">
-<p>"<a href="https://blogs.msdn.com/ie/archive/2005/10/12/480242.aspx">Deixem de usar CSS Hacks</a>" foi este o pedido da equipa que está a desenvolver o novo Internet Explorer 7. </p>
-<p>Os "hacks" são formas de contornar os problemas de renderização de CSS existentes nas versões 5, 5.5 e 6 do <a href="https://www.microsoft.com/windows/ie/default.mspx">Internet Explorer</a>. Normalmente quando se programa um website usando os webstandards é preciso fazer pequenos ajustes para que o resultado final seja igual em todos os browsers. Uma vez que as versões mencionadas do Internet Explorer não suportam muito bem estes webstandards, por vezes é preciso refazer algumas partes do código usando "hacks" ou outros ajustes ("workarounds"). </p>
+<p>"<a href="https://blogs.msdn.com/ie/archive/2005/10/12/480242.aspx" rel="noopener noreferrer">Deixem de usar CSS Hacks</a>" foi este o pedido da equipa que está a desenvolver o novo Internet Explorer 7. </p>
+<p>Os "hacks" são formas de contornar os problemas de renderização de CSS existentes nas versões 5, 5.5 e 6 do <a href="https://www.microsoft.com/windows/ie/default.mspx" rel="noopener noreferrer">Internet Explorer</a>. Normalmente quando se programa um website usando os webstandards é preciso fazer pequenos ajustes para que o resultado final seja igual em todos os browsers. Uma vez que as versões mencionadas do Internet Explorer não suportam muito bem estes webstandards, por vezes é preciso refazer algumas partes do código usando "hacks" ou outros ajustes ("workarounds"). </p>
 <p>Um "hack" é uma forma de enganar um browser, enquanto que um "workaround" é uma forma de enganar erros de renderização minimizando os browsers afectados.</p>
-<p>A equipa que está a desenvolver o <a href="https://blogs.msdn.com/ie/archive/2005/02/15/373104.aspx">IE 7</a> pediu aos webdesigners para deixarem de usar determinados "hacks" porque, segundo eles, o novo browser já terá grande parte dos bugs resolvidos e a inclusão de "hacks" irá fazer com que a renderização das páginas seja feita incorrectamente.</p>
+<p>A equipa que está a desenvolver o <a href="https://blogs.msdn.com/ie/archive/2005/02/15/373104.aspx" rel="noopener noreferrer">IE 7</a> pediu aos webdesigners para deixarem de usar determinados "hacks" porque, segundo eles, o novo browser já terá grande parte dos bugs resolvidos e a inclusão de "hacks" irá fazer com que a renderização das páginas seja feita incorrectamente.</p>
 <p>Estes são os "hacks" CSS que devem ser deixados de usar:</p>
 <ul>
-<li><a href="http://css-discuss.incutio.com/?page=ChildHack">html > body</a></li>
-<li><a href="http://css-discuss.incutio.com/?page=StarHtmlHack">* html</a></li>
-<li><a href="http://centricle.com/ref/css/filters/tests/owen/">head:first-child + body</a></li>
-<li><a href="http://www.dithered.com/css_filters/css_only/head_adjacent_sibling_body.html">head + body</a></li>
-<li><a href="http://css-discuss.incutio.com/?page=ChildHack">body > element</a></li>
+<li><a href="http://css-discuss.incutio.com/?page=ChildHack" rel="noopener noreferrer">html > body</a></li>
+<li><a href="http://css-discuss.incutio.com/?page=StarHtmlHack" rel="noopener noreferrer">* html</a></li>
+<li><a href="http://centricle.com/ref/css/filters/tests/owen/" rel="noopener noreferrer">head:first-child + body</a></li>
+<li><a href="http://www.dithered.com/css_filters/css_only/head_adjacent_sibling_body.html" rel="noopener noreferrer">head + body</a></li>
+<li><a href="http://css-discuss.incutio.com/?page=ChildHack" rel="noopener noreferrer">body > element</a></li>
 </ul>
-<p>Durante os meus últimos projectos que envolveram webdesign (incluindo a <a href="https://www.ivogomes.com/?p=156">remodelação do meu site</a>) tentei ao máximo não usar Hacks. Em vez disso, há <a href="http://web-graphics.com/mtarchive/001602.php">outras formas</a> de dar a volta aos bugs do IE. Segundo esta técnica, o desenvolvimento do código CSS pode ser feito da seguinte forma:</p>
+<p>Durante os meus últimos projectos que envolveram webdesign (incluindo a <a href="https://www.ivogomes.com/?p=156" rel="noopener noreferrer">remodelação do meu site</a>) tentei ao máximo não usar Hacks. Em vez disso, há <a href="http://web-graphics.com/mtarchive/001602.php" rel="noopener noreferrer">outras formas</a> de dar a volta aos bugs do IE. Segundo esta técnica, o desenvolvimento do código CSS pode ser feito da seguinte forma:</p>
 <ol>
 <li>Se conhecemos que existe um bug, podemos tentar prevenir que ele aconteça;</li>
 <li>Se não for possível preveni-lo, podemos fazer ajustes (workarounds) ao código para evitar que ele apareça;</li>
@@ -76,9 +78,9 @@
   <section class="blog-comments">
     <h2 class="blog-comments-title">22 comentários</h2>
     <div class="blog-comment" id="comment-2995">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/53488acd20a8bf8e289aa9f701a63a76?s=72&d=mp&r=r" alt="Dehumanizer" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/53488acd20a8bf8e289aa9f701a63a76?s=72&d=mp&r=r" alt="Dehumanizer" />
       <div>
-        <p class="blog-comment-author"><a href='http://tlog.dehumanizer.com/' rel='external nofollow' class='url'>Dehumanizer</a></p>
+        <p class="blog-comment-author"><a href='http://tlog.dehumanizer.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dehumanizer</a></p>
         <p class="blog-comment-date">14 de Outubro de 2005, 10:56</p>
         <div class="blog-comment-text"><p>O problema é que quem deixar de usar hacks tem o seu site, automaticamente, a não funcionar bem para 80% do mundo. </p>
 <p>Num site pessoal, pode-se fazer tal coisa por uma questão de princípio, mas num site comercial, é complicado.</p>
@@ -86,26 +88,26 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-2996">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">14 de Outubro de 2005, 11:52</p>
         <div class="blog-comment-text"><p>Podes não usar hacks e passar a usar workarounds. Foi isso que fiz para este site. Infelizmente tive que usar 2 hacks porque não consegui dar a volta a essa parte do código, um deles no menu principal e outro na colocação dos resultados da pesquisa LiveSearch.</p>
 <p>Num site comercial ainda é mais importante usar o menor número de hacks possível porque dessa forma ele não irá estar preparado para o futuro quando começarem a aparecer as novas versões do IE.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2997">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/53488acd20a8bf8e289aa9f701a63a76?s=72&d=mp&r=r" alt="Dehumanizer" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/53488acd20a8bf8e289aa9f701a63a76?s=72&d=mp&r=r" alt="Dehumanizer" />
       <div>
-        <p class="blog-comment-author"><a href='http://tlog.dehumanizer.com/' rel='external nofollow' class='url'>Dehumanizer</a></p>
+        <p class="blog-comment-author"><a href='http://tlog.dehumanizer.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dehumanizer</a></p>
         <p class="blog-comment-date">14 de Outubro de 2005, 12:33</p>
         <div class="blog-comment-text"><p>A questão, também, é que é muito mais fácil dizer às pessoas &#8220;actualizem o browser&#8221; do que &#8220;mudem de browser&#8221;.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2998">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">14 de Outubro de 2005, 13:29</p>
         <div class="blog-comment-text"><p>Às vezes os utilizadores não podem fazer isso porque não têm conhecimentos técnicos suficientes para actualizar o browser ou porque não têm as permissões para o fazer.</p>
 <p>Mesmo em grandes empresas em que facilmente se podia dizer ao Dep. informático para actualizar o browser, por vezes não o fazem. Já estive em empresas bastante grandes que ainda usam o IE5 ou o IE5.5.</p>
@@ -113,9 +115,9 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-3001">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8a1cab9229ce9819ffdd7bbe11743076?s=72&d=mp&r=r" alt="Rui Moura" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8a1cab9229ce9819ffdd7bbe11743076?s=72&d=mp&r=r" alt="Rui Moura" />
       <div>
-        <p class="blog-comment-author"><a href='http://ruimoura.net/' rel='external nofollow' class='url'>Rui Moura</a></p>
+        <p class="blog-comment-author"><a href='http://ruimoura.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Rui Moura</a></p>
         <p class="blog-comment-date">15 de Outubro de 2005, 22:12</p>
         <div class="blog-comment-text"><p>Quando o IE7 for lançado, o que não vai acontecer tão cedo, terá lógica deixar de usar os &#8220;Hacks&#8221;, isto se o IE7 se portar bem.<br />
 Só não percebi porque è que eles pediram para deixar de usar os hacks agora &#8230; Passou-me ao lado :|<br />
@@ -123,9 +125,9 @@ E já agora è de referir que no blog tenho mais hacks para o Opera do que para 
       </div>
     </div>
     <div class="blog-comment" id="comment-3002">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/dfc518e058a404e6873d5c76c0469ef4?s=72&d=mp&r=r" alt="Margarida" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/dfc518e058a404e6873d5c76c0469ef4?s=72&d=mp&r=r" alt="Margarida" />
       <div>
-        <p class="blog-comment-author"><a href='http://margarida.net/' rel='external nofollow' class='url'>Margarida</a></p>
+        <p class="blog-comment-author"><a href='http://margarida.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Margarida</a></p>
         <p class="blog-comment-date">16 de Outubro de 2005, 08:23</p>
         <div class="blog-comment-text"><p>Bem que eu até de vez em quando uso/usava o primeiro e/ou segundo desses hacks mencionados, mas vá lá que saia o IE 7, porque o que me partia mesmo a cabeça nos layouts era quando não funcionava no IE e no resto já estava resolvido.<br />
 Também tento evitar ao máximo hacks e às vezes até deixo andar com o que o pessoal vê no IE, pois não costuma ser nada por aí além, mas não sei se é por vir o IE 7 que a malta vai toda a correr atrás desse browser, ainda existem os outros: firefox, opera, etc. Mas penso que sim, que façam bem e &#8220;stardadizem&#8221; o IE :P<br />
@@ -133,9 +135,9 @@ Bom post :) não conhecia o teu blog, mas vou passar a visitá-lo. Fica bem ^_^<
       </div>
     </div>
     <div class="blog-comment" id="comment-3003">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="d3x7r0" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="d3x7r0" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.blog.nonsensebb.net/' rel='external nofollow' class='url'>d3x7r0</a></p>
+        <p class="blog-comment-author"><a href='http://www.blog.nonsensebb.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>d3x7r0</a></p>
         <p class="blog-comment-date">16 de Outubro de 2005, 22:12</p>
         <div class="blog-comment-text"><p>Se o IE não sabe colocar as imagens de acordo com a especificação CSS e não suporta transparencias em PNG (apesar de outras aplicações Microsoft como o Office 2003 já o fazerem) é natural que eu me veja forçado a usar hacks&#8230;</p>
 <p>E já agora creio que não é propriamente um hack o facto do IE não compreender um codigo só pelo facto de eu ter removido os espaços do meio, teoricamente ele reconheçeria á mesma (html&gt;body)&#8230;</p>
@@ -143,9 +145,9 @@ Bom post :) não conhecia o teu blog, mas vou passar a visitá-lo. Fica bem ^_^<
       </div>
     </div>
     <div class="blog-comment" id="comment-3008">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">17 de Outubro de 2005, 08:17</p>
         <div class="blog-comment-text"><p>Margarida: Mesmo quando chegar o IE vamos ter que continuar a desenvolver websites tendo em conta os mesmos bugs do IE5 e IE6 porque há pessoas que não os vão actualizar para o IE7. Obrigado pela tua visita, também gostei bastante do teu blog e dos layouts que criaste!</p>
 <p>Rui: Os hacks existentes para o Opera que eu conheço são aplicados por causa dos hacks para o IE&#8230; Por exemplo, o box model hack é um hack para o IE, mas no final tens que incluir um hack para o Opera porque apesar do Opera não ter nenhum bug aqui, ele interpreta os hacks do IE e como tal precisamos de um segundo hack para que ele &#8220;desinterprete&#8221;&#8230; não sei se alguém percebeu esta frase :)</p>
@@ -153,15 +155,15 @@ Bom post :) não conhecia o teu blog, mas vou passar a visitá-lo. Fica bem ^_^<
       </div>
     </div>
     <div class="blog-comment" id="comment-3011">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8a1cab9229ce9819ffdd7bbe11743076?s=72&d=mp&r=r" alt="Rui Moura" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8a1cab9229ce9819ffdd7bbe11743076?s=72&d=mp&r=r" alt="Rui Moura" />
       <div>
-        <p class="blog-comment-author"><a href='http://ruimoura.net/' rel='external nofollow' class='url'>Rui Moura</a></p>
+        <p class="blog-comment-author"><a href='http://ruimoura.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Rui Moura</a></p>
         <p class="blog-comment-date">17 de Outubro de 2005, 10:57</p>
         <div class="blog-comment-text"><p>Percebi perfeitamente ;). Obrigado pelo esclarecimento. Estamos sempre a aprender :D</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3282">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b5dcbba7955c8143eaadfec9bbc86a4c?s=72&d=mp&r=r" alt="Romeu Ribeiro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b5dcbba7955c8143eaadfec9bbc86a4c?s=72&d=mp&r=r" alt="Romeu Ribeiro" />
       <div>
         <p class="blog-comment-author">Romeu Ribeiro</p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 21:44</p>
@@ -172,7 +174,7 @@ Bom post :) não conhecia o teu blog, mas vou passar a visitá-lo. Fica bem ^_^<
       </div>
     </div>
     <div class="blog-comment" id="comment-3300">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/784210350d7975d2bae3799f2383147c?s=72&d=mp&r=r" alt="Bruno" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/784210350d7975d2bae3799f2383147c?s=72&d=mp&r=r" alt="Bruno" />
       <div>
         <p class="blog-comment-author">Bruno</p>
         <p class="blog-comment-date">27 de Janeiro de 2006, 16:17</p>
@@ -181,7 +183,7 @@ Bom post :) não conhecia o teu blog, mas vou passar a visitá-lo. Fica bem ^_^<
       </div>
     </div>
     <div class="blog-comment" id="comment-4065">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4d5128603f2cb69069ebb55f417fce39?s=72&d=mp&r=r" alt="TALLITA CORDEIRO ARAUJO" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4d5128603f2cb69069ebb55f417fce39?s=72&d=mp&r=r" alt="TALLITA CORDEIRO ARAUJO" />
       <div>
         <p class="blog-comment-author">TALLITA CORDEIRO ARAUJO</p>
         <p class="blog-comment-date">6 de Junho de 2006, 17:03</p>
@@ -189,23 +191,23 @@ Bom post :) não conhecia o teu blog, mas vou passar a visitá-lo. Fica bem ^_^<
       </div>
     </div>
     <div class="blog-comment" id="comment-5294">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/65e0cad8138c21db2e0f084620125392?s=72&d=mp&r=r" alt="MIguel" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/65e0cad8138c21db2e0f084620125392?s=72&d=mp&r=r" alt="MIguel" />
       <div>
-        <p class="blog-comment-author"><a href='http://mikestech.planetaclix.pt/' rel='external nofollow' class='url'>MIguel</a></p>
+        <p class="blog-comment-author"><a href='http://mikestech.planetaclix.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>MIguel</a></p>
         <p class="blog-comment-date">21 de Agosto de 2006, 00:09</p>
         <div class="blog-comment-text"><p>Usem o Mozilla ou o Opera, pelo menos esses respeitam os standards. E o IE tem demasiadas falhas de segurança.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-6522">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/21db121dc005b46d9224a11d3a728776?s=72&d=mp&r=r" alt="fernando" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/21db121dc005b46d9224a11d3a728776?s=72&d=mp&r=r" alt="fernando" />
       <div>
-        <p class="blog-comment-author"><a href='http://hacker/' rel='external nofollow' class='url'>fernando</a></p>
+        <p class="blog-comment-author"><a href='http://hacker/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>fernando</a></p>
         <p class="blog-comment-date">15 de Dezembro de 2006, 18:18</p>
         <div class="blog-comment-text"><p>eu quero ser hacker</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-10118">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/558e68e2515fa8fa4a3bcebad2678a5a?s=72&d=mp&r=r" alt="william" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/558e68e2515fa8fa4a3bcebad2678a5a?s=72&d=mp&r=r" alt="william" />
       <div>
         <p class="blog-comment-author">william</p>
         <p class="blog-comment-date">18 de Fevereiro de 2007, 15:10</p>
@@ -214,24 +216,24 @@ como resouvo este problema</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-15355">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/22de658cb5642964336484c8413a520d?s=72&d=mp&r=r" alt="helder" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/22de658cb5642964336484c8413a520d?s=72&d=mp&r=r" alt="helder" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.frontend.pt/' rel='external nofollow' class='url'>helder</a></p>
+        <p class="blog-comment-author"><a href='http://www.frontend.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>helder</a></p>
         <p class="blog-comment-date">4 de Maio de 2007, 15:33</p>
         <div class="blog-comment-text"><p>Pois, é mto bonito tentar, mas não me parece contornável. Queremos fazer algo mais específico e um dos 3 browsers actualmente mais representativos (ie6, 7 e ff) manda-nos dar uma grande curva.</p>
 <p>Exemplo: um cliente pediu-me para pôr uma marca por cima do conteúdo todo na impressão, que se sobreponha ao texto e imagens impressas. O firefox não faz transparencia ao gif. O ie6 só faz ao gif. E agora?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-15357">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Maio de 2007, 15:38</p>
         <div class="blog-comment-text"><p>Um GIF transparente funciona em qualquer browser. O problema pode estar no código que está a usar. Basicamente basta meter a imagem com &#8220;positioning: absolute&#8221; centrada na página e com um &#8220;z-index&#8221; superior aos restantes conteúdos para ficar sempre por cima.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-36250">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d4271bc2db8a6ec994ecf01884e9a91?s=72&d=mp&r=r" alt="Igor" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d4271bc2db8a6ec994ecf01884e9a91?s=72&d=mp&r=r" alt="Igor" />
       <div>
         <p class="blog-comment-author">Igor</p>
         <p class="blog-comment-date">28 de Novembro de 2007, 20:41</p>
@@ -239,9 +241,9 @@ como resouvo este problema</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-40749">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8e2c74825dfeb4d169d97d03ac0f306e?s=72&d=mp&r=r" alt="Thalis Valle" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8e2c74825dfeb4d169d97d03ac0f306e?s=72&d=mp&r=r" alt="Thalis Valle" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.thalisvalle.com/' rel='external nofollow' class='url'>Thalis Valle</a></p>
+        <p class="blog-comment-author"><a href='http://www.thalisvalle.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Thalis Valle</a></p>
         <p class="blog-comment-date">19 de Fevereiro de 2008, 15:17</p>
         <div class="blog-comment-text"><p>hoje está sendo impossícel usar hacks. Eu particularmente desenvolvo em front-end na plataforma Windows com os navegadores IE6/ IE7 / Firefox 2.x / Opera 9.x</p>
 <p>É impossível não precisar usar hacl, pois cada um renderiza de um jeito, mesmo em layouts mais simples.</p>
@@ -249,15 +251,15 @@ como resouvo este problema</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-61461">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/67ee813a45597304d2801b32fd523da3?s=72&d=mp&r=r" alt="Filipe Abreu" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/67ee813a45597304d2801b32fd523da3?s=72&d=mp&r=r" alt="Filipe Abreu" />
       <div>
-        <p class="blog-comment-author"><a href='http://inter-ativos.com/' rel='external nofollow' class='url'>Filipe Abreu</a></p>
+        <p class="blog-comment-author"><a href='http://inter-ativos.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Filipe Abreu</a></p>
         <p class="blog-comment-date">7 de Agosto de 2008, 14:10</p>
         <div class="blog-comment-text"><p>Eu tenho um cpomputador antigo rodando win98. Só posso usar até o IE 6 nele, pois o IE 7 requer ao mínimo o XP. Também é fato que ainda existe gente que tem win98&#8230; bom tem mta gente q tem mta coisa ainda&#8230; Usar hack é uma forma de dar um jeitinho&#8230; se bem q não tem outro mesmo, a não ser limitar o layout a um formato que não se altere em borwsers diferentes. Vejo diferenças até entre FF de PC e de Mac. Safari e Opera também conseguem serem chatinhos. Uso o meu FF como base, e depois vou hackeando. </p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-68469">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/421740fd537e4e42f19dfea835b953ef?s=72&d=mp&r=r" alt="Leo Cabral" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/421740fd537e4e42f19dfea835b953ef?s=72&d=mp&r=r" alt="Leo Cabral" />
       <div>
         <p class="blog-comment-author">Leo Cabral</p>
         <p class="blog-comment-date">15 de Setembro de 2008, 00:27</p>
@@ -266,7 +268,7 @@ como resouvo este problema</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-86257">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/555d643849a7fccf5f3c319cddbb7087?s=72&d=mp&r=r" alt="Pablo Alves Lima" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/555d643849a7fccf5f3c319cddbb7087?s=72&d=mp&r=r" alt="Pablo Alves Lima" />
       <div>
         <p class="blog-comment-author">Pablo Alves Lima</p>
         <p class="blog-comment-date">6 de Julho de 2009, 15:31</p>
@@ -276,7 +278,7 @@ Obrigado.</p></div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/donald-norman-e-os-webstandards/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -290,7 +292,7 @@ Obrigado.</p></div>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

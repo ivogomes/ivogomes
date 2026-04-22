@@ -14,6 +14,7 @@
 <title>Novamente sobre o tamanho do texto — Ivo Gomes</title>
 <meta name="description" content="Depois de alguma discussão sobre qual a melhor forma de definir o tamanho do texto num website, hoje encontrei uma possível solução para o problema e que funciona em qualquer browser/plataforma." />
 <meta property="og:title" content="Novamente sobre o tamanho do texto" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Depois de alguma discussão sobre qual a melhor forma de definir o tamanho do texto num website, hoje encontrei uma possível solução para o problema e que funciona em qualquer browser/plataforma." />
 <meta property="article:published_time" content="2006-05-11T16:24:04+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/novamente-sobre-o-tamanho-do-texto/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>11 Mai 2006</span>
+    <time datetime="2006-05-11">11 Mai 2006</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -51,7 +53,7 @@
 
   <article class="blog-article">
 <p>Depois de alguma discussão sobre <a href="/blog/o-tamanho-importa/">qual a melhor forma de definir o tamanho do texto num website</a>, hoje encontrei uma possível solução para o problema e que funciona em qualquer browser/plataforma.</p>
-<p>O <a href="https://developer.yahoo.com/">Yahoo! Developer Network</a> disponibilizou na sua <a href="https://developer.yahoo.com/yui/index.html">User Interface Library</a> uma solução que permite normalizar o tamanho do texto em todos os browsers, de forma muito simples. Através da inclusão de um ficheiro CSS, define-se o tamanho de texto para um valor fixo em pixeis. Isto fará com que o tamanho base do texto seja igual em todos os browsers.</p>
+<p>O <a href="https://developer.yahoo.com/" rel="noopener noreferrer">Yahoo! Developer Network</a> disponibilizou na sua <a href="https://developer.yahoo.com/yui/index.html" rel="noopener noreferrer">User Interface Library</a> uma solução que permite normalizar o tamanho do texto em todos os browsers, de forma muito simples. Através da inclusão de um ficheiro CSS, define-se o tamanho de texto para um valor fixo em pixeis. Isto fará com que o tamanho base do texto seja igual em todos os browsers.</p>
 <p>Depois, quando se quiser definir o tamanho do texto em alguma parte do site, usam-se percentagens para conseguir o tamanho pretendido, assim:</p>
 <ol class="code">
 <li><code>&lt;style&gt;</code></li>
@@ -139,21 +141,21 @@
 </tbody>
 </table>
 <p>Nada mais simples.</p>
-<p>Podem fazer <a href="https://developer.yahoo.com/yui/fonts/">download do código fonte aqui</a>.</p>
+<p>Podem fazer <a href="https://developer.yahoo.com/yui/fonts/" rel="noopener noreferrer">download do código fonte aqui</a>.</p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">13 comentários</h2>
     <div class="blog-comment" id="comment-3806">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8a1cab9229ce9819ffdd7bbe11743076?s=72&d=mp&r=r" alt="Rui Moura" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8a1cab9229ce9819ffdd7bbe11743076?s=72&d=mp&r=r" alt="Rui Moura" />
       <div>
-        <p class="blog-comment-author"><a href='http://ruimoura.net/' rel='external nofollow' class='url'>Rui Moura</a></p>
+        <p class="blog-comment-author"><a href='http://ruimoura.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Rui Moura</a></p>
         <p class="blog-comment-date">11 de Maio de 2006, 16:58</p>
         <div class="blog-comment-text"><p>Estes amigos da Yahoo estão a ser porreiros. Têm mandado cá para fora umas coisas interessantes, e esta é uma delas.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3807">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/94fa0f909e9c3135f50fc367ced77964?s=72&d=mp&r=r" alt="Abilio Santos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/94fa0f909e9c3135f50fc367ced77964?s=72&d=mp&r=r" alt="Abilio Santos" />
       <div>
         <p class="blog-comment-author">Abilio Santos</p>
         <p class="blog-comment-date">11 de Maio de 2006, 17:12</p>
@@ -163,9 +165,9 @@ Por exemplo: um utilizador com pouca acuidade visual que defina o tamanho de let
       </div>
     </div>
     <div class="blog-comment" id="comment-3808">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">11 de Maio de 2006, 17:19</p>
         <div class="blog-comment-text"><p>Se conceberes um site definindo o tamanho do texto em pixels também te acontece a mesma coisa&#8230; E a maior parte dos sites têm o tamanho do texto definido dessa maneira, impedindo que os utilizadores (do Internet Explorer) consigam aumentar ou reduzir o tamanho do texto.</p>
 <p>Em qualquer outro browser podes alterar o tamanho do texto usando a combinação de teclas CTRL+ e CTRL-.<br />
@@ -174,7 +176,7 @@ O uso de percentagens permite que os utilizadores do IE também possam fazer o m
       </div>
     </div>
     <div class="blog-comment" id="comment-3809">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/94fa0f909e9c3135f50fc367ced77964?s=72&d=mp&r=r" alt="Abilio Santos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/94fa0f909e9c3135f50fc367ced77964?s=72&d=mp&r=r" alt="Abilio Santos" />
       <div>
         <p class="blog-comment-author">Abilio Santos</p>
         <p class="blog-comment-date">11 de Maio de 2006, 17:20</p>
@@ -184,7 +186,7 @@ Tem a enorme vantagem, na minha pesrspectiva, de que aqueles utilizadores que se
       </div>
     </div>
     <div class="blog-comment" id="comment-3810">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/94fa0f909e9c3135f50fc367ced77964?s=72&d=mp&r=r" alt="Abilio Santos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/94fa0f909e9c3135f50fc367ced77964?s=72&d=mp&r=r" alt="Abilio Santos" />
       <div>
         <p class="blog-comment-author">Abilio Santos</p>
         <p class="blog-comment-date">11 de Maio de 2006, 17:26</p>
@@ -192,26 +194,26 @@ Tem a enorme vantagem, na minha pesrspectiva, de que aqueles utilizadores que se
       </div>
     </div>
     <div class="blog-comment" id="comment-3811">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/aaa9094f0e9d0ebbaf476f97698f1735?s=72&d=mp&r=r" alt="Claudio Franco" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/aaa9094f0e9d0ebbaf476f97698f1735?s=72&d=mp&r=r" alt="Claudio Franco" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.claudiofranco.net/' rel='external nofollow' class='url'>Claudio Franco</a></p>
+        <p class="blog-comment-author"><a href='http://blog.claudiofranco.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Claudio Franco</a></p>
         <p class="blog-comment-date">11 de Maio de 2006, 17:53</p>
         <div class="blog-comment-text"><p>Posso estar errado, mas usando &#8220;em&#8221; o texto continua a ficar escalável.</p>
 <p>Penso eu de que&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3812">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">11 de Maio de 2006, 18:00</p>
         <div class="blog-comment-text"><p>Só usando &#8220;px&#8221; é que o texto não é escalável.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3821">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">12 de Maio de 2006, 15:54</p>
         <div class="blog-comment-text"><p>A grande utilidade deste pacote é que remove as incoerências de tamanho entre browsers. Bom trabalho, yahoo-folks. :)</p>
 <p>Acho é que falta aí nessa tabela a resolução.<br />
@@ -220,42 +222,42 @@ Tem a enorme vantagem, na minha pesrspectiva, de que aqueles utilizadores que se
       </div>
     </div>
     <div class="blog-comment" id="comment-3822">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/aaa9094f0e9d0ebbaf476f97698f1735?s=72&d=mp&r=r" alt="Claudio Franco" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/aaa9094f0e9d0ebbaf476f97698f1735?s=72&d=mp&r=r" alt="Claudio Franco" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.claudiofranco.net/' rel='external nofollow' class='url'>Claudio Franco</a></p>
+        <p class="blog-comment-author"><a href='http://blog.claudiofranco.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Claudio Franco</a></p>
         <p class="blog-comment-date">12 de Maio de 2006, 16:04</p>
         <div class="blog-comment-text"><p>Os &#8220;em&#8221; são valores que trabalham acima de uma base, tipo %&#8230; se é que me fiz entender :|</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3823">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/2a3fbad33e9cfee364898c3de94c046e?s=72&d=mp&r=r" alt="Mateus Neves" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/2a3fbad33e9cfee364898c3de94c046e?s=72&d=mp&r=r" alt="Mateus Neves" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.thewpthemes.com/' rel='external nofollow' class='url'>Mateus Neves</a></p>
+        <p class="blog-comment-author"><a href='http://www.thewpthemes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Mateus Neves</a></p>
         <p class="blog-comment-date">12 de Maio de 2006, 17:27</p>
         <div class="blog-comment-text"><p>Uma ótima solução, não imaginava que fosse simples assim. Obrigado pela dica.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3861">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e218f439bd326d6694fa15b4cd629882?s=72&d=mp&r=r" alt="Jonathan Aantos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e218f439bd326d6694fa15b4cd629882?s=72&d=mp&r=r" alt="Jonathan Aantos" />
       <div>
         <p class="blog-comment-author">Jonathan Aantos</p>
         <p class="blog-comment-date">17 de Maio de 2006, 15:47</p>
-        <div class="blog-comment-text"><p>Eu gosto de usar body { font-size: 62.5%; } que vi no <a href="http://www.maratz.com/blog/archives/2005/10/21/typetesters-base-font-size/" rel="nofollow">Typetester’s base font size</a> através do <a href="http://typetester.maratz.com/" rel="nofollow">Typetester – Compare fonts for the screen – Compare fonts for the screen</a>.</p></div>
+        <div class="blog-comment-text"><p>Eu gosto de usar body { font-size: 62.5%; } que vi no <a href="http://www.maratz.com/blog/archives/2005/10/21/typetesters-base-font-size/" rel="nofollow noopener noreferrer">Typetester’s base font size</a> através do <a href="http://typetester.maratz.com/" rel="nofollow noopener noreferrer">Typetester – Compare fonts for the screen – Compare fonts for the screen</a>.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3874">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href="https://flickr.com/photos/fueg0/" rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href="https://flickr.com/photos/fueg0/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">19 de Maio de 2006, 03:01</p>
         <div class="blog-comment-text"><p>Eu continuo a usar `em´ porque px não deixam o texto escalável&#8230;<br />
 Onde está a acessibilidade? Acessibilidade não é também uma forma de usabilidade ?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3876">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">19 de Maio de 2006, 07:56</p>
         <div class="blog-comment-text"><p>Eu também costumo usar &#8216;em&#8217; ou &#8216;%&#8217;. Com esta técnica do Yahoo! também se usam &#8216;%&#8217; por isso o texto é sempre escalável. </p>
 <p>A grande diferença é que tens uma tabela base em que podes definir com bastante exactidão que um texto com 152% de tamanho fica exactamente do mesmo tamanho que um texto definido para 20px. Com a diferença que é escalável enquanto que o &#8216;px&#8217; não é (só no Internet Explorer é que não é).</p>
@@ -264,7 +266,7 @@ Onde está a acessibilidade? Acessibilidade não é também uma forma de usabili
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/standards-na-reciclagem/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -278,7 +280,7 @@ Onde está a acessibilidade? Acessibilidade não é também uma forma de usabili
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

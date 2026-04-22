@@ -14,6 +14,7 @@
 <title>O tamanho importa — Ivo Gomes</title>
 <meta name="description" content="Durante o desenvolvimento de uma aplicação web, chega uma altura em que é necessário definir o tamanho do texto. O grande problema é que nem todos os browsers mostram o texto com o tamanho certo, por isso, grande parte dos designers usa &quot;pixels&quot; para definir o seu tamanho." />
 <meta property="og:title" content="O tamanho importa" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Durante o desenvolvimento de uma aplicação web, chega uma altura em que é necessário definir o tamanho do texto. O grande problema é que nem todos os browsers mostram o texto com o tamanho certo, por isso, grande parte dos designers usa &quot;pixels&quot; para definir o seu tamanho." />
 <meta property="article:published_time" content="2006-01-25T15:48:03+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/o-tamanho-importa/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>25 Jan 2006</span>
+    <time datetime="2006-01-25">25 Jan 2006</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -52,7 +54,7 @@
   <article class="blog-article">
 <p>Durante o desenvolvimento de uma aplicação web, chega uma altura em que é necessário definir o tamanho do texto. O grande problema é que nem todos os browsers mostram o texto com o tamanho certo, por isso, grande parte dos designers usa "pixels" para definir o seu tamanho. 1 pixel é sempre 1 pixel em qualquer browser, por isso os sites concebidos desta forma ficam bastante iguais nos diferentes browsers, o que é bom para os designers.</p>
 <p>Um texto com o tamanho de 12 pixels terá sempre 12 pixels de altura tanto no Internet Explorer como no Firefox ou no Opera. </p>
-<p><img id="image202" src="/blog/wp-content/uploads/2006/01/screenshot2.png" alt="Alterar o tamanho do texto no IE" width="180" />O problema aqui é que há pessoas que podem não conseguir ler o texto com esse tamanho e usam o browser para aumentar gradualmente o tamanho do texto, e no Internet Explorer não é possível aumentar o texto (View -> Text Size -> Larger) se usarmos pixels. </p>
+<p><img loading="lazy" id="image202" src="/blog/wp-content/uploads/2006/01/screenshot2.png" alt="Alterar o tamanho do texto no IE" width="180" />O problema aqui é que há pessoas que podem não conseguir ler o texto com esse tamanho e usam o browser para aumentar gradualmente o tamanho do texto, e no Internet Explorer não é possível aumentar o texto (View -> Text Size -> Larger) se usarmos pixels. </p>
 <p>Desta forma privamos os utilizadores deste browser de poderem controlar a forma como visualizam o website. Em qualquer outro browser basta pressionar [CTRL] + ou [CTRL] - para aumentar ou diminuir o texto.</p>
 <p>Sendo assim, temos de usar uma unidade relativa para que os utilizadores do IE também consigam escalar o texto. Para isso existem várias soluções:</p>
 <h2>Usando palavras-chave</h2>
@@ -92,9 +94,9 @@ O valor standard do texto normal nos browsers é de 16 pixels. Se definirmos o t
 <p>Além da dificuldade que é escolher e definir o tamanho do texto, ainda existe mais uma variável: o tipo de letra.<br />
 O mesmo tipo de letra pode ser diferente em vários sistemas. Aqui já não falamos de browsers uma vez que eles usam os tipos de letra existentes no sistema operativo. Sendo assim, se compararmos este site com o mesmo tipo de letra num computador com Windows XP e noutro com Mac OS X, os resultados são bastante diferentes:</h2>
 <h3>Windows XP</h3>
-<p><img id="image203" src="/blog/wp-content/uploads/2006/01/winXP.png" alt="Texto no Windows XP" width="516" /></p>
+<p><img loading="lazy" id="image203" src="/blog/wp-content/uploads/2006/01/winXP.png" alt="Texto no Windows XP" width="516" /></p>
 <h3>Mac OS X</h3>
-<p><img id="image204" src="/blog/wp-content/uploads/2006/01/MacOSX.png" alt="Texto no Mac OS X" width="516" /></p>
+<p><img loading="lazy" id="image204" src="/blog/wp-content/uploads/2006/01/MacOSX.png" alt="Texto no Mac OS X" width="516" /></p>
 <p>As maiores diferenças notam-se principalmente na largura do menu e do título do artigo. No Mac OS X o menu fica perfeitamente alinhado com a linha que separa a barra lateral enquanto que no Windows XP a linha fica a meio do link para a página inicial.</p>
 <h2>Qual o método que usam?</h2>
 <p>Uma vez que há vários métodos para controlar o tamanho do texto, gostava de saber quais os métodos que costumam usar e quais os que acham mais adequados e acessíveis?</p>
@@ -103,9 +105,9 @@ O mesmo tipo de letra pode ser diferente em vários sistemas. Aqui já não fala
   <section class="blog-comments">
     <h2 class="blog-comments-title">25 comentários</h2>
     <div class="blog-comment" id="comment-3273">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e02005ef03b32183d1bfede509c386cb?s=72&d=mp&r=r" alt="Mário Lopes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e02005ef03b32183d1bfede509c386cb?s=72&d=mp&r=r" alt="Mário Lopes" />
       <div>
-        <p class="blog-comment-author"><a href='http://gridpt1.fe.up.pt/mlopes/blog/' rel='external nofollow' class='url'>Mário Lopes</a></p>
+        <p class="blog-comment-author"><a href='http://gridpt1.fe.up.pt/mlopes/blog/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Mário Lopes</a></p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 16:17</p>
         <div class="blog-comment-text"><p>O meu método é sugerir às pessoas que usem um browser de jeito.</p>
 <p>Acho que a preocupação com a usabilidade e acessibilidade é uma matéria crucial, mas deve ser bidireccional: tanto dos programadores como dos utilizadores &#8212; que se devem consciencializar a usar um browser de jeito.</p>
@@ -113,9 +115,9 @@ O mesmo tipo de letra pode ser diferente em vários sistemas. Aqui já não fala
       </div>
     </div>
     <div class="blog-comment" id="comment-3274">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1c450e30ee2ef6607ed2d4c6b1e7aac2?s=72&d=mp&r=r" alt="Walmar Andrade" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1c450e30ee2ef6607ed2d4c6b1e7aac2?s=72&d=mp&r=r" alt="Walmar Andrade" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.fatorw.com/' rel='external nofollow' class='url'>Walmar Andrade</a></p>
+        <p class="blog-comment-author"><a href='http://www.fatorw.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Walmar Andrade</a></p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 16:50</p>
         <div class="blog-comment-text"><p>Esse problema me atormenta desde que li o livro do Zeldman, lá no começo da aprendizagem sobre web standards. Um capítulo inteiro somente para discutir isso.</p>
 <p>Até recentemente usei os tamanhos relativos, principalmente por conta de tudo que li sobre acessibilidade. Hoje em dia, contudo, acredito que a melhor opção é mesmo usar pixels e, por enquanto, colocar os botões na interface para que o usuário aumente e diminua o texto.</p>
@@ -124,7 +126,7 @@ O mesmo tipo de letra pode ser diferente em vários sistemas. Aqui já não fala
       </div>
     </div>
     <div class="blog-comment" id="comment-3275">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/d10ca8d11301c2f4993ac2279ce4b930?s=72&d=mp&r=r" alt="A." />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/d10ca8d11301c2f4993ac2279ce4b930?s=72&d=mp&r=r" alt="A." />
       <div>
         <p class="blog-comment-author">A.</p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 18:34</p>
@@ -132,18 +134,18 @@ O mesmo tipo de letra pode ser diferente em vários sistemas. Aqui já não fala
       </div>
     </div>
     <div class="blog-comment" id="comment-3276">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 19:14</p>
-        <div class="blog-comment-text"><p>Ainda há uma outra forma&#8230; Não é que eu a recomende, mas há. Usando o <a href="http://www.shauninman.com/plete/2005/08/css-constants" rel="nofollow"><acronym title="Cascading Style Sheets">CSS</acronym> <acronym title="Server Side Constants">SSC</acronym></a> (Cascading Style Sheets Server Side Constants) do Shaun Inman é possível definir variáveis server-side com o tamanho do texto e através da manipulação de argumentos do PHP ir variando o tamanho de cada elemento.</p>
+        <div class="blog-comment-text"><p>Ainda há uma outra forma&#8230; Não é que eu a recomende, mas há. Usando o <a href="http://www.shauninman.com/plete/2005/08/css-constants" rel="nofollow noopener noreferrer"><acronym title="Cascading Style Sheets">CSS</acronym> <acronym title="Server Side Constants">SSC</acronym></a> (Cascading Style Sheets Server Side Constants) do Shaun Inman é possível definir variáveis server-side com o tamanho do texto e através da manipulação de argumentos do PHP ir variando o tamanho de cada elemento.</p>
 <p>Creio que usar palavras-chave (<code>xx-small</code>, etc) faz sentido no caso de não haver uma necessidade extrema de exatidão nas dimensões do texto. De resto, usar <code>em</code> em vez de <code>px</code> é o método que eu costumo usar. Mas sim, é preciso ter cuidado. ;)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3277">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/05961fff7b6390d49414d88c2ea6e127?s=72&d=mp&r=r" alt="Bruno Dulcetti" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/05961fff7b6390d49414d88c2ea6e127?s=72&d=mp&r=r" alt="Bruno Dulcetti" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.brunodulcetti.com/' rel='external nofollow' class='url'>Bruno Dulcetti</a></p>
+        <p class="blog-comment-author"><a href='http://www.brunodulcetti.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Dulcetti</a></p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 19:45</p>
         <div class="blog-comment-text"><p>E ae rapaz&#8230; Muito interessante&#8230; Ainda não tinha visto uma abordagem boa como essa desse assunto.</p>
 <p>Bom, eu utilizo o tamanho com em atualmente. Logicamente q eu tomo cuidado da implementação de cada código, para que não fique pequeno ou grande demais em específica tag&#8230;</p>
@@ -152,26 +154,26 @@ O mesmo tipo de letra pode ser diferente em vários sistemas. Aqui já não fala
       </div>
     </div>
     <div class="blog-comment" id="comment-3278">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.nonsensebb.net/' rel='external nofollow' class='url'>Dextro</a></p>
+        <p class="blog-comment-author"><a href='http://www.nonsensebb.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dextro</a></p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 20:32</p>
         <div class="blog-comment-text"><p>Bem agora devo dizer: I TOLD YOU SO! LOOL :lol: JK ;)</p>
 <p>Mas a serio fontes relativas são importantes e eu tenho fé que o IE7.0 venha a dar-me razão :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3285">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/3c25bc4905eb045e90ee55cc124711b2?s=72&d=mp&r=r" alt="Gustavo Pimenta" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/3c25bc4905eb045e90ee55cc124711b2?s=72&d=mp&r=r" alt="Gustavo Pimenta" />
       <div>
-        <p class="blog-comment-author"><a href='http://guspim.net/' rel='external nofollow' class='url'>Gustavo Pimenta</a></p>
+        <p class="blog-comment-author"><a href='http://guspim.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gustavo Pimenta</a></p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 23:09</p>
         <div class="blog-comment-text"><p>Parabéns pelo novo design, sem dúvida alguma o que gosto mais desde que sigo o teu blog.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3290">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 09:42</p>
         <div class="blog-comment-text"><p><strong>@Mário Lopes:</strong> Essa seria a solução ideal se toda a gente actualiza-se os seus browsers. No entanto isso não acontece. Mesmo em empresas grandes ainda se usa o IE5.0! Já tive oportunidade de trabalhar numa empresa enorme (aquela cuja produção representa 2% do PIB e 10% das exportações nacionais :) ) e lá ainda se usava o IE5. Agora podes ver a quantidade de pessoas que ainda usam browsers antiquados. Além disso, a regra número 1 da ergonomia: não é o Homem que tem que se adaptar ao sistema, é o sistema que tem que se adaptar ao Homem. Desta forma temos que adaptar os nossos sistemas a funcionar em qualquer circunstância para não colocarmos ninguém de parte só porque usa algo diferente. </p>
 <p><strong>@andr3:</strong> Isso é muito à frente!! No entanto é mais uma solução a ter em conta.</p>
@@ -179,17 +181,17 @@ O mesmo tipo de letra pode ser diferente em vários sistemas. Aqui já não fala
       </div>
     </div>
     <div class="blog-comment" id="comment-3294">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1c450e30ee2ef6607ed2d4c6b1e7aac2?s=72&d=mp&r=r" alt="Walmar Andrade" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1c450e30ee2ef6607ed2d4c6b1e7aac2?s=72&d=mp&r=r" alt="Walmar Andrade" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.fatorw.com/' rel='external nofollow' class='url'>Walmar Andrade</a></p>
+        <p class="blog-comment-author"><a href='http://www.fatorw.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Walmar Andrade</a></p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 14:24</p>
         <div class="blog-comment-text"><p>O problema é que usando em ou % você não vai ter a garantia que o texto será legível. O padrão é 16 pixels na maioria dos navegadores, mas se o usuário define para 14 pixels e vc diz no código que a fonte terá 70% disso, provavelmente ficará pequena demais.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3295">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9f6716132998b37445ceadd2b13a99bd?s=72&d=mp&r=r" alt="João Craveiro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9f6716132998b37445ceadd2b13a99bd?s=72&d=mp&r=r" alt="João Craveiro" />
       <div>
-        <p class="blog-comment-author"><a href='http://weblog.jcraveiro.com/' rel='external nofollow' class='url'>João Craveiro</a></p>
+        <p class="blog-comment-author"><a href='http://weblog.jcraveiro.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>João Craveiro</a></p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 19:04</p>
         <div class="blog-comment-text"><p>Uma pequena sugestão de correcção; em vez de</p>
 <p><code>font-size: 100%;</code></p>
@@ -200,18 +202,18 @@ O mesmo tipo de letra pode ser diferente em vários sistemas. Aqui já não fala
       </div>
     </div>
     <div class="blog-comment" id="comment-3296">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9f6716132998b37445ceadd2b13a99bd?s=72&d=mp&r=r" alt="João Craveiro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9f6716132998b37445ceadd2b13a99bd?s=72&d=mp&r=r" alt="João Craveiro" />
       <div>
-        <p class="blog-comment-author"><a href='http://weblog.jcraveiro.com/' rel='external nofollow' class='url'>João Craveiro</a></p>
+        <p class="blog-comment-author"><a href='http://weblog.jcraveiro.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>João Craveiro</a></p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 19:05</p>
         <div class="blog-comment-text"><p>Erm, o link acabou por nem passar:</p>
-<p><a href="http://www.communitymx.com/content/article.cfm?page=5&#038;cid=FAF76" rel="nofollow">http://www.communitymx.com/content/article.cfm?page=5&#038;cid=FAF76</a></p></div>
+<p><a href="http://www.communitymx.com/content/article.cfm?page=5&#038;cid=FAF76" rel="nofollow noopener noreferrer">http://www.communitymx.com/content/article.cfm?page=5&#038;cid=FAF76</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3297">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 19:28</p>
         <div class="blog-comment-text"><p>Eu consigo inserir links normalmente: <code>&lt;a href="teste"&gt;teste&lt;/a&gt; </code><br />
 Não será o teu browser que corrige as aspas automaticamente?</h2>
@@ -219,32 +221,32 @@ Não será o teu browser que corrige as aspas automaticamente?</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-3298">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9f6716132998b37445ceadd2b13a99bd?s=72&d=mp&r=r" alt="João Craveiro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9f6716132998b37445ceadd2b13a99bd?s=72&d=mp&r=r" alt="João Craveiro" />
       <div>
-        <p class="blog-comment-author"><a href='http://weblog.jcraveiro.com/' rel='external nofollow' class='url'>João Craveiro</a></p>
+        <p class="blog-comment-author"><a href='http://weblog.jcraveiro.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>João Craveiro</a></p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 20:08</p>
         <div class="blog-comment-text"><p>Eu acabei por não pôr a aspa final, a ver se passava; agora experimentei, e já vi que não acontece sempre: é só quando o endereço do link acaba num dígito (experimenta compor os 2 tipos de links e ir à preview ver os endereços de um e do outro) &#8212; problema na expressão regular? ;)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3299">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/dfc518e058a404e6873d5c76c0469ef4?s=72&d=mp&r=r" alt="Margarida" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/dfc518e058a404e6873d5c76c0469ef4?s=72&d=mp&r=r" alt="Margarida" />
       <div>
-        <p class="blog-comment-author"><a href='http://margarida.net/' rel='external nofollow' class='url'>Margarida</a></p>
+        <p class="blog-comment-author"><a href='http://margarida.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Margarida</a></p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 21:18</p>
         <div class="blog-comment-text"><p>por acaso isso é bom dos em&#8217;s e pt&#8217;s, mas nunca me habituei e sempre usei pixeis mesmo definidos por mim&#8230; bom uma vez usei a cena do javascript com o extra small, small, etc. É bem porreiro, mas hen, javascript e eu&#8230; eu e javascript :X lol fico-me pelos pixeis :)<br />
 gostei do teu post :D bem bacano</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3316">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">1 de Fevereiro de 2006, 15:46</p>
         <div class="blog-comment-text"><p><strong>@João Craveiro:</strong> Tens razão. Quando o link termina num algarismo ele não interpreta a tag <a>&#8230; Não fui eu que fiz o script e nem tenho conhecimentos técnicos para o alterar por isso acho que o vou deixar assim :)</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3492">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/f00c87ff50596324dfc00ed29405cf50?s=72&d=mp&r=r" alt="Felipe Lima" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/f00c87ff50596324dfc00ed29405cf50?s=72&d=mp&r=r" alt="Felipe Lima" />
       <div>
         <p class="blog-comment-author">Felipe Lima</p>
         <p class="blog-comment-date">15 de Março de 2006, 20:34</p>
@@ -253,35 +255,35 @@ Abraços e ótimo trabalho!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3495">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">16 de Março de 2006, 10:23</p>
         <div class="blog-comment-text"><p>Obrigado Felipe pela informação. Assim que tiver acesso a uma máquina Windows vou testar no IE7&#8230;</p>
-<p>Em relação ao tamanho do texto, a melhor opção é usar só EM. O facto de ter usado o tamanho 100.01% foi devido a um texto que li e sinceramente já não me lembro a razão. No entanto esta semana li este artigo (<a href="http://www.clagnut.com/blog/348/">How to size text using ems</a>) que explica uma forma ainda melhor e mais simples de usar EMs.</p>
+<p>Em relação ao tamanho do texto, a melhor opção é usar só EM. O facto de ter usado o tamanho 100.01% foi devido a um texto que li e sinceramente já não me lembro a razão. No entanto esta semana li este artigo (<a href="http://www.clagnut.com/blog/348/" rel="noopener noreferrer">How to size text using ems</a>) que explica uma forma ainda melhor e mais simples de usar EMs.</p>
 <p>Ainda não tive tempo de testar, mas assim que puder vou tentar aplicar aqui e ver como fica ;)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3505">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.nonsensebb.net/' rel='external nofollow' class='url'>Dextro</a></p>
+        <p class="blog-comment-author"><a href='http://www.nonsensebb.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dextro</a></p>
         <p class="blog-comment-date">20 de Março de 2006, 16:45</p>
         <div class="blog-comment-text"><p>Aqui está tudo bem, não tenho problemas nenhuns no IE7 :?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3531">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/2b40262a1cbd7d1a5981107c3d6ff82a?s=72&d=mp&r=r" alt="Wlad" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/2b40262a1cbd7d1a5981107c3d6ff82a?s=72&d=mp&r=r" alt="Wlad" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.wbh.com.br/' rel='external nofollow' class='url'>Wlad</a></p>
+        <p class="blog-comment-author"><a href='http://www.wbh.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Wlad</a></p>
         <p class="blog-comment-date">24 de Março de 2006, 17:26</p>
         <div class="blog-comment-text"><p>Quantas pessoas afinal ainda estão presas ao IE 5, na beira da saída do 7 ?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3847">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e4789f6905ee06e38de8ababd93f25b1?s=72&d=mp&r=r" alt="José Luís Agapito" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e4789f6905ee06e38de8ababd93f25b1?s=72&d=mp&r=r" alt="José Luís Agapito" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.jlagapito.net/' rel='external nofollow' class='url'>José Luís Agapito</a></p>
+        <p class="blog-comment-author"><a href='http://www.jlagapito.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>José Luís Agapito</a></p>
         <p class="blog-comment-date">15 de Maio de 2006, 16:16</p>
         <div class="blog-comment-text"><p>Embora sendo um &#8220;maçarico&#8221; nesta andanças, sempre achei, do ponto de vista do designer, a determinação do tamanho da fonte em pixeis mais maleável. </p>
 <p>Lógico que isso coloca problemas para o utilizador, mas tal como o <b>Mário Lopes</b> disse, é uma questão dos utilizadores estarem mais atentos à forma como personalizam as definições do browser e configuram o tamanho de letra. </p>
@@ -289,34 +291,34 @@ Abraços e ótimo trabalho!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3848">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/43d6cce38139595705cff9df8c02e071?s=72&d=mp&r=r" alt="Robson Waterkemper" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/43d6cce38139595705cff9df8c02e071?s=72&d=mp&r=r" alt="Robson Waterkemper" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.twodividedbyzero.com/robsonwt/home/default/principal/index.php' rel='external nofollow' class='url'>Robson Waterkemper</a></p>
+        <p class="blog-comment-author"><a href='http://www.twodividedbyzero.com/robsonwt/home/default/principal/index.php' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Robson Waterkemper</a></p>
         <p class="blog-comment-date">15 de Maio de 2006, 16:55</p>
         <div class="blog-comment-text"><p>Ivo, escrvo do Brasil, e gostei muito do seu website. Acompanho sempre aqui novidades sobre Usabilidade, CSS, Standards, etc.</p>
-<p>Lendo o seu artigo sobre tamanho de texto, me lembrei da dificuldade que tive para fazer o meu <a href="http://www.twodividedbyzero.com/robsonwt/" rel="nofollow">website</a>. Uso Mac e quis usar a fonte Lucida do Mac OS X tb no meu site, e deixei a opcao da Trebuchet MS para os usuarios Windows. Mas vi que o tamanho base dessas duas fontes e&#8217; bem diferente. Existe alguma solucao para que o usuario Mac veja a fonte de um jeito e o usuario PC de outro. Sei que posso fazer isso usando javascript de deteccao de browser, mas gostaria de saber se ha&#8217; outra forma. Nao estaria disposto a manter duas folhas de estilo.</p></div>
+<p>Lendo o seu artigo sobre tamanho de texto, me lembrei da dificuldade que tive para fazer o meu <a href="http://www.twodividedbyzero.com/robsonwt/" rel="nofollow noopener noreferrer">website</a>. Uso Mac e quis usar a fonte Lucida do Mac OS X tb no meu site, e deixei a opcao da Trebuchet MS para os usuarios Windows. Mas vi que o tamanho base dessas duas fontes e&#8217; bem diferente. Existe alguma solucao para que o usuario Mac veja a fonte de um jeito e o usuario PC de outro. Sei que posso fazer isso usando javascript de deteccao de browser, mas gostaria de saber se ha&#8217; outra forma. Nao estaria disposto a manter duas folhas de estilo.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3858">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">17 de Maio de 2006, 14:11</p>
         <div class="blog-comment-text"><p>Ola Robson!</p>
-<p>Desconheço que haja alguma técnica para enviar fontes diferentes consoante o sistema operativo, no entanto recomendo que dê uma vista de olhos por esta <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html" rel="nofollow">tabela comparativa de fontes em Mac e Windows</a> para ter uma ideia de como aparecem as fontes nos dosi sistemas e quais as fontes alternativas.</p></div>
+<p>Desconheço que haja alguma técnica para enviar fontes diferentes consoante o sistema operativo, no entanto recomendo que dê uma vista de olhos por esta <a href="http://www.ampsoft.net/webdesign-l/WindowsMacFonts.html" rel="nofollow noopener noreferrer">tabela comparativa de fontes em Mac e Windows</a> para ter uma ideia de como aparecem as fontes nos dosi sistemas e quais as fontes alternativas.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3860">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">17 de Maio de 2006, 15:19</p>
         <div class="blog-comment-text"><p>Podes também usar o <code>line-height</code> para garantir que lá por usarem fonts diferentes da default nao te &#8220;estragam&#8221; o layout&#8230; assim a linha, paragrafo, etc. fica com a mesma altura, mesmo que o texto seja menor. (convem dar um intervalo pequeno para haver margem de manobra.. testando com todas as fonts que definist no css, por exemplo)</p>
 <p>Não soluciona o caso em todas as situações, mas pode ajudar noutras. ;)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-5506">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/baccec74ee0717cfc97c66a20c50127f?s=72&d=mp&r=r" alt="Kiki" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/baccec74ee0717cfc97c66a20c50127f?s=72&d=mp&r=r" alt="Kiki" />
       <div>
         <p class="blog-comment-author">Kiki</p>
         <p class="blog-comment-date">14 de Outubro de 2006, 23:58</p>
@@ -324,9 +326,9 @@ Abraços e ótimo trabalho!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-40958">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1856d632e7c137cd2ce350d9dffb539d?s=72&d=mp&r=r" alt="Flavio Mendes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1856d632e7c137cd2ce350d9dffb539d?s=72&d=mp&r=r" alt="Flavio Mendes" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.flaviomendes.net/' rel='external nofollow' class='url'>Flavio Mendes</a></p>
+        <p class="blog-comment-author"><a href='http://www.flaviomendes.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Flavio Mendes</a></p>
         <p class="blog-comment-date">23 de Fevereiro de 2008, 15:58</p>
         <div class="blog-comment-text"><p>Excelente artigo!</p>
 <p>Parabéns também aos comentários que tanto acrescentam.</p></div>
@@ -334,7 +336,7 @@ Abraços e ótimo trabalho!</p></div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/desenterrando-artigos-populares/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -348,7 +350,7 @@ Abraços e ótimo trabalho!</p></div>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

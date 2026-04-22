@@ -14,6 +14,7 @@
 <title>Cálculo de percursos dos transportes de Lisboa — Ivo Gomes</title>
 <meta name="description" content="Na semana passada precisei de consultar qual seria o melhor percurso de transportes públicos de Santos (Av. D. Carlos I) para o Saldanha. Para tal, consultei o Transporlis, o website que engloba todos os transportes da Grande Lisboa." />
 <meta property="og:title" content="Cálculo de percursos dos transportes de Lisboa" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Na semana passada precisei de consultar qual seria o melhor percurso de transportes públicos de Santos (Av. D. Carlos I) para o Saldanha. Para tal, consultei o Transporlis, o website que engloba todos os transportes da Grande Lisboa." />
 <meta property="article:published_time" content="2008-07-21T16:56:37+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/calculo-de-percursos-dos-transportes-de-lisboa/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>21 Jul 2008</span>
+    <time datetime="2008-07-21">21 Jul 2008</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,40 +52,40 @@
   </div>
 
   <article class="blog-article">
-<p>Na semana passada precisei de consultar qual seria o melhor percurso de transportes públicos de Santos (<a href="https://maps.google.com/maps?f=q&amp;hl=pt-PT&amp;geocode=&amp;q=av.+d+carlos+I,+lisboa&amp;sll=38.751768,-9.145889&amp;sspn=0.007781,0.017574&amp;ie=UTF8&amp;ll=38.70991,-9.153113&amp;spn=0.007786,0.017574&amp;z=16&amp;iwloc=addr">Av. D. Carlos I</a>) para o <a href="https://maps.google.com/maps?f=q&amp;hl=pt-PT&amp;geocode=&amp;q=saldanha,+lisboa&amp;sll=38.70991,-9.153113&amp;sspn=0.007786,0.017574&amp;ie=UTF8&amp;ll=38.733749,-9.144659&amp;spn=0.007783,0.017574&amp;z=16&amp;iwloc=addr">Saldanha</a>. Para tal, consultei o <a href="http://transporlis.sapo.pt/">Transporlis</a>, o website que engloba todos os transportes da Grande Lisboa.</p>
+<p>Na semana passada precisei de consultar qual seria o melhor percurso de transportes públicos de Santos (<a href="https://maps.google.com/maps?f=q&amp;hl=pt-PT&amp;geocode=&amp;q=av.+d+carlos+I,+lisboa&amp;sll=38.751768,-9.145889&amp;sspn=0.007781,0.017574&amp;ie=UTF8&amp;ll=38.70991,-9.153113&amp;spn=0.007786,0.017574&amp;z=16&amp;iwloc=addr" rel="noopener noreferrer">Av. D. Carlos I</a>) para o <a href="https://maps.google.com/maps?f=q&amp;hl=pt-PT&amp;geocode=&amp;q=saldanha,+lisboa&amp;sll=38.70991,-9.153113&amp;sspn=0.007786,0.017574&amp;ie=UTF8&amp;ll=38.733749,-9.144659&amp;spn=0.007783,0.017574&amp;z=16&amp;iwloc=addr" rel="noopener noreferrer">Saldanha</a>. Para tal, consultei o <a href="http://transporlis.sapo.pt/" rel="noopener noreferrer">Transporlis</a>, o website que engloba todos os transportes da Grande Lisboa.</p>
 <p>Os resultados da pesquisa indicavam o seguinte percurso:</p>
 <ol>
 <li>Andar 477m até a paragem de Santos</li>
-<li>Apanhar a carreira 732 da <a href="http://www.carris.pt/">Carris</a></li>
+<li>Apanhar a carreira 732 da <a href="http://www.carris.pt/" rel="noopener noreferrer">Carris</a></li>
 <li>Sair no Saldanha e andar mais 76m até ao destino</li>
 </ol>
-<p><img title="Transporlis" src="/blog/wp-content/uploads/2008/07/picture-21.png" alt="Percurso Santos-Saldanha" width="405" height="180" /></p>
+<p><img loading="lazy" title="Transporlis" src="/blog/wp-content/uploads/2008/07/picture-21.png" alt="Percurso Santos-Saldanha" width="405" height="180" /></p>
 <p>Ora, o percurso mais rápido de Santos para o Saldanha faz-se apanhando a carreira 727 e andando cerca de 20m a pé. Além disso, fazendo o percurso indicado demoraria mais 25 minutos do que apanhando a carreira 727. No entanto, no site da Transporlis não há nenhum percurso alternativo nem nenhuma informação sobre os horários do 727, o que pode enganar muita gente, incluindo eu (só soube do 727 porque uma colega de trabalho me recomendou esse autocarro).</p>
-<p>O site tem vindo a melhorar ao longo do tempo. Houve uma altura que não fornecia os percursos usando o <a href="http://www.metrolisboa.pt">Metro</a> (mesmo que o ponto de partida e de chegada fossem ao lado de estações de metro), mas parece que agora está mais fiável e já mostra a informação correcta. Falta apenas actualizar os horários de alguns autocarros (não testei todos, só Carris e Metro) e usar um mapa melhor (não se vê nada naquele mapa e a API do Google Maps poderia ser uma opção muito melhor).</p>
+<p>O site tem vindo a melhorar ao longo do tempo. Houve uma altura que não fornecia os percursos usando o <a href="http://www.metrolisboa.pt" rel="noopener noreferrer">Metro</a> (mesmo que o ponto de partida e de chegada fossem ao lado de estações de metro), mas parece que agora está mais fiável e já mostra a informação correcta. Falta apenas actualizar os horários de alguns autocarros (não testei todos, só Carris e Metro) e usar um mapa melhor (não se vê nada naquele mapa e a API do Google Maps poderia ser uma opção muito melhor).</p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">8 comentários</h2>
     <div class="blog-comment" id="comment-58330">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel='external nofollow' class='url'>Dextro</a></p>
+        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dextro</a></p>
         <p class="blog-comment-date">21 de Julho de 2008, 17:08</p>
         <div class="blog-comment-text"><p>Mas porquê ir tão longe como o google? Porque não usar a API de mapas do sapo que sempre seria bem melhor (já que o site está efectivamente alojado no sapo)!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-58552">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">22 de Julho de 2008, 08:32</p>
         <div class="blog-comment-text"><p>Já há algum tempo que não usava os mapas do SAPO. Estão bem melhores do que eram antigamente, mas mesmo assim, a navegação ainda não é tão fluida como no Google Maps (o mapa anda aos saltos quando o movo de um lado para o outro).</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-58560">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/362ad2e65bee747c1d1089b4df5e96de?s=72&d=mp&r=r" alt="Pedro Sousa" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/362ad2e65bee747c1d1089b4df5e96de?s=72&d=mp&r=r" alt="Pedro Sousa" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.reinventar.com/' rel='external nofollow' class='url'>Pedro Sousa</a></p>
+        <p class="blog-comment-author"><a href='http://www.reinventar.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Pedro Sousa</a></p>
         <p class="blog-comment-date">22 de Julho de 2008, 09:13</p>
         <div class="blog-comment-text"><p>Já tinha sugerido isto á Carris&#8230; colocar os percursos dos autocarros no Google Maps e abrir a plataforma a todos.<br />
 Seria fantastico aceder aos percursos no telemovel/pda/iPhone, etc.</h2>
@@ -93,28 +95,28 @@ eles é que têm a localização exacta de cada paragem.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-58566">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">22 de Julho de 2008, 09:23</p>
         <div class="blog-comment-text"><p>O Google adicionou há pouco tempo nos mapas a localização das paragens do Metro e da Carris.</p>
 <p>Nas primeiras semanas, clicando numa paragem qualquer tinhamos informação do número do autocarro/linha de metro e dos horários durante a próxima hora e meia. Estava muito bom, mas não sei porquê, essa funcionalidade deixou de existir. Seria apenas um teste? Será que volta? Acho que era bastante útil.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-59857">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4df81dc2d2111983d96fd0532b985c1?s=72&d=mp&r=r" alt="Marco Rodrigues" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4df81dc2d2111983d96fd0532b985c1?s=72&d=mp&r=r" alt="Marco Rodrigues" />
       <div>
         <p class="blog-comment-author">Marco Rodrigues</p>
         <p class="blog-comment-date">28 de Julho de 2008, 00:17</p>
         <div class="blog-comment-text"><p>É daqui que começam os grandes projectos e quero felicitá-lo por expor aqui ideias que são indispensáveis de debater nos dias de hoje!</p>
-<p>Continue com o grande trabalho deste blog&#8230;E passe pelo meu que explica sumariamente a minha profissão (Terapia Ocupacional) que, vindo a trabalhar em conjunto com a sua área, pode vir a dar muitos frutos. O blog é: <a href="https://www.terapia--ocupacional.blogspot.com/" rel="nofollow">http://www.terapia&#8211;ocupacional.blogspot.com</a></p>
+<p>Continue com o grande trabalho deste blog&#8230;E passe pelo meu que explica sumariamente a minha profissão (Terapia Ocupacional) que, vindo a trabalhar em conjunto com a sua área, pode vir a dar muitos frutos. O blog é: <a href="https://www.terapia--ocupacional.blogspot.com/" rel="nofollow noopener noreferrer">http://www.terapia&#8211;ocupacional.blogspot.com</a></p>
 <p>Passe por lá se possível, comente e divulgue&#8230;</p>
 <p>Grato pela atenção.<br />
 Cumprimentos</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-60449">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8338f330b3cfcc0808c8e898f2e2af1b?s=72&d=mp&r=r" alt="Susana Vilaça" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8338f330b3cfcc0808c8e898f2e2af1b?s=72&d=mp&r=r" alt="Susana Vilaça" />
       <div>
         <p class="blog-comment-author">Susana Vilaça</p>
         <p class="blog-comment-date">31 de Julho de 2008, 17:00</p>
@@ -122,7 +124,7 @@ Cumprimentos</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-63350">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/690cb3687c51306ab5f131eface19264?s=72&d=mp&r=r" alt="Jose Luis Damas de Carvalho" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/690cb3687c51306ab5f131eface19264?s=72&d=mp&r=r" alt="Jose Luis Damas de Carvalho" />
       <div>
         <p class="blog-comment-author">Jose Luis Damas de Carvalho</p>
         <p class="blog-comment-date">20 de Agosto de 2008, 21:05</p>
@@ -130,9 +132,9 @@ Cumprimentos</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-84163">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8c5ca52f48d747fea033ff6802d953bb?s=72&d=mp&r=r" alt="PPP Lusofonia" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8c5ca52f48d747fea033ff6802d953bb?s=72&d=mp&r=r" alt="PPP Lusofonia" />
       <div>
-        <p class="blog-comment-author"><a href="https://ppplusofonia.blogspot.com/" rel='external nofollow' class='url'>PPP Lusofonia</a></p>
+        <p class="blog-comment-author"><a href="https://ppplusofonia.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>PPP Lusofonia</a></p>
         <p class="blog-comment-date">16 de Março de 2009, 23:35</p>
         <div class="blog-comment-text"><p>A informação de itinerarios percursos na Internet é essencial para promover os transportes públicos.<br />
 Este projecto já devia estar a funcionar muito melhor muito melhor</p></div>
@@ -140,7 +142,7 @@ Este projecto já devia estar a funcionar muito melhor muito melhor</p></div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/mytvshows-mais-novidades/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -154,7 +156,7 @@ Este projecto já devia estar a funcionar muito melhor muito melhor</p></div>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

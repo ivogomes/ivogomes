@@ -14,6 +14,7 @@
 <title>10 erros comuns da acessibilidade na web — Ivo Gomes</title>
 <meta name="description" content="Normalmente quem tenta desenvolver websites acessíveis costuma cometer os mesmos erros vezes sem conta. Apesar de tentarem dar o seu melhor para tornar os sites mais acessíveis, por vezes esforçam-se demasiado e em vez de melhorar a acessibilidade, acabam por piorá-la." />
 <meta property="og:title" content="10 erros comuns da acessibilidade na web" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Normalmente quem tenta desenvolver websites acessíveis costuma cometer os mesmos erros vezes sem conta. Apesar de tentarem dar o seu melhor para tornar os sites mais acessíveis, por vezes esforçam-se demasiado e em vez de melhorar a acessibilidade, acabam por piorá-la." />
 <meta property="article:published_time" content="2008-08-04T09:47:29+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/10-erros-comuns-da-acessibilidade-na-web/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>04 Ago 2008</span>
+    <time datetime="2008-08-04">04 Ago 2008</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -53,44 +55,44 @@
 <p>Normalmente quem tenta desenvolver websites acessíveis costuma cometer os mesmos erros vezes sem conta. Apesar de tentarem dar o seu melhor para tornar os sites mais acessíveis, por vezes esforçam-se demasiado e em vez de melhorar a acessibilidade, acabam por piorá-la.</p>
 <p>Estes 10 exemplos mostram aquilo que NÃO DEVE SER FEITO, mas que costumamos ver recorrentemente</p>
 <h3>1. Usar frases grandes no texto ALT das imagens</h3>
-<p>Alguns web designers costumam inserir demasiado texto alternativo (<a href="https://en.wikipedia.org/wiki/Alt_attribute">ALT</a>) nas imagens na esperança de que isso irá ajudar os utilizadores com <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitores de ecrã</a>. No entanto, o texto <a href="https://en.wikipedia.org/wiki/Alt_attribute">ALT</a> deve ser curto e sucinto, e não deve conter mais informação do que aquela que é transmitida pela imagem. As imagens decorativas devem ter um ALT nulo (<code>alt=""</code>) de forma a serem ignoradas pelos leitores de ecrã.</p>
+<p>Alguns web designers costumam inserir demasiado texto alternativo (<a href="https://en.wikipedia.org/wiki/Alt_attribute" rel="noopener noreferrer">ALT</a>) nas imagens na esperança de que isso irá ajudar os utilizadores com <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitores de ecrã</a>. No entanto, o texto <a href="https://en.wikipedia.org/wiki/Alt_attribute" rel="noopener noreferrer">ALT</a> deve ser curto e sucinto, e não deve conter mais informação do que aquela que é transmitida pela imagem. As imagens decorativas devem ter um ALT nulo (<code>alt=""</code>) de forma a serem ignoradas pelos leitores de ecrã.</p>
 <h3>2. Usar caracteres aleatórios para separar os links</h3>
-<p>Uma das regras de acessibilidade indica que os links adjacentes (consecutivos) devem ser separados por algum texto sem link uma vez que alguns browsers muito antigos tinham alguns problemas com os links dispostos desta forma. Esta regra já não é relevante apesar de continuar a ser recomendada pelos sistemas de verificação automática, por isso os caracteres que se costumam usar para separar os links (normalmente costuma-se usar uma barra vertical "|") são anunciadas aos <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitores de ecrã</a> como "barra vertical", o que atrapalha bastante a navegação destes utilizadores na página.</p>
+<p>Uma das regras de acessibilidade indica que os links adjacentes (consecutivos) devem ser separados por algum texto sem link uma vez que alguns browsers muito antigos tinham alguns problemas com os links dispostos desta forma. Esta regra já não é relevante apesar de continuar a ser recomendada pelos sistemas de verificação automática, por isso os caracteres que se costumam usar para separar os links (normalmente costuma-se usar uma barra vertical "|") são anunciadas aos <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitores de ecrã</a> como "barra vertical", o que atrapalha bastante a navegação destes utilizadores na página.</p>
 <h3>3. Inserir texto nos campos vazios dos formulários</h3>
-<p>Outra recomendação antiga e desactualizada indica que os campos dos formulários devem conter um texto de exemplo. Esta regra foi criada porque os antigos <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitores de ecrã</a> não conseguiam encontrar os campos que se encontravam vazios. Actualmente, todos os <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitores de ecrã</a> conseguem identificar todos os campos dos formulários, pelo que esta regra pode ser ignorada.</p>
+<p>Outra recomendação antiga e desactualizada indica que os campos dos formulários devem conter um texto de exemplo. Esta regra foi criada porque os antigos <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitores de ecrã</a> não conseguiam encontrar os campos que se encontravam vazios. Actualmente, todos os <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitores de ecrã</a> conseguem identificar todos os campos dos formulários, pelo que esta regra pode ser ignorada.</p>
 <h3>4. Usar teclas de atalho</h3>
-<p>Podemos associar uma tecla de atalho para aceder a um determinado link através do teclado. No entanto, estas teclas de atalho sobrepõem-se às teclas dos <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitores de ecrã</a>, tornando-as inúteis. O outro problema das teclas de atalho é o de não haver nenhum standard, por isso os poucos sites que as implementam usam as teclas que bem lhes interessam, tornando difícil a criação de um modelo mental que funcione de mesma forma em todos os sites.<br />
+<p>Podemos associar uma tecla de atalho para aceder a um determinado link através do teclado. No entanto, estas teclas de atalho sobrepõem-se às teclas dos <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitores de ecrã</a>, tornando-as inúteis. O outro problema das teclas de atalho é o de não haver nenhum standard, por isso os poucos sites que as implementam usam as teclas que bem lhes interessam, tornando difícil a criação de um modelo mental que funcione de mesma forma em todos os sites.<br />
 Em termos de acessibilidade, o uso destas teclas pode ser mau, mas em termos de usabilidade pode ser algo muito bom. A navegação pelo teclado é muito mais rápida do que a navegação com a movimentação do rato+clique. Por isso, neste aspecto é necessário criar um compromisso. Se queremos melhorar a acessibilidade, não usamos teclas de atalho, mas se queremos melhorar a usabilidade, podemos usar o teclado, desde que as teclas seleccionadas não se sobreponham às teclas de atalho do próprio browser e que haja uma página que explique todos os atalhos existentes.</h2>
 <h3>5. Usar resumos nas tabelas (só são importantes se adicionarem valor à tabela)</h3>
-<p>Os <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitores de ecrã</a> lêm em voz alta o <a href="http://diveintoaccessibility.org/day_20_providing_a_summary_for_tables.html">resumo das tabelas</a> (<code>summary="resumo"</code>) antes de iniciarem a leitura dos dados. Alguns websites que usam tabelas para o layout às vezes adicionam estes resumos do tipo <code>summary="tabela de layout"</code>, o que não traz nenhum valor à tabela e só atrapalha a navegação de quem usa um leitor de ecrã.</p>
+<p>Os <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitores de ecrã</a> lêm em voz alta o <a href="http://diveintoaccessibility.org/day_20_providing_a_summary_for_tables.html" rel="noopener noreferrer">resumo das tabelas</a> (<code>summary="resumo"</code>) antes de iniciarem a leitura dos dados. Alguns websites que usam tabelas para o layout às vezes adicionam estes resumos do tipo <code>summary="tabela de layout"</code>, o que não traz nenhum valor à tabela e só atrapalha a navegação de quem usa um leitor de ecrã.</p>
 <h3>6. Esquecer os conteúdos</h3>
 <p>A forma como os conteúdos estão estruturados na página é uma grande parte da acessibilidade da mesma. Um website pode ter um código perfeito e estar em conformidade com o nível mais elevado de acessibilidade, mas se os conteúdos estiverem mal estruturados, o site será de difícil navegação ou até impossível para alguns utilizadores com necessidades especiais.<br />
 É necessário assegurar que os conteúdos sejam disponibilizados em pequenos pedaços (parágrafos) e acompanhados de um título (cabeçalho). Devem também ser usadas listas (<code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>) sempre qur for apropriado e uma linguagem simples e directa.</h2>
 <h3>7. Preocupar-se com grandes declarações sobre a acessibilidade</h3>
 <p>Muitos sites desenvolvidos a pensar na acessibilidade costumam ter páginas bastante extensas a explicar as funcionalidades de acessibilidade que foram implementadas. Com ou sem necessidades especiais, os utilizadores não costumam consultar as páginas de "ajuda" de nenhum site. Em vez disso, preferem experimentar e descobrir por eles próprios (a não ser que o site seja mesmo muito difícil de usar, e aí passamos a ter um problema de usabilidade). Apesar de não haver nada de errado em ter uma página a explicar que o nosso site é acessível, não é necessário perder muito tempo com isso.</p>
 <h3>8. Agonizar com os acrónimos e abreviações</h3>
-<p>Declarar se alguma palavra é um acrónimo ou uma abreviação é facil de fazer em HTML usando as tags <code>&lt;acronym&gt;</code> ou <code>&lt;abbr&gt;</code>. A maior parte dos <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitores de ecrã</a> não suportam estas funcionalidades, por isso não será um grande benefício para os utilizadores com necessidades especiais. Até alguns browsers como o <a href="https://en.wikipedia.org/wiki/Internet_Explorer_6">Internet Explorer 6</a> não suportam este tipo de tags, nomeadamente a <code>&lt;abbr&gt;</code>, pelo que também não se deve perder muito tempo com isso.</p>
+<p>Declarar se alguma palavra é um acrónimo ou uma abreviação é facil de fazer em HTML usando as tags <code>&lt;acronym&gt;</code> ou <code>&lt;abbr&gt;</code>. A maior parte dos <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitores de ecrã</a> não suportam estas funcionalidades, por isso não será um grande benefício para os utilizadores com necessidades especiais. Até alguns browsers como o <a href="https://en.wikipedia.org/wiki/Internet_Explorer_6" rel="noopener noreferrer">Internet Explorer 6</a> não suportam este tipo de tags, nomeadamente a <code>&lt;abbr&gt;</code>, pelo que também não se deve perder muito tempo com isso.</p>
 <h3>9. Alterar a ordem das tabulações (a não ser que haja uma boa razão para isso)</h3>
-<p>O atributo <code>tabindex</code> pode ser usado para alterar a ordem da tabulação da página (navegação com o teclado usando a tecla TAB), mas raramente é necessário. Os browsers e <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitores de ecrã</a> costumam navegar nos sites pela ordem em que os elementos se encontram no HTML. Desde que a navegação seja feita do canto superior esquerdo para o canto inferior direito (o que normalmente acontece) então a ordenação das tabulações está perfeitamente adequada e não necessita de ser alterada.</p>
-<h3>10. Esquecer-se de ouvir o site num <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitor de ecrã</a></h3>
-<p>Enquanto estiver a desenvolver um website acessível, não se esqueça de experimentar ouvi-lo num <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela">leitor de ecrã</a> para se assegurar que as funcionalidade de acessibilidade funcionam correctamente e que o site é navegável. Além disso, também é recomendável navegar no site usando um browser de texto (ex: <a href="https://en.wikipedia.org/wiki/Lynx_(web_browser)">Lynx</a>).</p>
+<p>O atributo <code>tabindex</code> pode ser usado para alterar a ordem da tabulação da página (navegação com o teclado usando a tecla TAB), mas raramente é necessário. Os browsers e <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitores de ecrã</a> costumam navegar nos sites pela ordem em que os elementos se encontram no HTML. Desde que a navegação seja feita do canto superior esquerdo para o canto inferior direito (o que normalmente acontece) então a ordenação das tabulações está perfeitamente adequada e não necessita de ser alterada.</p>
+<h3>10. Esquecer-se de ouvir o site num <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitor de ecrã</a></h3>
+<p>Enquanto estiver a desenvolver um website acessível, não se esqueça de experimentar ouvi-lo num <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="noopener noreferrer">leitor de ecrã</a> para se assegurar que as funcionalidade de acessibilidade funcionam correctamente e que o site é navegável. Além disso, também é recomendável navegar no site usando um browser de texto (ex: <a href="https://en.wikipedia.org/wiki/Lynx_(web_browser)" rel="noopener noreferrer">Lynx</a>).</p>
 <h2>Outras considerações</h2>
-<p>Apesar de haverem <a href="https://www.w3.org/TR/WCAG/">regras de acessibilidade</a> que podemos ignorar (ver pontos 2, 3 e 5), quando estamos a desenvolver um website cujo requisito é passar no <a href="http://www.tawdis.net/taw3/cms/en">teste de acessibilidade</a>, por vezes temos mesmo que aplicar essas regras. Isto porque o cliente se poderá queixar de que o seu site não passa no validador X e que nós lhe tínhamos assegurado que o site iria ser acessível e passaria nos testes. </p>
-<p>Isto passa-se por exemplo nos <a href="/blog/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/">sites da Administração Pública que foram obrigados a cumprir as regras mínimas de acessibilidade</a> e que após terem sido implementados há sempre alguém que vai correr a validação de acessibilidade e verificar se passa em todos os pontos, caso contrário o site é tirado do ar. Por isso, dependendo dos casos, as <a href="https://www.w3.org/TR/WCAG/">regras</a> terão que ser cumpridas à risca, apesar de já estarem um pouco desactualizadas da realidade.</p>
+<p>Apesar de haverem <a href="https://www.w3.org/TR/WCAG/" rel="noopener noreferrer">regras de acessibilidade</a> que podemos ignorar (ver pontos 2, 3 e 5), quando estamos a desenvolver um website cujo requisito é passar no <a href="http://www.tawdis.net/taw3/cms/en" rel="noopener noreferrer">teste de acessibilidade</a>, por vezes temos mesmo que aplicar essas regras. Isto porque o cliente se poderá queixar de que o seu site não passa no validador X e que nós lhe tínhamos assegurado que o site iria ser acessível e passaria nos testes. </p>
+<p>Isto passa-se por exemplo nos <a href="/blog/nova-resolucao-do-conselho-de-ministros-para-a-acessibilidade-web/">sites da Administração Pública que foram obrigados a cumprir as regras mínimas de acessibilidade</a> e que após terem sido implementados há sempre alguém que vai correr a validação de acessibilidade e verificar se passa em todos os pontos, caso contrário o site é tirado do ar. Por isso, dependendo dos casos, as <a href="https://www.w3.org/TR/WCAG/" rel="noopener noreferrer">regras</a> terão que ser cumpridas à risca, apesar de já estarem um pouco desactualizadas da realidade.</p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">15 comentários</h2>
     <div class="blog-comment" id="comment-60997">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/10cb35b3e3e0697df9e19f5d445e9ecf?s=72&d=mp&r=r" alt="Filipe" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/10cb35b3e3e0697df9e19f5d445e9ecf?s=72&d=mp&r=r" alt="Filipe" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.filiperocha.com/' rel='external nofollow' class='url'>Filipe</a></p>
+        <p class="blog-comment-author"><a href='http://www.filiperocha.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Filipe</a></p>
         <p class="blog-comment-date">4 de Agosto de 2008, 10:27</p>
         <div class="blog-comment-text"><p>Excelente post, parabéns!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-60999">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5d41b61b15f944cbdc54469445a87d4a?s=72&d=mp&r=r" alt="Hugo Fernandes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5d41b61b15f944cbdc54469445a87d4a?s=72&d=mp&r=r" alt="Hugo Fernandes" />
       <div>
         <p class="blog-comment-author">Hugo Fernandes</p>
         <p class="blog-comment-date">4 de Agosto de 2008, 12:11</p>
@@ -103,7 +105,7 @@ O que eu depreendo é que devem ser usadas frases grandes porque você está-me 
       </div>
     </div>
     <div class="blog-comment" id="comment-61000">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5d41b61b15f944cbdc54469445a87d4a?s=72&d=mp&r=r" alt="Hugo Fernandes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5d41b61b15f944cbdc54469445a87d4a?s=72&d=mp&r=r" alt="Hugo Fernandes" />
       <div>
         <p class="blog-comment-author">Hugo Fernandes</p>
         <p class="blog-comment-date">4 de Agosto de 2008, 12:13</p>
@@ -115,7 +117,7 @@ Erro 1: Usar frases grandes no texto ALT das imagens</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-61003">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/357a20e8c56e69d6f9734d23ef9517e8?s=72&d=mp&r=r" alt="War" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/357a20e8c56e69d6f9734d23ef9517e8?s=72&d=mp&r=r" alt="War" />
       <div>
         <p class="blog-comment-author">War</p>
         <p class="blog-comment-date">4 de Agosto de 2008, 12:33</p>
@@ -123,23 +125,23 @@ Erro 1: Usar frases grandes no texto ALT das imagens</h2>
 <p>O que é um leitor de ecrã?!?!</p>
 <p>No máximo pode ser traduzido para navegador.</p>
 <p>Se tiverem duvidas consultem a página da Comissão Técnica Portuguesa de Normalização de Terminologia Informática</p>
-<p><a href="http://www.inst-informatica.pt/ct113/global.htm" rel="nofollow">http://www.inst-informatica.pt/ct113/global.htm</a></p></div>
+<p><a href="http://www.inst-informatica.pt/ct113/global.htm" rel="nofollow noopener noreferrer">http://www.inst-informatica.pt/ct113/global.htm</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-61018">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Agosto de 2008, 14:03</p>
         <div class="blog-comment-text"><p>@Hugo Fernandes: Obrigado pela sugestão, vou alterar os títulos para fazer mais sentido.</p>
 <p>@War: O termo &#8220;leitor de ecrã&#8221; existe e é um software que se instala no computador e que permite LER o texto que está no ecrã (daí o nome). O termo em Inglês é &#8220;Screen Reader&#8221; e no link que forneceu (Comissão Técnica Portuguesa para a Normalização da Terminologia Informática) não há nada relacionado com este termo. </p>
-<p>Pode obter aqui mais informações sobre o que é um leitor de ecrã: <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="nofollow">http://pt.wikipedia.org/wiki/Leitor_de_tela</a></p></div>
+<p>Pode obter aqui mais informações sobre o que é um leitor de ecrã: <a href="https://pt.wikipedia.org/wiki/Leitor_de_tela" rel="nofollow noopener noreferrer">http://pt.wikipedia.org/wiki/Leitor_de_tela</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-61019">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/64272f25bf0afec2f4551021b6bdf0ff?s=72&d=mp&r=r" alt="Rui Cruz" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/64272f25bf0afec2f4551021b6bdf0ff?s=72&d=mp&r=r" alt="Rui Cruz" />
       <div>
-        <p class="blog-comment-author"><a href='http://ruicruz.forunsbb.com/' rel='external nofollow' class='url'>Rui Cruz</a></p>
+        <p class="blog-comment-author"><a href='http://ruicruz.forunsbb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Rui Cruz</a></p>
         <p class="blog-comment-date">4 de Agosto de 2008, 14:15</p>
         <div class="blog-comment-text"><p>Olá.</p>
 <p>Algumas coisas a considerar&#8230;</p>
@@ -154,28 +156,28 @@ JAWS<br />
 Window-Eyes<br />
 JAWS<br />
 HAL</h2>
-<p>Os teus leitores não querem perder tempo a instalar? Então usem esta simulação para ver como se comporta um leitor de ecrã: <a href="http://www.webaim.org/simulations/screenreader-sim.htm" rel="nofollow">http://www.webaim.org/simulations/screenreader-sim.htm</a></p>
+<p>Os teus leitores não querem perder tempo a instalar? Então usem esta simulação para ver como se comporta um leitor de ecrã: <a href="http://www.webaim.org/simulations/screenreader-sim.htm" rel="nofollow noopener noreferrer">http://www.webaim.org/simulations/screenreader-sim.htm</a></p>
 <p>Isto também é válido para o War.</p>
-<p>Já agora, não estás ou não conheces ninguém interessado nisto: <a href="http://ruicruz.forunsbb.com/anuncio-de-bolsa-de-emprego-acessibilidades-web.html" rel="nofollow">http://ruicruz.forunsbb.com/anuncio-de-bolsa-de-emprego-acessibilidades-web.html</a></p>
+<p>Já agora, não estás ou não conheces ninguém interessado nisto: <a href="http://ruicruz.forunsbb.com/anuncio-de-bolsa-de-emprego-acessibilidades-web.html" rel="nofollow noopener noreferrer">http://ruicruz.forunsbb.com/anuncio-de-bolsa-de-emprego-acessibilidades-web.html</a></p>
 <p>Se não fosse a recibos verdes (desisti deles este ano) já me tinha metido lá&#8230; </p>
 <p>Rui</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-61021">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Agosto de 2008, 14:40</p>
-        <div class="blog-comment-text"><p>@Rui Cruz: Nesta listagem de atalhos do JAWS (<a href="http://www.webaim.org/resources/shortcuts/jaws.php" rel="nofollow">http://www.webaim.org/resources/shortcuts/jaws.php</a>) vejo algumas teclas de acesso directo: 5, H, L, I, T, F e B</p>
+        <div class="blog-comment-text"><p>@Rui Cruz: Nesta listagem de atalhos do JAWS (<a href="http://www.webaim.org/resources/shortcuts/jaws.php" rel="nofollow noopener noreferrer">http://www.webaim.org/resources/shortcuts/jaws.php</a>) vejo algumas teclas de acesso directo: 5, H, L, I, T, F e B</p>
 <p>Se usares, por exemplo o Google Reader, verás que a tecla de atalho T funciona para adicionar tags a um item. Ao usar o JAWS estamos a criar um conflito ao usar esta tecla.</p>
 <p>Quanto aos browsers normais, esses sim, apenas aceitam atalhos com a conjunção de 2 ou mais teclas.</p>
 <p>Finalmente, quanto à bolsa de emprego na ACAPO, eles dizem que não podes estar empregado numa &#8220;empresa que desenvolva software com tecnologias de acesso para pessoas com deficiência visual&#8221;. Logo, não me posso candidatar :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-61022">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/64272f25bf0afec2f4551021b6bdf0ff?s=72&d=mp&r=r" alt="Rui Cruz" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/64272f25bf0afec2f4551021b6bdf0ff?s=72&d=mp&r=r" alt="Rui Cruz" />
       <div>
-        <p class="blog-comment-author"><a href='http://ruicruz.forunsbb.com/' rel='external nofollow' class='url'>Rui Cruz</a></p>
+        <p class="blog-comment-author"><a href='http://ruicruz.forunsbb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Rui Cruz</a></p>
         <p class="blog-comment-date">4 de Agosto de 2008, 14:57</p>
         <div class="blog-comment-text"><p>Tens razão, tens razão&#8230;</p>
 <p>/me stabs himself</p>
@@ -183,9 +185,9 @@ HAL</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-61054">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/31c9d6706b78cb5967efb2969d1586c6?s=72&d=mp&r=r" alt="Alves" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/31c9d6706b78cb5967efb2969d1586c6?s=72&d=mp&r=r" alt="Alves" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.inospito.com/' rel='external nofollow' class='url'>Alves</a></p>
+        <p class="blog-comment-author"><a href='http://www.inospito.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Alves</a></p>
         <p class="blog-comment-date">4 de Agosto de 2008, 20:28</p>
         <div class="blog-comment-text"><p>O ponto 10 é sem dúvida o ponto fulcral, e do qual deviam derivar todas as regras, pois cumprir as normas só por cumprir não tem qualquer interesse. </p>
 <p>Fala-se muito em sites que respeitam as normas de acessibilidade, níveis A e AA, etc. &#8211; isso na teoria é muito bonito mas na prática devia-se era preparar o site para alguns leitores de écran e colocar uma nota informativa do tipo &#8220;Testado em JAWS, HAL, &#8230;&#8221; </p>
@@ -194,9 +196,9 @@ HAL</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-61480">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8f136b6b4b7ee2011b9b8129e850702f?s=72&d=mp&r=r" alt="Bruno Dulcetti" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8f136b6b4b7ee2011b9b8129e850702f?s=72&d=mp&r=r" alt="Bruno Dulcetti" />
       <div>
-        <p class="blog-comment-author"><a href='http://brunodulcetti.com/blog' rel='external nofollow' class='url'>Bruno Dulcetti</a></p>
+        <p class="blog-comment-author"><a href='http://brunodulcetti.com/blog' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Dulcetti</a></p>
         <p class="blog-comment-date">7 de Agosto de 2008, 15:49</p>
         <div class="blog-comment-text"><p>Belo post Ivo.</p>
 <p>Só o ponto 8 que eu fiquei com um pulga atrás da orelha. Tudo bem que encher de <abbr> e tudo mais pode ser exagero, mas será que amanhã os leitores de ecrã não podem suportar essas fucionalidades?</p>
@@ -207,23 +209,23 @@ HAL</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-62153">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/f6b92f34f20d486c9573031f85517082?s=72&d=mp&r=r" alt="PR" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/f6b92f34f20d486c9573031f85517082?s=72&d=mp&r=r" alt="PR" />
       <div>
-        <p class="blog-comment-author"><a href="https://takea-break.blogspot.com/" rel='external nofollow' class='url'>PR</a></p>
+        <p class="blog-comment-author"><a href="https://takea-break.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>PR</a></p>
         <p class="blog-comment-date">11 de Agosto de 2008, 12:10</p>
         <div class="blog-comment-text"><p>Muito obrigado pelas dicas :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-64281">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1856d632e7c137cd2ce350d9dffb539d?s=72&d=mp&r=r" alt="Flavio Mendes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1856d632e7c137cd2ce350d9dffb539d?s=72&d=mp&r=r" alt="Flavio Mendes" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.flaviomendes.net/' rel='external nofollow' class='url'>Flavio Mendes</a></p>
+        <p class="blog-comment-author"><a href='http://www.flaviomendes.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Flavio Mendes</a></p>
         <p class="blog-comment-date">24 de Agosto de 2008, 19:24</p>
         <div class="blog-comment-text"><p>Parabéns pelo artigo, Ivo. Vou compartilhar com meus alunos.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-65437">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/31dcac97f4ddea5b5e6a6cdb24ecd1c1?s=72&d=mp&r=r" alt="severina" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/31dcac97f4ddea5b5e6a6cdb24ecd1c1?s=72&d=mp&r=r" alt="severina" />
       <div>
         <p class="blog-comment-author">severina</p>
         <p class="blog-comment-date">30 de Agosto de 2008, 22:05</p>
@@ -232,7 +234,7 @@ breve nas palavras na internet?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-71868">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b12e528d1461a725e3d5b34e99ec72cb?s=72&d=mp&r=r" alt="Magda Joana SIlva" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b12e528d1461a725e3d5b34e99ec72cb?s=72&d=mp&r=r" alt="Magda Joana SIlva" />
       <div>
         <p class="blog-comment-author">Magda Joana SIlva</p>
         <p class="blog-comment-date">21 de Outubro de 2008, 20:31</p>
@@ -245,17 +247,17 @@ No fundo, é impossível implementar um web site que funcione correctamente com 
       </div>
     </div>
     <div class="blog-comment" id="comment-73075">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Novembro de 2008, 15:20</p>
         <div class="blog-comment-text"><p>Olá Magda. No teu comentário tocas num ponto essencial e que não mencionei no artigo, que é o facto de por vezes haver excesso de preocupação com a acessibilidade e ao tentarmos ajudar usando demasiada informação alternativa, estamos é a complicar ainda mais o acesso à informação.</p>
-<p>Há um post muito interessante sobre isso aqui: <a href="http://www.456bereastreet.com/archive/200712/overdoing_accessibility/" rel="nofollow">Overdoing Accessibility</a></p></div>
+<p>Há um post muito interessante sobre isso aqui: <a href="http://www.456bereastreet.com/archive/200712/overdoing_accessibility/" rel="nofollow noopener noreferrer">Overdoing Accessibility</a></p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/bill-gates-envia-e-mail-a-queixar-se-da-usabilidade-do-windows/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -269,7 +271,7 @@ No fundo, é impossível implementar um web site que funcione correctamente com 
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

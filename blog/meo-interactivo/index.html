@@ -14,6 +14,7 @@
 <title>MEO Interactivo — Ivo Gomes</title>
 <meta name="description" content="Foi ontem lançado o MEO Interactivo, um projecto em que estive envolvido nos últimos meses (como parte da equipa de usabilidade do SAPO) juntamente com as equipas de multi-plataformas SAPO e MEO.Este projecto tinha como objectivo levar a Internet para a TV (no formato widget) de modo a facilitar o acesso aos conteúdos web usando o principal objecto de interacção familiar em casa, a TV." />
 <meta property="og:title" content="MEO Interactivo" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Foi ontem lançado o MEO Interactivo, um projecto em que estive envolvido nos últimos meses (como parte da equipa de usabilidade do SAPO) juntamente com as equipas de multi-plataformas SAPO e MEO.Este projecto tinha como objectivo levar a Internet para a TV (no formato widget) de modo a facilitar o acesso aos conteúdos web usando o principal objecto de interacção familiar em casa, a TV." />
 <meta property="article:published_time" content="2010-07-09T14:33:04+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/meo-interactivo/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>09 Jul 2010</span>
+    <time datetime="2010-07-09">09 Jul 2010</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,45 +52,45 @@
   </div>
 
   <article class="blog-article">
-<p>Foi ontem lançado o <a href="http://interactivo.meo.pt/">MEO Interactivo</a>, um projecto em que estive envolvido nos últimos meses (como parte da equipa de usabilidade do SAPO) juntamente com as equipas de multi-plataformas <a href="https://sapo.pt/">SAPO</a> e <a href="http://meo.pt/">MEO</a>.</p>
+<p>Foi ontem lançado o <a href="http://interactivo.meo.pt/" rel="noopener noreferrer">MEO Interactivo</a>, um projecto em que estive envolvido nos últimos meses (como parte da equipa de usabilidade do SAPO) juntamente com as equipas de multi-plataformas <a href="https://sapo.pt/" rel="noopener noreferrer">SAPO</a> e <a href="http://meo.pt/" rel="noopener noreferrer">MEO</a>.</p>
 <p>Este projecto tinha como objectivo levar a Internet para a TV (no formato widget) de modo a facilitar o acesso aos conteúdos web usando o principal objecto de interacção familiar em casa, a TV.</p>
 <p>Além dos widgets, o MEO Interactivo inclui também uma espécie de App Store ou Marketplace onde o utilizador pode escolher os widgets que quer correr ou adicioná-los aos favoritos. Os widgets favoritos passam a poder ser acedidos através da tecla azul do telecomando directamente por cima da transmissão de TV.</p>
 <h2>Prototipagem</h2>
 <p>Como normalmente acontece, antes de começar a desenhar os interfaces é necessário estudar a plataforma (neste caso, desenhar para a TV é muito diferente e muito mais limitativo do que desenhar para a web) e a forma como a interacção iria ser feita (ecrãs, workflows, navegação, etc).</p>
 <p>Em baixo, alguns exemplos dos esboços iniciais feitos apenas com papel e lápis:</p>
-<p><a class="saportelink" href="http://fotos.sapo.pt/CQJiYgo3fVoaQ4nMLltU"><img style="border: 0 none;" src="http://c7.quickcachr.fotos.sapo.pt/i/B7204adaa/6721465_Rcw5E.jpeg" alt="Protótipos iniciais" /></a></p>
-<p><a class="saportelink" href="http://fotos.sapo.pt/h8wraadklRU4I5A3RpZ2"><img style="border: 0 none;" src="http://c9.quickcachr.fotos.sapo.pt/i/Bb9041708/6721467_YkP0S.jpeg" alt="Prototipagem" /></a></p>
+<p><a class="saportelink" href="http://fotos.sapo.pt/CQJiYgo3fVoaQ4nMLltU" rel="noopener noreferrer"><img loading="lazy" style="border: 0 none;" src="http://c7.quickcachr.fotos.sapo.pt/i/B7204adaa/6721465_Rcw5E.jpeg" alt="Protótipos iniciais" /></a></p>
+<p><a class="saportelink" href="http://fotos.sapo.pt/h8wraadklRU4I5A3RpZ2" rel="noopener noreferrer"><img loading="lazy" style="border: 0 none;" src="http://c9.quickcachr.fotos.sapo.pt/i/Bb9041708/6721467_YkP0S.jpeg" alt="Prototipagem" /></a></p>
 <p>Um dos principais problemas que encontrámos inicialmente foi com a tecla "back" do telecomando. Muitas pessoas desconhecem a existência dessa tecla (muito por culpa da sua má localização no comando e má iconografia) e usam outros atalhos para sair dos menus (ex: clicar 2x na tecla "menu"). Com base nesta limitação, foi criado um modelo de navegação que funcionaria apenas usando as setas (cima, baixo, esquerda, direita), em que a tecla "esquerda" serviria para voltar atrás, e a tecla "direita" serviria para seguir em frente.</p>
-<p><img style="border: 0 none;" src="http://c2.quickcachr.fotos.sapo.pt/i/B11048ea6/6721964_Lz3dW.png" alt="Navegação" /></p>
+<p><img loading="lazy" style="border: 0 none;" src="http://c2.quickcachr.fotos.sapo.pt/i/B11048ea6/6721964_Lz3dW.png" alt="Navegação" /></p>
 <h2>Wireframes</h2>
 <p>Depois de várias reuniões e fechados os protótipos, passou-se para a fase de desenho dos wireframes.</p>
 <p>Para desenhar os wireframes já é preciso ter uma noção das dimensões do ecrã e dos elementos que lá vão ser colocados. Apesar de hoje em dia a maior parte das TV já serem em alta definição (HD ou HD Ready), este sistema deveria funcionar em qualquer TV, e isso significa que um ecrã tem de funcionar igualmente bem numa resolução de 1080p como numa de 480p.</p>
 <p>E depois há o problema das margens de segurança que é necessário ter quando estamos a trabalhar com TVs antigas com ecrãs CRT.</p>
 <p>Em baixo, um exemplo de wireframes para o Marketplace (com as margens de segurança) e para uma Widget de meteorologia.</p>
-<p><a class="saportelink" href="http://fotos.sapo.pt/MKIy2DsbJZc3U5hUzs01"><img style="border: 0 none;" src="http://c1.quickcachr.fotos.sapo.pt/i/Bfc049f25/6722087_IZ2AV.png" alt="Marketplace" /></a></p>
-<p><a class="saportelink" href="http://fotos.sapo.pt/5EdIakBjSv5WBmrvPSAS"><img style="border: 0 none;" src="http://c3.quickcachr.fotos.sapo.pt/i/B0c04fc23/6722096_UEMBZ.png" alt="Widget" /></a></p>
+<p><a class="saportelink" href="http://fotos.sapo.pt/MKIy2DsbJZc3U5hUzs01" rel="noopener noreferrer"><img loading="lazy" style="border: 0 none;" src="http://c1.quickcachr.fotos.sapo.pt/i/Bfc049f25/6722087_IZ2AV.png" alt="Marketplace" /></a></p>
+<p><a class="saportelink" href="http://fotos.sapo.pt/5EdIakBjSv5WBmrvPSAS" rel="noopener noreferrer"><img loading="lazy" style="border: 0 none;" src="http://c3.quickcachr.fotos.sapo.pt/i/B0c04fc23/6722096_UEMBZ.png" alt="Widget" /></a></p>
 <h2>Desenvolvimento e Implementação</h2>
 <p>Depois dos wireframes finalizados e de mais algumas reuniões com a equipa de desenvolvimento onde foi discutida a viabilidade técnica das soluções apresentadas, passou-se finalmente ao desenvolvimento e design final da plataforma.</p>
 <p>A fase de design também foi acompanhada de perto uma vez que algumas das soluções apresentadas em wireframe poderiam necessitar de ser reajustadas de modo a adaptarem-se a um ecrã real de TV (no wireframe não temos noção de todas as limitações a que estamos sujeitos numa TV) e só depois de testes reais com o comando e com a interacção é que se chegou ao design final.</p>
 <p>E aqui está ele, disponível usando a tecla azul do telecomando do MEO (poderá ser necessário fazer restart à box para a actualizar). Em baixo alguns exemplos do resultado final:</p>
 <p>A barra dos widgets favoritos (o primeiro item dá acesso ao MEO Interactivo, nome de código Marketplace, onde se podem correr outros widgets ou fazer a gestão dos favoritos):</p>
-<p><a class="saportelink" href="http://fotos.sapo.pt/o6ulWQMweaR7e7KUGyiy"><img style="border: 0 none;" src="http://c9.quickcachr.fotos.sapo.pt/i/B5e045234/6722142_HMmqj.jpeg" alt="Barra de Favoritos" /></a></p>
+<p><a class="saportelink" href="http://fotos.sapo.pt/o6ulWQMweaR7e7KUGyiy" rel="noopener noreferrer"><img loading="lazy" style="border: 0 none;" src="http://c9.quickcachr.fotos.sapo.pt/i/B5e045234/6722142_HMmqj.jpeg" alt="Barra de Favoritos" /></a></p>
 <p>A widget de meteorologia:</p>
-<p><a class="saportelink" href="http://fotos.sapo.pt/GdhO7VRq5WCMDYIlOuka"><img style="border: 0 none;" src="http://c6.quickcachr.fotos.sapo.pt/i/B44047203/6722156_I7OV2.jpeg" alt="Widget Meteorologia" /></a></p>
+<p><a class="saportelink" href="http://fotos.sapo.pt/GdhO7VRq5WCMDYIlOuka" rel="noopener noreferrer"><img loading="lazy" style="border: 0 none;" src="http://c6.quickcachr.fotos.sapo.pt/i/B44047203/6722156_I7OV2.jpeg" alt="Widget Meteorologia" /></a></p>
 <p>Uma das secções (entretenimento) do MEO Interactivo onde é possível navegar por todas as widgets disponíveis:</p>
-<p><a class="saportelink" href="http://fotos.sapo.pt/edeZavzjZJWQ5HlY0syP"><img style="border: 0 none;" src="http://c1.quickcachr.fotos.sapo.pt/i/B1c049fb8/6722174_TqG2Y.jpeg" alt="Marketplace" /></a></p>
+<p><a class="saportelink" href="http://fotos.sapo.pt/edeZavzjZJWQ5HlY0syP" rel="noopener noreferrer"><img loading="lazy" style="border: 0 none;" src="http://c1.quickcachr.fotos.sapo.pt/i/B1c049fb8/6722174_TqG2Y.jpeg" alt="Marketplace" /></a></p>
 <p>E finalmente a ordenação de widgets na barra de favoritos:</p>
-<p><a class="saportelink" href="http://fotos.sapo.pt/abeKJKGzaQQ22fZUy62z"><img style="border: 0 none;" src="http://c2.quickcachr.fotos.sapo.pt/i/Bb7042b5a/6722199_gucjA.jpeg" alt="Ordenação dos favoritos" /></a></p>
-<p>Esperemos que gostem, e no futuro poderá ser possível adicionar mais widgets ao <a href="http://interactivo.meo.pt/">MEO Interactivo</a> (ainda não confirmado), quem sabe se não poderá ser a vossa própria widget :)</p>
-<p class="nota"><strong>NOTA:</strong> Este artigo foi escrito também no <a href="http://ux.sapo.pt/5056.html">blog SAPO UX</a></p>
+<p><a class="saportelink" href="http://fotos.sapo.pt/abeKJKGzaQQ22fZUy62z" rel="noopener noreferrer"><img loading="lazy" style="border: 0 none;" src="http://c2.quickcachr.fotos.sapo.pt/i/Bb7042b5a/6722199_gucjA.jpeg" alt="Ordenação dos favoritos" /></a></p>
+<p>Esperemos que gostem, e no futuro poderá ser possível adicionar mais widgets ao <a href="http://interactivo.meo.pt/" rel="noopener noreferrer">MEO Interactivo</a> (ainda não confirmado), quem sabe se não poderá ser a vossa própria widget :)</p>
+<p class="nota"><strong>NOTA:</strong> Este artigo foi escrito também no <a href="http://ux.sapo.pt/5056.html" rel="noopener noreferrer">blog SAPO UX</a></p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">1 comentário</h2>
     <div class="blog-comment" id="comment-90504">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4d8e6d7663f638e47fc8d9115437cc2?s=72&d=mp&r=r" alt="Paulo A. Silva" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4d8e6d7663f638e47fc8d9115437cc2?s=72&d=mp&r=r" alt="Paulo A. Silva" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.pauloasilva.com/' rel='external nofollow' class='url'>Paulo A. Silva</a></p>
+        <p class="blog-comment-author"><a href='http://blog.pauloasilva.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Paulo A. Silva</a></p>
         <p class="blog-comment-date">8 de Setembro de 2010, 19:44</p>
         <div class="blog-comment-text"><p>Muito bom Ivo.<br />
 Nota-se um verdadeiro trabalho de equipa.</h2></div>
@@ -96,7 +98,7 @@ Nota-se um verdadeiro trabalho de equipa.</h2></div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/ux-lx-dia-3/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -110,7 +112,7 @@ Nota-se um verdadeiro trabalho de equipa.</h2></div>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

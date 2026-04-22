@@ -14,6 +14,7 @@
 <title>Wireframes — Ivo Gomes</title>
 <meta name="description" content="No seguimento do projecto em que estou a trabalhar, depois de realizados e testados os protótipos em papel chegou a hora de passar os esboços para wireframes. Com base na validação dos protótipos em papel pelos próprios utilizadores, foi feita a digitalização dos mesmos em formato wireframe. Um wireframe é um documento que tem como …" />
 <meta property="og:title" content="Wireframes" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="No seguimento do projecto em que estou a trabalhar, depois de realizados e testados os protótipos em papel chegou a hora de passar os esboços para wireframes. Com base na validação dos protótipos em papel pelos próprios utilizadores, foi feita a digitalização dos mesmos em formato wireframe. Um wireframe é um documento que tem como …" />
 <meta property="article:published_time" content="2005-12-05T16:36:05+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/wireframes/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>05 Dez 2005</span>
+    <time datetime="2005-12-05">05 Dez 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -56,20 +58,20 @@ Um wireframe é um documento que tem como função estruturar o conteúdo de cad
 <p>Além desta função estrutural, o wireframe também é utilizado para a marcação das etapas de um processo de interacção entre o utilizador e o sistema, fornecendo um wireframe por cada ecrã que explique detalhadamente todos os elementos presentes na página e como o utilizador pode interagir com eles.</p>
 <p>O nome "wireframe" vem da junção de duas palavras em inglês: "wire" (linhas) e "frames" (ecrãs). Ou seja, são ecrãs de baixa resolução e com um aspecto gráfico muito pobre que servem apenas para indicar onde devem estar localizados os objectos e menus de interacção. O wireframe serve para mostrar a funcionalidade e não o aspecto gráfico de uma aplicação.</p>
 <h2>Como desenhar um wireframe?</h2>
-<p>Existem algumas aplicações com funções específicas para desenhar wireframes, entre elas temos o <a href="https://office.microsoft.com/en-us/FX010857981033.aspx">Microsoft Visio</a>, o <a href="https://www.omnigroup.com/applications/omnigraffle/">OmniGraffle</a>, o <a href="https://www.adobe.com/products/illustrator/main.html">Adobe Illustrator</a> ou o <a href="https://www.adobe.com/products/indesign/main.html">Adobe InDesign</a>.</p>
+<p>Existem algumas aplicações com funções específicas para desenhar wireframes, entre elas temos o <a href="https://office.microsoft.com/en-us/FX010857981033.aspx" rel="noopener noreferrer">Microsoft Visio</a>, o <a href="https://www.omnigroup.com/applications/omnigraffle/" rel="noopener noreferrer">OmniGraffle</a>, o <a href="https://www.adobe.com/products/illustrator/main.html" rel="noopener noreferrer">Adobe Illustrator</a> ou o <a href="https://www.adobe.com/products/indesign/main.html" rel="noopener noreferrer">Adobe InDesign</a>.</p>
 <p>No meu caso uso o OmniGraffle. A interface é extremamente simples e o resultado final tem uma qualidade superior à do Visio. Além disso, o OmniGraffle foi concebido quase especificamente para esta função.</p>
-<p><img src='https://www.ivogomes.com/img/artigos/omnigraffle.png' alt='OmniGraffle' /></p>
-<p>Há <a href="http://www.zeroseis.com.br/2005/11/wireframes-em-xhtml.html">quem prefira</a> conceber os wireframes logo em formato XHTML em vez de os desenhar numa destas aplicações. A vantagem de desenhar em XHTML é que os protótipos são funcionais e na fase de concepção em si poupa-se trabalho porque o esqueleto das páginas já está feito. No entanto, perde-se muito mais tempo a codificar o XHTML e o CSS correspondente do que se desenharmos os ecrãs através de objectos "drag & drop".</p>
+<p><img loading="lazy" src='https://www.ivogomes.com/img/artigos/omnigraffle.png' alt='OmniGraffle' /></p>
+<p>Há <a href="http://www.zeroseis.com.br/2005/11/wireframes-em-xhtml.html" rel="noopener noreferrer">quem prefira</a> conceber os wireframes logo em formato XHTML em vez de os desenhar numa destas aplicações. A vantagem de desenhar em XHTML é que os protótipos são funcionais e na fase de concepção em si poupa-se trabalho porque o esqueleto das páginas já está feito. No entanto, perde-se muito mais tempo a codificar o XHTML e o CSS correspondente do que se desenharmos os ecrãs através de objectos "drag & drop".</p>
 <p>No meu caso, dado o tamanho da aplicação que estamos a desenvolver, foram 250 ecrãs. Se tivesse optado por desenhar os ecrãs em XHTML ainda hoje não deveria ir a meio...</p>
 <h2>Qual é o aspecto de um wireframe?</h2>
 <p>Tal como já foi mencionado antes, o aspecto de uma página em formato wireframe é apenas um conjunto de linhas e caixas de texto que indicam a localização dos objectos e dos menus.</p>
 <p>Há ainda uma outra discussão relativamente ao uso da cor nestes ecrãs. Muitos especialistas dizem que não devemos usar a cor porque isso irá levantar questões no cliente do tipo: "é com aquela cor que vai ficar o site?"; ou "não gosto muito é das cores" em vez de se centrarem no layout das páginas.</p>
 <p>Por outro lado, podemos usar a cor para distinguir certos objectos da interacção e zonas de aviso ao utilizador. Num ecrã a preto e branco não é fácil distinguir se há zonas de alerta ou de aviso e na fase de programação pode acontecer que essas zonas não sejam devidamente marcadas pelo programador.</p>
 <p>Em baixo temos o exemplo de um ecrã em formato wireframe a preto e branco.<br />
-<img src='https://www.ivogomes.com/img/artigos/lvp_wireframes.gif' alt='wireframe' /></h2>
+<img loading="lazy" src='https://www.ivogomes.com/img/artigos/lvp_wireframes.gif' alt='wireframe' /></h2>
 <p>Para este projecto optei por usar a cor pois existem algumas mensagens de alerta importantes para os utilizadores. Eis 2 exemplos dos 250 ecrãs que desenvolvi para esta nova aplicação:</p>
-<p><img src='https://www.ivogomes.com/img/artigos/wireframew1.png' alt='Wireframe da aplicação' />O tamanho das imagens foi diminuido de propósito pois trata-se de uma aplicação de um cliente e não convém mostrar muito... As imagens foram colocadas aqui por motivos meramente demonstrativos de como pode ser desenvolvido um wireframe.</p>
-<p><img src='https://www.ivogomes.com/img/artigos/wireframew2.png' alt='Wireframe da aplicação' />Como podem reparar, do lado direito existe uma coluna com informações sobre cada elemento do ecrã. Podem ver ainda as cores usadas para as mensagens de aviso e de alerta.<br clear="all" /></p>
+<p><img loading="lazy" src='https://www.ivogomes.com/img/artigos/wireframew1.png' alt='Wireframe da aplicação' />O tamanho das imagens foi diminuido de propósito pois trata-se de uma aplicação de um cliente e não convém mostrar muito... As imagens foram colocadas aqui por motivos meramente demonstrativos de como pode ser desenvolvido um wireframe.</p>
+<p><img loading="lazy" src='https://www.ivogomes.com/img/artigos/wireframew2.png' alt='Wireframe da aplicação' />Como podem reparar, do lado direito existe uma coluna com informações sobre cada elemento do ecrã. Podem ver ainda as cores usadas para as mensagens de aviso e de alerta.<br clear="all" /></p>
 <h2>Próximos Passos</h2>
 <p>Os próximos passos consistem numa validação dos ecrãs feita pelos utilizadores e pelo cliente por forma a que se possa avançar finalmente para a fase de concepção e programação da aplicação.</p>
 <h2>Artigos Relacionados</h2>
@@ -79,19 +81,19 @@ Um wireframe é um documento que tem como função estruturar o conteúdo de cad
 </ul>
 <h2>Links</h2>
 <ul>
-<li><a href="http://deyalexander.com/resources/wireframes.html">Artigos sobre Wireframes</a></li>
-<li><a href="http://www.zeroseis.com.br/2005/11/wireframes-em-&#120;&#104;&#116;&#109;&#108;.html">Wireframes em XHTML</a> com links para outros artigos interessantes</li>
-<li><a href="http://webinsider.uol.com.br/vernoticia.php?id=1995">Wireframe: documento cada vez mais importante</a></li>
-<li><a href="http://www.strangesystems.com/archives/000005.php">Using Wireframes</a></li>
+<li><a href="http://deyalexander.com/resources/wireframes.html" rel="noopener noreferrer">Artigos sobre Wireframes</a></li>
+<li><a href="http://www.zeroseis.com.br/2005/11/wireframes-em-&#120;&#104;&#116;&#109;&#108;.html" rel="noopener noreferrer">Wireframes em XHTML</a> com links para outros artigos interessantes</li>
+<li><a href="http://webinsider.uol.com.br/vernoticia.php?id=1995" rel="noopener noreferrer">Wireframe: documento cada vez mais importante</a></li>
+<li><a href="http://www.strangesystems.com/archives/000005.php" rel="noopener noreferrer">Using Wireframes</a></li>
 </ul>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">22 comentários</h2>
     <div class="blog-comment" id="comment-3181">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8199ee0ef9509a20a320acd54d25d269?s=72&d=mp&r=r" alt="Daniele" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8199ee0ef9509a20a320acd54d25d269?s=72&d=mp&r=r" alt="Daniele" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.danielevsilva.com/' rel='external nofollow' class='url'>Daniele</a></p>
+        <p class="blog-comment-author"><a href='http://www.danielevsilva.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Daniele</a></p>
         <p class="blog-comment-date">5 de Dezembro de 2005, 18:16</p>
         <div class="blog-comment-text"><p>Tenho algumas dúvidas quanto esse tipo de apresentação.<br />
 Em primeiro lugar, acho que só deve ser usado, para passar para a própria equipe qual será o resultado da organização do trabalho.<br />
@@ -100,18 +102,18 @@ Acho que não deve ser apresentado ao cliente, pois não são só as cores que p
       </div>
     </div>
     <div class="blog-comment" id="comment-3182">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/762cbf98a545baba9e9f06b8c1890bf5?s=72&d=mp&r=r" alt="Aldemir Vieira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/762cbf98a545baba9e9f06b8c1890bf5?s=72&d=mp&r=r" alt="Aldemir Vieira" />
       <div>
-        <p class="blog-comment-author"><a href="https://lutandoporwasp.blogspot.com/" rel='external nofollow' class='url'>Aldemir Vieira</a></p>
+        <p class="blog-comment-author"><a href="https://lutandoporwasp.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Aldemir Vieira</a></p>
         <p class="blog-comment-date">6 de Dezembro de 2005, 05:19</p>
         <div class="blog-comment-text"><p>Eu uso wireframe (com o Word, pasmem), e concordo que realmente cores podem influenciar, assim como o próprio layout influencia. Eu não uso cores, principalmente, para não podar ainda mais a criatividade do Designer.<br />
 Acho o uso desta técnica importante, porque é a primeira forma gráfica de elaboração da estrutura do site, considero que, antes, deva existir o trabalho de arquitetura, para elaborar de forma textual a estrutura da informação. Assim, em conjunto, fornecerão subsídios para a elaboração do Markup (CSS e XHTML).</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3183">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">6 de Dezembro de 2005, 08:46</p>
         <div class="blog-comment-text"><p><b>@Daniele:</b> O resultado deve ser sempre apresentado ao cliente uma vez que há processos inerentes ao desempenho das suas tarefas e actividades que só ele compreende na totalidade. Não podemos conceber uma interface sem conhecer a opinião das pessoas que a vão usar. Foi por isso que desde o início envolvemos todos os futuros utilizadores desta aplicação no seu desenvolvimento. </p>
 <p>Uma vez que o cliente foi envolvido desde o início, não há o problema de ele confundir os wireframes com o layout final porque ao longo de todo o processo o cliente vai sendo sensibilizado para acompanhar o processo e dar a sua opinião em todas as fases. Desta forma, o próprio cliente tem noção das fases do projecto e da sua importância para o futuro desenvolvimento da aplicação.</p>
@@ -122,7 +124,7 @@ Nesta fase eu estou mais preocupado em saber se os ecrãs que vou apresentar sat
       </div>
     </div>
     <div class="blog-comment" id="comment-3184">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/d5a168556ea83a6e4aa8748d3be02bc5?s=72&d=mp&r=r" alt="Dominic Evans" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/d5a168556ea83a6e4aa8748d3be02bc5?s=72&d=mp&r=r" alt="Dominic Evans" />
       <div>
         <p class="blog-comment-author">Dominic Evans</p>
         <p class="blog-comment-date">6 de Dezembro de 2005, 09:08</p>
@@ -130,15 +132,15 @@ Nesta fase eu estou mais preocupado em saber se os ecrãs que vou apresentar sat
       </div>
     </div>
     <div class="blog-comment" id="comment-3185">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">6 de Dezembro de 2005, 09:16</p>
         <div class="blog-comment-text"><p>:D I&#8217;ve been thinking about starting to write in English! Maybe I&#8217;ll switch in a few months and probably translate some of the most popular articles I wrote. Stay tuned :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3186">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/6b96e8abadace8ea5684817f8bdca386?s=72&d=mp&r=r" alt="israel cefrin" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/6b96e8abadace8ea5684817f8bdca386?s=72&d=mp&r=r" alt="israel cefrin" />
       <div>
         <p class="blog-comment-author">israel cefrin</p>
         <p class="blog-comment-date">6 de Dezembro de 2005, 13:21</p>
@@ -149,7 +151,7 @@ Israel</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3187">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/d10ca8d11301c2f4993ac2279ce4b930?s=72&d=mp&r=r" alt="Sérgio" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/d10ca8d11301c2f4993ac2279ce4b930?s=72&d=mp&r=r" alt="Sérgio" />
       <div>
         <p class="blog-comment-author">Sérgio</p>
         <p class="blog-comment-date">7 de Dezembro de 2005, 01:19</p>
@@ -162,9 +164,9 @@ Gostava de discutir este ponto.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-3188">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">7 de Dezembro de 2005, 08:52</p>
         <div class="blog-comment-text"><p>Olá Sérgio!</p>
 <p>Quando disse que os wireframes serviam para identificar as localizações dos objectos estava a usar um termo genérico. Obviamente que nos wireframes devemos hierarquizar os conteúdos e usar a semântica para melhor estruturá-los. </p>
@@ -174,7 +176,7 @@ Gostava de discutir este ponto.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-3197">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/37d02273c94aa64b30a817fd8a7d5906?s=72&d=mp&r=r" alt="helder" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/37d02273c94aa64b30a817fd8a7d5906?s=72&d=mp&r=r" alt="helder" />
       <div>
         <p class="blog-comment-author">helder</p>
         <p class="blog-comment-date">10 de Dezembro de 2005, 16:03</p>
@@ -187,16 +189,16 @@ Pois quando falamos de um simples site isso pode ser simplesmente mais trabalho,
       </div>
     </div>
     <div class="blog-comment" id="comment-3200">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">15 de Dezembro de 2005, 12:32</p>
         <div class="blog-comment-text"><p>Os wireframes são importantes também nos sites de pequenas dimensões. Senão como é que é feita a estruturação das páginas? Se já tivermos essa estruturação feita, depois é só começar a desenhar o layout à volta.</p>
 <p>O prazo para a fase de análise deste projecto foi de cerca de 2 meses mas incluiu além disto uma análise à infra-estrutura tecnológica da empresa. Provavelmente se fosse só para a concepção dos wireframes e protótipos o prazo seria muito mais curto, mas assim aproveitámos e fizémos a análise completa ao mesmo tempo que era feita a análise à infra-estrutura.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3215">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/bd454a57d309dbe47ba47ca19f1404b9?s=72&d=mp&r=r" alt="Renato Rosa" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/bd454a57d309dbe47ba47ca19f1404b9?s=72&d=mp&r=r" alt="Renato Rosa" />
       <div>
         <p class="blog-comment-author">Renato Rosa</p>
         <p class="blog-comment-date">26 de Dezembro de 2005, 16:12</p>
@@ -204,9 +206,9 @@ Pois quando falamos de um simples site isso pode ser simplesmente mais trabalho,
       </div>
     </div>
     <div class="blog-comment" id="comment-3216">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ad9362beba121a41e1c28ca940e1f283?s=72&d=mp&r=r" alt="Moisés Ribeiro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ad9362beba121a41e1c28ca940e1f283?s=72&d=mp&r=r" alt="Moisés Ribeiro" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.untitled.art.br/' rel='external nofollow' class='url'>Moisés Ribeiro</a></p>
+        <p class="blog-comment-author"><a href='http://blog.untitled.art.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Moisés Ribeiro</a></p>
         <p class="blog-comment-date">26 de Dezembro de 2005, 16:36</p>
         <div class="blog-comment-text"><p>Escreves muito bem e com bom senso sobre o assunto.</p>
 <p><i>Li sobre tua intenção de escrever em inglês. Faça, mas não abandone a nossa língua, és uma boa referência em português sobre o assunto, que é tão escasso e difícil de ser encontrado.</i></p>
@@ -215,9 +217,9 @@ Pois quando falamos de um simples site isso pode ser simplesmente mais trabalho,
       </div>
     </div>
     <div class="blog-comment" id="comment-3225">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">5 de Janeiro de 2006, 13:32</p>
         <div class="blog-comment-text"><p><strong>@Renato:</strong> Nos próprios wireframes, cada elemento tem uma descrição própria que ajuda a futura equipa de desenvolvimento a perceber a sua importância e qual a sua função. Apesar do documento ser estático, existe um workflow associado com informação sobre para onde vai cada link e como funciona cada elemento.</p>
 <p><strong>@Moisés:</strong> Ainda não me decidi se passo a escrever em inglês ou não&#8230;<br />
@@ -226,7 +228,7 @@ Para convencer as empresas convém explicar desde o início que o projecto vai s
       </div>
     </div>
     <div class="blog-comment" id="comment-3280">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b5dcbba7955c8143eaadfec9bbc86a4c?s=72&d=mp&r=r" alt="Romeu Ribeiro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b5dcbba7955c8143eaadfec9bbc86a4c?s=72&d=mp&r=r" alt="Romeu Ribeiro" />
       <div>
         <p class="blog-comment-author">Romeu Ribeiro</p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 20:56</p>
@@ -235,9 +237,9 @@ Para convencer as empresas convém explicar desde o início que o projecto vai s
       </div>
     </div>
     <div class="blog-comment" id="comment-3289">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 09:35</p>
         <div class="blog-comment-text"><p>Um organigrama também pode ser considerado um Wireframe. Basta que faças um esboço da organização e hierarquização dos conteúdos no início do projecto para não vires a ter surpresas no final (alterações de última hora, correcções que poderiam ter sido evitadas, etc&#8230;)</p>
 <p>Os custos das correcções pós-implementação de um website são quase tão grandes como os custos de criação. Assim, se fizeres uma análise cuidada no inicio, minimizas os custos de correcção no final.</p>
@@ -246,7 +248,7 @@ Para convencer as empresas convém explicar desde o início que o projecto vai s
       </div>
     </div>
     <div class="blog-comment" id="comment-3291">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b5dcbba7955c8143eaadfec9bbc86a4c?s=72&d=mp&r=r" alt="Romeu Ribeiro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b5dcbba7955c8143eaadfec9bbc86a4c?s=72&d=mp&r=r" alt="Romeu Ribeiro" />
       <div>
         <p class="blog-comment-author">Romeu Ribeiro</p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 09:45</p>
@@ -254,7 +256,7 @@ Para convencer as empresas convém explicar desde o início que o projecto vai s
       </div>
     </div>
     <div class="blog-comment" id="comment-3941">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8957bf21571450ea5683aa20d9d4b3cf?s=72&d=mp&r=r" alt="Carolina Quelotti" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8957bf21571450ea5683aa20d9d4b3cf?s=72&d=mp&r=r" alt="Carolina Quelotti" />
       <div>
         <p class="blog-comment-author">Carolina Quelotti</p>
         <p class="blog-comment-date">25 de Maio de 2006, 13:50</p>
@@ -263,15 +265,15 @@ Você tem algum material de consulta de algum organograma? Tenho feito várias p
       </div>
     </div>
     <div class="blog-comment" id="comment-3942">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/762cbf98a545baba9e9f06b8c1890bf5?s=72&d=mp&r=r" alt="Aldemir Vieira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/762cbf98a545baba9e9f06b8c1890bf5?s=72&d=mp&r=r" alt="Aldemir Vieira" />
       <div>
         <p class="blog-comment-author">Aldemir Vieira</p>
         <p class="blog-comment-date">25 de Maio de 2006, 18:49</p>
-        <div class="blog-comment-text"><p>Carolina, um bom lugar para baixar exemplos e templates para trabalhar aplicar a arquitetura da informação é a página de <a href="http://iainstitute.org/tools/" rel="nofollow">Ferramentas do IA Institute</a>. No <a href="http://www.guilhermo.com/" rel="nofollow">site do Guilhermo Reis</a> também encontrará um rico material.</p></div>
+        <div class="blog-comment-text"><p>Carolina, um bom lugar para baixar exemplos e templates para trabalhar aplicar a arquitetura da informação é a página de <a href="http://iainstitute.org/tools/" rel="nofollow noopener noreferrer">Ferramentas do IA Institute</a>. No <a href="http://www.guilhermo.com/" rel="nofollow noopener noreferrer">site do Guilhermo Reis</a> também encontrará um rico material.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-5144">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/55d671961c215d3ce6306c810208ad8f?s=72&d=mp&r=r" alt="ibomb" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/55d671961c215d3ce6306c810208ad8f?s=72&d=mp&r=r" alt="ibomb" />
       <div>
         <p class="blog-comment-author">ibomb</p>
         <p class="blog-comment-date">7 de Julho de 2006, 17:08</p>
@@ -279,19 +281,19 @@ Você tem algum material de consulta de algum organograma? Tenho feito várias p
       </div>
     </div>
     <div class="blog-comment" id="comment-66531">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/beddbcb61a0d101bc45aee5f90df0b7e?s=72&d=mp&r=r" alt="fernando" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/beddbcb61a0d101bc45aee5f90df0b7e?s=72&d=mp&r=r" alt="fernando" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.fernandomartins.com/' rel='external nofollow' class='url'>fernando</a></p>
+        <p class="blog-comment-author"><a href='http://www.fernandomartins.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>fernando</a></p>
         <p class="blog-comment-date">5 de Setembro de 2008, 19:33</p>
         <div class="blog-comment-text"><p>Ivo, penso que achará interessantes estes 2 programas, que permitem desenvolver websites inteiros, interactivos, usando wireframes:</p>
-<p><a href="http://www.axure.com/" rel="nofollow">http://www.axure.com</a></p>
-<p><a href="http://www.protoshare.com/" rel="nofollow">http://www.protoshare.com</a></p></div>
+<p><a href="http://www.axure.com/" rel="nofollow noopener noreferrer">http://www.axure.com</a></p>
+<p><a href="http://www.protoshare.com/" rel="nofollow noopener noreferrer">http://www.protoshare.com</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-66585">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">6 de Setembro de 2008, 02:02</p>
         <div class="blog-comment-text"><p>Olá Fernando.</p>
 <p>Obrigado pelos links. Já os conhecia e continuo a preferir o OmniGraffle por algumas razões:<br />
@@ -301,7 +303,7 @@ Você tem algum material de consulta de algum organograma? Tenho feito várias p
       </div>
     </div>
     <div class="blog-comment" id="comment-87589">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/db1e0a3750e0399df3eeee808187d9b4?s=72&d=mp&r=r" alt="Carlos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/db1e0a3750e0399df3eeee808187d9b4?s=72&d=mp&r=r" alt="Carlos" />
       <div>
         <p class="blog-comment-author">Carlos</p>
         <p class="blog-comment-date">30 de Novembro de 2009, 10:27</p>
@@ -310,7 +312,7 @@ Você tem algum material de consulta de algum organograma? Tenho feito várias p
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/e-assim-se-trabalha/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -324,7 +326,7 @@ Você tem algum material de consulta de algum organograma? Tenho feito várias p
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

@@ -14,6 +14,7 @@
 <title>TV Shows 1.0 - Aplicação de Gestão de Séries de TV — Ivo Gomes</title>
 <meta name="description" content="Já aqui falei ao de leve sobre este meu projecto de gestão de Séries de TV. Basicamente, o TV Shows permite gerir os episódios das séries de TV que costumamos ver. Através desta aplicação podemos manter um registo de todas as séries que acompanhamos, quais os episódios que já vimos (e os que faltam ver) e também se temos (ou não) um ficheiro com as legendas para cada episódio." />
 <meta property="og:title" content="TV Shows 1.0 - Aplicação de Gestão de Séries de TV" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Já aqui falei ao de leve sobre este meu projecto de gestão de Séries de TV. Basicamente, o TV Shows permite gerir os episódios das séries de TV que costumamos ver. Através desta aplicação podemos manter um registo de todas as séries que acompanhamos, quais os episódios que já vimos (e os que faltam ver) e também se temos (ou não) um ficheiro com as legendas para cada episódio." />
 <meta property="article:published_time" content="2008-01-18T09:58:38+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/tv-shows-10-aplicacao-de-gestao-de-series-de-tv/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>18 Jan 2008</span>
+    <time datetime="2008-01-18">18 Jan 2008</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,65 +52,65 @@
   </div>
 
   <article class="blog-article">
-<p class="nota"><strong>Nota:</strong> Este artigo está desactualizado! Já existe uma <a href="http://www.mytvshows.org/">nova versão desta aplicação aqui</a>.</a></p>
+<p class="nota"><strong>Nota:</strong> Este artigo está desactualizado! Já existe uma <a href="http://www.mytvshows.org/" rel="noopener noreferrer">nova versão desta aplicação aqui</a>.</a></p>
 <p><a href="/blog/codebits-e-series-de-tv/">Já aqui falei</a> ao de leve sobre este meu projecto de gestão de Séries de TV. Basicamente, o <strong>TV Shows</strong> permite gerir os episódios das séries de TV que costumamos ver. </p>
 <p>Através desta aplicação podemos manter um registo de todas as séries que acompanhamos, quais os episódios que já vimos (e os que faltam ver) e também se temos (ou não) um ficheiro com as legendas para cada episódio.</p>
-<p><img src='/blog/wp-content/uploads/2007/12/tvshows.jpg' alt='TV Shows' /></p>
-<p>A inspiração para esta aplicação partiu da gestão de séries efectuada pelo <a href="https://www.apple.com/pt/itunes/overview/">iTunes</a>. No entanto, para gerir as séries via iTunes era necessário adicionar os ficheiros AVI à base de dados (através de um processo manhoso, uma vez que o iTunes apenas permite importar vídeos compatíveis com o iPod) e tê-los sempre disponíveis no disco. Assim, a ideia de ter algo simples que me permitisse saber de forma rápida quais os episódios que me faltam ver em cada série fez com que colocasse mãos à obra (uma vez que, depois de muito procurar, não encontrei nenhuma aplicação que o fizesse).</p>
+<p><img loading="lazy" src='/blog/wp-content/uploads/2007/12/tvshows.jpg' alt='TV Shows' /></p>
+<p>A inspiração para esta aplicação partiu da gestão de séries efectuada pelo <a href="https://www.apple.com/pt/itunes/overview/" rel="noopener noreferrer">iTunes</a>. No entanto, para gerir as séries via iTunes era necessário adicionar os ficheiros AVI à base de dados (através de um processo manhoso, uma vez que o iTunes apenas permite importar vídeos compatíveis com o iPod) e tê-los sempre disponíveis no disco. Assim, a ideia de ter algo simples que me permitisse saber de forma rápida quais os episódios que me faltam ver em cada série fez com que colocasse mãos à obra (uma vez que, depois de muito procurar, não encontrei nenhuma aplicação que o fizesse).</p>
 <h2>Funcionalidades</h2>
 <ul>
 <li><strong>Gestão dos episódios já vistos e dos que ainda faltam ver</strong><br />
 Para cada Série e Temporada temos a listagem de todos os episódios, com um marcador nos que ainda não vimos.<br />
-<img src='/blog/wp-content/uploads/2007/12/episodios1.png' alt='Episódios não vistos' <img></li>
+<img loading="lazy" src='/blog/wp-content/uploads/2007/12/episodios1.png' alt='Episódios não vistos' <img></li>
 <li><strong>Informação sobre se já temos ou não o ficheiro com as legendas para cada episódio</strong><br />
 Para os episódios que não têm legendas, existem vários websites onde podemos pesquisar e adicionar aos episódios. Assim ficamos com o registo se temos ou não legendas para cada episódio.<br />
-<img src='/blog/wp-content/uploads/2007/12/legendas1.png' alt='Temos legendas' /> <img src='/blog/wp-content/uploads/2007/12/legendas2.png' alt='Adicionar Legendas' /></li>
+<img loading="lazy" src='/blog/wp-content/uploads/2007/12/legendas1.png' alt='Temos legendas' /> <img loading="lazy" src='/blog/wp-content/uploads/2007/12/legendas2.png' alt='Adicionar Legendas' /></li>
 <li><strong>Importação automática dos nomes e resumos de todos os episódios de cada temporada e dos actores de cada série</strong><br />
-Todos os dados são recolhidos dos websites <a href="http://epguides.com/">epguides.com</a> e <a href="http://tv.com/">tv.com</a> com autorização do autor.<br />
-<img src='/blog/wp-content/uploads/2007/12/importar2.png' alt='Importar dados dos episódios' /> <img src='/blog/wp-content/uploads/2007/12/importar1.png' alt='A importar dados' /></li>
+Todos os dados são recolhidos dos websites <a href="http://epguides.com/" rel="noopener noreferrer">epguides.com</a> e <a href="http://tv.com/" rel="noopener noreferrer">tv.com</a> com autorização do autor.<br />
+<img loading="lazy" src='/blog/wp-content/uploads/2007/12/importar2.png' alt='Importar dados dos episódios' /> <img loading="lazy" src='/blog/wp-content/uploads/2007/12/importar1.png' alt='A importar dados' /></li>
 <li><strong>Possibilidade de adicionar séries, temporadas e episódios manualmente</strong><br />
-Caso os episódios ou séries que queiramos adicionar não existam na base de dados do <a href="http://epguides.com/">epguides.com</a>, podemos adicionar a informação manualmente.<br />
-<img src='/blog/wp-content/uploads/2007/12/adicionar1.png' alt='Adicionar episódios manualmente' /> <img src='/blog/wp-content/uploads/2007/12/adicionar2.png' alt='Adicionar os dados dos episódios manualmente' /></li>
+Caso os episódios ou séries que queiramos adicionar não existam na base de dados do <a href="http://epguides.com/" rel="noopener noreferrer">epguides.com</a>, podemos adicionar a informação manualmente.<br />
+<img loading="lazy" src='/blog/wp-content/uploads/2007/12/adicionar1.png' alt='Adicionar episódios manualmente' /> <img loading="lazy" src='/blog/wp-content/uploads/2007/12/adicionar2.png' alt='Adicionar os dados dos episódios manualmente' /></li>
 <li><strong>Suporte multilingue</strong><br />
-Possibilidade de adicionar novos idiomas à aplicação. Actualmente suporta o Inglês, Português e Português do Brasil (se quiserem ajudar a traduzir ou melhorar a tradução actual, <a href="https://www.ivogomes.com/tvshows/translate/">registem-se aqui e participem</a>.</li>
+Possibilidade de adicionar novos idiomas à aplicação. Actualmente suporta o Inglês, Português e Português do Brasil (se quiserem ajudar a traduzir ou melhorar a tradução actual, <a href="https://www.ivogomes.com/tvshows/translate/" rel="noopener noreferrer">registem-se aqui e participem</a>.</li>
 </ul>
 <h2>Mais Informações</h2>
-<p>Estas e outras informações estão disponíveis na página oficial do projecto em <a href="https://www.ivogomes.com/tvshows/">https://www.ivogomes.com/tvshows/</a>.</p>
+<p>Estas e outras informações estão disponíveis na página oficial do projecto em <a href="https://www.ivogomes.com/tvshows/" rel="noopener noreferrer">https://www.ivogomes.com/tvshows/</a>.</p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">14 comentários</h2>
     <div class="blog-comment" id="comment-39193">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6c4d22316b84c57e7a75dd22b63bb15e?s=72&d=mp&r=r" alt="Joel Calado" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6c4d22316b84c57e7a75dd22b63bb15e?s=72&d=mp&r=r" alt="Joel Calado" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.joelcalado.com/' rel='external nofollow' class='url'>Joel Calado</a></p>
+        <p class="blog-comment-author"><a href='http://www.joelcalado.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Joel Calado</a></p>
         <p class="blog-comment-date">18 de Janeiro de 2008, 12:21</p>
         <div class="blog-comment-text"><p>Só falta um sistema de login, et voilá :)</p>
 <p>Muitos parabéns, gostei muito e já estou a utilizar!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-39194">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">18 de Janeiro de 2008, 12:26</p>
         <div class="blog-comment-text"><p>Sim, com um sistema de login podia ter um serviço online (em vez de cada um instalar o seu), mas como não sou programador não me atrevi a fazer tal coisa porque de certeza que iria haver alguém a encontrar alguma falha de segurança algures e lixar as contas de todos os utilizadores :)</p>
 <p>No entanto, é algo que poderá vir a acontecer no futuro.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-39198">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/130680ae0b1344611186fc59ae5ef00d?s=72&d=mp&r=r" alt="Sérgio Jardim" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/130680ae0b1344611186fc59ae5ef00d?s=72&d=mp&r=r" alt="Sérgio Jardim" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.plasmadesign.com.br/' rel='external nofollow' class='url'>Sérgio Jardim</a></p>
+        <p class="blog-comment-author"><a href='http://www.plasmadesign.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Sérgio Jardim</a></p>
         <p class="blog-comment-date">18 de Janeiro de 2008, 15:24</p>
         <div class="blog-comment-text"><p>Muito boa a idéia, Ivo. Parabéns. Gostei muito da interface e da forma com aimplementou . :)</p>
 <p>Irei indicar aos meus camaradas.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-39244">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/b9f4728c1c417f162ce6fb5dbdc4eb42?s=72&d=mp&r=r" alt="cenourinha" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/b9f4728c1c417f162ce6fb5dbdc4eb42?s=72&d=mp&r=r" alt="cenourinha" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.webtuga.com/' rel='external nofollow' class='url'>cenourinha</a></p>
+        <p class="blog-comment-author"><a href='http://www.webtuga.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>cenourinha</a></p>
         <p class="blog-comment-date">19 de Janeiro de 2008, 14:34</p>
         <div class="blog-comment-text"><p>Gostei, apenas tenho duas sugestões a fazer:<br />
 &#8211; Urls amigáveis;<br />
@@ -116,36 +118,36 @@ Possibilidade de adicionar novos idiomas à aplicação. Actualmente suporta o I
       </div>
     </div>
     <div class="blog-comment" id="comment-39285">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">20 de Janeiro de 2008, 14:58</p>
         <div class="blog-comment-text"><p>Acabei de implementar o sistema de login (ainda em fase <em>alpha</em>). Em breve poderei disponibilizar o serviço aqui directamente (preciso de um domínio para isto :) )</p>
 <p><strong>@cenourinha:</strong> Vou ver se consigo ter URLs amigáveis no futuro, quanto às meta tags, porque queres tags diferentes para cada página? Que tipo de informação achas que devem aparecer?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-39287">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/b9f4728c1c417f162ce6fb5dbdc4eb42?s=72&d=mp&r=r" alt="cenourinha" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/b9f4728c1c417f162ce6fb5dbdc4eb42?s=72&d=mp&r=r" alt="cenourinha" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.webtuga.com/' rel='external nofollow' class='url'>cenourinha</a></p>
+        <p class="blog-comment-author"><a href='http://www.webtuga.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>cenourinha</a></p>
         <p class="blog-comment-date">20 de Janeiro de 2008, 15:03</p>
         <div class="blog-comment-text"><p>@Ivo Gomes: O script pode ser adaptado para um sistema de reviews de séries e episódios em vez de ser apenas um gestor pessoal.<br />
 :P</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-39327">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6c4d22316b84c57e7a75dd22b63bb15e?s=72&d=mp&r=r" alt="Joel Calado" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6c4d22316b84c57e7a75dd22b63bb15e?s=72&d=mp&r=r" alt="Joel Calado" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.joelcalado.com/' rel='external nofollow' class='url'>Joel Calado</a></p>
+        <p class="blog-comment-author"><a href='http://www.joelcalado.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Joel Calado</a></p>
         <p class="blog-comment-date">21 de Janeiro de 2008, 10:40</p>
         <div class="blog-comment-text"><p>Encontrei um software para mac que faz mais ou menos o mesmo serviço, mas com menos bling infelizmente :P</p>
-<p><a href="http://angeman7.free.fr/iWatchTV/" rel="nofollow">http://angeman7.free.fr/iWatchTV/</a></p></div>
+<p><a href="http://angeman7.free.fr/iWatchTV/" rel="nofollow noopener noreferrer">http://angeman7.free.fr/iWatchTV/</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-39372">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">22 de Janeiro de 2008, 14:48</p>
         <div class="blog-comment-text"><p><strong>@cenourinha:</strong> O objectivo não é esse. Para review de séries tens o tv.com. O objectivo principal é &#8220;saber a quantas ando&#8221; quando estou a ver uma ou mais séries ao mesmo tempo.</p>
 <p><strong>@Joel Calado:</strong> Sim, também já me tinham falado do iWatchTV, mas infelizmente só funciona no Leopard, por isso não pude testar.</p>
@@ -153,26 +155,26 @@ Possibilidade de adicionar novos idiomas à aplicação. Actualmente suporta o I
       </div>
     </div>
     <div class="blog-comment" id="comment-39593">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">28 de Janeiro de 2008, 09:04</p>
-        <div class="blog-comment-text"><p>Já está: <a href="http://www.mytvshows.org/" rel="nofollow">http://www.mytvshows.org</a></p>
+        <div class="blog-comment-text"><p>Já está: <a href="http://www.mytvshows.org/" rel="nofollow noopener noreferrer">http://www.mytvshows.org</a></p>
 <p>:D</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-39597">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6c4d22316b84c57e7a75dd22b63bb15e?s=72&d=mp&r=r" alt="Joel Calado" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6c4d22316b84c57e7a75dd22b63bb15e?s=72&d=mp&r=r" alt="Joel Calado" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.joelcalado.com/' rel='external nofollow' class='url'>Joel Calado</a></p>
+        <p class="blog-comment-author"><a href='http://www.joelcalado.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Joel Calado</a></p>
         <p class="blog-comment-date">28 de Janeiro de 2008, 09:42</p>
         <div class="blog-comment-text"><p>Muito bem, parabéns! :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-39607">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/facc83456837c7338ab3f58afa37b437?s=72&d=mp&r=r" alt="Carlos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/facc83456837c7338ab3f58afa37b437?s=72&d=mp&r=r" alt="Carlos" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.cmoreira.net/' rel='external nofollow' class='url'>Carlos</a></p>
+        <p class="blog-comment-author"><a href='http://www.cmoreira.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Carlos</a></p>
         <p class="blog-comment-date">28 de Janeiro de 2008, 14:05</p>
         <div class="blog-comment-text"><p>Parabéns, vai ser útil!<br />
 Fico à espera de novas surpresas!<br />
@@ -180,15 +182,15 @@ Que tal um simples top dos episódios/séries mais vistas pelo conjunto de utili
       </div>
     </div>
     <div class="blog-comment" id="comment-39608">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">28 de Janeiro de 2008, 14:28</p>
         <div class="blog-comment-text"><p>O top de séries e episódios virá quando já tiver suficientes utilizadores registados. Assim sempre vou tendo algumas surpresas para ir adicionando em vez de ter já tudo logo no início :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41410">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9422d294873415ba1f4f4d6ff803407d?s=72&d=mp&r=r" alt="Zimaia" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9422d294873415ba1f4f4d6ff803407d?s=72&d=mp&r=r" alt="Zimaia" />
       <div>
         <p class="blog-comment-author">Zimaia</p>
         <p class="blog-comment-date">5 de Março de 2008, 11:33</p>
@@ -197,16 +199,16 @@ Já estou a usar e tb como tu não tinha encontrado nada útil.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-157094">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/23948f24a4ce6f272e06aa09ed2b20a4?s=72&d=mp&r=r" alt="Pedro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/23948f24a4ce6f272e06aa09ed2b20a4?s=72&d=mp&r=r" alt="Pedro" />
       <div>
         <p class="blog-comment-author">Pedro</p>
         <p class="blog-comment-date">19 de Novembro de 2015, 00:45</p>
-        <div class="blog-comment-text"><p><a href="http://checktv.com.br/" rel="nofollow">http://checktv.com.br/</a> , nada como apoiar o que é vosso =)</p></div>
+        <div class="blog-comment-text"><p><a href="http://checktv.com.br/" rel="nofollow noopener noreferrer">http://checktv.com.br/</a> , nada como apoiar o que é vosso =)</p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/comparativo-de-usabilidade-entre-2-telemoveis/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -220,7 +222,7 @@ Já estou a usar e tb como tu não tinha encontrado nada útil.</p></div>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

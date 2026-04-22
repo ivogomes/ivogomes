@@ -14,6 +14,7 @@
 <title>O novo website do jornal Record — Ivo Gomes</title>
 <meta name="description" content="O Jornal Record renovou o seu website há algumas semanas atrás. Além de terem piorado no grafismo (o site parece um wireframe), também pioraram na acessibilidade dos conteúdos. Em relação à usabilidade, continua tão má como antes (continuo a ter grandes dificuldades a distinguir o que é link e o que não é)." />
 <meta property="og:title" content="O novo website do jornal Record" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="O Jornal Record renovou o seu website há algumas semanas atrás. Além de terem piorado no grafismo (o site parece um wireframe), também pioraram na acessibilidade dos conteúdos. Em relação à usabilidade, continua tão má como antes (continuo a ter grandes dificuldades a distinguir o que é link e o que não é)." />
 <meta property="article:published_time" content="2007-10-01T09:09:32+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/o-novo-website-do-jornal-record/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>01 Out 2007</span>
+    <time datetime="2007-10-01">01 Out 2007</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,21 +52,21 @@
   </div>
 
   <article class="blog-article">
-<p>O <a href="http://www.record.pt/">Jornal Record</a> renovou o seu website há algumas semanas atrás. Além de terem piorado no grafismo (o site parece um <a href="/blog/wireframes">wireframe</a>), também pioraram na acessibilidade dos conteúdos. Em relação à usabilidade, continua tão má como antes (continuo a ter grandes dificuldades a distinguir o que é link e o que não é).</p>
-<p>Mas os problemas não se ficam por aqui. Usando um browser moderno (<a href="https://www.apple.com/safari">Safari 3</a>) é impossível ler qualquer notícia no site e, para isso, muito devem ter contribuído os 1027 erros de validação existentes no código HTML e os 10 erros de CSS.</p>
-<p><img src='/blog/wp-content/uploads/2007/10/erros-record.png' alt='Erros de validação no site do Jornal Record'></p>
+<p>O <a href="http://www.record.pt/" rel="noopener noreferrer">Jornal Record</a> renovou o seu website há algumas semanas atrás. Além de terem piorado no grafismo (o site parece um <a href="/blog/wireframes">wireframe</a>), também pioraram na acessibilidade dos conteúdos. Em relação à usabilidade, continua tão má como antes (continuo a ter grandes dificuldades a distinguir o que é link e o que não é).</p>
+<p>Mas os problemas não se ficam por aqui. Usando um browser moderno (<a href="https://www.apple.com/safari" rel="noopener noreferrer">Safari 3</a>) é impossível ler qualquer notícia no site e, para isso, muito devem ter contribuído os 1027 erros de validação existentes no código HTML e os 10 erros de CSS.</p>
+<p><img loading="lazy" src='/blog/wp-content/uploads/2007/10/erros-record.png' alt='Erros de validação no site do Jornal Record'></p>
 <p>Quanto à acessibilidade, o abuso de imagens sem texto alternativo e os próprios erros de HTML tornam a navegação muito difícil ou quase impossível.</p>
 <p>E este é o aspecto da página de uma notícia, tal como (não) se vê no Safari:</p>
-<p><img src='/blog/wp-content/uploads/2007/10/record.png' alt='Página de notícia do Jornal Record, vista no browser Safari'></p>
+<p><img loading="lazy" src='/blog/wp-content/uploads/2007/10/record.png' alt='Página de notícia do Jornal Record, vista no browser Safari'></p>
 <p>Senhores responsáveis pelo website do Record, vejam lá isso...</p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">22 comentários</h2>
     <div class="blog-comment" id="comment-31049">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/785d95ac1a024f19aec887e7dc358ed0?s=72&d=mp&r=r" alt="Paulo Abreu" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/785d95ac1a024f19aec887e7dc358ed0?s=72&d=mp&r=r" alt="Paulo Abreu" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.clustercube.com/' rel='external nofollow' class='url'>Paulo Abreu</a></p>
+        <p class="blog-comment-author"><a href='http://www.clustercube.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Paulo Abreu</a></p>
         <p class="blog-comment-date">1 de Outubro de 2007, 11:27</p>
         <div class="blog-comment-text"><p>O problema é que tipicamente estes projectos são feitos por várias empresas. E a muitas vezes faltam os conhecimentos técnicos, vontade de fazer bem e orçamento para dar tempo aos técnicos de executar correctamente o trabalho.</p>
 <p>Já me vi envolvido em vários projectos em que tive de trabalhar com HTML deplorável (se é que se pode chamar de HTML).</p>
@@ -72,7 +74,7 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-31054">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5c96547f453dd83b1e5d4675412f7497?s=72&d=mp&r=r" alt="ya" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5c96547f453dd83b1e5d4675412f7497?s=72&d=mp&r=r" alt="ya" />
       <div>
         <p class="blog-comment-author">ya</p>
         <p class="blog-comment-date">1 de Outubro de 2007, 12:19</p>
@@ -81,7 +83,7 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-31055">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/cd7cf0992ed6d57f2ccff38c064dddc8?s=72&d=mp&r=r" alt="Manuel Tavares" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/cd7cf0992ed6d57f2ccff38c064dddc8?s=72&d=mp&r=r" alt="Manuel Tavares" />
       <div>
         <p class="blog-comment-author">Manuel Tavares</p>
         <p class="blog-comment-date">1 de Outubro de 2007, 12:27</p>
@@ -92,9 +94,9 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-31056">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">1 de Outubro de 2007, 12:32</p>
         <div class="blog-comment-text"><p>Obrigado pelos vossos comentários. </p>
 <p>Eu também já tive que trabalhar com HTML horrível e por acaso neste preciso momento estou a transformar um site que nos foi enviado por uma empresa de design (com um HTML(?) deplorável) em algo mais limpo e acessível.</p>
@@ -102,24 +104,24 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-31079">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/55511513a483c7410858f981ad5cf923?s=72&d=mp&r=r" alt="Bruno Carlos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/55511513a483c7410858f981ad5cf923?s=72&d=mp&r=r" alt="Bruno Carlos" />
       <div>
-        <p class="blog-comment-author"><a href="https://www.brunocarlos.wordpress.com/" rel='external nofollow' class='url'>Bruno Carlos</a></p>
+        <p class="blog-comment-author"><a href="https://www.brunocarlos.wordpress.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Carlos</a></p>
         <p class="blog-comment-date">2 de Outubro de 2007, 00:54</p>
         <div class="blog-comment-text"><p>Acho que tenho uma ideia a que código HTML te referes&#8230; Ainda andas às voltas com isso? Ainda bem que não te entreguei a primeira versão que me passou pelas mãos&#8230; 100KB do melhor HTML??!!<br />
 Mas eles é que são Bons&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-31122">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">2 de Outubro de 2007, 09:01</p>
         <div class="blog-comment-text"><p>Olá Bruno. Sim, é esse, mas basicamente &#8220;caguei&#8221; no HTML deles e comecei do zero. Só aproveitei as imagens (e mesmo assim tive que editá-las para conseguir replicar aquele layout). Em princípio acabo hoje :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-31216">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/210ebfaffdc42c9a20766f494db2798b?s=72&d=mp&r=r" alt="Anonimo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/210ebfaffdc42c9a20766f494db2798b?s=72&d=mp&r=r" alt="Anonimo" />
       <div>
         <p class="blog-comment-author">Anonimo</p>
         <p class="blog-comment-date">3 de Outubro de 2007, 14:47</p>
@@ -127,13 +129,13 @@ Mas eles é que são Bons&#8230;</p></div>
 Concordo quando diz que os sites deviam funcionar em todos os browsers. No entanto, há que ter em conta que existem dezenas deles e não é fácil acertar os websites para todos eles. Neste momento, existem até diferenças entre versões do mesmo browser.<br />
 Estive a verificar o site do Record em IE6, IE7 e Firefox e comporta-se bem. Apesar do Safari ser um browser moderno, tem uma utilização abaixo do 1%, o que não o torna relevante quando as equipas de desenvolvimento testam os sites, principalmente se tiverem deadlines apertados de entrega.<br />
 Outra questão, também importante, uma pagina não ser xHTML compliant, não quer dizer que não é um html bem formado. De notar que avaliando os erros que dão, grande percentagem de erro não são relavantes.<br />
-Nota: Se passar o <a href="http://www.meiosepublicidade.pt/" rel="nofollow">http://www.meiosepublicidade.pt</a> pela mesma ferramenta, também apresenta erros&#8230;</p></div>
+Nota: Se passar o <a href="http://www.meiosepublicidade.pt/" rel="nofollow noopener noreferrer">http://www.meiosepublicidade.pt</a> pela mesma ferramenta, também apresenta erros&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-31218">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/55511513a483c7410858f981ad5cf923?s=72&d=mp&r=r" alt="Bruno Carlos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/55511513a483c7410858f981ad5cf923?s=72&d=mp&r=r" alt="Bruno Carlos" />
       <div>
-        <p class="blog-comment-author"><a href="https://www.brunocarlos.wordpress.com/" rel='external nofollow' class='url'>Bruno Carlos</a></p>
+        <p class="blog-comment-author"><a href="https://www.brunocarlos.wordpress.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Carlos</a></p>
         <p class="blog-comment-date">3 de Outubro de 2007, 15:03</p>
         <div class="blog-comment-text"><p>Relativamente ao site do meiosepublicidade, o que tenho a dizer é que os erros apresentados devem-se unicamente ao código das zonas de publicidade provenientes do openads (antigo phpadsnew).</p>
 <p>Penso que todos os browsers são importantes considerar, e se existir um esforço para cumprir as recomendações W3C, praticamente todos os browser se comportam de forma semelhante. </p>
@@ -141,7 +143,7 @@ Nota: Se passar o <a href="http://www.meiosepublicidade.pt/" rel="nofollow">http
       </div>
     </div>
     <div class="blog-comment" id="comment-31422">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/210ebfaffdc42c9a20766f494db2798b?s=72&d=mp&r=r" alt="Anonimo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/210ebfaffdc42c9a20766f494db2798b?s=72&d=mp&r=r" alt="Anonimo" />
       <div>
         <p class="blog-comment-author">Anonimo</p>
         <p class="blog-comment-date">5 de Outubro de 2007, 22:47</p>
@@ -152,7 +154,7 @@ No entanto, estou convicto que a equipa do Record, caso saiba que no safari o we
       </div>
     </div>
     <div class="blog-comment" id="comment-31508">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/09ad840cd5ab574afe111799979600d0?s=72&d=mp&r=r" alt="Marco" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/09ad840cd5ab574afe111799979600d0?s=72&d=mp&r=r" alt="Marco" />
       <div>
         <p class="blog-comment-author">Marco</p>
         <p class="blog-comment-date">6 de Outubro de 2007, 17:34</p>
@@ -163,9 +165,9 @@ Já para não falar de que mau código (x?)html como o do record não contribui 
       </div>
     </div>
     <div class="blog-comment" id="comment-31858">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">10 de Outubro de 2007, 16:42</p>
         <div class="blog-comment-text"><p>Concordo com o Marco, é perfeitamente possível conceber um site compatível com qualquer browser se seguirmos as regras do W3C e código standard.</p>
 <p>O único browser que não cumpre estas regras é o Internet Explorer (do 6 para baixo), no entanto é possível fazer funcionar qualquer layout sem recurso a hacks.</p>
@@ -174,9 +176,9 @@ Já para não falar de que mau código (x?)html como o do record não contribui 
       </div>
     </div>
     <div class="blog-comment" id="comment-31949">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6ec0b4cf6042cac0dcca47dd7c7ac7f4?s=72&d=mp&r=r" alt="Levi Figueira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6ec0b4cf6042cac0dcca47dd7c7ac7f4?s=72&d=mp&r=r" alt="Levi Figueira" />
       <div>
-        <p class="blog-comment-author"><a href='http://levifig.net/' rel='external nofollow' class='url'>Levi Figueira</a></p>
+        <p class="blog-comment-author"><a href='http://levifig.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Levi Figueira</a></p>
         <p class="blog-comment-date">12 de Outubro de 2007, 20:17</p>
         <div class="blog-comment-text"><p>Também falei sobre isto no meu blog há uns dias e enviei o conteúdo por mail para um mail que me foi indicado, de alguém com influência no dito site.</p>
 <p>Anyway, quero apenas reafirmar o que já aqui foi dito:<b>1.</b> Bom código funciona bem em qualquer BOM browser.<b>2.</b> Bom código é mais rápido, acessível e bem mais fácil de manter.</p>
@@ -187,7 +189,7 @@ Tirei alguns screenshots do que me apareceu em múltiplos popups (sim, estava no
       </div>
     </div>
     <div class="blog-comment" id="comment-33170">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/db9ba19f16cdc2ba2e1179da57dbc4bb?s=72&d=mp&r=r" alt="Reis" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/db9ba19f16cdc2ba2e1179da57dbc4bb?s=72&d=mp&r=r" alt="Reis" />
       <div>
         <p class="blog-comment-author">Reis</p>
         <p class="blog-comment-date">28 de Outubro de 2007, 22:46</p>
@@ -197,25 +199,25 @@ Eu ja nao compro esta m**** de jornal faz muito tempo.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-33913">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6c60980f9c844719d39b3a4624d8503e?s=72&d=mp&r=r" alt="Exit" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6c60980f9c844719d39b3a4624d8503e?s=72&d=mp&r=r" alt="Exit" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.mais-trafego.info/comunidade/index.php?referredby=315' rel='external nofollow' class='url'>Exit</a></p>
+        <p class="blog-comment-author"><a href='http://www.mais-trafego.info/comunidade/index.php?referredby=315' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Exit</a></p>
         <p class="blog-comment-date">9 de Novembro de 2007, 17:52</p>
         <div class="blog-comment-text"><p>Sim é uma situação lamentável esta do record sendo uma das grandes publicações nacionais diárias (já para não falar do site da abola.com) mas, acontece com quase todas elas&#8230; Talvez um dia quando estes jornais se aperceberem que o papel irá passar a ser o formato secundário, talvez ai tenhamos grandes portais informativos de qualidade, ate lá, temos que levar com uma salganhada destes sites todos os dias&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-37859">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6488410b88d8cdb9e9b6bb00908fd6a0?s=72&d=mp&r=r" alt="Jorge" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6488410b88d8cdb9e9b6bb00908fd6a0?s=72&d=mp&r=r" alt="Jorge" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.kiiweb.com/' rel='external nofollow' class='url'>Jorge</a></p>
+        <p class="blog-comment-author"><a href='http://www.kiiweb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge</a></p>
         <p class="blog-comment-date">24 de Dezembro de 2007, 21:05</p>
         <div class="blog-comment-text"><p>deplorával sem duvida toda a apresentação em tables parece uma pagina do myspace :-)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-37860">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6ec0b4cf6042cac0dcca47dd7c7ac7f4?s=72&d=mp&r=r" alt="Levi Figueira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6ec0b4cf6042cac0dcca47dd7c7ac7f4?s=72&d=mp&r=r" alt="Levi Figueira" />
       <div>
-        <p class="blog-comment-author"><a href='http://levifig.net/' rel='external nofollow' class='url'>Levi Figueira</a></p>
+        <p class="blog-comment-author"><a href='http://levifig.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Levi Figueira</a></p>
         <p class="blog-comment-date">24 de Dezembro de 2007, 21:12</p>
         <div class="blog-comment-text"><p>Já agora um update!</p>
 <p>Através do Pedro Aniceto, fiz chegar aos responsáveis uma resolução rápida para o problema no Safari! Claro que não corrigi todos os erros, mas o erro que está a causar tantos problemas é tão simples quanto irritante&#8230; Especialmente por saber quanto cobram estes senhores por trabalhos dignos de amadores&#8230;</p>
@@ -224,7 +226,7 @@ Eu ja nao compro esta m**** de jornal faz muito tempo.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-39482">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/f2b140cb652424340c831c2621262b31?s=72&d=mp&r=r" alt="Carlos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/f2b140cb652424340c831c2621262b31?s=72&d=mp&r=r" alt="Carlos" />
       <div>
         <p class="blog-comment-author">Carlos</p>
         <p class="blog-comment-date">25 de Janeiro de 2008, 02:48</p>
@@ -232,46 +234,46 @@ Eu ja nao compro esta m**** de jornal faz muito tempo.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-41243">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8f91123deb0bd261f34fb734d4752203?s=72&d=mp&r=r" alt="gisele lorena" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8f91123deb0bd261f34fb734d4752203?s=72&d=mp&r=r" alt="gisele lorena" />
       <div>
-        <p class="blog-comment-author"><a href='http://giselelorena/' rel='external nofollow' class='url'>gisele lorena</a></p>
+        <p class="blog-comment-author"><a href='http://giselelorena/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>gisele lorena</a></p>
         <p class="blog-comment-date">29 de Fevereiro de 2008, 22:02</p>
         <div class="blog-comment-text"><p>eu adoro o jornal bjuss xau ♥♥</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41372">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Março de 2008, 10:16</p>
         <div class="blog-comment-text"><p>Finalmente, ao fim de 5 meses (altura em que escrevi este post) lá corrigiram o site e já funciona normalmente em Safari. </p>
 <p>Como é que se demora 5 meses para corrigir uma linha de código?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41381">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6ec0b4cf6042cac0dcca47dd7c7ac7f4?s=72&d=mp&r=r" alt="Levi Figueira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6ec0b4cf6042cac0dcca47dd7c7ac7f4?s=72&d=mp&r=r" alt="Levi Figueira" />
       <div>
-        <p class="blog-comment-author"><a href='http://levifig.net/' rel='external nofollow' class='url'>Levi Figueira</a></p>
+        <p class="blog-comment-author"><a href='http://levifig.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Levi Figueira</a></p>
         <p class="blog-comment-date">4 de Março de 2008, 15:11</p>
         <div class="blog-comment-text"><p>Bem visto!<br />
-Eu ainda há dias fiz um <a href="http://levifig.net/blog/2008/02/safari-record-again/" rel="nofollow">novo post</a> sobre o assunto.</h2>
+Eu ainda há dias fiz um <a href="http://levifig.net/blog/2008/02/safari-record-again/" rel="nofollow noopener noreferrer">novo post</a> sobre o assunto.</h2>
 <p>Finalmente corrigiram&#8230; Vou ter que blogar isso! ;) (não posso só dizer mal :p)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41382">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Março de 2008, 15:20</p>
         <div class="blog-comment-text"><p>Acho que eles finalmente leram o teu post&#8230; </p>
-<p>Agora já só falta terem o record.pt a apontar para o <a href="http://www.record.pt/" rel="nofollow">http://www.record.pt</a><br />
+<p>Agora já só falta terem o record.pt a apontar para o <a href="http://www.record.pt/" rel="nofollow noopener noreferrer">http://www.record.pt</a><br />
 É incrível como é que há tantos sites em Portugal que não funcionam sem o &#8220;www&#8221;. O &#8220;www&#8221; nem serve para nada, não sei porque continuam a implementar coisas dessa maneira.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41383">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6ec0b4cf6042cac0dcca47dd7c7ac7f4?s=72&d=mp&r=r" alt="Levi Figueira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6ec0b4cf6042cac0dcca47dd7c7ac7f4?s=72&d=mp&r=r" alt="Levi Figueira" />
       <div>
-        <p class="blog-comment-author"><a href='http://levifig.net/' rel='external nofollow' class='url'>Levi Figueira</a></p>
+        <p class="blog-comment-author"><a href='http://levifig.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Levi Figueira</a></p>
         <p class="blog-comment-date">4 de Março de 2008, 15:37</p>
         <div class="blog-comment-text"><p>Pois&#8230; Sinceramente também me custa compreender que raio de vento faz mover as engrenagens dos cérebros dos sysadmins que não configuram os DNS como deve ser&#8230;</p>
 <p>É que ainda por cima, a maior parte das configurações de DNS &#8220;default&#8221; fazem as coisas bem feitas&#8230; É preciso ser-se muito &#8220;bronco&#8221; (sem querer ofender os broncos, claro) para se fazer uma coisa dessas&#8230;</p>
@@ -280,7 +282,7 @@ Eu ainda há dias fiz um <a href="http://levifig.net/blog/2008/02/safari-record-
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/acessibilidade-na-ponta-do-polegar/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -294,7 +296,7 @@ Eu ainda há dias fiz um <a href="http://levifig.net/blog/2008/02/safari-record-
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

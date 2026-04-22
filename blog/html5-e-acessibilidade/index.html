@@ -14,6 +14,7 @@
 <title>HTML5 e Acessibilidade — Ivo Gomes</title>
 <meta name="description" content="Desde a chegada do HTML5, que a web está a tornar-se um pouco mais acessível, quase sem o notarmos. O facto de se usar simplesmente as tags <header> e <footer> para os cabeçalhos e rodapés e a tag <nav> para os menus acaba por ser uma grande ajuda para quem usa sistemas assistivos para navegar na …" />
 <meta property="og:title" content="HTML5 e Acessibilidade" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Desde a chegada do HTML5, que a web está a tornar-se um pouco mais acessível, quase sem o notarmos. O facto de se usar simplesmente as tags <header> e <footer> para os cabeçalhos e rodapés e a tag <nav> para os menus acaba por ser uma grande ajuda para quem usa sistemas assistivos para navegar na …" />
 <meta property="article:published_time" content="2014-05-08T10:54:00+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/html5-e-acessibilidade/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>08 Mai 2014</span>
+    <time datetime="2014-05-08">08 Mai 2014</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -51,13 +53,13 @@
 
   <article class="blog-article">
 <p>Desde a chegada do HTML5, que a web está a tornar-se um pouco mais acessível, quase sem o notarmos.</p>
-<p>O facto de se usar simplesmente as tags <code>&lt;header&gt;</code> e <code>&lt;footer&gt;</code> para os cabeçalhos e rodapés e a tag <code>&lt;nav&gt;</code> para os menus acaba por ser uma grande ajuda para quem usa sistemas assistivos para navegar na web. Segundo os resultados de um <a href="http://webaim.org/projects/screenreadersurvey5/">inquérito recente da WebAIM aos utilizadores de screen-readers</a> a <a href="http://webaim.org/projects/screenreadersurvey5/#landmarks">maior parte dos utilizadores</a> usa estes "atalhos" para navegar nos websites mais facilmente.</p>
-<p>Apesar de alguns browsers ainda não terem um <a href="http://html5accessibility.com/">suporte completo</a> às novas tags e atributos do HTML5, o que é certo é que os que já o fazem são uma grande ajuda para as pessoas que necessitam de uma ajuda extra para navegar na web.</p>
+<p>O facto de se usar simplesmente as tags <code>&lt;header&gt;</code> e <code>&lt;footer&gt;</code> para os cabeçalhos e rodapés e a tag <code>&lt;nav&gt;</code> para os menus acaba por ser uma grande ajuda para quem usa sistemas assistivos para navegar na web. Segundo os resultados de um <a href="http://webaim.org/projects/screenreadersurvey5/" rel="noopener noreferrer">inquérito recente da WebAIM aos utilizadores de screen-readers</a> a <a href="http://webaim.org/projects/screenreadersurvey5/#landmarks" rel="noopener noreferrer">maior parte dos utilizadores</a> usa estes "atalhos" para navegar nos websites mais facilmente.</p>
+<p>Apesar de alguns browsers ainda não terem um <a href="http://html5accessibility.com/" rel="noopener noreferrer">suporte completo</a> às novas tags e atributos do HTML5, o que é certo é que os que já o fazem são uma grande ajuda para as pessoas que necessitam de uma ajuda extra para navegar na web.</p>
 <p>E não nos podemos esquecer do jeitão que dá os campos dos formulários virem identificados como "email", "number", ou "date" para adaptar o teclado dos telemóveis ao tipo de informação pedida. Este é um exemplo claro de uma melhoria de usabilidade e de acessibilidade que tem um impacto universal.</p>
 <p></p>
   </article>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/testes-de-usabilidade-em-touch-screens-em-1991/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -71,7 +73,7 @@
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

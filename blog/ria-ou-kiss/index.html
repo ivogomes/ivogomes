@@ -14,6 +14,7 @@
 <title>RIA ou KISS? — Ivo Gomes</title>
 <meta name="description" content="Apesar do título estranho deste artigo, ele não é para rir nem para dar beijos :)RIA significa &quot;Rich Internet Applications&quot; e KISS é o conceito de &quot;Keep It Simple, Stupid&quot;. Os dois são, para algumas pessoas, o oposto um do outro, mas pessoalmente eu acho que nos dias que correm, com cada vez mais aplicações webbased e com mais funcionalidades, é importante que sejam fáceis de utilizar e não compliquem ainda mais a vida ao utilizador." />
 <meta property="og:title" content="RIA ou KISS?" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Apesar do título estranho deste artigo, ele não é para rir nem para dar beijos :)RIA significa &quot;Rich Internet Applications&quot; e KISS é o conceito de &quot;Keep It Simple, Stupid&quot;. Os dois são, para algumas pessoas, o oposto um do outro, mas pessoalmente eu acho que nos dias que correm, com cada vez mais aplicações webbased e com mais funcionalidades, é importante que sejam fáceis de utilizar e não compliquem ainda mais a vida ao utilizador." />
 <meta property="article:published_time" content="2007-01-21T16:08:52+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/ria-ou-kiss/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>21 Jan 2007</span>
+    <time datetime="2007-01-21">21 Jan 2007</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -52,42 +54,42 @@
   <article class="blog-article">
 <p>Apesar do título estranho deste artigo, ele não é para rir nem para dar beijos :)<br />
 RIA significa "Rich Internet Applications" e KISS é o conceito de "Keep It Simple, Stupid". Os dois são, para algumas pessoas, o oposto um do outro, mas pessoalmente eu acho que nos dias que correm, com cada vez mais aplicações <em>webbased</em> e com mais funcionalidades, é importante que sejam fáceis de utilizar e não compliquem ainda mais a vida ao utilizador.</h2>
-<p>Há alguns dias fui convidado para me inscrever na <a href="http://www.riapt.org/">Comunidade Portuguesa de Desenvolvimento de Rich Internet Applications</a> e aceitei com agrado participar na discussão de tópicos relacionados com esta área. Uma Rich Internet Application é uma aplicação web com um aspecto e funcionamento semelhantes ao seu equivalente num desktop, ou seja, é como se fosse um programa instalado no computador, mas em vez disso, funciona através da Internet sem haver necessidade de instalar nada. Um exemplo deste tipo de aplicações é o <a href="https://docs.google.com/">Google Docs &amp; Spreadsheets</a> que é, nada mais nada menos, que uma versão web de um processador de texto e uma folha de cálculo (semelhantes ao <a href="https://office.microsoft.com/en-us/default.aspx">Microsoft Office</a> ou ao <a href="https://openoffice.org/">OpenOffice</a>)</p>
-<p><img id="image320" src="/blog/wp-content/uploads/2007/01/docs.png" alt="Google Docs &amp; Spreadsheets" /></p>
+<p>Há alguns dias fui convidado para me inscrever na <a href="http://www.riapt.org/" rel="noopener noreferrer">Comunidade Portuguesa de Desenvolvimento de Rich Internet Applications</a> e aceitei com agrado participar na discussão de tópicos relacionados com esta área. Uma Rich Internet Application é uma aplicação web com um aspecto e funcionamento semelhantes ao seu equivalente num desktop, ou seja, é como se fosse um programa instalado no computador, mas em vez disso, funciona através da Internet sem haver necessidade de instalar nada. Um exemplo deste tipo de aplicações é o <a href="https://docs.google.com/" rel="noopener noreferrer">Google Docs &amp; Spreadsheets</a> que é, nada mais nada menos, que uma versão web de um processador de texto e uma folha de cálculo (semelhantes ao <a href="https://office.microsoft.com/en-us/default.aspx" rel="noopener noreferrer">Microsoft Office</a> ou ao <a href="https://openoffice.org/" rel="noopener noreferrer">OpenOffice</a>)</p>
+<p><img loading="lazy" id="image320" src="/blog/wp-content/uploads/2007/01/docs.png" alt="Google Docs &amp; Spreadsheets" /></p>
 <p>Através do desenvolvimento destas aplicações, o objectivo é tornar o acesso à informação a partir de qualquer local, independentemente do computador que se usa ou do software que tenha instalado. Dessa forma, tenta-se replicar as mesmas funcionalidades e botões que normalmente existem nas aplicações que se instalam no computador. Esta semelhança tem como objectivo facilitar a transição entre o utilizador que passa do software instalado para uma versão web que se acede através do browser. Apesar de ser uma boa intenção, essa semelhança também trás problemas.</p>
 <p>O facto de haver uma página web que se comporta como uma aplicação normal pode ajudar a complicar um pouco mais as coisas para o utilizador comum. Isto porque, normalmente, numa página web não existem algumas funcionalidades a que estamos habituados, como por exemplo clicar com o botão direito do rato num objecto e aparecer um menu contextual. Quando fazemos isso numa página web normal, aparece-nos o menu do browser, mas quando estamos na página de uma Rich Internet Application, o funcionamento dos cliques deixa de ser o normal de uma página e passa a ser semelhante ao de uma aplicação normal. É aqui que entra o conceito de KISS, ou seja, apesar de tentarmos criar uma semelhança entre as duas aplicações, convém tentar mantê-la o mais simples possível.</p>
 <p>Já há tantas dificuldades que as pessoas sentem ao navegar em websites "normais", que se torna imperativo que estas novas aplicações sejam fáceis de utilizar em vez de trazerem mais uma componente de dificuldade associada à componente já existente de dificuldade de utilização de uma página web. </p>
 <h2>RIA e Internet Móvel</h2>
 <p>O desenvolvimento de aplicações com funcionalidades que vão além daquilo que estávamos habituados a fazer num browser faz com que seja necessário repensar a forma como os aparelhops móveis comunicam com a Internet.</p>
 <p>Actualmente muito poucos dispositivos móveis (neste caso vou falar dos telemóveis) conseguem visualizar páginas web de forma decente. A maior parte usa browsers bastante limitados e não existe um standard para fazer com que uma aplicação funcione em vários aparelhos diferentes, mesmo que sejam da mesma marca, o que torna extremamente difícil, se não impossível, o desenvolvimento de Rich Internet Applications que funcionem num telemóvel.</p>
-<p>Este ponto é bastante importante porque cada vez mais, com a proliferação de redes sem fios e a melhoria das redes móveis, os telemóveis serão cada vez mais usados para navegar na Internet. Em algumas partes do mundo <a href="http://www.informationweek.com/internet/showArticle.jhtml?articleID=186100308&subSection=Browsers">há mais pessoas a comprar telemóveis do que computadores portáteis para aceder à Internet</a>. </p>
+<p>Este ponto é bastante importante porque cada vez mais, com a proliferação de redes sem fios e a melhoria das redes móveis, os telemóveis serão cada vez mais usados para navegar na Internet. Em algumas partes do mundo <a href="http://www.informationweek.com/internet/showArticle.jhtml?articleID=186100308&subSection=Browsers" rel="noopener noreferrer">há mais pessoas a comprar telemóveis do que computadores portáteis para aceder à Internet</a>. </p>
 <p>A grande maioria das aplicações web foram desenvolvidas sem ter em conta o seu acesso a partir de dispositivos móveis. Em vez disso, estamos demasiado preocupados em desenvolver aplicações Web 2.0, e com isso, está-nos a escapar a verdadeira revolução que aí vem. Daqui a muito poucos anos, o acesso móvel aos conteúdos será cada vez mais uma realidade e com isso é necessário que aconteçam pelo menos duas coisas: primeiro, as Rich internet Applications devem ter em conta que podem ser acedidas por outros dispositivos além de um computador, e não perder funcionalidades com isso; segundo, os dispositivos móveis devem passar a ter um acesso decente aos conteúdos e devem ser criados standards para que as aplicações funcionem no maior número de aparelhos diferentes.</p>
-<p>Com a chegada do <a href="https://www.apple.com/iphone">iPhone</a> (pronto, tinha que falar disso, não é?) começa a revolução, uma vez que trás incorporado um browser (<a href="https://www.apple.com/iphone/internet/">Safari</a>) que normalmente apenas está disponível num computador. Dessa forma poderemos aproveitar as potencialidades normais de um browser, num aparelho móvel e com isso, ter acesso à maioria das funcionalidades que as Rich Internet Applications têm para oferecer.</p>
+<p>Com a chegada do <a href="https://www.apple.com/iphone" rel="noopener noreferrer">iPhone</a> (pronto, tinha que falar disso, não é?) começa a revolução, uma vez que trás incorporado um browser (<a href="https://www.apple.com/iphone/internet/" rel="noopener noreferrer">Safari</a>) que normalmente apenas está disponível num computador. Dessa forma poderemos aproveitar as potencialidades normais de um browser, num aparelho móvel e com isso, ter acesso à maioria das funcionalidades que as Rich Internet Applications têm para oferecer.</p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">5 comentários</h2>
     <div class="blog-comment" id="comment-7742">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel='external nofollow' class='url'>Dextro</a></p>
+        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dextro</a></p>
         <p class="blog-comment-date">21 de Janeiro de 2007, 23:12</p>
         <div class="blog-comment-text"><p>E tirando o facto que até hoje todo o santo telemovel S60 (grande maioria Nokias) já dispunha do browser Opera sem grandes limitações (muitos dos modelos até já vinham com o browser pre-instalado) tirando o tamanho do ecrã e que existe também o opera mini para telemoveis java não me pareçe que o problema seja a falta de padrões (até porque a maioria dos outros suporta xhtml-mp razoavelmente) mas sim da falta de memoria muitas vezes :?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-7813">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/96554c57415d6ba7c6d1a7cebbc4d7e9?s=72&d=mp&r=r" alt="João Saleiro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/96554c57415d6ba7c6d1a7cebbc4d7e9?s=72&d=mp&r=r" alt="João Saleiro" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.riapt.org/' rel='external nofollow' class='url'>João Saleiro</a></p>
+        <p class="blog-comment-author"><a href='http://www.riapt.org/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>João Saleiro</a></p>
         <p class="blog-comment-date">22 de Janeiro de 2007, 09:49</p>
         <div class="blog-comment-text"><p>Gostei especialmente da parte em que fala dos problemas de compatibilidade das RIAs em dispositivos móveis. É um assunto delicado, e de certa forma complexo com que tive que lidar já num projecto (foi resolvido criando dois interfaces diferentes para a mesma aplicação, um para PC e outro para o telemóvel). </p>
 <p>A sua opinião deve ser levada em conta para iniciar discussão em volta deste tema. Pergunto-lhe se se importaria de inserir a segunda parte do seu post no blog da riapt.org . Se aceitar, envie-me um mail para lhe adicionar as permissões de blogger. :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-7908">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/ed8138c2a50481a25e97ad3b0b55855c?s=72&d=mp&r=r" alt="Camilo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/ed8138c2a50481a25e97ad3b0b55855c?s=72&d=mp&r=r" alt="Camilo" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.needforlumbriga.com/' rel='external nofollow' class='url'>Camilo</a></p>
+        <p class="blog-comment-author"><a href='http://www.needforlumbriga.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Camilo</a></p>
         <p class="blog-comment-date">22 de Janeiro de 2007, 12:33</p>
         <div class="blog-comment-text"><p>Acho que o conceito de KISS não deve ser deixado de lado, mesmo numa aplicação rica. </p>
 <p>O <em>&#8220;Não me faça pensar&#8221;</em> é não pode ser esquecido nem um minuto!</p>
@@ -95,9 +97,9 @@ RIA significa "Rich Internet Applications" e KISS é o conceito de "Keep It Simp
       </div>
     </div>
     <div class="blog-comment" id="comment-7929">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/05961fff7b6390d49414d88c2ea6e127?s=72&d=mp&r=r" alt="Bruno Dulcetti" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/05961fff7b6390d49414d88c2ea6e127?s=72&d=mp&r=r" alt="Bruno Dulcetti" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.brunodulcetti.com/blog/' rel='external nofollow' class='url'>Bruno Dulcetti</a></p>
+        <p class="blog-comment-author"><a href='http://www.brunodulcetti.com/blog/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Dulcetti</a></p>
         <p class="blog-comment-date">22 de Janeiro de 2007, 20:01</p>
         <div class="blog-comment-text"><p>Boa Ivo. Gostei bastante e assim como o João disse, gostei da parte sobre os dispositivos móveis.</p>
 <p>E parabéns pela oportunidade na Comunidade Portuguesa de Desenvolvimento de Rich Internet Applications.</p>
@@ -107,16 +109,16 @@ RIA significa "Rich Internet Applications" e KISS é o conceito de "Keep It Simp
       </div>
     </div>
     <div class="blog-comment" id="comment-8005">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/b47fd6b55862b208431dc31aef778190?s=72&d=mp&r=r" alt="Eduardo Loureiro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/b47fd6b55862b208431dc31aef778190?s=72&d=mp&r=r" alt="Eduardo Loureiro" />
       <div>
         <p class="blog-comment-author">Eduardo Loureiro</p>
         <p class="blog-comment-date">23 de Janeiro de 2007, 19:22</p>
-        <div class="blog-comment-text"><p>E ai beleza? Queria ouvir sua opinião sobre o site da presidencia: <a href="http://www.presidencia.pt/" rel="nofollow">http://www.presidencia.pt/</a></p></div>
+        <div class="blog-comment-text"><p>E ai beleza? Queria ouvir sua opinião sobre o site da presidencia: <a href="http://www.presidencia.pt/" rel="nofollow noopener noreferrer">http://www.presidencia.pt/</a></p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/feliz-2007/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -130,7 +132,7 @@ RIA significa "Rich Internet Applications" e KISS é o conceito de "Keep It Simp
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

@@ -14,6 +14,7 @@
 <title>"Captchas" e Acessibilidade — Ivo Gomes</title>
 <meta name="description" content="Estive a ler um artigo publicado no site El Factor Humano sobre &quot;captchas&quot; e acessibilidade e achei excelente. A análise feita pelo Nelson Rodriguez-Peña foi muito bem feita e tendo em conta o estado actual de SPAM nos comentários, cada vez mais sites usam este tipo de protecção. No entanto, em termos de acessibilidade a …" />
 <meta property="og:title" content="&quot;Captchas&quot; e Acessibilidade" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Estive a ler um artigo publicado no site El Factor Humano sobre &quot;captchas&quot; e acessibilidade e achei excelente. A análise feita pelo Nelson Rodriguez-Peña foi muito bem feita e tendo em conta o estado actual de SPAM nos comentários, cada vez mais sites usam este tipo de protecção. No entanto, em termos de acessibilidade a …" />
 <meta property="article:published_time" content="2005-10-12T15:59:53+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/captchas-e-acessibilidade/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>12 Out 2005</span>
+    <time datetime="2005-10-12">12 Out 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,58 +52,58 @@
   </div>
 
   <article class="blog-article">
-<p>Estive a ler um artigo publicado no site <a href="http://www.webstudio.cl/blog/captchas-y-accesibilidad/">El Factor Humano</a> sobre "captchas" e acessibilidade e achei excelente. A análise feita pelo <a href="http://www.webstudio.cl/blog/?pagename=acerca">Nelson Rodriguez-Peña</a> foi muito bem feita e tendo em conta o estado actual de SPAM nos comentários, cada vez mais sites usam este tipo de protecção. No entanto, em termos de acessibilidade a utilização de "captchas" pode ser uma verdadeira barreira.</p>
+<p>Estive a ler um artigo publicado no site <a href="http://www.webstudio.cl/blog/captchas-y-accesibilidad/" rel="noopener noreferrer">El Factor Humano</a> sobre "captchas" e acessibilidade e achei excelente. A análise feita pelo <a href="http://www.webstudio.cl/blog/?pagename=acerca" rel="noopener noreferrer">Nelson Rodriguez-Peña</a> foi muito bem feita e tendo em conta o estado actual de SPAM nos comentários, cada vez mais sites usam este tipo de protecção. No entanto, em termos de acessibilidade a utilização de "captchas" pode ser uma verdadeira barreira.</p>
 <h2>O que são "captchas"?</h2>
-<p><img src='https://www.ivogomes.com/img/artigos/Captcha.jpg' alt='Captcha' />Primeiro que tudo convém explicar o que são "captchas". A palavra "captcha" é uma abreviação de "Completely Automated Public Turing Tests to Tell Computers and Humans Apart", ou seja, é basicamente um mecanismo automatizado que serve para distinguir humanos e máquinas e foi usado pela primeira vez pelo <a href="http://www.altavista.com/">Altavista</a> em 1997.</p>
+<p><img loading="lazy" src='https://www.ivogomes.com/img/artigos/Captcha.jpg' alt='Captcha' />Primeiro que tudo convém explicar o que são "captchas". A palavra "captcha" é uma abreviação de "Completely Automated Public Turing Tests to Tell Computers and Humans Apart", ou seja, é basicamente um mecanismo automatizado que serve para distinguir humanos e máquinas e foi usado pela primeira vez pelo <a href="http://www.altavista.com/" rel="noopener noreferrer">Altavista</a> em 1997.</p>
 <h2>Onde são usados os "captchas"?</h2>
 <p>Este mecanismo é usado normalmente em formulários de registo ou de comentários em vários sites e blogs. A razão pela qual se usam os "captchas" é para evitar que sejam feitos registos ou sejam inseridos comentários automaticamente por um script ou um robot. Ao mostrar uma imagem de um texto distorcido, pede-se ao utilizador que escreva esse mesmo texto numa caixa à parte. Desta forma faz-se a separação entre um utilizador humano real e um script gerado por um crawler ou robot.</p>
 <h2>A análise</h2>
-<p>A análise do <a href="http://www.webstudio.cl/blog/?pagename=acerca">Nelson</a> centra-se na dificuldade ou impossibilidade de alguns utilizadores conseguirem ler o que está escrito nos "captchas". Por exemplo, um utilizador cego nunca poderia aceder a um site que requeresse a leitura de um "captcha". Outros utilizadores que tenham desligado as imagens ou usem navegadores de texto também podem não se aperceber que é necessário visualizar uma imagem para poder aceder a determinadas áreas de um site.<br />
+<p>A análise do <a href="http://www.webstudio.cl/blog/?pagename=acerca" rel="noopener noreferrer">Nelson</a> centra-se na dificuldade ou impossibilidade de alguns utilizadores conseguirem ler o que está escrito nos "captchas". Por exemplo, um utilizador cego nunca poderia aceder a um site que requeresse a leitura de um "captcha". Outros utilizadores que tenham desligado as imagens ou usem navegadores de texto também podem não se aperceber que é necessário visualizar uma imagem para poder aceder a determinadas áreas de um site.<br />
 Há ainda os casos em que as letras estão tão distorcidas que muitas vezes não se percebe que letra é.</h2>
-<p>Para resolver, ou não, estes problemas, o <a href="https://www.msn.com/">MSN</a> utiliza dois tipos de "captchas": um com imagem e outro sonoro. Os utilizadores que não conseguirem ler a imagem podem ouvir o código que têm que inserir para poderem aceder aos conteúdos. Parece ser uma boa solução, no entanto falta saber se é fácil chegar a essa informação sonora facilmente...</p>
-<p><a href="http://www.webstudio.cl/blog/captchas-y-accesibilidad/">Vejam o artigo completo aqui</a>.</p>
+<p>Para resolver, ou não, estes problemas, o <a href="https://www.msn.com/" rel="noopener noreferrer">MSN</a> utiliza dois tipos de "captchas": um com imagem e outro sonoro. Os utilizadores que não conseguirem ler a imagem podem ouvir o código que têm que inserir para poderem aceder aos conteúdos. Parece ser uma boa solução, no entanto falta saber se é fácil chegar a essa informação sonora facilmente...</p>
+<p><a href="http://www.webstudio.cl/blog/captchas-y-accesibilidad/" rel="noopener noreferrer">Vejam o artigo completo aqui</a>.</p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">12 comentários</h2>
     <div class="blog-comment" id="comment-2990">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">13 de Outubro de 2005, 12:38</p>
         <div class="blog-comment-text"><p>A solução sonora parece-me bem (devia vir em vários formatos: flash, mp3, wav?). A imagem serve para utilizadores ditos &#8220;normais&#8221; e sem capacidade de audição (surdos) e o som para os utilizadores invisuais (cegos). A coisa complica-se se forem cegos e surdos.. :-\</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2991">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ed4228e84228830eb4150c35dd8d7e14?s=72&d=mp&r=r" alt="Gustavo Moura" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ed4228e84228830eb4150c35dd8d7e14?s=72&d=mp&r=r" alt="Gustavo Moura" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gmoura.com/' rel='external nofollow' class='url'>Gustavo Moura</a></p>
+        <p class="blog-comment-author"><a href='http://www.gmoura.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gustavo Moura</a></p>
         <p class="blog-comment-date">13 de Outubro de 2005, 13:26</p>
         <div class="blog-comment-text"><p>Gostei da solução sonora, pode ser uma boa saída tanto para acessibilidade quanto para ajudar o entendimento dos caracteres apresentados ao usuário..</p>
 <p>Quanto os “captchas�? usam palavras associadas como &#8220;blue&#8221; , &#8220;house&#8221; etc.. são bem mais compreensíveis.. já vi aplicativos que usam uma combinação de letras e números [ ! ]</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2992">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/421740fd537e4e42f19dfea835b953ef?s=72&d=mp&r=r" alt="Leo Cabral" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/421740fd537e4e42f19dfea835b953ef?s=72&d=mp&r=r" alt="Leo Cabral" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.leo.cabral.nom.br/' rel='external nofollow' class='url'>Leo Cabral</a></p>
+        <p class="blog-comment-author"><a href='http://www.leo.cabral.nom.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Leo Cabral</a></p>
         <p class="blog-comment-date">13 de Outubro de 2005, 15:28</p>
         <div class="blog-comment-text"><p>O uso do &#8220;Turing reverso&#8221; (a separar computadores de humanos) na Internet ainda é pouco conhecido. Um exemplo disso é o pequeno número de soluções desenvolvidas com o uso do CSS aural aliado ao &#8220;Captcha&#8221; e de navegadores que permitam tais soluções.</p>
 <p>Para o usuário, isso é apenas algo que surge após um erro de entrada de dado em algum formulário (talvez daí venha a resistência que ele cria em alguns usuários).</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3006">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/c25df13fbb393f879ca82a201b2baf5f?s=72&d=mp&r=r" alt="Mario" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/c25df13fbb393f879ca82a201b2baf5f?s=72&d=mp&r=r" alt="Mario" />
       <div>
-        <p class="blog-comment-author"><a href='http://kaylee.weblog.com.pt/' rel='external nofollow' class='url'>Mario</a></p>
+        <p class="blog-comment-author"><a href='http://kaylee.weblog.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Mario</a></p>
         <p class="blog-comment-date">17 de Outubro de 2005, 03:05</p>
         <div class="blog-comment-text"><p>Já agora uma pequena duvida, porque é que distorcem as palavras nas imagens?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3007">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">17 de Outubro de 2005, 06:17</p>
         <div class="blog-comment-text"><p>Mario,</p>
 <p>Porque da mesma maneira que há funções para criar texto dentro de uma imagem, também há funções para tentar ler texto a partir de uma. Se não estiver distorcida é &#8220;menos dificil&#8221; para os bots indentificar o texto na imagem..</p>
@@ -109,27 +111,27 @@ Há ainda os casos em que as letras estão tão distorcidas que muitas vezes nã
       </div>
     </div>
     <div class="blog-comment" id="comment-3009">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">17 de Outubro de 2005, 08:20</p>
         <div class="blog-comment-text"><p>Tal como o André explicou, há software OCR que consegue ler texto de uma imagem. Ao distorcer as imagens tenta-se evitar que elas possam ser lidas por uma máquina e só possam ser lidas por um humano.</p>
 <p>Contudo também já há várias técnicas para ultrapassar isto, pelo que o uso de &#8220;captchas&#8221; não é 100% seguro.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-52510">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8a41dfc12cc0f746cbabc209464586d4?s=72&d=mp&r=r" alt="MAQ" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8a41dfc12cc0f746cbabc209464586d4?s=72&d=mp&r=r" alt="MAQ" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.acessibilidadelegal.com/' rel='external nofollow' class='url'>MAQ</a></p>
+        <p class="blog-comment-author"><a href='http://www.acessibilidadelegal.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>MAQ</a></p>
         <p class="blog-comment-date">16 de Junho de 2008, 20:25</p>
         <div class="blog-comment-text"><p>Captchas, para nós cegos, realmente é uma barreira intransponível quando feito somente por imagem. Quando a UOL começou, no Brasil, a colocar captchas sonoros foi uma alegria para pessoas como eu. No entanto, se pensarmos em desenho universal, os surdocegos acabam ficando com o mesmo problema. A solução da soma dos números, para sites médios consegue resolver. No entanto, ainda acho que a solução universal e definitiva sejam perguntas que requeiram a inteligência humana para serem respondidas e que, por sinal, sejam também inteligentemente preparadas para que não possam ser adivinhadas. O W3C também já se pronunciou a respeito, mas solução que é boa, por onde precisamos passar, ainda não foi implementada.</p>
 <p>O fato é que ainda não acreditam que possamos ser consumidores de verdade e muitos ainda, apesar de estarmos na web praticamente há tanto ttempo quanto a web existe (eu estou desde 1995, mas tenho amigos cegos desde 1994), nossa passagem pelos sites e e-mails da vida não são marcados: &#8220;passou um cego por aqui&#8221;, ou &#8220;passou um surdo por aqui&#8221;. Nunca estamos nos públicos alvos dos projetos de AI e não somos público alvo específico ao mesmo tempo. Posso comprar uma televisão, como as tenho em casa, como posso comprar uma peça para meu micro, como esse que me faz teclar aqui e estar nesse post. Mas sabem em quantos lugares na web me permitem comprar daqui o que desejo? Pouquíssimos. A maior parte de vocês, amigos, podem comprar o que quiserem sem saírem de vossas cadeiras, eu que me locomovo com mais dificuldade, tenho de pegar minha bengala e sair para comprar!<br />
-Vejam algo em: <a href="http://www.acessibilidadelegal.com/" rel="nofollow">http://www.acessibilidadelegal.com</a> , ok?</h2>
+Vejam algo em: <a href="http://www.acessibilidadelegal.com/" rel="nofollow noopener noreferrer">http://www.acessibilidadelegal.com</a> , ok?</h2>
 <p>Abraços acessíveis do MAQ.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-73753">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/47cda24f8bce018b79215e239cd9c92c?s=72&d=mp&r=r" alt="Tony" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/47cda24f8bce018b79215e239cd9c92c?s=72&d=mp&r=r" alt="Tony" />
       <div>
         <p class="blog-comment-author">Tony</p>
         <p class="blog-comment-date">11 de Novembro de 2008, 17:08</p>
@@ -139,7 +141,7 @@ Vejam algo em: <a href="http://www.acessibilidadelegal.com/" rel="nofollow">http
       </div>
     </div>
     <div class="blog-comment" id="comment-86734">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/05371a29353f812d7e1f38311053ccb3?s=72&d=mp&r=r" alt="dina" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/05371a29353f812d7e1f38311053ccb3?s=72&d=mp&r=r" alt="dina" />
       <div>
         <p class="blog-comment-author">dina</p>
         <p class="blog-comment-date">24 de Agosto de 2009, 12:26</p>
@@ -147,19 +149,19 @@ Vejam algo em: <a href="http://www.acessibilidadelegal.com/" rel="nofollow">http
       </div>
     </div>
     <div class="blog-comment" id="comment-87298">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8a41dfc12cc0f746cbabc209464586d4?s=72&d=mp&r=r" alt="MAQ" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8a41dfc12cc0f746cbabc209464586d4?s=72&d=mp&r=r" alt="MAQ" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.acessibilidadelegal.com/' rel='external nofollow' class='url'>MAQ</a></p>
+        <p class="blog-comment-author"><a href='http://www.acessibilidadelegal.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>MAQ</a></p>
         <p class="blog-comment-date">16 de Outubro de 2009, 18:18</p>
         <div class="blog-comment-text"><p>Oi Dina.<br />
 Nós, seres humanos, temos facilidade em somar números, ainda mais tão pequenos. Entretanto, robots e spammers não têm tanta facilidade assim. Em meu blog eu tenho essa soma e, por ele não fazer parte dos interesses dos robots mais sofisticados, não tenho recebido spams e nada mais que não onão me interesse. A grande questão é que essa conta é apresentada no formato texto e não em uma imagem. Meus leitores de tela não lêem imagens, a não ser que seja feita a acessibilidade adequada com o atributo ALT, que o sistema OCR poderia capturar pelo robot. Assim, sendo em texto, sendo obrigado a fazer contas, essa pequena tecnologia consegue acalmar aquela avalanche de spams. Entretanto, caso o robot experimente todos os números de 1 a 8, acabará tendo a resposta, mas não são todos, aliás, muito poucos fazem isso. Eu leio a pergunta e escrevo a resposta com tranquilidade sendo cego, ok?</h2>
 <p>Espero que tenha conseguido te explicar.</p>
-<p>Mais sobre captchas em: <a href="http://www.acessibilidadelegal.com/13-captchas.php" rel="nofollow">http://www.acessibilidadelegal.com/13-captchas.php</a></p>
+<p>Mais sobre captchas em: <a href="http://www.acessibilidadelegal.com/13-captchas.php" rel="nofollow noopener noreferrer">http://www.acessibilidadelegal.com/13-captchas.php</a></p>
 <p>Abraços acessíveis e fáceis de usar. MAQ.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-103461">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4b33a0e770e4ed6c37766d38196715f?s=72&d=mp&r=r" alt="Daiane Janing" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4b33a0e770e4ed6c37766d38196715f?s=72&d=mp&r=r" alt="Daiane Janing" />
       <div>
         <p class="blog-comment-author">Daiane Janing</p>
         <p class="blog-comment-date">11 de Outubro de 2011, 14:33</p>
@@ -171,9 +173,9 @@ tempo, e os sites que visitei pronunciam os captchas em inglês.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-103475">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">11 de Outubro de 2011, 16:17</p>
         <div class="blog-comment-text"><p>O problema é que a maioria dos sistemas de captcha existentes foram desenvolvidos por empresas estrangeiras, e como tal, apenas fornecem o audio em inglês</p>
 <p>Por isso é que quando se implementa este sistema, deve ser tido em conta o público alvo. Não faz sentido ter um captcha em inglês num site escrito em português.</p></div>
@@ -181,7 +183,7 @@ tempo, e os sites que visitei pronunciam os captchas em inglês.</p></div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/os-10-maiores-erros-de-webdesign-em-2005/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -195,7 +197,7 @@ tempo, e os sites que visitei pronunciam os captchas em inglês.</p></div>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

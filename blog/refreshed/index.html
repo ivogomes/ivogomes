@@ -14,6 +14,7 @@
 <title>Refreshed — Ivo Gomes</title>
 <meta name="description" content="Como já devem ter reparado, hoje estreio um novo layout aqui no site. Além das alterações gráficas profundas, há também alterações ao nível das funcionalidades. No entanto, a grande alteração está relacionada com a aplicação da tecnologia AJAX." />
 <meta property="og:title" content="Refreshed" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Como já devem ter reparado, hoje estreio um novo layout aqui no site. Além das alterações gráficas profundas, há também alterações ao nível das funcionalidades. No entanto, a grande alteração está relacionada com a aplicação da tecnologia AJAX." />
 <meta property="article:published_time" content="2005-08-05T15:49:20+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/refreshed/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>05 Ago 2005</span>
+    <time datetime="2005-08-05">05 Ago 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -54,18 +56,18 @@
 <h2>Ajax</h2>
 <p>Há pouco tempo falei sobre a tecnologia da moda, o Ajax, e desde esse dia fiquei com vontade em experimentar algumas coisas e ver como funcionavam. No fundo, a maior parte das coisas feitas com o AJAX são basicamente código JavaScript+CSS. Com esta remodelação do site tive a oportunidade de implementar algumas novidades!! Aqui vão alguns exemplos:</p>
 <h3>Pesquisa em Directo</h3>
-<p><img src='https://www.ivogomes.com/img/artigos/Picture1.png' alt='Pesquisa em Directo' />Experimentem usar o motor de busca no topo da página. Ao mesmo tempo que escrevem a palavra para pesquisar, os resultados vão sendo mostrados sem ser necessário clicar num botão "pesquisar" e sem ter de carregar uma nova página.<br />
+<p><img loading="lazy" src='https://www.ivogomes.com/img/artigos/Picture1.png' alt='Pesquisa em Directo' />Experimentem usar o motor de busca no topo da página. Ao mesmo tempo que escrevem a palavra para pesquisar, os resultados vão sendo mostrados sem ser necessário clicar num botão "pesquisar" e sem ter de carregar uma nova página.<br />
 Em termos de experiência do utilizador isto pode não causar grande impacto porque a maioria dos utilizadores experientes escreve a palavra a pesquisar e carrega na tecla ENTER logo a seguir. No entanto, a pesquisa funciona das duas formas: directa e normal.</h2>
-<p>Para implementar esta técnica usei o tutorial do <a href="http://fernando.dubtribe.com/archives/2005/06/01/livesearch-for-wordpress-1512/">Fernando Graphicos</a> que indica como instalar o LiveSearch no <a href="https://www.wordpress.org/">WordPress</a>.</p>
+<p>Para implementar esta técnica usei o tutorial do <a href="http://fernando.dubtribe.com/archives/2005/06/01/livesearch-for-wordpress-1512/" rel="noopener noreferrer">Fernando Graphicos</a> que indica como instalar o LiveSearch no <a href="https://www.wordpress.org/" rel="noopener noreferrer">WordPress</a>.</p>
 <h3>FAT (Fade Anything Technique)</h3>
-<p><img src='https://www.ivogomes.com/img/artigos/Picture3.png' alt='FAT' />Há uns tempos atrás a <a href="http://www.37signals.com/">37Signals</a> apresentou a <a href="https://37signals.com/svn/archives/000558.php">YFT (Yellow Fade Technique)</a> que é uma técnica de salientar alguma mensagem importante numa página através de uma alteração da cor de fundo gradual de amarelo para branco. Podem encontrar um bom exemplo da aplicação desta técnica na <a href="http://www.tadalist.com/">Ta-Da List</a>.</p>
-<p>Inspirado pela inovação da 37Signals, o <a href="http://www.axentric.com/">Adam Michela</a> criou a <a href="http://www.axentric.com/posts/default/7">FAT (Fade Anything Technique)</a> que permite alterar gradualmente a cor de fundo de qualquer objecto numa página com a possibilidade de se poder escolher a cor (sem estar restrito apenas ao amarelo). Podem ver um exemplo do funcionamento da FAT <a href="http://www.axentric.com/aside/fat/">nesta demonstração</a> ou aqui mesmo nas <a href="https://www.ivogomes.com/404.php">mensagens de erro do site</a>.</p>
+<p><img loading="lazy" src='https://www.ivogomes.com/img/artigos/Picture3.png' alt='FAT' />Há uns tempos atrás a <a href="http://www.37signals.com/" rel="noopener noreferrer">37Signals</a> apresentou a <a href="https://37signals.com/svn/archives/000558.php" rel="noopener noreferrer">YFT (Yellow Fade Technique)</a> que é uma técnica de salientar alguma mensagem importante numa página através de uma alteração da cor de fundo gradual de amarelo para branco. Podem encontrar um bom exemplo da aplicação desta técnica na <a href="http://www.tadalist.com/" rel="noopener noreferrer">Ta-Da List</a>.</p>
+<p>Inspirado pela inovação da 37Signals, o <a href="http://www.axentric.com/" rel="noopener noreferrer">Adam Michela</a> criou a <a href="http://www.axentric.com/posts/default/7" rel="noopener noreferrer">FAT (Fade Anything Technique)</a> que permite alterar gradualmente a cor de fundo de qualquer objecto numa página com a possibilidade de se poder escolher a cor (sem estar restrito apenas ao amarelo). Podem ver um exemplo do funcionamento da FAT <a href="http://www.axentric.com/aside/fat/" rel="noopener noreferrer">nesta demonstração</a> ou aqui mesmo nas <a href="https://www.ivogomes.com/404.php" rel="noopener noreferrer">mensagens de erro do site</a>.</p>
 <h3>Nice Forms</h3>
-<p><img src='https://www.ivogomes.com/img/artigos/Picture2.png' alt='Caixas de texto dos formul&aacute;rios' />Nos formulários usei a técnica do <a href="http://www.badboy.ro/">Lucian Slatineanu</a> (mais conhecido como badboy). Basicamente, <a href="http://www.badboy.ro/articles/2005-07-23/index.php">esta técnica</a> permite alterar o layout dos formulários para um design mais atraente. No entanto, tem algumas limitações porque alguns browsers não suportam bem estas alterações, por isso só apliquei em alguns elementos dos formulários.</p>
+<p><img loading="lazy" src='https://www.ivogomes.com/img/artigos/Picture2.png' alt='Caixas de texto dos formul&aacute;rios' />Nos formulários usei a técnica do <a href="http://www.badboy.ro/" rel="noopener noreferrer">Lucian Slatineanu</a> (mais conhecido como badboy). Basicamente, <a href="http://www.badboy.ro/articles/2005-07-23/index.php" rel="noopener noreferrer">esta técnica</a> permite alterar o layout dos formulários para um design mais atraente. No entanto, tem algumas limitações porque alguns browsers não suportam bem estas alterações, por isso só apliquei em alguns elementos dos formulários.</p>
 <h3>Ajuda nos formulários</h3>
 <p>Se experimentarem clicar nas caixas de texto do formulário de comentários ou no formulário de contacto verão que para cada caixa existe um texto de ajuda. Esta é uma técnica simples de implementar e que dá muito jeito para não sobrecarregar o ecrã com informações que só são relevantes em determinado contexto. neste caso, as informações são importantes apenas para quem vai escrever um comentário ou enviar uma mensagem e não valia a pena estarem a ocupar espaço denecessáriamente no ecrã.</p>
 <h2>Plugins</h2>
-<p>Além da implementação do AJAX, foram também adicionados alguns plugins ao WordPress. O <a href="https://ww.wordpress.org/">WordPress</a> é o sistema de gestão de conteúdos que permite escrever artigos no blog e manter as páginas do site.</p>
+<p>Além da implementação do AJAX, foram também adicionados alguns plugins ao WordPress. O <a href="https://ww.wordpress.org/" rel="noopener noreferrer">WordPress</a> é o sistema de gestão de conteúdos que permite escrever artigos no blog e manter as páginas do site.</p>
 <h2>Novo menu</h2>
 <p>Foram também efectuadas alterações ao menu e à navegação no site. Foram criadas duas novas áreas: usabilidade e css&webstandards. Em "Usabilidade" vou colocar algumas definições do tema, links para artigos, etc. Em CSS&Webstandards vou colocar alguns pedaços de código CSS que tenho espalhados pelo meu disco rígido e que por vezes fazem falta e não sei onde estão. Desta forma vou tentar criar uma pequena base de dados de exemplos e dicas de CSS e webdesign.<br />
 Nota: Estas duas áreas ainda não estão online.</h2>
@@ -81,25 +83,25 @@ Espero que gostem!</h2>
   <section class="blog-comments">
     <h2 class="blog-comments-title">17 comentários</h2>
     <div class="blog-comment" id="comment-2900">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4b8ac0bc39ea7d962a57688cd7af5b8e?s=72&d=mp&r=r" alt="Ciro Feitosa" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4b8ac0bc39ea7d962a57688cd7af5b8e?s=72&d=mp&r=r" alt="Ciro Feitosa" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.cirofeitosa.com.br/' rel='external nofollow' class='url'>Ciro Feitosa</a></p>
+        <p class="blog-comment-author"><a href='http://www.cirofeitosa.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ciro Feitosa</a></p>
         <p class="blog-comment-date">5 de Agosto de 2005, 16:18</p>
         <div class="blog-comment-text"><p>Parabéns Ivo. Muito bom as novas funcionalidades: Ajax, Nice Forms, Fade nos &#8220;blocks&#8221;. Um excelente trabalho. Sucesso!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2903">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/d03be6770803c2a503c092add0f0ba97?s=72&d=mp&r=r" alt="Carlos Jorge Andrade" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/d03be6770803c2a503c092add0f0ba97?s=72&d=mp&r=r" alt="Carlos Jorge Andrade" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.karlus.net/' rel='external nofollow' class='url'>Carlos Jorge Andrade</a></p>
+        <p class="blog-comment-author"><a href='http://blog.karlus.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Carlos Jorge Andrade</a></p>
         <p class="blog-comment-date">5 de Agosto de 2005, 17:20</p>
         <div class="blog-comment-text"><p>Clap! Clap! Clap! :-)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2904">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.ipodportugal.com/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://www.ipodportugal.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">6 de Agosto de 2005, 14:53</p>
         <div class="blog-comment-text"><p>Espero que não te importes de eu ir usar algumas destas novas técnicas num site que estou a desenvolver.<br />
 Parabéns!<br />
@@ -107,17 +109,17 @@ E já agora, o teu site funciona às mil maravilhas no Camino versão 2005080408
       </div>
     </div>
     <div class="blog-comment" id="comment-2905">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.ipodportugal.com/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://www.ipodportugal.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">6 de Agosto de 2005, 16:31</p>
-        <div class="blog-comment-text"><p>Ah! Já agora, pelo menos no Safari que eu tenho (1.3 v312) o site <a href="http://www.badboy.ro/assets/articles/niceforms/niceforms.html" rel="nofollow">http://www.badboy.ro/assets/articles/niceforms/niceforms.html</a> funciona bem e o teu também parece estar a funcionar correctamente&#8230;</p></div>
+        <div class="blog-comment-text"><p>Ah! Já agora, pelo menos no Safari que eu tenho (1.3 v312) o site <a href="http://www.badboy.ro/assets/articles/niceforms/niceforms.html" rel="nofollow noopener noreferrer">http://www.badboy.ro/assets/articles/niceforms/niceforms.html</a> funciona bem e o teu também parece estar a funcionar correctamente&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2906">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5f9722d15fdd925b201bebaeb8f256f2?s=72&d=mp&r=r" alt="MarcoGomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5f9722d15fdd925b201bebaeb8f256f2?s=72&d=mp&r=r" alt="MarcoGomes" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.marcogomes.com/' rel='external nofollow' class='url'>MarcoGomes</a></p>
+        <p class="blog-comment-author"><a href='http://www.marcogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>MarcoGomes</a></p>
         <p class="blog-comment-date">6 de Agosto de 2005, 18:48</p>
         <div class="blog-comment-text"><p>Cara, como sempre sendo dos desbravadores de novos recursos da Web.</p>
 <p>Seu site está formidável, quem sabe algum dia eu implemente algumas ferramentas parecidas no meu website.</p>
@@ -126,9 +128,9 @@ E já agora, o teu site funciona às mil maravilhas no Camino versão 2005080408
       </div>
     </div>
     <div class="blog-comment" id="comment-2908">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">7 de Agosto de 2005, 10:56</p>
         <div class="blog-comment-text"><p>Jorge:<br />
 No meu Safari (v2.0) as caixas de texto e os botões não são alteráveis e aparecem sempre com o aspecto default, tanto no meu site como no badboy.ro&#8230; Quanto às técnicas utilizadas, podes usar à vontade, não fui eu que as criei e elas são de uso livre porque estão disponíveis para download nos sites dos seus criadores.</h2>
@@ -139,9 +141,9 @@ Obrigado por visitarem o site e pelos elogios!!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2911">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1c81268b2ab0b1c6716be36d06ec2519?s=72&d=mp&r=r" alt="Pedro Custódio" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1c81268b2ab0b1c6716be36d06ec2519?s=72&d=mp&r=r" alt="Pedro Custódio" />
       <div>
-        <p class="blog-comment-author"><a href='http://patriciaepedro.com/pedro/blog' rel='external nofollow' class='url'>Pedro Custódio</a></p>
+        <p class="blog-comment-author"><a href='http://patriciaepedro.com/pedro/blog' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Pedro Custódio</a></p>
         <p class="blog-comment-date">8 de Agosto de 2005, 10:26</p>
         <div class="blog-comment-text"><p>5 estrelas IVO!<br />
 Está super porreiro o novo layout.<br />
@@ -149,9 +151,9 @@ Está super porreiro o novo layout.<br />
       </div>
     </div>
     <div class="blog-comment" id="comment-2914">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ed4228e84228830eb4150c35dd8d7e14?s=72&d=mp&r=r" alt="Gustavo Moura" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ed4228e84228830eb4150c35dd8d7e14?s=72&d=mp&r=r" alt="Gustavo Moura" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gmoura.com/' rel='external nofollow' class='url'>Gustavo Moura</a></p>
+        <p class="blog-comment-author"><a href='http://www.gmoura.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gustavo Moura</a></p>
         <p class="blog-comment-date">9 de Agosto de 2005, 17:27</p>
         <div class="blog-comment-text"><p>Oi Ivo,</p>
 <p>Seu novo layout ficou muito bom, também sou um grande &#8220;fã&#8221; do verde! Parabéns.</p>
@@ -159,13 +161,13 @@ Está super porreiro o novo layout.<br />
 <p>Mas será que elas não estão muito parecidas com links? Você já tentou usar outra configuração? eu acho que derrepente um subilhado pontilhado poderia ser uma solução, fica a sugestão.. ;-)</p>
 <p>Abraços,</p>
 <p>Gustavo<br />
-<a href="http://www.gmoura.com/" rel="nofollow">http://www.gmoura.com</a></p></div>
+<a href="http://www.gmoura.com/" rel="nofollow noopener noreferrer">http://www.gmoura.com</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2915">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">10 de Agosto de 2005, 15:53</p>
         <div class="blog-comment-text"><p>Olá Gustavo!</p>
 <p>As palavras auto-explicativas, ou acrónimos e abreviações, têm o sublinhado pontilhado. Que browser usou para navegar no site?</p>
@@ -175,34 +177,34 @@ Está super porreiro o novo layout.<br />
       </div>
     </div>
     <div class="blog-comment" id="comment-2916">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ed4228e84228830eb4150c35dd8d7e14?s=72&d=mp&r=r" alt="Gustavo Moura" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ed4228e84228830eb4150c35dd8d7e14?s=72&d=mp&r=r" alt="Gustavo Moura" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.gmoura.com/' rel='external nofollow' class='url'>Gustavo Moura</a></p>
+        <p class="blog-comment-author"><a href='http://www.gmoura.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gustavo Moura</a></p>
         <p class="blog-comment-date">10 de Agosto de 2005, 17:48</p>
         <div class="blog-comment-text"><p>Então esté explicado, acessei o site com o FireFox, e o subilinhado ficou contínuo</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2917">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.ipodportugal.com/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://www.ipodportugal.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">10 de Agosto de 2005, 18:11</p>
         <div class="blog-comment-text"><p>Então Gustavo, actualize a sua cópia do Firefox.<br />
 Eu estou a usar a 1.0.6 para Mac OS X e o pontilhado fica pontilhado. Não fica contínuo.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2918">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">10 de Agosto de 2005, 18:14</p>
         <div class="blog-comment-text"><p>Eu penso que só o IE é que ainda não suporta pontilhados nem tracejados e substitui por uma linha contínua&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2966">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/130680ae0b1344611186fc59ae5ef00d?s=72&d=mp&r=r" alt="Sérgio Jardim" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/130680ae0b1344611186fc59ae5ef00d?s=72&d=mp&r=r" alt="Sérgio Jardim" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.plasmadesign.com.br/' rel='external nofollow' class='url'>Sérgio Jardim</a></p>
+        <p class="blog-comment-author"><a href='http://www.plasmadesign.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Sérgio Jardim</a></p>
         <p class="blog-comment-date">30 de Setembro de 2005, 19:13</p>
         <div class="blog-comment-text"><p>Ivo, você pode usar a borda superior para demarcar os acrônimos. Ou mesmo, uma cor de fundo bem clara, e com um ícone de informação (um ! por exemplo) à direita do termo.</p>
 <p>Apenas sugestão. Não vejo problemas neste aspecto já que você já usa o cursos em forma de ?.</p>
@@ -210,7 +212,7 @@ Eu estou a usar a 1.0.6 para Mac OS X e o pontilhado fica pontilhado. Não fica 
       </div>
     </div>
     <div class="blog-comment" id="comment-2982">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8f308ca130fa6ea71d16b8d2f2ced1f4?s=72&d=mp&r=r" alt="Wallace" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8f308ca130fa6ea71d16b8d2f2ced1f4?s=72&d=mp&r=r" alt="Wallace" />
       <div>
         <p class="blog-comment-author">Wallace</p>
         <p class="blog-comment-date">10 de Outubro de 2005, 08:44</p>
@@ -220,15 +222,15 @@ Bravo.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2983">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">10 de Outubro de 2005, 09:12</p>
-        <div class="blog-comment-text"><p>Para quem quiser ter um blog concebido em Ruby e AJAX, pode testar o <a href="http://typo.leetsoft.com/trac/" rel="nofollow">Typo</a>. Tem aqui um <a href="http://www.leetsoft.com/rails/typo_ajax.mov" rel="nofollow">demo</a>.</p></div>
+        <div class="blog-comment-text"><p>Para quem quiser ter um blog concebido em Ruby e AJAX, pode testar o <a href="http://typo.leetsoft.com/trac/" rel="nofollow noopener noreferrer">Typo</a>. Tem aqui um <a href="http://www.leetsoft.com/rails/typo_ajax.mov" rel="nofollow noopener noreferrer">demo</a>.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2984">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8f308ca130fa6ea71d16b8d2f2ced1f4?s=72&d=mp&r=r" alt="wallace" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/8f308ca130fa6ea71d16b8d2f2ced1f4?s=72&d=mp&r=r" alt="wallace" />
       <div>
         <p class="blog-comment-author">wallace</p>
         <p class="blog-comment-date">10 de Outubro de 2005, 10:12</p>
@@ -238,20 +240,20 @@ Agradecia dicas variadas.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2985">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">10 de Outubro de 2005, 10:53</p>
         <div class="blog-comment-text"><p>Não sei que mais dicas posso dar em relação a este tema.<br />
 A maior parte das funcionalidades que o AJAX permite fazer estão disponíveis gratuitamente na Internet sem necessidade de ter conhecimentos muito avançados de programação. No entanto, para um conhecimento mais aprofundado do uso do AJAX sugiro que comece a estudar programação Ruby (há quem diga que o Ruby é a linguagem de programação mais usável de sempre).</h2>
 <p>Apesar de haver uma enorme euforia com a introdução do AJAX, não nos podemos esquecer que isso pode implicar vários problemas de usabilidade porque há situações em que o utilizador espera determinados comportamentos típicos do ambiente web e o AJAX pode tornar a experiência completamente diferente. Para tal é sempre necessário dar &#8220;feedback&#8221; ao utilizador do que está a acontecer.</p>
 <p>Num ambiente web, quando se clica em algo, espera-se que seja carregada uma nova página com as alterações. Com o AJAX não aconcete esse novo carregamento da página e como tal é necessário informar o utilizador que algo mudou em consequência do seu clique.</p>
-<p>Mais informações sobre Ruby no site <a href="http://www.rubyonrails.org/" rel="nofollow">Ruby on Rails</a></p></div>
+<p>Mais informações sobre Ruby no site <a href="http://www.rubyonrails.org/" rel="nofollow noopener noreferrer">Ruby on Rails</a></p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/a-usabilidade-dos-conteudos/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -265,7 +267,7 @@ A maior parte das funcionalidades que o AJAX permite fazer estão disponíveis g
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

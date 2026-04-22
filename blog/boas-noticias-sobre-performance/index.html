@@ -14,6 +14,7 @@
 <title>Boas notícias sobre 'performance' — Ivo Gomes</title>
 <meta name="description" content="Aqui há uns dias tive uns problemas graves com o meu serviço de alojamento (DreamHost). Felizmente está tudo resolvido e o problema estava relacionado com um script que estava a tentar optimizar uma tabela na base de dados com cerca de 300MB. Entrou em loop e nunca mais parou, mandando o servidor abaixo e consumindo toda a RAM existente (e a não existente também). Como consequência disso, o Portal das Curiosidades (o site que contém a tal tabela) ficou em baixo durante 2 dias e os quase 21.000 utilizadores ficaram privados do seu espaço preferido na Internet ;)" />
 <meta property="og:title" content="Boas notícias sobre 'performance'" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Aqui há uns dias tive uns problemas graves com o meu serviço de alojamento (DreamHost). Felizmente está tudo resolvido e o problema estava relacionado com um script que estava a tentar optimizar uma tabela na base de dados com cerca de 300MB. Entrou em loop e nunca mais parou, mandando o servidor abaixo e consumindo toda a RAM existente (e a não existente também). Como consequência disso, o Portal das Curiosidades (o site que contém a tal tabela) ficou em baixo durante 2 dias e os quase 21.000 utilizadores ficaram privados do seu espaço preferido na Internet ;)" />
 <meta property="article:published_time" content="2008-09-15T16:24:13+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/boas-noticias-sobre-performance/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>15 Set 2008</span>
+    <time datetime="2008-09-15">15 Set 2008</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,10 +52,10 @@
   </div>
 
   <article class="blog-article">
-<p>Aqui há uns dias tive uns <a href="/blog/sugestoes-para-alojamento-web/">problemas graves com o meu serviço de alojamento</a> (<a href="https://www.dreamhost.com/">DreamHost</a>). Felizmente está tudo resolvido e o problema estava relacionado com um script que estava a tentar optimizar uma tabela na base de dados com cerca de 300MB. Entrou em loop e nunca mais parou, mandando o servidor abaixo e consumindo toda a RAM existente (e a não existente também). Como consequência disso, o <a href="http://www.portaldascuriosidades.com/">Portal das Curiosidades</a> (o site que contém a tal tabela) ficou em baixo durante 2 dias e os quase 21.000 utilizadores ficaram privados do seu espaço preferido na Internet ;)</p>
+<p>Aqui há uns dias tive uns <a href="/blog/sugestoes-para-alojamento-web/">problemas graves com o meu serviço de alojamento</a> (<a href="https://www.dreamhost.com/" rel="noopener noreferrer">DreamHost</a>). Felizmente está tudo resolvido e o problema estava relacionado com um script que estava a tentar optimizar uma tabela na base de dados com cerca de 300MB. Entrou em loop e nunca mais parou, mandando o servidor abaixo e consumindo toda a RAM existente (e a não existente também). Como consequência disso, o <a href="http://www.portaldascuriosidades.com/" rel="noopener noreferrer">Portal das Curiosidades</a> (o site que contém a tal tabela) ficou em baixo durante 2 dias e os quase 21.000 utilizadores ficaram privados do seu espaço preferido na Internet ;)</p>
 <p>Cheguei mesmo a pensar que tinha sido o fim do Portal das Curiosidades, isto no dia exacto em que fazia 9 anos de vida (9/9/99 - 9/9/08). </p>
-<p>Depois do problema resolvido, dos 3 sites que tenho no servidor (VPS), apenas um, o <a href="http://www.mytvshows.org/">MyTVShows</a>, continuava extremamente lento a carregar as páginas e a gastar alguma RAM a mais comparado com os outros dois sites muito mais pesados e com muito mais visitantes (este blog e o Portal das Curiosidades).</p>
-<p>Depois de andar a olhar para o código e de andar a tentar optimizar as ligações à base de dados, dei de caras com um artigo sobre o uso de INDEXES nas tabelas da base de dados MySQL. Segundo esse artigo, numa tabela com 1000 registos, o uso de um INDEX melhoraria o desempenho da mesma em cerca de 100 vezes. Desconfiei e fui ler o artigo sobre <a href="https://dev.mysql.com/doc/refman/5.0/en/mysql-indexes.html">INDEXES no manual de MySQL</a> e decidi tentar.</p>
+<p>Depois do problema resolvido, dos 3 sites que tenho no servidor (VPS), apenas um, o <a href="http://www.mytvshows.org/" rel="noopener noreferrer">MyTVShows</a>, continuava extremamente lento a carregar as páginas e a gastar alguma RAM a mais comparado com os outros dois sites muito mais pesados e com muito mais visitantes (este blog e o Portal das Curiosidades).</p>
+<p>Depois de andar a olhar para o código e de andar a tentar optimizar as ligações à base de dados, dei de caras com um artigo sobre o uso de INDEXES nas tabelas da base de dados MySQL. Segundo esse artigo, numa tabela com 1000 registos, o uso de um INDEX melhoraria o desempenho da mesma em cerca de 100 vezes. Desconfiei e fui ler o artigo sobre <a href="https://dev.mysql.com/doc/refman/5.0/en/mysql-indexes.html" rel="noopener noreferrer">INDEXES no manual de MySQL</a> e decidi tentar.</p>
 <p>Cinco minutos depois, o My TV Shows estava a debitar páginas com uma velocidade como se não houvesse amanhã :D</p>
 <p>Passou de cerca de 4 ou 5 segundos para 0,07 segundos o tempo que demora a carregar a página inicial. Todas as outras operações ficaram também notavelmente mais rápidas.</p>
 <p>Nota: para que saibam, a primeira vez que programei alguma coisa foi o My TV Shows, por isso é natural que não soubesse estes pequenos (grandes) pormenores. Vou aprendendo à medida que vou avançando.</p>
@@ -63,25 +65,25 @@
   <section class="blog-comments">
     <h2 class="blog-comments-title">7 comentários</h2>
     <div class="blog-comment" id="comment-68581">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4a5a2b3e901096ed28a11854ee6f6082?s=72&d=mp&r=r" alt="Paulo Abreu" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4a5a2b3e901096ed28a11854ee6f6082?s=72&d=mp&r=r" alt="Paulo Abreu" />
       <div>
-        <p class="blog-comment-author"><a href='http://explicadores.net/' rel='external nofollow' class='url'>Paulo Abreu</a></p>
+        <p class="blog-comment-author"><a href='http://explicadores.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Paulo Abreu</a></p>
         <p class="blog-comment-date">15 de Setembro de 2008, 17:24</p>
         <div class="blog-comment-text"><p>Sugiro técnicas de cache.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-68599">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e40207c60ef1192b263ec384fff4cb01?s=72&d=mp&r=r" alt="Gustavo Felisberto" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e40207c60ef1192b263ec384fff4cb01?s=72&d=mp&r=r" alt="Gustavo Felisberto" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.felisberto.net/' rel='external nofollow' class='url'>Gustavo Felisberto</a></p>
+        <p class="blog-comment-author"><a href='http://blog.felisberto.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gustavo Felisberto</a></p>
         <p class="blog-comment-date">15 de Setembro de 2008, 19:03</p>
         <div class="blog-comment-text"><p>Eu se fosse a ti comprava um livrito sobre bases de dados e lia a teoria da coisa. Digo isto porque indices são uma coisa boa, mas não devemos abusar da coisa.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-68605">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/584d974034606369cf2e3401e4497354?s=72&d=mp&r=r" alt="Pedro Melo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/584d974034606369cf2e3401e4497354?s=72&d=mp&r=r" alt="Pedro Melo" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.simplicidade.org/' rel='external nofollow' class='url'>Pedro Melo</a></p>
+        <p class="blog-comment-author"><a href='http://www.simplicidade.org/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Pedro Melo</a></p>
         <p class="blog-comment-date">15 de Setembro de 2008, 19:51</p>
         <div class="blog-comment-text"><p>Olá,</p>
 <p>no mysql, podes activar um log de queries lentas.</p>
@@ -91,9 +93,9 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-68628">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b344e4656bde3fe40f0e3160610ef579?s=72&d=mp&r=r" alt="JoaoJose" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b344e4656bde3fe40f0e3160610ef579?s=72&d=mp&r=r" alt="JoaoJose" />
       <div>
-        <p class="blog-comment-author"><a href='http://kiss.souagil.com.br/' rel='external nofollow' class='url'>JoaoJose</a></p>
+        <p class="blog-comment-author"><a href='http://kiss.souagil.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>JoaoJose</a></p>
         <p class="blog-comment-date">15 de Setembro de 2008, 23:32</p>
         <div class="blog-comment-text"><p>Técnicas de Cache são ótimas e diminuem bastante o consumo de recursos. Nem sempre é possível utilizar Cache, mas com um pouco de esforço é possível diminuir bastante o acesso ao banco.</p>
 <p>Otimizações de banco também são interessantes, caso você faça bastante junções aconselho ler um pouco sobre VIEWs. VIEWs criam tabelas virtuais que armazenam os dados já filtrados e agrupados, economizando o tempo de junção.</p>
@@ -101,7 +103,7 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-68629">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5a46c45ae5e044a4e63c9ed91b7b7c0a?s=72&d=mp&r=r" alt="Francisco" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5a46c45ae5e044a4e63c9ed91b7b7c0a?s=72&d=mp&r=r" alt="Francisco" />
       <div>
         <p class="blog-comment-author">Francisco</p>
         <p class="blog-comment-date">15 de Setembro de 2008, 23:32</p>
@@ -113,9 +115,9 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-68728">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/584d974034606369cf2e3401e4497354?s=72&d=mp&r=r" alt="Pedro Melo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/584d974034606369cf2e3401e4497354?s=72&d=mp&r=r" alt="Pedro Melo" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.simplicidade.org/' rel='external nofollow' class='url'>Pedro Melo</a></p>
+        <p class="blog-comment-author"><a href='http://www.simplicidade.org/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Pedro Melo</a></p>
         <p class="blog-comment-date">16 de Setembro de 2008, 12:17</p>
         <div class="blog-comment-text"><p>JoaoJose,</p>
 <p>as views não fazem nada disso. A querie é executada sempre totalmente.</p>
@@ -125,9 +127,9 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-68786">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="Dextro" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel='external nofollow' class='url'>Dextro</a></p>
+        <p class="blog-comment-author"><a href='http://www.nonsensebb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dextro</a></p>
         <p class="blog-comment-date">16 de Setembro de 2008, 20:42</p>
         <div class="blog-comment-text"><p>Bem, o MyTVShows parece um site novo :D</p>
 <p>BTW subscrevo o que foi dito aqui, procura um bom livrinho sobre SQL que é sempre uma boa ajuda.</p></div>
@@ -135,7 +137,7 @@
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/sugestoes-para-alojamento-web/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -149,7 +151,7 @@
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

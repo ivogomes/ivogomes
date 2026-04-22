@@ -14,6 +14,7 @@
 <title>Novos sites do governo: ViaCTT — Ivo Gomes</title>
 <meta name="description" content="Na semana passada o Governo lançou dois novos sites que, segundo eles, irão facilitar bastante a vida dos cidadãos e eliminarão muitas burocracias. Os sites lançados foram o ViaCTT e o NetEmpregos. Vou fazer aqui uma breve análise a cada um dos sites em termos de usabilidade e acessibilidade, começando pelo ViaCTT." />
 <meta property="og:title" content="Novos sites do governo: ViaCTT" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Na semana passada o Governo lançou dois novos sites que, segundo eles, irão facilitar bastante a vida dos cidadãos e eliminarão muitas burocracias. Os sites lançados foram o ViaCTT e o NetEmpregos. Vou fazer aqui uma breve análise a cada um dos sites em termos de usabilidade e acessibilidade, começando pelo ViaCTT." />
 <meta property="article:published_time" content="2006-07-04T13:31:52+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/novos-sites-do-governo-viactt/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>04 Jul 2006</span>
+    <time datetime="2006-07-04">04 Jul 2006</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,29 +52,29 @@
   </div>
 
   <article class="blog-article">
-<p>Na semana passada o Governo lançou dois novos sites que, segundo eles, irão facilitar bastante a vida dos cidadãos e eliminarão muitas burocracias. Os sites lançados foram o <a href="http://www.viactt.pt/">ViaCTT</a> e o <a href="http://www.netemprego.gov.pt/">NetEmprego</a>. Vou fazer aqui uma breve análise a cada um dos sites em termos de usabilidade e acessibilidade, começando pelo ViaCTT.</p>
+<p>Na semana passada o Governo lançou dois novos sites que, segundo eles, irão facilitar bastante a vida dos cidadãos e eliminarão muitas burocracias. Os sites lançados foram o <a href="http://www.viactt.pt/" rel="noopener noreferrer">ViaCTT</a> e o <a href="http://www.netemprego.gov.pt/" rel="noopener noreferrer">NetEmprego</a>. Vou fazer aqui uma breve análise a cada um dos sites em termos de usabilidade e acessibilidade, começando pelo ViaCTT.</p>
 <h2>ViaCTT</h2>
-<p>O <a href="http://www.viactt.pt/">ViaCTT</a> é um serviço que permite que todos os cidadãos e empresas tenham uma caixa de correio electrónica onde podem receber a correspondência. A caixa postal electrónica faz parte do programa para simplificação e combate à burocracia na administração pública (Simplex), e está incluído no Plano Tecnológico, que foi lançado em Novembro pelo Governo.</p>
+<p>O <a href="http://www.viactt.pt/" rel="noopener noreferrer">ViaCTT</a> é um serviço que permite que todos os cidadãos e empresas tenham uma caixa de correio electrónica onde podem receber a correspondência. A caixa postal electrónica faz parte do programa para simplificação e combate à burocracia na administração pública (Simplex), e está incluído no Plano Tecnológico, que foi lançado em Novembro pelo Governo.</p>
 <blockquote><p>Uma das vantagens do ViaCTT é a capacidade de agrupar várias facturas electrónicas, extractos bancários e outros documentos num único sítio. Através da sua caixa de email, o utilizador poderá também efectuar pagamentos.</p></blockquote>
 <p>Ao aceder ao site, a primeira impressão que se tem é a extrema lentidão de carregamento das imagens. A página inicial contém duas imagens que no total têm cerca de 160Kb. Para um site que se espera que seja acedido por todos os portugueses (cerca de 10 milhões), ter uma página que gaste tanta largura de banda vai tornar-se numa despesa mensal enorme para o estado.</p>
-<p><img id="image273" src="/blog/wp-content/uploads/2006/07/ViaCTT.png" alt="Página inicial do ViaCTT" /></p>
-<p>Se repararem no canto inferior direito da página, existe informação de que o site tem um nível de acessibilidade de conformidade A, ou seja, passa em todos os testes de prioridade 1. No entanto, só na página inicial existem 19 instâncias de nível 1 que não passam no teste automático e 65 que necessitam de revisão manual (teste efectuado no <a href="http://www.tawdis.net/">TAWDIS</a>). A maior parte dos erros encontrados são a inexistência de texto alternativo nas imagens, o que é grave uma vez que as imagens usadas no site contêm texto e links.</p>
-<p>Nem sequer o código HTML utilizado segue os web standards falhando a verificação em <a href="https://validator.w3.org/check?uri=http%3A%2F%2Fwww.viactt.pt%2Fwebsite%2Findex.html&charset=iso-8859-1&doctype=XHTML+1.0+Transitional">XHTML 1.0</a> <span class="small">(84 erros)</span> e <a href="https://validator.w3.org/check?uri=http%3A%2F%2Fwww.viactt.pt%2Fwebsite%2Findex.html&charset=iso-8859-1&doctype=XHTML+1.1">XHTML 1.1</a> <span class="small">(98 erros)</span> bem como <a href="https://validator.w3.org/check?uri=http%3A%2F%2Fwww.viactt.pt%2Fwebsite%2Findex.html&charset=iso-8859-1&doctype=HTML+4.01+Transitional">HTML 4.0</a> <span class="small">(26 erros)</span>. Nem sequer foi declarado um DOCTYPE nem o enconding do texto pelo que foi necessário definir esses valores manualmente para testar a validação do código.</p>
-<p>Já na <a href="https://www.viactt.pt/ebm/enroll/user/show.do">página de registo</a>, o formulário usa tooltips ao lado de cada campo para dar instruções de preenchimento, no entanto estas instruções só são activadas passando o rato por cima de uma imagem. Um utilizador que use apenas o teclado ou outro dispositivo apontador não terá acesso a estas instruções.</p>
+<p><img loading="lazy" id="image273" src="/blog/wp-content/uploads/2006/07/ViaCTT.png" alt="Página inicial do ViaCTT" /></p>
+<p>Se repararem no canto inferior direito da página, existe informação de que o site tem um nível de acessibilidade de conformidade A, ou seja, passa em todos os testes de prioridade 1. No entanto, só na página inicial existem 19 instâncias de nível 1 que não passam no teste automático e 65 que necessitam de revisão manual (teste efectuado no <a href="http://www.tawdis.net/" rel="noopener noreferrer">TAWDIS</a>). A maior parte dos erros encontrados são a inexistência de texto alternativo nas imagens, o que é grave uma vez que as imagens usadas no site contêm texto e links.</p>
+<p>Nem sequer o código HTML utilizado segue os web standards falhando a verificação em <a href="https://validator.w3.org/check?uri=http%3A%2F%2Fwww.viactt.pt%2Fwebsite%2Findex.html&charset=iso-8859-1&doctype=XHTML+1.0+Transitional" rel="noopener noreferrer">XHTML 1.0</a> <span class="small">(84 erros)</span> e <a href="https://validator.w3.org/check?uri=http%3A%2F%2Fwww.viactt.pt%2Fwebsite%2Findex.html&charset=iso-8859-1&doctype=XHTML+1.1" rel="noopener noreferrer">XHTML 1.1</a> <span class="small">(98 erros)</span> bem como <a href="https://validator.w3.org/check?uri=http%3A%2F%2Fwww.viactt.pt%2Fwebsite%2Findex.html&charset=iso-8859-1&doctype=HTML+4.01+Transitional" rel="noopener noreferrer">HTML 4.0</a> <span class="small">(26 erros)</span>. Nem sequer foi declarado um DOCTYPE nem o enconding do texto pelo que foi necessário definir esses valores manualmente para testar a validação do código.</p>
+<p>Já na <a href="https://www.viactt.pt/ebm/enroll/user/show.do" rel="noopener noreferrer">página de registo</a>, o formulário usa tooltips ao lado de cada campo para dar instruções de preenchimento, no entanto estas instruções só são activadas passando o rato por cima de uma imagem. Um utilizador que use apenas o teclado ou outro dispositivo apontador não terá acesso a estas instruções.</p>
 <p>Depois temos um teclado virtual para escrever a password. Porque é necessário um teclado virtual para escrever a password num formulário de registo? Consigo compreender o uso deste tipo de segurança quando se está a fazer o login, mas no registo não há nenhuma razão para o utilizar. Além disso, na minha opinião, os teclados virtuais são menos seguros do que um campo de password porque qualquer pessoa que esteja ao lado do computador consegue facilmente saber a minha password ao ver onde clico no teclado. Para usar este tipo de login não posso ter ninguém à volta...</p>
 <p>Só depois de efectuar o registo, quando se tenta fazer o login, é que nos é apresentado o texto das Condições Gerais de Prestação do Serviço. Ou seja, primeiro registo-me e insiro os meus dados e depois de os ter enviado é que me perguntam se concordo com as Condições Gerais de Prestação do Serviço? </p>
 <p>De qualquer das formas ainda não recebi nenhuma chave de confirmação para activar o registo, por isso não consigo dizer-lhes que <strong>não concordo</strong> com as condições gerais porque não quero receber publicidade. Já me chega op lixo que recebo no correio e o spam que recebo no e-mail.</p>
 <blockquote><p>3.3. Os dados pessoais fornecidos pelo TITULAR no Formulário do Pedido de Registo serão processados e armazenados informaticamente numa base de dados pertencente aos CTT e destinam-se a ser utilizados pelos CTT no âmbito da relação contratual com o TITULAR <strong>e para a comercialização de serviços e/ou produtos das empresas do Grupo CTT</strong>.</p></blockquote>
-<p><img id="image274" src="/blog/wp-content/uploads/2006/07/activacaoViaCTT.png" alt="Activação do registo no ViaCTT" /></p>
+<p><img loading="lazy" id="image274" src="/blog/wp-content/uploads/2006/07/activacaoViaCTT.png" alt="Activação do registo no ViaCTT" /></p>
 <p>Tentei usar uma chave aleatória "teste" só para ver o que acontecia e o erro que aparece é o seguinte: "A password é de preenchimento obrigatório."<br />
 Pois, mas não consigo inserir a password porque o teclado virtual não funciona...</h2>
 <p>Enfim, criaram um sistema tão complicado para uma coisa que podia ser feita de forma muito mais simples e eficaz. Além de que a opinião de muitas pessoas é que o serviço é inútil e pouca gente o vai utilizar...</p>
 <h3>Mais análises sobre o ViaCTT</h3>
 <ul>
-<li>Lâmpada Azul - <a href="http://weblog.jcraveiro.com/artigos/viactt-tragedia-em-tres-actos/">ViaCTT: Tragédia em 3 actos</a></li>
-<li>Flickr - <a href="https://www.flickr.com/photos/jcraveiro/179040139/">Página incial do ViaCTT com notas sobre alguns elementos</a></li>
-<li>Gildot - <a href="http://www.gildot.org/article.pl?sid=06/06/27/2155240">Problemas de privacidade no ViaCTT</a></li>
-<li>SIC Online - <a href="http://sic.sapo.pt/online/noticias/vida/20060627bereprovaviactt.htm">Bloco de Esquerda reprova ViaCTT</a></li>
+<li>Lâmpada Azul - <a href="http://weblog.jcraveiro.com/artigos/viactt-tragedia-em-tres-actos/" rel="noopener noreferrer">ViaCTT: Tragédia em 3 actos</a></li>
+<li>Flickr - <a href="https://www.flickr.com/photos/jcraveiro/179040139/" rel="noopener noreferrer">Página incial do ViaCTT com notas sobre alguns elementos</a></li>
+<li>Gildot - <a href="http://www.gildot.org/article.pl?sid=06/06/27/2155240" rel="noopener noreferrer">Problemas de privacidade no ViaCTT</a></li>
+<li>SIC Online - <a href="http://sic.sapo.pt/online/noticias/vida/20060627bereprovaviactt.htm" rel="noopener noreferrer">Bloco de Esquerda reprova ViaCTT</a></li>
 </ul>
 <h2>Artigos relacionados</h2>
 <ul>
@@ -83,23 +85,23 @@ Pois, mas não consigo inserir a password porque o teclado virtual não funciona
   <section class="blog-comments">
     <h2 class="blog-comments-title">7 comentários</h2>
     <div class="blog-comment" id="comment-5125">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/21409c93b32ddde3a83d1db7017a359f?s=72&d=mp&r=r" alt="Tiago Azevedo Fernandes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/21409c93b32ddde3a83d1db7017a359f?s=72&d=mp&r=r" alt="Tiago Azevedo Fernandes" />
       <div>
-        <p class="blog-comment-author"><a href='http://taf.net/opiniao/' rel='external nofollow' class='url'>Tiago Azevedo Fernandes</a></p>
+        <p class="blog-comment-author"><a href='http://taf.net/opiniao/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Tiago Azevedo Fernandes</a></p>
         <p class="blog-comment-date">4 de Julho de 2006, 14:29</p>
         <div class="blog-comment-text"><p>A chave de activação do viaCTT, juntamente com a nome de utilizador, vem em envelope ABERTO dos CTT! Não foi um erro pontual porque é daqueles emitidos automaticamente, e pura e simplesmente não está fechado numa das arestas maiores. Isto não se passou só comigo&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-5126">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/aaa9094f0e9d0ebbaf476f97698f1735?s=72&d=mp&r=r" alt="Cláudio Franco" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/aaa9094f0e9d0ebbaf476f97698f1735?s=72&d=mp&r=r" alt="Cláudio Franco" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.claudiofranco.net/' rel='external nofollow' class='url'>Cláudio Franco</a></p>
+        <p class="blog-comment-author"><a href='http://blog.claudiofranco.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Cláudio Franco</a></p>
         <p class="blog-comment-date">4 de Julho de 2006, 14:44</p>
         <div class="blog-comment-text"><p>Aposto que ainda aparece aqui alguém a dizer que isto são coisas de &#8220;geek&#8221; e que realmente interessa é funcionar no Browser utilizado por 90% da população mundial e no máximo pelo Safari pois vem naqueles bichos estranhos, os Macintosh.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-5134">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5221563ea6621a3fb1ef54eccfa22486?s=72&d=mp&r=r" alt="xp" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5221563ea6621a3fb1ef54eccfa22486?s=72&d=mp&r=r" alt="xp" />
       <div>
         <p class="blog-comment-author">xp</p>
         <p class="blog-comment-date">5 de Julho de 2006, 22:50</p>
@@ -107,18 +109,18 @@ Pois, mas não consigo inserir a password porque o teclado virtual não funciona
       </div>
     </div>
     <div class="blog-comment" id="comment-5135">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">6 de Julho de 2006, 09:43</p>
         <div class="blog-comment-text"><p>Apesar de estar a fugir do âmbito do post, o facto de haver mais comentários de utilizadores Windows deve-se ao facto de que a Microsoft detém cerca de 90% do mercado de computadores pessoais. Quanto aos problemas não sei, mas no Mac não preciso de me preocupar com vírus, spyware, adware, crashes dos sistema, etc&#8230; Simplesmente funciona.</p>
 <p>O problema é que muitos sites são desenvolvidos a pensar no Internet Explorer, um browser antigo, desenvolvido há 6 anos atrás e com pouco suporte para os web standards. Uma boa empresa de webdesign consegue desenvolver aplicações que funcionem em qualquer browser e em qualquer plataforma. O problema é que em Portugal a maior parte das empresas de webdesign ainda trabalha como se estivéssemos em 1999&#8230; E depois os novos sites são o que se vê&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-5147">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/6570225c1d2bcd88ddebe8423e9e156b?s=72&d=mp&r=r" alt="Carlos Afonso" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/6570225c1d2bcd88ddebe8423e9e156b?s=72&d=mp&r=r" alt="Carlos Afonso" />
       <div>
-        <p class="blog-comment-author"><a href="https://aindaapensar.blogspot.com/" rel='external nofollow' class='url'>Carlos Afonso</a></p>
+        <p class="blog-comment-author"><a href="https://aindaapensar.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Carlos Afonso</a></p>
         <p class="blog-comment-date">7 de Julho de 2006, 20:19</p>
         <div class="blog-comment-text"><p>Os sites indicados apresentam a (falta de) qualidade habitual em quase todos os sites públicos (no sentido de do estado) portugueses. Quando a UMIC diz que há neste momento mais serviços disponíveis na net para os utilizadores portugueses do que para os de uma série de países da União Europeia esquece-se de se referir a este aspecto.</p>
 <p>E tem toda a razão os sites são feitos a pensar em 1999 não em 2006.</p>
@@ -126,24 +128,24 @@ Pois, mas não consigo inserir a password porque o teclado virtual não funciona
       </div>
     </div>
     <div class="blog-comment" id="comment-5149">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">7 de Julho de 2006, 20:23</p>
         <div class="blog-comment-text"><p>Carlos, pode dizer qual é o erro. É que estive a ver e não encontro nenhum erro&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-6298">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0ee92978550e470148d4c1682a29255e?s=72&d=mp&r=r" alt="celsa" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0ee92978550e470148d4c1682a29255e?s=72&d=mp&r=r" alt="celsa" />
       <div>
-        <p class="blog-comment-author"><a href="https://celsomartinsalmeida.blogspot.com/" rel='external nofollow' class='url'>celsa</a></p>
+        <p class="blog-comment-author"><a href="https://celsomartinsalmeida.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>celsa</a></p>
         <p class="blog-comment-date">6 de Dezembro de 2006, 05:05</p>
         <div class="blog-comment-text"><p>mt bom</p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/media-2006-os-slides-das-apresentacoes/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -157,7 +159,7 @@ Pois, mas não consigo inserir a password porque o teclado virtual não funciona
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

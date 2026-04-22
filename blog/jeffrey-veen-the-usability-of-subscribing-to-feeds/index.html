@@ -14,6 +14,7 @@
 <title>A Usabilidade de subscrever RSS Feeds — Ivo Gomes</title>
 <meta name="description" content="Li há pouco tempo um artigo do Jeffrey Veen que falava precisamente deste facto: a usabilidade de subscrever RSS Feeds. Antes de mais, é necessário explicar o que são as RSS Feeds. Um utilizador normal da Internet provavelmente não sabe o que significa nem para que serve aquele botão cor-de-laranja que quando é clicado abre …" />
 <meta property="og:title" content="A Usabilidade de subscrever RSS Feeds" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Li há pouco tempo um artigo do Jeffrey Veen que falava precisamente deste facto: a usabilidade de subscrever RSS Feeds. Antes de mais, é necessário explicar o que são as RSS Feeds. Um utilizador normal da Internet provavelmente não sabe o que significa nem para que serve aquele botão cor-de-laranja que quando é clicado abre …" />
 <meta property="article:published_time" content="2005-06-04T11:23:52+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/jeffrey-veen-the-usability-of-subscribing-to-feeds/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>04 Jun 2005</span>
+    <time datetime="2005-06-04">04 Jun 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,25 +52,25 @@
   </div>
 
   <article class="blog-article">
-<p>Li há pouco tempo um artigo do <a href="http://www.veen.com/jeff/archives/000733.html">Jeffrey Veen</a> que falava precisamente deste facto: a usabilidade de subscrever <a href="https://pt.wikipedia.org/wiki/RSS">RSS Feeds</a>.</p>
-<p>Antes de mais, é necessário explicar o que são as <a href="https://pt.wikipedia.org/wiki/RSS">RSS Feeds</a>.<br />
-Um utilizador normal da Internet provavelmente não sabe o que significa nem para que serve aquele botão cor-de-laranja <img src='https://www.ivogomes.com/img/artigos/rss_feed.gif' alt='RSS Feed' /> que quando é clicado abre uma página com um código indecifrável. A maior parte das pessoas não sabe que é preciso um "<a href="http://www.rssficado.com.br/index.php?wiki=__Leitores_de_Feeds__">Feed Reader</a>" para abrir este tipo de ficheiros, ou então usar um browser que suporte RSS (O Internet Explorer, que é o mais utilizado, não suporta RSS... para variar).<br />
-E mesmo que o utilizador tenha esses programas ou use um browser moderno (<a href="http://www.getfirefox.com/">Firefox</a> ou <a href="https://www.apple.com/macosx/features/safari/">Safari</a>) que consiga ler RSS, vai continuar a haver a mesma questão: Para que servem os RSS?</h2>
-<p>Basicamente os RSS servem para disponibilizar aos utilizadores os conteúdos de um website. A grande maioria dos websites de notícias (em Portugal o <a href="http://publico.clix.pt/">Público</a> ainda é o único a ter), os blogs (quase todos têm) e alguns outros websites fornecem um ficheiro com as notícias ou artigos que lá são publicados. Este ficheiro pode ser subscrito pelos utilizadores para que, sempre que o site for actualizado com uma nova notícia ou artigo, o utilizador poderá ler sem ter que visitar o website.</p>
+<p>Li há pouco tempo um artigo do <a href="http://www.veen.com/jeff/archives/000733.html" rel="noopener noreferrer">Jeffrey Veen</a> que falava precisamente deste facto: a usabilidade de subscrever <a href="https://pt.wikipedia.org/wiki/RSS" rel="noopener noreferrer">RSS Feeds</a>.</p>
+<p>Antes de mais, é necessário explicar o que são as <a href="https://pt.wikipedia.org/wiki/RSS" rel="noopener noreferrer">RSS Feeds</a>.<br />
+Um utilizador normal da Internet provavelmente não sabe o que significa nem para que serve aquele botão cor-de-laranja <img loading="lazy" src='https://www.ivogomes.com/img/artigos/rss_feed.gif' alt='RSS Feed' /> que quando é clicado abre uma página com um código indecifrável. A maior parte das pessoas não sabe que é preciso um "<a href="http://www.rssficado.com.br/index.php?wiki=__Leitores_de_Feeds__" rel="noopener noreferrer">Feed Reader</a>" para abrir este tipo de ficheiros, ou então usar um browser que suporte RSS (O Internet Explorer, que é o mais utilizado, não suporta RSS... para variar).<br />
+E mesmo que o utilizador tenha esses programas ou use um browser moderno (<a href="http://www.getfirefox.com/" rel="noopener noreferrer">Firefox</a> ou <a href="https://www.apple.com/macosx/features/safari/" rel="noopener noreferrer">Safari</a>) que consiga ler RSS, vai continuar a haver a mesma questão: Para que servem os RSS?</h2>
+<p>Basicamente os RSS servem para disponibilizar aos utilizadores os conteúdos de um website. A grande maioria dos websites de notícias (em Portugal o <a href="http://publico.clix.pt/" rel="noopener noreferrer">Público</a> ainda é o único a ter), os blogs (quase todos têm) e alguns outros websites fornecem um ficheiro com as notícias ou artigos que lá são publicados. Este ficheiro pode ser subscrito pelos utilizadores para que, sempre que o site for actualizado com uma nova notícia ou artigo, o utilizador poderá ler sem ter que visitar o website.</p>
 <p>Agora imaginemos que eu tenho um conjunto de websites de notícias e de blogs que leio frequentemente. Todos os dias tenho que visitar cada um desses sites para ver se há actualizações. Se eu tiver 50 sites preferidos, tenho que abrir o browser em 50 páginas diferentes só para ver se há novos artigos! A grande utilidade dos RSS Feeds é que eu posso subscrever esses 50 sites e vê-los todos numa única janela usando um Feed Reader.</p>
-<p><img src='https://www.ivogomes.com/img/artigos/netnewswire.png' alt='Feed Reader' /></p>
-<p>Nesta imagem podemos ver a lista de sites do lado esquerdo (separados por grupos para facilitar a leitura) em que está indicado ao lado de cada um deles o número de artigos não lidos por mim. Clicando num deles (na imagem está clicado o <a href="http://www.simplebits.com/">SimpleBits</a>) do lado direito aparecem os últimos artigos do site, e clicando nos títulos dá para ler o resumo ou o artigo completo. Tudo dentro de uma única janela, sem ter que abrir o browser e abrir as páginas todas "à mão".</p>
+<p><img loading="lazy" src='https://www.ivogomes.com/img/artigos/netnewswire.png' alt='Feed Reader' /></p>
+<p>Nesta imagem podemos ver a lista de sites do lado esquerdo (separados por grupos para facilitar a leitura) em que está indicado ao lado de cada um deles o número de artigos não lidos por mim. Clicando num deles (na imagem está clicado o <a href="http://www.simplebits.com/" rel="noopener noreferrer">SimpleBits</a>) do lado direito aparecem os últimos artigos do site, e clicando nos títulos dá para ler o resumo ou o artigo completo. Tudo dentro de uma única janela, sem ter que abrir o browser e abrir as páginas todas "à mão".</p>
 <p>Tudo isto é muito simples, mas ainda só é utilizado pelos utilizadores mais experientes da Internet. O utilizador normal continua sem saber para que servem e como deve utilizar as RSS Feeds. Como tal, penso que deveriamos ter um link ao lado do tal botão cor-de-laranja com informação sobre para que serve e como deve ser lido o ficheiro RSS para que todos possam aproveitar da melhor forma esta tecnologia que nos simplifica o processo de leitura de vários sites e nos poupa tempo porque não precisamos de abrir tantas janelas no browser...</p>
-<p>No entanto há ainda outro problema. Além da nomenclatura RSS, também há sites que usam o nome XML ou "Syndication". Há ainda outra tecnologia semelhante chamada Atom (os Feed Readers não fazem distinção e lêm ambas as tecnologias da mesma maneira). Com tantos nomes diferentes o utilizador fica ainda mais confuso. Tal como o <a href="http://blog.delaranja.com/?p=324">André</a> diz, neste momento, provavelmente o melhor termo a usar é mesmo RSS:</p>
-<blockquote><p>The best thing to do is help turning the most popular feed format (RSS) into an even more popular term. There are other types of feeds like Atom (which <a href="https://blogger.com/">blogger</a> uses) which might even be technologically better. But by now the user is already tunned in into RSS and big sites are already marketing RSS feeds and RSS icons. This will surely help spread the adoption of feeds in general.</p></blockquote>
+<p>No entanto há ainda outro problema. Além da nomenclatura RSS, também há sites que usam o nome XML ou "Syndication". Há ainda outra tecnologia semelhante chamada Atom (os Feed Readers não fazem distinção e lêm ambas as tecnologias da mesma maneira). Com tantos nomes diferentes o utilizador fica ainda mais confuso. Tal como o <a href="http://blog.delaranja.com/?p=324" rel="noopener noreferrer">André</a> diz, neste momento, provavelmente o melhor termo a usar é mesmo RSS:</p>
+<blockquote><p>The best thing to do is help turning the most popular feed format (RSS) into an even more popular term. There are other types of feeds like Atom (which <a href="https://blogger.com/" rel="noopener noreferrer">blogger</a> uses) which might even be technologically better. But by now the user is already tunned in into RSS and big sites are already marketing RSS feeds and RSS icons. This will surely help spread the adoption of feeds in general.</p></blockquote>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">15 comentários</h2>
     <div class="blog-comment" id="comment-1190">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://thetaoofwebdesign.tk/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://thetaoofwebdesign.tk/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">4 de Junho de 2005, 12:57</p>
         <div class="blog-comment-text"><p>Ah! Usas o NetNewsWire. Eu também.<br />
 Envia-me o teu OPML para o e-mail.<br />
@@ -77,59 +79,59 @@ Assim ficas a saber que afinal em Portugal há mais do que o Público &#8230; :D
       </div>
     </div>
     <div class="blog-comment" id="comment-1192">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Junho de 2005, 13:13</p>
-        <div class="blog-comment-text"><p>Estava a falar em termos oficiais. Em termos não oficiais o Karlus tem RSS de vários sites portugueses: <a href="http://feeds.karlus.net/" rel="nofollow">http://feeds.karlus.net/</a> ;)</p></div>
+        <div class="blog-comment-text"><p>Estava a falar em termos oficiais. Em termos não oficiais o Karlus tem RSS de vários sites portugueses: <a href="http://feeds.karlus.net/" rel="nofollow noopener noreferrer">http://feeds.karlus.net/</a> ;)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-1264">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/307b7b4cb001ed81b573e0ed819fccd7?s=72&d=mp&r=r" alt="Sérgio Nunes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/307b7b4cb001ed81b573e0ed819fccd7?s=72&d=mp&r=r" alt="Sérgio Nunes" />
       <div>
         <p class="blog-comment-author">Sérgio Nunes</p>
         <p class="blog-comment-date">6 de Junho de 2005, 11:27</p>
         <div class="blog-comment-text"><p>Há quem defenda, incluindo o próprio Dave Winer, que o termo XML é o mais adequado.</p>
-<p><a href="http://radar.oreilly.com/archives/2005/05/atom_has_a_bran.html" rel="nofollow">http://radar.oreilly.com/archives/2005/05/atom_has_a_bran.html</a></p></div>
+<p><a href="http://radar.oreilly.com/archives/2005/05/atom_has_a_bran.html" rel="nofollow noopener noreferrer">http://radar.oreilly.com/archives/2005/05/atom_has_a_bran.html</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-1269">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ee3e253e506d24c69cb29ffcc5ca5235?s=72&d=mp&r=r" alt="Bruno Tarmann Barretto" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ee3e253e506d24c69cb29ffcc5ca5235?s=72&d=mp&r=r" alt="Bruno Tarmann Barretto" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.tarmann.com.br/' rel='external nofollow' class='url'>Bruno Tarmann Barretto</a></p>
+        <p class="blog-comment-author"><a href='http://www.tarmann.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Tarmann Barretto</a></p>
         <p class="blog-comment-date">6 de Junho de 2005, 16:26</p>
         <div class="blog-comment-text"><p>Um Feed Reader legal também é o bloglines, pela praticidade de ele ser online, ou seja, você pode ser seus feeds de qualquer computador.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-1270">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ee3e253e506d24c69cb29ffcc5ca5235?s=72&d=mp&r=r" alt="Bruno Tarmann Barretto" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/ee3e253e506d24c69cb29ffcc5ca5235?s=72&d=mp&r=r" alt="Bruno Tarmann Barretto" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.tarmann.com.br/' rel='external nofollow' class='url'>Bruno Tarmann Barretto</a></p>
+        <p class="blog-comment-author"><a href='http://www.tarmann.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Tarmann Barretto</a></p>
         <p class="blog-comment-date">6 de Junho de 2005, 16:26</p>
-        <div class="blog-comment-text"><p>Esqueci de colocar o endereço: <a href="http://www.bloglines.com/" rel="nofollow">http://www.bloglines.com</a></p></div>
+        <div class="blog-comment-text"><p>Esqueci de colocar o endereço: <a href="http://www.bloglines.com/" rel="nofollow noopener noreferrer">http://www.bloglines.com</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-1278">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">6 de Junho de 2005, 17:19</p>
         <div class="blog-comment-text"><p>O programa (feed reader) que eu uso está sincronizado com as minhas &#8220;feeds&#8221; no <a href="/blog/jeffrey-veen-the-usability-of-subscribing-to-feeds/bloglines.com" rel="nofollow">BlogLines</a> ;)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-1346">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/fbf6e92cc831f51ea8086e3db24e1a53?s=72&d=mp&r=r" alt="JFK" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/fbf6e92cc831f51ea8086e3db24e1a53?s=72&d=mp&r=r" alt="JFK" />
       <div>
-        <p class="blog-comment-author"><a href='http://JFK.NET/' rel='external nofollow' class='url'>JFK</a></p>
+        <p class="blog-comment-author"><a href='http://JFK.NET/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>JFK</a></p>
         <p class="blog-comment-date">8 de Junho de 2005, 18:31</p>
         <div class="blog-comment-text"><p>Ivo, atualiza mais vezes seu site.. ele é 10&#8230; mas quando fica parado eu fico assim :(</p>
 <p>abração</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-1674">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">16 de Junho de 2005, 11:34</p>
         <div class="blog-comment-text"><p>Eu sei que não tenho actualizado muito ultimamente, mas por motivos porfissionais não tenho tido tempo sequer de ler, muito menos de escrever!</p>
 <p>Assim que tiver mais tempo irei com certeza publicar muito mais artigos.</p>
@@ -137,23 +139,23 @@ Assim ficas a saber que afinal em Portugal há mais do que o Público &#8230; :D
       </div>
     </div>
     <div class="blog-comment" id="comment-3859">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/2b40262a1cbd7d1a5981107c3d6ff82a?s=72&d=mp&r=r" alt="Wladmyr Martins" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/2b40262a1cbd7d1a5981107c3d6ff82a?s=72&d=mp&r=r" alt="Wladmyr Martins" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.wbh.com.br/' rel='external nofollow' class='url'>Wladmyr Martins</a></p>
+        <p class="blog-comment-author"><a href='http://www.wbh.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Wladmyr Martins</a></p>
         <p class="blog-comment-date">17 de Maio de 2006, 14:21</p>
         <div class="blog-comment-text"><p>Fiz uma consulta aos meus clientes e você tem razão, nenhum sabia bulufas sobre RSS. Daí me pergunto, será que pega? Digo fora do nosso próprio meio&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3864">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">18 de Maio de 2006, 10:47</p>
         <div class="blog-comment-text"><p>Assim que o IE7 aparecer com o suporte para RSS, a maior parte dos utilizadores vai perceber a sua utilidade. Infelizmente a maior parte das pessoas não sabe muito sobre informática e fica-se com aquilo que já vem instalado no computador (neste caso, a grande maioria ainda usa o IE6 ou inferior).</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-8051">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9a7958bd12c7bec9040b438f640ad5ac?s=72&d=mp&r=r" alt="karina" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9a7958bd12c7bec9040b438f640ad5ac?s=72&d=mp&r=r" alt="karina" />
       <div>
         <p class="blog-comment-author">karina</p>
         <p class="blog-comment-date">24 de Janeiro de 2007, 12:18</p>
@@ -161,15 +163,15 @@ Assim ficas a saber que afinal em Portugal há mais do que o Público &#8230; :D
       </div>
     </div>
     <div class="blog-comment" id="comment-8052">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/2b40262a1cbd7d1a5981107c3d6ff82a?s=72&d=mp&r=r" alt="Tio_Wlad" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/2b40262a1cbd7d1a5981107c3d6ff82a?s=72&d=mp&r=r" alt="Tio_Wlad" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.fazersites.com/' rel='external nofollow' class='url'>Tio_Wlad</a></p>
+        <p class="blog-comment-author"><a href='http://www.fazersites.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Tio_Wlad</a></p>
         <p class="blog-comment-date">24 de Janeiro de 2007, 12:27</p>
         <div class="blog-comment-text"><p>Não estou acreditando muito na velocidade de troca do IE6 para o IE7, há algo de enterrado no Windows Vista, nunca vi um software demorar tanto a ser lançado, a versão beta é triste, muito triste&#8230; parece queb desenharam para supercomputadores e não para usuários normais.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-16154">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/cdb3db087b85f1c8e2f0e7044e57ac1b?s=72&d=mp&r=r" alt="camila" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/cdb3db087b85f1c8e2f0e7044e57ac1b?s=72&d=mp&r=r" alt="camila" />
       <div>
         <p class="blog-comment-author">camila</p>
         <p class="blog-comment-date">14 de Maio de 2007, 13:39</p>
@@ -177,24 +179,24 @@ Assim ficas a saber que afinal em Portugal há mais do que o Público &#8230; :D
       </div>
     </div>
     <div class="blog-comment" id="comment-16245">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/c39726d2fa8dbd471997e92314571803?s=72&d=mp&r=r" alt="Martha Strabbs" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/c39726d2fa8dbd471997e92314571803?s=72&d=mp&r=r" alt="Martha Strabbs" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.mgsites.com.br/' rel='external nofollow' class='url'>Martha Strabbs</a></p>
+        <p class="blog-comment-author"><a href='http://www.mgsites.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Martha Strabbs</a></p>
         <p class="blog-comment-date">15 de Maio de 2007, 11:02</p>
         <div class="blog-comment-text"><p>Essa históris de xml não vai colar, ou pega feed ou rss, aqui o termo feed tem sido o mais usado na comunidade, porém a maioria dos internautas nem sabe do que se trata.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-90925">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4ed9bedf7ad0208c8e389f90d3db0233?s=72&d=mp&r=r" alt="orlando" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/4ed9bedf7ad0208c8e389f90d3db0233?s=72&d=mp&r=r" alt="orlando" />
       <div>
-        <p class="blog-comment-author"><a href='http://ausabilidadedesubscreverrssfree/' rel='external nofollow' class='url'>orlando</a></p>
+        <p class="blog-comment-author"><a href='http://ausabilidadedesubscreverrssfree/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>orlando</a></p>
         <p class="blog-comment-date">7 de Outubro de 2010, 01:22</p>
         <div class="blog-comment-text"><p>isto assim é trabalhar, obrigado!</p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/bp-gas-light-botija-de-gas-ergonomica/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -208,7 +210,7 @@ Assim ficas a saber que afinal em Portugal há mais do que o Público &#8230; :D
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

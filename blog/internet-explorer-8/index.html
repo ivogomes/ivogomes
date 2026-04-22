@@ -14,6 +14,7 @@
 <title>Internet Explorer 8 — Ivo Gomes</title>
 <meta name="description" content="Esta semana foi lançada a primeira versão Beta do Internet Explorer 8. Este é um grande passo da Microsoft para tornar o seu browser mais compatível com os web standards e fazer com que no futuro os webdesigners não tenham que passar horas e horas a fio a tentar corrigir bugs de interpretação de CSS." />
 <meta property="og:title" content="Internet Explorer 8" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Esta semana foi lançada a primeira versão Beta do Internet Explorer 8. Este é um grande passo da Microsoft para tornar o seu browser mais compatível com os web standards e fazer com que no futuro os webdesigners não tenham que passar horas e horas a fio a tentar corrigir bugs de interpretação de CSS." />
 <meta property="article:published_time" content="2008-03-06T08:47:07+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/internet-explorer-8/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>06 Mar 2008</span>
+    <time datetime="2008-03-06">06 Mar 2008</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,13 +52,13 @@
   </div>
 
   <article class="blog-article">
-<p>Esta semana foi lançada a primeira <a href="https://www.microsoft.com/windows/products/winfamily/ie/ie8/default.mspx">versão Beta do Internet Explorer 8</a>. Este é um grande passo da Microsoft para tornar o seu browser mais compatível com os web standards e fazer com que no futuro os webdesigners não tenham que passar horas e horas a fio a tentar corrigir bugs de interpretação de CSS.</p>
-<p><img src='/blog/wp-content/uploads/2008/03/picture-1.png' alt='IE8' /></p>
+<p>Esta semana foi lançada a primeira <a href="https://www.microsoft.com/windows/products/winfamily/ie/ie8/default.mspx" rel="noopener noreferrer">versão Beta do Internet Explorer 8</a>. Este é um grande passo da Microsoft para tornar o seu browser mais compatível com os web standards e fazer com que no futuro os webdesigners não tenham que passar horas e horas a fio a tentar corrigir bugs de interpretação de CSS.</p>
+<p><img loading="lazy" src='/blog/wp-content/uploads/2008/03/picture-1.png' alt='IE8' /></p>
 <p>Inicialmente, a equipa que está a desenvolver o IE8 decidiu que o browser iria adoptar por defeito o motor de renderização do IE7 (isto permitiria que todos os sites antigos e com código feito para versões anteriores do IE continuassem a funcionar correctamente no IE8). Quem já criou um site em HTML+CSS sabe que se ele for feito segundo os web standards, ele funciona correctamente em todos os browsers excepto no IE (em que cada versão do próprio IE tem bugs diferentes). Da mesma forma, se um site for feito especificamente para funcionar no IE, é provável que ele venha a ficar meio torto no Firefox ou no Safari. Foi por essa razão que a equipa do IE8 decidiu que por defeito iriam adoptar a renderização do IE7 (para que os sites feitos para versões anteriores do IE não quebrassem no novo IE8) a não ser que o webdesigner colocasse um código no cabeçalho do site a dizer especificamente que queria utilizar o novo motor do IE8. Esta funcionalidade chama-se "Version Targeting".</p>
-<p>Obviamente, toda a comunidade de webdesigners ficou <a href="https://www.google.pt/search?q=IE8%20version%20targeting">revoltada com esta decisão</a>. Com um novo browser não deveria ser necessário especificar que se quer utilizar o novo motor de renderização. Não fazia sentido ter um novo software que usa por defeito um motor da versão anterior.</p>
-<p>Finalmente, na passada segunda-feira a equipa de desenvolvimento do IE8 <a href="https://blogs.msdn.com/ie/archive/2008/03/03/microsoft-s-interoperability-principles-and-ie8.aspx">mudou de ideias</a> e o browser virá com o novo motor instalado por defeito. No entanto o "Version targeting" continuará a estar disponível para os sites que necessitarem de usar o antigo motor de renderização do IE7.</p>
+<p>Obviamente, toda a comunidade de webdesigners ficou <a href="https://www.google.pt/search?q=IE8%20version%20targeting" rel="noopener noreferrer">revoltada com esta decisão</a>. Com um novo browser não deveria ser necessário especificar que se quer utilizar o novo motor de renderização. Não fazia sentido ter um novo software que usa por defeito um motor da versão anterior.</p>
+<p>Finalmente, na passada segunda-feira a equipa de desenvolvimento do IE8 <a href="https://blogs.msdn.com/ie/archive/2008/03/03/microsoft-s-interoperability-principles-and-ie8.aspx" rel="noopener noreferrer">mudou de ideias</a> e o browser virá com o novo motor instalado por defeito. No entanto o "Version targeting" continuará a estar disponível para os sites que necessitarem de usar o antigo motor de renderização do IE7.</p>
 <h2>IE8 Beta 1</h2>
-<p>Já cá está! <a href="https://blogs.msdn.com/ie/archive/2008/03/05/internet-explorer-8-beta-1-for-developers-now-available.aspx">O IE8 Beta 1 já está disponível</a> para <a href="https://www.microsoft.com/windows/products/winfamily/ie/ie8/default.mspx">download</a>. Como estou a trabalhar num Mac ainda não tive a oportunidade de o testar, mas assim que conseguir ter acesso a um PC com Windows (é mais difícil do que possam imaginar) vou experimentar :D</p>
+<p>Já cá está! <a href="https://blogs.msdn.com/ie/archive/2008/03/05/internet-explorer-8-beta-1-for-developers-now-available.aspx" rel="noopener noreferrer">O IE8 Beta 1 já está disponível</a> para <a href="https://www.microsoft.com/windows/products/winfamily/ie/ie8/default.mspx" rel="noopener noreferrer">download</a>. Como estou a trabalhar num Mac ainda não tive a oportunidade de o testar, mas assim que conseguir ter acesso a um PC com Windows (é mais difícil do que possam imaginar) vou experimentar :D</p>
 <p>As principais novidades no IE8 (que interessam aos webdesigners) são:</p>
 <ul>
 <li>Suporte completo a CSS 2.1</li>
@@ -70,17 +72,17 @@
   <section class="blog-comments">
     <h2 class="blog-comments-title">9 comentários</h2>
     <div class="blog-comment" id="comment-41471">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8920549c2c37ceda9afcaaefb78c4479?s=72&d=mp&r=r" alt="Tiago Sousa" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8920549c2c37ceda9afcaaefb78c4479?s=72&d=mp&r=r" alt="Tiago Sousa" />
       <div>
-        <p class="blog-comment-author"><a href="https://sousatiago.blogspot.com/" rel='external nofollow' class='url'>Tiago Sousa</a></p>
+        <p class="blog-comment-author"><a href="https://sousatiago.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Tiago Sousa</a></p>
         <p class="blog-comment-date">6 de Março de 2008, 09:08</p>
         <div class="blog-comment-text"><p>Finalmente está-se a ir no bom caminho. É das coisas que mais me irrita a desenvolver aplicações web, ter de fazer hacks ao código para por tudo a funcionar em todos os browsers, mesmo que tenha respeitado os standards.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41475">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/210507832ef2777b3bd551a5b9a66437?s=72&d=mp&r=r" alt="André Luís" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/210507832ef2777b3bd551a5b9a66437?s=72&d=mp&r=r" alt="André Luís" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>André Luís</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>André Luís</a></p>
         <p class="blog-comment-date">6 de Março de 2008, 09:49</p>
         <div class="blog-comment-text"><p>Para mim a grande surpresa foi terem implementado a api de Selectors. Vai facilitar e melhor o desempenho de muitas webapps. Código nativo corre sempre muito mais rápido do que código em JS.</p>
 <p>CSS2.1, adorei o facto de terem disponibilizado 702 testes com licença BSD! As coisas estão mesmo a mudar.</p>
@@ -93,23 +95,23 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-41477">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1c450e30ee2ef6607ed2d4c6b1e7aac2?s=72&d=mp&r=r" alt="Walmar Andrade" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1c450e30ee2ef6607ed2d4c6b1e7aac2?s=72&d=mp&r=r" alt="Walmar Andrade" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.fatorw.com/' rel='external nofollow' class='url'>Walmar Andrade</a></p>
+        <p class="blog-comment-author"><a href='http://www.fatorw.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Walmar Andrade</a></p>
         <p class="blog-comment-date">6 de Março de 2008, 10:14</p>
         <div class="blog-comment-text"><p>Pelo menos não vão se passar mais seis anos entre a versão 7 e a 8. Efeitos colaterais do Firefox, imagino.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41482">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1b491994d6011d720e332af6e1ffd03b?s=72&d=mp&r=r" alt="Bruno Antunes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1b491994d6011d720e332af6e1ffd03b?s=72&d=mp&r=r" alt="Bruno Antunes" />
       <div>
-        <p class="blog-comment-author"><a href='http://iruel.net/' rel='external nofollow' class='url'>Bruno Antunes</a></p>
+        <p class="blog-comment-author"><a href='http://iruel.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Antunes</a></p>
         <p class="blog-comment-date">6 de Março de 2008, 11:39</p>
         <div class="blog-comment-text"><p>Eu queria instalar isto pra ver, mas se for como o IE7 da cabo do &#8220;Explorer&#8221; normal do Windows &#8211; quando instalei o IE7, deixei de conseguir com que os folders memorizassem a &#8220;view&#8221; que defino para eles&#8230; :(</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41494">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/cd6b5e28ac0f9dfd778eb1d2977bd8d9?s=72&d=mp&r=r" alt="Frank Gilber" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/cd6b5e28ac0f9dfd778eb1d2977bd8d9?s=72&d=mp&r=r" alt="Frank Gilber" />
       <div>
         <p class="blog-comment-author">Frank Gilber</p>
         <p class="blog-comment-date">6 de Março de 2008, 14:37</p>
@@ -117,42 +119,42 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-41679">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/57c7adc09a5ecdefba3abb34abf1403a?s=72&d=mp&r=r" alt="Filipe Miguel Tavares" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/57c7adc09a5ecdefba3abb34abf1403a?s=72&d=mp&r=r" alt="Filipe Miguel Tavares" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.usabilidade.net/' rel='external nofollow' class='url'>Filipe Miguel Tavares</a></p>
+        <p class="blog-comment-author"><a href='http://www.usabilidade.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Filipe Miguel Tavares</a></p>
         <p class="blog-comment-date">10 de Março de 2008, 19:32</p>
         <div class="blog-comment-text"><p>Ai, ai&#8230; ninguém testou com o ACID pois não? Sugiro que antes dos foguetes testem o Safari, IE 6, IE 7, IE 8 e FF.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41716">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">11 de Março de 2008, 10:06</p>
         <div class="blog-comment-text"><p>Pelo que já pude ver (por screenshots), ainda tem alguns bugs. Por exemplo, o Google Maps aparece todo distorcido, no entanto ainda é só uma versão Beta, por isso não há crise.</p>
 <p>Quanto ao ACID2, o meu Safari 3 e o Opera 9.5 passam com distinção. O mesmo já não se pode dizer do Firefox 2.0.0.12. Quanto aos IE, não tenho aqui nenhum à mão para poder testar&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-41744">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/3d0b1bcec6deb115ba53a20ca6a35fa7?s=72&d=mp&r=r" alt="Luiz Tiago" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/3d0b1bcec6deb115ba53a20ca6a35fa7?s=72&d=mp&r=r" alt="Luiz Tiago" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.luiztiago.com/' rel='external nofollow' class='url'>Luiz Tiago</a></p>
+        <p class="blog-comment-author"><a href='http://www.luiztiago.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Luiz Tiago</a></p>
         <p class="blog-comment-date">11 de Março de 2008, 19:53</p>
         <div class="blog-comment-text"><p>Se preparem para o famoso &#8220;if IE 8&#8243;&#8230; =\</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-42039">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/d10ca8d11301c2f4993ac2279ce4b930?s=72&d=mp&r=r" alt="Miguel" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/d10ca8d11301c2f4993ac2279ce4b930?s=72&d=mp&r=r" alt="Miguel" />
       <div>
         <p class="blog-comment-author">Miguel</p>
         <p class="blog-comment-date">17 de Março de 2008, 17:28</p>
         <div class="blog-comment-text"><p>A decisão é muito mais complexa do que parece à primeira vista. Leiam por exemplo este texto do Joel:</p>
-<p><a href="http://www.joelonsoftware.com/items/2008/03/17.html" rel="nofollow">http://www.joelonsoftware.com/items/2008/03/17.html</a></p></div>
+<p><a href="http://www.joelonsoftware.com/items/2008/03/17.html" rel="nofollow noopener noreferrer">http://www.joelonsoftware.com/items/2008/03/17.html</a></p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/seminario-de-usabilidade-2008/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -166,7 +168,7 @@
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

@@ -14,6 +14,7 @@
 <title>Algumas novidades no blog — Ivo Gomes</title>
 <meta name="description" content="Este fim-de-semana aproveitei para testar algumas coisas novas aqui no blog.Mudei o meu sistema de gestão de fotos antigo e passei a usar a API do Flickr juntamente com o WordPress para gerir as minhas fotos.Mudei também o sistema de arquivo do blog e passei a usar um novo sistema que usa tecnologia AJAX. Finalmente, adicionei uma pré-visualização automática dos comentários ao formulário de comentários aos artigos." />
 <meta property="og:title" content="Algumas novidades no blog" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Este fim-de-semana aproveitei para testar algumas coisas novas aqui no blog.Mudei o meu sistema de gestão de fotos antigo e passei a usar a API do Flickr juntamente com o WordPress para gerir as minhas fotos.Mudei também o sistema de arquivo do blog e passei a usar um novo sistema que usa tecnologia AJAX. Finalmente, adicionei uma pré-visualização automática dos comentários ao formulário de comentários aos artigos." />
 <meta property="article:published_time" content="2005-11-07T11:15:33+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/algumas-novidades-no-blog/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>07 Nov 2005</span>
+    <time datetime="2005-11-07">07 Nov 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -51,19 +53,19 @@
 
   <article class="blog-article">
 <p>Este fim-de-semana aproveitei para testar algumas coisas novas aqui no blog.<br />
-Mudei o meu sistema de gestão de fotos <a href="http://www.rebelpixel.com/projects/ipap/">antigo</a> e passei a usar a API do <a href="https://www.flickr.com/">Flickr</a> juntamente com o <a href="https://www.wordpress.org/">WordPress</a> para gerir as minhas fotos.<br />
+Mudei o meu sistema de gestão de fotos <a href="http://www.rebelpixel.com/projects/ipap/" rel="noopener noreferrer">antigo</a> e passei a usar a API do <a href="https://www.flickr.com/" rel="noopener noreferrer">Flickr</a> juntamente com o <a href="https://www.wordpress.org/" rel="noopener noreferrer">WordPress</a> para gerir as minhas fotos.<br />
 Mudei também o sistema de arquivo do blog e passei a usar um novo sistema que usa tecnologia AJAX. Finalmente, adicionei uma pré-visualização automática dos comentários ao formulário de comentários aos artigos.</h2>
 <h2>Novo sistema de gestão de fotos (Flickr)</h2>
 <p>Como tenho pouco espaço aqui no servidor (cerca de 130MB), não posso colocar muitas fotos online. Ultimamente já estava a receber e-mails de alerta a dizer que já estava a usar 90% da capacidade máxima do disco e como tal, era preciso fazer alguma coisa.</p>
 <p>A solução passava por criar uma conta num sistema externo de gestão de fotos e depois importá-las para o meu site através de uma API.<br />
-Primeiro experimentei o novo sistema de <a href="http://fotos.sapo.pt/">Fotos do Sapo</a> que me foi recomendado pelo <a href="http://blog.centopeia.com/">Pedro</a> (pertencente à equipa do <a href="https://www.sapo.pt/">Sapo</a> que desenvolveu o sistema). Criei uma conta e andei a experimentar um pouco. Depois resolvi procurar uma maneira de importar as fotos do Sapo através de uma API para o meu site, mas não encontrei nada no site que me ajudasse a fazer isso.</h2>
-<p>Resolvi então procurar uma solução mais simples, o <a href="https://www.flickr.com/">Flickr</a>. O Flickr é o maior site de gestão de fotos do mundo e foi recentemente comprado pelo <a href="http://www.yahoo.com/">Yahoo</a>.<br />
-Já tinha conhecimento que eles tinham uma API que podia ser usada para ir buscar as fotos e disponibilizá-las da forma que quisermos e onde quisermos, mas como não sou programador, tive que procurar algo que já estivesse desenvolvido. Uma vez que o Flickr é usado por milhões de pessoas, é natural que hajam vários scripts e plugins desenvolvidos para tirar melhor partido de todas as funcionalidades disponíveis. E assim encontrei o <a href="http://www.randombyte.net/blog/projects/falbum/">FAlbum</a>, um plugin para o <a href="https://www.wordpress.org/">WordPress</a> que permite ir buscar as minhas fotos ao Flickr e disponibilizá-las aqui no site com o meu layout. Perfeito.</h2>
-<p>O único problema é que as contas grátis no Flickr só permitem a criação de 3 álbuns e têm um limite mensal de 20Mb de transferência de fotos. Então resolvi comprar uma conta no Flickr que me iria expandir o limite mensal para 2Gb e a possibilidade de ter fotos e álbuns infinitos. O custo de uma anuidade não é muito caro (21€) e aproveitei o sucesso dos <a href="/blog/o-boom-do-portal-das-curiosidades/">anúncios do Google</a> no <a href="http://www.portaldascuriosidades.com/">Portal das Curiosidades</a> para me pagarem a anuidade :)</p>
+Primeiro experimentei o novo sistema de <a href="http://fotos.sapo.pt/" rel="noopener noreferrer">Fotos do Sapo</a> que me foi recomendado pelo <a href="http://blog.centopeia.com/" rel="noopener noreferrer">Pedro</a> (pertencente à equipa do <a href="https://www.sapo.pt/" rel="noopener noreferrer">Sapo</a> que desenvolveu o sistema). Criei uma conta e andei a experimentar um pouco. Depois resolvi procurar uma maneira de importar as fotos do Sapo através de uma API para o meu site, mas não encontrei nada no site que me ajudasse a fazer isso.</h2>
+<p>Resolvi então procurar uma solução mais simples, o <a href="https://www.flickr.com/" rel="noopener noreferrer">Flickr</a>. O Flickr é o maior site de gestão de fotos do mundo e foi recentemente comprado pelo <a href="http://www.yahoo.com/" rel="noopener noreferrer">Yahoo</a>.<br />
+Já tinha conhecimento que eles tinham uma API que podia ser usada para ir buscar as fotos e disponibilizá-las da forma que quisermos e onde quisermos, mas como não sou programador, tive que procurar algo que já estivesse desenvolvido. Uma vez que o Flickr é usado por milhões de pessoas, é natural que hajam vários scripts e plugins desenvolvidos para tirar melhor partido de todas as funcionalidades disponíveis. E assim encontrei o <a href="http://www.randombyte.net/blog/projects/falbum/" rel="noopener noreferrer">FAlbum</a>, um plugin para o <a href="https://www.wordpress.org/" rel="noopener noreferrer">WordPress</a> que permite ir buscar as minhas fotos ao Flickr e disponibilizá-las aqui no site com o meu layout. Perfeito.</h2>
+<p>O único problema é que as contas grátis no Flickr só permitem a criação de 3 álbuns e têm um limite mensal de 20Mb de transferência de fotos. Então resolvi comprar uma conta no Flickr que me iria expandir o limite mensal para 2Gb e a possibilidade de ter fotos e álbuns infinitos. O custo de uma anuidade não é muito caro (21€) e aproveitei o sucesso dos <a href="/blog/o-boom-do-portal-das-curiosidades/">anúncios do Google</a> no <a href="http://www.portaldascuriosidades.com/" rel="noopener noreferrer">Portal das Curiosidades</a> para me pagarem a anuidade :)</p>
 <p>O sistema está a funcionar lindamente apesar de ser um pouco mais lento do que se tivesse as fotos alojadas no meu servidor, mas em termos de gestão e organização das fotos, não há nada como o Flickr.</p>
 <p>www.ivogomes.com/fotos</p>
 <h2>Novo arquivo (AJAX)</h2>
-<p>Juntamente com o novo sistema de gestão de fotos, instalei também um novo sistema de arquivo. Mais uma vez usei um <a href="http://www.jonas.rabbe.com/archives/2005/05/08/super-archives-plugin-for-wordpress/">plugin</a> do <a href="https://www.wordpress.org/">WordPress</a> para implementar este novo sistema.<br />
+<p>Juntamente com o novo sistema de gestão de fotos, instalei também um novo sistema de arquivo. Mais uma vez usei um <a href="http://www.jonas.rabbe.com/archives/2005/05/08/super-archives-plugin-for-wordpress/" rel="noopener noreferrer">plugin</a> do <a href="https://www.wordpress.org/" rel="noopener noreferrer">WordPress</a> para implementar este novo sistema.<br />
 A ideia é simples, ter um menu navegável por datas em que não é necessário carregar a página sempre que se selecciona um ano ou um mês. Para isso muito contribui o uso de tecnologia AJAX!</h2>
 <p>www.ivogomes.com/arquivo/</p>
 <h2>Pré-Visualização dos comentários</h2>
@@ -73,9 +75,9 @@ A ideia é simples, ter um menu navegável por datas em que não é necessário 
   <section class="blog-comments">
     <h2 class="blog-comments-title">14 comentários</h2>
     <div class="blog-comment" id="comment-3085">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5f9722d15fdd925b201bebaeb8f256f2?s=72&d=mp&r=r" alt="Marco Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5f9722d15fdd925b201bebaeb8f256f2?s=72&d=mp&r=r" alt="Marco Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='http://marcogomes.com/' rel='external nofollow' class='url'>Marco Gomes</a></p>
+        <p class="blog-comment-author"><a href='http://marcogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Marco Gomes</a></p>
         <p class="blog-comment-date">7 de Novembro de 2005, 15:38</p>
         <div class="blog-comment-text"><p>Como sempre implementando/testando os recursos mais recentes da Web hein!</p>
 <p>Estou pensando seriamente em migrar meu sistema de fotos para Flickr também, mas isso reque tempo, algo que não tenho&#8230;</p>
@@ -83,51 +85,51 @@ A ideia é simples, ter um menu navegável por datas em que não é necessário 
       </div>
     </div>
     <div class="blog-comment" id="comment-3086">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">7 de Novembro de 2005, 15:46</p>
         <div class="blog-comment-text"><p>Olá Marco!<br />
 O tempo que demorei a passar de um sistema para o outro foi uma manhã! Não é muito complicado e até é fácil de customizar :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3087">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="d3x7r0" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="d3x7r0" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.nonsensebb.net/' rel='external nofollow' class='url'>d3x7r0</a></p>
+        <p class="blog-comment-author"><a href='http://www.nonsensebb.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>d3x7r0</a></p>
         <p class="blog-comment-date">7 de Novembro de 2005, 16:33</p>
         <div class="blog-comment-text"><p>Realmente o sistema dos arquivos está muito bom mesmo, se calhar arrisco-me a meter no meu blog também :D</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3089">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/992f14a233885aa853d4a5f562864f37?s=72&d=mp&r=r" alt="Pedro Custódio" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/992f14a233885aa853d4a5f562864f37?s=72&d=mp&r=r" alt="Pedro Custódio" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.centopeia.com/' rel='external nofollow' class='url'>Pedro Custódio</a></p>
+        <p class="blog-comment-author"><a href='http://blog.centopeia.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Pedro Custódio</a></p>
         <p class="blog-comment-date">7 de Novembro de 2005, 23:50</p>
         <div class="blog-comment-text"><p>Ivo, o arquivo está um expectáculo! Curti mesmo muito! Imagino que o styling da coisa tenhas sido tu, e por isso mesmo imagino que seja um pouco mais complicado do que instalar um plugin! ;)</p>
 <p>Quando às fotos, acho que fizeste mal, sinceramente! O fotos vai disponibilizar a API em breve, tudo passou pela revisão que se tudo correr bem entra daqui a pouco e vai estabilizar a plataforma, primeiro viram os clientes de upload para as plataformas e depois a explicação da API. Pelo menos não tinhas que pagar! E sempre tinhas um canal privilegiado com os autores, right?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3090">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/c25df13fbb393f879ca82a201b2baf5f?s=72&d=mp&r=r" alt="Mario" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/c25df13fbb393f879ca82a201b2baf5f?s=72&d=mp&r=r" alt="Mario" />
       <div>
-        <p class="blog-comment-author"><a href='http://kaylee.weblog.com.pt/' rel='external nofollow' class='url'>Mario</a></p>
+        <p class="blog-comment-author"><a href='http://kaylee.weblog.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Mario</a></p>
         <p class="blog-comment-date">8 de Novembro de 2005, 02:10</p>
         <div class="blog-comment-text"><p>Me gusta si. O facto de ser tão simples como instalar um plugin é optimo. Como referiste não é necessário ser-se programador para ter um blog fantastico. Só te faltam smiles aqui nos comentários :p</p>
 <p>Nice work although</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3091">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">8 de Novembro de 2005, 08:55</p>
-        <div class="blog-comment-text"><p><b>Pedro:</b> o arquivo já vem com os estilos também praticamente feitos, só mudei as cores e pouco mais. Quanto às fotos, tive pena de não usar o do Sapo mas quando meto uma coisa na cabeça é para fazer na hora! O facto do plugin para o Flickr já estar desenvolvido e pronto a instalar também foi um factor decisivo na minha escolha. Não sei como vai ser a API do Sapo mas se tiverem uma espécie de plugins pré-feitos penso que o pessoal vai aderir. Caso contrário, se forem como eu que não sabem programar, têm que pedir a alguém para o fazer ou então considerar outras hipóteses&#8230; É claro que no meu caso tinha parte da equipa do <a href="http://fotos.sapo.pt/" rel="nofollow">fotos.sapo.pt</a> para me ajudar :) E quanto ao pagamento, 20€ por ano&#8230; o Google paga-me muito mais que isso por mês :D</p>
+        <div class="blog-comment-text"><p><b>Pedro:</b> o arquivo já vem com os estilos também praticamente feitos, só mudei as cores e pouco mais. Quanto às fotos, tive pena de não usar o do Sapo mas quando meto uma coisa na cabeça é para fazer na hora! O facto do plugin para o Flickr já estar desenvolvido e pronto a instalar também foi um factor decisivo na minha escolha. Não sei como vai ser a API do Sapo mas se tiverem uma espécie de plugins pré-feitos penso que o pessoal vai aderir. Caso contrário, se forem como eu que não sabem programar, têm que pedir a alguém para o fazer ou então considerar outras hipóteses&#8230; É claro que no meu caso tinha parte da equipa do <a href="http://fotos.sapo.pt/" rel="nofollow noopener noreferrer">fotos.sapo.pt</a> para me ajudar :) E quanto ao pagamento, 20€ por ano&#8230; o Google paga-me muito mais que isso por mês :D</p>
 <p><b>Mário:</b> De facto não é preciso ser-se programador, mas convém saber desenrascar-se quando se olha para o código, nem que seja para o poder estilizar à nossa maneira :) Quanto aos smilies, vou pensar nisso. Só preciso de encontrar uns que se enquadrem com as cores do site.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-5175">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/bd92776c07b84f3043113645097dc9dc?s=72&d=mp&r=r" alt="Maikel Neris" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/bd92776c07b84f3043113645097dc9dc?s=72&d=mp&r=r" alt="Maikel Neris" />
       <div>
         <p class="blog-comment-author">Maikel Neris</p>
         <p class="blog-comment-date">12 de Julho de 2006, 21:05</p>
@@ -137,9 +139,9 @@ O tempo que demorei a passar de um sistema para o outro foi uma manhã! Não é 
       </div>
     </div>
     <div class="blog-comment" id="comment-5183">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">14 de Julho de 2006, 08:22</p>
         <div class="blog-comment-text"><p>Obrigado! :)</p>
 <p>Para trocar de idioma, tem que usar um idioma já existente do plugin (/falbum/lang/idioma) ou então traduzir o inglês para português (se quiser posso disponibilizar a minha tradução).</p>
@@ -147,7 +149,7 @@ O tempo que demorei a passar de um sistema para o outro foi uma manhã! Não é 
       </div>
     </div>
     <div class="blog-comment" id="comment-5203">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/bd92776c07b84f3043113645097dc9dc?s=72&d=mp&r=r" alt="Maikel Neris" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/bd92776c07b84f3043113645097dc9dc?s=72&d=mp&r=r" alt="Maikel Neris" />
       <div>
         <p class="blog-comment-author">Maikel Neris</p>
         <p class="blog-comment-date">15 de Julho de 2006, 18:56</p>
@@ -156,49 +158,49 @@ O tempo que demorei a passar de um sistema para o outro foi uma manhã! Não é 
       </div>
     </div>
     <div class="blog-comment" id="comment-5204">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">16 de Julho de 2006, 18:32</p>
         <div class="blog-comment-text"><p>O facto das traduções terem vários ficheiros é porque o falbum e o wordpress usam o gettext para fazer a tradução dos textos. Assim, existe um ficheiro com o texto simples (.po e .pot) e outro com o texto compilado (.mo &#8211; o que é usado pelo gettext).</p>
-<p>Aqui tem os meus ficheiros (<a href="https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.po" rel="nofollow">PO</a>) (<a href="https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.pot" rel="nofollow">POT</a>) (<a href="https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.mo" rel="nofollow">MO</a>)</p></div>
+<p>Aqui tem os meus ficheiros (<a href="https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.po" rel="nofollow noopener noreferrer">PO</a>) (<a href="https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.pot" rel="nofollow noopener noreferrer">POT</a>) (<a href="https://www.ivogomes.com/wordpress/wp-content/plugins/falbum/lang/falbum-pt_PT.mo" rel="nofollow noopener noreferrer">MO</a>)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-50882">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/cfddb672fec27c91182c81aaf23bc03d?s=72&d=mp&r=r" alt="Verônica Fragoso" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/cfddb672fec27c91182c81aaf23bc03d?s=72&d=mp&r=r" alt="Verônica Fragoso" />
       <div>
-        <p class="blog-comment-author"><a href="https://veronnikafra-forever.blogspot.com/" rel='external nofollow' class='url'>Verônica Fragoso</a></p>
+        <p class="blog-comment-author"><a href="https://veronnikafra-forever.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Verônica Fragoso</a></p>
         <p class="blog-comment-date">24 de Maio de 2008, 00:14</p>
         <div class="blog-comment-text"><p>Oi Ivo, sou uma xereta que acaba de se apaixonar pelo mundo dos blogs.E como toda xereta, acho q consegui aprender alguma coisa&#8230;Bem, gostaria de saber de vc como faço para colocar arquivo de voz no meu blog e como mudar a cor de fundo por imagem.Valeu!Beijo</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-50983">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">26 de Maio de 2008, 08:39</p>
         <div class="blog-comment-text"><p>Olá Verônica. Vejo que você usa o Blogspot e sendo assim não a posso ajudar porque não uso esse sistema, mas acho que eles não deixam alterar o layout dos blogs facilmente.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-50994">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/cfddb672fec27c91182c81aaf23bc03d?s=72&d=mp&r=r" alt="Verônica Fragoso" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/cfddb672fec27c91182c81aaf23bc03d?s=72&d=mp&r=r" alt="Verônica Fragoso" />
       <div>
-        <p class="blog-comment-author"><a href="https://veronnikafra-forever.blogspot.com/" rel='external nofollow' class='url'>Verônica Fragoso</a></p>
+        <p class="blog-comment-author"><a href="https://veronnikafra-forever.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Verônica Fragoso</a></p>
         <p class="blog-comment-date">26 de Maio de 2008, 15:10</p>
         <div class="blog-comment-text"><p>Valeu Ivo! Vou continuar minhas xeretices e ver no que dá.Beijo!Parabens pelo |Blog</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-51377">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1458d54d81dabc44cef66b0c6f3803b3?s=72&d=mp&r=r" alt="gutornelas" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1458d54d81dabc44cef66b0c6f3803b3?s=72&d=mp&r=r" alt="gutornelas" />
       <div>
-        <p class="blog-comment-author"><a href='http://meu.formosafest.com.br/' rel='external nofollow' class='url'>gutornelas</a></p>
+        <p class="blog-comment-author"><a href='http://meu.formosafest.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>gutornelas</a></p>
         <p class="blog-comment-date">2 de Junho de 2008, 10:32</p>
-        <div class="blog-comment-text"><p>Muito bom, vou colocar no meu site para disposição dos usuários colocarem foto, queria entender um pouco mais o que você fez, caso possa me ajudar agradeço, <a href="https://www.ivogomes.com/cdn-cgi/l/email-protection#016674756e6b6b3331313441696e756c60686d2f626e6c"><span class="__cf_email__" data-cfemail="3b5c4e4f545151090b0b0e7b53544f565a525715585456">[email&#160;protected]</span></a>!</p></div>
+        <div class="blog-comment-text"><p>Muito bom, vou colocar no meu site para disposição dos usuários colocarem foto, queria entender um pouco mais o que você fez, caso possa me ajudar agradeço, <a href="https://www.ivogomes.com/cdn-cgi/l/email-protection#016674756e6b6b3331313441696e756c60686d2f626e6c" rel="noopener noreferrer"><span class="__cf_email__" data-cfemail="3b5c4e4f545151090b0b0e7b53544f565a525715585456">[email&#160;protected]</span></a>!</p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/links-em-artigos-impressos/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -212,7 +214,7 @@ O tempo que demorei a passar de um sistema para o outro foi uma manhã! Não é 
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

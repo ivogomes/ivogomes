@@ -14,6 +14,7 @@
 <title>Estilizando o RSS — Ivo Gomes</title>
 <meta name="description" content="Para tornar o RSS mais amigável, resolvi incluir uma folha de estilos para as minhas Feeds RSS. Desta forma, mesmo que o utilizador não saiba o que é uma Feed RSS/XML, não irá ver aquela página esquisita cheia de código! Em vez disso, verá uma versão com um layout semelhante ao do site mas mais simples." />
 <meta property="og:title" content="Estilizando o RSS" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Para tornar o RSS mais amigável, resolvi incluir uma folha de estilos para as minhas Feeds RSS. Desta forma, mesmo que o utilizador não saiba o que é uma Feed RSS/XML, não irá ver aquela página esquisita cheia de código! Em vez disso, verá uma versão com um layout semelhante ao do site mas mais simples." />
 <meta property="article:published_time" content="2005-08-15T11:36:22+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/estilizando-o-rss/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>15 Ago 2005</span>
+    <time datetime="2005-08-15">15 Ago 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,20 +52,20 @@
   </div>
 
   <article class="blog-article">
-<p>Seguindo a dica da <a href="http://simonevb.com/blog/2005/07/tornando_o_rss_mais_amigavel.htm">Simone</a> para tornar o RSS mais amigável, resolvi também incluir uma folha de estilos para as minhas Feeds RSS.<br />
-Desta forma, mesmo que o utilizador <a href="https://www.ivogomes.com/?page_id=163">não saiba o que é uma Feed RSS/XML</a>, não irá ver aquela página esquisita cheia de código! Em vez disso, verá uma versão com um layout semelhante ao do site mas mais simples.</h2>
+<p>Seguindo a dica da <a href="http://simonevb.com/blog/2005/07/tornando_o_rss_mais_amigavel.htm" rel="noopener noreferrer">Simone</a> para tornar o RSS mais amigável, resolvi também incluir uma folha de estilos para as minhas Feeds RSS.<br />
+Desta forma, mesmo que o utilizador <a href="https://www.ivogomes.com/?page_id=163" rel="noopener noreferrer">não saiba o que é uma Feed RSS/XML</a>, não irá ver aquela página esquisita cheia de código! Em vez disso, verá uma versão com um layout semelhante ao do site mas mais simples.</h2>
 <p>Podem ver aqui o <a href="/wp-rss2-old.php">antes</a> e o <a href="/wp-rss2.php">depois</a>.</p>
 <h2>Como se faz?</h2>
-<p>Uma vez que uso o <a href="https://www.wordpress.org/">WordPress</a>, bastou-me incluir um ficheiro CSS para alterar o layout do RSS (da mesma forma que se altera o layout de um ficheiro HTML).<br />
-<a href="http://fernando.dubtribe.com/archives/2005/05/14/rss-style-for-your-wp-feed/">Aqui está um tutorial</a> muito bom para quem usa o <a href="https://www.wordpress.org/">WordPress</a>, escrito pelo <a href="http://fernando.dubtribe.com/">Fernando Graphicos</a> e até tem um ficheiro CSS padrão que podemos fazer download e que funciona com o RSS do WordPress, depois é só alterar ao nosso gosto.</h2>
-<div class="box"><strong>Actualização:</strong> Em vez de usar o método do <a href="http://fernando.dubtribe.com/archives/2005/05/14/rss-style-for-your-wp-feed/">Fernando</a> (criação de uma folha de estilos para o RSS), o <a href="http://andr3.net/blog/post/11">André</a> e a <a href="http://simonevb.com/blog/2005/07/tornando_o_rss_mais_amigavel.htm">Simone</a> usam um ficheiro XSLT para estilizar o RSS. Desta forma não é necessário criar uma folha de estilos específica para as tags do RSS (como o Fernando fez). Em vez disso, cria-se um ficheiro XSLT que pode conter XHTML normal e tags XML onde devem aparecer os conteúdos das Feeds. Desta forma podemos criar uma página em XHTML que será mostrada quando alguém tentar visualizar a Feed num browser e indicar qual a melhor forma de visualizar aquele tipo de ficheiro.<br />
+<p>Uma vez que uso o <a href="https://www.wordpress.org/" rel="noopener noreferrer">WordPress</a>, bastou-me incluir um ficheiro CSS para alterar o layout do RSS (da mesma forma que se altera o layout de um ficheiro HTML).<br />
+<a href="http://fernando.dubtribe.com/archives/2005/05/14/rss-style-for-your-wp-feed/" rel="noopener noreferrer">Aqui está um tutorial</a> muito bom para quem usa o <a href="https://www.wordpress.org/" rel="noopener noreferrer">WordPress</a>, escrito pelo <a href="http://fernando.dubtribe.com/" rel="noopener noreferrer">Fernando Graphicos</a> e até tem um ficheiro CSS padrão que podemos fazer download e que funciona com o RSS do WordPress, depois é só alterar ao nosso gosto.</h2>
+<div class="box"><strong>Actualização:</strong> Em vez de usar o método do <a href="http://fernando.dubtribe.com/archives/2005/05/14/rss-style-for-your-wp-feed/" rel="noopener noreferrer">Fernando</a> (criação de uma folha de estilos para o RSS), o <a href="http://andr3.net/blog/post/11" rel="noopener noreferrer">André</a> e a <a href="http://simonevb.com/blog/2005/07/tornando_o_rss_mais_amigavel.htm" rel="noopener noreferrer">Simone</a> usam um ficheiro XSLT para estilizar o RSS. Desta forma não é necessário criar uma folha de estilos específica para as tags do RSS (como o Fernando fez). Em vez disso, cria-se um ficheiro XSLT que pode conter XHTML normal e tags XML onde devem aparecer os conteúdos das Feeds. Desta forma podemos criar uma página em XHTML que será mostrada quando alguém tentar visualizar a Feed num browser e indicar qual a melhor forma de visualizar aquele tipo de ficheiro.<br />
 A criação de um ficheiro XSLT é muito mais simples do que a criação de um ficheiro CSS com as tags de RSS.</div>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">30 comentários</h2>
     <div class="blog-comment" id="comment-2928">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/514f76ab1da55365f7015c722185c7d5?s=72&d=mp&r=r" alt="Rodrigo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/514f76ab1da55365f7015c722185c7d5?s=72&d=mp&r=r" alt="Rodrigo" />
       <div>
         <p class="blog-comment-author">Rodrigo</p>
         <p class="blog-comment-date">15 de Agosto de 2005, 15:49</p>
@@ -71,27 +73,27 @@ A criação de um ficheiro XSLT é muito mais simples do que a criação de um f
       </div>
     </div>
     <div class="blog-comment" id="comment-2929">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1d8a5f8b85c7c0b6276f55800cfee320?s=72&d=mp&r=r" alt="jose reis" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/1d8a5f8b85c7c0b6276f55800cfee320?s=72&d=mp&r=r" alt="jose reis" />
       <div>
-        <p class="blog-comment-author"><a href="https://jreis.deviantart.com/" rel='external nofollow' class='url'>jose reis</a></p>
+        <p class="blog-comment-author"><a href="https://jreis.deviantart.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>jose reis</a></p>
         <p class="blog-comment-date">15 de Agosto de 2005, 18:02</p>
         <div class="blog-comment-text"><p>puto!!! um gajo vem de férias e tu mudas todo o design do site&#8230;bem está muito fixe. gostei!!!</p>
 <p>abração</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2930">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">15 de Agosto de 2005, 18:30</p>
-        <div class="blog-comment-text"><p>Rodrigo: Foi só um CSS. Pode vê-lo <a href="https://www.ivogomes.com/lib/c/rssfeed.css" rel="nofollow">aqui</a> . Não sei se funciona em todas as feeds porque foi feito para a feed do WordPress, mas é uma questão de experimentar e ver se funciona em outros sistemas.</p>
+        <div class="blog-comment-text"><p>Rodrigo: Foi só um CSS. Pode vê-lo <a href="https://www.ivogomes.com/lib/c/rssfeed.css" rel="nofollow noopener noreferrer">aqui</a> . Não sei se funciona em todas as feeds porque foi feito para a feed do WordPress, mas é uma questão de experimentar e ver se funciona em outros sistemas.</p>
 <p>Zé: Já vieste de férias ou estás a meio delas? He he!! Abraços</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2931">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">16 de Agosto de 2005, 00:03</p>
         <div class="blog-comment-text"><p>Podes ir mais além e criar uma página dinamicamente com o XSLT. Não é nada complicado&#8230; (até parece de propósito, acabei de postar um mini how-to no meu site)</p>
 <p>Isso permite-te criar links que funcionam, avisos para os utilizadores de como podem usar as feeds (para os que não sabem), etc.</p>
@@ -99,62 +101,62 @@ A criação de um ficheiro XSLT é muito mais simples do que a criação de um f
       </div>
     </div>
     <div class="blog-comment" id="comment-2932">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.ipodportugal.com/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href='http://www.ipodportugal.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">16 de Agosto de 2005, 01:40</p>
         <div class="blog-comment-text"><p>Simples fabuloso. O Ivo está mesmo na onda!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2933">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">16 de Agosto de 2005, 08:26</p>
         <div class="blog-comment-text"><p>André adorei o layout da tua feed!! Está muito bom. Vou ler o artigo com mais atenção e tentar implementar qualquer coisa aqui!</p>
 <p>Abraços.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2934">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">16 de Agosto de 2005, 14:08</p>
         <div class="blog-comment-text"><p>Obrigado :) </p>
 <p>Se precisares de alguma ajuda, não hesites em me procurar.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2935">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b475e5c694e51764f632e57657512cf1?s=72&d=mp&r=r" alt="Vitor" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b475e5c694e51764f632e57657512cf1?s=72&d=mp&r=r" alt="Vitor" />
       <div>
-        <p class="blog-comment-author"><a href='http://vitorazevedo.com/' rel='external nofollow' class='url'>Vitor</a></p>
+        <p class="blog-comment-author"><a href='http://vitorazevedo.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Vitor</a></p>
         <p class="blog-comment-date">16 de Agosto de 2005, 20:38</p>
         <div class="blog-comment-text"><p>Bom trabalho neste novo layout!<br />
 Sugiro apenas que incluas a opção de <code>autocomplete=off</code> no código do livesearch ;)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2936">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">16 de Agosto de 2005, 22:42</p>
         <div class="blog-comment-text"><p>Qual é a função do <code>autocomplete</code>? Em todos os sistemas que testei nunca o texto da pesquisa se auto-completou ao escrever&#8230;</p>
 <p>Removi o <code>autocomplete</code> porque o código não valida como XHTML. Não existe nenhum atributo chamado <code>autocomplete</code> e neste momento não sei qual é a sua utilidade, por isso, por enquanto, não faz falta (a não ser que alguém me diga o porquê dele estar ali).</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2937">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b475e5c694e51764f632e57657512cf1?s=72&d=mp&r=r" alt="Vitor" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b475e5c694e51764f632e57657512cf1?s=72&d=mp&r=r" alt="Vitor" />
       <div>
-        <p class="blog-comment-author"><a href='http://vitorazevedo.com/' rel='external nofollow' class='url'>Vitor</a></p>
+        <p class="blog-comment-author"><a href='http://vitorazevedo.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Vitor</a></p>
         <p class="blog-comment-date">17 de Agosto de 2005, 13:42</p>
-        <div class="blog-comment-text"><p>O <code>autocomplete</code> pretende evitar isto: <a href="http://vitorazevedo.com/images/ivo.jpg" rel="nofollow">print screen</a>.<br />
-Aqui vai uma dica: <a href="http://stevepsharpe.co.uk/index.php?/journal/comments/make_livesearch_validate/" rel="nofollow">Valiting Livesearch</a></p></div>
+        <div class="blog-comment-text"><p>O <code>autocomplete</code> pretende evitar isto: <a href="http://vitorazevedo.com/images/ivo.jpg" rel="nofollow noopener noreferrer">print screen</a>.<br />
+Aqui vai uma dica: <a href="http://stevepsharpe.co.uk/index.php?/journal/comments/make_livesearch_validate/" rel="nofollow noopener noreferrer">Valiting Livesearch</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2938">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">17 de Agosto de 2005, 20:49</p>
         <div class="blog-comment-text"><p>Espectáculo!</p>
 <p>Obrigado Vitor. Já alterei o código para não ter o <code>autocomplete</code> e entretanto consegui também resolver outros problemas que tinha com o LiveSearch, nomeadamente:</p>
@@ -165,16 +167,16 @@ Aqui vai uma dica: <a href="http://stevepsharpe.co.uk/index.php?/journal/comment
       </div>
     </div>
     <div class="blog-comment" id="comment-2940">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/7348c22d5b9e555819782dc40a635200?s=72&d=mp&r=r" alt="Gean" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/7348c22d5b9e555819782dc40a635200?s=72&d=mp&r=r" alt="Gean" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.kakalo.com/' rel='external nofollow' class='url'>Gean</a></p>
+        <p class="blog-comment-author"><a href='http://www.kakalo.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Gean</a></p>
         <p class="blog-comment-date">22 de Agosto de 2005, 14:23</p>
         <div class="blog-comment-text"><p>Oi Ivo, meio atrasado na leitura dos feeds. Parabens pelo novo layout. Realmente ficou maravilhoso. Ja tinha visto essa dica na Simone tambem. Voce colocou e tambem esta excelente. Vou ver se crio coragem e faco o mesmo.</p>
 <p>Um abraco</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-2960">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9853ebe489421a38f2b1ee2ac8d0690b?s=72&d=mp&r=r" alt="valderez baisi silveira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9853ebe489421a38f2b1ee2ac8d0690b?s=72&d=mp&r=r" alt="valderez baisi silveira" />
       <div>
         <p class="blog-comment-author">valderez baisi silveira</p>
         <p class="blog-comment-date">24 de Setembro de 2005, 04:40</p>
@@ -182,44 +184,44 @@ Aqui vai uma dica: <a href="http://stevepsharpe.co.uk/index.php?/journal/comment
       </div>
     </div>
     <div class="blog-comment" id="comment-3065">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/23f4300cace1f376abc705586a6c8295?s=72&d=mp&r=r" alt="William" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/23f4300cace1f376abc705586a6c8295?s=72&d=mp&r=r" alt="William" />
       <div>
         <p class="blog-comment-author">William</p>
         <p class="blog-comment-date">3 de Novembro de 2005, 18:47</p>
-        <div class="blog-comment-text"><p>Olá Ivo tudo bom, gostei da sua matéria cara, o problema que eu ainda sou um iniciante e não conheço muito bem´os códigos, será que você faria algo pra mim, com esse endereço <a href="http://www.estadao.com.br/rss/agestado.xml" rel="nofollow">http://www.estadao.com.br/rss/agestado.xml</a></p>
+        <div class="blog-comment-text"><p>Olá Ivo tudo bom, gostei da sua matéria cara, o problema que eu ainda sou um iniciante e não conheço muito bem´os códigos, será que você faria algo pra mim, com esse endereço <a href="http://www.estadao.com.br/rss/agestado.xml" rel="nofollow noopener noreferrer">http://www.estadao.com.br/rss/agestado.xml</a></p>
 <p>Obrigado.<br />
 William</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3067">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">4 de Novembro de 2005, 00:27</p>
         <div class="blog-comment-text"><p>William,</p>
 <p>Não é nada difícil&#8230; se fizeres uma página em (X)HTML é bastante fácil fazeres uma folha de estilos XSL-T para a criar a partir de um XML. Chegaste a ler o meu post que o Ivo referiu no post dele? É que gostava de saber até que ponto aquilo é compreensível para &#8220;leigos&#8221;. ;)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3068">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Novembro de 2005, 08:28</p>
         <div class="blog-comment-text"><p>Também recomendo a leres o artigo do André!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3069">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/23f4300cace1f376abc705586a6c8295?s=72&d=mp&r=r" alt="William" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/23f4300cace1f376abc705586a6c8295?s=72&d=mp&r=r" alt="William" />
       <div>
         <p class="blog-comment-author">William</p>
         <p class="blog-comment-date">4 de Novembro de 2005, 09:14</p>
-        <div class="blog-comment-text"><p>Bom Dia, ou André você não quer me ajudar a fazer não cara, eu precisava ver um pronto, para depois conseguir fazer.. eu descobri um cara que chegou a fazer mas quando pedi os fontes pra ele, ele simplesmente me disse se vira você não é quadrado, ai q raiva.. rsrsrs, mas fazer o q né, cada um passa o que pode. qualquer coisa me envie um e-mail: <a href="https://www.ivogomes.com/cdn-cgi/l/email-protection#a2d5cbcececbc3cfc1c3ced1cdcec3d0cbe2cacdd6cfc3cbce8cc1cdcf"><span class="__cf_email__" data-cfemail="592e3035353038343a38352a3635382b301931362d34383035773a3634">[email&#160;protected]</span></a><br />
+        <div class="blog-comment-text"><p>Bom Dia, ou André você não quer me ajudar a fazer não cara, eu precisava ver um pronto, para depois conseguir fazer.. eu descobri um cara que chegou a fazer mas quando pedi os fontes pra ele, ele simplesmente me disse se vira você não é quadrado, ai q raiva.. rsrsrs, mas fazer o q né, cada um passa o que pode. qualquer coisa me envie um e-mail: <a href="https://www.ivogomes.com/cdn-cgi/l/email-protection#a2d5cbcececbc3cfc1c3ced1cdcec3d0cbe2cacdd6cfc3cbce8cc1cdcf" rel="noopener noreferrer"><span class="__cf_email__" data-cfemail="592e3035353038343a38352a3635382b301931362d34383035773a3634">[email&#160;protected]</span></a><br />
 Obrigado cara,</h2>
 <p>William</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3071">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/23f4300cace1f376abc705586a6c8295?s=72&d=mp&r=r" alt="William" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/23f4300cace1f376abc705586a6c8295?s=72&d=mp&r=r" alt="William" />
       <div>
         <p class="blog-comment-author">William</p>
         <p class="blog-comment-date">4 de Novembro de 2005, 14:32</p>
@@ -229,15 +231,15 @@ Obrigado,</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-3072">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Novembro de 2005, 14:57</p>
-        <div class="blog-comment-text"><p>Bom, mais uma vez eu limitei-me a seguir <a href="http://andr3.net/blog/post/11" rel="nofollow">estas instruções</a></p></div>
+        <div class="blog-comment-text"><p>Bom, mais uma vez eu limitei-me a seguir <a href="http://andr3.net/blog/post/11" rel="nofollow noopener noreferrer">estas instruções</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3203">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9365f73aa695f45be63e623286684ba6?s=72&d=mp&r=r" alt="Gean Fonseca" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9365f73aa695f45be63e623286684ba6?s=72&d=mp&r=r" alt="Gean Fonseca" />
       <div>
         <p class="blog-comment-author">Gean Fonseca</p>
         <p class="blog-comment-date">22 de Dezembro de 2005, 12:44</p>
@@ -253,18 +255,18 @@ mas como fazer isso se não tenho acesso ao xml do rss original?</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-3204">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">22 de Dezembro de 2005, 12:57</p>
         <div class="blog-comment-text"><p>Olá Gean!</p>
-<p>Em vez da técnica do XSLT em que é necessário adicionar uma folha de estilos, podes usar a técnica do <a href="http://fernando.dubtribe.com/archives/2005/05/14/rss-style-for-your-wp-feed/" rel="nofollow">Fernando</a>.</p>
+<p>Em vez da técnica do XSLT em que é necessário adicionar uma folha de estilos, podes usar a técnica do <a href="http://fernando.dubtribe.com/archives/2005/05/14/rss-style-for-your-wp-feed/" rel="nofollow noopener noreferrer">Fernando</a>.</p>
 <p>Cada feed RSS tem tags que podem ser estilizadas. Se definires um CSS com essas tags podes estilizar qualquer feed (desde que esteja bem formatada).</p>
-<p>Acho que o podes fazer seguindo <a href="http://jade.mcli.dist.maricopa.edu/feed/index.php?s=style" rel="nofollow">estas instruções</a>&#8230;</p></div>
+<p>Acho que o podes fazer seguindo <a href="http://jade.mcli.dist.maricopa.edu/feed/index.php?s=style" rel="nofollow noopener noreferrer">estas instruções</a>&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3205">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9365f73aa695f45be63e623286684ba6?s=72&d=mp&r=r" alt="Gean Fonseca" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9365f73aa695f45be63e623286684ba6?s=72&d=mp&r=r" alt="Gean Fonseca" />
       <div>
         <p class="blog-comment-author">Gean Fonseca</p>
         <p class="blog-comment-date">22 de Dezembro de 2005, 13:08</p>
@@ -273,19 +275,19 @@ mas como fazer isso se não tenho acesso ao xml do rss original?</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-3208">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">22 de Dezembro de 2005, 18:09</p>
         <div class="blog-comment-text"><p>Gean,</p>
 <p>Se o teu objectivo passa por mais do que ir estilizar as tags das feeds, podes usar linguagens server-side para aplicar folhas de estilo XSLT.</p>
-<p><a href="http://pt.php.net/manual/en/ref.xslt.php" rel="nofollow">http://pt.php.net/manual/en/ref.xslt.php</a><br />
-<a href="http://www.sitepoint.com/print/transform-php-xslt" rel="nofollow">http://www.sitepoint.com/print/transform-php-xslt</a></h2>
+<p><a href="http://pt.php.net/manual/en/ref.xslt.php" rel="nofollow noopener noreferrer">http://pt.php.net/manual/en/ref.xslt.php</a><br />
+<a href="http://www.sitepoint.com/print/transform-php-xslt" rel="nofollow noopener noreferrer">http://www.sitepoint.com/print/transform-php-xslt</a></h2>
 <p>Pode é precisar de instalação de um módulo adicional ao PHP. Mas também, não sei qual a linguagem que tu usas no teu sistema&#8230; Fica a recomendação. :)</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3211">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9365f73aa695f45be63e623286684ba6?s=72&d=mp&r=r" alt="Gean Fonseca" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9365f73aa695f45be63e623286684ba6?s=72&d=mp&r=r" alt="Gean Fonseca" />
       <div>
         <p class="blog-comment-author">Gean Fonseca</p>
         <p class="blog-comment-date">23 de Dezembro de 2005, 12:23</p>
@@ -298,7 +300,7 @@ mas como fazer isso se não tenho acesso ao xml do rss original?</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-3239">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4c58b5d3f32fe419ea9484aca6a67cd?s=72&d=mp&r=r" alt="Nuno" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4c58b5d3f32fe419ea9484aca6a67cd?s=72&d=mp&r=r" alt="Nuno" />
       <div>
         <p class="blog-comment-author">Nuno</p>
         <p class="blog-comment-date">17 de Janeiro de 2006, 23:35</p>
@@ -307,25 +309,25 @@ Ps: sou admin desse forum.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3241">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/351fa00e0347d74192024c9e3c96aec7?s=72&d=mp&r=r" alt="andr3" />
       <div>
-        <p class="blog-comment-author"><a href='http://andr3.net/' rel='external nofollow' class='url'>andr3</a></p>
+        <p class="blog-comment-author"><a href='http://andr3.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>andr3</a></p>
         <p class="blog-comment-date">18 de Janeiro de 2006, 01:59</p>
         <div class="blog-comment-text"><p>Nuno,</p>
-<p>Esse teu fórum, é baseado no phpBB? Se sim, creio que <a href="https://www.phpbb.com/phpBB/viewtopic.php?t=144548" rel="nofollow">isto</a> é o que procuras.</p>
+<p>Esse teu fórum, é baseado no phpBB? Se sim, creio que <a href="https://www.phpbb.com/phpBB/viewtopic.php?t=144548" rel="nofollow noopener noreferrer">isto</a> é o que procuras.</p>
 <p>Senão, basta ter conhecimentos básicos na linguagem disponível (php, asp, etc&#8230;) para fazer uma query à base de dados. Claro que depende da plataforma que estás a usar, mas criar uma feed RSS não deverá ser muito complicado. ;) Diz qual a plataforma e qual a linguagem do teu fórum..</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3242">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">18 de Janeiro de 2006, 08:45</p>
-        <div class="blog-comment-text"><p>Se usares o <a href="https://www.simplemachines.org/" rel="nofollow">SMF</a> essa funcionalidade já vem instalada. Basta activá-la na administração.</p></div>
+        <div class="blog-comment-text"><p>Se usares o <a href="https://www.simplemachines.org/" rel="nofollow noopener noreferrer">SMF</a> essa funcionalidade já vem instalada. Basta activá-la na administração.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3243">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4c58b5d3f32fe419ea9484aca6a67cd?s=72&d=mp&r=r" alt="Nuno" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4c58b5d3f32fe419ea9484aca6a67cd?s=72&d=mp&r=r" alt="Nuno" />
       <div>
         <p class="blog-comment-author">Nuno</p>
         <p class="blog-comment-date">18 de Janeiro de 2006, 18:53</p>
@@ -334,7 +336,7 @@ Se nao der ponho no outro que tambem precisava k esta em php. Ja agora andr3 a p
       </div>
     </div>
     <div class="blog-comment" id="comment-3279">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4c58b5d3f32fe419ea9484aca6a67cd?s=72&d=mp&r=r" alt="Nuno" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e4c58b5d3f32fe419ea9484aca6a67cd?s=72&d=mp&r=r" alt="Nuno" />
       <div>
         <p class="blog-comment-author">Nuno</p>
         <p class="blog-comment-date">25 de Janeiro de 2006, 20:45</p>
@@ -342,18 +344,18 @@ Se nao der ponho no outro que tambem precisava k esta em php. Ja agora andr3 a p
       </div>
     </div>
     <div class="blog-comment" id="comment-3288">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">26 de Janeiro de 2006, 09:30</p>
-        <div class="blog-comment-text"><p>Acho que devias procurar no suporte do fórum que usas. EU quando quero saber alguma coisa sobre o <a href="https://www.simplemachines.org/" rel="nofollow">SMF</a> (O fórum que uso) vou ao fórum de suporte e lá de certeza que tenho a resposta.</p>
+        <div class="blog-comment-text"><p>Acho que devias procurar no suporte do fórum que usas. EU quando quero saber alguma coisa sobre o <a href="https://www.simplemachines.org/" rel="nofollow noopener noreferrer">SMF</a> (O fórum que uso) vou ao fórum de suporte e lá de certeza que tenho a resposta.</p>
 <p>Aqui estás a comentar num post que não está directamente relacionado com fóruns por isso é natural que não te respondam a essa pergunta&#8230;</p>
-<p>Fazendo uma breve pesquisa por &#8220;Invision+RSS&#8221; cheguei à página oficial do Invision onde estão identificadas as suas <a href="https://www.invisionpower.com/ip.dynamic/products/board/features.html" rel="nofollow">funcionalidades</a> e uma delas é o RSS (canto inferior direito da página).</p></div>
+<p>Fazendo uma breve pesquisa por &#8220;Invision+RSS&#8221; cheguei à página oficial do Invision onde estão identificadas as suas <a href="https://www.invisionpower.com/ip.dynamic/products/board/features.html" rel="nofollow noopener noreferrer">funcionalidades</a> e uma delas é o RSS (canto inferior direito da página).</p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/estudo-sobre-motores-de-busca-de-sites-de-e-commerce/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -367,7 +369,7 @@ Se nao der ponho no outro que tambem precisava k esta em php. Ja agora andr3 a p
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

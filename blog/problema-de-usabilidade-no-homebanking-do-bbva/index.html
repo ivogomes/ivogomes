@@ -14,6 +14,7 @@
 <title>Problema de Usabilidade no homebanking do BBVA — Ivo Gomes</title>
 <meta name="description" content="Recentemente criei uma conta no BBVA e ontem tive acesso pela primeira vez ao serviço de homebanking deles. O começo não poderia ser pior...Na primeira vez que se acede ao sistema, é-nos pedido para definir uma password de acesso e uma password de operações. Como se pode ver na imagem em baixo, os campos para inserir a password de operações estão desactivados, sendo necessário clicar numa checkbox em cima para os activar e preencher com a password pretendida." />
 <meta property="og:title" content="Problema de Usabilidade no homebanking do BBVA" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Recentemente criei uma conta no BBVA e ontem tive acesso pela primeira vez ao serviço de homebanking deles. O começo não poderia ser pior...Na primeira vez que se acede ao sistema, é-nos pedido para definir uma password de acesso e uma password de operações. Como se pode ver na imagem em baixo, os campos para inserir a password de operações estão desactivados, sendo necessário clicar numa checkbox em cima para os activar e preencher com a password pretendida." />
 <meta property="article:published_time" content="2010-03-03T10:50:07+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/problema-de-usabilidade-no-homebanking-do-bbva/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>03 Mar 2010</span>
+    <time datetime="2010-03-03">03 Mar 2010</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,15 +52,15 @@
   </div>
 
   <article class="blog-article">
-<p>Recentemente criei uma conta no <a href="http://www.bbva.pt/">BBVA</a> e ontem tive acesso pela primeira vez ao serviço de homebanking deles. O começo não poderia ser pior...</p>
+<p>Recentemente criei uma conta no <a href="http://www.bbva.pt/" rel="noopener noreferrer">BBVA</a> e ontem tive acesso pela primeira vez ao serviço de homebanking deles. O começo não poderia ser pior...</p>
 <p>Na primeira vez que se acede ao sistema, é-nos pedido para definir uma password de acesso e uma password de operações. Como se pode ver na imagem em baixo, os campos para inserir a password de operações estão desactivados, sendo necessário clicar numa checkbox em cima para os activar e preencher com a password pretendida.</p>
-<p><a href="/blog/wp-content/uploads/2010/03/bbva.png"><img src="/blog/wp-content/uploads/2010/03/bbva.png" alt="" title="Homebanking BBVA" width="550" height="111" /></a></p>
+<p><a href="/blog/wp-content/uploads/2010/03/bbva.png"><img loading="lazy" src="/blog/wp-content/uploads/2010/03/bbva.png" alt="" title="Homebanking BBVA" width="550" height="111" /></a></p>
 <p>O problema é que quase ninguém lê as instruções (principalmente se são frases ou parágrafos muito longos). Eu não li a instrução e intuitivamente pensei que a checkbox servia para indicar que queria usar o mesmo código para as duas passwords (eu sei, eu sei, é um problema de segurança, mas posso sempre alterá-las depois) uma vez que a selecção da checkbox activava ou desactivava o preenchimento da segunda password.<br />
 Ou seja, ao clicar na checkbox, a percepção dada pelo site é que ela serve para definir a mesma password para os dois campos.</h2>
 <p>Depois de fazer login e tentar realizar operações no site é que reparei que não podia fazer nada porque me dava um erro a dizer que a password de operações não foi definida. E não há nenhuma forma de definir uma nova password porque para isso preciso de inserir a password de operações actual (que não existe)... E desta forma não consigo usar o site. Lá vou eu ter de ligar para o helpdesk para poder criar uma nova password...</p>
 <p>No caso do utilizador (como eu) não preencher a password de operações, porque é que o deixam continuar? Se essa password é necessária para usar o site então porque é que não é de preenchimento obrigatório logo no início, e porque é que as instruções estão numa checkbox? Não percebo...</p>
 <p>Fiz uma versão alterada desta página que penso será mais fácil de usar (e que deverá mostrar uma mensagem de erro se o utilizador não preencher as duas passwords):</p>
-<p><a href="/blog/wp-content/uploads/2010/03/bbva_new.png"><img src="/blog/wp-content/uploads/2010/03/bbva_new.png" alt="" title="Homepage BBVA (proposta)" width="568" height="206" /></a></p>
+<p><a href="/blog/wp-content/uploads/2010/03/bbva_new.png"><img loading="lazy" src="/blog/wp-content/uploads/2010/03/bbva_new.png" alt="" title="Homepage BBVA (proposta)" width="568" height="206" /></a></p>
 <p>Já para não falar do facto de que as passwords têm ambas 4 caracteres no máximo... Não me parece ser lá muito seguro...</p>
 <p>Em breve conto fazer um comparativo entre os serviços de homebanking de alguns Bancos :)</p>
   </article>
@@ -66,59 +68,59 @@ Ou seja, ao clicar na checkbox, a percepção dada pelo site é que ela serve pa
   <section class="blog-comments">
     <h2 class="blog-comments-title">14 comentários</h2>
     <div class="blog-comment" id="comment-88334">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d1065597beb153d88e79a3a11727b45?s=72&d=mp&r=r" alt="Bruno Silva" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d1065597beb153d88e79a3a11727b45?s=72&d=mp&r=r" alt="Bruno Silva" />
       <div>
-        <p class="blog-comment-author"><a href='http://brunosilva.net/' rel='external nofollow' class='url'>Bruno Silva</a></p>
+        <p class="blog-comment-author"><a href='http://brunosilva.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Silva</a></p>
         <p class="blog-comment-date">3 de Março de 2010, 10:54</p>
         <div class="blog-comment-text"><p>Mas com essa alteração perdeste a possibilidade de optar por não permitir operações monetárias no e-banking, a não ser que assumas que pin de operações vazio seja não definido, o que não me parece muito bem.</p>
 <p>O que acho que deveria ter acontecido, é ao clicar na checkbox não te devia ter permitido submeter sem preencher os pins de operações.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-88337">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">3 de Março de 2010, 11:27</p>
         <div class="blog-comment-text"><p>E para que é que eu precisaria do homebanking sem a possibilidade de realizar operações monetárias?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-88338">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">3 de Março de 2010, 11:27</p>
         <div class="blog-comment-text"><p>Era a mesma coisa que teres um cartão MultiBanco que só dá para ver o saldo e mais nada.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-88339">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d1065597beb153d88e79a3a11727b45?s=72&d=mp&r=r" alt="Bruno Silva" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d1065597beb153d88e79a3a11727b45?s=72&d=mp&r=r" alt="Bruno Silva" />
       <div>
-        <p class="blog-comment-author"><a href='http://brunosilva.net/' rel='external nofollow' class='url'>Bruno Silva</a></p>
+        <p class="blog-comment-author"><a href='http://brunosilva.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Silva</a></p>
         <p class="blog-comment-date">3 de Março de 2010, 11:30</p>
         <div class="blog-comment-text"><p>Para fins de consulta, e eventualmente subscrição de serviços ou assim, depende da definição deles de &#8220;operações monetárias&#8221; lol.</p>
 <p>Mas sim, concordo. Se calhar é um bocado parvo, concordo. Ter e-banking só para consulta.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-88340">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">3 de Março de 2010, 11:31</p>
         <div class="blog-comment-text"><p>Neste momento nem sequer os meus dados pessoais consigo mudar sem a password de operações, por isso, basicamente só posso ver, não posso alterar nada.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-88341">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d1065597beb153d88e79a3a11727b45?s=72&d=mp&r=r" alt="Bruno Silva" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d1065597beb153d88e79a3a11727b45?s=72&d=mp&r=r" alt="Bruno Silva" />
       <div>
-        <p class="blog-comment-author"><a href='http://brunosilva.net/' rel='external nofollow' class='url'>Bruno Silva</a></p>
+        <p class="blog-comment-author"><a href='http://brunosilva.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Silva</a></p>
         <p class="blog-comment-date">3 de Março de 2010, 11:33</p>
         <div class="blog-comment-text"><p>Ok. Isso então é parvo&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-88344">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9550b178978227c4010e3d6c651d1ab3?s=72&d=mp&r=r" alt="Rogério Pereira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/9550b178978227c4010e3d6c651d1ab3?s=72&d=mp&r=r" alt="Rogério Pereira" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.rogeriopa.com/blog' rel='external nofollow' class='url'>Rogério Pereira</a></p>
+        <p class="blog-comment-author"><a href='http://www.rogeriopa.com/blog' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Rogério Pereira</a></p>
         <p class="blog-comment-date">3 de Março de 2010, 12:24</p>
         <div class="blog-comment-text"><p>Outro problema grande de usabilidade é ver a programação em empresas de TV por assinatura. </p>
 <p>Ainda vou fazer uma proposta que seja mais fácil de usar também.</p>
@@ -126,23 +128,23 @@ Ou seja, ao clicar na checkbox, a percepção dada pelo site é que ela serve pa
       </div>
     </div>
     <div class="blog-comment" id="comment-88347">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/fba9349fb3d30a82cb33e70a2cb6a484?s=72&d=mp&r=r" alt="vitorsilva" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/fba9349fb3d30a82cb33e70a2cb6a484?s=72&d=mp&r=r" alt="vitorsilva" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.osmeusapontamentos.com/' rel='external nofollow' class='url'>vitorsilva</a></p>
+        <p class="blog-comment-author"><a href='http://blog.osmeusapontamentos.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>vitorsilva</a></p>
         <p class="blog-comment-date">3 de Março de 2010, 14:13</p>
         <div class="blog-comment-text"><p>confesso que também não vejo grande valor em ter 2 pins&#8230;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-88348">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d1065597beb153d88e79a3a11727b45?s=72&d=mp&r=r" alt="Bruno Silva" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/0d1065597beb153d88e79a3a11727b45?s=72&d=mp&r=r" alt="Bruno Silva" />
       <div>
-        <p class="blog-comment-author"><a href='http://brunosilva.net/' rel='external nofollow' class='url'>Bruno Silva</a></p>
+        <p class="blog-comment-author"><a href='http://brunosilva.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno Silva</a></p>
         <p class="blog-comment-date">3 de Março de 2010, 14:15</p>
         <div class="blog-comment-text"><p>Eles ainda não usam cartão matriz ou telemóvel para confirmação das operações?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-88350">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b12e528d1461a725e3d5b34e99ec72cb?s=72&d=mp&r=r" alt="Magda Joana Silva" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/b12e528d1461a725e3d5b34e99ec72cb?s=72&d=mp&r=r" alt="Magda Joana Silva" />
       <div>
         <p class="blog-comment-author">Magda Joana Silva</p>
         <p class="blog-comment-date">3 de Março de 2010, 18:39</p>
@@ -150,7 +152,7 @@ Ou seja, ao clicar na checkbox, a percepção dada pelo site é que ela serve pa
       </div>
     </div>
     <div class="blog-comment" id="comment-88514">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e9540a282c036e6c43e7125073c1f2b3?s=72&d=mp&r=r" alt="Bruno Fernandes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/e9540a282c036e6c43e7125073c1f2b3?s=72&d=mp&r=r" alt="Bruno Fernandes" />
       <div>
         <p class="blog-comment-author">Bruno Fernandes</p>
         <p class="blog-comment-date">23 de Março de 2010, 10:25</p>
@@ -160,7 +162,7 @@ Bruno</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-97930">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/11be91da2058a2846a645e49101f5713?s=72&d=mp&r=r" alt="ddc" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/11be91da2058a2846a645e49101f5713?s=72&d=mp&r=r" alt="ddc" />
       <div>
         <p class="blog-comment-author">ddc</p>
         <p class="blog-comment-date">3 de Junho de 2011, 17:56</p>
@@ -176,9 +178,9 @@ Neste momento existem inumeras formas de alguém aceder em simultaneo ás sms qu
       </div>
     </div>
     <div class="blog-comment" id="comment-97989">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Junho de 2011, 11:11</p>
         <div class="blog-comment-text"><p>@ddc: se fores por aí, não há nenhuma forma segura de guardar o teu dinheiro.</p>
 <p>Em relação aos dois pontos que mencionas: para obter o cartão matriz é preciso que haja algum keylogger instalado no computador de modo a registar as teclas pressionadas. Além disso, depois seria necessário associar as teclas às coordenadas do cartão que são pedidas. Não é trivial. A única forma de obterem a matriz completa é através de phishing, enganando o utilizador a preencher a matriz completa do cartão pensando que é o banco que lhe está a pedir isso.</p>
@@ -189,7 +191,7 @@ Neste momento existem inumeras formas de alguém aceder em simultaneo ás sms qu
       </div>
     </div>
     <div class="blog-comment" id="comment-97997">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/11be91da2058a2846a645e49101f5713?s=72&d=mp&r=r" alt="ddc" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/11be91da2058a2846a645e49101f5713?s=72&d=mp&r=r" alt="ddc" />
       <div>
         <p class="blog-comment-author">ddc</p>
         <p class="blog-comment-date">4 de Junho de 2011, 12:31</p>
@@ -203,7 +205,7 @@ Neste momento existem inumeras formas de alguém aceder em simultaneo ás sms qu
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/ux-lx-user-experience-lisbon/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -217,7 +219,7 @@ Neste momento existem inumeras formas de alguém aceder em simultaneo ás sms qu
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

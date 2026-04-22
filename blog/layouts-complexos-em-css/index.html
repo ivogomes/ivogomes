@@ -14,6 +14,7 @@
 <title>Layouts Complexos em CSS — Ivo Gomes</title>
 <meta name="description" content="Excelente artigo do Andrew Krespanis, autor do site Left Justified. Neste artigo é feita a explicação de como fazer um layout complexo em CSS (tableless) de uma forma rápida e muito simples, com um código bastante limpo. Dêm uma vista de olhos: Making Complex CSS Simple! Este é para imprimir e guardar. De certeza que …" />
 <meta property="og:title" content="Layouts Complexos em CSS" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Excelente artigo do Andrew Krespanis, autor do site Left Justified. Neste artigo é feita a explicação de como fazer um layout complexo em CSS (tableless) de uma forma rápida e muito simples, com um código bastante limpo. Dêm uma vista de olhos: Making Complex CSS Simple! Este é para imprimir e guardar. De certeza que …" />
 <meta property="article:published_time" content="2005-02-25T10:23:56+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/layouts-complexos-em-css/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>25 Fev 2005</span>
+    <time datetime="2005-02-25">25 Fev 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,50 +52,50 @@
   </div>
 
   <article class="blog-article">
-<p>Excelente artigo do <a href="http://leftjustified.net/about.php">Andrew Krespanis</a>, autor do site <a href="http://leftjustified.net/">Left Justified</a>. </p>
+<p>Excelente artigo do <a href="http://leftjustified.net/about.php" rel="noopener noreferrer">Andrew Krespanis</a>, autor do site <a href="http://leftjustified.net/" rel="noopener noreferrer">Left Justified</a>. </p>
 <p>Neste artigo é feita a explicação de como fazer um layout complexo em CSS (tableless) de uma forma rápida e muito simples, com um código bastante limpo.</p>
 <p>Dêm uma vista de olhos:<br />
-<a href="http://leftjustified.net/site-in-an-hour/">Making Complex CSS Simple!</a></h2>
+<a href="http://leftjustified.net/site-in-an-hour/" rel="noopener noreferrer">Making Complex CSS Simple!</a></h2>
 <p>Este é para imprimir e guardar. De certeza que vai dar muito jeito para futuros projectos...</p>
   </article>
 
   <section class="blog-comments">
     <h2 class="blog-comments-title">3 comentários</h2>
     <div class="blog-comment" id="comment-584">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/41e71ce78b95d99ff0329e5f65ece2c1?s=72&d=mp&r=r" alt="s1mone" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/41e71ce78b95d99ff0329e5f65ece2c1?s=72&d=mp&r=r" alt="s1mone" />
       <div>
-        <p class="blog-comment-author"><a href='http://simonevb.com/' rel='external nofollow' class='url'>s1mone</a></p>
+        <p class="blog-comment-author"><a href='http://simonevb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>s1mone</a></p>
         <p class="blog-comment-date">25 de Fevereiro de 2005, 22:58</p>
         <div class="blog-comment-text"><p>Sabe o que é mais nesta apresentação? É a tal técnica de XMLHttpRequest. Super leve, eficiente e uma experiência satisfatória para o usuário. Veja mais sobre isso no artigo &#8220;XMLHttpRequest, Ajax, and the customer experience&#8221; [http://www.37signals.com/svn/archives/001070.php]<br />
 []s</h2></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-585">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/762cbf98a545baba9e9f06b8c1890bf5?s=72&d=mp&r=r" alt="Aldemir Vieira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/762cbf98a545baba9e9f06b8c1890bf5?s=72&d=mp&r=r" alt="Aldemir Vieira" />
       <div>
-        <p class="blog-comment-author"><a href="https://lutandoporwasp.blogspot.com/" rel='external nofollow' class='url'>Aldemir Vieira</a></p>
+        <p class="blog-comment-author"><a href="https://lutandoporwasp.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Aldemir Vieira</a></p>
         <p class="blog-comment-date">27 de Fevereiro de 2005, 11:28</p>
         <div class="blog-comment-text"><p>É o artigo é bonzinho, a forma de apresentar é ótima, mas ele tinha que fazer a asneira de codificar: #left, #center, #right ? Onde está a complexidade se a semântica não está na mente? </p>
-<p>&#8211; Sobre nomenclatura de TAG semântica<a href="https://lutandoporwasp.blogspot.com/2004/06/ainda-sobre-nomenclaturas-css.html" rel="nofollow"><br />
-&#8211; Semântica na Mente &#8211; W3C Good Name Class</a><a href="https://www.w3.org/QA/Tips/goodclassnames" rel="nofollow"></h2>
+<p>&#8211; Sobre nomenclatura de TAG semântica<a href="https://lutandoporwasp.blogspot.com/2004/06/ainda-sobre-nomenclaturas-css.html" rel="nofollow noopener noreferrer"><br />
+&#8211; Semântica na Mente &#8211; W3C Good Name Class</a><a href="https://www.w3.org/QA/Tips/goodclassnames" rel="nofollow noopener noreferrer"></h2>
 <p>Eu costumo sempre a criticar esse tipo de atitude e sempre há a justificativa &#8220;É apenas para exemplificar&#8221;, mas é no exemplo que as pessoas levam a prática. Uma pena</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-586">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/762cbf98a545baba9e9f06b8c1890bf5?s=72&d=mp&r=r" alt="Aldemir Vieira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/762cbf98a545baba9e9f06b8c1890bf5?s=72&d=mp&r=r" alt="Aldemir Vieira" />
       <div>
-        <p class="blog-comment-author"><a href="https://lutandoporwasp.blogspot.com/" rel='external nofollow' class='url'>Aldemir Vieira</a></p>
+        <p class="blog-comment-author"><a href="https://lutandoporwasp.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Aldemir Vieira</a></p>
         <p class="blog-comment-date">27 de Fevereiro de 2005, 12:29</p>
         <div class="blog-comment-text"><p>E sabe o que tem de negativo nesta apresentação? A falta de semântica na nomenclatura dos ID´s (#left, #center, #right). Vocês vão dizer que é apenas um exemplo, mas tem lugar melhor para fixar conceito que &#8220;exemplos&#8221;?<br />
 Devemos sempre pensar semanticamente:<br />
-Use class with semantics in mind<a href="https://www.w3.org/QA/Tips/goodclassnames" title="Semântica na mente" rel="nofollow"></h2>
+Use class with semantics in mind<a href="https://www.w3.org/QA/Tips/goodclassnames" title="Semântica na mente" rel="nofollow noopener noreferrer"></h2>
 <p>Veja mais: </a><a title="Nomenclatura Semântica" rel="nofollow"><br />
 </a></p></div>
       </div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/curso-especializado-em-metodologias-de-usabilidad-em-madrid/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -107,7 +109,7 @@ Use class with semantics in mind<a href="https://www.w3.org/QA/Tips/goodclassnam
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

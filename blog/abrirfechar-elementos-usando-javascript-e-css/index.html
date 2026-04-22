@@ -14,6 +14,7 @@
 <title>Abrir/Fechar elementos usando Javascript e CSS — Ivo Gomes</title>
 <meta name="description" content="Basicamente, através de um pequeno código Javascript e uma linha de CSS conseguimos fazer com que um determinado elemento se abra ou feche mediante um clique. Por exemplo, podemos querer ter alguma informação na página que é acedida apenas quando o utilizador clica num link. Isto faz com que essa informação apareça sem ter que recarregar a página (no fundo, a informação está lá, mas está escondida)." />
 <meta property="og:title" content="Abrir/Fechar elementos usando Javascript e CSS" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Basicamente, através de um pequeno código Javascript e uma linha de CSS conseguimos fazer com que um determinado elemento se abra ou feche mediante um clique. Por exemplo, podemos querer ter alguma informação na página que é acedida apenas quando o utilizador clica num link. Isto faz com que essa informação apareça sem ter que recarregar a página (no fundo, a informação está lá, mas está escondida)." />
 <meta property="article:published_time" content="2007-03-14T12:14:26+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/abrirfechar-elementos-usando-javascript-e-css/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>14 Mar 2007</span>
+    <time datetime="2007-03-14">14 Mar 2007</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -77,7 +79,7 @@
 <li><code>&lt;div id="maisinfo" style="display:none"&gt;Conteúdos que ficarão escondidos&lt;/div&gt;</code></li>
 </ol>
 <p>O CSS usado nesta <code>div</code> indica que este elemento está escondido quando se abrir a página. Se quiserem que o elemento apareça aberto, basta remover a instrução do <code>style</code>.</p>
-<p><a href="https://www.ivogomes.com/exemplos/toggle.php">Ver exemplo 1</a></p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle.php" rel="noopener noreferrer">Ver exemplo 1</a></p>
 <h2>E para quem não tem o javascript activado no browser?</h2>
 <p>Pegando no Exemplo 1, vamos fazer com que o link "Mais Informação" apenas apareça para os browsers que tiverem o Javascript activado. Sendo assim, alteramos o link para:</p>
 <ol class="code">
@@ -90,9 +92,9 @@
 </ol>
 <p>Ou seja, caso não exista nenhuma versão de Javascript, apenas mostramos o texto que está entre as tags <code>noscript</code>.<br />
 Esta versão ainda não está perfeita porque falta dizer ao browser que, se não houver javascript, então os conteúdos devem ter um <code>display:block</code>, caso contrário, um utilizador com CSS activo e Javascript desactivo, não irá ver o texto.</h2>
-<p><a href="https://www.ivogomes.com/exemplos/toggle2.php">Ver exemplo 2</a></p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle2.php" rel="noopener noreferrer">Ver exemplo 2</a></p>
 <h2>Fazer a mesma coisa, mas com efeitos animados (Script.aculo.us + Prototype)</h2>
-<p>Para que possamos animar a abertura/fecho do elemento, necessitamos de usar uma "library" de efeitos. Neste exemplo, vamos usar a <a href="http://script.aculo.us/">Script.aculo.us</a>.<br />
+<p>Para que possamos animar a abertura/fecho do elemento, necessitamos de usar uma "library" de efeitos. Neste exemplo, vamos usar a <a href="http://script.aculo.us/" rel="noopener noreferrer">Script.aculo.us</a>.<br />
 A Scrip.taculo.us é uma biblioteca de efeitos em Javascript que pode ser facilmente usada no nosso site, sem ser necessário grandes conhecimentos de programação. Basta fazer download e colocar numa pasta do site.</h2>
 <p>No cabeçalho da página, temos que chamar os efeitos, assim:</p>
 <ol class="code">
@@ -105,18 +107,18 @@ A Scrip.taculo.us é uma biblioteca de efeitos em Javascript que pode ser facilm
 <li><code>&lt;a href="#" onclick="Effect.toggle('maisinfo','slide'); return false;"&gt;</code></li>
 </ol>
 <p>Em que: "maisinfo" é o nome da <code>div</code> a abrir/fechar e "slide" é o efeito. Podemos usar outros efeitos, tais como "blind" ou "appear".</p>
-<p><a href="https://www.ivogomes.com/exemplos/toggle3.php">Ver exemplo 3</a></p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle3.php" rel="noopener noreferrer">Ver exemplo 3</a></p>
 <h2>Separação do Javascript dos conteúdos</h2>
 <p>Da mesma forma que podemos separar a apresentação (CSS) dos conteúdos (HTML), também é possível separar os efeitos e outras animações (Javascript) para fora do código HTML.<br />
-(Obrigado ao <a href="http://www.sergionunes.com/">Sérgio Nunes</a> pela dica!)</h2>
+(Obrigado ao <a href="http://www.sergionunes.com/" rel="noopener noreferrer">Sérgio Nunes</a> pela dica!)</h2>
 <p>Fiz um pequeno teste com base no Exemplo 1, em que modifiquei o HTML, removendo todo o Javascript e colocando as acções à parte no Javascript.</p>
-<p><a href="https://www.ivogomes.com/exemplos/toggle4.php">Ver exemplo 4</a></p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle4.php" rel="noopener noreferrer">Ver exemplo 4</a></p>
 <h2>E fazendo a mesma coisa usando jQuery</h2>
-<p>Graças ao <a href="http://blog.logon.com.pt/">José Carlos</a>, temos um exemplo que consegue fazer tudo o que os anteriores fazem, e melhor. Através do <a href="https://jquery.com/">jQuery</a>, uma biblioteca de Javascript, é possível, com pouco código, abrir ou fechar um elemento usando animação e, ao mesmo tempo, ter em conta os utilizadores que não têm javascript activado. Além de tudo isto, faz também a separação do Javascript para um ficheiro externo, o que nos deixa com um HTML limpo e sem mais nenhuma tag que não seja HTML puro.</p>
-<p><a href="https://www.ivogomes.com/exemplos/toggle5.php">Ver exemplo 5</a></p>
+<p>Graças ao <a href="http://blog.logon.com.pt/" rel="noopener noreferrer">José Carlos</a>, temos um exemplo que consegue fazer tudo o que os anteriores fazem, e melhor. Através do <a href="https://jquery.com/" rel="noopener noreferrer">jQuery</a>, uma biblioteca de Javascript, é possível, com pouco código, abrir ou fechar um elemento usando animação e, ao mesmo tempo, ter em conta os utilizadores que não têm javascript activado. Além de tudo isto, faz também a separação do Javascript para um ficheiro externo, o que nos deixa com um HTML limpo e sem mais nenhuma tag que não seja HTML puro.</p>
+<p><a href="https://www.ivogomes.com/exemplos/toggle5.php" rel="noopener noreferrer">Ver exemplo 5</a></p>
 <p>Definitivamente, esta é a melhor solução para este tipo de situações.</p>
 <h2>Outros métodos</h2>
-<p>O <a href="http://www.dustindiaz.com/seven-togglers/">Dustin Diaz mostra 7 maneiras diferentes de abrir/fechar (toggle) um elemento</a> usando Javascript. Estes exemplos fazem basicamente a mesma coisa mostrada no Exemplo 1, mas usando várias metodologias diferentes.</p>
+<p>O <a href="http://www.dustindiaz.com/seven-togglers/" rel="noopener noreferrer">Dustin Diaz mostra 7 maneiras diferentes de abrir/fechar (toggle) um elemento</a> usando Javascript. Estes exemplos fazem basicamente a mesma coisa mostrada no Exemplo 1, mas usando várias metodologias diferentes.</p>
 <h2>Conclusão</h2>
 <p>Usando um pequeno pedaço de código é possível tornar o nosso site um pouco mais interactivo. É claro que este tipo de elementos e as animações não devem ser usadas em demasia, mas sim, tendo em conta um propósito e um objectivo bem definidos que facilitem de alguma forma a navegabilidade do site.<br />
 Por exemplo, esta função seria bastante útil numa listagem de itens com um link para "ver mais informações" sobre cada um deles. Desta forma, o utilizador não seria bombardeado com tanta informação de início e ao mesmo tempo teria a liberdade de poder abrir a informação detalhada de cada elemento sem ter que recarregar a página inteira nem distrair-se com outra informação que não é relevante na altura.</h2>
@@ -126,34 +128,34 @@ Por exemplo, esta função seria bastante útil numa listagem de itens com um li
   <section class="blog-comments">
     <h2 class="blog-comments-title">59 comentários</h2>
     <div class="blog-comment" id="comment-11603">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/30def9b77ccaf2e9df8d615fd8837ebc?s=72&d=mp&r=r" alt="Cesar Oliveira" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/30def9b77ccaf2e9df8d615fd8837ebc?s=72&d=mp&r=r" alt="Cesar Oliveira" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.profissionalweb.net/blog/' rel='external nofollow' class='url'>Cesar Oliveira</a></p>
+        <p class="blog-comment-author"><a href='http://www.profissionalweb.net/blog/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Cesar Oliveira</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 12:44</p>
         <div class="blog-comment-text"><p>Olá Ivo, muitos parabéns,</p>
 <p>Aqui está um post verdadeiramente util e interessante.</p>
 <p>Continua nessa onda que vais bem.</p>
 <p>Um abraço de Guimarães<br />
 César Oliveira<br />
-<a href="http://www.profissionalweb.net/blog/" rel="nofollow">http://www.profissionalweb.net/blog/</a><br />
-<a href="http://www.profissionalweb.net/cursos/" rel="nofollow">http://www.profissionalweb.net/cursos/</a><br />
-<a href="http://www.profissionalweb.net/gestdoc/" rel="nofollow">http://www.profissionalweb.net/gestdoc/</a></h2>
+<a href="http://www.profissionalweb.net/blog/" rel="nofollow noopener noreferrer">http://www.profissionalweb.net/blog/</a><br />
+<a href="http://www.profissionalweb.net/cursos/" rel="nofollow noopener noreferrer">http://www.profissionalweb.net/cursos/</a><br />
+<a href="http://www.profissionalweb.net/gestdoc/" rel="nofollow noopener noreferrer">http://www.profissionalweb.net/gestdoc/</a></h2>
 <p>PS: Tu estás em que cidade ?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-11604">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8ac73fe5c5b3d09bf674f7b4ba2cde1a?s=72&d=mp&r=r" alt="Muniz" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8ac73fe5c5b3d09bf674f7b4ba2cde1a?s=72&d=mp&r=r" alt="Muniz" />
       <div>
-        <p class="blog-comment-author"><a href='http://rodrigomuniz.com/' rel='external nofollow' class='url'>Muniz</a></p>
+        <p class="blog-comment-author"><a href='http://rodrigomuniz.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Muniz</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 12:53</p>
         <div class="blog-comment-text"><p>Está aí uma dica que merecia um pouco de material português :)<br />
 Ótimo!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-11605">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&d=mp&r=r" alt="José Carlos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&d=mp&r=r" alt="José Carlos" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.logon.com.pt/' rel='external nofollow' class='url'>José Carlos</a></p>
+        <p class="blog-comment-author"><a href='http://blog.logon.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>José Carlos</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 13:01</p>
         <div class="blog-comment-text"><p>Boa dica.</p>
 <p>Penso que se deve evitar a utilização de links com o # como destino.<br />
@@ -166,9 +168,9 @@ Logo sou capaz de ter mais tempo para exemplificar.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-11607">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&d=mp&r=r" alt="José Carlos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&d=mp&r=r" alt="José Carlos" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.logon.com.pt/' rel='external nofollow' class='url'>José Carlos</a></p>
+        <p class="blog-comment-author"><a href='http://blog.logon.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>José Carlos</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 13:03</p>
         <div class="blog-comment-text"><p>no inicio, onde disse:<br />
 : se a pessoa tiver o javascript activo, a informação adiccional aparece normalmente, logo, não é necessário o link.</h2>
@@ -178,38 +180,38 @@ Logo sou capaz de ter mais tempo para exemplificar.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-11613">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 13:52</p>
         <div class="blog-comment-text"><p>@José Carlos: Obrigado pela dica. Por acaso já tinha pensado nisso dos links a apontar para &#8220;#&#8221;, mas não me ocorreu nenhuma forma de dar a volta. Quanto às sugestões que dás, infelizmente só comecei agora a aprender Javascript, por isso ainda não estou apto para as implementar de cabeça :)<br />
 Vou pesquisar um pouco e depois meto aqui a solução (ou faço um novo post só sobre isso).</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-11614">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/543818c6aa6430df918006d63b596dcf?s=72&d=mp&r=r" alt="Jorge Laranjo" />
       <div>
-        <p class="blog-comment-author"><a href="https://concursosdefotografia.blogspot.com/" rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-author"><a href="https://concursosdefotografia.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Jorge Laranjo</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 14:01</p>
         <div class="blog-comment-text"><p>O José Carlos tem razão.<br />
 E é importante que o site não deixe de ser acessível só por usar Ajax.</h2>
-<p>E já experimentaste a jQuery? <a href="https://jquery.com/" rel="nofollow">http://jquery.com/</a></p></div>
+<p>E já experimentaste a jQuery? <a href="https://jquery.com/" rel="nofollow noopener noreferrer">http://jquery.com/</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-11618">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1ff9c55fcc06a93a614248d31cb4ed3c?s=72&d=mp&r=r" alt="Sérgio Nunes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/1ff9c55fcc06a93a614248d31cb4ed3c?s=72&d=mp&r=r" alt="Sérgio Nunes" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.sergionunes.com/' rel='external nofollow' class='url'>Sérgio Nunes</a></p>
+        <p class="blog-comment-author"><a href='http://www.sergionunes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Sérgio Nunes</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 14:38</p>
         <div class="blog-comment-text"><p>Sugiro que, em vez de usar JS directamente nos código HTML, se use JS não intrusivo. Ver por exemplo:</p>
-<p><a href="http://alistapart.com/articles/behavioralseparation" rel="nofollow">http://alistapart.com/articles/behavioralseparation</a></p>
+<p><a href="http://alistapart.com/articles/behavioralseparation" rel="nofollow noopener noreferrer">http://alistapart.com/articles/behavioralseparation</a></p>
 <p>As vantagens são grandes e estão associadas à separação da estrutura-estilo-dinâmica das páginas web.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-11620">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 15:04</p>
         <div class="blog-comment-text"><p>@Jorge Laranjo: Vou ver a jQuery. Já me falaram muito bem disso.</p>
 <p>@Sérgio Nunes: Obrigado pelo link. Não sabia que dava para fazer essa separação, tal como a do CSS/HTML. Estive a experimentar, mas ainda não percebo muito de Javascript para conseguir fazer com que algo funcione&#8230;</p>
@@ -217,7 +219,7 @@ E é importante que o site não deixe de ser acessível só por usar Ajax.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-11625">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c3c400c18b635c67ded330d03c92d0e1?s=72&d=mp&r=r" alt="Estevão Lucas" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c3c400c18b635c67ded330d03c92d0e1?s=72&d=mp&r=r" alt="Estevão Lucas" />
       <div>
         <p class="blog-comment-author">Estevão Lucas</p>
         <p class="blog-comment-date">14 de Março de 2007, 16:52</p>
@@ -238,18 +240,18 @@ Ah&#8230;trabalha com seletores de CSS3&#8230;nossa!</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-11626">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&d=mp&r=r" alt="José Carlos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&d=mp&r=r" alt="José Carlos" />
       <div>
-        <p class="blog-comment-author"><a href='http://blog.logon.com.pt/' rel='external nofollow' class='url'>José Carlos</a></p>
+        <p class="blog-comment-author"><a href='http://blog.logon.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>José Carlos</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 17:19</p>
         <div class="blog-comment-text"><p>Também concordo que a jQuery é das mais interessantes, quer pelo tamnho reduzido, quer pelas funcionalidades.<br />
-Para não alongar o post, e como era preciso código, deixo esta página de exemplo para aquilo que disse atrás, <a href="http://logon.com.pt/diversos/jquery.html" title="ver exemplo" rel="nofollow">a criação, via javascript do link</a>, recorrendo à <a href="https://jquery.com/" title="jquery.com" rel="nofollow">jQuery</a>.</p></div>
+Para não alongar o post, e como era preciso código, deixo esta página de exemplo para aquilo que disse atrás, <a href="http://logon.com.pt/diversos/jquery.html" title="ver exemplo" rel="nofollow noopener noreferrer">a criação, via javascript do link</a>, recorrendo à <a href="https://jquery.com/" title="jquery.com" rel="nofollow noopener noreferrer">jQuery</a>.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-11627">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/0a5e7ae59ecf7efee3168b8d3ad424c9?s=72&d=mp&r=r" alt="André" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/0a5e7ae59ecf7efee3168b8d3ad424c9?s=72&d=mp&r=r" alt="André" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.andrecrins.com/' rel='external nofollow' class='url'>André</a></p>
+        <p class="blog-comment-author"><a href='http://www.andrecrins.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>André</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 17:42</p>
         <div class="blog-comment-text"><p><strong>Grande ivo!</strong><br />
 Muito boa a iniciativa de publicar artigos relacionados a desenvolvimento. Tenho certeza que será útil para os visitantes do seu blog.</h2>
@@ -258,16 +260,16 @@ Muito boa a iniciativa de publicar artigos relacionados a desenvolvimento. Tenho
       </div>
     </div>
     <div class="blog-comment" id="comment-11629">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">14 de Março de 2007, 17:50</p>
         <div class="blog-comment-text"><p>Esse exemplo do jQuery deixou-me embasbacado :D</p>
 <p>Brutal. Extremamente simples quando comparado com outros métodos que andei a pesquisar.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-14493">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/44dd01f5b3ac8a8724e6c3e4bf020c53?s=72&d=mp&r=r" alt="Gabriel" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/44dd01f5b3ac8a8724e6c3e4bf020c53?s=72&d=mp&r=r" alt="Gabriel" />
       <div>
         <p class="blog-comment-author">Gabriel</p>
         <p class="blog-comment-date">25 de Abril de 2007, 05:39</p>
@@ -275,7 +277,7 @@ Muito boa a iniciativa de publicar artigos relacionados a desenvolvimento. Tenho
       </div>
     </div>
     <div class="blog-comment" id="comment-14500">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c9dd589616d26396a12d70c773e3cf64?s=72&d=mp&r=r" alt="Euclides" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c9dd589616d26396a12d70c773e3cf64?s=72&d=mp&r=r" alt="Euclides" />
       <div>
         <p class="blog-comment-author">Euclides</p>
         <p class="blog-comment-date">25 de Abril de 2007, 08:15</p>
@@ -300,16 +302,16 @@ Conteúdos que ficarão escondidos</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-14727">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">27 de Abril de 2007, 10:58</p>
         <div class="blog-comment-text"><p>Euclides, o Javascript não pode ficar no meio do HTML. Abra as páginas com os meus exemplos e veja como foi colocado o código.</p>
 <p>Gabriel, provavelmente para isso terá que ser definido mais algum código para deixar sempre um bloco aberto, mas neste momento também ainda não sei como o fazer (ainda não tive tempo de aprofundar mais os meus conhecimentos de JavaScript).</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-14737">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c9dd589616d26396a12d70c773e3cf64?s=72&d=mp&r=r" alt="Euclides" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c9dd589616d26396a12d70c773e3cf64?s=72&d=mp&r=r" alt="Euclides" />
       <div>
         <p class="blog-comment-author">Euclides</p>
         <p class="blog-comment-date">27 de Abril de 2007, 11:59</p>
@@ -317,35 +319,35 @@ Conteúdos que ficarão escondidos</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-14740">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&d=mp&r=r" alt="José Carlos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8155772edddcf06050a4dc5eefd61d95?s=72&d=mp&r=r" alt="José Carlos" />
       <div>
-        <p class="blog-comment-author"><a href='http://logon.com.pt/' rel='external nofollow' class='url'>José Carlos</a></p>
+        <p class="blog-comment-author"><a href='http://logon.com.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>José Carlos</a></p>
         <p class="blog-comment-date">27 de Abril de 2007, 12:30</p>
         <div class="blog-comment-text"><p>@Euclides: posso recomendar eu um? Se sim, um excelente livro de DOM Scripting é o DOM Scripting &#8211; Web DEsign with Javascript and the Document Object Model, do Jeremy Keith.<br />
 Tem uma introdução bastante boa ao Javascript e depois avança para o DOM Scripting, sempre com exemplos e conselhos.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-15323">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">3 de Maio de 2007, 17:23</p>
         <div class="blog-comment-text"><p>Eu comprei o &#8220;Learning Javascript&#8221; há uns dois meses mas ainda não tive tempo de começar a ler.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-15519">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">7 de Maio de 2007, 17:36</p>
         <div class="blog-comment-text"><p>E finalmente tive a oportunidade de fazer uma pequena página usando o JQuery :)</p>
-<p>Podem ver aqui: <a href="http://anedotas.numsitedejeito.com/faq" rel="nofollow">http://anedotas.numsitedejeito.com/faq</a></p></div>
+<p>Podem ver aqui: <a href="http://anedotas.numsitedejeito.com/faq" rel="nofollow noopener noreferrer">http://anedotas.numsitedejeito.com/faq</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-19378">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c8abf7f548e7df76ebb79c53e07bcce9?s=72&d=mp&r=r" alt="Danilo Debiazi" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c8abf7f548e7df76ebb79c53e07bcce9?s=72&d=mp&r=r" alt="Danilo Debiazi" />
       <div>
-        <p class="blog-comment-author"><a href="https://danilodebiazi.blogspot.com/" rel='external nofollow' class='url'>Danilo Debiazi</a></p>
+        <p class="blog-comment-author"><a href="https://danilodebiazi.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Danilo Debiazi</a></p>
         <p class="blog-comment-date">13 de Junho de 2007, 08:45</p>
         <div class="blog-comment-text"><p>Achei muito interessante este artigo, me ajudou muito de fato. Mas neste código surgiu o seguinte problema:</p>
 <p><code><a href="#" rel="nofollow">Mais Informação</a></code></p>
@@ -354,15 +356,15 @@ Tem uma introdução bastante boa ao Javascript e depois avança para o DOM Scri
       </div>
     </div>
     <div class="blog-comment" id="comment-30476">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/3c3f653196981dcf79b5c0ee4e2fd5a2?s=72&d=mp&r=r" alt="Elfrancio Granjense" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/3c3f653196981dcf79b5c0ee4e2fd5a2?s=72&d=mp&r=r" alt="Elfrancio Granjense" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.wwwsites.com.br/' rel='external nofollow' class='url'>Elfrancio Granjense</a></p>
+        <p class="blog-comment-author"><a href='http://www.wwwsites.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Elfrancio Granjense</a></p>
         <p class="blog-comment-date">25 de Setembro de 2007, 20:06</p>
         <div class="blog-comment-text"><p>Finalmente encontrei o que procurava neste blog, obrigadão!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-31518">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/118b439aecf80f34b7716ae8b4ccf471?s=72&d=mp&r=r" alt="Ademir Bastiani" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/118b439aecf80f34b7716ae8b4ccf471?s=72&d=mp&r=r" alt="Ademir Bastiani" />
       <div>
         <p class="blog-comment-author">Ademir Bastiani</p>
         <p class="blog-comment-date">6 de Outubro de 2007, 19:04</p>
@@ -370,18 +372,18 @@ Tem uma introdução bastante boa ao Javascript e depois avança para o DOM Scri
       </div>
     </div>
     <div class="blog-comment" id="comment-35827">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/0ebaa3c9f3b52c19e0d13c090a15962f?s=72&d=mp&r=r" alt="TIAGO...BELOM" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/0ebaa3c9f3b52c19e0d13c090a15962f?s=72&d=mp&r=r" alt="TIAGO...BELOM" />
       <div>
         <p class="blog-comment-author">TIAGO...BELOM</p>
         <p class="blog-comment-date">22 de Novembro de 2007, 17:55</p>
         <div class="blog-comment-text"><p>e ae galera eu queria saber como eu faço para colocar uma parte so de comentarios em meu site&#8230;.pohhh se alguem souber porfavor me ajudem&#8230;.blz&#8230;.ate+++</p>
-<p><a href="http://www.ivogomes.com/cdn-cgi/l/email-protection#22564b43454d7d40474e4d4f624a4d564f434b4e0c414d4f"><span class="__cf_email__" data-cfemail="e7938e868088b885828b888aa78f88938a868e8bc984888a">[email&#160;protected]</span></a></p></div>
+<p><a href="http://www.ivogomes.com/cdn-cgi/l/email-protection#22564b43454d7d40474e4d4f624a4d564f434b4e0c414d4f" rel="noopener noreferrer"><span class="__cf_email__" data-cfemail="e7938e868088b885828b888aa78f88938a868e8bc984888a">[email&#160;protected]</span></a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-37594">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8a5604e816380ff809f344acf0cf33b1?s=72&d=mp&r=r" alt="Cayo Medeiros aka. yogodoshi" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8a5604e816380ff809f344acf0cf33b1?s=72&d=mp&r=r" alt="Cayo Medeiros aka. yogodoshi" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.yogodoshi.com/blog' rel='external nofollow' class='url'>Cayo Medeiros aka. yogodoshi</a></p>
+        <p class="blog-comment-author"><a href='http://www.yogodoshi.com/blog' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Cayo Medeiros aka. yogodoshi</a></p>
         <p class="blog-comment-date">20 de Dezembro de 2007, 15:08</p>
         <div class="blog-comment-text"><p>Parabéns pelo artigo.<br />
 Muito bem explicado!</h2>
@@ -390,9 +392,9 @@ Muito bem explicado!</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-51299">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/01d326908cf5fc67218d608a7dc0dc0e?s=72&d=mp&r=r" alt="Lipeh" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/01d326908cf5fc67218d608a7dc0dc0e?s=72&d=mp&r=r" alt="Lipeh" />
       <div>
-        <p class="blog-comment-author"><a href="https://dominiohacker.blogspot.com/" rel='external nofollow' class='url'>Lipeh</a></p>
+        <p class="blog-comment-author"><a href="https://dominiohacker.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Lipeh</a></p>
         <p class="blog-comment-date">1 de Junho de 2008, 00:51</p>
         <div class="blog-comment-text"><p>Gostei, uma post que realmente presta..<br />
 amigo queria uma ajudinha sua..<br />
@@ -414,21 +416,21 @@ e ai nao vai dar certo&#8230;<br />
 tem como??<br />
 valew espero respostas&#8230;entra no mew blog e ai fala se tem ou nao ok?<br />
 flwss</h2>
-<p><a href="https://dominiohacker.blogspot.com/" rel="nofollow">http://dominiohacker.blogspot.com</a></p></div>
+<p><a href="https://dominiohacker.blogspot.com/" rel="nofollow noopener noreferrer">http://dominiohacker.blogspot.com</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-52088">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">11 de Junho de 2008, 09:15</p>
         <div class="blog-comment-text"><p>Podes fazer os links relativos em vez de os fazeres absolutos. Exemplo: &#8220;1/index.php&#8221; em vez de &#8220;Desktop/1/index.htm&#8221;. Para fazer um link para uma pasta anterior, basta fazer &#8220;../comandos.html&#8221;</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-72543">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/de5832fea7fc7edc5208c94391797234?s=72&d=mp&r=r" alt="Carlos Bonaparte" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/de5832fea7fc7edc5208c94391797234?s=72&d=mp&r=r" alt="Carlos Bonaparte" />
       <div>
-        <p class="blog-comment-author"><a href='http://FutebolemPortugal.do.sapo.pt/' rel='external nofollow' class='url'>Carlos Bonaparte</a></p>
+        <p class="blog-comment-author"><a href='http://FutebolemPortugal.do.sapo.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Carlos Bonaparte</a></p>
         <p class="blog-comment-date">28 de Outubro de 2008, 12:56</p>
         <div class="blog-comment-text"><p>Olá,</p>
 <p>realmente, este post sem dúvida está interessante, até porque encontrei exatamente aquilo que queria para o meu site.. um menu onde possa mostrar certas coisas só quando o utilizador clicar nelas.</p>
@@ -456,9 +458,9 @@ especificações à parte.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-73076">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">4 de Novembro de 2008, 15:25</p>
         <div class="blog-comment-text"><p>Olá Carlos.<br />
 Em relação à sua dúvida, quando cria um link, tem de colocar sempre o endereço correcto para o ficheiro. Por isso, se o ficheiro está na pasta /ABCD/noticias.html, terá que usar essa informação para o link.<br />
@@ -466,9 +468,9 @@ A única forma de não ter que escrever manualmente o nome da pasta seria usar u
       </div>
     </div>
     <div class="blog-comment" id="comment-73726">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/de5832fea7fc7edc5208c94391797234?s=72&d=mp&r=r" alt="Carlos Bonaparte" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/de5832fea7fc7edc5208c94391797234?s=72&d=mp&r=r" alt="Carlos Bonaparte" />
       <div>
-        <p class="blog-comment-author"><a href='http://FutebolemPortugal.do.sapo.pt/' rel='external nofollow' class='url'>Carlos Bonaparte</a></p>
+        <p class="blog-comment-author"><a href='http://FutebolemPortugal.do.sapo.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Carlos Bonaparte</a></p>
         <p class="blog-comment-date">11 de Novembro de 2008, 11:42</p>
         <div class="blog-comment-text"><p>Olá, obrigado&#8230;<br />
 A questão é que, tendo em conta que o objetivo final é ter aproximadamente 2000 clubes, alterar no final da temporada 2000 menus&#8230; é muita coisa;</h2>
@@ -479,7 +481,7 @@ A questão é que, tendo em conta que o objetivo final é ter aproximadamente 20
       </div>
     </div>
     <div class="blog-comment" id="comment-85046">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8455a60d6a0a281c31703dac3729ef4a?s=72&d=mp&r=r" alt="Carlos Fernando" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8455a60d6a0a281c31703dac3729ef4a?s=72&d=mp&r=r" alt="Carlos Fernando" />
       <div>
         <p class="blog-comment-author">Carlos Fernando</p>
         <p class="blog-comment-date">26 de Março de 2009, 13:02</p>
@@ -491,25 +493,25 @@ Gostaria de abrir a div dentro de um if do PHP.</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-85325">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/18f1ade3755f5abdc76b6bac8e9850c7?s=72&d=mp&r=r" alt="José Coelho" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/18f1ade3755f5abdc76b6bac8e9850c7?s=72&d=mp&r=r" alt="José Coelho" />
       <div>
-        <p class="blog-comment-author"><a href='http://internetparatodos.blogs.sapo.pt/' rel='external nofollow' class='url'>José Coelho</a></p>
+        <p class="blog-comment-author"><a href='http://internetparatodos.blogs.sapo.pt/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>José Coelho</a></p>
         <p class="blog-comment-date">10 de Abril de 2009, 17:42</p>
-        <div class="blog-comment-text"><p>Olá ivo, boa tarde. Descobri o seu site que considero bastante útil. Tenho a dizer que não entendo nada nem de Javascript nem de CSS, mas gostaria imenso de ter um efeito no meu blog e pedia-lhe ajuda, nesse sentido. Gostaria de criar um efeito colorido nos links ao passar com o rato, o que em inglês se chama Flashing Links. Aqui nesta página japonesa pode ver o efeito que pretendo: <a href="http://celluloide.tistory.com/category/Future%20pop/EBM" rel="nofollow">http://celluloide.tistory.com/category/Future%20pop/EBM</a><br />
+        <div class="blog-comment-text"><p>Olá ivo, boa tarde. Descobri o seu site que considero bastante útil. Tenho a dizer que não entendo nada nem de Javascript nem de CSS, mas gostaria imenso de ter um efeito no meu blog e pedia-lhe ajuda, nesse sentido. Gostaria de criar um efeito colorido nos links ao passar com o rato, o que em inglês se chama Flashing Links. Aqui nesta página japonesa pode ver o efeito que pretendo: <a href="http://celluloide.tistory.com/category/Future%20pop/EBM" rel="nofollow noopener noreferrer">http://celluloide.tistory.com/category/Future%20pop/EBM</a><br />
 Tenho um blog no Sapo que funciona em CSS, como posso adicionar este efeito colorido no meu blog? Pode-me ajudar? Obrigado pela atenção. Um abraço. José</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-85327">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">10 de Abril de 2009, 18:54</p>
         <div class="blog-comment-text"><p>Olá José.<br />
 Não sei como fazer esse efeito, mas sugiro um muito mais simples, que muda apenas a cor do link ao passar com o rato por cima. O que me mostrou parece ser um pouco irritante se o site tiver muitos links e todos eles fizerem esse efeito ao passar com o rato. Além disso, seria necessário criar algo em JavaScript para esse efeito e não sei se os blogs do SAPO permitem que isso seja feito.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-87158">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e420cda44f1c9f8b0d623ef67e9a86e9?s=72&d=mp&r=r" alt="Patricia" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e420cda44f1c9f8b0d623ef67e9a86e9?s=72&d=mp&r=r" alt="Patricia" />
       <div>
         <p class="blog-comment-author">Patricia</p>
         <p class="blog-comment-date">8 de Outubro de 2009, 16:10</p>
@@ -523,7 +525,7 @@ esse codigo p chama pasta dentro de pasta 2x</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-87505">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/45fde8a5f23b01228e400c8cdf7a4c3c?s=72&d=mp&r=r" alt="Jéssica" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/45fde8a5f23b01228e400c8cdf7a4c3c?s=72&d=mp&r=r" alt="Jéssica" />
       <div>
         <p class="blog-comment-author">Jéssica</p>
         <p class="blog-comment-date">9 de Novembro de 2009, 17:31</p>
@@ -531,7 +533,7 @@ esse codigo p chama pasta dentro de pasta 2x</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-87555">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/640b5a14576287a63c2b8edb86714bcd?s=72&d=mp&r=r" alt="WESLLEY CLYTON" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/640b5a14576287a63c2b8edb86714bcd?s=72&d=mp&r=r" alt="WESLLEY CLYTON" />
       <div>
         <p class="blog-comment-author">WESLLEY CLYTON</p>
         <p class="blog-comment-date">25 de Novembro de 2009, 13:18</p>
@@ -540,15 +542,15 @@ esse codigo p chama pasta dentro de pasta 2x</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-87556">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">25 de Novembro de 2009, 13:27</p>
         <div class="blog-comment-text"><p>Olá. Basta fazer &#8220;View Source&#8221; e os passos estão todos explicados no código.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-87557">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/640b5a14576287a63c2b8edb86714bcd?s=72&d=mp&r=r" alt="weslley clyton" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/640b5a14576287a63c2b8edb86714bcd?s=72&d=mp&r=r" alt="weslley clyton" />
       <div>
         <p class="blog-comment-author">weslley clyton</p>
         <p class="blog-comment-date">25 de Novembro de 2009, 13:54</p>
@@ -560,17 +562,17 @@ pois se eu deixar a div com o nome fixo.. todas as div feitas pelo loop vao ter 
       </div>
     </div>
     <div class="blog-comment" id="comment-88745">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/4911aed8ea5d74d7f291db78a9d7cd99?s=72&d=mp&r=r" alt="Wagner Cecatto" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/4911aed8ea5d74d7f291db78a9d7cd99?s=72&d=mp&r=r" alt="Wagner Cecatto" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.aquimais.com.br/' rel='external nofollow' class='url'>Wagner Cecatto</a></p>
+        <p class="blog-comment-author"><a href='http://www.aquimais.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Wagner Cecatto</a></p>
         <p class="blog-comment-date">8 de Abril de 2010, 19:20</p>
         <div class="blog-comment-text"><p>Prezados Amigos, excelente matéria, parabéns! Porém tenho uma dúvida e gostaria que vocês me ajudassem, baixei o código e o exemplo usando o jQuery, porém não estou conseguindo colocar mais de uma função na página, ou seja, com vários botões que tenham a tarefa de abrir/fechar conteúdo&#8230;podem me ajudar? grato pela atenção de todos!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-89221">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/3e5ecac34d8952b356a6379a46e2a10c?s=72&d=mp&r=r" alt="RodrigoAmorinn" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/3e5ecac34d8952b356a6379a46e2a10c?s=72&d=mp&r=r" alt="RodrigoAmorinn" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.rodrigoamorinn.zip.net/' rel='external nofollow' class='url'>RodrigoAmorinn</a></p>
+        <p class="blog-comment-author"><a href='http://www.rodrigoamorinn.zip.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>RodrigoAmorinn</a></p>
         <p class="blog-comment-date">20 de Maio de 2010, 16:18</p>
         <div class="blog-comment-text"><p>Cara, muito bom o seu artigo, gostei muito é realmente o que eu precisava, mas como agente coloca a direção para a div abrir? no meu caso eu gostaria que a div abrisse da esquerda para a direita.</p>
 <p>como que eu faço isso? </p>
@@ -579,7 +581,7 @@ abraços</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-89415">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a31038fd26b8e8d456c322626ba6d62b?s=72&d=mp&r=r" alt="Giuliano Fernandes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a31038fd26b8e8d456c322626ba6d62b?s=72&d=mp&r=r" alt="Giuliano Fernandes" />
       <div>
         <p class="blog-comment-author">Giuliano Fernandes</p>
         <p class="blog-comment-date">28 de Maio de 2010, 03:12</p>
@@ -589,7 +591,7 @@ abraços</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-89492">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/cea5814d72e4a819d87d1506a485fd75?s=72&d=mp&r=r" alt="Flavio" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/cea5814d72e4a819d87d1506a485fd75?s=72&d=mp&r=r" alt="Flavio" />
       <div>
         <p class="blog-comment-author">Flavio</p>
         <p class="blog-comment-date">1 de Junho de 2010, 22:46</p>
@@ -597,9 +599,9 @@ abraços</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-89583">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/0b6069d4aca1a00c7d311a67a987a403?s=72&d=mp&r=r" alt="Giovanni" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/0b6069d4aca1a00c7d311a67a987a403?s=72&d=mp&r=r" alt="Giovanni" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.impressoesonline.com.br/' rel='external nofollow' class='url'>Giovanni</a></p>
+        <p class="blog-comment-author"><a href='http://www.impressoesonline.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Giovanni</a></p>
         <p class="blog-comment-date">12 de Junho de 2010, 14:03</p>
         <div class="blog-comment-text"><p>Ivo, estou aprendendo JS e gostei muito dessa dica, gostaria de utiliza-la da seguinte forma:</p>
 <p>Imagine que tenho um menu ao lado esquerdo da pagina. Link1, Link2, Link3&#8230; Quando eu clicar no Link1 utilizando esse efeito vai surgir a imagem1, quando eu clicar no link2, a imagem1 fecha e aparece a imagem2, quando clicar no link3 a imagem1 ou imagem2 (depende daquela que o usuario esta) fecha e abre a imagem3, é possivel? você poderia me ajudar?</p>
@@ -607,18 +609,18 @@ abraços</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-90287">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/85493f4ae32cf89958ce00307573e145?s=72&d=mp&r=r" alt="Redton" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/85493f4ae32cf89958ce00307573e145?s=72&d=mp&r=r" alt="Redton" />
       <div>
-        <p class="blog-comment-author"><a href='http://mundovermelho.totalsfree.com/' rel='external nofollow' class='url'>Redton</a></p>
+        <p class="blog-comment-author"><a href='http://mundovermelho.totalsfree.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Redton</a></p>
         <p class="blog-comment-date">26 de Agosto de 2010, 02:30</p>
         <div class="blog-comment-text"><p>Rapaz tava procurando por algo assim a tempos!<br />
 Obrigado.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-90442">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/386ca0bdcdddbad6c9b1893d8e68dd80?s=72&d=mp&r=r" alt="Thiago" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/386ca0bdcdddbad6c9b1893d8e68dd80?s=72&d=mp&r=r" alt="Thiago" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.vejanomapa.com/df' rel='external nofollow' class='url'>Thiago</a></p>
+        <p class="blog-comment-author"><a href='http://www.vejanomapa.com/df' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Thiago</a></p>
         <p class="blog-comment-date">2 de Setembro de 2010, 16:04</p>
         <div class="blog-comment-text"><p>Olá<br />
 Como faço para integrar esse código em um tema wordpress?</h2>
@@ -626,7 +628,7 @@ Como faço para integrar esse código em um tema wordpress?</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-91049">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/f59ee4a0d8d7ab297a1f876db336adbd?s=72&d=mp&r=r" alt="sidney suderio" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/f59ee4a0d8d7ab297a1f876db336adbd?s=72&d=mp&r=r" alt="sidney suderio" />
       <div>
         <p class="blog-comment-author">sidney suderio</p>
         <p class="blog-comment-date">16 de Outubro de 2010, 14:29</p>
@@ -635,33 +637,33 @@ Como faço para integrar esse código em um tema wordpress?</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-91628">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a05b7a93690ee1baad4e7ca3f573eeac?s=72&d=mp&r=r" alt="Viniccios" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a05b7a93690ee1baad4e7ca3f573eeac?s=72&d=mp&r=r" alt="Viniccios" />
       <div>
-        <p class="blog-comment-author"><a href='http://ragnaroker.tk/' rel='external nofollow' class='url'>Viniccios</a></p>
+        <p class="blog-comment-author"><a href='http://ragnaroker.tk/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Viniccios</a></p>
         <p class="blog-comment-date">15 de Novembro de 2010, 22:55</p>
         <div class="blog-comment-text"><p>Amigo, não consegui usar o efeito no link, pode me ajudar?</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-93064">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/dd4772e960d807677d01c207736f5e28?s=72&d=mp&r=r" alt="João MArcos" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/dd4772e960d807677d01c207736f5e28?s=72&d=mp&r=r" alt="João MArcos" />
       <div>
-        <p class="blog-comment-author"><a href="https://carosamigos.wordpress.com/" rel='external nofollow' class='url'>João MArcos</a></p>
+        <p class="blog-comment-author"><a href="https://carosamigos.wordpress.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>João MArcos</a></p>
         <p class="blog-comment-date">15 de Fevereiro de 2011, 11:48</p>
-        <div class="blog-comment-text"><p>Vinicios, veja se esse site ajuda: <a href="https://carosamigos.wordpress.com/2009/02/11/abrir-e-fechar-div-com-sinal-de-menos-e-de-mais/" rel="nofollow">http://carosamigos.wordpress.com/2009/02/11/abrir-e-fechar-div-com-sinal-de-menos-e-de-mais/</a></p>
+        <div class="blog-comment-text"><p>Vinicios, veja se esse site ajuda: <a href="https://carosamigos.wordpress.com/2009/02/11/abrir-e-fechar-div-com-sinal-de-menos-e-de-mais/" rel="nofollow noopener noreferrer">http://carosamigos.wordpress.com/2009/02/11/abrir-e-fechar-div-com-sinal-de-menos-e-de-mais/</a></p>
 <p>Neste post tem um link ensinando fazer em jquery tb.</p>
 <p>^^</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-96470">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6b213cf5b0b4fd9338bb429571444672?s=72&d=mp&r=r" alt="@rodrigoaraujo92" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/6b213cf5b0b4fd9338bb429571444672?s=72&d=mp&r=r" alt="@rodrigoaraujo92" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.rodrigoaraujo92.xpg.com.br/' rel='external nofollow' class='url'>@rodrigoaraujo92</a></p>
+        <p class="blog-comment-author"><a href='http://www.rodrigoaraujo92.xpg.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>@rodrigoaraujo92</a></p>
         <p class="blog-comment-date">8 de Maio de 2011, 20:05</p>
         <div class="blog-comment-text"><p>Perfeito cara era exatamente o que eu preucurava!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-100791">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9a9a6788757ae9e649a380989a69c415?s=72&d=mp&r=r" alt="Fábio Luiz Parizotto" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/9a9a6788757ae9e649a380989a69c415?s=72&d=mp&r=r" alt="Fábio Luiz Parizotto" />
       <div>
         <p class="blog-comment-author">Fábio Luiz Parizotto</p>
         <p class="blog-comment-date">18 de Agosto de 2011, 22:36</p>
@@ -670,43 +672,43 @@ Grato!</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-103191">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/574f8faf37106484197da963681c9096?s=72&d=mp&r=r" alt="Felipe Braga" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/574f8faf37106484197da963681c9096?s=72&d=mp&r=r" alt="Felipe Braga" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.bandaatrito.com.br/' rel='external nofollow' class='url'>Felipe Braga</a></p>
+        <p class="blog-comment-author"><a href='http://www.bandaatrito.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Felipe Braga</a></p>
         <p class="blog-comment-date">5 de Outubro de 2011, 12:36</p>
         <div class="blog-comment-text"><p>Gostaria de saber como eu faço para derrubar uma página aberta pelo Mozilla Firefox e reabrí-la automaticamente pelo IE, através de código. Se o cara já abiri pelo IE, nada acontece. Alguém poderia me ajudar ??</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-103212">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">6 de Outubro de 2011, 08:59</p>
         <div class="blog-comment-text"><p>@Filipe Braga: Primeiro: nunca deverias fazer uma coisas dessas.<br />
 Segundo: não podes :P</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-103216">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/574f8faf37106484197da963681c9096?s=72&d=mp&r=r" alt="Felipe Braga" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/574f8faf37106484197da963681c9096?s=72&d=mp&r=r" alt="Felipe Braga" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.bandaatrito.com.br/' rel='external nofollow' class='url'>Felipe Braga</a></p>
+        <p class="blog-comment-author"><a href='http://www.bandaatrito.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Felipe Braga</a></p>
         <p class="blog-comment-date">6 de Outubro de 2011, 13:08</p>
         <div class="blog-comment-text"><p>Pois não é que achei um modo de fazer? Uso um shell com comandos DOS depois de GET URL atual e rodo no cliente, funciona, vou aprimorar e mando por aqui.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-105387">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/30743fd8e98b862119e3f87393601d73?s=72&d=mp&r=r" alt="Angel" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/30743fd8e98b862119e3f87393601d73?s=72&d=mp&r=r" alt="Angel" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.facenetgame.com/' rel='external nofollow' class='url'>Angel</a></p>
+        <p class="blog-comment-author"><a href='http://www.facenetgame.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Angel</a></p>
         <p class="blog-comment-date">14 de Novembro de 2011, 01:44</p>
         <div class="blog-comment-text"><p>Simplesmente maravilhado com tanta coisa que vi. Pena nao ver o que realmente pretendo para o meu site. De qualquer forma impressionado mesmo.<br />
 Obrigado. ASS: Angel.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-108273">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8fcac151fa49f6d313297121fb0844e3?s=72&d=mp&r=r" alt="Lini" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8fcac151fa49f6d313297121fb0844e3?s=72&d=mp&r=r" alt="Lini" />
       <div>
-        <p class="blog-comment-author"><a href="https://aprenderpravalereassim.blogspot.com/" rel='external nofollow' class='url'>Lini</a></p>
+        <p class="blog-comment-author"><a href="https://aprenderpravalereassim.blogspot.com/" rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Lini</a></p>
         <p class="blog-comment-date">16 de Dezembro de 2011, 17:40</p>
         <div class="blog-comment-text"><p>Estou iniciando no mundo dos blogs e gostaria de colocar em um post esta possibilidade de abrir e fechar clicando no link.<br />
 Tipo: num texto de dicas, colocar o texto e quando enumerar as dicas cada dica ter um link explicativo que ao clicar ela abra e depois clica novamente para ela fechar.</h2>
@@ -719,25 +721,25 @@ Se puder me orientar melhor fico muito grata.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-108501">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">19 de Dezembro de 2011, 14:40</p>
-        <div class="blog-comment-text"><p>@Lini: Coloquei o seu exemplo <a href="https://www.ivogomes.com/exemplos/js_openelements.html" rel="nofollow">aqui</a>. Não sei qual vai ser a estrutura do HTML no seu site, mas criei uma de exemplo com 2 links que abrem a respectiva descrição.<br />
+        <div class="blog-comment-text"><p>@Lini: Coloquei o seu exemplo <a href="https://www.ivogomes.com/exemplos/js_openelements.html" rel="nofollow noopener noreferrer">aqui</a>. Não sei qual vai ser a estrutura do HTML no seu site, mas criei uma de exemplo com 2 links que abrem a respectiva descrição.<br />
 Se vir o código fonte, está lá a explicação de como funciona e pode adaptar como quiser.</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-113575">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e2e7f5fa0480709f04f6b461a7520362?s=72&d=mp&r=r" alt="Dermeval Junior" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/e2e7f5fa0480709f04f6b461a7520362?s=72&d=mp&r=r" alt="Dermeval Junior" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.fazeromeusite.com/' rel='external nofollow' class='url'>Dermeval Junior</a></p>
+        <p class="blog-comment-author"><a href='http://www.fazeromeusite.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Dermeval Junior</a></p>
         <p class="blog-comment-date">11 de Janeiro de 2012, 17:47</p>
         <div class="blog-comment-text"><p>Bom artigo.</p>
 <p>Só uma dica, se ao esconder o elemento, você quiser manter o espaço que ele ocupava antes, é só usar visibility:hidden ao invés de display:none desde que no elemento tenha sido definido altura e largura</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-116550">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/23d83201cddc308cabb3194094cf09c4?s=72&d=mp&r=r" alt="Andreza" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/23d83201cddc308cabb3194094cf09c4?s=72&d=mp&r=r" alt="Andreza" />
       <div>
         <p class="blog-comment-author">Andreza</p>
         <p class="blog-comment-date">13 de Março de 2012, 19:44</p>
@@ -746,9 +748,9 @@ Se vir o código fonte, está lá a explicação de como funciona e pode adaptar
       </div>
     </div>
     <div class="blog-comment" id="comment-117617">
-      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/7db6595fb902319a9b7d02c917cad5ef?s=72&d=mp&r=r" alt="Bruno de MAuro" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://1.gravatar.com/avatar/7db6595fb902319a9b7d02c917cad5ef?s=72&d=mp&r=r" alt="Bruno de MAuro" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.brunodemauro.com.br/' rel='external nofollow' class='url'>Bruno de MAuro</a></p>
+        <p class="blog-comment-author"><a href='http://www.brunodemauro.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Bruno de MAuro</a></p>
         <p class="blog-comment-date">17 de Abril de 2012, 17:04</p>
         <div class="blog-comment-text"><p>Procurei muito no Google e achei vocês!<br />
 Finalmente um código que funciona!</h2>
@@ -757,9 +759,9 @@ Finalmente um código que funciona!</h2>
       </div>
     </div>
     <div class="blog-comment" id="comment-123181">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/37b8dce2b5f9398d3f30755eefccc7cb?s=72&d=mp&r=r" alt="Alex Souza" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/37b8dce2b5f9398d3f30755eefccc7cb?s=72&d=mp&r=r" alt="Alex Souza" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.valuti.com.br/' rel='external nofollow' class='url'>Alex Souza</a></p>
+        <p class="blog-comment-author"><a href='http://www.valuti.com.br/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Alex Souza</a></p>
         <p class="blog-comment-date">15 de Março de 2013, 16:32</p>
         <div class="blog-comment-text"><p>Boa tarde Ivo. </p>
 <p>Como a propriedade eu uso nesse exemplo do José Carlos. Para em vez de clicar para abrir, eu apenas colocar o mouse sobre ?. </p>
@@ -771,7 +773,7 @@ Qualquer coisa me manda no email. </h2>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/2%c2%ba-encontro-de-profissionais-de-usabilidade/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -785,7 +787,7 @@ Qualquer coisa me manda no email. </h2>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

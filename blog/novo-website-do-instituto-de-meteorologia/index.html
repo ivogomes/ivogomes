@@ -14,6 +14,7 @@
 <title>Novo website do Instituto de Meteorologia — Ivo Gomes</title>
 <meta name="description" content="Há uns meses atrás fomos convidados para apresentar uma proposta para a remodelação do novo website do Instituto de Meteorologia. Infelizmente a nossa proposta não ganhou.Hoje vejo que já têm um novo site, mais bonito e mais &quot;clean&quot; que o anterior (em termos visuais). No entanto há alguns aspectos menos positivos nesta nova versão." />
 <meta property="og:title" content="Novo website do Instituto de Meteorologia" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Há uns meses atrás fomos convidados para apresentar uma proposta para a remodelação do novo website do Instituto de Meteorologia. Infelizmente a nossa proposta não ganhou.Hoje vejo que já têm um novo site, mais bonito e mais &quot;clean&quot; que o anterior (em termos visuais). No entanto há alguns aspectos menos positivos nesta nova versão." />
 <meta property="article:published_time" content="2008-07-11T14:43:42+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/novo-website-do-instituto-de-meteorologia/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>11 Jul 2008</span>
+    <time datetime="2008-07-11">11 Jul 2008</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,15 +52,15 @@
   </div>
 
   <article class="blog-article">
-<p>Há uns meses atrás <a href="http://www.log.pt/">fomos</a> convidados para apresentar uma proposta para a remodelação do novo website do Instituto de Meteorologia. Infelizmente a nossa proposta não ganhou.</p>
+<p>Há uns meses atrás <a href="http://www.log.pt/" rel="noopener noreferrer">fomos</a> convidados para apresentar uma proposta para a remodelação do novo website do Instituto de Meteorologia. Infelizmente a nossa proposta não ganhou.</p>
 <p>Hoje vejo que já têm um novo site, mais bonito e mais "clean" que o anterior (em termos visuais). No entanto há alguns aspectos menos positivos nesta nova versão. Para começar, a previsão do tempo no mapa requer o plugin Flash. Apesar de não ser totalmente contra o uso do Flash, penso que neste caso poderia ter sido evitado uma vez que o site pode ser consultado através de dispositivos móveis que não possuem essa tecnologia ou mesmo por causa da acessibilidade (apesar de terem uma versão HTML com uma tabela com o tempo para cada cidade, o link está um pouco escondido e os dados da tabela não estão estruturados de forma acessível).</p>
-<p>Tirando a parte visual, que gosto (exceptuando o facto do mapa estar um pouco "atarracado"), o código em si não esta grande coisa, com muitas tabelas no meio do HTML e pouca ou nenhuma semântica (não usam cabeçalhos nos titulos nem nas tabelas), isto para não falar dos inumeros <a href="https://validator.w3.org/check?verbose=1&amp;uri=http%3A%2F%2Fwww.meteo.pt%2Fpt%2Fotempo%2Fprevisaosignificativa%2F">erros de HTML</a>.</p>
+<p>Tirando a parte visual, que gosto (exceptuando o facto do mapa estar um pouco "atarracado"), o código em si não esta grande coisa, com muitas tabelas no meio do HTML e pouca ou nenhuma semântica (não usam cabeçalhos nos titulos nem nas tabelas), isto para não falar dos inumeros <a href="https://validator.w3.org/check?verbose=1&amp;uri=http%3A%2F%2Fwww.meteo.pt%2Fpt%2Fotempo%2Fprevisaosignificativa%2F" rel="noopener noreferrer">erros de HTML</a>.</p>
 <p>Em termos de acessibilidade, nao está assim tão mau, contendo apenas alguns erros resultados do uso de código HTML inválido. Apenas o facto de usar Flash para mostrar a previsão no mapa estraga este ponto.</p>
 <p>Só para comparação, aqui vai um screenshot da nova versão do site do Intituto de Meteorologia com a maquete desenhada por mim na altura em que fizemos a proposta.</p>
 <h2>Versão Actual</h2>
-<p><img title="meteo" src="/blog/wp-content/uploads/2008/07/meteo.png" alt="Nova versão do website do Instituto de Meteorologia" width="500" height="324" /></p>
+<p><img loading="lazy" title="meteo" src="/blog/wp-content/uploads/2008/07/meteo.png" alt="Nova versão do website do Instituto de Meteorologia" width="500" height="324" /></p>
 <h2>A minha maqueta</h2>
-<p><img title="meteo2" src="/blog/wp-content/uploads/2008/07/meteo2.png" alt="Maquete proposta para o website do Instituto de Meteorologia" width="500" height="550" /></p>
+<p><img loading="lazy" title="meteo2" src="/blog/wp-content/uploads/2008/07/meteo2.png" alt="Maquete proposta para o website do Instituto de Meteorologia" width="500" height="550" /></p>
 <p>De notar que a minha versão é apenas uma maquete e foi o primeiro esboço, por isso, pode não estar tão apelativa visualmente :)</p>
 <p>Da comparação entre as duas versões, no novo website acho que é de difícil visualização o menu para escolha do dia/hora em que se quer ver a previsão. Penso que em termos de usabilidade, a versão que desenhei tornava esse menu mais visível e mais fácil de usar.</p>
 <p>Outra funcionalidade que tambem não foi implementada é a listagem do tempo nas cidades mais importantes nos próximos dias (com a possibilidade de definir outras cidades depois do login). Na anterior versão e nesta nova, continua a ser necessário seleccionar um dia/hora em cima do mapa para ver o tempo nos próximos dias (agora com a versão em Flash é mais rápido do que na versão anterior, mas mesmo assim, podem ser cliques desnecessários). Finalmente, outra coisa que me irritava um pouco no site anterior (e neste continua na mesma) é o facto de ao clicar numa cidade não ter acesso à meteorologia para essa mesma cidade. Em vez disso, é necessário aceder ao item "tempo na cidade" que está no fundo do mapa e depois escolher um das cidades num menu dropdown. Seria muito mais fácil clicar na cidade directamente no mapa...</p>
@@ -67,7 +69,7 @@
   <section class="blog-comments">
     <h2 class="blog-comments-title">7 comentários</h2>
     <div class="blog-comment" id="comment-55087">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/2f3dc93ce7ee4e74b81dd67a6cad2449?s=72&d=mp&r=r" alt="Jorge Silva" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/2f3dc93ce7ee4e74b81dd67a6cad2449?s=72&d=mp&r=r" alt="Jorge Silva" />
       <div>
         <p class="blog-comment-author">Jorge Silva</p>
         <p class="blog-comment-date">11 de Julho de 2008, 17:32</p>
@@ -75,9 +77,9 @@
       </div>
     </div>
     <div class="blog-comment" id="comment-55088">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
       <div>
-        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Ivo Gomes</a></p>
         <p class="blog-comment-date">11 de Julho de 2008, 17:50</p>
         <div class="blog-comment-text"><p>Olá Jorge. Obrigado pelo comentário. De facto, o site melhorou (visualmente) em relação ao anterior, mas em termos de funcionalidades, mantiveram-se as mesmas (à primeira vista).<br />
 Continuo a não conseguir clicar numa cidade para ver o tempo nessa cidade para os próximos dias e a desculpa para o mapa estar atarrachado parece-me completamente descabida. O facto da terra ser redonda não faz com que os mapas mostrados em plano fiquem atarrachados, muito menos o de Portugal que tem uma área demasiado pequena para se notar alguma diferença entre a versão plana e a versão esférica.</h2>
@@ -86,9 +88,9 @@ Continuo a não conseguir clicar numa cidade para ver o tempo nessa cidade para 
       </div>
     </div>
     <div class="blog-comment" id="comment-55091">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/204f207a1ba6c34cc7b429631892a36b?s=72&d=mp&r=r" alt="Mário Andrade" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/204f207a1ba6c34cc7b429631892a36b?s=72&d=mp&r=r" alt="Mário Andrade" />
       <div>
-        <p class="blog-comment-author"><a href='http://blue.muiomuio.net/' rel='external nofollow' class='url'>Mário Andrade</a></p>
+        <p class="blog-comment-author"><a href='http://blue.muiomuio.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Mário Andrade</a></p>
         <p class="blog-comment-date">11 de Julho de 2008, 17:51</p>
         <div class="blog-comment-text"><p>Realmente em termos visuais o site actual é bastante mais apelativo.</p>
 <p>Em termos de funcionalidades visto que recorreram a flash poderiam ter melhorado a interactividade com o utilizador.</p>
@@ -96,13 +98,13 @@ Continuo a não conseguir clicar numa cidade para ver o tempo nessa cidade para 
       </div>
     </div>
     <div class="blog-comment" id="comment-55109">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/55e2d5dd60dd1244082139cb44358631?s=72&d=mp&r=r" alt="Nelson" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/55e2d5dd60dd1244082139cb44358631?s=72&d=mp&r=r" alt="Nelson" />
       <div>
         <p class="blog-comment-author">Nelson</p>
         <p class="blog-comment-date">11 de Julho de 2008, 20:59</p>
         <div class="blog-comment-text"><p>Olá Ivo,</p>
 <p>Realmente este novo design ao site está muito melhor. Como sabes para ganhar projectos temos de mostrar o melhor que podemos fazer. Os acertos vêm depois.. O que interessa é ganhar; e uma boa imagem vale mil palavras, em tudo “mesmo com um mapa atarraxado  ”. </p>
-<p>Pessoalmente gosto muito, foge totalmente aos padrões de design que vemos em sites do género. (<a href="http://www.iol.pt/tempo/index.php" rel="nofollow">http://www.iol.pt/tempo/index.php</a>; <a href="http://www.meteoaeronautica.com/" rel="nofollow">http://www.meteoaeronautica.com/</a>; <a href="http://www.meteoalarm.eu/?lang=PT" rel="nofollow">http://www.meteoalarm.eu/?lang=PT</a>; <a href="http://tempopt.com/" rel="nofollow">http://tempopt.com/</a> )</p>
+<p>Pessoalmente gosto muito, foge totalmente aos padrões de design que vemos em sites do género. (<a href="http://www.iol.pt/tempo/index.php" rel="nofollow noopener noreferrer">http://www.iol.pt/tempo/index.php</a>; <a href="http://www.meteoaeronautica.com/" rel="nofollow noopener noreferrer">http://www.meteoaeronautica.com/</a>; <a href="http://www.meteoalarm.eu/?lang=PT" rel="nofollow noopener noreferrer">http://www.meteoalarm.eu/?lang=PT</a>; <a href="http://tempopt.com/" rel="nofollow noopener noreferrer">http://tempopt.com/</a> )</p>
 <p>A nível de usabilidade, está muito acessível e achei que está bem estruturado. As áreas e os links estão facilmente legíveis, temos uma percepção imediata de onde está o que procuramos, sem aquelas grandes listagens de links, que são muito desagradáveis de ver numa hp de um site. </p>
 <p>Sei que quando se muda, deve-se mudar tudo, mas desta forma encontro rapidamente o que sempre procurei no site. Também não demorei muito tempo a achar os conteúdos que procurei, o que quer dizer que a navegabilidade está muito intuitiva no meu ver.</p>
 <p>A ideia que fiquei da tua maquete, é que esta não tinha qualquer inovação e perdoa-me, algo pobrezita.. Sobre o Flash, hoje em dia este permite fazer quase de tudo, tornado assim a interactividade ao site muito enriquecedora e apelativa, esta poderá ter sido também uma das razões porque não ganharam.. Por exemplo eles só com o flash que utilizaram, ganharam muitos pontos.. está com pormenores excelentes. A possibilidade de ver versão do flash em html, está impecável.</p>
@@ -112,11 +114,11 @@ A nível de acessibilidade A, não encontrei qualquer erro, em nenhuma página (
 <p>Os meus parabéns ao IM pelo investimento, pois estavam mesmo a precisar.. permite-me a ousadia de deixar aqui, felicitações pelo excelente trabalho a todos que participaram no desenvolvimento do novo site IM.</p>
 <p>Ivo um incentivo &#8220;Onde existe fé, sempre brilha a esperança&#8221;!</p>
 <p>Já agora, o que diz o pessoal.<br />
-<a href="http://www.meteopt.com/forum/meteorologia-geral/novo-site-do-im-2346.html" rel="nofollow">http://www.meteopt.com/forum/meteorologia-geral/novo-site-do-im-2346.html</a></p></div>
+<a href="http://www.meteopt.com/forum/meteorologia-geral/novo-site-do-im-2346.html" rel="nofollow noopener noreferrer">http://www.meteopt.com/forum/meteorologia-geral/novo-site-do-im-2346.html</a></p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-55112">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/347ce4554a45e11f1e40d3c380335d3c?s=72&d=mp&r=r" alt="Semedo" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/347ce4554a45e11f1e40d3c380335d3c?s=72&d=mp&r=r" alt="Semedo" />
       <div>
         <p class="blog-comment-author">Semedo</p>
         <p class="blog-comment-date">11 de Julho de 2008, 21:38</p>
@@ -124,7 +126,7 @@ A nível de acessibilidade A, não encontrei qualquer erro, em nenhuma página (
       </div>
     </div>
     <div class="blog-comment" id="comment-55113">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/288e0ec132a2c1db5e5e9b24b78f3fb9?s=72&d=mp&r=r" alt="Roberto Ornelas" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/288e0ec132a2c1db5e5e9b24b78f3fb9?s=72&d=mp&r=r" alt="Roberto Ornelas" />
       <div>
         <p class="blog-comment-author">Roberto Ornelas</p>
         <p class="blog-comment-date">11 de Julho de 2008, 21:40</p>
@@ -141,9 +143,9 @@ A nível de acessibilidade A, não encontrei qualquer erro, em nenhuma página (
       </div>
     </div>
     <div class="blog-comment" id="comment-55139">
-      <img class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/64272f25bf0afec2f4551021b6bdf0ff?s=72&d=mp&r=r" alt="Rui Cruz" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://secure.gravatar.com/avatar/64272f25bf0afec2f4551021b6bdf0ff?s=72&d=mp&r=r" alt="Rui Cruz" />
       <div>
-        <p class="blog-comment-author"><a href='http://ruicruz.forunsbb.com/' rel='external nofollow' class='url'>Rui Cruz</a></p>
+        <p class="blog-comment-author"><a href='http://ruicruz.forunsbb.com/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>Rui Cruz</a></p>
         <p class="blog-comment-date">12 de Julho de 2008, 07:36</p>
         <div class="blog-comment-text"><p>Olá.</p>
 <p>Subscrevo tudo o que disseste, e aproveitei a tua ideia para um post meu. Espero que não te importes.</p>
@@ -152,7 +154,7 @@ A nível de acessibilidade A, não encontrei qualquer erro, em nenhuma página (
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/o-novo-website-da-rtp/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -166,7 +168,7 @@ A nível de acessibilidade A, não encontrei qualquer erro, em nenhuma página (
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>

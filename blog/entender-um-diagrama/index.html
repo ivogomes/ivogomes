@@ -14,6 +14,7 @@
 <title>Entender um diagrama — Ivo Gomes</title>
 <meta name="description" content="Já há algum tempo que queria escrever sobre o diagrama da rede do Metropolitano de Lisboa. A partir do momento que que a rede se estendeu para fora da cidade de Lisboa, passaram a existir dois tipos de zonas: Coroa L (todas as estações dentro de Lisboa) e Coroa 1 (todas as estações fora de …" />
 <meta property="og:title" content="Entender um diagrama" />
+<meta property="og:type" content="article" />
 <meta property="og:description" content="Já há algum tempo que queria escrever sobre o diagrama da rede do Metropolitano de Lisboa. A partir do momento que que a rede se estendeu para fora da cidade de Lisboa, passaram a existir dois tipos de zonas: Coroa L (todas as estações dentro de Lisboa) e Coroa 1 (todas as estações fora de …" />
 <meta property="article:published_time" content="2005-11-22T14:32:47+00:00" />
 
@@ -21,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="canonical" href="https://www.ivogomes.com/blog/entender-um-diagrama/" />
 <meta name="theme-color" content="#F3EDE1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,12 @@
 </head>
 <body>
 
-<div class="pp-wrap">
+<main class="pp-wrap">
   <div class="pp-nav">
     <a href="/blog/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to blog
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to blog
     </a>
-    <span>22 Nov 2005</span>
+    <time datetime="2005-11-22">22 Nov 2005</time>
   </div>
 
   <div class="pp-header" style="display: block; margin-top: 48px;">
@@ -50,17 +52,17 @@
   </div>
 
   <article class="blog-article">
-<p>Já há algum tempo que queria escrever sobre o diagrama da rede do <a href="http://www.metrolisboa.pt/">Metropolitano de Lisboa</a>. </p>
+<p>Já há algum tempo que queria escrever sobre o diagrama da rede do <a href="http://www.metrolisboa.pt/" rel="noopener noreferrer">Metropolitano de Lisboa</a>. </p>
 <p>A partir do momento que que a rede se estendeu para fora da cidade de Lisboa, passaram a existir dois tipos de zonas: <strong>Coroa L</strong> (todas as estações dentro de Lisboa) e <strong>Coroa 1</strong> (todas as estações fora de Lisboa). Com esta separação passaram também a haver dois tipos de bilhetes: bilhete de <strong>1 zona</strong> (permite viajar pelas estações dentro de uma zona) e bilhete de <strong>2 zonas</strong> (permite viajar na rede completa do metro).</p>
-<p><a href="http://www.metrolisboa.pt/diagrede.htm"><img src='https://www.ivogomes.com/img/artigos/metrolisboa.gif' alt='Diagrama da rede do Metro de Lisboa' /></a></p>
-<p>Por exemplo, se eu quiser ir da estação da <a href="http://www.metrolisboa.pt/cu_ai.htm">Cidade Universitária</a> para a estação da <a href="http://www.metrolisboa.pt/ax_ai.htm">Ameixoeira</a>, só preciso de comprar o bilhete de 1 zona. Até aqui não há grandes complicações. </p>
-<p>O pior é se eu quiser ir até à estação do <a href="http://www.metrolisboa.pt/sr_ai.htm">Senhor Roubado</a>. Qual o bilhete que devo comprar? 1 zona ou 2 zonas? A estação do Senhor Roubado está na <strong>Coroa L</strong> ou na <strong>Coroa 1</strong>?</p>
-<p>E a estação da <a href="http://www.metrolisboa.pt/po_ai.htm">Pontinha</a>?</p>
+<p><a href="http://www.metrolisboa.pt/diagrede.htm" rel="noopener noreferrer"><img loading="lazy" src='https://www.ivogomes.com/img/artigos/metrolisboa.gif' alt='Diagrama da rede do Metro de Lisboa' /></a></p>
+<p>Por exemplo, se eu quiser ir da estação da <a href="http://www.metrolisboa.pt/cu_ai.htm" rel="noopener noreferrer">Cidade Universitária</a> para a estação da <a href="http://www.metrolisboa.pt/ax_ai.htm" rel="noopener noreferrer">Ameixoeira</a>, só preciso de comprar o bilhete de 1 zona. Até aqui não há grandes complicações. </p>
+<p>O pior é se eu quiser ir até à estação do <a href="http://www.metrolisboa.pt/sr_ai.htm" rel="noopener noreferrer">Senhor Roubado</a>. Qual o bilhete que devo comprar? 1 zona ou 2 zonas? A estação do Senhor Roubado está na <strong>Coroa L</strong> ou na <strong>Coroa 1</strong>?</p>
+<p>E a estação da <a href="http://www.metrolisboa.pt/po_ai.htm" rel="noopener noreferrer">Pontinha</a>?</p>
 <p>Para um utente que queira viajar até uma dessas estações, a dúvida permanece: qual dos bilhetes devo comprar?</p>
 <h2>Entender o Diagrama</h2>
 <p>Não é fácil saber qual dos bilhetes comprar e uma solução fácil seria afastar um pouco a divisória das zonas para uma área mais à frente da estação. Ou seja, em vez de se fazer a divisão por cima da estação, fazia-se um pouco depois. Dessa forma seria fácil de saber que só preciso de comprar o bilhete de 1 zona para ir até à estação do Senhor Roubado.</p>
 <p>Mas não é assim tão simples!</p>
-<p>Imaginem que estão na estação de <a href="http://www.metrolisboa.pt/od_ai.htm">Odivelas</a> e querem ir para a estação do <a href="http://www.metrolisboa.pt/sr_ai.htm">Senhor Roubado</a>. Supostamente nesta viagem também só precisam de um bilhete de 1 zona e se tivéssemos alterado o diagrama para afastar a divisória das zonas teríamos que comprar um bilhete de 2 zonas para ir de Odivelas até ao Senhor Roubado.</p>
+<p>Imaginem que estão na estação de <a href="http://www.metrolisboa.pt/od_ai.htm" rel="noopener noreferrer">Odivelas</a> e querem ir para a estação do <a href="http://www.metrolisboa.pt/sr_ai.htm" rel="noopener noreferrer">Senhor Roubado</a>. Supostamente nesta viagem também só precisam de um bilhete de 1 zona e se tivéssemos alterado o diagrama para afastar a divisória das zonas teríamos que comprar um bilhete de 2 zonas para ir de Odivelas até ao Senhor Roubado.</p>
 <p>Sendo assim compreende-se o porquê da colocação das estações no meio da linha divisória das zonas. A estação funciona como meio transitório entre uma zona e outra.</p>
 <p>Agora só falta explicar aos utentes que só é necessário um bilhete de 2 zonas caso se queira atravessar essa linha divisória. Entretanto a dúvida irá manter-se e continuará a haver pessoas a comprar bilhetes de 2 zonas para irem até ao Senhor Roubado...</p>
   </article>
@@ -68,16 +70,16 @@
   <section class="blog-comments">
     <h2 class="blog-comments-title">2 comentários</h2>
     <div class="blog-comment" id="comment-3160">
-      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="d3x7r0" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://0.gravatar.com/avatar/66ee8f3987f0c73c6d2e45dd90e67ea0?s=72&d=mp&r=r" alt="d3x7r0" />
       <div>
-        <p class="blog-comment-author"><a href='http://www.nonsensebb.net/' rel='external nofollow' class='url'>d3x7r0</a></p>
+        <p class="blog-comment-author"><a href='http://www.nonsensebb.net/' rel="external nofollow noopener noreferrer noopener noreferrer" class='url'>d3x7r0</a></p>
         <p class="blog-comment-date">22 de Novembro de 2005, 15:28</p>
         <div class="blog-comment-text"><p>Pois mas quem anda de autocarro já sabe essas coisas todas! Estes finos que andam de metro não percebem nada disto LOL Just Kidding ;)</p>
 <p>Mas a verdade é que o sistema é identico ao da carris sem qualquer excepção mas não entendo porque é que na carris Moscavide (Loures) dispõe de excepção a este sistema de zonas (conta como zona L) e o Metro não fez o mesmo para esta unica estação nem que fosse como medida temporaria&#8230; Poupava dinheiro aos utentes e muito possivelmente tornava o uso daquela estação muito mais atraente&#8230; :(</p></div>
       </div>
     </div>
     <div class="blog-comment" id="comment-3179">
-      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/b3da599d18004e33b63c60d9ea6454ce?s=72&d=mp&r=r" alt="Ni" />
+      <img loading="lazy" class="blog-comment-avatar" src="https://2.gravatar.com/avatar/b3da599d18004e33b63c60d9ea6454ce?s=72&d=mp&r=r" alt="Ni" />
       <div>
         <p class="blog-comment-author">Ni</p>
         <p class="blog-comment-date">5 de Dezembro de 2005, 14:47</p>
@@ -87,7 +89,7 @@ espero que me ajudem.</p></div>
     </div>
   </section>
 
-  <nav class="pp-pagination">
+  <nav class="pp-pagination" aria-label="Post navigation">
     <div>
       <a href="/blog/taxonomia-usar-os-termos-correctos/" class="pp-pagination-link">
         <div class="pp-pagination-label">← Previous</div>
@@ -101,7 +103,7 @@ espero que me ajudem.</p></div>
       </a>
     </div>
   </nav>
-</div>
+</main>
 
 </body>
 </html>
