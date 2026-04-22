@@ -48,7 +48,7 @@ function ProjectTile({ project, size = "lg", showText = true, style = {} }) {
 
 function ProjectShot({ project, shot, style = {}, showNote = false, thumb = false }) {
   return (
-    <div className="shot" style={{background: project.tileColor, color: project.tileInk, ...style}}>
+    <figure className="shot" style={{background: project.tileColor, color: project.tileInk, ...style}}>
       {shot.img ? (
         <>
           <img src={thumb ? (shot.imgThumb || shot.img) : shot.img} alt={shot.label} className="shot-img" loading="lazy" />
@@ -66,11 +66,11 @@ function ProjectShot({ project, shot, style = {}, showNote = false, thumb = fals
           </svg>
         </>
       )}
-      <div className="shot-footer">
-        <div className="shot-label">{shot.label}</div>
-        {showNote && <div className="shot-note">{shot.note}</div>}
-      </div>
-    </div>
+      <figcaption className="shot-footer">
+        <span className="shot-label">{shot.label}</span>
+        {showNote && <span className="shot-note">{shot.note}</span>}
+      </figcaption>
+    </figure>
   );
 }
 

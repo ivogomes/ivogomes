@@ -29,19 +29,19 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
   const paginationTitleClass = `pp-pagination-title${isSans ? " pp-pagination-title--sans" : ""}`;
 
   return (
-    <div className={`pp-wrap${isMono ? " pp-wrap--mono" : ""}`}>
-      <div className="pp-nav">
+    <main className={`pp-wrap${isMono ? " pp-wrap--mono" : ""}`}>
+      <nav aria-label="Page navigation" className="pp-nav">
         <a href="#/" onClick={(e) => { e.preventDefault(); onBack && onBack(); }} className="pp-nav-back">
           <span className="pp-nav-back-arrow">←</span> Back to portfolio
         </a>
         <span>{project.company} · {project.year}</span>
-      </div>
+      </nav>
 
       <window.ProjectTile project={project} size="hero" />
 
-      <div className="pp-header">
+      <header className="pp-header">
         <div>
-          <div className="pp-tag">{project.tag}</div>
+          <p className="pp-tag">{project.tag}</p>
           <h1 className={titleClass}>{project.title}</h1>
           <p className={blurbClass}>{project.blurb}</p>
         </div>
@@ -59,7 +59,7 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
             <dd>{project.company}</dd>
           </div>
         </dl>
-      </div>
+      </header>
 
       {shots.length > 0 && (
         <section className="pp-shots">
@@ -125,7 +125,7 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
           )}
         </div>
       </nav>
-    </div>
+    </main>
   );
 }
 
