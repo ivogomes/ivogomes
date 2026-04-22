@@ -1419,21 +1419,29 @@
 </style>
 
 <script>
-  const input = document.querySelector('.blog-search');
-  const posts = document.querySelectorAll('.blog-post');
-  const empty = document.querySelector('.blog-search-empty');
+  (function () {
+    var input = document.querySelector('.blog-search');
+    var posts = document.querySelectorAll('.blog-post');
+    var empty = document.querySelector('.blog-search-empty');
 
-  input.addEventListener('input', () => {
-    const q = input.value.trim().toLowerCase();
-    let visible = 0;
-    posts.forEach(post => {
-      const title = post.querySelector('.blog-post-title').textContent.toLowerCase();
-      const match = !q || title.includes(q);
-      post.style.display = match ? '' : 'none';
-      if (match) visible++;
-    });
-    empty.hidden = visible > 0;
-  });
+    if (!input || !posts.length || !empty) return;
+
+    function filter() {
+      var q = input.value.trim().toLowerCase();
+      var visible = 0;
+      for (var i = 0; i < posts.length; i++) {
+        var titleEl = posts[i].querySelector('.blog-post-title');
+        if (!titleEl) continue;
+        var match = !q || titleEl.textContent.toLowerCase().indexOf(q) !== -1;
+        posts[i].style.display = match ? '' : 'none';
+        if (match) visible++;
+      }
+      empty.style.display = visible > 0 ? 'none' : '';
+    }
+
+    input.addEventListener('input', filter);
+    input.addEventListener('keyup', filter);
+  })();
 </script>
 </body>
 </html>
