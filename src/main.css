@@ -830,3 +830,103 @@ a:hover { color: var(--accent); }
   }
   .pp-meta-group { margin-bottom: 0; }
 }
+
+/* ── Blog Post ───────────────────────────────────────────────── */
+.blog-article {
+  margin: 56px auto 0;
+  max-width: 720px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text);
+}
+.blog-article p { margin: 0 0 1.4em; }
+.blog-article h2 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 2em 0 0.6em;
+}
+.blog-article h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 1.8em 0 0.5em;
+}
+.blog-article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.6em 0;
+  border-radius: 2px;
+}
+.blog-article a { color: var(--ink); }
+.blog-article a:hover { opacity: 0.65; }
+.blog-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 1.6em 0;
+}
+.blog-gallery a { display: block; }
+.blog-gallery img { margin: 0; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.blog-store { text-align: center; margin: 1.6em 0; }
+.blog-store img { display: inline-block; margin: 0; }
+
+.blog-comments {
+  margin: 72px auto 0;
+  max-width: 720px;
+}
+.blog-comments-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 32px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.blog-comment {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.blog-comment-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+}
+.blog-comment-author {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 2px;
+}
+.blog-comment-date {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+.blog-comment-text {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0;
+}
+.blog-comment-text p { margin: 0 0 0.8em; }
+.blog-comment-text p:last-child { margin-bottom: 0; }
+}

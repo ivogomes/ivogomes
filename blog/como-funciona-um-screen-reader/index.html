@@ -1,498 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# profile: https://ogp.me/ns/profile#">
-<title>
-	    Como funciona um Screen Reader? - IvoGomes.com
-	</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="author" content="Ivo Gomes">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
-<link rel="shortcut icon" href="http://www.ivogomes.com/img/favicon.ico">
-<link rel="icon" sizes="196x196" href="http://www.ivogomes.com/img/icon-highres.png">
-<link rel="icon" sizes="128x128" href="http://www.ivogomes.com/img/icon.png">
-<link rel="apple-touch-icon" href="http://www.ivogomes.com/img/touch-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="http://www.ivogomes.com/img/touch-icon-ipad.png">
-<link rel="apple-touch-icon" sizes="120x120" href="http://www.ivogomes.com/img/touch-icon-iphone-retina.png">
-<link rel="apple-touch-icon" sizes="152x152" href="http://www.ivogomes.com/img/touch-icon-ipad-retina.png">
-<meta name="mobile-web-app-capable" content="yes">
-<noscript>
-      <link rel="stylesheet" type="text/css" href="http://www.ivogomes.com/css/ink.min.css">
-      <link rel="stylesheet" type="text/css" href="http://www.ivogomes.com/css/font-awesome.min.css">
-      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo%7CPacifico">
-    </noscript>
-<link rel="stylesheet" type="text/css" href="http://www.ivogomes.com/css/styles.min.css">
-<link rel="alternate" type="application/rss+xml" title="Feed RSS dos artigos do blog IvoGomes.com" href="/feed/" />
-<!--[if IE lte 8 ]>
-    <link rel="stylesheet" type="text/css" href="/css/ink-ie.min.css">
-    <![endif]-->
-<link href="https://plus.google.com/+IvoGomes/" rel="author" />
-<meta property="fb:admins" content="557197683" />
-<link rel="pingback" href="/xmlrpc.php">
-
-<link rel="canonical" href="/como-funciona-um-screen-reader/" />
-<meta property="og:locale" content="pt_PT" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Como funciona um Screen Reader? - IvoGomes.com" />
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBSBK2BKKQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZBSBK2BKKQ');
+</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Como funciona um Screen Reader? — Ivo Gomes</title>
+<meta name="description" content="Se nunca experimentaram usar um leitor de ecrã, vejam neste vídeo como é que uma pessoa com incapacidade visual &quot;vê&quot; a Internet. Um aspecto curioso: no final do vídeo ele altera a velocidade de leitura do texto, que estava em velocidade lenta (necessário para nós percebermos a explicação) e muda para super rápida (que é o que ele usa no dia-a-dia)." />
+<meta property="og:title" content="Como funciona um Screen Reader?" />
 <meta property="og:description" content="Se nunca experimentaram usar um leitor de ecrã, vejam neste vídeo como é que uma pessoa com incapacidade visual &quot;vê&quot; a Internet. Um aspecto curioso: no final do vídeo ele altera a velocidade de leitura do texto, que estava em velocidade lenta (necessário para nós percebermos a explicação) e muda para super rápida (que é o que ele usa no dia-a-dia)." />
-<meta property="og:url" content="https://www.ivogomes.com/blog/como-funciona-um-screen-reader/" />
-<meta property="og:site_name" content="IvoGomes.com" />
-<meta property="article:publisher" content="http://www.facebook.com/ivogomes" />
-<meta property="article:author" content="http://facebook.com/ivogomes" />
-<meta property="article:tag" content="Acessibilidade" />
-<meta property="article:tag" content="leitor-de-ecrã" />
-<meta property="article:tag" content="screen-reader" />
-<meta property="article:section" content="Acessibilidade" />
 <meta property="article:published_time" content="2007-05-23T16:51:45+00:00" />
-<meta property="article:modified_time" content="2016-06-17T09:04:19+00:00" />
-<meta property="og:updated_time" content="2016-06-17T09:04:19+00:00" />
-<meta property="og:image" content="https://www.ivogomes.com/img/ivo.jpg" />
-<meta property="og:image:secure_url" content="https://www.ivogomes.com/img/ivo.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="Se nunca experimentaram usar um leitor de ecrã, vejam neste vídeo como é que uma pessoa com incapacidade visual &quot;vê&quot; a Internet. Um aspecto curioso: no final do vídeo ele altera a velocidade de leitura do texto, que estava em velocidade lenta (necessário para nós percebermos a explicação) e muda para super rápida (que é o que ele usa no dia-a-dia)." />
-<meta name="twitter:title" content="Como funciona um Screen Reader? - IvoGomes.com" />
-<meta name="twitter:site" content="@ivogomes" />
-<meta name="twitter:image" content="https://www.ivogomes.com/img/ivo.jpg" />
-<meta name="twitter:creator" content="@ivogomes" />
-<script type='application/ld+json'>{"@context":"https://schema.org","@type":"Person","url":"https://www.ivogomes.com/blog/","sameAs":["http://www.facebook.com/ivogomes","https://instagram.com/ivogomes/","http://www.linkedin.com/in/ivogomes","https://www.youtube.com/user/ivogomes","https://twitter.com/ivogomes"],"@id":"#person","name":"Ivo Gomes"}</script>
 
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="Feed de comentários de IvoGomes.com &raquo; Como funciona um Screen Reader?" href="/como-funciona-um-screen-reader/feed/" />
-<link rel='stylesheet' id='wp-block-library-css' href='/wp-includes/css/dist/block-library/style.min.css?ver=5.0.4' type='text/css' media='all' />
-<link rel='https://api.w.org/' href='/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" />
-<link rel='shortlink' href='/?p=372' />
-<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ivogomes.com%2Fblog%2Fcomo-funciona-um-screen-reader%2F" />
-<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ivogomes.com%2Fblog%2Fcomo-funciona-um-screen-reader%2F&#038;format=xml" />
-<link rel="amphtml" href="/como-funciona-um-screen-reader/amp/"></head>
-<body id="blog">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v2.4&appId=634518223269818";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-<!--[if IE lte 8 ]>
-    <div class="ie-warning">
-        <div class="ink-grid">
-            <p><strong>AVISO: Está a usar uma versão desactualizada do Internet Explorer.</strong><br />Para poder ter uma mehor experiência de navegação neste site, por favor actualize para um navegador mais moderno como o <a href="https://google.com/chrome">Chrome</a>, <a href="https://apple.com/safari">Safari</a>, <a href="getfirefox.com">Firefox</a> ou o <a href="https://windows.microsoft.com/en-us/internet-explorer/ie-10-worldwide-languages">Internet Explorer 10</a>.</p>
-        </div>
-    </div>
-<![endif]-->
-<nav class="a11y"><a href="#contents">Saltar para os conteúdos</a></nav>
-<header id="top">
-<div class="ink-grid">
-<div class="column-group">
-<div class="all-30 small-100 tiny-100 align-left">
-<h1>IvoGomes.com</h1>
-</div>
-<div class="all-70 small-100 tiny-100 align-right">
-<form method="get" class="ink-form" id="searchform" action="/">
-<div class="control-group push-right">
-<label for="s">Pesquisar no blog</label>
-<div class="control">
-<input type="search" id="s" name="s" placeholder="Pesquisar no blog" value="">
-<button class="ink-button" type="submit"><span class="fa fa-search"></span><span class="hide-all"> Pesquisar</span></button>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</header>
-<nav class="ink-navigation ink-sticky" id="main-menu">
-<div class="ink-grid">
-<ul class="menu horizontal" role="menubar">
-<li role="menuitem" class="home"><a href="http://www.ivogomes.com/#top" title="Voltar ao topo">IG</a></li>
-<li role="menuitem"><a href="http://www.ivogomes.com/#about">Sobre<span class="hide-large hide-medium"> Mim</span></a></li>
-<li role="menuitem" class="hide-small hide-tiny"><a href="http://www.ivogomes.com/#work">Trabalho</a></li>
-<li role="menuitem" class="hide-small hide-tiny"><a href="http://www.ivogomes.com/#training">Formações<span class="hide-medium"> e Workshops</span></a></li>
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<meta name="theme-color" content="#F3EDE1" />
 
-<li role="menuitem" class="hide-small hide-tiny"><a href="http://www.ivogomes.com/#contact">Contactos</a></li>
-<li role="menuitem" class="push-right active"><a href="/"><span class="hide-small hide-tiny"></span>Blog</a></li>
-</ul>
-</div>
-</nav>
-<div id="contents">
-<div class="ink-grid">
-<div class="column-group gutters">
-<div class="all-15 medium-10 hide-small hide-tiny">
-<p></p>
-</div>
-<div class="all-70 medium-80 small-100 tiny-100">
-<p><a href=""><span class="fa fa-arrow-left"></span> Voltar ao início</a></p>
-<article itemscope itemtype="http://schema.org/Article">
-<h1 id="post-372" itemprop="name">Como funciona um Screen Reader?</h1>
-<p class="author-date">Por <strong itemprop="author" itemscope itemtype="http://schema.org/Person">Ivo Gomes</strong>, em <span itemprop="datePublished" content="2007-5-23">Quarta-feira, 23 de Maio de 2007</span> | <a href="#comments-list" title="Coment&aacute;rios para: Como funciona um Screen Reader?"><span class="fa fa-comment"></span> 18 Coment&aacute;rios</a></p>
-<meta itemprop="interactionCount" content="UserComments:18" />
-<div itemprop="articleBody">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/src/tokens.css" />
+<link rel="stylesheet" href="/src/main.css" />
+</head>
+<body>
+
+<div class="pp-wrap">
+  <div class="pp-nav">
+    <a href="/blog/" class="pp-nav-back">
+      <span class="pp-nav-back-arrow">←</span> Back to blog
+    </a>
+    <span>23 Mai 2007</span>
+  </div>
+
+  <div class="pp-header" style="display: block; margin-top: 48px;">
+    <div class="pp-tag">Acessibilidade</div>
+    <h1 class="pp-title">Como funciona um Screen Reader?</h1>
+  </div>
+
+  <article class="blog-article">
 <p>Victor Tsaran é um engenheiro do <a href="http://www.yahoo.com/">Yahoo!</a> e trabalha como gestor de acessibilidade. Neste vídeo de 27 minutos, ele mostra-nos como se usa um <em>Screen Reader</em> ou Leitor de Ecrã (programa que lê o texto que aparece no ecrã) e como se navega num website (no vídeo ele navega pela homepage do <a href="http://www.yahoo.com/">Yahoo!</a>) usando esta tecnologia assistiva. Aqui ele salienta os benefícios do site ter um código bem estruturado e com semântica. A navegação também deve ser acessível e no geral deve ter uma boa usabilidade para que se consiga navegar normalmente.</p>
 <p>Se nunca experimentaram usar um leitor de ecrã, vejam neste vídeo como é que uma pessoa com incapacidade visual "vê" a Internet. Um aspecto curioso: no final do vídeo ele altera a velocidade de leitura do texto, que estava em velocidade lenta (necessário para nós percebermos a explicação) e muda para super rápida (que é o que ele usa no dia-a-dia).</p>
 <p>Já tive a oportunidade de assistir a uma apresentação feita na <a href="/conferencia-media-2006-dia-2/">@media2006</a> por Robin Christopherson, chefe dos serviços de acessibilidade da <a href="http://abilitynet.co.uk/">AbilityNet</a> e deficiente visual, e toda a apresentação foi feita usando um leitor de ecrã, cuja velocidade de leitura era completamente impossível de acompanhar. Mas para este tipo de utilizadores, quanto mais rápido for lido o texto, menos tempo se perde na navegação. Com o tempo, vão-se habituando à velocidade de leitura e assim conseguem realizar várias tarefas de forma rápida e sem estar à espera que o texto seja todo lido lentamente.</p>
 <p>Recomendo vivamente o vídeo:<br />
-<embed src='http://us.i1.yimg.com/cosmos.bcst.yahoo.com/player/media/swf/FLVVideoSolo.swf' flashvars='id=2686894&#038;searchUrl=http://video.yahoo.com/video/search?p=&#038;profileUrl=http://video.yahoo.com/video/profile?yid=&#038;creatorValue=ZXJpY21pcmFnbGlh&#038;vid=514676' type='application/x-shockwave-flash' width='425' height='350'></embed></p>
+<embed src='http://us.i1.yimg.com/cosmos.bcst.yahoo.com/player/media/swf/FLVVideoSolo.swf' flashvars='id=2686894&#038;searchUrl=http://video.yahoo.com/video/search?p=&#038;profileUrl=http://video.yahoo.com/video/profile?yid=&#038;creatorValue=ZXJpY21pcmFnbGlh&#038;vid=514676' type='application/x-shockwave-flash' width='425' height='350'></embed></h2>
 <ul>
 <li><a href="https://screen.yahoo.com/video/play?vid=514676">Link directo para o vídeo</li>
 <li><a href="http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/tsaran-screenreaders.m4v">Download do vídeo</a> (M4V - compatível com iPod)</li>
 </ul>
-</div>
-<div class="fb-like" data-href="https://www.ivogomes.com/blog/como-funciona-um-screen-reader/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-</article>
-<div class="column-group more-articles">
-<div class="all-50 medium-50 small-100 tiny-100">
-<p><span class="fa fa-arrow-left"></span> Artigo Anterior<br /><a href="/teste-comparativo-de-simbolos-de-informacao/">Teste comparativo de símbolos de informação</a></p>
-</div>
-<div class="all-50 medium-50 small-100 tiny-100">
-<p class="align-right">Artigo Seguinte <span class="fa fa-arrow-right"></span><br /><a href="/sic-lanca-website-renovado/">SIC lança website renovado</a></p>
-</div>
-</div>
-</div>
-</div>
+  </article>
 
-<div class="column-group gutters">
-<div class="all-20 medium-10 hide-small hide-tiny">
-<p></p>
-</div>
-<div class="all-60 medium-80 small-100 tiny-100">
-<section id="comments-list">
-<h2 class="align-center"><span class="fa fa-comment fa-2x"></span><br &>18 Coment&aacute;rios</h2>
-<p class="comente align-center"><a href="#comment">Comente este artigo!</a></p>
-<ol class="unstyled">
-<li class="comentario" id="comment-17177">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/8ac73fe5c5b3d09bf674f7b4ba2cde1a?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/8ac73fe5c5b3d09bf674f7b4ba2cde1a?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='http://rodrigomuniz.com/' rel='external nofollow' class='url'>Muniz</a></p>
-<p class="author-date">23 de Maio de 2007, 18:48</p>
-</div>
-<div class="text">
-<p>Vi esse vídeo semana passada e já virou referência. É muito esclarecedor e bom para enviar as pessoas que nunca testaram um Screen Reader.<br />
-Ótima indicação.</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-17251">
-<div class="author">
-<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/a4824a58c6d6e9b0f69eea9b01ffee44?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/a4824a58c6d6e9b0f69eea9b01ffee44?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='http://webbemfeita.com/' rel='external nofollow' class='url'>Rochester</a></p>
-<p class="author-date">24 de Maio de 2007, 05:18</p>
-</div>
-<div class="text">
-<p>Não tem o link direto?</p>
-<p>Tá comlicado de ver o vídeo daqui, não funciona a opção de enviar via email :P</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentarioi" id="comment-17267">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
-<p class="author-date">24 de Maio de 2007, 09:09</p>
-</div>
-<div class="text">
-<p>Já coloquei o link directo para o vídeo (Flash), bem como uma versão para download (M4V).</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-17285">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
-<p class="author-date">24 de Maio de 2007, 10:57</p>
-</div>
-<div class="text">
-<p>Link directo para download (79MB): <a href="https://tinyurl.com/yw9lx3" rel="nofollow">http://tinyurl.com/yw9lx3</a></p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-17375">
-<div class="author">
-<div class="push-left"><img alt='' src="https://1.gravatar.com/avatar/a4824a58c6d6e9b0f69eea9b01ffee44?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://1.gravatar.com/avatar/a4824a58c6d6e9b0f69eea9b01ffee44?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='http://webbemfeita.com/' rel='external nofollow' class='url'>Rochester</a></p>
-<p class="author-date">25 de Maio de 2007, 03:57</p>
-</div>
-<div class="text">
-<p>Valeu :)</p>
-<p>[]&#8217;s</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-17487">
-<div class="author">
-<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/c56349fdbfae0d9a8df0e46266cb2222?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/c56349fdbfae0d9a8df0e46266cb2222?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name">A. L. Magno</p>
-<p class="author-date">26 de Maio de 2007, 15:46</p>
-</div>
-<div class="text">
-<p>Olá! Antes de tudo agradeço a disponibilização de material sobre acessibiliade! Eu não preciso dos recursos de acessibiliade graças a Deus, mas preciso aprender a disponibilizá-los em meus projetos. Você pode me tirar uma dúvida se puder? Não consegui entender tudo que o rapaz falou, pois ainda não entendo bem o inglês, para ouvir entendo pouco ainda. Você pode me dizer se esses leitores de tela conseguem ler novos textos e objetos de texto criados dinamicamente no browser por javascript?<br />
+  <section class="blog-comments">
+    <h2 class="blog-comments-title">17 comentários</h2>
+    <div class="blog-comment" id="comment-17177">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/8ac73fe5c5b3d09bf674f7b4ba2cde1a?s=72&d=mp&r=r" alt="Muniz" />
+      <div>
+        <p class="blog-comment-author"><a href='http://rodrigomuniz.com/' rel='external nofollow' class='url'>Muniz</a></p>
+        <p class="blog-comment-date">23 de Maio de 2007, 18:48</p>
+        <div class="blog-comment-text"><p>Vi esse vídeo semana passada e já virou referência. É muito esclarecedor e bom para enviar as pessoas que nunca testaram um Screen Reader.<br />
+Ótima indicação.</h2></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17251">
+      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a4824a58c6d6e9b0f69eea9b01ffee44?s=72&d=mp&r=r" alt="Rochester" />
+      <div>
+        <p class="blog-comment-author"><a href='http://webbemfeita.com/' rel='external nofollow' class='url'>Rochester</a></p>
+        <p class="blog-comment-date">24 de Maio de 2007, 05:18</p>
+        <div class="blog-comment-text"><p>Não tem o link direto?</p>
+<p>Tá comlicado de ver o vídeo daqui, não funciona a opção de enviar via email :P</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17267">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <div>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-date">24 de Maio de 2007, 09:09</p>
+        <div class="blog-comment-text"><p>Já coloquei o link directo para o vídeo (Flash), bem como uma versão para download (M4V).</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17285">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/249a4256777638de91bc2ece45eb13ca?s=72&d=mp&r=r" alt="Jorge Laranjo" />
+      <div>
+        <p class="blog-comment-author"><a href='http://jorge.laranjo.eu/' rel='external nofollow' class='url'>Jorge Laranjo</a></p>
+        <p class="blog-comment-date">24 de Maio de 2007, 10:57</p>
+        <div class="blog-comment-text"><p>Link directo para download (79MB): <a href="https://tinyurl.com/yw9lx3" rel="nofollow">http://tinyurl.com/yw9lx3</a></p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17375">
+      <img class="blog-comment-avatar" src="https://1.gravatar.com/avatar/a4824a58c6d6e9b0f69eea9b01ffee44?s=72&d=mp&r=r" alt="Rochester" />
+      <div>
+        <p class="blog-comment-author"><a href='http://webbemfeita.com/' rel='external nofollow' class='url'>Rochester</a></p>
+        <p class="blog-comment-date">25 de Maio de 2007, 03:57</p>
+        <div class="blog-comment-text"><p>Valeu :)</p>
+<p>[]&#8217;s</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17487">
+      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c56349fdbfae0d9a8df0e46266cb2222?s=72&d=mp&r=r" alt="A. L. Magno" />
+      <div>
+        <p class="blog-comment-author">A. L. Magno</p>
+        <p class="blog-comment-date">26 de Maio de 2007, 15:46</p>
+        <div class="blog-comment-text"><p>Olá! Antes de tudo agradeço a disponibilização de material sobre acessibiliade! Eu não preciso dos recursos de acessibiliade graças a Deus, mas preciso aprender a disponibilizá-los em meus projetos. Você pode me tirar uma dúvida se puder? Não consegui entender tudo que o rapaz falou, pois ainda não entendo bem o inglês, para ouvir entendo pouco ainda. Você pode me dizer se esses leitores de tela conseguem ler novos textos e objetos de texto criados dinamicamente no browser por javascript?<br />
 Agradeço antecipadamente sua disposição para me ajudar!<br />
-A. L. Magno</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentarioi" id="comment-17528">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
-<p class="author-date">27 de Maio de 2007, 17:13</p>
-</div>
-<div class="text">
-<p>Os leitores de ecrã não normalmente não conseguem ler ou aceder a conteúdos gerados por Javascript. É por isso que um website nunca deve depender do uso de Javascript para poder ser navegado. Existem várias técnicas para disponibilizar os conteúdos se o javascript não estiver activado, como por exemplo usando a tag <code>&lt;noscript&gt;</code>. Dessa forma sim, um leitor de ecrã conseguirá ler o texto.</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-17530">
-<div class="author">
-<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/c56349fdbfae0d9a8df0e46266cb2222?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/c56349fdbfae0d9a8df0e46266cb2222?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name">A. L. Magno</p>
-<p class="author-date">27 de Maio de 2007, 19:03</p>
-</div>
-<div class="text">
-<p>Obrigado pela ajuda!</p>
+A. L. Magno</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17528">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <div>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-date">27 de Maio de 2007, 17:13</p>
+        <div class="blog-comment-text"><p>Os leitores de ecrã não normalmente não conseguem ler ou aceder a conteúdos gerados por Javascript. É por isso que um website nunca deve depender do uso de Javascript para poder ser navegado. Existem várias técnicas para disponibilizar os conteúdos se o javascript não estiver activado, como por exemplo usando a tag <code>&lt;noscript&gt;</code>. Dessa forma sim, um leitor de ecrã conseguirá ler o texto.</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17530">
+      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/c56349fdbfae0d9a8df0e46266cb2222?s=72&d=mp&r=r" alt="A. L. Magno" />
+      <div>
+        <p class="blog-comment-author">A. L. Magno</p>
+        <p class="blog-comment-date">27 de Maio de 2007, 19:03</p>
+        <div class="blog-comment-text"><p>Obrigado pela ajuda!</p>
 <p>Você disponibiliza um bom trabalho aqui.</p>
 <p>Até!</p>
-<p>A. L. Magno</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-17649">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/eb592511ad1b57a2abd42c52ad4ab198?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/eb592511ad1b57a2abd42c52ad4ab198?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='http://dnunes.com/' rel='external nofollow' class='url'>diego nunes</a></p>
-<p class="author-date">28 de Maio de 2007, 20:32</p>
-</div>
-<div class="text">
-<p>. . A propósito: todo mundo reparou que tem um .mp3 como música de fundo na Splash Screen deles?! Omg!</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-17738">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/2e6f96eea4adcbcda6206dad882d39b9?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/2e6f96eea4adcbcda6206dad882d39b9?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name">Rui Sona</p>
-<p class="author-date">29 de Maio de 2007, 15:29</p>
-</div>
-<div class="text">
-<p>parabéns pelo blog antes do mais.</p>
+<p>A. L. Magno</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17649">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/eb592511ad1b57a2abd42c52ad4ab198?s=72&d=mp&r=r" alt="diego nunes" />
+      <div>
+        <p class="blog-comment-author"><a href='http://dnunes.com/' rel='external nofollow' class='url'>diego nunes</a></p>
+        <p class="blog-comment-date">28 de Maio de 2007, 20:32</p>
+        <div class="blog-comment-text"><p>. . A propósito: todo mundo reparou que tem um .mp3 como música de fundo na Splash Screen deles?! Omg!</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17738">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/2e6f96eea4adcbcda6206dad882d39b9?s=72&d=mp&r=r" alt="Rui Sona" />
+      <div>
+        <p class="blog-comment-author">Rui Sona</p>
+        <p class="blog-comment-date">29 de Maio de 2007, 15:29</p>
+        <div class="blog-comment-text"><p>parabéns pelo blog antes do mais.</p>
 <p>gostava de saber onde poderei encontrar um screen reader para poder ver como funciona nos sites por mim desenvolvidos<br />
-obrigado</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentarioi" id="comment-17885">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
-<p class="author-date">30 de Maio de 2007, 16:11</p>
-</div>
-<div class="text">
-<p>Se usar Windows pode experimentar o <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp" rel="nofollow">JAWS</a>, que é um dos mais conhecidos.</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-21520">
-<div class="author">
-<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/92ca195e5b6ce87a069835cd380c38f4?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/92ca195e5b6ce87a069835cd380c38f4?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='http://www.artideias.com/' rel='external nofollow' class='url'>Gaspar</a></p>
-<p class="author-date">2 de Julho de 2007, 00:27</p>
-</div>
-<div class="text">
-<p>Este video tambem é interessante . Feito pela equipa do acesso digital. E em portugues ou melhor brasileiro.</p>
+obrigado</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-17885">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <div>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-date">30 de Maio de 2007, 16:11</p>
+        <div class="blog-comment-text"><p>Se usar Windows pode experimentar o <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp" rel="nofollow">JAWS</a>, que é um dos mais conhecidos.</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-21520">
+      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/92ca195e5b6ce87a069835cd380c38f4?s=72&d=mp&r=r" alt="Gaspar" />
+      <div>
+        <p class="blog-comment-author"><a href='http://www.artideias.com/' rel='external nofollow' class='url'>Gaspar</a></p>
+        <p class="blog-comment-date">2 de Julho de 2007, 00:27</p>
+        <div class="blog-comment-text"><p>Este video tambem é interessante . Feito pela equipa do acesso digital. E em portugues ou melhor brasileiro.</p>
 <p>Muito bom mesmo</p>
-<p><a href="http://brunotorres.net/acessibilidade-na-web-custo-ou-beneficio" title="Bruno TOrres - Acessibilidade na web: Custo ou benef�cio?" rel="nofollow">Acessibilidade na web</a> disponivel em <a href="http://acessodigital.net/video.html" title="Custo ou benef�cio?" rel="nofollow">varios formatos</a> em wwww.acessodigital.net .</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-42063">
-<div class="author">
-<div class="push-left"><img alt='' src="https://0.gravatar.com/avatar/37637c5641b1132086ce148b49a22c7a?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://0.gravatar.com/avatar/37637c5641b1132086ce148b49a22c7a?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='http://www.bengalalegal.com/' rel='external nofollow' class='url'>MAQ</a></p>
-<p class="author-date">18 de Março de 2008, 18:53</p>
-</div>
-<div class="text">
-<p>O vídeo é inacessível para mim que só sei o idioma português. No entanto, suas explicações, Ivo, são exatas com o que acontece conosco com relação à velocidade da escuta. Sempre que tenho de mostrar a alguém como navego com o Jaws, tenho de diminuir a velocidade dividindo por 3. Gostaria de avisar a vocês que estão desenvolvendo um software livre para Windows, um leitor de telas muito bom para navegação, especialmente através do Firefox, é o NVDA &#8211; <a href="http://www.nvda.org/" rel="nofollow">http://www.nvda.org</a> e pode ser pego gratuitamente. Outro vídeo muito bom e que todos perceberão bastante bem como uma pessoa cega navega e o do grupo que faço parte, o Acesso Digital. Já foi indicado aqui e o vídeo pode ser pego em: <a href="http://acessodigital.net/video.html" rel="nofollow">http://acessodigital.net/video.html</a><br />
-Saudações! MAQ.</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-53343">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/2bedd31f57cd69e8eca66a8c1e806d5a?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/2bedd31f57cd69e8eca66a8c1e806d5a?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name">Alex Medeiros</p>
-<p class="author-date">27 de Junho de 2008, 03:18</p>
-</div>
-<div class="text">
-<p>Olá gostei muito do video, mas assim como outros caras famoso da internet como o bruno torres vocês tem a mania de dizer que tudo que se trata de acessibilidade é impossivel.</p>
+<p><a href="http://brunotorres.net/acessibilidade-na-web-custo-ou-beneficio" title="Bruno TOrres - Acessibilidade na web: Custo ou benef�cio?" rel="nofollow">Acessibilidade na web</a> disponivel em <a href="http://acessodigital.net/video.html" title="Custo ou benef�cio?" rel="nofollow">varios formatos</a> em wwww.acessodigital.net .</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-42063">
+      <img class="blog-comment-avatar" src="https://0.gravatar.com/avatar/37637c5641b1132086ce148b49a22c7a?s=72&d=mp&r=r" alt="MAQ" />
+      <div>
+        <p class="blog-comment-author"><a href='http://www.bengalalegal.com/' rel='external nofollow' class='url'>MAQ</a></p>
+        <p class="blog-comment-date">18 de Março de 2008, 18:53</p>
+        <div class="blog-comment-text"><p>O vídeo é inacessível para mim que só sei o idioma português. No entanto, suas explicações, Ivo, são exatas com o que acontece conosco com relação à velocidade da escuta. Sempre que tenho de mostrar a alguém como navego com o Jaws, tenho de diminuir a velocidade dividindo por 3. Gostaria de avisar a vocês que estão desenvolvendo um software livre para Windows, um leitor de telas muito bom para navegação, especialmente através do Firefox, é o NVDA &#8211; <a href="http://www.nvda.org/" rel="nofollow">http://www.nvda.org</a> e pode ser pego gratuitamente. Outro vídeo muito bom e que todos perceberão bastante bem como uma pessoa cega navega e o do grupo que faço parte, o Acesso Digital. Já foi indicado aqui e o vídeo pode ser pego em: <a href="http://acessodigital.net/video.html" rel="nofollow">http://acessodigital.net/video.html</a><br />
+Saudações! MAQ.</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-53343">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/2bedd31f57cd69e8eca66a8c1e806d5a?s=72&d=mp&r=r" alt="Alex Medeiros" />
+      <div>
+        <p class="blog-comment-author">Alex Medeiros</p>
+        <p class="blog-comment-date">27 de Junho de 2008, 03:18</p>
+        <div class="blog-comment-text"><p>Olá gostei muito do video, mas assim como outros caras famoso da internet como o bruno torres vocês tem a mania de dizer que tudo que se trata de acessibilidade é impossivel.</p>
 <p>Alguns dias atras eu li um artigo no Maujor falando sobre acessibilidade em Ajax. Estou passando o link, vale a pena dar uma conferida, alem de falar que é possivel ele diz quais as limitações dos screensreaders mais famosos.</p>
-<p><a href="http://www.maujor.com/tutorial/ajax-screen-readers.php" rel="nofollow">http://www.maujor.com/tutorial/ajax-screen-readers.php</a></p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-53344">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/2bedd31f57cd69e8eca66a8c1e806d5a?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/2bedd31f57cd69e8eca66a8c1e806d5a?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name">Alex Medeiros</p>
-<p class="author-date">27 de Junho de 2008, 03:20</p>
-</div>
-<div class="text">
-<p>so mais uma coisinha quem ainda acha que flash é inacessivel. depois da uma olhada nos jogos em flash que eu criei para o portal do investidor, site mantido pelo CVM</p>
+<p><a href="http://www.maujor.com/tutorial/ajax-screen-readers.php" rel="nofollow">http://www.maujor.com/tutorial/ajax-screen-readers.php</a></p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-53344">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/2bedd31f57cd69e8eca66a8c1e806d5a?s=72&d=mp&r=r" alt="Alex Medeiros" />
+      <div>
+        <p class="blog-comment-author">Alex Medeiros</p>
+        <p class="blog-comment-date">27 de Junho de 2008, 03:20</p>
+        <div class="blog-comment-text"><p>so mais uma coisinha quem ainda acha que flash é inacessivel. depois da uma olhada nos jogos em flash que eu criei para o portal do investidor, site mantido pelo CVM</p>
 <p><a href="http://www.portaldoinvestidor.gov.br/" rel="nofollow">http://www.portaldoinvestidor.gov.br</a></p>
 <p>Va na área academica e procure por desafios, e historias interativas. </p>
-<p>São jogos em flash totalmente acessiveis.</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentarioi" id="comment-53356">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
-<p class="author-date">27 de Junho de 2008, 08:10</p>
-</div>
-<div class="text">
-<p>@Alex: Ninguém disse que o Flash é inacessível, mas é muito mais difícil encontrar alguma coisa feita em Flash que seja acessível, mais por culpa dos programadores do que por culpa da tecnologia. Ou seja, a tecnologia permite desenvolver tendo em conta a preocupação com a acessibilidade, mas 90% dos programadores não se preocupam com isso.<br />
+<p>São jogos em flash totalmente acessiveis.</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-53356">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/5b24050bdb7fef926914f4021a3918a3?s=72&d=mp&r=r" alt="Ivo Gomes" />
+      <div>
+        <p class="blog-comment-author"><a href='https://www.ivogomes.com/' rel='external nofollow' class='url'>Ivo Gomes</a></p>
+        <p class="blog-comment-date">27 de Junho de 2008, 08:10</p>
+        <div class="blog-comment-text"><p>@Alex: Ninguém disse que o Flash é inacessível, mas é muito mais difícil encontrar alguma coisa feita em Flash que seja acessível, mais por culpa dos programadores do que por culpa da tecnologia. Ou seja, a tecnologia permite desenvolver tendo em conta a preocupação com a acessibilidade, mas 90% dos programadores não se preocupam com isso.<br />
 O mesmo acontece com qualquer outra tecnologia: AJAX, Javascript, até mesmo com o HTML. A desculpa mais usada é que &#8220;dá mais trabalho&#8221;. É claro que dá um pouco mais de trabalho, mas se na nossa metodologia já tivermos em conta a acessibilidade, torna-se mais fácil e menos trabalhoso à medida que vamos tendo mais experiência.<br />
-E as pessoas com necessidades especiais agradecem&#8230;</p>
-</div>
-<div class="clear"></div>
-</li>
-<li class="comentario" id="comment-53436">
-<div class="author">
-<div class="push-left"><img alt='' src="https://2.gravatar.com/avatar/2bedd31f57cd69e8eca66a8c1e806d5a?s=72&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r" srcset='http://2.gravatar.com/avatar/2bedd31f57cd69e8eca66a8c1e806d5a?s=144&#038;d=https%3A%2F%2Fwww.ivogomes.com%2Fimg%2Fgravatar.png&#038;r=r 2x' class='avatar avatar-72 photo' height='72' width='72' /></div>
-<p class="author-name">Alex Medeiros</p>
-<p class="author-date">28 de Junho de 2008, 02:19</p>
-</div>
-<div class="text">
-<p>Eu luto muito por isso, inclusive minha monografia de gradução que estou terminando de escrever e toda voltada para acessibilidade em sistemas web.</p>
+E as pessoas com necessidades especiais agradecem&#8230;</p></div>
+      </div>
+    </div>
+    <div class="blog-comment" id="comment-53436">
+      <img class="blog-comment-avatar" src="https://2.gravatar.com/avatar/2bedd31f57cd69e8eca66a8c1e806d5a?s=72&d=mp&r=r" alt="Alex Medeiros" />
+      <div>
+        <p class="blog-comment-author">Alex Medeiros</p>
+        <p class="blog-comment-date">28 de Junho de 2008, 02:19</p>
+        <div class="blog-comment-text"><p>Eu luto muito por isso, inclusive minha monografia de gradução que estou terminando de escrever e toda voltada para acessibilidade em sistemas web.</p>
 <p>Atualmente trabalho em uma empresa grande TI e Acessibilidade hoje em dia é considerada um produto, por se tratar de mais esforço na hora do desenvolvimento, o que eu não concordo, pois o esforço maior é de planejamento e não de desenvolvimento.</p>
 <p>Mas é isso eu luto por isso e se Deus quiser vou ver alguma diferença na mentalidades das pessoas que programam para web.</p>
-<p>Ps. gostei muito do seu blog ta de parabens!!!</p>
-</div>
-<div class="clear"></div>
-</li>
-</ol>
-<h3 id="trackbacks">Blogs que "linkam" para aqui</h2>
-<ol id="trackbacklist">
-<li id="comment-17197" class="fa fa-retweet">
-<a href="<a href='http://s1mone.net/blog/2007/05/acessivel-para-quem/' rel='external'>s1mone.net/blog/2007/05/acessivel-para-quem</a>" class="external" title="Link externo (abre numa nova janela)">pixeladas aleatórias ∙∙∙∙ Acessível para quem?</a><br /><span class="small">23 de Maio de 2007, 21:04 </li>
-</ol>
-</section>
-<div id="comment">
-<h2>Comente!</h2>
-<form class="ink-form" method="post" id="commentform" action="/wp-comments-post.php" onsubmit="return Ink.UI.FormValidator_1.validate(this);">
-<fieldset>
-<div class="control-group required validation">
-<label for="author">Nome</label>
-<div class="control">
-<input id="author" name="author" value="" class="ink-fv-required" type="text" placeholder="O seu nome">
-<input type="hidden" name="comment_post_ID" value="372">
-<input type="hidden" name="redirect_to" value="/blog/como-funciona-um-screen-reader/">
-</div>
-<p class="tip">* Campo obrigatório, de modo a aparecer o seu nome como autor do comentário</p>
-</div>
-<div class="control-group required validation">
-<label for="email">E-Mail</label>
-<div class="control append-symbol">
-<span>
-<input id="email" name="email" value="" type="email" class="ink-fv-required ink-fv-email" placeholder="O seu endereço de e-mail">
-<i class="fa fa-envelope-o"></i>
-</span>
-</div>
-<p class="tip">* Campo obrigatório, mas não será mostrado no site</p>
-</div>
-<div class="control-group">
-<label for="url">Website</label>
-<div class="control append-symbol">
-<span>
-<input id="url" name="url" value="" type="text" class="" placeholder="Se tiver um site pessoal, indique aqui">
-<i class="fa fa-globe"></i>
-</span>
-</div>
-</div>
-<div class="control-group required validation">
-<label for="comment.text">Comentário</label>
-<div class="control">
-<textarea id="comment-text" rows="10" name="comment" class="ink-fv-required"></textarea>
-</div>
-<p class="tip">* Campo obrigatório, convém escrever alguma coisa ;)</p>
-<p class="tip">São permitidas algumas tags HTML, como<br />
-<code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt;
-&lt;abbr title=&quot;&quot;&gt;
-&lt;acronym title=&quot;&quot;&gt;
-&lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt;
-&lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt;
-&lt;strong&gt;</code>
-</p>
-</div>
-</fieldset>
-<p style="clear: both;" class="subscribe-to-comments">
-<input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" />
-<label for="subscribe">Notificar-me por e-mail de novos comentários a este artigo</label>
-</p>
-<button class="button" type="submit"><span class="fa fa-comment"></span> Comentar</button>
-<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="7e624358d5" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="175" /></p> </form>
-</div>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class="ink-grid">
-<p>Ivo Gomes</p>
-<div class="social">
-<ul>
-<li><a title="Facebook" class="fb" href="https://www.facebook.com/ivogomes"><span class="fa fa-facebook"></span><i>Facebook</i></a></li>
-<li><a title="Twitter" class="twitter" href="https://www.twitter.com/ivogomes"><span class="fa fa-twitter"></span><i>Twitter</i></a></li>
-<li><a title="Google+" class="gplus" href="https://google.com/+IvoGomes/?rel=author"><span class="fa fa-google-plus"></span><i>Google+</i></a></li>
-<li><a title="LinkedIn" class="lk" href="https://www.linkedin.com/in/ivogomes"><span class="fa fa-linkedin"></span><i>LinkedIn</i></a></li>
-</ul>
-</div>
-</div>
-</footer>
-<script type="text/javascript" src="http://www.ivogomes.com/js/ink-all.min.js"></script>
-<script type="text/javascript" src="http://www.ivogomes.com/js/autoload.js"></script>
-<script type="text/javascript" src="http://www.ivogomes.com/js/prism.min.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<p>Ps. gostei muito do seu blog ta de parabens!!!</p></div>
+      </div>
+    </div>
+  </section>
 
-  ga('create', 'UA-88368-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
-<script type="text/javascript">
-/* Deffer loading CSS files */
-var giftofspeed = document.createElement('link');
-giftofspeed.rel = 'stylesheet';
-giftofspeed.href = '/css/ink.min.css';
-giftofspeed.type = 'text/css';
-var godefer = document.getElementsByTagName('link')[0];
-godefer.parentNode.insertBefore(giftofspeed, godefer);
-
-var giftofspeed2 = document.createElement('link');
-giftofspeed2.rel = 'stylesheet';
-giftofspeed2.href = '/css/font-awesome.min.css';
-giftofspeed2.type = 'text/css';
-var godefer2 = document.getElementsByTagName('link')[0];
-godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
-
-var giftofspeed3 = document.createElement('link');
-giftofspeed3.rel = 'stylesheet';
-giftofspeed3.href = 'https://fonts.googleapis.com/css?family=Arvo%7CPacifico';
-giftofspeed3.type = 'text/css';
-var godefer3 = document.getElementsByTagName('link')[0];
-godefer3.parentNode.insertBefore(giftofspeed3, godefer3);
-</script>
-
-<script type="text/javascript">
-    window.cookieconsent_options = {"message":"Este site utiliza cookies para ajudar a disponibilizar os respetivos serviços e analisar o tráfego. Ao utilizar este site, concorda que o mesmo utilize cookies.","dismiss":"Entendi","learnMore":"Saiba mais","link":"","theme":"dark-bottom"};
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+  <nav class="pp-pagination">
+    <div>
+      <a href="/blog/teste-comparativo-de-simbolos-de-informacao/" class="pp-pagination-link">
+        <div class="pp-pagination-label">← Previous</div>
+        <div class="pp-pagination-title">Teste comparativo de símbolos de informação</div>
+      </a>
+    </div>
+    <div class="pp-pagination-next">
+      <a href="/blog/sic-lanca-website-renovado/" class="pp-pagination-link">
+        <div class="pp-pagination-label">Next →</div>
+        <div class="pp-pagination-title">SIC lança website renovado</div>
+      </a>
+    </div>
+  </nav>
+</div>
 
 </body>
 </html>
