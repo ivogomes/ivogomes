@@ -3,9 +3,15 @@
 function ProjectPage({ project, direction = "editorial", allProjects = [], onBack, onNavigate }) {
   const idx = allProjects.findIndex(p => p.id === project.id);
   const [lightboxIdx, setLightboxIdx] = React.useState(null);
+  const [lightboxClosing, setLightboxClosing] = React.useState(false);
   const shots = project.shots || [];
   const lightboxRef = React.useRef(null);
   const lightboxOpen = lightboxIdx !== null;
+
+  const closeLightbox = React.useCallback(() => {
+    setLightboxClosing(true);
+    setTimeout(() => { setLightboxIdx(null); setLightboxClosing(false); }, 150);
+  }, []);
 
   React.useEffect(() => {
     if (!lightboxOpen || !lightboxRef.current) return;
@@ -16,7 +22,7 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
   React.useEffect(() => {
     if (lightboxIdx === null) return;
     const onKey = (e) => {
-      if (e.key === "Escape") { setLightboxIdx(null); return; }
+      if (e.key === "Escape") { closeLightbox(); return; }
       if (e.key === "ArrowRight") setLightboxIdx(i => i < shots.length - 1 ? i + 1 : i);
       if (e.key === "ArrowLeft")  setLightboxIdx(i => i > 0 ? i - 1 : i);
       if (e.key === "Tab") {
@@ -36,6 +42,16 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [lightboxIdx, shots.length]);
+  React.useEffect(() => {
+    const els = document.querySelectorAll('.pp-section.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('is-visible')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, [project.id]);
+
   const prev = idx > 0 ? allProjects[idx - 1] : null;
   const next = idx < allProjects.length - 1 ? allProjects[idx + 1] : null;
 
@@ -51,16 +67,18 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
 
   return (
     <main className={`pp-wrap${isMono ? " pp-wrap--mono" : ""}`}>
-      <nav aria-label="Page navigation" className="pp-nav">
+      <nav aria-label="Page navigation" className="pp-nav pp-enter" style={{"--enter-delay":"0ms"}}>
         <a href="#/" onClick={(e) => { e.preventDefault(); onBack && onBack(); }} className="pp-nav-back">
           <span className="pp-nav-back-arrow">←</span> Back to portfolio
         </a>
         <span>{project.company} · {project.year}</span>
       </nav>
 
-      <window.ProjectTile project={project} size="hero" />
+      <div className="pp-enter" style={{"--enter-delay":"80ms"}}>
+        <window.ProjectTile project={project} size="hero" />
+      </div>
 
-      <header className="pp-header">
+      <header className="pp-header pp-enter" style={{"--enter-delay":"180ms"}}>
         <div>
           <p className="pp-tag">{project.tag}</p>
           <h1 className={titleClass}>{project.title}</h1>
@@ -83,7 +101,7 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
       </header>
 
       {shots.length > 0 && (
-        <section className="pp-shots">
+        <section className="pp-shots pp-enter" style={{"--enter-delay":"280ms"}}>
           <h2 className="pp-shots-label">
             {isMono ? "// screenshots" : "Screenshots"}
           </h2>
@@ -98,9 +116,9 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
       )}
 
       {lightboxIdx !== null && (
-        <div className="pp-lightbox" role="dialog" aria-modal="true" aria-label={shots[lightboxIdx]?.label} onClick={() => setLightboxIdx(null)}>
+        <div className={`pp-lightbox${lightboxClosing ? ' pp-lightbox--closing' : ''}`} role="dialog" aria-modal="true" aria-label={shots[lightboxIdx]?.label} onClick={closeLightbox}>
           <div className="pp-lightbox-inner" ref={lightboxRef} onClick={(e) => e.stopPropagation()}>
-            <button className="pp-lightbox-close" onClick={() => setLightboxIdx(null)} aria-label="Close">✕</button>
+            <button className="pp-lightbox-close" onClick={closeLightbox} aria-label="Close">✕</button>
             <window.ProjectShot project={project} shot={shots[lightboxIdx]} showNote={true} style={{width: "100%", aspectRatio: "16/10"}} />
             {shots.length > 1 && (
               <div className="pp-lightbox-nav">
@@ -115,7 +133,7 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
 
       <div className="pp-narrative">
         {project.sections.map((s, i) => (
-          <section key={i} className="pp-section">
+          <section key={i} className="pp-section reveal" style={{"--reveal-delay": `${i * 60}ms`}}>
             <h2 className={sectionHClass}>
               {isMono ? `// ${s.h.toLowerCase()}` : s.h}
             </h2>

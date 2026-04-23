@@ -408,12 +408,39 @@ a:hover { color: var(--accent); }
 .pp-shot-btn {
   all: unset;
   display: block;
+  position: relative;
   cursor: zoom-in;
   border-radius: var(--radius);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .pp-shot-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
 .pp-shot-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.pp-shot-btn .shot-img { transition: transform 400ms ease; }
+.pp-shot-btn:hover .shot-img { transform: scale(1.04); }
+.pp-shot-btn::after {
+  content: '↗';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 26px;
+  height: 26px;
+  background: rgba(0,0,0,0.52);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 26px;
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  transform: scale(0.8) translate(2px, -2px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  pointer-events: none;
+}
+.pp-shot-btn:hover::after { opacity: 1; transform: scale(1) translate(0, 0); }
+@keyframes ppLightboxBgIn  { from { opacity: 0; }                         to { opacity: 1; } }
+@keyframes ppLightboxBgOut { from { opacity: 1; }                         to { opacity: 0; } }
+@keyframes ppLightboxIn    { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes ppLightboxOut   { from { opacity: 1; transform: scale(1); }   to { opacity: 0; transform: scale(0.96); } }
 .pp-lightbox {
   position: fixed;
   inset: 0;
@@ -424,13 +451,17 @@ a:hover { color: var(--accent); }
   z-index: var(--z-modal);
   padding: 24px;
   cursor: zoom-out;
+  animation: ppLightboxBgIn 180ms ease both;
 }
+.pp-lightbox--closing { animation: ppLightboxBgOut 150ms ease both; }
 .pp-lightbox-inner {
   position: relative;
   width: 100%;
   max-width: 900px;
   cursor: default;
+  animation: ppLightboxIn 220ms ease both;
 }
+.pp-lightbox--closing .pp-lightbox-inner { animation: ppLightboxOut 150ms ease both; }
 .pp-lightbox-close {
   all: unset;
   position: absolute;
@@ -769,6 +800,42 @@ a:hover { color: var(--accent); }
   letter-spacing: -0.02em;
   color: #C97B5A;
   opacity: 0.85;
+}
+
+/* ── Reading progress bar ────────────────────────────────────── */
+@supports (animation-timeline: scroll()) {
+  @keyframes readingProgress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  .pp-wrap::before,
+  .blog-article::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform-origin: left center;
+    transform: scaleX(0);
+    animation: readingProgress linear both;
+    animation-timeline: scroll(root);
+    z-index: 1000;
+  }
+}
+
+/* ── Project page enter ──────────────────────────────────────── */
+@keyframes ppEnter {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+.pp-enter {
+  animation: ppEnter 500ms ease both;
+  animation-delay: var(--enter-delay, 0ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pp-enter { animation: none; }
 }
 
 /* ── Scroll reveal ───────────────────────────────────────────── */
