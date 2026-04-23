@@ -917,6 +917,35 @@ a:hover { color: var(--accent); }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
+/* ── CV at a glance ──────────────────────────────────────────── */
+.cv-glance {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 32px;
+  margin: 28px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--rule);
+}
+.cv-glance-item dt {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-quiet);
+  margin-bottom: 5px;
+}
+.cv-glance-item dd {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1.35;
+}
+@media (min-width: 480px) {
+  .cv-glance { grid-template-columns: repeat(4, 1fr); }
+}
+
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 640px) {
   .ed-job {
