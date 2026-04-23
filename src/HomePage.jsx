@@ -1,5 +1,19 @@
 // Editorial direction — full-screen hero + scrollable content below
 
+
+// "Hi," (3) + br (1) + "I'm " (4) + "Ivo." (4) = 12 total chars
+const HERO_FULL = 12;
+
+function renderHeroTyped(n) {
+  const nodes = [];
+  let rem = n;
+  if (rem > 0) { nodes.push("Hi,".slice(0, Math.min(3, rem))); rem = Math.max(0, rem - 3); }
+  if (rem > 0) { nodes.push(<br key="br" />); rem--; }
+  if (rem > 0) { nodes.push("I'm ".slice(0, Math.min(4, rem))); rem = Math.max(0, rem - 4); }
+  if (rem > 0) { nodes.push(<span key="ivo">{"Ivo.".slice(0, Math.min(4, rem))}</span>); }
+  return nodes;
+}
+
 function HeroArt() {
   return (
     <React.Fragment>
@@ -14,6 +28,32 @@ function HeroArt() {
 }
 
 function EditorialDirection({ data, onOpenProject }) {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const [typed, setTyped] = React.useState(prefersReduced ? HERO_FULL : 0);
+  React.useEffect(() => {
+    if (typed >= HERO_FULL) return;
+    const t = setTimeout(() => setTyped(n => n + 1), 65);
+    return () => clearTimeout(t);
+  }, [typed]);
+
+  React.useEffect(() => {
+    const els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   const scrollDown = () => {
     const target = document.getElementById("bio");
     if (target) target.scrollIntoView({behavior: "smooth", block: "start"});
@@ -30,7 +70,11 @@ function EditorialDirection({ data, onOpenProject }) {
 
         <div className="ed-hero-center">
           <h1 className="ed-hero-hi">
-            Hi,<br/>I'm <span>Ivo.</span>
+            <span className="ed-hero-hi-ghost">Hi,<br/>I'm <span>Ivo.</span></span>
+            <span className="ed-hero-hi-typed" aria-hidden="true">
+              {renderHeroTyped(typed)}
+              <span className="hero-cursor" aria-hidden="true" />
+            </span>
           </h1>
           <p className="ed-hero-tagline">
             I'm a product design leader based in Lisbon. These days I'm Director of Product Design at{" "}
@@ -66,10 +110,10 @@ function EditorialDirection({ data, onOpenProject }) {
 
         <h2 className="ed-section-label" id="work">Work</h2>
         <ul className="ed-jobs">
-          {data.work.map(job => {
+          {data.work.map((job, jobIdx) => {
             const jobProjects = data.projects.filter(p => p.workId === job.id);
             return (
-              <li key={job.id} className="ed-job">
+              <li key={job.id} className="ed-job reveal" style={{"--reveal-delay": `${jobIdx * 80}ms`}}>
                 <time className="ed-job-years">{job.years}</time>
                 <div>
                   <h3 className="ed-job-company" id={job.id}>{job.company}</h3>

@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="src/tokens.css?v=7" />
-<link rel="stylesheet" href="src/main.css?v=7" />
+<link rel="stylesheet" href="src/main.css?v=11" />
 
 </head>
 
@@ -45,7 +45,7 @@
 <script src="src/data.js?v=5"></script>
 <script type="text/babel" data-presets="react" src="src/ProjectTile.jsx?v=5"></script>
 <script type="text/babel" data-presets="react" src="src/ProjectPage.jsx?v=5"></script>
-<script type="text/babel" data-presets="react" src="src/HomePage.jsx?v=5"></script>
+<script type="text/babel" data-presets="react" src="src/HomePage.jsx?v=9"></script>
 
 <script type="text/babel" data-presets="react">
   const { useState, useEffect } = React;
@@ -93,6 +93,27 @@
   }
 
   ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+
+<script>
+(function(){
+  var s = 'color:#C97B5A;font-size:12px;font-family:monospace;line-height:1.9;';
+  console.log(
+    '%c Ivo Gomes %c\n\n%c' +
+    '$ whoami\n' +
+    '  Director of Product Design · Dashlane\n' +
+    '  Lisbon, Portugal\n\n' +
+    '$ cat /etc/interests\n' +
+    '  [design-systems, minimalism, AI, tiny-details]\n\n' +
+    '$ echo $SECRET\n' +
+    '  You opened devtools. I like you already. 👀\n\n' +
+    '  → ivogomes.com\n',
+    'background:#5BBFB5;color:#FFF8E8;font-size:16px;font-weight:bold;padding:6px 14px;',
+    '',
+    s
+  );
+})();
 </script>
 
 </body>
