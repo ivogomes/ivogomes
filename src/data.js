@@ -1,5 +1,5 @@
 // Shared content for Ivo Gomes' personal site
-window.IVO_DATA = {
+const IVO_DATA = {
   name: "Ivo Gomes",
   role: "Director of Product Design",
   company: "Dashlane",
@@ -355,3 +355,5 @@ window.IVO_DATA = {
     }
   ]
 };
+
+export default IVO_DATA;

@@ -1,4 +1,5 @@
 // Shared: project tile (placeholder image) + project page layout
+import React from 'react';
 
 function ProjectTile({ project, size = "lg", showText = true, style = {} }) {
   const isHero = size === "hero";
@@ -133,6 +134,4 @@ likes: [design systems, minimalism, details]
   );
 }
 
-window.ProjectTile = ProjectTile;
-window.ProjectShot = ProjectShot;
-window.HeroBackdrop = HeroBackdrop;
+export { ProjectTile, ProjectShot, HeroBackdrop };

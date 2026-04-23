@@ -1,4 +1,6 @@
 // Project sub-page — single layout, direction-flavored typography
+import React from 'react';
+import { ProjectTile, ProjectShot } from './ProjectTile.jsx';
 
 function ProjectPage({ project, direction = "editorial", allProjects = [], onBack, onNavigate }) {
   const idx = allProjects.findIndex(p => p.id === project.id);
@@ -75,7 +77,7 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
       </nav>
 
       <div className="pp-enter" style={{"--enter-delay":"80ms"}}>
-        <window.ProjectTile project={project} size="hero" />
+        <ProjectTile project={project} size="hero" />
       </div>
 
       <header className="pp-header pp-enter" style={{"--enter-delay":"180ms"}}>
@@ -108,7 +110,7 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
           <div className={`pp-shots-grid${shots.length < 3 ? " pp-shots-grid--pair" : ""}`}>
             {shots.map((s, i) => (
               <button key={i} className="pp-shot-btn" onClick={() => setLightboxIdx(i)} aria-label={`View ${s.label} full size`}>
-                <window.ProjectShot project={project} shot={s} thumb={true} />
+                <ProjectShot project={project} shot={s} thumb={true} />
               </button>
             ))}
           </div>
@@ -119,7 +121,7 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
         <div className={`pp-lightbox${lightboxClosing ? ' pp-lightbox--closing' : ''}`} role="dialog" aria-modal="true" aria-label={shots[lightboxIdx]?.label} onClick={closeLightbox}>
           <div className="pp-lightbox-inner" ref={lightboxRef} onClick={(e) => e.stopPropagation()}>
             <button className="pp-lightbox-close" onClick={closeLightbox} aria-label="Close">✕</button>
-            <window.ProjectShot project={project} shot={shots[lightboxIdx]} showNote={true} style={{width: "100%", aspectRatio: "16/10"}} />
+            <ProjectShot project={project} shot={shots[lightboxIdx]} showNote={true} style={{width: "100%", aspectRatio: "16/10"}} />
             {shots.length > 1 && (
               <div className="pp-lightbox-nav">
                 <button className="pp-lightbox-nav-btn" onClick={() => setLightboxIdx(i => i > 0 ? i - 1 : i)} disabled={lightboxIdx === 0} aria-label="Previous">←</button>
@@ -168,4 +170,4 @@ function ProjectPage({ project, direction = "editorial", allProjects = [], onBac
   );
 }
 
-window.ProjectPage = ProjectPage;
+export { ProjectPage };

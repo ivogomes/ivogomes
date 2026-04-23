@@ -1,4 +1,6 @@
 // Editorial direction — full-screen hero + scrollable content below
+import React from 'react';
+import { ProjectTile } from './ProjectTile.jsx';
 
 
 // "Hi," (3) + br (1) + "I'm " (4) + "Ivo." (4) = 12 total chars
@@ -138,7 +140,7 @@ function EditorialDirection({ data, onOpenProject }) {
                           onClick={(e) => { e.preventDefault(); onOpenProject && onOpenProject(project.id); }}
                           className="project-card"
                         >
-                          <window.ProjectTile project={project} size="md" />
+                          <ProjectTile project={project} size="md" />
                           <div className="pg-card-info">
                             <div className="pg-card-title">{project.title}</div>
                             <div className="pg-card-tag">{project.tag}</div>
@@ -179,4 +181,4 @@ function EditorialDirection({ data, onOpenProject }) {
   );
 }
 
-window.EditorialDirection = EditorialDirection;
+export { EditorialDirection };

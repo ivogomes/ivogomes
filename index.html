@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZBSBK2BKKQ');
 </script>
 <meta charset="utf-8" />
@@ -22,79 +21,17 @@
 <link rel="manifest" href="assets/site.webmanifest" />
 <meta name="theme-color" content="#F3EDE1" />
 
-<!-- Fonts -->
 <link rel="preload" href="assets/bg.webp" as="image" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="src/tokens.css?v=7" />
-<link rel="stylesheet" href="src/main.css?v=13" />
-
+<link rel="stylesheet" href="dist/style.min.css" />
 </head>
 
 <body>
 
 <div id="root"></div>
-
-<!-- React + Babel -->
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-
-<script src="src/data.js?v=5"></script>
-<script type="text/babel" data-presets="react" src="src/ProjectTile.jsx?v=5"></script>
-<script type="text/babel" data-presets="react" src="src/ProjectPage.jsx?v=6"></script>
-<script type="text/babel" data-presets="react" src="src/HomePage.jsx?v=9"></script>
-
-<script type="text/babel" data-presets="react">
-  const { useState, useEffect } = React;
-
-  function parseHash() {
-    const h = window.location.hash || '';
-    const m = h.match(/^#\/project\/([a-z0-9-]+)/i);
-    return m ? m[1] : null;
-  }
-
-  function App() {
-    const [projectId, setProjectId] = useState(() => parseHash());
-
-    useEffect(() => {
-      const onHash = () => setProjectId(parseHash());
-      window.addEventListener('hashchange', onHash);
-      return () => window.removeEventListener('hashchange', onHash);
-    }, []);
-
-    const openProject = (id) => {
-      window.location.hash = '#/project/' + id;
-      setProjectId(id);
-      window.scrollTo({top: 0, behavior: 'instant'});
-    };
-    const backToHome = () => {
-      window.location.hash = '';
-      setProjectId(null);
-      window.scrollTo({top: 0, behavior: 'instant'});
-    };
-
-    if (projectId) {
-      const project = window.IVO_DATA.projects.find(p => p.id === projectId);
-      if (project) {
-        return <window.ProjectPage
-          project={project}
-          direction="editorial"
-          allProjects={window.IVO_DATA.projects}
-          onBack={backToHome}
-          onNavigate={openProject}
-        />;
-      }
-    }
-
-    return <window.EditorialDirection data={window.IVO_DATA} onOpenProject={openProject} />;
-  }
-
-  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-</script>
-
 
 <script>
 (function(){
@@ -115,6 +52,8 @@
   );
 })();
 </script>
+
+<script src="dist/bundle.min.js" defer></script>
 
 </body>
 </html>
