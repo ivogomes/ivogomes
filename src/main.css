@@ -802,6 +802,71 @@ a:hover { color: var(--accent); }
   opacity: 0.85;
 }
 
+/* ── Download button shimmer ─────────────────────────────────── */
+.pp-download-btn {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin-top: 28px;
+  padding: 12px 24px;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: opacity 0.2s;
+}
+.pp-download-btn:hover { opacity: 0.88; color: var(--bg); }
+.pp-download-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
+  transform: skewX(-15deg);
+  transition: left 500ms ease;
+  pointer-events: none;
+}
+.pp-download-btn:hover::after { left: 150%; }
+@media (prefers-reduced-motion: reduce) {
+  .pp-download-btn::after { display: none; }
+}
+
+/* ── 404 glitch ───────────────────────────────────────────────── */
+@keyframes glitch404 {
+  0%, 88%, 100% { text-shadow: none; transform: none; }
+  89%  { text-shadow:  2px 0 rgba(200,54,26,.9), -2px 0 rgba(91,191,181,.9); transform: translateX( 2px); }
+  90%  { text-shadow: -3px 0 rgba(200,54,26,.8),  3px 0 rgba(91,191,181,.8); transform: translateX(-2px); }
+  91%  { text-shadow: none; transform: skewX(4deg); }
+  92%  { text-shadow:  3px 0 rgba(200,54,26,.9), -2px 0 rgba(91,191,181,.9); transform: none; }
+  93%  { text-shadow: none; transform: none; }
+}
+.pp-tag--glitch { animation: glitch404 6s step-end infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .pp-tag--glitch { animation: none; }
+}
+
+/* ── 404 terminal output ──────────────────────────────────────── */
+.e404-terminal {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  margin-top: 28px;
+  white-space: pre;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+.e404-terminal::after {
+  content: '▌';
+  animation: cursorBlink 1.1s step-end infinite;
+  margin-left: 1px;
+}
+
 /* ── Reading progress bar ────────────────────────────────────── */
 @supports (animation-timeline: scroll()) {
   @keyframes readingProgress {
