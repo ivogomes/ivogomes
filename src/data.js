@@ -91,9 +91,8 @@ const IVO_DATA = {
       ],
       shots: [
         { label: "Component library", note: "Figma — core set", img: "assets/projects/dashlane-ds.png", imgThumb: "assets/projects/dashlane-ds-thumb.png" },
-        { label: "Tokens", note: "color · spacing · type" },
-        { label: "Patterns", note: "recipes / interactions" },
-        { label: "Docs", note: "guidance site" }
+        { label: "Color tokens", note: "color · spacing · type", img: "assets/projects/dashlane-ds-colors.png", imgThumb: "assets/projects/dashlane-ds-colors-thumb.png" },
+        { label: "Patterns", note: "recipes / interactions", img: "assets/projects/dashlane-ds-patterns.png", imgThumb: "assets/projects/dashlane-ds-patterns-thumb.png" }
       ]
     },
     {
@@ -107,18 +106,13 @@ const IVO_DATA = {
       blurb: "How levelling up the team's Figma skills, shipping a Design System, and building a culture of shared knowledge cut the cost of building new features.",
       tileColor: "#F0A830",  // amber
       tileInk: "#2A1A08",
-      initials: "DC",
+      initials: "Craft",
       tileImg: "",
       tileImgThumb: "",
       sections: [
         { h: "Context", p: "Designers were spending too much time reinventing UI and not enough time solving problems. Without shared components or a common craft baseline, every feature started from scratch — inconsistency crept in and velocity suffered." },
         { h: "Approach", p: "I focused on three levers: raising the technical floor through targeted Figma coaching, deploying a Design System that made consistent, production-ready UI the path of least resistance, and creating recurring spaces — Round Tables and pair-design sessions — where the team could teach each other and stay aligned." },
         { h: "What I did", p: "Ran hands-on Figma workshops to close skill gaps across the team. Led the Design System rollout: component architecture, documentation, and adoption strategy. Established Round Tables as a weekly ritual for sharing patterns, critiquing work, and surfacing knowledge that would otherwise stay siloed. The result: designers moved faster, output was more consistent, and new features required far less rework." }
-      ],
-      shots: [
-        { label: "System", note: "component library" },
-        { label: "Round Table", note: "knowledge sharing" },
-        { label: "Pair design", note: "in-session collaboration" }
       ]
     },
     {
@@ -133,8 +127,8 @@ const IVO_DATA = {
       tileColor: "#C8361A",  // rust
       tileInk: "#FFF4E2",
       initials: "AX",
-      tileImg: "",
-      tileImgThumb: "",
+      tileImg: "assets/projects/talkdesk-ax.png",  // 1600x1000
+      tileImgThumb: "assets/projects/talkdesk-ax-thumb.png",  // 600x375
       sections: [
         { h: "Context", p: "I was the lead product designer for the new agent experience at Talkdesk — specifically for the voice channel. This is the web/desktop app contact-center agents use every day to make and receive calls, manage contacts, listen to voicemails, and check their activity." },
         { h: "The product", p: "A responsive web app that runs in a browser or as a desktop app. Agents usually juggle many tools at once, so they prefer running it in a tiny desktop window — which meant every pixel had to earn its place." },
@@ -144,10 +138,9 @@ const IVO_DATA = {
         { h: "Prototyping in code", p: "I like to put my hands in the code sometimes. It helps me convey the experience I want — like the <a href='https://codepen.io/ivogomes/pen/vMLvVW' target='_blank' rel='noopener noreferrer'>ringing-avatar animation</a> I prototyped on CodePen." }
       ],
       shots: [
-        { label: "Idle state", note: "Conversations app" },
-        { label: "Inbound ringing", note: "call incoming" },
-        { label: "Call in progress", note: "active call" },
-        { label: "Activity details", note: "supervisor view" }
+        { label: "Call in progress", note: "active call", img: "assets/projects/talkdesk-ax.png", imgThumb: "assets/projects/talkdesk-ax-thumb.png" },
+        { label: "Idle state", note: "Conversations app", img: "assets/projects/talkdesk-ax-idle.png", imgThumb: "assets/projects/talkdesk-ax-idle-thumb.png" },
+        { label: "Activity details", note: "supervisor view", img: "assets/projects/talkdesk-ax-activity.png", imgThumb: "assets/projects/talkdesk-ax-activity-thumb.png" }
       ]
     },
     {
@@ -162,8 +155,8 @@ const IVO_DATA = {
       tileColor: "#2E6F5E",  // walnut
       tileInk: "#E6F5EC",
       initials: "Co",
-      tileImg: "",
-      tileImgThumb: "",
+      tileImg: "assets/projects/talkdesk-ds-app.png",  // 1600x1000
+      tileImgThumb: "assets/projects/talkdesk-ds-app-thumb.png",  // 600x375
       sections: [
         { h: "Context", p: "I helped build <a href='https://designsystem.talkdesk.com' target='_blank' rel='noopener noreferrer'>Talkdesk's Design System</a> from scratch. In the early days I also helped on the front-end (HTML/CSS) of components to include accessibility features and make sure the experience matched what we had imagined in the design style guide. That was in parallel with the Sketch (later Figma) component library." },
         { h: "Adoption", p: "Cobalt became the foundation for the entire product's UI/UX revamp. Talkdesk started as a hackathon project, and years of ad-hoc development had left the product fragmented — inconsistent components, mismatched styles, no shared language between design and engineering. The design system gave us that common ground: new features were built on top of it from day one, and legacy screens were gradually migrated across." },
@@ -171,9 +164,10 @@ const IVO_DATA = {
         { h: "More", p: "I wrote a <a href='https://medium.com/talkdesk-design/building-our-design-system-533b29102cd2' target='_blank' rel='noopener noreferrer'>blog post</a> about how we built it in 2020 — it covers the decisions, the gotchas, and the team shape." }
       ],
       shots: [
-        { label: "Core components", note: "first wave" },
-        { label: "Tokens", note: "color & type" },
-        { label: "Accessibility", note: "a11y-first" }
+        { label: "Desktop app", note: "Agents usually prefer to use Talkdesk in a small desktop app, with very limited size constraints", img: "assets/projects/talkdesk-ds-app.png", imgThumb: "assets/projects/talkdesk-ds-app-thumb.png" },
+        { label: "Bulk actions", note: "Bulk actions pattern", img: "assets/projects/talkdesk-ds-bulkactions.png", imgThumb: "assets/projects/talkdesk-ds-bulkactions-thumb.png" },
+        { label: "Filters", note: "Filters pattern", img: "assets/projects/talkdesk-ds-filters.png", imgThumb: "assets/projects/talkdesk-ds-filters-thumb.png" },
+        { label: "Forms", note: "Forms pattern", img: "assets/projects/talkdesk-ds-forms.png", imgThumb: "assets/projects/talkdesk-ds-forms-thumb.png" }
       ]
     },
     {
@@ -187,18 +181,13 @@ const IVO_DATA = {
       blurb: "Talkdesk went from scrappy startup to $10B company in under five years. I helped build the design org that scaled alongside it — from 4 designers to almost 70, across four cities on three continents.",
       tileColor: "#2E6F5E",  // walnut
       tileInk: "#E6F5EC",
-      initials: "Co",
+      initials: "Growth",
       tileImg: "",
       tileImgThumb: "",
       sections: [
         { h: "Context", p: "In 2017, Talkdesk had a handful of designers and serious product ambitions. By 2022 it was a decacorn with six business units and nearly 70 designers spread across Lisbon, San Francisco, Armenia, and Wuhan. I was part of the leadership team that made that growth possible — and responsible for making sure design didn't fall apart in the process." },
         { h: "My role", p: "I became Director of Product Design for the CCaaS business unit, managing up to 11 designers across three locations: Lisbon, San Francisco, and Wuhan. The timezone spread alone — up to 8 hours between offices — made everyday coordination genuinely hard. Getting alignment on direction, keeping a feedback loop alive, and making designers feel part of one team rather than three separate ones was a constant challenge." },
         { h: "Making 70 designers feel like one", p: "The bigger organisational challenge was coherence at scale. With designers embedded in different scrum teams across six business units, it was easy for the product to fragment. We invested heavily in shared infrastructure: a Design System and Talkdesk styleguide that became the single source of truth across all units, cross-team design critiques, weekly knowledge-sharing sessions, and pair-design rituals that kept patterns and decisions from staying siloed. The goal was for any designer, anywhere, to be able to pick up another team's work and feel at home." }
-      ],
-      shots: [
-        { label: "Org", note: "4 → 70 designers" },
-        { label: "System", note: "shared styleguide" },
-        { label: "Culture", note: "cross-team rituals" }
       ]
     },
     {
