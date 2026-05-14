@@ -81,8 +81,8 @@ const IVO_DATA = {
       tileColor: "#E8553D",  // terracotta
       tileInk: "#FFF8E8",
       initials: "DS",
-      tileImg: "assets/projects/dashlane-ds.png",  // 1600x1000
-      tileImgThumb: "assets/projects/dashlane-ds-thumb.png",  // 600x375
+      tileImg: "assets/projects/dashlane-ds.webp",  // 1600x1000
+      tileImgThumb: "assets/projects/dashlane-ds-thumb.webp",  // 600x375
       sections: [
         { h: "Context", p: "I'm a huge fan of Design Systems and love building them. When I joined Dashlane, the Design System was in its early stages: 5 components, very low adoption from designers and engineers, and a slow development process that required each component to ship for all 4 platforms (Figma, Web, iOS, Android) before any release." },
         { h: "Strategy", p: "Shortly after taking over, I set up a strategy to build the base components users would need for 80+% of all pages in the product, and changed how we delivered to our users. We started publishing early for designers in Figma as soon as components were ready — this boosted adoption and design consistency." },
@@ -90,9 +90,9 @@ const IVO_DATA = {
         { h: "Maintenance", p: "We're focusing our efforts on UX Architecture and Patterns — pre-built recipes for larger interactions (bulk actions, filtering, navigation) — and have moved to a hybrid model where our users are now the main contributors to the DS, validated by the UX Architecture Working Group." }
       ],
       shots: [
-        { label: "Component library", note: "Figma · core set", img: "assets/projects/dashlane-ds.png", imgThumb: "assets/projects/dashlane-ds-thumb.png" },
-        { label: "Design tokens", note: "color · spacing · type", img: "assets/projects/dashlane-ds-colors.png", imgThumb: "assets/projects/dashlane-ds-colors-thumb.png" },
-        { label: "Patterns", note: "recipes · interactions", img: "assets/projects/dashlane-ds-patterns.png", imgThumb: "assets/projects/dashlane-ds-patterns-thumb.png" }
+        { label: "Component library", note: "Figma · core set", img: "assets/projects/dashlane-ds.webp", imgThumb: "assets/projects/dashlane-ds-thumb.webp" },
+        { label: "Design tokens", note: "color · spacing · type", img: "assets/projects/dashlane-ds-colors.webp", imgThumb: "assets/projects/dashlane-ds-colors-thumb.webp" },
+        { label: "Patterns", note: "recipes · interactions", img: "assets/projects/dashlane-ds-patterns.webp", imgThumb: "assets/projects/dashlane-ds-patterns-thumb.webp" }
       ]
     },
     {
@@ -127,8 +127,8 @@ const IVO_DATA = {
       tileColor: "#C8361A",  // rust
       tileInk: "#FFF4E2",
       initials: "AX",
-      tileImg: "assets/projects/talkdesk-ax.png",  // 1600x1000
-      tileImgThumb: "assets/projects/talkdesk-ax-thumb.png",  // 600x375
+      tileImg: "assets/projects/talkdesk-ax.webp",  // 1600x1000
+      tileImgThumb: "assets/projects/talkdesk-ax-thumb.webp",  // 600x375
       sections: [
         { h: "Context", p: "I was the lead product designer for the new agent experience at Talkdesk — specifically for the voice channel. This is the web/desktop app contact-center agents use every day to make and receive calls, manage contacts, listen to voicemails, and check their activity." },
         { h: "The product", p: "A responsive web app that runs in a browser or as a desktop app. Agents usually juggle many tools at once, so they prefer running it in a tiny desktop window — which meant every pixel had to earn its place." },
@@ -138,9 +138,9 @@ const IVO_DATA = {
         { h: "Prototyping in code", p: "I like to put my hands in the code sometimes. It helps me convey the experience I want — like the <a href='https://codepen.io/ivogomes/pen/vMLvVW' target='_blank' rel='noopener noreferrer'>ringing-avatar animation</a> I prototyped on CodePen." }
       ],
       shots: [
-        { label: "Call in progress", note: "voice channel", img: "assets/projects/talkdesk-ax.png", imgThumb: "assets/projects/talkdesk-ax-thumb.png" },
-        { label: "Conversations", note: "idle · between calls", img: "assets/projects/talkdesk-ax-idle.png", imgThumb: "assets/projects/talkdesk-ax-idle-thumb.png" },
-        { label: "Activity details", note: "supervisor view", img: "assets/projects/talkdesk-ax-activity.png", imgThumb: "assets/projects/talkdesk-ax-activity-thumb.png" }
+        { label: "Call in progress", note: "voice channel", img: "assets/projects/talkdesk-ax.webp", imgThumb: "assets/projects/talkdesk-ax-thumb.webp" },
+        { label: "Conversations", note: "idle · between calls", img: "assets/projects/talkdesk-ax-idle.webp", imgThumb: "assets/projects/talkdesk-ax-idle-thumb.webp" },
+        { label: "Activity details", note: "supervisor view", img: "assets/projects/talkdesk-ax-activity.webp", imgThumb: "assets/projects/talkdesk-ax-activity-thumb.webp" }
       ]
     },
     {
@@ -155,8 +155,8 @@ const IVO_DATA = {
       tileColor: "#2E6F5E",  // walnut
       tileInk: "#E6F5EC",
       initials: "Co",
-      tileImg: "assets/projects/talkdesk-ds-app.png",  // 1600x1000
-      tileImgThumb: "assets/projects/talkdesk-ds-app-thumb.png",  // 600x375
+      tileImg: "assets/projects/talkdesk-ds-app.webp",  // 1600x1000
+      tileImgThumb: "assets/projects/talkdesk-ds-app-thumb.webp",  // 600x375
       sections: [
         { h: "Context", p: "I helped build <a href='https://designsystem.talkdesk.com' target='_blank' rel='noopener noreferrer'>Talkdesk's Design System</a> from scratch. In the early days I also helped on the front-end (HTML/CSS) of components to include accessibility features and make sure the experience matched what we had imagined in the design style guide. That was in parallel with the Sketch (later Figma) component library." },
         { h: "Adoption", p: "Cobalt became the foundation for the entire product's UI/UX revamp. Talkdesk started as a hackathon project, and years of ad-hoc development had left the product fragmented — inconsistent components, mismatched styles, no shared language between design and engineering. The design system gave us that common ground: new features were built on top of it from day one, and legacy screens were gradually migrated across." },
@@ -164,10 +164,10 @@ const IVO_DATA = {
         { h: "More", p: "I wrote a <a href='https://medium.com/talkdesk-design/building-our-design-system-533b29102cd2' target='_blank' rel='noopener noreferrer'>blog post</a> about how we built it in 2020 — it covers the decisions, the gotchas, and the team shape." }
       ],
       shots: [
-        { label: "Desktop app", note: "small-window UI", img: "assets/projects/talkdesk-ds-app.png", imgThumb: "assets/projects/talkdesk-ds-app-thumb.png" },
-        { label: "Bulk actions", note: "selection · batch ops", img: "assets/projects/talkdesk-ds-bulkactions.png", imgThumb: "assets/projects/talkdesk-ds-bulkactions-thumb.png" },
-        { label: "Filters", note: "query · refine", img: "assets/projects/talkdesk-ds-filters.png", imgThumb: "assets/projects/talkdesk-ds-filters-thumb.png" },
-        { label: "Forms", note: "inputs · validation", img: "assets/projects/talkdesk-ds-forms.png", imgThumb: "assets/projects/talkdesk-ds-forms-thumb.png" }
+        { label: "Desktop app", note: "small-window UI", img: "assets/projects/talkdesk-ds-app.webp", imgThumb: "assets/projects/talkdesk-ds-app-thumb.webp" },
+        { label: "Bulk actions", note: "selection · batch ops", img: "assets/projects/talkdesk-ds-bulkactions.webp", imgThumb: "assets/projects/talkdesk-ds-bulkactions-thumb.webp" },
+        { label: "Filters", note: "query · refine", img: "assets/projects/talkdesk-ds-filters.webp", imgThumb: "assets/projects/talkdesk-ds-filters-thumb.webp" },
+        { label: "Forms", note: "inputs · validation", img: "assets/projects/talkdesk-ds-forms.webp", imgThumb: "assets/projects/talkdesk-ds-forms-thumb.webp" }
       ]
     },
     {
@@ -182,8 +182,8 @@ const IVO_DATA = {
       tileColor: "#2E6F5E",  // walnut
       tileInk: "#E6F5EC",
       initials: "Growth",
-      tileImg: "assets/projects/talkdesk-hg.png",  // 1600x1000
-      tileImgThumb: "assets/projects/talkdesk-hg-thumb.png",  // 600x375
+      tileImg: "assets/projects/talkdesk-hg.webp",  // 1600x1000
+      tileImgThumb: "assets/projects/talkdesk-hg-thumb.webp",  // 600x375
       sections: [
         { h: "Context", p: "In 2017, Talkdesk had a handful of designers and serious product ambitions. By 2022 it was a decacorn with six business units and nearly 70 designers spread across Lisbon 🇵🇹, San Francisco 🇺🇸, Yerevan 🇦🇲, and Wuhan 🇨🇳 (and a few remote in Brazil 🇧🇷). I was part of the leadership team that made that growth possible — and responsible for making sure design didn't fall apart in the process." },
         { h: "My role", p: "I became Director of Product Design for the CCaaS business unit, managing up to 11 designers across three locations: Lisbon, San Francisco, and Wuhan. The timezone spread alone — up to 8 hours between offices — made everyday coordination genuinely hard. Getting alignment on direction, keeping a feedback loop alive, and making designers feel part of one team rather than three separate ones was a constant challenge." },
