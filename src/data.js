@@ -90,9 +90,9 @@ const IVO_DATA = {
         { h: "Maintenance", p: "We're focusing our efforts on UX Architecture and Patterns — pre-built recipes for larger interactions (bulk actions, filtering, navigation) — and have moved to a hybrid model where our users are now the main contributors to the DS, validated by the UX Architecture Working Group." }
       ],
       shots: [
-        { label: "Component library", note: "Figma — core set", img: "assets/projects/dashlane-ds.png", imgThumb: "assets/projects/dashlane-ds-thumb.png" },
-        { label: "Color tokens", note: "color · spacing · type", img: "assets/projects/dashlane-ds-colors.png", imgThumb: "assets/projects/dashlane-ds-colors-thumb.png" },
-        { label: "Patterns", note: "recipes / interactions", img: "assets/projects/dashlane-ds-patterns.png", imgThumb: "assets/projects/dashlane-ds-patterns-thumb.png" }
+        { label: "Component library", note: "Figma · core set", img: "assets/projects/dashlane-ds.png", imgThumb: "assets/projects/dashlane-ds-thumb.png" },
+        { label: "Design tokens", note: "color · spacing · type", img: "assets/projects/dashlane-ds-colors.png", imgThumb: "assets/projects/dashlane-ds-colors-thumb.png" },
+        { label: "Patterns", note: "recipes · interactions", img: "assets/projects/dashlane-ds-patterns.png", imgThumb: "assets/projects/dashlane-ds-patterns-thumb.png" }
       ]
     },
     {
@@ -138,8 +138,8 @@ const IVO_DATA = {
         { h: "Prototyping in code", p: "I like to put my hands in the code sometimes. It helps me convey the experience I want — like the <a href='https://codepen.io/ivogomes/pen/vMLvVW' target='_blank' rel='noopener noreferrer'>ringing-avatar animation</a> I prototyped on CodePen." }
       ],
       shots: [
-        { label: "Call in progress", note: "active call", img: "assets/projects/talkdesk-ax.png", imgThumb: "assets/projects/talkdesk-ax-thumb.png" },
-        { label: "Idle state", note: "Conversations app", img: "assets/projects/talkdesk-ax-idle.png", imgThumb: "assets/projects/talkdesk-ax-idle-thumb.png" },
+        { label: "Call in progress", note: "voice channel", img: "assets/projects/talkdesk-ax.png", imgThumb: "assets/projects/talkdesk-ax-thumb.png" },
+        { label: "Conversations", note: "idle · between calls", img: "assets/projects/talkdesk-ax-idle.png", imgThumb: "assets/projects/talkdesk-ax-idle-thumb.png" },
         { label: "Activity details", note: "supervisor view", img: "assets/projects/talkdesk-ax-activity.png", imgThumb: "assets/projects/talkdesk-ax-activity-thumb.png" }
       ]
     },
@@ -164,10 +164,10 @@ const IVO_DATA = {
         { h: "More", p: "I wrote a <a href='https://medium.com/talkdesk-design/building-our-design-system-533b29102cd2' target='_blank' rel='noopener noreferrer'>blog post</a> about how we built it in 2020 — it covers the decisions, the gotchas, and the team shape." }
       ],
       shots: [
-        { label: "Desktop app", note: "Agents usually prefer to use Talkdesk in a small desktop app, with very limited size constraints", img: "assets/projects/talkdesk-ds-app.png", imgThumb: "assets/projects/talkdesk-ds-app-thumb.png" },
-        { label: "Bulk actions", note: "Bulk actions pattern", img: "assets/projects/talkdesk-ds-bulkactions.png", imgThumb: "assets/projects/talkdesk-ds-bulkactions-thumb.png" },
-        { label: "Filters", note: "Filters pattern", img: "assets/projects/talkdesk-ds-filters.png", imgThumb: "assets/projects/talkdesk-ds-filters-thumb.png" },
-        { label: "Forms", note: "Forms pattern", img: "assets/projects/talkdesk-ds-forms.png", imgThumb: "assets/projects/talkdesk-ds-forms-thumb.png" }
+        { label: "Desktop app", note: "small-window UI", img: "assets/projects/talkdesk-ds-app.png", imgThumb: "assets/projects/talkdesk-ds-app-thumb.png" },
+        { label: "Bulk actions", note: "selection · batch ops", img: "assets/projects/talkdesk-ds-bulkactions.png", imgThumb: "assets/projects/talkdesk-ds-bulkactions-thumb.png" },
+        { label: "Filters", note: "query · refine", img: "assets/projects/talkdesk-ds-filters.png", imgThumb: "assets/projects/talkdesk-ds-filters-thumb.png" },
+        { label: "Forms", note: "inputs · validation", img: "assets/projects/talkdesk-ds-forms.png", imgThumb: "assets/projects/talkdesk-ds-forms-thumb.png" }
       ]
     },
     {
@@ -178,14 +178,14 @@ const IVO_DATA = {
       year: "2017 — 2023",
       role: "Director of Product Design",
       tag: "Leadership · Hypergrowth",
-      blurb: "Talkdesk went from scrappy startup to $10B company in under five years. I helped build the design org that scaled alongside it — from 4 designers to almost 70, across four cities on three continents.",
+      blurb: "Talkdesk went from scrappy startup to $10B company in under five years. I helped build the design org that scaled alongside it — from 4 designers to almost 70, across multiple cities on three continents.",
       tileColor: "#2E6F5E",  // walnut
       tileInk: "#E6F5EC",
       initials: "Growth",
-      tileImg: "",
-      tileImgThumb: "",
+      tileImg: "assets/projects/talkdesk-hg.png",  // 1600x1000
+      tileImgThumb: "assets/projects/talkdesk-hg-thumb.png",  // 600x375
       sections: [
-        { h: "Context", p: "In 2017, Talkdesk had a handful of designers and serious product ambitions. By 2022 it was a decacorn with six business units and nearly 70 designers spread across Lisbon, San Francisco, Armenia, and Wuhan. I was part of the leadership team that made that growth possible — and responsible for making sure design didn't fall apart in the process." },
+        { h: "Context", p: "In 2017, Talkdesk had a handful of designers and serious product ambitions. By 2022 it was a decacorn with six business units and nearly 70 designers spread across Lisbon 🇵🇹, San Francisco 🇺🇸, Yerevan 🇦🇲, and Wuhan 🇨🇳 (and a few remote in Brazil 🇧🇷). I was part of the leadership team that made that growth possible — and responsible for making sure design didn't fall apart in the process." },
         { h: "My role", p: "I became Director of Product Design for the CCaaS business unit, managing up to 11 designers across three locations: Lisbon, San Francisco, and Wuhan. The timezone spread alone — up to 8 hours between offices — made everyday coordination genuinely hard. Getting alignment on direction, keeping a feedback loop alive, and making designers feel part of one team rather than three separate ones was a constant challenge." },
         { h: "Making 70 designers feel like one", p: "The bigger organisational challenge was coherence at scale. With designers embedded in different scrum teams across six business units, it was easy for the product to fragment. We invested heavily in shared infrastructure: a Design System and Talkdesk styleguide that became the single source of truth across all units, cross-team design critiques, weekly knowledge-sharing sessions, and pair-design rituals that kept patterns and decisions from staying siloed. The goal was for any designer, anywhere, to be able to pick up another team's work and feel at home." }
       ]
@@ -211,9 +211,9 @@ const IVO_DATA = {
         { h: "How it ended", p: "We didn't move forward because of a conflict of interests between our first customer (Público) and our main investor (Sonae). Still, we won Road2WebSummit and the Lisbon Challenge, and participated in Web Summit as an Alpha start-up." }
       ],
       shots: [
-        { label: "Writing view", note: "immersive editor" },
-        { label: "CMS", note: "for the newsroom" },
-        { label: "Publishing", note: "multi-channel" }
+        { label: "Writing view", note: "distraction-free editor" },
+        { label: "CMS", note: "newsroom workflow" },
+        { label: "Publishing", note: "web · mobile · print" }
       ]
     },
     {
@@ -237,16 +237,16 @@ const IVO_DATA = {
         { h: "MEO & IPTV", p: "As part of Portugal Telecom, we also worked on MEO products: MEO Interativo (the IPTV apps marketplace — one of the first TV UI projects I worked on, before SmartTVs were a thing), MEO Kanal (a platform for MEO clients to create and broadcast their own TV channel), and MEO Music (a Spotify alternative for Portugal before Spotify launched here)." }
       ],
       shots: [
-        { label: "Homepage", note: "main layout" },
+        { label: "Homepage", note: "desktop layout" },
         { label: "Modules", note: "content blocks" },
-        { label: "Mobile", note: "responsive" }
+        { label: "Mobile", note: "phone · tablet" }
       ]
     },
     {
       id: "meo-pt",
       workId: "sapo",
       company: "Portugal Telecom",
-      title: "MEO.PT & PT Empresas",
+      title: "MEO.PT & MEO Empresas",
       year: "2012 — 2015",
       role: "Head of UX",
       tag: "Telco · Web",
@@ -262,8 +262,8 @@ const IVO_DATA = {
         { h: "What I did", p: "Specifications for the new MEO and MEO Empresas websites, sketches, wireframes, user testing, and card sorting." }
       ],
       shots: [
-        { label: "MEO.PT", note: "homepage" },
-        { label: "PT Empresas", note: "B2B" },
+        { label: "MEO.PT", note: "consumer site" },
+        { label: "MEO Empresas", note: "enterprise variant" },
         { label: "Plans", note: "3P configurator" }
       ]
     },
@@ -288,9 +288,9 @@ const IVO_DATA = {
         { h: "What I did", p: "Specifications, sketches, wireframes, user testing, and card sorting." }
       ],
       shots: [
-        { label: "Account", note: "dashboard" },
-        { label: "Bill & plan", note: "self-service" },
-        { label: "Support flow", note: "guided paths" }
+        { label: "Account", note: "overview · billing" },
+        { label: "Bill & plan", note: "manage · change" },
+        { label: "Support flow", note: "guided self-service" }
       ]
     },
     {
@@ -314,8 +314,8 @@ const IVO_DATA = {
         { h: "What I did", p: "Content, specifications, wireframes, UI design, HTML/CSS, and WordPress integration." }
       ],
       shots: [
-        { label: "Site", note: "ux.sapo.pt" },
-        { label: "Guidelines", note: "articles" }
+        { label: "Homepage", note: "ux.sapo.pt" },
+        { label: "Guideline article", note: "usability · a11y" }
       ]
     },
     {
@@ -338,8 +338,8 @@ const IVO_DATA = {
         { h: "The end", p: "Fun while it lasted, but I had to shut it down due to lack of time and a scalability problem — too many users for a service that wasn't designed for that kind of traffic. I wrote a <a href='https://ivogomes.medium.com/mytvshows-is-dead-long-live-mytvshows-18907bbc4a47' target='_blank' rel='noopener noreferrer'>blog post</a> about the whole thing." }
       ],
       shots: [
-        { label: "Tracker", note: "episode list" },
-        { label: "Show page", note: "detail view" }
+        { label: "Tracker", note: "episodes · watch state" },
+        { label: "Show page", note: "cast · seasons · stats" }
       ]
     }
   ]
