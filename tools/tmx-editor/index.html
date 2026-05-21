@@ -172,12 +172,14 @@
       <div class="status" id="status"></div>
       <button id="add-row-btn" class="secondary">+ New row</button>
     </div>
-    <table>
-      <thead>
-        <tr id="thead-row"></tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr id="thead-row"></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
   </div>
 </main>
 
@@ -242,6 +244,29 @@
     </div>
   </div>
 </dialog>
+
+<aside id="tu-panel" class="tu-panel" hidden aria-label="Translation unit details">
+  <div class="tu-panel-header">
+    <h2 id="tu-panel-title">Translation unit</h2>
+    <button type="button" id="tu-panel-close" class="icon-btn" aria-label="Close">×</button>
+  </div>
+  <div class="tu-panel-body">
+    <section class="tu-panel-section">
+      <h3>Notes</h3>
+      <ul id="tu-notes-list" class="tu-panel-list"></ul>
+      <button type="button" id="tu-notes-add" class="secondary tu-panel-add">+ Add note</button>
+    </section>
+    <section class="tu-panel-section">
+      <h3>Properties</h3>
+      <ul id="tu-props-list" class="tu-panel-list"></ul>
+      <button type="button" id="tu-props-add" class="secondary tu-panel-add">+ Add property</button>
+    </section>
+    <section class="tu-panel-section">
+      <h3>Attributes</h3>
+      <dl id="tu-attrs" class="tu-attrs"></dl>
+    </section>
+  </div>
+</aside>
 
 <script src="app.js"></script>
 </body>

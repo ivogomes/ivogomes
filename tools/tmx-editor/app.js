@@ -39,7 +39,10 @@
     filteredTuIdx: [],
     selected: new Set(), // tu indices selected for bulk actions
     filterModified: false,
+    filterMissing: false,
+    filterPlaceholder: false,
     deletedCount: 0,
+    panelTu: null,
     page: 0,
     search: '',
     fileName: 'edited.tmx',
@@ -55,6 +58,8 @@
       e.returnValue = '';
     }
   });
+
+  window.addEventListener('resize', () => requestAnimationFrame(updateStickyOffsets));
 
   const $ = (id) => document.getElementById(id);
   const fileInput = $('file-input');
@@ -92,6 +97,11 @@
   const createNewBtn = $('create-new-btn');
   const undoBtn = $('undo-btn');
   const redoBtn = $('redo-btn');
+  const tuPanel = $('tu-panel');
+  const tuPanelTitle = $('tu-panel-title');
+  const tuNotesList = $('tu-notes-list');
+  const tuPropsList = $('tu-props-list');
+  const tuAttrsEl = $('tu-attrs');
 
   const history = { undo: [], redo: [], max: 200 };
   const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
@@ -177,7 +187,14 @@
   createNewBtn.addEventListener('click', createNewFile);
   undoBtn.addEventListener('click', performUndo);
   redoBtn.addEventListener('click', performRedo);
+  $('tu-panel-close').addEventListener('click', closeTuPanel);
+  $('tu-notes-add').addEventListener('click', addNote);
+  $('tu-props-add').addEventListener('click', addProp);
   window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && state.panelTu && !document.querySelector('dialog[open]')) {
+      const inPanel = e.target.closest && e.target.closest('#tu-panel');
+      if (inPanel) { e.preventDefault(); closeTuPanel(); return; }
+    }
     const meta = e.metaKey || e.ctrlKey;
     if (!meta || e.altKey) return;
     const t = e.target;
@@ -187,8 +204,15 @@
     else if ((key === 'z' && e.shiftKey) || key === 'y') { e.preventDefault(); performRedo(); }
   });
   statusEl.addEventListener('click', (e) => {
-    if (!e.target.closest('[data-filter-modified]')) return;
-    state.filterModified = !state.filterModified;
+    if (e.target.closest('[data-filter-modified]')) {
+      state.filterModified = !state.filterModified;
+    } else if (e.target.closest('[data-filter-missing]')) {
+      state.filterMissing = !state.filterMissing;
+    } else if (e.target.closest('[data-filter-placeholder]')) {
+      state.filterPlaceholder = !state.filterPlaceholder;
+    } else {
+      return;
+    }
     state.page = 0;
     applyFilter();
     render();
@@ -261,7 +285,10 @@
     state.search = '';
     state.selected.clear();
     state.filterModified = false;
+    state.filterMissing = false;
+    state.filterPlaceholder = false;
     state.deletedCount = 0;
+    closeTuPanel();
     searchInput.value = '';
     dialogReplaceInput.value = '';
     primaryControls.hidden = false;
@@ -346,12 +373,56 @@
     return false;
   }
 
+  function tuMissingTranslation(tu) {
+    const checkLangs = state.compareLang ? [state.compareLang] : state.languages;
+    for (const lang of checkLangs) {
+      const tuv = tu.tuvByLang[lang];
+      if (!tuv || !tuv.segEl.textContent.trim()) return true;
+    }
+    return false;
+  }
+
+  const PLACEHOLDER_RE = /%(?:\d+\$)?[sdifgouxXeEcp@%]|\{[a-zA-Z0-9_.]*\}|\$\{[a-zA-Z0-9_.]+\}/g;
+
+  function extractPlaceholders(text) {
+    return text.match(PLACEHOLDER_RE) || [];
+  }
+
+  function sameMultiset(a, b) {
+    if (a.length !== b.length) return false;
+    const sa = [...a].sort();
+    const sb = [...b].sort();
+    return sa.every((v, i) => v === sb[i]);
+  }
+
+  function tuHasPlaceholderIssue(tu) {
+    const checkLangs = state.compareLang
+      ? [state.defaultLang, state.compareLang]
+      : state.languages;
+    const sets = [];
+    for (const lang of checkLangs) {
+      const tuv = tu.tuvByLang[lang];
+      if (!tuv) continue;
+      const text = tuv.segEl.textContent;
+      if (!text.trim()) continue;
+      sets.push(extractPlaceholders(text));
+    }
+    if (sets.length < 2) return false;
+    const ref = sets[0];
+    for (let i = 1; i < sets.length; i++) {
+      if (!sameMultiset(ref, sets[i])) return true;
+    }
+    return false;
+  }
+
   function applyFilter() {
     const q = state.search.trim().toLowerCase();
     const langs = visibleLanguages();
     const rows = [];
     state.tus.forEach((tu, tuIdx) => {
       if (state.filterModified && !tuHasModified(tu)) return;
+      if (state.filterMissing && !tuMissingTranslation(tu)) return;
+      if (state.filterPlaceholder && !tuHasPlaceholderIssue(tu)) return;
       if (!q) {
         rows.push(tuIdx);
         return;
@@ -909,9 +980,10 @@
     thIdx.className = 'idx';
     thIdx.textContent = '#';
     headFrag.appendChild(thIdx);
-    visibleLanguages().forEach((lang) => {
+    visibleLanguages().forEach((lang, i) => {
       const th = document.createElement('th');
       th.className = 'th-lang';
+      if (i === 0) th.classList.add('lang-default');
       const code = document.createElement('span');
       code.className = 'th-lang-code';
       code.textContent = lang.toUpperCase();
@@ -926,6 +998,23 @@
       headFrag.appendChild(th);
     });
     theadRow.replaceChildren(headFrag);
+    requestAnimationFrame(updateStickyOffsets);
+  }
+
+  function updateStickyOffsets() {
+    const selectTh = theadRow.querySelector('th.select');
+    const idxTh = theadRow.querySelector('th.idx');
+    const langTh = theadRow.querySelector('th.lang-default');
+    const table = theadRow.closest('table');
+    if (!table || !selectTh) return;
+    const selectW = selectTh.getBoundingClientRect().width;
+    if (idxTh) {
+      table.style.setProperty('--sticky-idx-left', `${selectW}px`);
+      const idxW = idxTh.getBoundingClientRect().width;
+      if (langTh) {
+        table.style.setProperty('--sticky-lang-left', `${selectW + idxW}px`);
+      }
+    }
   }
 
   function refreshHeaderCheckbox() {
@@ -996,6 +1085,14 @@
       } else if (state.filterModified) {
         title.textContent = 'No modified rows';
         desc.textContent = 'Edit a cell, or clear the modified filter to see all rows.';
+      } else if (state.filterMissing) {
+        title.textContent = 'No missing translations';
+        desc.textContent = state.compareLang
+          ? `Every row has a ${state.compareLang.toUpperCase()} translation.`
+          : 'Every row has a translation in every language.';
+      } else if (state.filterPlaceholder) {
+        title.textContent = 'No placeholder issues';
+        desc.textContent = 'Placeholders like %s, {0}, and ${var} match across languages.';
       } else if (state.search) {
         title.textContent = 'No matches';
         desc.textContent = 'Try a different search term or clear it to see all rows.';
@@ -1028,12 +1125,15 @@
       const idxTd = document.createElement('td');
       idxTd.className = 'idx';
       idxTd.textContent = tuIdx + 1;
+      idxTd.title = 'Open details';
+      idxTd.addEventListener('click', () => openTuPanel(tu));
       tr.appendChild(idxTd);
 
-      visibleLanguages().forEach((lang) => {
+      visibleLanguages().forEach((lang, i) => {
         const tuv = tu.tuvByLang[lang];
         const segTd = document.createElement('td');
         segTd.className = 'seg';
+        if (i === 0) segTd.classList.add('lang-default');
         segTd.contentEditable = 'true';
         segTd.spellcheck = false;
         segTd.dataset.tuIdx = tuIdx;
@@ -1071,6 +1171,8 @@
     refreshHeaderCheckbox();
     refreshDeleteButton();
     updateStatus();
+    syncTuPanel();
+    requestAnimationFrame(updateStickyOffsets);
   }
 
   function onCellFocus(e) {
@@ -1176,16 +1278,43 @@
     const total = state.filteredTuIdx.length;
     const tuCount = state.tus.length;
     const modified = countModified();
+    const missing = countMissing();
     let s = `<strong>${tuCount}</strong> translation units · <strong>${total}</strong> visible`;
     if (modified > 0 || state.filterModified) {
       const cls = state.filterModified ? 'modified-chip is-active' : 'modified-chip';
       const suffix = state.filterModified ? ' · clear' : '';
       s += ` · <button type="button" class="${cls}" data-filter-modified><strong>${modified}</strong> modified${suffix}</button>`;
     }
+    if (missing > 0 || state.filterMissing) {
+      const cls = state.filterMissing ? 'missing-chip is-active' : 'missing-chip';
+      const suffix = state.filterMissing ? ' · clear' : '';
+      const label = state.compareLang
+        ? `missing ${state.compareLang.toUpperCase()}`
+        : 'missing';
+      s += ` · <button type="button" class="${cls}" data-filter-missing><strong>${missing}</strong> ${label}${suffix}</button>`;
+    }
+    const placeholderIssues = countPlaceholderIssues();
+    if (placeholderIssues > 0 || state.filterPlaceholder) {
+      const cls = state.filterPlaceholder ? 'missing-chip is-active' : 'missing-chip';
+      const suffix = state.filterPlaceholder ? ' · clear' : '';
+      s += ` · <button type="button" class="${cls}" data-filter-placeholder title="Rows where placeholders like %s, {0}, or \${var} don’t match between languages"><strong>${placeholderIssues}</strong> placeholder issue${placeholderIssues === 1 ? '' : 's'}${suffix}</button>`;
+    }
     if (state.deletedCount > 0) {
       s += ` · <strong>${state.deletedCount}</strong> deleted`;
     }
     statusEl.innerHTML = s;
+  }
+
+  function countMissing() {
+    let n = 0;
+    state.tus.forEach((tu) => { if (tuMissingTranslation(tu)) n++; });
+    return n;
+  }
+
+  function countPlaceholderIssues() {
+    let n = 0;
+    state.tus.forEach((tu) => { if (tuHasPlaceholderIssue(tu)) n++; });
+    return n;
   }
 
   function countModified() {
@@ -1215,5 +1344,263 @@
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     markSaved();
+  }
+
+  function openTuPanel(tu) {
+    state.panelTu = tu;
+    renderTuPanel();
+    tuPanel.hidden = false;
+  }
+
+  function closeTuPanel() {
+    state.panelTu = null;
+    tuPanel.hidden = true;
+  }
+
+  function syncTuPanel() {
+    if (!state.panelTu) return;
+    const idx = state.tus.indexOf(state.panelTu);
+    if (idx < 0) { closeTuPanel(); return; }
+    tuPanelTitle.textContent = `TU #${idx + 1}`;
+  }
+
+  function tuChildrenByTag(tuEl, tag) {
+    return [...tuEl.children].filter((c) => c.tagName.toLowerCase() === tag);
+  }
+
+  function insertBeforeFirstTuv(tu, el) {
+    const firstTuv = tu.tuEl.querySelector(':scope > tuv');
+    if (firstTuv) tu.tuEl.insertBefore(el, firstTuv);
+    else tu.tuEl.appendChild(el);
+  }
+
+  function renderTuPanel() {
+    const tu = state.panelTu;
+    if (!tu) return;
+    const idx = state.tus.indexOf(tu);
+    if (idx < 0) { closeTuPanel(); return; }
+    tuPanelTitle.textContent = `TU #${idx + 1}`;
+
+    const notes = tuChildrenByTag(tu.tuEl, 'note');
+    if (notes.length === 0) {
+      const hint = document.createElement('li');
+      hint.className = 'tu-empty-hint';
+      hint.textContent = 'No notes yet.';
+      tuNotesList.replaceChildren(hint);
+    } else {
+      tuNotesList.replaceChildren(...notes.map((noteEl) => renderNoteRow(tu, noteEl)));
+    }
+
+    const props = tuChildrenByTag(tu.tuEl, 'prop');
+    if (props.length === 0) {
+      const hint = document.createElement('li');
+      hint.className = 'tu-empty-hint';
+      hint.textContent = 'No properties yet.';
+      tuPropsList.replaceChildren(hint);
+    } else {
+      tuPropsList.replaceChildren(...props.map((propEl) => renderPropRow(tu, propEl)));
+    }
+
+    renderTuAttrs(tu);
+  }
+
+  function renderTuAttrs(tu) {
+    const attrNames = ['tuid', 'srclang', 'datatype', 'segtype', 'creationdate', 'changedate', 'creationid', 'changeid', 'usagecount', 'lastusagedate'];
+    const frag = document.createDocumentFragment();
+    let any = false;
+    attrNames.forEach((name) => {
+      const val = tu.tuEl.getAttribute(name);
+      if (!val) return;
+      any = true;
+      const dt = document.createElement('dt');
+      dt.textContent = name;
+      const dd = document.createElement('dd');
+      dd.textContent = val;
+      frag.appendChild(dt);
+      frag.appendChild(dd);
+    });
+    if (!any) {
+      const empty = document.createElement('p');
+      empty.className = 'tu-attrs-empty';
+      empty.textContent = 'No TU attributes set.';
+      tuAttrsEl.replaceChildren(empty);
+    } else {
+      tuAttrsEl.replaceChildren(frag);
+    }
+  }
+
+  function renderNoteRow(tu, noteEl) {
+    const li = document.createElement('li');
+    li.className = 'tu-note-item';
+    const ta = document.createElement('textarea');
+    ta.value = noteEl.textContent;
+    ta.placeholder = 'Note text…';
+    ta.addEventListener('blur', () => {
+      const oldText = noteEl.textContent;
+      const newText = ta.value;
+      if (oldText === newText) return;
+      noteEl.textContent = newText;
+      pushCommand(
+        'Edit note',
+        () => { noteEl.textContent = oldText; if (state.panelTu === tu) renderTuPanel(); },
+        () => { noteEl.textContent = newText; if (state.panelTu === tu) renderTuPanel(); }
+      );
+    });
+    li.appendChild(ta);
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'tu-row-remove';
+    remove.textContent = 'Remove';
+    remove.style.justifySelf = 'end';
+    remove.addEventListener('click', () => removeNote(tu, noteEl));
+    li.appendChild(remove);
+    return li;
+  }
+
+  function renderPropRow(tu, propEl) {
+    const li = document.createElement('li');
+    li.className = 'tu-prop-item';
+
+    const typeInput = document.createElement('input');
+    typeInput.type = 'text';
+    typeInput.value = propEl.getAttribute('type') || '';
+    typeInput.placeholder = 'type';
+    typeInput.dataset.field = 'type';
+    typeInput.addEventListener('blur', () => {
+      const oldVal = propEl.getAttribute('type') || '';
+      const newVal = typeInput.value.trim();
+      if (oldVal === newVal) return;
+      if (newVal) propEl.setAttribute('type', newVal); else propEl.removeAttribute('type');
+      pushCommand(
+        'Edit property type',
+        () => {
+          if (oldVal) propEl.setAttribute('type', oldVal); else propEl.removeAttribute('type');
+          if (state.panelTu === tu) renderTuPanel();
+        },
+        () => {
+          if (newVal) propEl.setAttribute('type', newVal); else propEl.removeAttribute('type');
+          if (state.panelTu === tu) renderTuPanel();
+        }
+      );
+    });
+    li.appendChild(typeInput);
+
+    const valInput = document.createElement('input');
+    valInput.type = 'text';
+    valInput.value = propEl.textContent;
+    valInput.placeholder = 'value';
+    valInput.dataset.field = 'value';
+    valInput.addEventListener('blur', () => {
+      const oldVal = propEl.textContent;
+      const newVal = valInput.value;
+      if (oldVal === newVal) return;
+      propEl.textContent = newVal;
+      pushCommand(
+        'Edit property value',
+        () => { propEl.textContent = oldVal; if (state.panelTu === tu) renderTuPanel(); },
+        () => { propEl.textContent = newVal; if (state.panelTu === tu) renderTuPanel(); }
+      );
+    });
+    li.appendChild(valInput);
+
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'tu-row-remove';
+    remove.textContent = '×';
+    remove.title = 'Remove property';
+    remove.addEventListener('click', () => removeProp(tu, propEl));
+    li.appendChild(remove);
+    return li;
+  }
+
+  function addNote() {
+    if (!state.panelTu) return;
+    const tu = state.panelTu;
+    const noteEl = state.xmlDoc.createElement('note');
+    insertBeforeFirstTuv(tu, noteEl);
+    renderTuPanel();
+    requestAnimationFrame(() => {
+      const last = tuNotesList.querySelector('.tu-note-item:last-child textarea');
+      if (last) last.focus();
+    });
+    pushCommand(
+      'Add note',
+      () => {
+        if (noteEl.parentNode) noteEl.parentNode.removeChild(noteEl);
+        if (state.panelTu === tu) renderTuPanel();
+      },
+      () => {
+        insertBeforeFirstTuv(tu, noteEl);
+        if (state.panelTu === tu) renderTuPanel();
+      }
+    );
+  }
+
+  function removeNote(tu, noteEl) {
+    const prevSibling = noteEl.previousSibling;
+    if (noteEl.parentNode) noteEl.parentNode.removeChild(noteEl);
+    if (state.panelTu === tu) renderTuPanel();
+    pushCommand(
+      'Remove note',
+      () => {
+        if (prevSibling && prevSibling.parentNode === tu.tuEl) {
+          if (prevSibling.nextSibling) tu.tuEl.insertBefore(noteEl, prevSibling.nextSibling);
+          else tu.tuEl.appendChild(noteEl);
+        } else {
+          insertBeforeFirstTuv(tu, noteEl);
+        }
+        if (state.panelTu === tu) renderTuPanel();
+      },
+      () => {
+        if (noteEl.parentNode) noteEl.parentNode.removeChild(noteEl);
+        if (state.panelTu === tu) renderTuPanel();
+      }
+    );
+  }
+
+  function addProp() {
+    if (!state.panelTu) return;
+    const tu = state.panelTu;
+    const propEl = state.xmlDoc.createElement('prop');
+    propEl.setAttribute('type', '');
+    insertBeforeFirstTuv(tu, propEl);
+    renderTuPanel();
+    requestAnimationFrame(() => {
+      const last = tuPropsList.querySelector('.tu-prop-item:last-child input[data-field="type"]');
+      if (last) last.focus();
+    });
+    pushCommand(
+      'Add property',
+      () => {
+        if (propEl.parentNode) propEl.parentNode.removeChild(propEl);
+        if (state.panelTu === tu) renderTuPanel();
+      },
+      () => {
+        insertBeforeFirstTuv(tu, propEl);
+        if (state.panelTu === tu) renderTuPanel();
+      }
+    );
+  }
+
+  function removeProp(tu, propEl) {
+    const prevSibling = propEl.previousSibling;
+    if (propEl.parentNode) propEl.parentNode.removeChild(propEl);
+    if (state.panelTu === tu) renderTuPanel();
+    pushCommand(
+      'Remove property',
+      () => {
+        if (prevSibling && prevSibling.parentNode === tu.tuEl) {
+          if (prevSibling.nextSibling) tu.tuEl.insertBefore(propEl, prevSibling.nextSibling);
+          else tu.tuEl.appendChild(propEl);
+        } else {
+          insertBeforeFirstTuv(tu, propEl);
+        }
+        if (state.panelTu === tu) renderTuPanel();
+      },
+      () => {
+        if (propEl.parentNode) propEl.parentNode.removeChild(propEl);
+        if (state.panelTu === tu) renderTuPanel();
+      }
+    );
   }
 })();
