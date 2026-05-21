@@ -1056,3 +1056,31 @@
   }
   .file-attr-input:focus { outline: none; border-color: var(--accent); }
   .file-attr-input.is-mono { font-family: var(--font-mono); font-size: 12px; }
+
+  .merge-stats {
+    margin: 0 0 14px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px 14px;
+    align-items: baseline;
+    background: var(--cream-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .merge-stats dt {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .merge-stats dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    font-weight: 600;
+    text-align: right;
+  }

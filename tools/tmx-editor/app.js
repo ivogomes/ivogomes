@@ -109,6 +109,13 @@
   const fileAttrsList = $('file-attrs-list');
   const fileNotesList = $('file-notes-list');
   const filePropsList = $('file-props-list');
+  const mergeDupsDialog = $('merge-dups-dialog');
+  const mergeLangLabel = $('merge-lang-label');
+  const mergeStats = $('merge-stats');
+  const mergeConflictNote = $('merge-conflict-note');
+  const mergeConflictCount = $('merge-conflict-count');
+  const mergeConfirmBtn = $('merge-confirm');
+  let pendingMergePlans = null;
 
   const history = { undo: [], redo: [], max: 200 };
   const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
@@ -190,6 +197,8 @@
   $('file-props-close').addEventListener('click', () => filePropsDialog.close());
   $('file-notes-add').addEventListener('click', addFileNote);
   $('file-props-add').addEventListener('click', addFileProp);
+  $('merge-cancel').addEventListener('click', () => mergeDupsDialog.close());
+  mergeConfirmBtn.addEventListener('click', confirmMergeDuplicates);
   $('lang-add-btn').addEventListener('click', onAddLanguage);
   langAddInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') { e.preventDefault(); onAddLanguage(); }
@@ -221,6 +230,9 @@
       state.filterMissing = !state.filterMissing;
     } else if (e.target.closest('[data-filter-placeholder]')) {
       state.filterPlaceholder = !state.filterPlaceholder;
+    } else if (e.target.closest('[data-merge-duplicates]')) {
+      openMergeDuplicatesDialog();
+      return;
     } else {
       return;
     }
@@ -424,6 +436,195 @@
       if (!sameMultiset(ref, sets[i])) return true;
     }
     return false;
+  }
+
+  function getDuplicateTuIdxSet() {
+    const lang = state.defaultLang;
+    if (!lang) return new Set();
+    const byText = new Map();
+    state.tus.forEach((tu, idx) => {
+      const tuv = tu.tuvByLang[lang];
+      if (!tuv) return;
+      const text = tuv.segEl.textContent.trim();
+      if (!text) return;
+      const list = byText.get(text);
+      if (list) list.push(idx);
+      else byText.set(text, [idx]);
+    });
+    const dupSet = new Set();
+    byText.forEach((indices) => {
+      if (indices.length > 1) indices.forEach((i) => dupSet.add(i));
+    });
+    return dupSet;
+  }
+
+  function planMergeDuplicates() {
+    const lang = state.defaultLang;
+    if (!lang) return null;
+    const groups = new Map();
+    state.tus.forEach((tu) => {
+      const tuv = tu.tuvByLang[lang];
+      if (!tuv) return;
+      const text = tuv.segEl.textContent.trim();
+      if (!text) return;
+      const list = groups.get(text);
+      if (list) list.push(tu);
+      else groups.set(text, [tu]);
+    });
+    const dupGroups = [...groups.values()].filter((g) => g.length > 1);
+    const plans = [];
+    let conflictGroups = 0;
+    dupGroups.forEach((tus) => {
+      const collected = new Map();
+      let conflict = false;
+      tus.forEach((tu) => {
+        state.languages.forEach((l) => {
+          const tuv = tu.tuvByLang[l];
+          if (!tuv) return;
+          const t = tuv.segEl.textContent;
+          if (!t.trim()) return;
+          if (collected.has(l)) {
+            if (collected.get(l) !== t) conflict = true;
+          } else {
+            collected.set(l, t);
+          }
+        });
+      });
+      if (conflict) { conflictGroups++; return; }
+      plans.push({ canonical: tus[0], others: tus.slice(1), collected });
+    });
+    return {
+      totalDupGroups: dupGroups.length,
+      mergeableGroups: plans.length,
+      conflictGroups,
+      rowsToRemove: plans.reduce((sum, p) => sum + p.others.length, 0),
+      plans,
+    };
+  }
+
+  function openMergeDuplicatesDialog() {
+    const plan = planMergeDuplicates();
+    if (!plan || plan.totalDupGroups === 0) {
+      showToast('No duplicates to merge.');
+      return;
+    }
+    pendingMergePlans = plan.plans;
+    mergeLangLabel.textContent = state.defaultLang ? state.defaultLang.toUpperCase() : '';
+    const stats = [
+      ['Duplicate groups', plan.totalDupGroups],
+      ['Will merge', `${plan.mergeableGroups}`],
+      ['Rows that will be removed', plan.rowsToRemove],
+    ];
+    const frag = document.createDocumentFragment();
+    stats.forEach(([label, value]) => {
+      const dt = document.createElement('dt');
+      dt.textContent = label;
+      const dd = document.createElement('dd');
+      dd.textContent = value;
+      frag.appendChild(dt);
+      frag.appendChild(dd);
+    });
+    mergeStats.replaceChildren(frag);
+    if (plan.conflictGroups > 0) {
+      mergeConflictCount.textContent = plan.conflictGroups;
+      mergeConflictNote.hidden = false;
+    } else {
+      mergeConflictNote.hidden = true;
+    }
+    mergeConfirmBtn.disabled = plan.mergeableGroups === 0;
+    mergeConfirmBtn.textContent = plan.mergeableGroups > 0
+      ? `Merge ${plan.mergeableGroups} group${plan.mergeableGroups === 1 ? '' : 's'}`
+      : 'Nothing to merge';
+    mergeDupsDialog.showModal();
+  }
+
+  function confirmMergeDuplicates() {
+    if (!pendingMergePlans || pendingMergePlans.length === 0) {
+      mergeDupsDialog.close();
+      return;
+    }
+    const plans = pendingMergePlans;
+    pendingMergePlans = null;
+    const captures = executeMerge(plans);
+    mergeDupsDialog.close();
+    applyFilter();
+    render();
+    showToast(`Merged ${plans.length} group${plans.length === 1 ? '' : 's'}, removed ${captures.deletedTus.length} row${captures.deletedTus.length === 1 ? '' : 's'}.`);
+    pushCommand(
+      `Merge ${plans.length} duplicate group${plans.length === 1 ? '' : 's'}`,
+      () => { undoMergeCapture(captures); applyFilter(); render(); },
+      () => { redoMergeCapture(captures); applyFilter(); render(); }
+    );
+  }
+
+  function executeMerge(plans) {
+    const captures = { deletedTus: [], textChanges: [], createdTuvs: [] };
+    plans.forEach(({ canonical, others, collected }) => {
+      collected.forEach((text, lang) => {
+        let cTuv = canonical.tuvByLang[lang];
+        if (!cTuv) {
+          cTuv = createTuv(canonical, lang, text);
+          canonical.tuvByLang[lang] = cTuv;
+          captures.createdTuvs.push({ tu: canonical, lang, tuvRef: cTuv });
+        } else if (cTuv.segEl.textContent !== text) {
+          const oldText = cTuv.segEl.textContent;
+          cTuv.segEl.textContent = text;
+          captures.textChanges.push({ tuv: cTuv, oldText, newText: text });
+        }
+      });
+      others.forEach((tu) => {
+        const idx = state.tus.indexOf(tu);
+        if (idx < 0) return;
+        captures.deletedTus.push({ tu, idx, prevSibling: tu.tuEl.previousSibling });
+      });
+    });
+    captures.deletedTus.sort((a, b) => b.idx - a.idx);
+    captures.deletedTus.forEach(({ tu, idx }) => {
+      state.tus.splice(idx, 1);
+      if (tu.tuEl.parentNode) tu.tuEl.parentNode.removeChild(tu.tuEl);
+    });
+    state.deletedCount += captures.deletedTus.length;
+    return captures;
+  }
+
+  function undoMergeCapture(captures) {
+    const body = state.xmlDoc.querySelector('body') || state.xmlDoc.documentElement;
+    const sorted = [...captures.deletedTus].sort((a, b) => a.idx - b.idx);
+    sorted.forEach(({ tu, idx, prevSibling }) => {
+      state.tus.splice(idx, 0, tu);
+      if (prevSibling && prevSibling.parentNode === body) {
+        if (prevSibling.nextSibling) body.insertBefore(tu.tuEl, prevSibling.nextSibling);
+        else body.appendChild(tu.tuEl);
+      } else {
+        if (body.firstChild) body.insertBefore(tu.tuEl, body.firstChild);
+        else body.appendChild(tu.tuEl);
+      }
+    });
+    state.deletedCount -= captures.deletedTus.length;
+    captures.textChanges.forEach(({ tuv, oldText }) => {
+      tuv.segEl.textContent = oldText;
+    });
+    captures.createdTuvs.forEach(({ tu, lang, tuvRef }) => {
+      if (tuvRef.tuvEl.parentNode) tuvRef.tuvEl.parentNode.removeChild(tuvRef.tuvEl);
+      delete tu.tuvByLang[lang];
+    });
+  }
+
+  function redoMergeCapture(captures) {
+    captures.createdTuvs.forEach(({ tu, lang, tuvRef }) => {
+      tu.tuEl.appendChild(tuvRef.tuvEl);
+      tu.tuvByLang[lang] = tuvRef;
+    });
+    captures.textChanges.forEach(({ tuv, newText }) => {
+      tuv.segEl.textContent = newText;
+    });
+    const sorted = [...captures.deletedTus].sort((a, b) => b.idx - a.idx);
+    sorted.forEach(({ tu }) => {
+      const idx = state.tus.indexOf(tu);
+      if (idx >= 0) state.tus.splice(idx, 1);
+      if (tu.tuEl.parentNode) tu.tuEl.parentNode.removeChild(tu.tuEl);
+    });
+    state.deletedCount += captures.deletedTus.length;
   }
 
   function applyFilter() {
@@ -1310,6 +1511,11 @@
       const suffix = state.filterPlaceholder ? ' · clear' : '';
       s += ` · <button type="button" class="${cls}" data-filter-placeholder title="Rows where placeholders like %s, {0}, or \${var} don’t match between languages"><strong>${placeholderIssues}</strong> placeholder issue${placeholderIssues === 1 ? '' : 's'}${suffix}</button>`;
     }
+    const duplicates = countDuplicates();
+    if (duplicates > 0) {
+      const langLabel = state.defaultLang ? state.defaultLang.toUpperCase() : '';
+      s += ` · <button type="button" class="missing-chip" data-merge-duplicates title="Combine rows that share the same ${langLabel} text into a single TU"><strong>${duplicates}</strong> duplicate${duplicates === 1 ? '' : 's'} · merge…</button>`;
+    }
     if (state.deletedCount > 0) {
       s += ` · <strong>${state.deletedCount}</strong> deleted`;
     }
@@ -1326,6 +1532,10 @@
     let n = 0;
     state.tus.forEach((tu) => { if (tuHasPlaceholderIssue(tu)) n++; });
     return n;
+  }
+
+  function countDuplicates() {
+    return getDuplicateTuIdxSet().size;
   }
 
   function countModified() {

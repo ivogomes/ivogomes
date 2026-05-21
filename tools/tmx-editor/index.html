@@ -205,6 +205,23 @@
   </div>
 </dialog>
 
+<dialog id="merge-dups-dialog">
+  <div class="dialog-body">
+    <h2>Merge duplicates</h2>
+    <p class="dialog-summary">
+      Combine TUs that share the same <strong id="merge-lang-label"></strong> source. Each language's translation is taken from whichever row has it.
+    </p>
+    <dl class="merge-stats" id="merge-stats"></dl>
+    <p class="dialog-summary" id="merge-conflict-note" hidden>
+      <strong id="merge-conflict-count"></strong> group(s) have different translations for the same language and will be left alone.
+    </p>
+    <div class="dialog-actions">
+      <button type="button" id="merge-cancel" class="secondary">Cancel</button>
+      <button type="button" id="merge-confirm">Merge</button>
+    </div>
+  </div>
+</dialog>
+
 <dialog id="file-props-dialog">
   <div class="dialog-body">
     <h2>File properties</h2>
