@@ -102,6 +102,13 @@
   const tuNotesList = $('tu-notes-list');
   const tuPropsList = $('tu-props-list');
   const tuAttrsEl = $('tu-attrs');
+  const tuTuvsSection = $('tu-tuvs-section');
+  const tuTuvsList = $('tu-tuvs-list');
+  const filePropsBtn = $('file-props-btn');
+  const filePropsDialog = $('file-props-dialog');
+  const fileAttrsList = $('file-attrs-list');
+  const fileNotesList = $('file-notes-list');
+  const filePropsList = $('file-props-list');
 
   const history = { undo: [], redo: [], max: 200 };
   const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
@@ -179,6 +186,10 @@
   $('delete-confirm').addEventListener('click', performDelete);
   manageLangsBtn.addEventListener('click', openManageLangsDialog);
   $('manage-langs-close').addEventListener('click', () => manageLangsDialog.close());
+  filePropsBtn.addEventListener('click', openFilePropsDialog);
+  $('file-props-close').addEventListener('click', () => filePropsDialog.close());
+  $('file-notes-add').addEventListener('click', addFileNote);
+  $('file-props-add').addEventListener('click', addFileProp);
   $('lang-add-btn').addEventListener('click', onAddLanguage);
   langAddInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') { e.preventDefault(); onAddLanguage(); }
@@ -1402,6 +1413,102 @@
     }
 
     renderTuAttrs(tu);
+    renderTuvDetails(tu);
+  }
+
+  function renderTuvDetails(tu) {
+    if (!tuTuvsSection || !tuTuvsList) return;
+    const cards = [];
+    state.languages.forEach((lang) => {
+      const tuv = tu.tuvByLang[lang];
+      if (!tuv) return;
+      const card = buildTuvCard(lang, tuv.tuvEl);
+      if (card) cards.push(card);
+    });
+    if (cards.length === 0) {
+      tuTuvsSection.hidden = true;
+      tuTuvsList.replaceChildren();
+      return;
+    }
+    tuTuvsSection.hidden = false;
+    tuTuvsList.replaceChildren(...cards);
+  }
+
+  function buildTuvCard(lang, tuvEl) {
+    const skipAttrs = new Set(['xml:lang', 'lang']);
+    const attrs = [...tuvEl.attributes].filter((a) => !skipAttrs.has(a.name));
+    const notes = [...tuvEl.children].filter((c) => c.tagName.toLowerCase() === 'note');
+    const props = [...tuvEl.children].filter((c) => c.tagName.toLowerCase() === 'prop');
+    if (attrs.length === 0 && notes.length === 0 && props.length === 0) return null;
+
+    const card = document.createElement('div');
+    card.className = 'tu-tuv-card';
+
+    const header = document.createElement('div');
+    header.className = 'tu-tuv-card-header';
+    const code = document.createElement('span');
+    code.className = 'tu-tuv-card-code';
+    code.textContent = lang.toUpperCase();
+    header.appendChild(code);
+    const name = langName(lang);
+    if (name) {
+      const nameEl = document.createElement('span');
+      nameEl.className = 'tu-tuv-card-name';
+      nameEl.textContent = name;
+      header.appendChild(nameEl);
+    }
+    card.appendChild(header);
+
+    if (notes.length > 0) {
+      const sub = document.createElement('div');
+      sub.className = 'tu-tuv-subheading';
+      sub.textContent = notes.length === 1 ? 'Note' : `Notes (${notes.length})`;
+      card.appendChild(sub);
+      notes.forEach((n) => {
+        const p = document.createElement('p');
+        p.className = 'tu-tuv-note';
+        p.textContent = n.textContent;
+        card.appendChild(p);
+      });
+    }
+
+    if (props.length > 0) {
+      const sub = document.createElement('div');
+      sub.className = 'tu-tuv-subheading';
+      sub.textContent = props.length === 1 ? 'Property' : `Properties (${props.length})`;
+      card.appendChild(sub);
+      const dl = document.createElement('dl');
+      dl.className = 'tu-attrs';
+      props.forEach((p) => {
+        const dt = document.createElement('dt');
+        dt.textContent = p.getAttribute('type') || '(no type)';
+        const dd = document.createElement('dd');
+        dd.textContent = p.textContent;
+        dl.appendChild(dt);
+        dl.appendChild(dd);
+      });
+      card.appendChild(dl);
+    }
+
+    if (attrs.length > 0) {
+      const sub = document.createElement('div');
+      sub.className = 'tu-tuv-subheading';
+      sub.textContent = 'Attributes';
+      card.appendChild(sub);
+      const dl = document.createElement('dl');
+      dl.className = 'tu-attrs';
+      attrs.forEach((a) => {
+        const dt = document.createElement('dt');
+        dt.textContent = a.name;
+        const dd = document.createElement('dd');
+        dd.textContent = a.value;
+        dl.appendChild(dt);
+        dl.appendChild(dd);
+      });
+      card.appendChild(dl);
+    }
+
+    return card;
   }
 
   function renderTuAttrs(tu) {
@@ -1600,6 +1707,289 @@
       () => {
         if (propEl.parentNode) propEl.parentNode.removeChild(propEl);
         if (state.panelTu === tu) renderTuPanel();
+      }
+    );
+  }
+
+  const STANDARD_HEADER_ATTRS = [
+    'creationtool', 'creationtoolversion', 'segtype', 'o-tmf', 'adminlang',
+    'srclang', 'datatype', 'o-encoding', 'creationdate', 'creationid',
+    'changedate', 'changeid',
+  ];
+
+  function getOrCreateHeader() {
+    if (!state.xmlDoc) return null;
+    let header = state.xmlDoc.querySelector('header');
+    if (!header) {
+      const root = state.xmlDoc.documentElement;
+      if (!root) return null;
+      header = state.xmlDoc.createElement('header');
+      if (root.firstChild) root.insertBefore(header, root.firstChild);
+      else root.appendChild(header);
+    }
+    return header;
+  }
+
+  function openFilePropsDialog() {
+    if (!state.xmlDoc) return;
+    renderFileProps();
+    filePropsDialog.showModal();
+  }
+
+  function renderFileProps() {
+    const header = getOrCreateHeader();
+    if (!header) return;
+    renderFileAttrs(header);
+    renderFileNotes(header);
+    renderFilePropsList(header);
+  }
+
+  function renderFileAttrs(header) {
+    const present = [...header.attributes].map((a) => a.name);
+    const extras = present.filter((n) => !STANDARD_HEADER_ATTRS.includes(n));
+    const ordered = [...STANDARD_HEADER_ATTRS, ...extras];
+    const frag = document.createDocumentFragment();
+    ordered.forEach((name) => {
+      const label = document.createElement('label');
+      label.className = 'file-attr-label';
+      label.textContent = name;
+      label.htmlFor = `file-attr-${name}`;
+      frag.appendChild(label);
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.className = 'file-attr-input';
+      if (name === 'srclang' || name === 'adminlang' || name === 'o-encoding') {
+        input.classList.add('is-mono');
+      }
+      input.id = `file-attr-${name}`;
+      input.value = header.getAttribute(name) || '';
+      input.dataset.attr = name;
+      input.addEventListener('blur', () => onFileAttrBlur(header, name, input));
+      frag.appendChild(input);
+    });
+    fileAttrsList.replaceChildren(frag);
+  }
+
+  function onFileAttrBlur(header, name, input) {
+    const oldVal = header.getAttribute(name);
+    const newVal = input.value;
+    if ((oldVal || '') === newVal) return;
+    if (newVal === '' && oldVal !== null) header.removeAttribute(name);
+    else header.setAttribute(name, newVal);
+    pushCommand(
+      `Edit file ${name}`,
+      () => {
+        if (oldVal === null) header.removeAttribute(name);
+        else header.setAttribute(name, oldVal);
+        if (filePropsDialog.open) renderFileAttrs(header);
+      },
+      () => {
+        if (newVal === '' && oldVal !== null) header.removeAttribute(name);
+        else header.setAttribute(name, newVal);
+        if (filePropsDialog.open) renderFileAttrs(header);
+      }
+    );
+  }
+
+  function renderFileNotes(header) {
+    const notes = [...header.children].filter((c) => c.tagName.toLowerCase() === 'note');
+    if (notes.length === 0) {
+      const hint = document.createElement('li');
+      hint.className = 'tu-empty-hint';
+      hint.textContent = 'No notes yet.';
+      fileNotesList.replaceChildren(hint);
+    } else {
+      fileNotesList.replaceChildren(...notes.map((n) => renderFileNoteRow(header, n)));
+    }
+  }
+
+  function renderFilePropsList(header) {
+    const props = [...header.children].filter((c) => c.tagName.toLowerCase() === 'prop');
+    if (props.length === 0) {
+      const hint = document.createElement('li');
+      hint.className = 'tu-empty-hint';
+      hint.textContent = 'No properties yet.';
+      filePropsList.replaceChildren(hint);
+    } else {
+      filePropsList.replaceChildren(...props.map((p) => renderFilePropRow(header, p)));
+    }
+  }
+
+  function insertHeaderChild(header, el) {
+    header.appendChild(el);
+  }
+
+  function renderFileNoteRow(header, noteEl) {
+    const li = document.createElement('li');
+    li.className = 'tu-note-item';
+    const ta = document.createElement('textarea');
+    ta.value = noteEl.textContent;
+    ta.placeholder = 'Note text…';
+    ta.addEventListener('blur', () => {
+      const oldText = noteEl.textContent;
+      const newText = ta.value;
+      if (oldText === newText) return;
+      noteEl.textContent = newText;
+      pushCommand(
+        'Edit file note',
+        () => { noteEl.textContent = oldText; if (filePropsDialog.open) renderFileNotes(header); },
+        () => { noteEl.textContent = newText; if (filePropsDialog.open) renderFileNotes(header); }
+      );
+    });
+    li.appendChild(ta);
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'tu-row-remove';
+    remove.textContent = 'Remove';
+    remove.style.justifySelf = 'end';
+    remove.addEventListener('click', () => removeFileNote(header, noteEl));
+    li.appendChild(remove);
+    return li;
+  }
+
+  function renderFilePropRow(header, propEl) {
+    const li = document.createElement('li');
+    li.className = 'tu-prop-item';
+
+    const typeInput = document.createElement('input');
+    typeInput.type = 'text';
+    typeInput.value = propEl.getAttribute('type') || '';
+    typeInput.placeholder = 'type';
+    typeInput.dataset.field = 'type';
+    typeInput.addEventListener('blur', () => {
+      const oldVal = propEl.getAttribute('type') || '';
+      const newVal = typeInput.value.trim();
+      if (oldVal === newVal) return;
+      if (newVal) propEl.setAttribute('type', newVal); else propEl.removeAttribute('type');
+      pushCommand(
+        'Edit file property type',
+        () => {
+          if (oldVal) propEl.setAttribute('type', oldVal); else propEl.removeAttribute('type');
+          if (filePropsDialog.open) renderFilePropsList(header);
+        },
+        () => {
+          if (newVal) propEl.setAttribute('type', newVal); else propEl.removeAttribute('type');
+          if (filePropsDialog.open) renderFilePropsList(header);
+        }
+      );
+    });
+    li.appendChild(typeInput);
+
+    const valInput = document.createElement('input');
+    valInput.type = 'text';
+    valInput.value = propEl.textContent;
+    valInput.placeholder = 'value';
+    valInput.dataset.field = 'value';
+    valInput.addEventListener('blur', () => {
+      const oldVal = propEl.textContent;
+      const newVal = valInput.value;
+      if (oldVal === newVal) return;
+      propEl.textContent = newVal;
+      pushCommand(
+        'Edit file property value',
+        () => { propEl.textContent = oldVal; if (filePropsDialog.open) renderFilePropsList(header); },
+        () => { propEl.textContent = newVal; if (filePropsDialog.open) renderFilePropsList(header); }
+      );
+    });
+    li.appendChild(valInput);
+
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'tu-row-remove';
+    remove.textContent = '×';
+    remove.title = 'Remove property';
+    remove.addEventListener('click', () => removeFileProp(header, propEl));
+    li.appendChild(remove);
+    return li;
+  }
+
+  function addFileNote() {
+    const header = getOrCreateHeader();
+    if (!header) return;
+    const noteEl = state.xmlDoc.createElement('note');
+    insertHeaderChild(header, noteEl);
+    renderFileNotes(header);
+    requestAnimationFrame(() => {
+      const last = fileNotesList.querySelector('.tu-note-item:last-of-type textarea');
+      if (last) last.focus();
+    });
+    pushCommand(
+      'Add file note',
+      () => {
+        if (noteEl.parentNode) noteEl.parentNode.removeChild(noteEl);
+        if (filePropsDialog.open) renderFileNotes(header);
+      },
+      () => {
+        insertHeaderChild(header, noteEl);
+        if (filePropsDialog.open) renderFileNotes(header);
+      }
+    );
+  }
+
+  function removeFileNote(header, noteEl) {
+    const prevSibling = noteEl.previousSibling;
+    if (noteEl.parentNode) noteEl.parentNode.removeChild(noteEl);
+    if (filePropsDialog.open) renderFileNotes(header);
+    pushCommand(
+      'Remove file note',
+      () => {
+        if (prevSibling && prevSibling.parentNode === header) {
+          if (prevSibling.nextSibling) header.insertBefore(noteEl, prevSibling.nextSibling);
+          else header.appendChild(noteEl);
+        } else {
+          insertHeaderChild(header, noteEl);
+        }
+        if (filePropsDialog.open) renderFileNotes(header);
+      },
+      () => {
+        if (noteEl.parentNode) noteEl.parentNode.removeChild(noteEl);
+        if (filePropsDialog.open) renderFileNotes(header);
+      }
+    );
+  }
+
+  function addFileProp() {
+    const header = getOrCreateHeader();
+    if (!header) return;
+    const propEl = state.xmlDoc.createElement('prop');
+    propEl.setAttribute('type', '');
+    insertHeaderChild(header, propEl);
+    renderFilePropsList(header);
+    requestAnimationFrame(() => {
+      const last = filePropsList.querySelector('.tu-prop-item:last-of-type input[data-field="type"]');
+      if (last) last.focus();
+    });
+    pushCommand(
+      'Add file property',
+      () => {
+        if (propEl.parentNode) propEl.parentNode.removeChild(propEl);
+        if (filePropsDialog.open) renderFilePropsList(header);
+      },
+      () => {
+        insertHeaderChild(header, propEl);
+        if (filePropsDialog.open) renderFilePropsList(header);
+      }
+    );
+  }
+
+  function removeFileProp(header, propEl) {
+    const prevSibling = propEl.previousSibling;
+    if (propEl.parentNode) propEl.parentNode.removeChild(propEl);
+    if (filePropsDialog.open) renderFilePropsList(header);
+    pushCommand(
+      'Remove file property',
+      () => {
+        if (prevSibling && prevSibling.parentNode === header) {
+          if (prevSibling.nextSibling) header.insertBefore(propEl, prevSibling.nextSibling);
+          else header.appendChild(propEl);
+        } else {
+          insertHeaderChild(header, propEl);
+        }
+        if (filePropsDialog.open) renderFilePropsList(header);
+      },
+      () => {
+        if (propEl.parentNode) propEl.parentNode.removeChild(propEl);
+        if (filePropsDialog.open) renderFilePropsList(header);
       }
     );
   }

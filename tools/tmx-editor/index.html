@@ -53,6 +53,7 @@
       <select id="compare-lang-select"></select>
     </label>
     <button id="manage-langs-btn" class="secondary">Languages…</button>
+    <button id="file-props-btn" class="secondary">File…</button>
     <div class="toolbar-spacer"></div>
     <input type="search" id="search-input" placeholder="Search…">
     <button id="replace-btn" class="secondary">Replace…</button>
@@ -204,6 +205,26 @@
   </div>
 </dialog>
 
+<dialog id="file-props-dialog">
+  <div class="dialog-body">
+    <h2>File properties</h2>
+    <p class="dialog-summary">
+      Edit the TMX <code>&lt;header&gt;</code>: attributes, notes, and properties that describe the whole file.
+    </p>
+    <div class="dialog-section-label"><span>Attributes</span></div>
+    <div id="file-attrs-list" class="file-attrs-list"></div>
+    <div class="dialog-section-label"><span>Notes</span></div>
+    <ul id="file-notes-list" class="tu-panel-list"></ul>
+    <button type="button" id="file-notes-add" class="secondary tu-panel-add">+ Add note</button>
+    <div class="dialog-section-label" style="margin-top: 16px;"><span>Properties</span></div>
+    <ul id="file-props-list" class="tu-panel-list"></ul>
+    <button type="button" id="file-props-add" class="secondary tu-panel-add">+ Add property</button>
+    <div class="dialog-actions" style="margin-top: 22px;">
+      <button type="button" id="file-props-close" class="secondary">Done</button>
+    </div>
+  </div>
+</dialog>
+
 <dialog id="delete-dialog">
   <div class="dialog-body">
     <h2>Delete translation units</h2>
@@ -264,6 +285,10 @@
     <section class="tu-panel-section">
       <h3>Attributes</h3>
       <dl id="tu-attrs" class="tu-attrs"></dl>
+    </section>
+    <section class="tu-panel-section" id="tu-tuvs-section">
+      <h3>Per-translation details</h3>
+      <div id="tu-tuvs-list" class="tu-tuvs-list"></div>
     </section>
   </div>
 </aside>
