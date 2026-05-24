@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBSBK2BKKQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZBSBK2BKKQ');
+</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tools — Ivo Gomes</title>
+<meta name="description" content="Small utilities I've built — free to use, no signup, runs in your browser." />
+
+<link rel="icon" type="image/x-icon"  href="/assets/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<meta name="theme-color" content="#F3EDE1" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/src/tokens.css" />
+<link rel="stylesheet" href="/src/main.css" />
+<link rel="stylesheet" href="/src/tools.css" />
+</head>
+<body>
+
+<main class="pp-wrap">
+  <nav class="pp-nav pp-enter" aria-label="Page navigation" style="--enter-delay: 0ms">
+    <a href="/" class="pp-nav-back">
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to the homepage
+    </a>
+    <span>Ivo Gomes</span>
+  </nav>
+
+  <header class="pp-header pp-enter" style="margin-top: 48px; --enter-delay: 100ms">
+    <div>
+      <h1 class="pp-title">Tools</h1>
+      <p class="pp-blurb">Small utilities I've built for myself, free to use. No signup, no tracking, everything runs in your browser.</p>
+    </div>
+  </header>
+
+  <ul class="tools-list pp-enter" style="--enter-delay: 200ms">
+    <li>
+      <a href="/tools/tmx-editor/" class="tools-card">
+        <svg class="tools-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <rect x="0.75" y="0.75" width="22.5" height="22.5" rx="2" stroke-width="1.5"/>
+          <line x1="9" y1="1" x2="9" y2="23" stroke-width="1"/>
+          <line x1="1" y1="8.5" x2="23" y2="8.5" stroke-width="1"/>
+          <line x1="1" y1="15.5" x2="23" y2="15.5" stroke-width="1"/>
+          <rect x="10" y="9.5" width="13" height="5" fill="var(--accent)" stroke="none"/>
+        </svg>
+        <div class="tools-card-body">
+          <h2 class="tools-card-title">TMX Editor</h2>
+          <p class="tools-card-desc">Open, view, and edit TMX translation memory files. Search and replace across languages, merge duplicate rows, edit translation-unit metadata, and export — all client-side.</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+</main>
+
+</body>
+</html>

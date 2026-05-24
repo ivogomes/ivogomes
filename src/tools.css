@@ -1,0 +1,65 @@
+/* ── Tools index ─────────────────────────────────────────────── */
+.tools-list {
+  list-style: none;
+  margin: 48px auto 0;
+  padding: 0 24px;
+  max-width: 720px;
+  display: grid;
+  gap: 16px;
+}
+
+.tools-card {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.tools-card:hover {
+  background: var(--cream-2);
+  border-color: var(--rule-strong);
+}
+
+.tools-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+.tools-card-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.tools-card-body {
+  min-width: 0;
+}
+
+.tools-card-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.tools-card-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-card { transition: none; }
+}
