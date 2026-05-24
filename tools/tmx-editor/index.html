@@ -55,7 +55,7 @@
     <button id="manage-langs-btn" class="secondary">Languages…</button>
     <button id="file-props-btn" class="secondary">File…</button>
     <div class="toolbar-spacer"></div>
-    <input type="search" id="search-input" placeholder="Search…">
+    <input type="search" id="search-input" aria-label="Search segments" placeholder="Search…">
     <button id="replace-btn" class="secondary">Replace…</button>
   </div>
 </header>
@@ -233,10 +233,10 @@
     <div class="dialog-section-label"><span>Notes</span></div>
     <ul id="file-notes-list" class="tu-panel-list"></ul>
     <button type="button" id="file-notes-add" class="secondary tu-panel-add">+ Add note</button>
-    <div class="dialog-section-label" style="margin-top: 16px;"><span>Properties</span></div>
+    <div class="dialog-section-label dialog-section-spaced"><span>Properties</span></div>
     <ul id="file-props-list" class="tu-panel-list"></ul>
     <button type="button" id="file-props-add" class="secondary tu-panel-add">+ Add property</button>
-    <div class="dialog-actions" style="margin-top: 22px;">
+    <div class="dialog-actions dialog-actions-spaced">
       <button type="button" id="file-props-close" class="secondary">Done</button>
     </div>
   </div>

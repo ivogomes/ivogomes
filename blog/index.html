@@ -27,23 +27,24 @@
 
 <link rel="stylesheet" href="/src/tokens.css" />
 <link rel="stylesheet" href="/src/main.css" />
+<link rel="stylesheet" href="/src/blog-search.css" />
 </head>
 <body>
 
-<div class="pp-wrap">
-  <div class="pp-nav">
+<main class="pp-wrap">
+  <nav class="pp-nav" aria-label="Page navigation">
     <a href="/" class="pp-nav-back">
-      <span class="pp-nav-back-arrow">←</span> Back to the homepage
+      <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to the homepage
     </a>
     <span>Ivo Gomes</span>
-  </div>
+  </nav>
 
-  <div class="pp-header" style="margin-top: 48px;">
+  <header class="pp-header" style="margin-top: 48px;">
     <div>
       <h1 class="pp-title">Blog</h1>
       <p class="pp-blurb"><strong>This is an archive.</strong> I wrote about usability, accessibility, and UX in Portuguese from 2004 to 2015 — I no longer post here. More recent writing is on <a href="https://ivogomes.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
     </div>
-  </div>
+  </header>
 
   <div class="blog-search-wrap">
     <input class="blog-search" type="search" placeholder="Search posts…" aria-label="Search blog posts" autocomplete="off" />
@@ -1345,99 +1346,7 @@
     </a>
 
   </div>
-</div>
-
-<style>
-  .blog-search-wrap {
-    max-width: 640px;
-    margin: 32px auto 0;
-    padding: 0 24px;
-  }
-  .blog-search {
-    width: 100%;
-    padding: 10px 14px;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 14px;
-    color: var(--ink);
-    background: var(--surface);
-    border: 1px solid var(--rule-strong);
-    border-radius: 6px;
-    outline: none;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  .blog-search::placeholder { color: var(--text-muted); }
-  .blog-search:focus { border-color: var(--ink); }
-  .blog-search-empty {
-    max-width: 640px;
-    margin: 24px auto 0;
-    padding: 0 24px;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 14px;
-    color: var(--text-muted);
-  }
-  .blog-posts {
-    max-width: 640px;
-    margin: 48px auto 0;
-    padding: 0 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border-top: 1px solid var(--ink-faint, rgba(0,0,0,0.1));
-  }
-  .blog-post {
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--ink-faint, rgba(0,0,0,0.1));
-    text-decoration: none;
-    color: var(--ink);
-  }
-  .blog-post:hover .blog-post-title { opacity: 0.55; }
-  .blog-post-date {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    color: var(--ink);
-    opacity: 0.4;
-    white-space: nowrap;
-    min-width: 72px;
-  }
-  .blog-post-title {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 14px;
-    line-height: 1.4;
-    transition: opacity 0.15s;
-  }
-</style>
-
-<script>
-  (function () {
-    var input = document.querySelector('.blog-search');
-    var posts = document.querySelectorAll('.blog-post');
-    var empty = document.querySelector('.blog-search-empty');
-
-    if (!input || !posts.length || !empty) return;
-
-    function filter() {
-      var q = input.value.trim().toLowerCase();
-      var visible = 0;
-      for (var i = 0; i < posts.length; i++) {
-        var titleEl = posts[i].querySelector('.blog-post-title');
-        if (!titleEl) continue;
-        var match = !q || titleEl.textContent.toLowerCase().indexOf(q) !== -1;
-        posts[i].style.display = match ? '' : 'none';
-        if (match) visible++;
-      }
-      empty.style.display = visible > 0 ? 'none' : '';
-    }
-
-    input.addEventListener('input', filter);
-    input.addEventListener('keyup', filter);
-  })();
-</script>
+</main>
+<script src="/src/blog-search.js" defer></script>
 </body>
 </html>

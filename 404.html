@@ -28,34 +28,23 @@
 </head>
 <body>
 
-<div class="pp-wrap">
-  <div class="pp-nav pp-enter" style="--enter-delay: 0ms">
+<main class="pp-wrap">
+  <nav class="pp-nav pp-enter" aria-label="Page navigation" style="--enter-delay: 0ms">
     <a href="/" class="pp-nav-back">
       <span class="pp-nav-back-arrow" aria-hidden="true">←</span> Back to the homepage
     </a>
     <span>Ivo Gomes</span>
-  </div>
+  </nav>
 
-  <div class="pp-header pp-enter" style="display: block; margin-top: 48px; --enter-delay: 100ms">
+  <header class="pp-header pp-enter" style="display: block; margin-top: 48px; --enter-delay: 100ms">
     <div class="pp-tag">404</div>
     <h1 class="pp-title pp-tag--glitch">Page not found</h1>
     <p class="pp-blurb">Whatever you were looking for, it's not here. Maybe it moved, maybe it never existed, maybe the internet ate it.</p>
     <p class="e404-terminal" id="e404-terminal" aria-live="polite"></p>
-  </div>
-</div>
+  </header>
+</main>
 
-<script>
-(function() {
-  var el = document.getElementById('e404-terminal');
-  var msg = 'ERROR 404: RESOURCE_NOT_FOUND\nAttempting reroute........... failed.\nSuggestion: return to the homepage.';
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    el.textContent = msg; return;
-  }
-  var i = 0;
-  function tick() { el.textContent = msg.slice(0, ++i); if (i < msg.length) setTimeout(tick, 38); }
-  setTimeout(tick, 900);
-})();
-</script>
+<script src="/assets/404-terminal.js" defer></script>
 
 </body>
 </html>

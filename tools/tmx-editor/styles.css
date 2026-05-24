@@ -1056,6 +1056,8 @@
   }
   .file-attr-input:focus { outline: none; border-color: var(--accent); }
   .file-attr-input.is-mono { font-family: var(--font-mono); font-size: 12px; }
+  .dialog-section-spaced { margin-top: 16px; }
+  .dialog-actions-spaced { margin-top: 22px; }
 
   .merge-stats {
     margin: 0 0 14px;
