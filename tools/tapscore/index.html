@@ -328,7 +328,8 @@
   .matchstats .cmp-fa { background: var(--a); }
   .matchstats .cmp-fb { background: var(--b); margin-left: auto; }
   @media (min-width: 420px) { .matchstats .statgrid { grid-template-columns: 1fr 1fr; } }
-  .winner .wtrophy { position: relative; font-size: clamp(30px, 7vh, 56px); line-height: 1; }
+  .winner .wtrophy { position: relative; line-height: 0; }
+  .winner .wtrophy svg { width: clamp(64px, 13vh, 104px); height: auto; display: block; filter: drop-shadow(0 6px 14px rgba(0,0,0,.45)); }
   /* winning name — sized to fit the screen by JS (fitWinnerName) */
   .winner .wname {
     position: relative; display: inline-block;
@@ -353,13 +354,15 @@
   }
   .winner .newmatch:hover { box-shadow: var(--elev-3); }
   .winner .newmatch:active { transform: translateY(1px); box-shadow: var(--elev-1); }
-  /* secondary "Match stats" button (ghost) below New match */
+  /* results group: set scores, with the "Match stats" button on its own line below them */
+  .winner .wresults { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  /* secondary "Match stats" button (ghost), sitting next to the results */
   .winner .statsbtn {
     position: relative;
-    font: inherit; font-weight: 600; font-size: 15px; letter-spacing: .3px;
+    font: inherit; font-weight: 600; font-size: 14px; letter-spacing: .3px;
     color: var(--ink); background: transparent;
     border: 1px solid rgba(255,255,255,.28); border-radius: 999px;
-    padding: 11px 26px; cursor: pointer;
+    padding: 9px 18px; cursor: pointer;
     transition: background-color .2s var(--ease);
   }
   .winner .statsbtn:hover { background: rgba(255,255,255,.08); }
@@ -798,11 +801,13 @@
 
   <div class="winner" id="winner">
     <canvas id="confetti" aria-hidden="true"></canvas>
-    <div class="wtrophy" aria-hidden="true">🏆</div>
+    <div class="wtrophy" id="winnerTrophy" aria-hidden="true"></div>
     <div class="wname" id="winnerName"></div>
-    <div class="scoreline" id="winnerScore"></div>
+    <div class="wresults">
+      <div class="scoreline" id="winnerScore"></div>
+      <button class="statsbtn" id="winnerStatsBtn">Match stats</button>
+    </div>
     <button class="newmatch" id="winnerNew">New match</button>
-    <button class="statsbtn" id="winnerStatsBtn">Match stats</button>
   </div>
 
   <div class="help" id="statsScreen" role="dialog" aria-modal="true" aria-labelledby="statsTitle" aria-hidden="true">
@@ -1817,6 +1822,7 @@ function rollValue(container, val) {
 
 // Ball icon for the serve indicator (inline SVG — avoids inconsistent emoji rendering across platforms)
 // inner shapes of a ball in a 24×24 box (centre 12, r 10) — shared by the serve icon and the logo
+// inner shapes of a ball in a 24×24 box (centre 12, r 10) — shared by the serve icon, sport list and trophy
 function ballInner(sport) {
   if (sport === "tabletennis") {
     return `<circle cx="12" cy="12" r="10" fill="#f4f5f7" stroke="rgba(0,0,0,.18)" stroke-width="1"/>
@@ -1843,19 +1849,98 @@ function ballInner(sport) {
         fill="none" stroke="rgba(37,99,235,.55)" stroke-width="1.1" stroke-linecap="round"/>`;
   }
   if (sport === "beachvolley") {
-    // white ball with bold colourful bands (blue + yellow) — the classic beach look
     return `<circle cx="12" cy="12" r="10" fill="#f8fafc" stroke="rgba(0,0,0,.14)" stroke-width="0.8"/>
       <path d="M2.6 9.3 Q12 7 21.4 9.3" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linecap="round"/>
       <path d="M2.6 14.7 Q12 17 21.4 14.7" fill="none" stroke="#f59e0b" stroke-width="2.6" stroke-linecap="round"/>
       <path d="M12 2.1 Q9.4 12 12 21.9" fill="none" stroke="rgba(37,99,235,.45)" stroke-width="1" stroke-linecap="round"/>`;
   }
-  // tennis & padel — yellow-green ball with the curved seam
   return `<circle cx="12" cy="12" r="10" fill="#c9e64b"/>
     <path d="M4.6 7.5 Q12 12 4.6 16.5" fill="none" stroke="#fbfee2" stroke-width="1.5"/>
     <path d="M19.4 7.5 Q12 12 19.4 16.5" fill="none" stroke="#fbfee2" stroke-width="1.5"/>`;
 }
 function ballSVG(sport) {
   return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${ballInner(sport)}</svg>`;
+}
+// Winner trophy — cup in the winning side's colour, with the played sport's ball resting inside
+function trophySVG(sport, side) {
+  const c = side === 1 ? "b" : "a";
+  const cup = `var(--${c})`, dark = `var(--${c}-dark)`;
+  const R = 4.2, s = R / 10;
+  const bx = (12 - 12 * s).toFixed(2), by = (6 - 12 * s).toFixed(2);
+  return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M6.5 8 C3 8 3 12 7.2 12.4" fill="none" stroke="${cup}" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M17.5 8 C21 8 21 12 16.8 12.4" fill="none" stroke="${cup}" stroke-width="1.7" stroke-linecap="round"/>
+    <g transform="translate(${bx},${by}) scale(${s})">${ballInner(sport)}</g>
+    <path d="M6.4 7 H17.6 V9.2 C17.6 12.8 15.1 15 12 15 C8.9 15 6.4 12.8 6.4 9.2 Z" fill="${cup}"/>
+    <rect x="11" y="15" width="2" height="2.6" fill="${dark}"/>
+    <path d="M9 17.4 H15 L15.8 20 H8.2 Z" fill="${dark}"/>
+    <rect x="7.2" y="19.7" width="9.6" height="1.9" rx="0.7" fill="${cup}"/>
+  </svg>`;
+}
+// Stroked volume icon (uses currentColor), matching the help & settings icon set
+function voiceIconSVG(on) {
+  const spk = `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const extra = on
+    ? `<path d="M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+       <path d="M19.07 4.93a10 10 0 0 1 0 14.14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`
+    : `<line x1="16" y1="9" x2="22" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+       <line x1="22" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${spk}${extra}</svg>`;
+}
+function courtSVG(sport) {
+  let lines;
+  if (sport === "tabletennis") {
+    lines = `<rect x="66" y="110" width="168" height="300" rx="4"/>
+      <line x1="150" y1="110" x2="150" y2="410"/>
+      <line x1="50" y1="260" x2="250" y2="260"/>`;
+  } else if (sport === "padel") {
+    lines = `<rect x="52" y="55" width="196" height="410" rx="3"/>
+      <line x1="52" y1="260" x2="248" y2="260"/>
+      <line x1="52" y1="150" x2="248" y2="150"/>
+      <line x1="52" y1="370" x2="248" y2="370"/>
+      <line x1="150" y1="150" x2="150" y2="370"/>`;
+  } else if (sport === "pickleball") {
+    lines = `<rect x="40" y="40" width="220" height="440"/>
+      <line x1="18" y1="260" x2="282" y2="260"/>
+      <line x1="40" y1="212" x2="260" y2="212"/>
+      <line x1="40" y1="308" x2="260" y2="308"/>
+      <line x1="150" y1="40" x2="150" y2="212"/>
+      <line x1="150" y1="308" x2="150" y2="480"/>`;
+  } else if (sport === "volleyball") {
+    lines = `<rect x="50" y="60" width="200" height="400"/>
+      <line x1="34" y1="260" x2="266" y2="260"/>
+      <line x1="50" y1="185" x2="250" y2="185"/>
+      <line x1="50" y1="335" x2="250" y2="335"/>`;
+  } else if (sport === "beachvolley") {
+    lines = `<rect x="60" y="90" width="180" height="340"/>
+      <line x1="42" y1="260" x2="258" y2="260"/>`;
+  } else if (sport === "badminton") {
+    lines = `<rect x="52" y="45" width="196" height="430"/>
+      <line x1="36" y1="260" x2="264" y2="260"/>
+      <line x1="76" y1="45" x2="76" y2="475"/>
+      <line x1="224" y1="45" x2="224" y2="475"/>
+      <line x1="52" y1="210" x2="248" y2="210"/>
+      <line x1="52" y1="310" x2="248" y2="310"/>
+      <line x1="52" y1="70" x2="248" y2="70"/>
+      <line x1="52" y1="450" x2="248" y2="450"/>
+      <line x1="150" y1="45" x2="150" y2="210"/>
+      <line x1="150" y1="310" x2="150" y2="475"/>`;
+  } else if (sport === "squash") {
+    lines = `<rect x="74" y="60" width="152" height="400"/>
+      <line x1="74" y1="325" x2="226" y2="325"/>
+      <line x1="150" y1="325" x2="150" y2="460"/>
+      <rect x="74" y="325" width="44" height="44"/>
+      <rect x="182" y="325" width="44" height="44"/>`;
+  } else {
+    lines = `<rect x="40" y="40" width="220" height="440"/>
+      <line x1="66" y1="40" x2="66" y2="480"/>
+      <line x1="234" y1="40" x2="234" y2="480"/>
+      <line x1="18" y1="260" x2="282" y2="260"/>
+      <line x1="66" y1="175" x2="234" y2="175"/>
+      <line x1="66" y1="345" x2="234" y2="345"/>
+      <line x1="150" y1="175" x2="150" y2="345"/>`;
+  }
+  return `<svg viewBox="0 0 300 520" xmlns="http://www.w3.org/2000/svg"><g class="cl">${lines}</g></svg>`;
 }
 
 function render() {
@@ -1935,6 +2020,7 @@ function render() {
 
   const win = el("winner");
   if (match.over) {
+    el("winnerTrophy").innerHTML = trophySVG(match.settings.sport, match.winner);
     el("winnerName").textContent = match.names[match.winner];
     el("winnerScore").innerHTML = match.completedSets.map(s => `<span>${s[0]}–${s[1]}</span>`).join("");
     win.classList.add("show");
@@ -2316,16 +2402,6 @@ el("winBySeg").addEventListener("click", (e) => {
 });
 
 // Voice announce toggle lives on the bottom bar
-function voiceIconSVG(on) {
-  // Stroked volume icon, matching the help & settings icon set (Lucide-style, 1.8 stroke, round caps)
-  const spk = `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`;
-  const extra = on
-    ? `<path d="M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-       <path d="M19.07 4.93a10 10 0 0 1 0 14.14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`
-    : `<line x1="16" y1="9" x2="22" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-       <line x1="22" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`;
-  return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${spk}${extra}</svg>`;
-}
 function syncVoiceBtn() {
   const b = el("voiceBtn");
   b.innerHTML = voiceIconSVG(voiceOn);   // waves = on, slash = off — icon is the only indicator
@@ -2434,61 +2510,6 @@ function syncMore() {
 el("moreBtn").addEventListener("click", () => { moreOpen = !moreOpen; syncMore(); });
 
 // top-down court diagram shown beside the settings, per sport
-function courtSVG(sport) {
-  let lines;
-  if (sport === "tabletennis") {
-    lines = `<rect x="66" y="110" width="168" height="300" rx="4"/>
-      <line x1="150" y1="110" x2="150" y2="410"/>
-      <line x1="50" y1="260" x2="250" y2="260"/>`;
-  } else if (sport === "padel") {
-    lines = `<rect x="52" y="55" width="196" height="410" rx="3"/>
-      <line x1="52" y1="260" x2="248" y2="260"/>
-      <line x1="52" y1="150" x2="248" y2="150"/>
-      <line x1="52" y1="370" x2="248" y2="370"/>
-      <line x1="150" y1="150" x2="150" y2="370"/>`;
-  } else if (sport === "pickleball") {
-    lines = `<rect x="40" y="40" width="220" height="440"/>
-      <line x1="18" y1="260" x2="282" y2="260"/>
-      <line x1="40" y1="212" x2="260" y2="212"/>
-      <line x1="40" y1="308" x2="260" y2="308"/>
-      <line x1="150" y1="40" x2="150" y2="212"/>
-      <line x1="150" y1="308" x2="150" y2="480"/>`;
-  } else if (sport === "volleyball") {
-    lines = `<rect x="50" y="60" width="200" height="400"/>
-      <line x1="34" y1="260" x2="266" y2="260"/>
-      <line x1="50" y1="185" x2="250" y2="185"/>
-      <line x1="50" y1="335" x2="250" y2="335"/>`;
-  } else if (sport === "beachvolley") {
-    lines = `<rect x="60" y="90" width="180" height="340"/>
-      <line x1="42" y1="260" x2="258" y2="260"/>`;
-  } else if (sport === "badminton") {
-    lines = `<rect x="52" y="45" width="196" height="430"/>
-      <line x1="36" y1="260" x2="264" y2="260"/>
-      <line x1="76" y1="45" x2="76" y2="475"/>
-      <line x1="224" y1="45" x2="224" y2="475"/>
-      <line x1="52" y1="210" x2="248" y2="210"/>
-      <line x1="52" y1="310" x2="248" y2="310"/>
-      <line x1="52" y1="70" x2="248" y2="70"/>
-      <line x1="52" y1="450" x2="248" y2="450"/>
-      <line x1="150" y1="45" x2="150" y2="210"/>
-      <line x1="150" y1="310" x2="150" y2="475"/>`;
-  } else if (sport === "squash") {
-    lines = `<rect x="74" y="60" width="152" height="400"/>
-      <line x1="74" y1="325" x2="226" y2="325"/>
-      <line x1="150" y1="325" x2="150" y2="460"/>
-      <rect x="74" y="325" width="44" height="44"/>
-      <rect x="182" y="325" width="44" height="44"/>`;
-  } else { // tennis
-    lines = `<rect x="40" y="40" width="220" height="440"/>
-      <line x1="66" y1="40" x2="66" y2="480"/>
-      <line x1="234" y1="40" x2="234" y2="480"/>
-      <line x1="18" y1="260" x2="282" y2="260"/>
-      <line x1="66" y1="175" x2="234" y2="175"/>
-      <line x1="66" y1="345" x2="234" y2="345"/>
-      <line x1="150" y1="175" x2="150" y2="345"/>`;
-  }
-  return `<svg viewBox="0 0 300 520" xmlns="http://www.w3.org/2000/svg"><g class="cl">${lines}</g></svg>`;
-}
 
 function syncSetupUI() {
   const target = isTargetSport(pendingSetup.sport);
