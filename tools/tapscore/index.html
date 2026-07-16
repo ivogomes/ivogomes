@@ -567,12 +567,54 @@ function addPoint(i) {
 let voiceOn = false;
 try { voiceOn = localStorage.getItem("tennisTracker.voice") === "1"; } catch (e) {}
 
+// Only override the voice when the device's DEFAULT voice isn't English (e.g. a Portuguese Android).
+// When the default is already English (e.g. Chrome), leave it untouched so we keep its best-quality voice.
+function englishOverrideVoice() {
+  if (!("speechSynthesis" in window)) return null;
+  const voices = window.speechSynthesis.getVoices() || [];
+  if (!voices.length) return null;
+  const def = voices.find(v => v.default);
+  if (!def || /^en/i.test(def.lang)) return null;         // default already English (or unknown) → don't touch it
+  return voices.find(v => /^en/i.test(v.lang) && /google|natural|enhanced/i.test(v.name))
+      || voices.find(v => /^en[-_]us/i.test(v.lang))
+      || voices.find(v => /^en/i.test(v.lang))
+      || null;
+}
+
+// Keep the audio output route "warm" with an inaudible tone so Android doesn't power it down
+// between announcements (that power-up is the click). Must be started from a user gesture.
+let audioKeepAlive = null;
+function startAudioKeepAlive() {
+  try {
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return;
+    if (!audioKeepAlive) {
+      const ctx = new Ctx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      gain.gain.value = 0.0015;        // essentially inaudible, but enough to hold the route open
+      osc.frequency.value = 60;
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.start();
+      audioKeepAlive = { ctx, osc };
+    }
+    if (audioKeepAlive.ctx.state === "suspended") audioKeepAlive.ctx.resume();
+  } catch (e) {}
+}
+function stopAudioKeepAlive() {
+  try {
+    if (audioKeepAlive) { audioKeepAlive.osc.stop(); audioKeepAlive.ctx.close(); audioKeepAlive = null; }
+  } catch (e) {}
+}
+
 function speak(text) {
   if (!voiceOn || !text || !("speechSynthesis" in window)) return;
   try {
+    startAudioKeepAlive();             // ensure the route is warm (this call is inside a tap gesture)
     window.speechSynthesis.cancel();   // drop any backlog so fast tapping doesn't pile up
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = "en-US";                  // force English; let the engine pick its own best matching voice
+    const v = englishOverrideVoice();
+    if (v) { u.voice = v; u.lang = v.lang || "en-US"; }   // only intervene on non-English-default devices
     u.rate = 1.05;
     window.speechSynthesis.speak(u);
   } catch (e) {}
@@ -992,10 +1034,15 @@ el("voiceBtn").addEventListener("click", (e) => {
   e.stopPropagation();
   voiceOn = !voiceOn;
   try { localStorage.setItem("tennisTracker.voice", voiceOn ? "1" : "0"); } catch (e) {}
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-    // prime the speech engine on this tap gesture, silently (no spoken confirmation)
-    if (voiceOn) { try { window.speechSynthesis.speak(new SpeechSynthesisUtterance("")); } catch (e) {} }
+  if (voiceOn) {
+    startAudioKeepAlive();   // open the audio route now (on this gesture) so the first call doesn't click
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+      try { window.speechSynthesis.speak(new SpeechSynthesisUtterance("")); } catch (e) {}  // silent prime
+    }
+  } else {
+    stopAudioKeepAlive();
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
   }
   syncVoiceBtn();
 });
