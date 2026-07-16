@@ -190,6 +190,22 @@
   }
   .history:empty { display: none; }
   .history span { padding: 1px 7px; border-radius: 6px; }
+  /* live match timer, centred in the court gap */
+  .mtimer {
+    font-variant-numeric: tabular-nums; font-weight: 700; font-size: 13px;
+    letter-spacing: .5px; opacity: .5;
+    background: rgba(0,0,0,.28); padding: 3px 10px; border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+  .mtimer:empty { display: none; }
+  /* pickleball side-out doubles: which server (1 or 2) is up */
+  .snum {
+    display: none; flex: none;
+    min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px;
+    align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums;
+    background: rgba(0,0,0,.28); color: var(--ink);
+  }
   /* the freshly-recorded set score springs into the summary when a set is won */
   .history span.justwon { animation: pillpop .55s var(--ease); }
   @keyframes pillpop {
@@ -206,6 +222,24 @@
     padding: 4px 10px; border-radius: 999px;
   }
   .badge.hidden { display: none; }
+
+  /* Change-ends reminder toast — a brief pill above the controls */
+  .toast {
+    position: fixed; left: 50%; z-index: 6;
+    bottom: calc(env(safe-area-inset-bottom) + 74px);
+    transform: translate(-50%, 10px);
+    display: inline-flex; align-items: center; gap: 8px;
+    max-width: 88vw; white-space: nowrap;
+    background: rgba(15,23,42,.96); color: var(--ink);
+    border: 1px solid rgba(255,255,255,.18);
+    padding: 10px 18px; border-radius: 999px;
+    font-weight: 600; letter-spacing: .3px;
+    box-shadow: var(--elev-2);
+    pointer-events: none; opacity: 0; visibility: hidden;
+    transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s;
+  }
+  .toast.show { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  .toast svg { width: 18px; height: 18px; flex: none; }
 
   /* Controls */
   .controls {
@@ -237,9 +271,63 @@
     display: none; flex-direction: column;
     align-items: center; justify-content: center; gap: 18px;
     background: rgba(2,6,23,.82); backdrop-filter: blur(6px);
-    text-align: center; padding: 24px;
+    text-align: center;
+    padding: max(24px, env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom));
+    overflow-y: auto;   /* stats can make it tall on small screens */
   }
   .winner.show { display: flex; }
+  /* end-of-match stats */
+  .matchstats { position: relative; width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 12px; }
+  .matchstats .stiles { display: flex; gap: 10px; justify-content: center; }
+  .matchstats .stile {
+    flex: 1 1 0; min-width: 0;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px; padding: 12px 8px;
+  }
+  .matchstats .sval { font-family: var(--score-font); font-weight: 700; font-size: 20px; font-variant-numeric: tabular-nums; }
+  .matchstats .slbl { font-size: 11px; letter-spacing: .6px; text-transform: uppercase; opacity: .55; margin-top: 3px; }
+  .matchstats .sline { font-size: 14px; opacity: .85; }
+  .matchstats .sline b { font-weight: 700; }
+  .matchstats .setlist { display: flex; flex-direction: column; gap: 4px; margin-top: 2px; }
+  .matchstats .setrow {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    font-size: 13px; padding: 6px 12px; border-radius: 10px; background: rgba(255,255,255,.05);
+  }
+  .matchstats .setrow .sr-label { opacity: .6; }
+  .matchstats .setrow .sr-mid { display: inline-flex; align-items: center; gap: 6px; }
+  .matchstats .setrow .sr-score { font-family: var(--score-font); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .matchstats .setrow .sr-time { opacity: .75; font-variant-numeric: tabular-nums; }
+  /* sections + components on the stats page */
+  .matchstats .statsec { display: flex; flex-direction: column; gap: 7px; text-align: left; }
+  .matchstats .statsec-h { font-size: 12px; letter-spacing: .6px; text-transform: uppercase; opacity: .55; }
+  .matchstats .statsec-h .muted { text-transform: none; letter-spacing: 0; opacity: .8; }
+  .matchstats .statbar { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+  .matchstats .sb-name { flex: 0 0 30%; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .matchstats .sb-track { flex: 1 1 auto; height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+  .matchstats .sb-fill { height: 100%; border-radius: 999px; }
+  .matchstats .sb-fill.sb-0 { background: var(--a); }
+  .matchstats .sb-fill.sb-1 { background: var(--b); }
+  .matchstats .sb-val { flex: 0 0 auto; font-variant-numeric: tabular-nums; font-weight: 700; min-width: 36px; text-align: right; }
+  .matchstats .spark { width: 100%; height: 56px; display: block; }
+  .matchstats .statgrid { display: grid; grid-template-columns: 1fr; gap: 2px; }
+  .matchstats .sg-row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; font-size: 14px; padding: 7px 12px; border-radius: 8px; background: rgba(255,255,255,.04); }
+  .matchstats .sg-l { opacity: .6; }
+  .matchstats .sg-v { font-weight: 600; text-align: right; }
+  .matchstats .statnote { font-size: 11px; opacity: .45; }
+  /* side colour swatch used in place of long names */
+  .matchstats .cdot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; vertical-align: middle; }
+  .matchstats .cdot-0 { background: var(--a); }
+  .matchstats .cdot-1 { background: var(--b); }
+  /* head-to-head split bars */
+  .matchstats .cmprow { display: flex; flex-direction: column; gap: 5px; }
+  .matchstats .cmp-label { font-size: 12px; opacity: .6; }
+  .matchstats .cmp-line { display: flex; align-items: center; gap: 10px; }
+  .matchstats .cmp-n { flex: 0 0 auto; min-width: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .matchstats .cmp-line .cmp-n:last-child { text-align: right; }
+  .matchstats .cmp-bar { flex: 1 1 auto; display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,.08); }
+  .matchstats .cmp-fa { background: var(--a); }
+  .matchstats .cmp-fb { background: var(--b); margin-left: auto; }
+  @media (min-width: 420px) { .matchstats .statgrid { grid-template-columns: 1fr 1fr; } }
   .winner .wtrophy { position: relative; font-size: clamp(30px, 7vh, 56px); line-height: 1; }
   /* winning name — sized to fit the screen by JS (fitWinnerName) */
   .winner .wname {
@@ -265,6 +353,17 @@
   }
   .winner .newmatch:hover { box-shadow: var(--elev-3); }
   .winner .newmatch:active { transform: translateY(1px); box-shadow: var(--elev-1); }
+  /* secondary "Match stats" button (ghost) below New match */
+  .winner .statsbtn {
+    position: relative;
+    font: inherit; font-weight: 600; font-size: 15px; letter-spacing: .3px;
+    color: var(--ink); background: transparent;
+    border: 1px solid rgba(255,255,255,.28); border-radius: 999px;
+    padding: 11px 26px; cursor: pointer;
+    transition: background-color .2s var(--ease);
+  }
+  .winner .statsbtn:hover { background: rgba(255,255,255,.08); }
+  .winner .statsbtn:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
   #confetti { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
   /* set-win confetti burst — flies over the court (not the overlays) */
   #setConfetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 7; }
@@ -648,6 +747,7 @@
       <div class="namepill">
         <button class="serve" id="serveA" title="Serving — tap to give serve to this side" aria-label="Serving"></button>
         <input class="name" id="nameA" value="Player 1" maxlength="24" size="9" aria-label="Side A name" />
+        <span class="snum" id="snumA" aria-hidden="true"></span>
       </div>
       <div class="sets" id="setsA"></div>
       <div class="games" id="gamesA"><span class="pv">0</span></div>
@@ -658,6 +758,7 @@
       <div class="namepill">
         <button class="serve" id="serveB" title="Serving — tap to give serve to this side" aria-label="Serving"></button>
         <input class="name" id="nameB" value="Player 2" maxlength="24" size="9" aria-label="Side B name" />
+        <span class="snum" id="snumB" aria-hidden="true"></span>
       </div>
       <div class="sets" id="setsB"></div>
       <div class="games" id="gamesB"><span class="pv">0</span></div>
@@ -668,9 +769,11 @@
 
   <div class="matchinfo" id="matchInfo"></div>
   <div class="center">
+    <div class="mtimer" id="matchTimer" aria-hidden="true"></div>
     <div class="history" id="history"></div>
     <div class="badge hidden" id="badge">Tiebreak</div>
   </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-hidden="true"></div>
 
   <div class="controls">
     <button id="undoBtn" title="Undo last point">Undo</button>
@@ -699,6 +802,16 @@
     <div class="wname" id="winnerName"></div>
     <div class="scoreline" id="winnerScore"></div>
     <button class="newmatch" id="winnerNew">New match</button>
+    <button class="statsbtn" id="winnerStatsBtn">Match stats</button>
+  </div>
+
+  <div class="help" id="statsScreen" role="dialog" aria-modal="true" aria-labelledby="statsTitle" aria-hidden="true">
+    <div class="panel">
+      <button class="helpClose" id="statsClose" aria-label="Close stats">&times;</button>
+      <h2 id="statsTitle">Match stats</h2>
+      <div class="matchstats" id="statsBody"></div>
+      <button class="done" id="statsDone">Done</button>
+    </div>
   </div>
 
   <div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-hidden="true">
@@ -753,10 +866,20 @@
         </div>
       </div>
 
+
       <div class="group" id="setupPointsGroup" style="display:none">
         <label>Points to win a game</label>
         <span class="desc">First to this many wins a game</span>
         <div class="seg" id="setupPoints"></div>
+      </div>
+
+      <div class="group" id="setupScoringGroup" style="display:none">
+        <label>Scoring</label>
+        <span class="desc"><strong>Rally</strong>: every rally scores. <strong>Side-out</strong>: only the serving side scores (traditional; doubles uses two servers).</span>
+        <div class="seg" id="setupScoring">
+          <button data-scoring="rally">Rally</button>
+          <button data-scoring="sideout">Side-out</button>
+        </div>
       </div>
 
       <div class="group" id="setupAdvGroup">
@@ -803,6 +926,16 @@
         <div class="seg" id="setupWinBy">
           <button data-winby="2">Win by 2</button>
           <button data-winby="1">Straight</button>
+        </div>
+      </div>
+
+      <div class="group" id="setupChangeEndsGroup">
+        <label>Change-ends reminder</label>
+        <span class="desc">Prompt to switch sides during the match</span>
+        <div class="seg" id="setupChangeEnds">
+          <button data-cends="off">Off</button>
+          <button data-cends="set">End of set</button>
+          <button data-cends="standard">Standard</button>
         </div>
       </div>
       </div>
@@ -869,6 +1002,17 @@
         <div class="seg" id="winBySeg">
           <button data-winby="2">Win by 2</button>
           <button data-winby="1">Straight</button>
+        </div>
+      </div>
+      <div class="row" id="changeEndsRow">
+        <div>
+          <label>Change-ends reminder</label>
+          <span class="desc"><strong>End of set</strong>: only between sets/games. <strong>Standard</strong>: every conventional change (odd games, tiebreaks, deciding‑game halfway).</span>
+        </div>
+        <div class="seg" id="changeEndsSeg">
+          <button data-cends="off">Off</button>
+          <button data-cends="set">End of set</button>
+          <button data-cends="standard">Standard</button>
         </div>
       </div>
       <div class="row" id="voiceRow">
@@ -981,11 +1125,24 @@ function freshMatch(settings) {
     over: false,
     winner: null,
     server: 0,           // side currently serving (0 or 1)
+    serverNum: 2,        // pickleball side-out doubles: 1st or 2nd server (game opener starts on 2)
     serveStart: 0,       // table tennis: who served first in the current game
     tbFirstServer: 0,    // tennis/padel: who served the tiebreak's first point
-    settings: settings || { sport: "tennis", mode: "singles", bestOf: 3, advantages: "unlimited", pointsTarget: 11, decider: "set", gamesPerSet: 6, tbPoints: 7, winBy: 2 }
+    startedAt: 0,        // timestamp of the first point (ms)
+    endedAt: 0,          // timestamp the match ended (ms)
+    setStart: 0,         // timestamp the current set began (ms)
+    setDurations: [],    // ms taken to win each completed set/game
+    rallies: 0,          // total points/rallies played
+    rallyWins: [0, 0],   // rallies won by each side
+    streakSide: -1, streakLen: 0, longestRun: [0, 0],   // longest run of consecutive points
+    pointLog: [],        // per rally: { w: winner, s: server, t: timestamp } — powers the stats page
+    breaks: [0, 0],      // racket: games won by the returning side
+    deuces: 0,           // times the game reached deuce
+    tiebreaks: 0,        // tiebreaks played
+    settings: settings || { sport: "tennis", mode: "singles", bestOf: 3, advantages: "unlimited", pointsTarget: 11, decider: "set", gamesPerSet: 6, tbPoints: 7, winBy: 2, scoring: "rally" }
   };
 }
+function nowMs() { try { return Date.now(); } catch (e) { return 0; } }
 
 // sport: "tennis" | "padel" (points→games→sets, deuce/adv) | "tabletennis" (points→games, win by 2 to target)
 // advantages: "unlimited" (win by two) | 0 (golden at 1st deuce) | 1 | 2 (play N advs, then golden)
@@ -1000,9 +1157,12 @@ function normalizeSettings(s) {
   if (s.gamesPerSet === undefined) s.gamesPerSet = 6;    // tennis/padel: 6 (standard) or 4 (short sets)
   if (s.tbPoints === undefined) s.tbPoints = 7;          // tennis/padel: points to win a set tie-break
   if (s.winBy === undefined) s.winBy = 2;                // target sports: win by 2 or straight to target
+  if (s.scoring === undefined) s.scoring = "rally";      // pickleball: "rally" or "sideout" (traditional)
   delete s.golden;
   return s;
 }
+// pickleball only: traditional side-out scoring (only the serving side can score)
+function isSideOut() { return match.settings.sport === "pickleball" && match.settings.scoring === "sideout"; }
 
 // target-scored sports (rally to a points target, win by 2, best-of games — no games/sets or deuce/advantage)
 // Target/rally sports: score every rally to a points target, win by 2, best-of games
@@ -1010,11 +1170,13 @@ function normalizeSettings(s) {
 // NB: keep this a self-contained function (no module-level const) — it's called during early init.
 function isTargetSport(sp) {
   const s = sp || match.settings.sport;
-  return s === "tabletennis" || s === "pickleball" || s === "squash" || s === "badminton" || s === "volleyball";
+  return s === "tabletennis" || s === "pickleball" || s === "squash" || s === "badminton"
+      || s === "volleyball" || s === "beachvolley";
 }
 function sportLabel(sp) {
   return sp === "padel" ? "Padel" : sp === "tabletennis" ? "Table Tennis" : sp === "pickleball" ? "Pickleball"
-    : sp === "squash" ? "Squash" : sp === "badminton" ? "Badminton" : sp === "volleyball" ? "Volleyball" : "Tennis";
+    : sp === "squash" ? "Squash" : sp === "badminton" ? "Badminton" : sp === "volleyball" ? "Volleyball"
+    : sp === "beachvolley" ? "Beach Volleyball" : "Tennis";
 }
 // Per-sport rule quirks for the target engine.
 //  rallyServe   – the rally winner serves next (squash/badminton/volleyball) vs a fixed rotation (table tennis)
@@ -1023,9 +1185,9 @@ function sportLabel(sp) {
 function sportRules(sp) {
   sp = sp || match.settings.sport;
   return {
-    rallyServe: sp === "squash" || sp === "badminton" || sp === "volleyball",
+    rallyServe: sp === "squash" || sp === "badminton" || sp === "volleyball" || sp === "beachvolley",
     cap: sp === "badminton" ? 30 : 0,
-    deciderTarget: sp === "volleyball" ? 15 : 0,
+    deciderTarget: (sp === "volleyball" || sp === "beachvolley") ? 15 : 0,
   };
 }
 // The points target for the set currently in play (honours volleyball's shorter deciding set).
@@ -1036,7 +1198,7 @@ function currentTarget() {
 }
 // Sensible defaults applied when a sport is picked on the setup screen.
 function defaultBestOf(sport) {
-  if (sport === "badminton" || sport === "pickleball") return 3;
+  if (sport === "badminton" || sport === "pickleball" || sport === "beachvolley") return 3;
   if (sport === "squash" || sport === "volleyball" || sport === "tabletennis") return 5;
   return 3;
 }
@@ -1053,7 +1215,8 @@ function pointsOptions(sport) {
     case "pickleball": return [11, 15, 21];
     case "squash": return [11, 15];
     case "badminton": return [21, 15];
-    case "volleyball": return [25, 21];   // 21 doubles as beach volleyball
+    case "volleyball": return [25, 21];
+    case "beachvolley": return [21, 15];
     default: return [11, 21];             // table tennis
   }
 }
@@ -1076,6 +1239,19 @@ if (match.server === undefined) match.server = 0;
 if (match.serveStart === undefined) match.serveStart = match.server;
 if (match.tbFirstServer === undefined) match.tbFirstServer = 0;
 if (match.matchTB === undefined) match.matchTB = false;
+// migrate saved matches that predate side-out serving, the timer and stats
+if (match.serverNum === undefined) match.serverNum = 2;
+if (match.startedAt === undefined) match.startedAt = 0;
+if (match.endedAt === undefined) match.endedAt = 0;
+if (match.setStart === undefined) match.setStart = match.startedAt || 0;
+if (match.setDurations === undefined) match.setDurations = [];
+if (match.rallies === undefined) match.rallies = 0;
+if (match.rallyWins === undefined) match.rallyWins = [0, 0];
+if (match.streakSide === undefined) { match.streakSide = -1; match.streakLen = 0; match.longestRun = [0, 0]; }
+if (match.pointLog === undefined) match.pointLog = [];
+if (match.breaks === undefined) match.breaks = [0, 0];
+if (match.deuces === undefined) match.deuces = 0;
+if (match.tiebreaks === undefined) match.tiebreaks = 0;
 maybeStartMatchTB();   // in case a saved match resumes right at the start of a match-tie-break decider
 let historyStack = [];   // snapshots for undo
 let winnerShown = match.over;   // true when the winner screen is already up (avoids re-firing confetti on resume)
@@ -1091,7 +1267,8 @@ let pendingSetup = {
   decider: match.settings.decider,
   gamesPerSet: match.settings.gamesPerSet,
   tbPoints: match.settings.tbPoints,
-  winBy: match.settings.winBy
+  winBy: match.settings.winBy,
+  scoring: match.settings.scoring
 };
 
 function setsToWin() { const b = match.settings.bestOf; return b === "inf" ? Infinity : Math.ceil(b / 2); }
@@ -1109,6 +1286,7 @@ function maybeStartMatchTB() {
     match.matchTB = true;
     match.points = [0, 0];
     match.tbFirstServer = match.server;
+    match.tiebreaks++;
   }
 }
 
@@ -1132,10 +1310,29 @@ function addPoint(i) {
   // a tiny haptic tick so a scored point feels registered even without looking
   if (!prefersReducedMotion() && navigator.vibrate) { try { navigator.vibrate(12); } catch (e) {} }
   snapshot();
-  const before = { games: match.games.slice(), sets: match.sets.slice(), tiebreak: match.tiebreak };
-  if (isTargetSport()) tableTennisPoint(i);
+  const before = { games: match.games.slice(), sets: match.sets.slice(), points: match.points.slice(), tiebreak: match.tiebreak };
+
+  // stats + timer bookkeeping (all after snapshot() so undo rewinds them too)
+  const t = nowMs();
+  if (!match.startedAt) { match.startedAt = t; match.setStart = t; }
+  match.rallies++;
+  match.rallyWins[i]++;
+  if (match.streakSide === i) match.streakLen++; else { match.streakSide = i; match.streakLen = 1; }
+  if (match.streakLen > match.longestRun[i]) match.longestRun[i] = match.streakLen;
+  match.pointLog.push({ w: i, s: match.server, t: t });   // server is the one about to (maybe) score
+
+  if (isSideOut()) pickleballSideOutPoint(i);
+  else if (isTargetSport()) tableTennisPoint(i);
   else if (match.tiebreak) tiebreakPoint(i);
   else regularPoint(i);
+
+  // a set/game just finished → record how long it took
+  if ((match.sets[0] + match.sets[1]) > (before.sets[0] + before.sets[1])) {
+    match.setDurations.push(t - (match.setStart || match.startedAt || t));
+    match.setStart = t;
+  }
+  if (match.over && !match.endedAt) match.endedAt = t;
+
   save();
   render();
   announceScore(before);
@@ -1143,7 +1340,64 @@ function addPoint(i) {
   if (!match.over) {
     if (match.sets[0] > before.sets[0]) celebrateSet(0);
     else if (match.sets[1] > before.sets[1]) celebrateSet(1);
+    maybeChangeEnds(before);
   }
+}
+
+/* ---- change-ends reminder ---- */
+// "off" | "set" (only between sets/games) | "standard" (every conventional change)
+let changeEndsMode = "standard";
+try { changeEndsMode = localStorage.getItem("tennisTracker.changeEndsMode") || "standard"; } catch (e) {}
+let toastTimer = null;
+// describe what "Standard" means for the given sport (matches maybeChangeEnds' behaviour)
+function changeEndsDesc(sport) {
+  const s = sport || match.settings.sport;
+  let std;
+  if (s === "tennis" || s === "padel") std = "on odd games, and every 6 points in a tiebreak";
+  else if (s === "volleyball" || s === "beachvolley") std = "after each set, and midway through the deciding set";
+  else std = "after each game, and midway through the deciding game";
+  return `<strong>End of set</strong>: only between sets/games. <strong>Standard</strong>: ${std}.`;
+}
+function showToast(text) {
+  const t = el("toast");
+  if (!t) return;
+  t.innerHTML = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M6.5 8.5h11l-3-3M17.5 15.5h-11l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>${text}</span>`;
+  t.classList.add("show");
+  t.setAttribute("aria-hidden", "false");
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.classList.remove("show"); t.setAttribute("aria-hidden", "true"); }, 3200);
+}
+// Prompt to switch sides at the conventional moment for each sport (squash never changes ends).
+function maybeChangeEnds(before) {
+  if (changeEndsMode === "off" || match.over) return;
+  const sp = match.settings.sport;
+  if (sp === "squash") return;
+  const setWon = (match.sets[0] + match.sets[1]) > (before.sets[0] + before.sets[1]);
+  let due = false;
+
+  if (changeEndsMode === "set") {
+    due = setWon;                                        // only between sets/games
+  } else if (isTargetSport()) {
+    if (setWon) due = true;                              // change after every completed game/set
+    else if (isDecidingSet()) {                          // deciding game/set: switch at the halfway mark
+      const t = currentTarget();
+      const half = (sp === "tabletennis") ? Math.floor(t / 2) : Math.ceil(t / 2);
+      const now = Math.max(match.points[0], match.points[1]);
+      const prev = Math.max(before.points[0], before.points[1]);
+      if (now === half && prev === half - 1) due = true;
+    }
+  } else if (match.tiebreak) {
+    const tp = match.points[0] + match.points[1];
+    if (tp > 0 && tp % 6 === 0) due = true;              // tennis tiebreak: every 6 points
+  } else if (setWon) {
+    const last = match.completedSets[match.completedSets.length - 1];
+    if (last && (last[0] + last[1]) % 2 === 1) due = true; // end of an odd-total set
+  } else if ((match.games[0] + match.games[1]) > (before.games[0] + before.games[1])
+          && (match.games[0] + match.games[1]) % 2 === 1) {
+    due = true;                                          // odd game within the set
+  }
+  if (due) showToast("Change ends");
 }
 
 /* ---- score announcements (Web Speech API) ---- */
@@ -1261,7 +1515,7 @@ function tally(x0, x1, unit, useLove) {
 // table tennis / squash / badminton / pickleball play "games"; tennis, padel and volleyball play "sets".
 function setUnit() {
   const sp = match.settings.sport;
-  return (isTargetSport() && sp !== "volleyball") ? "games" : "sets";
+  return (isTargetSport() && sp !== "volleyball" && sp !== "beachvolley") ? "games" : "sets";
 }
 function unitWonWord() { return setUnit() === "games" ? "Game" : "Set"; }
 
@@ -1388,6 +1642,7 @@ function tableTennisPoint(i) {
     if (match.sets[w] >= setsToWin()) { match.over = true; match.winner = w; }
     return;
   }
+  if (a === b && a >= target - 1) match.deuces++;   // reached deuce (both at target-1)
   if (rules.rallyServe) {
     match.server = i;   // squash/badminton/volleyball: the side that won the rally serves next
     return;
@@ -1397,6 +1652,34 @@ function tableTennisPoint(i) {
   const block = target >= 21 ? 5 : 2;
   const deuce = a >= target - 1 && b >= target - 1;
   if (deuce || total % block === 0) match.server = 1 - match.server;
+}
+
+// Pickleball traditional (side-out): only the serving side scores. `w` = side that won the rally.
+// Doubles has two servers per turn; the game opener gets only one (starts on server #2 → "0-0-2").
+function pickleballSideOutPoint(w) {
+  const target = match.settings.pointsTarget || 11;
+  const winBy = match.settings.winBy || 2;
+  if (w === match.server) {                       // serving side won the rally → a point
+    match.points[w]++;
+    const [a, b] = match.points;
+    if (Math.max(a, b) >= target && Math.abs(a - b) >= winBy) {
+      const win = a > b ? 0 : 1;
+      match.completedSets.push([a, b]);
+      match.sets[win]++;
+      match.points = [0, 0];
+      match.server = win;                         // winner serves the next game…
+      match.serverNum = 2;                        // …as the lone opening server
+      if (match.sets[win] >= setsToWin()) { match.over = true; match.winner = win; }
+    }
+    return;
+  }
+  // receiving side won → fault for the server
+  if (match.settings.mode === "doubles" && match.serverNum === 1) {
+    match.serverNum = 2;                          // second server of the same team
+  } else {
+    match.server = w;                             // side-out: serve passes to the other side
+    match.serverNum = 1;
+  }
 }
 
 // Sudden death armed once the number of deuces reached exceeds the advantages allowed.
@@ -1413,6 +1696,7 @@ function regularPoint(i) {
   match.points[i]++;
   const [a, b] = match.points;
   const max = Math.max(a, b), diff = Math.abs(a - b);
+  if (a === b && a >= 3) match.deuces++;   // reached deuce
   const won = goldenArmed(a, b) ? (diff >= 1) : (max >= 4 && diff >= 2);
   if (won) winGame(a > b ? 0 : 1);
 }
@@ -1439,18 +1723,22 @@ function tiebreakPoint(i) {
     winSet(w);
     return;
   }
+  if (a === b && a >= target - 1) match.deuces++;   // tiebreak deuce
   // serve changes after the 1st point, then every 2 points
   if ((a + b) % 2 === 1) match.server = 1 - match.server;
 }
 
 function winGame(i) {
+  const gameServer = match.server;   // who served this game (serve passes below)
   match.games[i]++;
   match.points = [0, 0];
   match.server = 1 - match.server;   // serve passes to the other side each game
+  if (i !== gameServer) match.breaks[i]++;   // the returning side won → break of serve
   const G = match.settings.gamesPerSet || 6;
   if (match.games[0] === G && match.games[1] === G) {
     match.tiebreak = true;
     match.tbFirstServer = match.server;   // whoever is up next serves the tiebreak's first point
+    match.tiebreaks++;
     return;
   }
   if (match.games[i] >= G && (match.games[i] - match.games[1 - i]) >= 2) winSet(i);
@@ -1528,41 +1816,46 @@ function rollValue(container, val) {
 }
 
 // Ball icon for the serve indicator (inline SVG — avoids inconsistent emoji rendering across platforms)
-function ballSVG(sport) {
-  const svg = (inner) => `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${inner}</svg>`;
+// inner shapes of a ball in a 24×24 box (centre 12, r 10) — shared by the serve icon and the logo
+function ballInner(sport) {
   if (sport === "tabletennis") {
-    // white ping-pong ball with a soft highlight
-    return svg(`<circle cx="12" cy="12" r="10" fill="#f4f5f7" stroke="rgba(0,0,0,.18)" stroke-width="1"/>
-      <circle cx="9" cy="9" r="3.2" fill="#ffffff" opacity="0.7"/>`);
+    return `<circle cx="12" cy="12" r="10" fill="#f4f5f7" stroke="rgba(0,0,0,.18)" stroke-width="1"/>
+      <circle cx="9" cy="9" r="3.2" fill="#ffffff" opacity="0.7"/>`;
   }
   if (sport === "pickleball") {
-    // yellow ball with holes
     const holes = [[12, 6.5], [8, 10], [16, 10], [9.5, 14.5], [14.5, 14.5]]
       .map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.5" fill="#8f951a"/>`).join("");
-    return svg(`<circle cx="12" cy="12" r="10" fill="#e6ec2e"/>${holes}`);
+    return `<circle cx="12" cy="12" r="10" fill="#e6ec2e"/>${holes}`;
   }
   if (sport === "squash") {
-    // dark rubber ball with the yellow (single-dot) marker + soft highlight
-    return svg(`<circle cx="12" cy="12" r="10" fill="#1f2937"/>
+    return `<circle cx="12" cy="12" r="10" fill="#1f2937"/>
       <circle cx="9" cy="9" r="3" fill="#ffffff" opacity="0.12"/>
-      <circle cx="14.5" cy="14.5" r="1.7" fill="#fbbf24"/>`);
+      <circle cx="14.5" cy="14.5" r="1.7" fill="#fbbf24"/>`;
   }
   if (sport === "badminton") {
-    // shuttlecock: white feather skirt (widening upward) with ribs, over a rounded cork base
-    return svg(`<path d="M7.6 13.5 L4.6 5 Q12 2.8 19.4 5 L16.4 13.5 Z" fill="#f8fafc" stroke="rgba(0,0,0,.16)" stroke-width="0.7" stroke-linejoin="round"/>
+    return `<path d="M7.6 13.5 L4.6 5 Q12 2.8 19.4 5 L16.4 13.5 Z" fill="#f8fafc" stroke="rgba(0,0,0,.16)" stroke-width="0.7" stroke-linejoin="round"/>
       <path d="M12 13.5 V4 M9.8 13.5 L7.6 4.7 M14.2 13.5 L16.4 4.7" fill="none" stroke="rgba(0,0,0,.14)" stroke-width="0.7"/>
-      <ellipse cx="12" cy="16" rx="4.4" ry="3.6" fill="#eef2f7" stroke="rgba(0,0,0,.14)" stroke-width="0.7"/>`);
+      <ellipse cx="12" cy="16" rx="4.4" ry="3.6" fill="#eef2f7" stroke="rgba(0,0,0,.14)" stroke-width="0.7"/>`;
   }
   if (sport === "volleyball") {
-    // white ball with curved panel seams
-    return svg(`<circle cx="12" cy="12" r="10" fill="#f8fafc" stroke="rgba(0,0,0,.14)" stroke-width="0.8"/>
+    return `<circle cx="12" cy="12" r="10" fill="#f8fafc" stroke="rgba(0,0,0,.14)" stroke-width="0.8"/>
       <path d="M12 2 Q7.5 12 12 22 M12 2 Q16.5 12 12 22 M2.5 8.5 Q12 10.5 21.5 8.5 M2.8 15.5 Q12 13.5 21.2 15.5"
-        fill="none" stroke="rgba(37,99,235,.55)" stroke-width="1.1" stroke-linecap="round"/>`);
+        fill="none" stroke="rgba(37,99,235,.55)" stroke-width="1.1" stroke-linecap="round"/>`;
+  }
+  if (sport === "beachvolley") {
+    // white ball with bold colourful bands (blue + yellow) — the classic beach look
+    return `<circle cx="12" cy="12" r="10" fill="#f8fafc" stroke="rgba(0,0,0,.14)" stroke-width="0.8"/>
+      <path d="M2.6 9.3 Q12 7 21.4 9.3" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M2.6 14.7 Q12 17 21.4 14.7" fill="none" stroke="#f59e0b" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M12 2.1 Q9.4 12 12 21.9" fill="none" stroke="rgba(37,99,235,.45)" stroke-width="1" stroke-linecap="round"/>`;
   }
   // tennis & padel — yellow-green ball with the curved seam
-  return svg(`<circle cx="12" cy="12" r="10" fill="#c9e64b"/>
+  return `<circle cx="12" cy="12" r="10" fill="#c9e64b"/>
     <path d="M4.6 7.5 Q12 12 4.6 16.5" fill="none" stroke="#fbfee2" stroke-width="1.5"/>
-    <path d="M19.4 7.5 Q12 12 19.4 16.5" fill="none" stroke="#fbfee2" stroke-width="1.5"/>`);
+    <path d="M19.4 7.5 Q12 12 19.4 16.5" fill="none" stroke="#fbfee2" stroke-width="1.5"/>`;
+}
+function ballSVG(sport) {
+  return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${ballInner(sport)}</svg>`;
 }
 
 function render() {
@@ -1589,6 +1882,20 @@ function render() {
     b.innerHTML = ball;
     b.classList.toggle("gone", match.over);
     b.classList.toggle("inactive", match.server !== idx);
+  });
+  // in side-out only the serving side can score; the receiver only wins the rally (a side-out)
+  const sideOut = isSideOut();
+  ["sideA", "sideB"].forEach((sid, idx) => {
+    const h = el(sid).querySelector(".hint");
+    if (h) h.textContent = sideOut ? (match.server === idx ? "Tap to score" : "Tap to win rally") : "Tap to score";
+  });
+  // pickleball side-out doubles: show the current server number (1/2) on the serving side
+  const showSnum = sideOut && match.settings.mode === "doubles" && !match.over;
+  ["snumA", "snumB"].forEach((id, idx) => {
+    const s = el(id);
+    const on = showSnum && match.server === idx;
+    s.textContent = on ? String(match.serverNum) : "";
+    s.style.display = on ? "inline-flex" : "none";
   });
 
   const st = match.settings;
@@ -1638,9 +1945,141 @@ function render() {
     winnerShown = false;
   }
 
+  updateTimer();
   el("undoBtn").disabled = historyStack.length === 0;
   syncSettingsUI();
   firstRender = false;   // subsequent renders may animate score changes
+}
+
+// mm:ss (or h:mm:ss past an hour)
+function fmtDur(ms) {
+  const s = Math.max(0, Math.round(ms / 1000));
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), ss = s % 60;
+  const p = (n) => String(n).padStart(2, "0");
+  return h > 0 ? `${h}:${p(m)}:${p(ss)}` : `${m}:${p(ss)}`;
+}
+function updateTimer() {
+  const t = el("matchTimer");
+  if (!t) return;
+  if (!match.startedAt || match.over) { t.textContent = ""; return; }   // winner screen shows the final time
+  t.textContent = fmtDur((match.endedAt || nowMs()) - match.startedAt);
+}
+// end-of-match stats — returns HTML for the dedicated stats page
+function buildStatsHTML() {
+  const esc = (s) => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+  const n = [esc(match.names[0]), esc(match.names[1])];
+  const dot = (i) => `<span class="cdot cdot-${i}"></span>`;   // side colour instead of the (long) name
+  const log = match.pointLog || [];
+  const total = (match.endedAt || nowMs()) - (match.startedAt || match.endedAt || nowMs());
+  const racket = !isTargetSport();
+
+  // ---- derive from the point log ----
+  const served = [0, 0], srvWon = [0, 0];
+  const margins = [0];         // cumulative points margin (side 0 minus side 1) after each point
+  let m = 0, maxLead = 0, minLead = 0, leadChanges = 0, prevSign = 0, maxGap = 0, prevT = match.startedAt || 0;
+  for (const p of log) {
+    if (p.s === 0 || p.s === 1) { served[p.s]++; if (p.w === p.s) srvWon[p.s]++; }
+    m += (p.w === 0 ? 1 : -1);
+    margins.push(m);
+    if (m > maxLead) maxLead = m;
+    if (m < minLead) minLead = m;
+    const sign = m > 0 ? 1 : (m < 0 ? -1 : 0);
+    if (sign !== 0 && prevSign !== 0 && sign !== prevSign) leadChanges++;
+    if (sign !== 0) prevSign = sign;
+    if (p.t && prevT) maxGap = Math.max(maxGap, p.t - prevT);
+    if (p.t) prevT = p.t;
+  }
+  const w = match.winner;
+  const comeback = w === 0 ? Math.max(0, -minLead) : (w === 1 ? Math.max(0, maxLead) : 0);
+  const biggestLead = Math.max(maxLead, -minLead);
+  const lead = match.longestRun[0] >= match.longestRun[1] ? 0 : 1;
+  // average seconds per point (sub-second shown with one decimal, so fast matches don't read as "—")
+  const avgMs = match.rallies ? total / match.rallies : 0;
+  const avgPt = avgMs <= 0 ? "—" : avgMs >= 9950 ? fmtDur(avgMs) : avgMs >= 950 ? Math.round(avgMs / 1000) + "s" : (avgMs / 1000).toFixed(1) + "s";
+  const setTotals = match.completedSets.map(s => s[0] + s[1]);
+  const setMargins = match.completedSets.map(s => Math.abs(s[0] - s[1]));
+  const longestSet = setTotals.length ? Math.max(...setTotals) : 0;
+  const biggestMargin = setMargins.length ? Math.max(...setMargins) : 0;
+  const setUnitCap = setUnit() === "games" ? "Game" : "Set";
+
+  // ---- header tiles ----
+  const tiles = [
+    ["Duration", fmtDur(total)],
+    ["Points", String(match.rallies)],
+    ["Avg point*", avgPt],
+  ].map(([l, v]) => `<div class="stile"><div class="sval">${v}</div><div class="slbl">${l}</div></div>`).join("");
+
+  // ---- head-to-head split bars (who did better on each two-sided stat) ----
+  const cmpBar = (label, a, b) => {
+    const tot = a + b, wa = tot ? (100 * a / tot) : 50;
+    return `<div class="cmprow"><div class="cmp-label">${label}</div>
+      <div class="cmp-line"><span class="cmp-n">${a}</span>
+        <div class="cmp-bar"><div class="cmp-fa" style="width:${wa.toFixed(1)}%"></div><div class="cmp-fb" style="width:${(100 - wa).toFixed(1)}%"></div></div>
+        <span class="cmp-n">${b}</span></div></div>`;
+  };
+  const cmpBlock = `<div class="statsec"><div class="statsec-h">Head to head</div>` +
+    cmpBar("Points won", match.rallyWins[0], match.rallyWins[1]) +
+    (racket ? cmpBar("Breaks of serve", match.breaks[0], match.breaks[1]) : "") +
+    cmpBar("Longest run", match.longestRun[0], match.longestRun[1]) +
+    `</div>`;
+
+  // ---- serve won % (mini bars) ----
+  const pct = (i) => served[i] ? Math.round(100 * srvWon[i] / served[i]) : 0;
+  const bar = (i) => `<div class="statbar"><div class="sb-name">${n[i]}</div>
+    <div class="sb-track"><div class="sb-fill sb-${i}" style="width:${pct(i)}%"></div></div>
+    <div class="sb-val">${served[i] ? pct(i) + "%" : "—"}</div></div>`;
+  const serveBlock = log.length
+    ? `<div class="statsec"><div class="statsec-h">Points won on serve</div>${bar(0)}${bar(1)}</div>` : "";
+
+  // ---- momentum area chart (filled with the leading side's colour above/below the centre line) ----
+  const spark = (() => {
+    if (margins.length < 3) return "";
+    const W = 300, H = 60, pad = 3, cy = H / 2;
+    const maxAbs = Math.max(1, biggestLead);
+    const x = (i) => pad + (W - 2 * pad) * (i / (margins.length - 1));
+    const y = (v) => cy - (v / maxAbs) * (cy - pad);
+    const linePts = margins.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`);
+    // close the line back along the centre line → the band between the line and centre gets filled
+    const areaPts = [...linePts, `${x(margins.length - 1).toFixed(1)},${cy}`, `${x(0).toFixed(1)},${cy}`].join(" ");
+    return `<div class="statsec"><div class="statsec-h">Momentum <span class="muted">(cumulative point lead)</span></div>
+      <svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <clipPath id="mTop"><rect x="0" y="0" width="${W}" height="${cy}"/></clipPath>
+          <clipPath id="mBot"><rect x="0" y="${cy}" width="${W}" height="${H - cy}"/></clipPath>
+        </defs>
+        <polygon points="${areaPts}" fill="var(--a)" opacity="0.8" clip-path="url(#mTop)"/>
+        <polygon points="${areaPts}" fill="var(--b)" opacity="0.8" clip-path="url(#mBot)"/>
+        <line x1="0" y1="${cy}" x2="${W}" y2="${cy}" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+        <polyline points="${linePts.join(" ")}" fill="none" stroke="rgba(248,250,252,.6)" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg></div>`;
+  })();
+
+  // ---- key/value grid ----
+  const rows = [];
+  rows.push(["Lead changes", String(leadChanges)]);
+  const leadSide = maxLead >= -minLead ? 0 : 1;   // who held the biggest points lead
+  rows.push(["Biggest lead", `${biggestLead} pts ${dot(leadSide)}`]);
+  rows.push(["Biggest comeback", comeback ? `${comeback} pts ${dot(w)}` : "—"]);
+  rows.push(["Deuces", String(match.deuces)]);
+  if (racket) rows.push(["Tiebreaks", String(match.tiebreaks)]);
+  rows.push([`Longest ${setUnitCap.toLowerCase()}`, longestSet + " pts"]);
+  rows.push(["Biggest margin", biggestMargin]);
+  if (maxGap > 4000) rows.push(["Longest point*", fmtDur(maxGap)]);
+  const grid = `<div class="statgrid">${rows.map(([l, v]) =>
+    `<div class="sg-row"><span class="sg-l">${l}</span><span class="sg-v">${v}</span></div>`).join("")}</div>`;
+
+  // ---- set-by-set ----
+  const setRows = match.completedSets.map((s, i) => {
+    const dur = match.setDurations[i] != null ? `<span class="sr-time">${fmtDur(match.setDurations[i])}</span>` : "";
+    const wSide = s[0] > s[1] ? 0 : (s[1] > s[0] ? 1 : -1);   // set winner (dot sits on their side)
+    const mid = `<span class="sr-mid">${wSide === 0 ? dot(0) : ""}<span class="sr-score">${s[0]}–${s[1]}</span>${wSide === 1 ? dot(1) : ""}</span>`;
+    return `<div class="setrow"><span class="sr-label">${setUnitCap} ${i + 1}</span>${mid}${dur}</div>`;
+  }).join("");
+  const setBlock = setRows ? `<div class="statsec"><div class="statsec-h">By ${setUnitCap.toLowerCase()}</div><div class="setlist">${setRows}</div></div>` : "";
+
+  const note = match.startedAt ? `<div class="statnote">* point times are measured tap‑to‑tap, so they include the time between rallies</div>` : "";
+  // serve chart first — it carries the names, so it doubles as the colour key for the bars/dots below
+  return `<div class="stiles">${tiles}</div>${serveBlock}${cmpBlock}${spark}${grid}${setBlock}${note}`;
 }
 
 // Scale the winning name to be as large as fits the screen width (capped by height)
@@ -1762,6 +2201,22 @@ confirmModal.addEventListener("click", (e) => { if (e.target === confirmModal) c
 
 el("winnerNew").addEventListener("click", showSetup);
 
+/* ---- match stats page ---- */
+const statsScreen = el("statsScreen");
+function openStats() {
+  el("statsBody").innerHTML = buildStatsHTML();
+  statsScreen.classList.add("show");
+  statsScreen.setAttribute("aria-hidden", "false");
+}
+function closeStats() {
+  statsScreen.classList.remove("show");
+  statsScreen.setAttribute("aria-hidden", "true");
+}
+el("winnerStatsBtn").addEventListener("click", openStats);
+el("statsClose").addEventListener("click", closeStats);
+el("statsDone").addEventListener("click", closeStats);
+statsScreen.addEventListener("click", (e) => { if (e.target === statsScreen) closeStats(); });
+
 /* ---- help overlay ---- */
 const help = el("help");
 const openHelp = () => help.classList.add("show");
@@ -1802,6 +2257,21 @@ el("settingsBtn").addEventListener("click", (e) => {
 });
 el("sheetDone").addEventListener("click", () => sheetClose(sheet));
 sheet.addEventListener("click", (e) => { if (e.target === sheet) sheetClose(sheet); });
+
+// the setting lives in two places (start screen + in-match sheet); keep both in sync
+function syncChangeEndsSeg() {
+  document.querySelectorAll("#changeEndsSeg button, #setupChangeEnds button").forEach(b =>
+    b.classList.toggle("active", b.dataset.cends === changeEndsMode));
+}
+function pickChangeEnds(e) {
+  const b = e.target.closest("button[data-cends]"); if (!b) return;
+  changeEndsMode = b.dataset.cends;
+  try { localStorage.setItem("tennisTracker.changeEndsMode", changeEndsMode); } catch (e) {}
+  syncChangeEndsSeg();
+}
+el("changeEndsSeg").addEventListener("click", pickChangeEnds);
+el("setupChangeEnds").addEventListener("click", pickChangeEnds);
+syncChangeEndsSeg();
 
 el("formatSeg").addEventListener("click", (e) => {
   const btn = e.target.closest("button[data-bestof]");
@@ -1922,6 +2392,8 @@ function syncSettingsUI() {
   el("deciderRow").style.display = (!tt && (match.settings.bestOf === 3 || match.settings.bestOf === 5)) ? "" : "none";
   el("tbRow").style.display = tt ? "none" : "";
   el("winByRow").style.display = match.settings.sport === "pickleball" ? "" : "none";
+  el("changeEndsRow").style.display = match.settings.sport === "squash" ? "none" : "";   // squash never changes ends
+  el("changeEndsRow").querySelector(".desc").innerHTML = changeEndsDesc(match.settings.sport);
   document.querySelectorAll("#deciderSeg button").forEach(b =>
     b.classList.toggle("active", b.dataset.decider === match.settings.decider));
   document.querySelectorAll("#tbSeg button").forEach(b =>
@@ -1942,7 +2414,8 @@ function showSetup() {
     decider: match.settings.decider,
     gamesPerSet: match.settings.gamesPerSet,
     tbPoints: match.settings.tbPoints,
-    winBy: match.settings.winBy
+    winBy: match.settings.winBy,
+    scoring: match.settings.scoring
   };
   moreOpen = false;   // always start collapsed so the screen opens simple
   syncMore();
@@ -1985,6 +2458,9 @@ function courtSVG(sport) {
       <line x1="34" y1="260" x2="266" y2="260"/>
       <line x1="50" y1="185" x2="250" y2="185"/>
       <line x1="50" y1="335" x2="250" y2="335"/>`;
+  } else if (sport === "beachvolley") {
+    lines = `<rect x="60" y="90" width="180" height="340"/>
+      <line x1="42" y1="260" x2="258" y2="260"/>`;
   } else if (sport === "badminton") {
     lines = `<rect x="52" y="45" width="196" height="430"/>
       <line x1="36" y1="260" x2="264" y2="260"/>
@@ -2021,8 +2497,13 @@ function syncSetupUI() {
   el("setupAdvGroup").style.display = target ? "none" : "";
   el("setupPointsGroup").style.display = target ? "" : "none";
   if (target) fillPoints("setupPoints", pendingSetup.sport);
-  // padel & volleyball are team games — hide the singles/doubles selector entirely
-  el("setupModeGroup").style.display = (pendingSetup.sport === "padel" || pendingSetup.sport === "volleyball") ? "none" : "";
+  // side-out scoring is a pickleball-only option
+  el("setupScoringGroup").style.display = pendingSetup.sport === "pickleball" ? "" : "none";
+  document.querySelectorAll("#setupScoring button").forEach(b =>
+    b.classList.toggle("active", b.dataset.scoring === (pendingSetup.scoring || "rally")));
+  // padel, volleyball & beach volleyball are team games — hide the singles/doubles selector entirely
+  const teamSport = pendingSetup.sport === "padel" || pendingSetup.sport === "volleyball" || pendingSetup.sport === "beachvolley";
+  el("setupModeGroup").style.display = teamSport ? "none" : "";
   fillBestOf("setupLength", pendingSetup.sport);
 
   syncSportDropdown();
@@ -2043,6 +2524,8 @@ function syncSetupUI() {
   el("setupTbGroup").style.display = racket ? "" : "none";
   el("setupDeciderGroup").style.display = (racket && (pendingSetup.bestOf === 3 || pendingSetup.bestOf === 5)) ? "" : "none";
   el("setupWinByGroup").style.display = pendingSetup.sport === "pickleball" ? "" : "none";
+  el("setupChangeEndsGroup").style.display = pendingSetup.sport === "squash" ? "none" : "";   // squash never changes ends
+  el("setupChangeEndsGroup").querySelector(".desc").innerHTML = changeEndsDesc(pendingSetup.sport);
   document.querySelectorAll("#setupSetLen button").forEach(b =>
     b.classList.toggle("active", Number(b.dataset.games) === pendingSetup.gamesPerSet));
   document.querySelectorAll("#setupTb button").forEach(b =>
@@ -2056,8 +2539,8 @@ function syncSetupUI() {
 // Sport selection + its canonical defaults (shared by the dropdown's click & keyboard paths)
 function selectSport(sport) {
   pendingSetup.sport = sport;
-  // padel/pickleball/volleyball are team games; the rest default to singles
-  pendingSetup.mode = (sport === "padel" || sport === "pickleball" || sport === "volleyball") ? "doubles" : "singles";
+  // padel/pickleball/volleyball/beach volleyball are team games; the rest default to singles
+  pendingSetup.mode = ["padel", "pickleball", "volleyball", "beachvolley"].includes(sport) ? "doubles" : "singles";
   // apply the sport's canonical format so each sport opens with its real-world defaults
   pendingSetup.bestOf = defaultBestOf(sport);
   if (isTargetSport(sport)) pendingSetup.pointsTarget = defaultPoints(sport);
@@ -2069,7 +2552,8 @@ function selectSport(sport) {
    The single options list is re-parented into whichever host fits the viewport when opened. */
 const SPORT_LIST = [
   ["tennis", "Tennis"], ["padel", "Padel"], ["tabletennis", "Table Tennis"],
-  ["pickleball", "Pickleball"], ["squash", "Squash"], ["badminton", "Badminton"], ["volleyball", "Volleyball"]
+  ["pickleball", "Pickleball"], ["squash", "Squash"], ["badminton", "Badminton"],
+  ["volleyball", "Volleyball"], ["beachvolley", "Beach Volleyball"]
 ];
 const sportDrop = el("sportDrop"), sportTrigger = el("sportTrigger"), sportSheet = el("sportSheet");
 const sportSheetPanel = sportSheet.querySelector(".panel"), sportList = el("sportList");
@@ -2137,6 +2621,10 @@ el("setupMode").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-mode]"); if (!b || b.disabled) return;
   pendingSetup.mode = b.dataset.mode; syncSetupUI();
 });
+el("setupScoring").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-scoring]"); if (!b) return;
+  pendingSetup.scoring = b.dataset.scoring; syncSetupUI();
+});
 el("setupLength").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-bestof]"); if (!b) return;
   pendingSetup.bestOf = parseBestOf(b.dataset.bestof); syncSetupUI();
@@ -2180,7 +2668,8 @@ el("startBtn").addEventListener("click", () => {
     decider: pendingSetup.decider,
     gamesPerSet: pendingSetup.gamesPerSet,
     tbPoints: pendingSetup.tbPoints,
-    winBy: pendingSetup.winBy
+    winBy: pendingSetup.winBy,
+    scoring: pendingSetup.scoring || "rally"
   });
   match.names = pendingSetup.mode === "doubles" ? ["Team 1", "Team 2"] : ["Player 1", "Player 2"];
   historyStack = [];
@@ -2271,6 +2760,7 @@ document.addEventListener("visibilitychange", () => { if (document.visibilitySta
 keepAwake();
 
 render();
+setInterval(updateTimer, 1000);   // live match timer
 if (firstRun) showSetup();
 </script>
 <script>
