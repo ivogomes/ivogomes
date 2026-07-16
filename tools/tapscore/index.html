@@ -51,6 +51,7 @@
     gap: clamp(4px, 2vh, 20px);
     cursor: pointer;
     position: relative;
+    overflow: hidden;               /* clip the tap splash to this half */
     transition: filter .08s ease;
     touch-action: manipulation;
     container-type: size;
@@ -65,6 +66,37 @@
   @keyframes setflash { 0% { opacity: 0; } 12% { opacity: .45; } 100% { opacity: 0; } }
   .side.setwon .games, .side.setwon .sets { animation: setpop .6s ease .12s; }
   @keyframes setpop { 0% { transform: scale(1); } 35% { transform: scale(1.28); } 100% { transform: scale(1); } }
+
+  /* scoring delight: the score "rolls" like a gas-pump counter — the old value rolls up
+     and out while the new one rolls up into place — plus a soft splash from the tap */
+  .point, .games { position: relative; display: flex; align-items: center; justify-content: center; }
+  .point .pv, .games .pv { display: block; }
+  .point .pv.rollin, .games .pv.rollin { animation: rollin .3s var(--ease); }
+  @keyframes rollin {
+    0% { transform: translateY(0.6em); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  .point .pv-ghost, .games .pv-ghost {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+    animation: rollout .3s var(--ease) forwards;
+  }
+  @keyframes rollout {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-0.6em); opacity: 0; }
+  }
+  .splash {
+    position: absolute; width: 46px; height: 46px; border-radius: 50%;
+    pointer-events: none; z-index: 2; opacity: 0;
+    background: radial-gradient(circle, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+  }
+  .splash.go { animation: splash .55s var(--ease) forwards; }
+  @keyframes splash {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: .85; }
+    100% { transform: translate(-50%, -50%) scale(9); opacity: 0; }
+  }
 
   /* pill holds the serve ball + the editable name so they never clash with anything else */
   .namepill {
@@ -130,6 +162,13 @@
   }
   .history:empty { display: none; }
   .history span { padding: 1px 7px; border-radius: 6px; }
+  /* the freshly-recorded set score springs into the summary when a set is won */
+  .history span.justwon { animation: pillpop .55s var(--ease); }
+  @keyframes pillpop {
+    0% { transform: scale(0.2); opacity: 0; }
+    55% { transform: scale(1.35); opacity: 1; }
+    100% { transform: scale(1); }
+  }
   .history .live { background: #fff; color: #0b1220; }   /* set in progress — neutral white so it reads as a highlight, not a team */
   .badge {
     margin-top: 8px; display: inline-block;
@@ -198,6 +237,8 @@
   .winner .newmatch:hover { box-shadow: var(--elev-3); }
   .winner .newmatch:active { transform: translateY(1px); box-shadow: var(--elev-1); }
   #confetti { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  /* set-win confetti burst — flies over the court (not the overlays) */
+  #setConfetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 7; }
 
   /* Settings sheet */
   .sheet {
@@ -474,7 +515,8 @@
   @keyframes ripple { to { transform: scale(2.4); opacity: 0; } }
 
   @media (prefers-reduced-motion: reduce) {
-    .ripple { display: none; }
+    .ripple, .splash, .pv-ghost { display: none; }
+    .point .pv.rollin, .games .pv.rollin { animation: none; }
     .controls button, .seg button, .startBtn, .sheet .done, .help .done,
     .winner .newmatch, .modal .actions button, .switch, .switch::after {
       transition-duration: .001ms;
@@ -490,8 +532,8 @@
         <input class="name" id="nameA" value="Player 1" maxlength="24" size="9" aria-label="Side A name" />
       </div>
       <div class="sets" id="setsA"></div>
-      <div class="games" id="gamesA">0</div>
-      <div class="point" id="pointA">0</div>
+      <div class="games" id="gamesA"><span class="pv">0</span></div>
+      <div class="point" id="pointA"><span class="pv">0</span></div>
       <div class="hint">Tap to score</div>
     </div>
     <div class="side side-b" id="sideB" role="button" aria-label="Score point for side B">
@@ -500,8 +542,8 @@
         <input class="name" id="nameB" value="Player 2" maxlength="24" size="9" aria-label="Side B name" />
       </div>
       <div class="sets" id="setsB"></div>
-      <div class="games" id="gamesB">0</div>
-      <div class="point" id="pointB">0</div>
+      <div class="games" id="gamesB"><span class="pv">0</span></div>
+      <div class="point" id="pointB"><span class="pv">0</span></div>
       <div class="hint">Tap to score</div>
     </div>
   </div>
@@ -530,6 +572,8 @@
     </button>
     <button id="resetBtn" title="New match">Reset</button>
   </div>
+
+  <canvas id="setConfetti" aria-hidden="true"></canvas>
 
   <div class="winner" id="winner">
     <canvas id="confetti" aria-hidden="true"></canvas>
@@ -860,6 +904,7 @@ if (match.matchTB === undefined) match.matchTB = false;
 maybeStartMatchTB();   // in case a saved match resumes right at the start of a match-tie-break decider
 let historyStack = [];   // snapshots for undo
 let winnerShown = match.over;   // true when the winner screen is already up (avoids re-firing confetti on resume)
+let firstRender = true;         // suppress score-change animations on the initial paint / resume
 
 // selections shown on the setup screen (prefilled from the current/last match)
 let pendingSetup = {
@@ -909,6 +954,8 @@ function snapshot() {
 
 function addPoint(i) {
   if (match.over) return;
+  // a tiny haptic tick so a scored point feels registered even without looking
+  if (!prefersReducedMotion() && navigator.vibrate) { try { navigator.vibrate(12); } catch (e) {} }
   snapshot();
   const before = { games: match.games.slice(), sets: match.sets.slice(), tiebreak: match.tiebreak };
   if (isTargetSport()) tableTennisPoint(i);
@@ -1012,6 +1059,57 @@ function celebrateSet(side) {
   void s.offsetWidth;           // restart the animation if one is already running
   s.classList.add("setwon");
   setTimeout(() => s.classList.remove("setwon"), 1200);
+  if (prefersReducedMotion()) return;
+  // pop the freshly-recorded set score in the centre summary (the last completed-set pill)
+  const pills = el("history").querySelectorAll("span:not(.live)");
+  replayAnim(pills[pills.length - 1], "justwon");
+  // and a confetti burst in the winning side's colour, launched from that side
+  burstFromSide(side);
+}
+
+/* ---- set-win confetti burst (a lighter, side-launched cousin of the match-win confetti) ---- */
+let burstParts = [], burstRunning = false;
+function burstFromSide(side) {
+  const canvas = el("setConfetti");
+  if (!canvas || !canvas.getContext) return;
+  const rect = el(side === 0 ? "sideA" : "sideB").getBoundingClientRect();
+  const cs = getComputedStyle(document.documentElement);
+  const sideColor = (side === 0 ? cs.getPropertyValue("--a") : cs.getPropertyValue("--b")).trim();
+  const lime = cs.getPropertyValue("--primary").trim();
+  const colors = [sideColor, sideColor, lime, "#f8fafc"];
+  const ox = rect.left + rect.width / 2, oy = rect.top + rect.height / 2;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  for (let i = 0; i < 90; i++) {
+    const ang = Math.random() * Math.PI * 2;        // radial so it reads well from any side/orientation
+    const sp = 3 + Math.random() * 9;
+    burstParts.push({
+      x: ox, y: oy,
+      vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp - 2,   // slight upward bias
+      g: 0.13 + Math.random() * 0.12, w: 5 + Math.random() * 6,
+      color: colors[i % colors.length],
+      rot: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.4,
+      life: 0, max: 80 + Math.random() * 45
+    });
+  }
+  if (!burstRunning) { burstRunning = true; requestAnimationFrame(tickBurst); }
+}
+function tickBurst() {
+  const canvas = el("setConfetti"), ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  burstParts = burstParts.filter(p => p.life < p.max && p.y < canvas.height + 40);
+  for (const p of burstParts) {
+    p.vy += p.g; p.vx *= 0.99; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life++;
+    const fade = p.life > p.max - 22 ? Math.max(0, (p.max - p.life) / 22) : 1;
+    ctx.save();
+    ctx.globalAlpha = fade;
+    ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(-p.w / 2, -p.w / 2, p.w, p.w * 0.6);
+    ctx.restore();
+  }
+  if (burstParts.length) requestAnimationFrame(tickBurst);
+  else { ctx.clearRect(0, 0, canvas.width, canvas.height); burstRunning = false; }
 }
 
 // Would side i win the set / match by taking the next point? (simulated through the real scoring logic)
@@ -1132,6 +1230,55 @@ function pointDisplay() {
 /* ---- render ---- */
 const el = id => document.getElementById(id);
 
+// honour the user's reduced-motion preference for all the score animations
+const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// re-trigger a one-shot CSS animation class (removing + reflow so rapid taps replay it)
+function replayAnim(node, cls) {
+  if (!node || prefersReducedMotion()) return;
+  node.classList.remove(cls);
+  void node.offsetWidth;   // force reflow so the animation restarts
+  node.classList.add(cls);
+}
+
+// soft splash that ripples out from where a side was tapped (centre if no coords, e.g. a clicker)
+function scoreSplash(side, e) {
+  if (!side || prefersReducedMotion()) return;
+  const r = side.getBoundingClientRect();
+  const x = (e && e.clientX != null) ? e.clientX - r.left : r.width / 2;
+  const y = (e && e.clientY != null) ? e.clientY - r.top : r.height / 2;
+  const s = document.createElement("span");
+  s.className = "splash";
+  s.style.left = x + "px";
+  s.style.top = y + "px";
+  side.appendChild(s);
+  requestAnimationFrame(() => s.classList.add("go"));
+  s.addEventListener("animationend", () => s.remove());
+}
+
+// Set a score value with a gas-pump "roll": the outgoing digit rolls up & fades out while
+// the incoming one rolls up into place. `container` is the .point / .games box (holds a .pv span).
+function rollValue(container, val) {
+  val = String(val);
+  const inner = container.querySelector(".pv");
+  if (!inner) { container.textContent = val; return; }
+  const prev = inner.getAttribute("data-val");
+  if (prev === val) return;                       // unchanged → nothing to animate
+  const animate = !firstRender && prev != null && !prefersReducedMotion();
+  const oldGhost = container.querySelector(".pv-ghost");
+  if (oldGhost) oldGhost.remove();                // a faster tap supersedes the last roll
+  if (animate) {
+    const ghost = document.createElement("span");
+    ghost.className = "pv-ghost";
+    ghost.textContent = inner.textContent;        // the value rolling away
+    container.appendChild(ghost);
+    ghost.addEventListener("animationend", () => ghost.remove(), { once: true });
+  }
+  inner.textContent = val;
+  inner.setAttribute("data-val", val);
+  if (animate) replayAnim(inner, "rollin");
+}
+
 // Ball icon for the serve indicator (inline SVG — avoids inconsistent emoji rendering across platforms)
 function ballSVG(sport) {
   const svg = (inner) => `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${inner}</svg>`;
@@ -1157,15 +1304,15 @@ function render() {
   if (document.activeElement !== el("nameB")) el("nameB").value = match.names[1];
 
   const pts = pointDisplay();
-  el("pointA").textContent = pts[0];
-  el("pointB").textContent = pts[1];
+  rollValue(el("pointA"), pts[0]);
+  rollValue(el("pointB"), pts[1]);
 
   const tt = isTargetSport();
   if (tt) {
     // target sports: the secondary number is games (sets) won
     el("gamesA").style.display = ""; el("gamesB").style.display = "";
-    el("gamesA").textContent = match.sets[0];
-    el("gamesB").textContent = match.sets[1];
+    rollValue(el("gamesA"), match.sets[0]);
+    rollValue(el("gamesB"), match.sets[1]);
     el("setsA").style.display = "none";
     el("setsB").style.display = "none";
   } else {
@@ -1237,6 +1384,7 @@ function render() {
 
   el("undoBtn").disabled = historyStack.length === 0;
   syncSettingsUI();
+  firstRender = false;   // subsequent renders may animate score changes
 }
 
 function renderSetDots(id, count) {
@@ -1308,8 +1456,8 @@ function launchConfetti() {
 }
 
 /* ---- interactions ---- */
-el("sideA").addEventListener("click", () => addPoint(0));
-el("sideB").addEventListener("click", () => addPoint(1));
+el("sideA").addEventListener("click", (e) => { if (!match.over) scoreSplash(el("sideA"), e); addPoint(0); });
+el("sideB").addEventListener("click", (e) => { if (!match.over) scoreSplash(el("sideB"), e); addPoint(1); });
 
 // Editable names inline — no native prompt() (some environments block it)
 function wireName(nameId, idx) {
@@ -1687,7 +1835,9 @@ function remoteActive() {
 function resolveRemoteTaps() {
   const n = rTaps; rTaps = 0; rTapTimer = null;
   if (n <= 0) return;
-  addPoint(n === 1 ? YOUR_SIDE : 1 - YOUR_SIDE);   // 1 click = your team, 2+ = opponents
+  const side = n === 1 ? YOUR_SIDE : 1 - YOUR_SIDE;   // 1 click = your team, 2+ = opponents
+  if (!match.over) scoreSplash(el(side === 0 ? "sideA" : "sideB"), null);   // splash from the side's centre
+  addPoint(side);
 }
 function remoteUndo() {
   rTaps = 0;
