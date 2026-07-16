@@ -1,6 +1,6 @@
 /* Service worker: precache the app shell so the tracker installs and runs fully offline.
    Bump CACHE whenever index.html (or any shell file) changes so clients pick up the update. */
-const CACHE = "tennis-tracker-v3";
+const CACHE = "tennis-tracker-v4";
 const SHELL = [
   "./",
   "./index.html",
@@ -8,7 +8,10 @@ const SHELL = [
   "./icon-192.png",
   "./icon-512.png",
   "./icon-512-maskable.png",
-  "./apple-touch-icon.png"
+  "./apple-touch-icon.png",
+  "./favicon-16.png",
+  "./favicon-32.png",
+  "./favicon-48.png"
 ];
 
 self.addEventListener("install", (e) => {
