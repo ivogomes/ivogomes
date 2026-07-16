@@ -11,6 +11,23 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="TapScore" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<!-- iOS launch splash screens (common iPhones; Android uses the manifest icon + background_color) -->
+<link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash-750x1334.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="splash-1334x750.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash-828x1792.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="splash-1792x828.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash-1125x2436.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="splash-2436x1125.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash-1170x2532.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="splash-2532x1170.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash-1179x2556.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="splash-2556x1179.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash-1242x2688.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="splash-2688x1242.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash-1284x2778.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="splash-2778x1284.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash-1290x2796.png" />
+<link rel="apple-touch-startup-image" media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="splash-2796x1290.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
@@ -975,18 +992,36 @@ function addPoint(i) {
 let voiceOn = false;
 try { voiceOn = localStorage.getItem("tennisTracker.voice") === "1"; } catch (e) {}
 
-// Only override the voice when the device's DEFAULT voice isn't English (e.g. a Portuguese Android).
-// When the default is already English (e.g. Chrome), leave it untouched so we keep its best-quality voice.
-function englishOverrideVoice() {
-  if (!("speechSynthesis" in window)) return null;
-  const voices = window.speechSynthesis.getVoices() || [];
-  if (!voices.length) return null;
-  const def = voices.find(v => v.default);
-  if (!def || /^en/i.test(def.lang)) return null;         // default already English (or unknown) → don't touch it
-  return voices.find(v => /^en/i.test(v.lang) && /google|natural|enhanced/i.test(v.name))
-      || voices.find(v => /^en[-_]us/i.test(v.lang))
-      || voices.find(v => /^en/i.test(v.lang))
-      || null;
+// Voices load asynchronously on some platforms (notably iOS/Safari) — cache them and refresh.
+let cachedVoices = [];
+function refreshVoices() { try { cachedVoices = window.speechSynthesis.getVoices() || []; } catch (e) {} }
+if ("speechSynthesis" in window) {
+  refreshVoices();
+  window.speechSynthesis.addEventListener("voiceschanged", refreshVoices);
+}
+
+// Pick the most natural English voice available — don't just keep the device default.
+// iOS defaults to a robotic "compact" voice but exposes better "enhanced"/"premium" variants
+// (same name, different voiceURI) once the user downloads them; desktop/Android expose
+// Google / Natural / Neural voices. We rank by those quality hints and prefer en-US.
+function bestEnglishVoice() {
+  const voices = cachedVoices.length ? cachedVoices
+    : (("speechSynthesis" in window) ? window.speechSynthesis.getVoices() : []);
+  let best = null, bestScore = -1;
+  for (const v of voices) {
+    if (!/^en/i.test(v.lang || "")) continue;
+    const uri = (v.voiceURI || "").toLowerCase(), name = (v.name || "").toLowerCase();
+    let s = 2;                                     // unknown quality baseline
+    if (/premium/.test(uri)) s = 6;                // iOS premium (best)
+    else if (/enhanced/.test(uri)) s = 5;          // iOS enhanced
+    else if (/compact/.test(uri)) s = 1;           // iOS default — the robotic one
+    if (/google|natural|neural/.test(name)) s += 4;   // Chrome/Android/Edge high-quality voices
+    if (/siri/.test(uri) || /siri/.test(name)) s += 3;
+    if (/en[-_]us/i.test(v.lang)) s += 1;
+    if (v.localService) s += 0.5;
+    if (s > bestScore) { bestScore = s; best = v; }
+  }
+  return best;
 }
 
 function speak(text) {
@@ -1001,9 +1036,10 @@ function speak(text) {
     warm.volume = 0;
     synth.speak(warm);
     const u = new SpeechSynthesisUtterance(text);
-    const v = englishOverrideVoice();
-    if (v) { u.voice = v; u.lang = v.lang || "en-US"; }   // only intervene on non-English-default devices
-    u.rate = 1.05;
+    const v = bestEnglishVoice();
+    if (v) { u.voice = v; u.lang = v.lang || "en-US"; }   // prefer the most natural English voice
+    u.rate = 1.0;
+    u.pitch = 1.0;
     synth.speak(u);
   } catch (e) {}
 }
