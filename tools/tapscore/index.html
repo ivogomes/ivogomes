@@ -312,7 +312,11 @@
   .courtbg svg { width: 100%; height: auto; max-height: 74vh; }
   .courtbg .cl { fill: none; stroke: rgba(148,163,184,0.28); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
   .setup .card { flex: 0 1 460px; width: 100%; max-width: 460px; }
-  .setup h1 { margin: 0 0 4px; font-size: clamp(24px, 6vw, 30px); }
+  .setup .balls { display: flex; gap: 12px; margin: 0 0 14px; }
+  .setup .balls svg { width: 38px; height: 38px; display: block; filter: drop-shadow(0 3px 7px rgba(0,0,0,.45)); }
+  .setup .balls svg:nth-child(1) { transform: rotate(-14deg); }
+  .setup .balls svg:nth-child(3) { transform: rotate(14deg); }
+  .setup h1 { margin: 0 0 4px; font-size: clamp(28px, 7vw, 36px); font-weight: 800; letter-spacing: -0.015em; }
   .setup .tagline { opacity: .6; margin: 0 0 22px; }
   .setup .group { margin: 18px 0; }
   .setup .group > label { display: block; font-weight: 600; margin-bottom: 8px; }
@@ -382,6 +386,8 @@
     #setupMore { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; align-items: start; }
     .setup .group { margin: 7px 0; }
     .setup .seg button { font-size: 14px; padding: 4px; min-height: 42px; }
+    .setup .balls { margin-bottom: 8px; }
+    .setup .balls svg { width: 28px; height: 28px; }
     .setup h1 { font-size: 20px; margin: 0 0 2px; }
     .setup .tagline { font-size: 13px; margin: 0 0 8px; }
     .startBtn { margin-top: 12px; padding: 12px; font-size: 16px; }
@@ -472,8 +478,9 @@
     <div class="topbar" aria-hidden="true"></div>
     <div class="courtbg" id="courtBg" aria-hidden="true"></div>
     <div class="card">
+      <div class="balls" id="setupBalls" aria-hidden="true"></div>
       <h1>TapScore</h1>
-      <p class="tagline">Tennis, padel &amp; table tennis — tap to score</p>
+      <p class="tagline">Tap either side to score — it tracks points, games, sets and serve for you</p>
 
       <div class="groups">
       <div class="group">
@@ -1442,6 +1449,9 @@ el("setupWinBy").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-winby]"); if (!b) return;
   pendingSetup.winBy = Number(b.dataset.winby); syncSetupUI();
 });
+
+// Decorative ball icons in the setup header (the three distinct ball designs)
+el("setupBalls").innerHTML = ["tennis", "tabletennis", "pickleball"].map(s => ballSVG(s)).join("");
 
 el("startBtn").addEventListener("click", () => {
   match = freshMatch({
