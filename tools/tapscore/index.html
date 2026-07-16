@@ -128,6 +128,8 @@
     backdrop-filter: blur(4px);
   }
   .history:empty { display: none; }
+  .history span { padding: 1px 7px; border-radius: 6px; }
+  .history .live { background: #fff; color: #0b1220; }   /* set in progress — neutral white so it reads as a highlight, not a team */
   .badge {
     margin-top: 8px; display: inline-block;
     font-size: 12px; font-weight: 700; letter-spacing: 1px;
@@ -314,7 +316,26 @@
   .setup .tagline { opacity: .6; margin: 0 0 22px; }
   .setup .group { margin: 18px 0; }
   .setup .group > label { display: block; font-weight: 600; margin-bottom: 8px; }
+  .setup .group > label:has(+ .desc) { margin-bottom: 2px; }   /* tighten only when a description follows */
+  .setup .group .desc { display: block; font-weight: 400; opacity: .55; font-size: 13px; margin: 0 0 8px; }
   /* setup uses the same segmented control (height comes from the shared min-height) */
+  /* Secondary controls — setup "More options" and the in-match settings — use a quiet neutral
+     selected fill, not the vibrant primary reserved for the main-choice controls */
+  #setupMore .seg button.active,
+  #sheet .seg button.active { background: rgba(255,255,255,.18); color: #fff; font-weight: 600; }
+  /* "More options" expander */
+  .moreBtn {
+    width: 100%; margin-top: 8px; padding: 12px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font: inherit; font-weight: 600; color: var(--ink);
+    background: transparent; border: 1px solid rgba(255,255,255,.2); border-radius: 999px;
+    cursor: pointer; opacity: .85;
+    position: relative; overflow: hidden;
+    transition: background-color .2s var(--ease), opacity .2s var(--ease);
+  }
+  .moreBtn:hover { background: rgba(255,255,255,.06); opacity: 1; }
+  .moreBtn .chev { transition: transform .2s var(--ease); }
+  .moreBtn.open .chev { transform: rotate(180deg); }
   .startBtn {
     width: 100%; margin-top: 26px; padding: 16px;
     font: inherit; font-weight: 600; font-size: 18px; letter-spacing: .3px;
@@ -357,9 +378,10 @@
     .setup { align-items: flex-start; }
     .courtbg { display: none; }
     .setup .card { max-width: 640px; flex-grow: 1; }   /* actually widen the card so the 2-col groups get room */
-    .card .groups { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; align-items: start; }
-    .card .groups .group { margin: 7px 0; }
-    .card .groups .seg button { font-size: 14px; padding: 4px; min-height: 42px; }
+    /* only the "More" section goes two-column; primary Sport/Match length stay full-width rows */
+    #setupMore { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; align-items: start; }
+    .setup .group { margin: 7px 0; }
+    .setup .seg button { font-size: 14px; padding: 4px; min-height: 42px; }
     .setup h1 { font-size: 20px; margin: 0 0 2px; }
     .setup .tagline { font-size: 13px; margin: 0 0 8px; }
     .startBtn { margin-top: 12px; padding: 12px; font-size: 16px; }
@@ -464,36 +486,78 @@
         </div>
       </div>
 
+      <div class="group">
+        <label>Match length</label>
+        <div class="seg" id="setupLength"></div>
+      </div>
+      </div>
+
+      <button id="moreBtn" class="moreBtn" aria-expanded="false" aria-controls="setupMore">
+        <span id="moreLabel">More options</span>
+        <svg class="chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="groups" id="setupMore" style="display:none">
       <div class="group" id="setupModeGroup">
         <label>Type</label>
+        <span class="desc">Singles or doubles</span>
         <div class="seg" id="setupMode">
           <button data-mode="singles">Singles</button>
           <button data-mode="doubles">Doubles</button>
         </div>
       </div>
 
-      <div class="group">
-        <label>Match length</label>
-        <div class="seg" id="setupLength"></div>
-      </div>
-
       <div class="group" id="setupPointsGroup" style="display:none">
         <label>Points to win a game</label>
+        <span class="desc">First to this many wins a game</span>
         <div class="seg" id="setupPoints"></div>
       </div>
 
       <div class="group" id="setupAdvGroup">
         <label>Advantage rules</label>
+        <span class="desc"><strong>Adv</strong>: win by two. <strong>Golden</strong>: sudden death at the first deuce. <strong>+1</strong>/<strong>+2</strong>: play 1 or 2 more deuces, then a golden point.</span>
         <div class="seg" id="setupAdv">
           <button data-adv="unlimited">Adv</button>
           <button data-adv="0">Golden</button>
           <button data-adv="1">+1</button>
           <button data-adv="2">+2</button>
         </div>
-        <p class="desc" style="margin:8px 0 0; opacity:.6; font-size:13px">
-          <strong>Adv</strong> = win by two. <strong>Golden</strong> = sudden death at deuce.
-          <strong>+1</strong>/<strong>+2</strong> = play N advantages, then a golden point.
-        </p>
+      </div>
+
+      <div class="group" id="setupSetLenGroup">
+        <label>Games per set</label>
+        <span class="desc">Games needed to win a set</span>
+        <div class="seg" id="setupSetLen">
+          <button data-games="6">6 games</button>
+          <button data-games="4">4 games</button>
+        </div>
+      </div>
+
+      <div class="group" id="setupTbGroup">
+        <label>Tie-break points</label>
+        <span class="desc">Points to win a set tie-break</span>
+        <div class="seg" id="setupTb">
+          <button data-tb="7">7 points</button>
+          <button data-tb="10">10 points</button>
+        </div>
+      </div>
+
+      <div class="group" id="setupDeciderGroup">
+        <label>Deciding set</label>
+        <span class="desc"><strong>Full set</strong>: play the last set out normally. <strong>Match tie-break</strong>: a first-to-10 (win by 2) tie-break replaces the final set.</span>
+        <div class="seg" id="setupDecider">
+          <button data-decider="set">Full set</button>
+          <button data-decider="matchTB">Match tie-break</button>
+        </div>
+      </div>
+
+      <div class="group" id="setupWinByGroup">
+        <label>Win by</label>
+        <span class="desc">Margin needed to win a game</span>
+        <div class="seg" id="setupWinBy">
+          <button data-winby="2">Win by 2</button>
+          <button data-winby="1">Straight</button>
+        </div>
       </div>
       </div>
 
@@ -516,10 +580,30 @@
           <button data-bestof="5">Best of 5</button>
         </div>
       </div>
+      <div class="row" id="deciderRow">
+        <div>
+          <label>Deciding set</label>
+          <span class="desc"><strong>Full set</strong>: play it out normally. <strong>Match tie-break</strong>: first-to-10 (win by 2) instead of a final set.</span>
+        </div>
+        <div class="seg" id="deciderSeg">
+          <button data-decider="set">Full set</button>
+          <button data-decider="matchTB">Match tie-break</button>
+        </div>
+      </div>
+      <div class="row" id="tbRow">
+        <div>
+          <label>Tie-break points</label>
+          <span class="desc">First to this many (win by 2) takes the tie-break</span>
+        </div>
+        <div class="seg" id="tbSeg">
+          <button data-tb="7">7 points</button>
+          <button data-tb="10">10 points</button>
+        </div>
+      </div>
       <div class="row" id="advRow">
         <div>
           <label>Advantage rules</label>
-          <span class="desc">How a deuce (40–40) is decided</span>
+          <span class="desc"><strong>Adv</strong>: win by two. <strong>Golden</strong>: sudden death at the first deuce. <strong>+1</strong>/<strong>+2</strong>: play 1 or 2 more deuces, then a golden point.</span>
         </div>
         <div class="seg" id="advSeg">
           <button data-adv="unlimited">Adv</button>
@@ -528,10 +612,16 @@
           <button data-adv="2">+2</button>
         </div>
       </div>
-      <p class="desc" id="advDesc" style="margin:6px 0 0">
-        <strong>Adv</strong> = win by two (standard). <strong>Golden</strong> = sudden death on the first deuce.
-        <strong>+1</strong> / <strong>+2</strong> = play 1 or 2 advantages first, then a golden point.
-      </p>
+      <div class="row" id="winByRow">
+        <div>
+          <label>Win by</label>
+          <span class="desc">Margin needed to win a game</span>
+        </div>
+        <div class="seg" id="winBySeg">
+          <button data-winby="2">Win by 2</button>
+          <button data-winby="1">Straight</button>
+        </div>
+      </div>
 
       <button class="done" id="sheetDone">Done</button>
     </div>
@@ -550,12 +640,13 @@ function freshMatch(settings) {
     points: [0, 0],
     completedSets: [],   // array of [gamesA, gamesB]
     tiebreak: false,
+    matchTB: false,      // the deciding set is being played as a match tie-break (first to 10)
     over: false,
     winner: null,
     server: 0,           // side currently serving (0 or 1)
     serveStart: 0,       // table tennis: who served first in the current game
     tbFirstServer: 0,    // tennis/padel: who served the tiebreak's first point
-    settings: settings || { sport: "tennis", mode: "singles", bestOf: 3, advantages: "unlimited", pointsTarget: 11 }
+    settings: settings || { sport: "tennis", mode: "singles", bestOf: 3, advantages: "unlimited", pointsTarget: 11, decider: "set", gamesPerSet: 6, tbPoints: 7, winBy: 2 }
   };
 }
 
@@ -568,6 +659,10 @@ function normalizeSettings(s) {
   if (s.sport === undefined) s.sport = "tennis";
   if (s.mode === undefined) s.mode = "singles";
   if (s.pointsTarget === undefined) s.pointsTarget = 11;
+  if (s.decider === undefined) s.decider = "set";        // tennis/padel: how the final set is played
+  if (s.gamesPerSet === undefined) s.gamesPerSet = 6;    // tennis/padel: 6 (standard) or 4 (short sets)
+  if (s.tbPoints === undefined) s.tbPoints = 7;          // tennis/padel: points to win a set tie-break
+  if (s.winBy === undefined) s.winBy = 2;                // target sports: win by 2 or straight to target
   delete s.golden;
   return s;
 }
@@ -605,6 +700,8 @@ match.settings = normalizeSettings(match.settings);
 if (match.server === undefined) match.server = 0;
 if (match.serveStart === undefined) match.serveStart = match.server;
 if (match.tbFirstServer === undefined) match.tbFirstServer = 0;
+if (match.matchTB === undefined) match.matchTB = false;
+maybeStartMatchTB();   // in case a saved match resumes right at the start of a match-tie-break decider
 let historyStack = [];   // snapshots for undo
 let winnerShown = match.over;   // true when the winner screen is already up (avoids re-firing confetti on resume)
 
@@ -614,10 +711,30 @@ let pendingSetup = {
   mode: match.settings.mode,
   bestOf: match.settings.bestOf,
   advantages: match.settings.advantages,
-  pointsTarget: match.settings.pointsTarget
+  pointsTarget: match.settings.pointsTarget,
+  decider: match.settings.decider,
+  gamesPerSet: match.settings.gamesPerSet,
+  tbPoints: match.settings.tbPoints,
+  winBy: match.settings.winBy
 };
 
 function setsToWin() { const b = match.settings.bestOf; return b === "inf" ? Infinity : Math.ceil(b / 2); }
+function isRacket() { return !isTargetSport(); }
+// Deciding set = both sides one set from winning (only meaningful in a best-of-3/5)
+function isDecidingSet() {
+  const need = setsToWin();
+  return need !== Infinity && need >= 2 && match.sets[0] === need - 1 && match.sets[1] === need - 1;
+}
+// When the "deciding set = match tie-break" option is on, open that final set as a first-to-10 tie-break
+function maybeStartMatchTB() {
+  if (isRacket() && match.settings.decider === "matchTB" && !match.over && !match.tiebreak
+      && isDecidingSet() && match.games[0] === 0 && match.games[1] === 0) {
+    match.tiebreak = true;
+    match.matchTB = true;
+    match.points = [0, 0];
+    match.tbFirstServer = match.server;
+  }
+}
 
 function load() {
   try {
@@ -761,7 +878,8 @@ function tableTennisPoint(i) {
   match.points[i]++;
   const [a, b] = match.points;
   const target = match.settings.pointsTarget || 11;
-  if (Math.max(a, b) >= target && Math.abs(a - b) >= 2) {
+  const winBy = match.settings.winBy || 2;
+  if (Math.max(a, b) >= target && Math.abs(a - b) >= winBy) {
     const w = a > b ? 0 : 1;
     match.completedSets.push([a, b]);
     match.sets[w]++;
@@ -800,10 +918,20 @@ function regularPoint(i) {
 function tiebreakPoint(i) {
   match.points[i]++;
   const [a, b] = match.points;
-  if (Math.max(a, b) >= 7 && Math.abs(a - b) >= 2) {
+  const target = match.matchTB ? 10 : (match.settings.tbPoints || 7);   // match tie-break is always to 10
+  if (Math.max(a, b) >= target && Math.abs(a - b) >= 2) {
     const w = a > b ? 0 : 1;
-    match.games[w]++;            // 7-6
     match.tiebreak = false;
+    if (match.matchTB) {
+      // a match tie-break decides the set (and the match); record its points as the set score
+      match.matchTB = false;
+      match.completedSets.push([a, b]);
+      match.sets[w]++;
+      match.points = [0, 0];
+      if (match.sets[w] >= setsToWin()) { match.over = true; match.winner = w; }
+      return;
+    }
+    match.games[w]++;            // 7-6
     match.points = [0, 0];
     match.server = 1 - match.tbFirstServer;  // next set opens with the tiebreak's first receiver
     winSet(w);
@@ -817,12 +945,13 @@ function winGame(i) {
   match.games[i]++;
   match.points = [0, 0];
   match.server = 1 - match.server;   // serve passes to the other side each game
-  if (match.games[0] === 6 && match.games[1] === 6) {
+  const G = match.settings.gamesPerSet || 6;
+  if (match.games[0] === G && match.games[1] === G) {
     match.tiebreak = true;
     match.tbFirstServer = match.server;   // whoever is up next serves the tiebreak's first point
     return;
   }
-  if (match.games[i] >= 6 && (match.games[i] - match.games[1 - i]) >= 2) winSet(i);
+  if (match.games[i] >= G && (match.games[i] - match.games[1 - i]) >= 2) winSet(i);
 }
 
 function winSet(i) {
@@ -830,6 +959,7 @@ function winSet(i) {
   match.sets[i]++;
   match.games = [0, 0];
   if (match.sets[i] >= setsToWin()) { match.over = true; match.winner = i; }
+  else maybeStartMatchTB();   // the next set may be a match-tie-break decider
 }
 
 /* ---- display helpers ---- */
@@ -875,15 +1005,18 @@ function render() {
   el("pointB").textContent = pts[1];
 
   const tt = isTargetSport();
-  // The "set score" is the big number: games-in-current-set for tennis/padel, games-won for table tennis.
   if (tt) {
+    // target sports: the secondary number is games (sets) won
+    el("gamesA").style.display = ""; el("gamesB").style.display = "";
     el("gamesA").textContent = match.sets[0];
     el("gamesB").textContent = match.sets[1];
     el("setsA").style.display = "none";
     el("setsB").style.display = "none";
   } else {
-    el("gamesA").textContent = match.games[0];
-    el("gamesB").textContent = match.games[1];
+    // tennis/padel: the current-set games now live in the center scoreline (see below),
+    // not stacked on top of the big game score
+    el("gamesA").style.display = "none";
+    el("gamesB").style.display = "none";
     el("setsA").style.display = "";
     el("setsB").style.display = "";
     renderSetDots("setsA", match.sets[0]);
@@ -905,8 +1038,13 @@ function render() {
   if (tt) info.push(st.pointsTarget + " pts");
   el("matchInfo").textContent = info.join(" · ");
 
-  el("history").innerHTML = match.completedSets
-    .map(s => `<span>${s[0]}–${s[1]}</span>`).join("");
+  // Match summary: completed sets plus the live current set, always on. The current set is highlighted.
+  const line = match.completedSets.map(s => `<span>${s[0]}–${s[1]}</span>`);
+  if (!tt && !match.over) {
+    const cur = match.matchTB ? match.points : match.games;   // match tie-break shows its points as the set score
+    line.push(`<span class="live">${cur[0]}–${cur[1]}</span>`);
+  }
+  el("history").innerHTML = line.join("");
 
   const badge = el("badge");
   const [pa, pb] = match.points;
@@ -915,6 +1053,7 @@ function render() {
     const winA = outcomeIfWin(0), winB = outcomeIfWin(1);
     if (winA.matchWon || winB.matchWon) badgeText = "Match point";
     else if (winA.setWon || winB.setWon) badgeText = "Set point";
+    else if (match.matchTB) badgeText = "Match tie-break";
     else if (match.tiebreak) badgeText = "Tiebreak";
     else if (tt && pa >= (st.pointsTarget - 1) && pb >= (st.pointsTarget - 1)) badgeText = "Deuce";
     else if (!tt && pa === pb && pa >= 3 && goldenArmed(pa, pb)) badgeText = "Golden point";
@@ -922,7 +1061,7 @@ function render() {
 
   if (badgeText) {
     badge.textContent = badgeText; badge.classList.remove("hidden");
-    el("history").style.display = "none";   // badge replaces the set summary — keep the center clean
+    el("history").style.display = "none";   // badge replaces the summary to keep the center uncluttered
   } else {
     badge.classList.add("hidden");
     el("history").style.display = "";
@@ -1083,6 +1222,27 @@ el("advSeg").addEventListener("click", (e) => {
   save(); render();   // applied live; deuce rule doesn't invalidate the current score
 });
 
+// Deciding-set, tie-break points and win-by all apply live — they don't invalidate the current score
+el("deciderSeg").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-decider]");
+  if (!btn) return;
+  match.settings.decider = btn.dataset.decider;
+  maybeStartMatchTB();   // convert now if we're already sitting at the start of the deciding set
+  save(); render();
+});
+el("tbSeg").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-tb]");
+  if (!btn) return;
+  match.settings.tbPoints = Number(btn.dataset.tb);
+  save(); render();
+});
+el("winBySeg").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-winby]");
+  if (!btn) return;
+  match.settings.winBy = Number(btn.dataset.winby);
+  save(); render();
+});
+
 // Voice announce toggle lives on the bottom bar
 function voiceIconSVG(on) {
   const spk = `<path d="M3 9 h3.5 l4.5 -3.5 v13 l-4.5 -3.5 H3 z" fill="currentColor"/>`;
@@ -1117,11 +1277,21 @@ function syncSettingsUI() {
   document.querySelectorAll("#formatSeg button").forEach(b =>
     b.classList.toggle("active", parseBestOf(b.dataset.bestof) === match.settings.bestOf));
   el("advRow").style.display = tt ? "none" : "";
-  el("advDesc").style.display = tt ? "none" : "";
   document.querySelectorAll("#advSeg button").forEach(b => {
     const v = b.dataset.adv === "unlimited" ? "unlimited" : Number(b.dataset.adv);
     b.classList.toggle("active", v === match.settings.advantages);
   });
+
+  // Deciding set only matters in a best-of-3/5; tie-break points are racket-only; win-by is pickleball-only
+  el("deciderRow").style.display = (!tt && (match.settings.bestOf === 3 || match.settings.bestOf === 5)) ? "" : "none";
+  el("tbRow").style.display = tt ? "none" : "";
+  el("winByRow").style.display = match.settings.sport === "pickleball" ? "" : "none";
+  document.querySelectorAll("#deciderSeg button").forEach(b =>
+    b.classList.toggle("active", b.dataset.decider === match.settings.decider));
+  document.querySelectorAll("#tbSeg button").forEach(b =>
+    b.classList.toggle("active", Number(b.dataset.tb) === match.settings.tbPoints));
+  document.querySelectorAll("#winBySeg button").forEach(b =>
+    b.classList.toggle("active", Number(b.dataset.winby) === match.settings.winBy));
 }
 
 /* ---- setup / welcome screen ---- */
@@ -1132,11 +1302,27 @@ function showSetup() {
     mode: match.settings.mode,
     bestOf: match.settings.bestOf,
     advantages: match.settings.advantages,
-    pointsTarget: match.settings.pointsTarget
+    pointsTarget: match.settings.pointsTarget,
+    decider: match.settings.decider,
+    gamesPerSet: match.settings.gamesPerSet,
+    tbPoints: match.settings.tbPoints,
+    winBy: match.settings.winBy
   };
+  moreOpen = false;   // always start collapsed so the screen opens simple
+  syncMore();
   syncSetupUI();
   el("setup").classList.add("show");
 }
+
+// "More options" expander on the setup screen
+let moreOpen = false;
+function syncMore() {
+  el("setupMore").style.display = moreOpen ? "" : "none";
+  el("moreBtn").classList.toggle("open", moreOpen);
+  el("moreBtn").setAttribute("aria-expanded", String(moreOpen));
+  el("moreLabel").textContent = moreOpen ? "Fewer options" : "More options";
+}
+el("moreBtn").addEventListener("click", () => { moreOpen = !moreOpen; syncMore(); });
 
 // top-down court diagram shown beside the settings, per sport
 function courtSVG(sport) {
@@ -1193,6 +1379,21 @@ function syncSetupUI() {
     const v = b.dataset.adv === "unlimited" ? "unlimited" : Number(b.dataset.adv);
     b.classList.toggle("active", v === pendingSetup.advantages);
   });
+
+  // tennis/padel extras; deciding-set only applies to a best-of-3/5; win-by is pickleball-only
+  const racket = !target;
+  el("setupSetLenGroup").style.display = racket ? "" : "none";
+  el("setupTbGroup").style.display = racket ? "" : "none";
+  el("setupDeciderGroup").style.display = (racket && (pendingSetup.bestOf === 3 || pendingSetup.bestOf === 5)) ? "" : "none";
+  el("setupWinByGroup").style.display = pendingSetup.sport === "pickleball" ? "" : "none";
+  document.querySelectorAll("#setupSetLen button").forEach(b =>
+    b.classList.toggle("active", Number(b.dataset.games) === pendingSetup.gamesPerSet));
+  document.querySelectorAll("#setupTb button").forEach(b =>
+    b.classList.toggle("active", Number(b.dataset.tb) === pendingSetup.tbPoints));
+  document.querySelectorAll("#setupDecider button").forEach(b =>
+    b.classList.toggle("active", b.dataset.decider === pendingSetup.decider));
+  document.querySelectorAll("#setupWinBy button").forEach(b =>
+    b.classList.toggle("active", Number(b.dataset.winby) === pendingSetup.winBy));
 }
 
 el("setupSport").addEventListener("click", (e) => {
@@ -1225,6 +1426,22 @@ el("setupAdv").addEventListener("click", (e) => {
   pendingSetup.advantages = b.dataset.adv === "unlimited" ? "unlimited" : Number(b.dataset.adv);
   syncSetupUI();
 });
+el("setupSetLen").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-games]"); if (!b) return;
+  pendingSetup.gamesPerSet = Number(b.dataset.games); syncSetupUI();
+});
+el("setupTb").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-tb]"); if (!b) return;
+  pendingSetup.tbPoints = Number(b.dataset.tb); syncSetupUI();
+});
+el("setupDecider").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-decider]"); if (!b) return;
+  pendingSetup.decider = b.dataset.decider; syncSetupUI();
+});
+el("setupWinBy").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-winby]"); if (!b) return;
+  pendingSetup.winBy = Number(b.dataset.winby); syncSetupUI();
+});
 
 el("startBtn").addEventListener("click", () => {
   match = freshMatch({
@@ -1232,7 +1449,11 @@ el("startBtn").addEventListener("click", () => {
     mode: pendingSetup.mode,
     bestOf: pendingSetup.bestOf,
     advantages: pendingSetup.advantages,
-    pointsTarget: pendingSetup.pointsTarget
+    pointsTarget: pendingSetup.pointsTarget,
+    decider: pendingSetup.decider,
+    gamesPerSet: pendingSetup.gamesPerSet,
+    tbPoints: pendingSetup.tbPoints,
+    winBy: pendingSetup.winBy
   });
   match.names = pendingSetup.mode === "doubles" ? ["Team 1", "Team 2"] : ["Player 1", "Player 2"];
   historyStack = [];
