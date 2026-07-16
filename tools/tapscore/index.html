@@ -1185,12 +1185,27 @@ function setServer(i) {
 el("serveA").addEventListener("click", (e) => { e.stopPropagation(); setServer(0); });
 el("serveB").addEventListener("click", (e) => { e.stopPropagation(); setServer(1); });
 
-el("undoBtn").addEventListener("click", (e) => {
-  e.stopPropagation();
+// After an undo, speak the resulting (corrected) score so players hear where it stands
+function announceCorrection() {
+  if (!voiceOn) return;
+  let text;
+  if (match.over) {
+    text = "Correction. Match to " + match.names[match.winner];
+  } else if (isTargetSport() || match.tiebreak) {
+    const s = match.server, r = 1 - s;
+    text = "Correction. " + match.points[s] + ", " + match.points[r];
+  } else {
+    text = "Correction. " + tennisCall();   // server's score first, e.g. "30, 15" / "deuce"
+  }
+  speak(text);
+}
+function doUndo() {
   if (!historyStack.length) return;
   match = JSON.parse(historyStack.pop());
   save(); render();
-});
+  announceCorrection();
+}
+el("undoBtn").addEventListener("click", (e) => { e.stopPropagation(); doUndo(); });
 
 // Reset asks for confirmation via a custom dialog (native confirm() is blocked in some environments)
 const confirmModal = el("confirmModal");
@@ -1491,6 +1506,65 @@ document.addEventListener("pointerdown", (e) => {
   span.addEventListener("animationend", () => span.remove());
   btn.appendChild(span);
 });
+
+/* ---- external clicker / remote support ----
+   Any Bluetooth remote that pairs as a keyboard sends key events; we don't care which key.
+   One click → your team (side A), double-click → opponents (side B), long press → undo.
+   This lets a single-button remote score for both sides without touching the screen. */
+const REMOTE_LONG_MS = 600;    // hold this long → undo
+const REMOTE_MULTI_MS = 320;   // window to catch a second click for a double
+const YOUR_SIDE = 0;           // side A = "your team"; double-click scores the opponents
+const REMOTE_IGNORE = new Set(["Shift", "Control", "Alt", "Meta", "Escape", "Tab", "CapsLock"]);
+let rDownAt = 0, rLongFired = false, rTaps = 0, rTapTimer = null;
+
+// Only act on remote keys during live play — not while typing a name or with an overlay open
+function remoteActive() {
+  const ae = document.activeElement;
+  if (ae && (ae.tagName === "INPUT" || ae.isContentEditable)) return false;
+  if (match.over) return false;
+  return !["setup", "sheet", "winner", "confirmModal"].some(id => el(id).classList.contains("show"));
+}
+function resolveRemoteTaps() {
+  const n = rTaps; rTaps = 0; rTapTimer = null;
+  if (n <= 0) return;
+  addPoint(n === 1 ? YOUR_SIDE : 1 - YOUR_SIDE);   // 1 click = your team, 2+ = opponents
+}
+function remoteUndo() {
+  rTaps = 0;
+  if (rTapTimer) { clearTimeout(rTapTimer); rTapTimer = null; }
+  doUndo();
+}
+document.addEventListener("keydown", (e) => {
+  if (REMOTE_IGNORE.has(e.key) || !remoteActive()) return;
+  e.preventDefault();
+  if (e.repeat) {   // key auto-repeats while held → treat a long hold as undo
+    if (!rLongFired && performance.now() - rDownAt >= REMOTE_LONG_MS) { rLongFired = true; remoteUndo(); }
+    return;
+  }
+  rDownAt = performance.now(); rLongFired = false;
+});
+document.addEventListener("keyup", (e) => {
+  if (REMOTE_IGNORE.has(e.key) || !remoteActive()) return;
+  if (rLongFired) { rLongFired = false; rDownAt = 0; return; }
+  if (!rDownAt) return;
+  const held = performance.now() - rDownAt; rDownAt = 0;
+  if (held >= REMOTE_LONG_MS) { remoteUndo(); return; }   // long press (remotes that only send down/up)
+  rTaps++;
+  if (rTapTimer) clearTimeout(rTapTimer);
+  rTapTimer = setTimeout(resolveRemoteTaps, REMOTE_MULTI_MS);
+});
+
+// Keep the screen awake during a match so the phone doesn't sleep between points
+let wakeLock = null;
+async function keepAwake() {
+  try {
+    if ("wakeLock" in navigator && !match.over && (!wakeLock || wakeLock.released)) {
+      wakeLock = await navigator.wakeLock.request("screen");
+    }
+  } catch (e) {}
+}
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") keepAwake(); });
+keepAwake();
 
 render();
 if (firstRun) showSetup();
