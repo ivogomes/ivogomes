@@ -32,6 +32,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+<!-- Outfit (Google Fonts) for the score readout; system-ui fallback keeps it readable offline / before load -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap" />
 <style>
   :root {
     --a: #0ea5e9;      /* side A — azure */
@@ -41,6 +45,8 @@
     --ink: #f8fafc;
     --primary: #c9e64b;      /* lime — the app's signature accent */
     --on-primary: #0b1220;   /* text/icons on a lime fill */
+    /* Outfit for the score numbers, with a system fallback for offline / pre-load */
+    --score-font: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     /* Material-style elevation & motion */
     --elev-1: 0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(0,0,0,.24);
     --elev-2: 0 3px 6px rgba(0,0,0,.32), 0 2px 4px rgba(0,0,0,.22);
@@ -139,13 +145,14 @@
   .sets { display: flex; gap: 8px; min-height: 16px; align-items: center; }
   .sets .dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,.25); }
   .sets .dot.on { background: #fff; }
-  .games { font-size: clamp(18px, 4vh, 40px); font-weight: 700; opacity: .9; line-height: 1; }
+  .games { font-family: var(--score-font); font-size: clamp(18px, 4vh, 40px); font-weight: 700; opacity: .9; line-height: 1; }
   .point {
     /* game score fills the side's box — sized to the container, not a fixed cap */
+    font-family: var(--score-font);
     font-size: min(66cqw, 60cqh);
     font-weight: 800;
     line-height: .85;
-    letter-spacing: -0.055em;   /* tighten — the default digit spacing reads too loose at this size */
+    letter-spacing: -0.02em;
     text-shadow: 0 4px 20px rgba(0,0,0,.35);
   }
   .hint { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: .55; }
@@ -174,6 +181,7 @@
   .history {
     display: flex; gap: 4px; justify-content: center; align-items: center;
     flex-direction: column;              /* landscape: one score per line */
+    font-family: var(--score-font);
     font-variant-numeric: tabular-nums;
     font-size: 15px; font-weight: 700;
     background: rgba(0,0,0,.35);
@@ -244,6 +252,7 @@
   .winner .scoreline span {
     background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16);
     padding: 8px 14px; border-radius: 12px;
+    font-family: var(--score-font);
     font-weight: 700; font-variant-numeric: tabular-nums; font-size: clamp(16px, 2.4vh, 20px);
   }
   .winner .newmatch {
@@ -316,6 +325,40 @@
   .switch.on { background: var(--primary); }
   .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: var(--elev-1); transition: left .2s var(--ease); }
   .switch.on::after { left: 25px; }
+  /* sport picker — an accessible custom dropdown showing each sport's ball icon + name */
+  .dropdown { position: relative; }
+  .dropTrigger {
+    width: 100%; display: flex; align-items: center; gap: 11px;
+    min-height: 52px; padding: 8px 14px;
+    font: inherit; color: var(--ink); text-align: left;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.3); border-radius: 12px;
+    cursor: pointer; position: relative; overflow: hidden;   /* clip ripple */
+    transition: border-color .18s var(--ease), background-color .18s var(--ease);
+  }
+  .dropTrigger:hover { background: rgba(255,255,255,.08); }
+  .dropTrigger .dropName { flex: 1 1 auto; font-weight: 600; }
+  .dropTrigger:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+  .dropChev { flex: 0 0 auto; opacity: .7; transition: transform .2s var(--ease); }
+  .dropdown.open .dropChev { transform: rotate(180deg); }
+  .dropBall { width: 24px; height: 24px; flex: 0 0 auto; display: block; }
+  .dropBall svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 1px 1px rgba(0,0,0,.4)); }
+  .dropList {
+    list-style: none; margin: 6px 0 0; padding: 6px;
+    position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 6;
+    background: #0f172a; border: 1px solid rgba(255,255,255,.16); border-radius: 14px;
+    box-shadow: var(--elev-3);
+    max-height: 320px; overflow-y: auto; overscroll-behavior: contain;
+  }
+  .dropList[hidden] { display: none; }
+  .dropList li {
+    display: flex; align-items: center; gap: 11px;
+    padding: 10px 12px; border-radius: 10px; cursor: pointer;
+    font-weight: 500;
+  }
+  .dropList li.active { background: rgba(255,255,255,.09); }
+  .dropList li[aria-selected="true"] { background: var(--primary); color: var(--on-primary); }
+  .dropList li[aria-selected="true"].active { background: var(--primary); filter: brightness(1.08); }
   /* announcer voice picker — native select styled for the dark sheet */
   .voiceSel {
     width: 100%; min-height: 48px;
@@ -643,12 +686,14 @@
 
       <div class="groups">
       <div class="group">
-        <label>Sport</label>
-        <div class="seg" id="setupSport">
-          <button data-sport="tennis">Tennis</button>
-          <button data-sport="padel">Padel</button>
-          <button data-sport="tabletennis">Table Tennis</button>
-          <button data-sport="pickleball">Pickleball</button>
+        <label id="sportLabel">Sport</label>
+        <div class="dropdown" id="sportDrop">
+          <button type="button" class="dropTrigger" id="sportTrigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="sportLabel sportTriggerName">
+            <span class="dropBall" id="sportTriggerBall" aria-hidden="true"></span>
+            <span class="dropName" id="sportTriggerName">Tennis</span>
+            <svg class="dropChev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="dropList" id="sportList" role="listbox" aria-labelledby="sportLabel" tabindex="-1" hidden></ul>
         </div>
       </div>
 
@@ -918,19 +963,57 @@ function normalizeSettings(s) {
 }
 
 // target-scored sports (rally to a points target, win by 2, best-of games — no games/sets or deuce/advantage)
-function isTargetSport(sp) { const s = sp || match.settings.sport; return s === "tabletennis" || s === "pickleball"; }
-function sportLabel(sp) {
-  return sp === "padel" ? "Padel" : sp === "tabletennis" ? "Table Tennis" : sp === "pickleball" ? "Pickleball" : "Tennis";
+// Target/rally sports: score every rally to a points target, win by 2, best-of games
+// (no games/sets/deuce). Table tennis, pickleball, squash, badminton and volleyball all work this way.
+// NB: keep this a self-contained function (no module-level const) — it's called during early init.
+function isTargetSport(sp) {
+  const s = sp || match.settings.sport;
+  return s === "tabletennis" || s === "pickleball" || s === "squash" || s === "badminton" || s === "volleyball";
 }
+function sportLabel(sp) {
+  return sp === "padel" ? "Padel" : sp === "tabletennis" ? "Table Tennis" : sp === "pickleball" ? "Pickleball"
+    : sp === "squash" ? "Squash" : sp === "badminton" ? "Badminton" : sp === "volleyball" ? "Volleyball" : "Tennis";
+}
+// Per-sport rule quirks for the target engine.
+//  rallyServe   – the rally winner serves next (squash/badminton/volleyball) vs a fixed rotation (table tennis)
+//  cap          – hard ceiling where the next point wins outright, ignoring win-by-2 (badminton 29–29 → 30)
+//  deciderTarget – a shorter target for the deciding set (volleyball final set to 15)
+function sportRules(sp) {
+  sp = sp || match.settings.sport;
+  return {
+    rallyServe: sp === "squash" || sp === "badminton" || sp === "volleyball",
+    cap: sp === "badminton" ? 30 : 0,
+    deciderTarget: sp === "volleyball" ? 15 : 0,
+  };
+}
+// The points target for the set currently in play (honours volleyball's shorter deciding set).
+function currentTarget() {
+  const r = sportRules();
+  if (r.deciderTarget && isDecidingSet()) return r.deciderTarget;
+  return match.settings.pointsTarget || 11;
+}
+// Sensible defaults applied when a sport is picked on the setup screen.
+function defaultBestOf(sport) {
+  if (sport === "badminton" || sport === "pickleball") return 3;
+  if (sport === "squash" || sport === "volleyball" || sport === "tabletennis") return 5;
+  return 3;
+}
+function defaultPoints(sport) { return pointsOptions(sport)[0]; }
 // Best-of options differ by sport: racket sports offer a single set; target sports are best-of games.
 function bestOfOptions(sport) {
   return isTargetSport(sport)
     ? [[3, "Best of 3"], [5, "Best of 5"], [7, "Best of 7"], ["inf", "Free"]]
     : [[1, "1 set"], [3, "Best of 3"], [5, "Best of 5"], ["inf", "Free"]];
 }
-// Points-to-win options per target sport
+// Points-to-win options per target sport (first entry is the default)
 function pointsOptions(sport) {
-  return sport === "pickleball" ? [11, 15, 21] : [11, 21];
+  switch (sport) {
+    case "pickleball": return [11, 15, 21];
+    case "squash": return [11, 15];
+    case "badminton": return [21, 15];
+    case "volleyball": return [25, 21];   // 21 doubles as beach volleyball
+    default: return [11, 21];             // table tennis
+  }
 }
 function fillPoints(containerId, sport) {
   el(containerId).innerHTML = pointsOptions(sport)
@@ -1132,21 +1215,32 @@ function tally(x0, x1, unit, useLove) {
   return match.names[leader] + " leads " + hi + " " + noun(hi) + " to " + num(lo);
 }
 
+// What one "set counter" is called for the current sport (plural; tally() singularises it):
+// table tennis / squash / badminton / pickleball play "games"; tennis, padel and volleyball play "sets".
+function setUnit() {
+  const sp = match.settings.sport;
+  return (isTargetSport() && sp !== "volleyball") ? "games" : "sets";
+}
+function unitWonWord() { return setUnit() === "games" ? "Game" : "Set"; }
+
 function announceScore(before) {
   if (!voiceOn) return;
   const target = isTargetSport();
   const s = match.server, r = 1 - s;
   let text;
   if (match.over) {
-    text = (target ? "Game, set, and match. " : "Game, set, and match, ") + match.names[match.winner];
+    // tennis/padel keep the classic call; rally sports simply declare the match
+    text = target ? ("Match to " + match.names[match.winner] + ".")
+                  : ("Game, set, and match, " + match.names[match.winner] + ".");
   } else if (match.sets[0] + match.sets[1] > before.sets[0] + before.sets[1]) {
     const w = match.sets[0] > before.sets[0] ? 0 : 1;
-    text = (target ? "Game, " : "Set, ") + match.names[w] + ". " + tally(match.sets[0], match.sets[1], target ? "games" : "sets", !target);
+    text = unitWonWord() + ", " + match.names[w] + ". " + tally(match.sets[0], match.sets[1], setUnit(), !target);
   } else if (!target && (match.games[0] + match.games[1] > before.games[0] + before.games[1])) {
     const w = match.games[0] > before.games[0] ? 0 : 1;
     text = "Game, " + match.names[w] + ". " + tally(match.games[0], match.games[1], "games", true);
   } else if (target || match.tiebreak) {
-    text = match.points[s] + ", " + match.points[r];   // e.g. "seven, five"
+    const a = match.points[s], b = match.points[r];          // server's score first
+    text = (a === b) ? (a + " all") : (a + ", " + b);        // "20 all" when level, else "21, 19"
   } else {
     text = tennisCall();
   }
@@ -1228,24 +1322,35 @@ function outcomeIfWin(i) {
   }
 }
 
-// Table tennis: rally point to the target (default 11), win by 2. A "game" = one set counter.
+// Rally-scored sports: every rally is a point to the target, win by 2. A "game"/"set" = one set counter.
+// Handles table tennis, pickleball, squash, badminton (29–29 → 30 cap) and volleyball (final set to 15).
 function tableTennisPoint(i) {
   match.points[i]++;
   const [a, b] = match.points;
-  const target = match.settings.pointsTarget || 11;
+  const rules = sportRules();
+  const target = currentTarget();
   const winBy = match.settings.winBy || 2;
-  if (Math.max(a, b) >= target && Math.abs(a - b) >= winBy) {
+  const max = Math.max(a, b), diff = Math.abs(a - b);
+  const won = (max >= target && diff >= winBy) || (rules.cap && max >= rules.cap);
+  if (won) {
     const w = a > b ? 0 : 1;
     match.completedSets.push([a, b]);
     match.sets[w]++;
     match.points = [0, 0];
-    // next game: the previous game's receiver serves first
-    match.serveStart = 1 - match.serveStart;
+    if (rules.rallyServe) {
+      match.serveStart = w;                    // squash/badminton/volleyball: the game's winner serves next game
+    } else {
+      match.serveStart = 1 - match.serveStart; // table tennis: the previous game's receiver serves first
+    }
     match.server = match.serveStart;
     if (match.sets[w] >= setsToWin()) { match.over = true; match.winner = w; }
     return;
   }
-  // serve changes every `block` points (5 at 21-point, else 2); every point once at deuce
+  if (rules.rallyServe) {
+    match.server = i;   // squash/badminton/volleyball: the side that won the rally serves next
+    return;
+  }
+  // table tennis: serve changes every `block` points (5 at 21-point, else 2); every point once at deuce
   const total = a + b;
   const block = target >= 21 ? 5 : 2;
   const deuce = a >= target - 1 && b >= target - 1;
@@ -1394,6 +1499,24 @@ function ballSVG(sport) {
       .map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.5" fill="#8f951a"/>`).join("");
     return svg(`<circle cx="12" cy="12" r="10" fill="#e6ec2e"/>${holes}`);
   }
+  if (sport === "squash") {
+    // dark rubber ball with the yellow (single-dot) marker + soft highlight
+    return svg(`<circle cx="12" cy="12" r="10" fill="#1f2937"/>
+      <circle cx="9" cy="9" r="3" fill="#ffffff" opacity="0.12"/>
+      <circle cx="14.5" cy="14.5" r="1.7" fill="#fbbf24"/>`);
+  }
+  if (sport === "badminton") {
+    // shuttlecock: white feather skirt (widening upward) with ribs, over a rounded cork base
+    return svg(`<path d="M7.6 13.5 L4.6 5 Q12 2.8 19.4 5 L16.4 13.5 Z" fill="#f8fafc" stroke="rgba(0,0,0,.16)" stroke-width="0.7" stroke-linejoin="round"/>
+      <path d="M12 13.5 V4 M9.8 13.5 L7.6 4.7 M14.2 13.5 L16.4 4.7" fill="none" stroke="rgba(0,0,0,.14)" stroke-width="0.7"/>
+      <ellipse cx="12" cy="16" rx="4.4" ry="3.6" fill="#eef2f7" stroke="rgba(0,0,0,.14)" stroke-width="0.7"/>`);
+  }
+  if (sport === "volleyball") {
+    // white ball with curved panel seams
+    return svg(`<circle cx="12" cy="12" r="10" fill="#f8fafc" stroke="rgba(0,0,0,.14)" stroke-width="0.8"/>
+      <path d="M12 2 Q7.5 12 12 22 M12 2 Q16.5 12 12 22 M2.5 8.5 Q12 10.5 21.5 8.5 M2.8 15.5 Q12 13.5 21.2 15.5"
+        fill="none" stroke="rgba(37,99,235,.55)" stroke-width="1.1" stroke-linecap="round"/>`);
+  }
   // tennis & padel — yellow-green ball with the curved seam
   return svg(`<circle cx="12" cy="12" r="10" fill="#c9e64b"/>
     <path d="M4.6 7.5 Q12 12 4.6 16.5" fill="none" stroke="#fbfee2" stroke-width="1.5"/>
@@ -1409,23 +1532,13 @@ function render() {
   rollValue(el("pointB"), pts[1]);
 
   const tt = isTargetSport();
-  if (tt) {
-    // target sports: the secondary number is games (sets) won
-    el("gamesA").style.display = ""; el("gamesB").style.display = "";
-    rollValue(el("gamesA"), match.sets[0]);
-    rollValue(el("gamesB"), match.sets[1]);
-    el("setsA").style.display = "none";
-    el("setsB").style.display = "none";
-  } else {
-    // tennis/padel: the current-set games now live in the center scoreline (see below),
-    // not stacked on top of the big game score
-    el("gamesA").style.display = "none";
-    el("gamesB").style.display = "none";
-    el("setsA").style.display = "";
-    el("setsB").style.display = "";
-    renderSetDots("setsA", match.sets[0]);
-    renderSetDots("setsB", match.sets[1]);
-  }
+  // Sets/games won are shown as a number for every sport (tennis/padel too). For racket sports the
+  // current-set games live in the centre scoreline, so this number is the sets-won count.
+  el("gamesA").style.display = ""; el("gamesB").style.display = "";
+  rollValue(el("gamesA"), match.sets[0]);
+  rollValue(el("gamesB"), match.sets[1]);
+  el("setsA").style.display = "none";
+  el("setsB").style.display = "none";
 
   // serve indicator — sport-aware ball (SVG), dimmed on the non-serving side, hidden when the match is over
   const ball = ballSVG(match.settings.sport);
@@ -1459,7 +1572,7 @@ function render() {
     else if (winA.setWon || winB.setWon) badgeText = "Set point";
     else if (match.matchTB) badgeText = "Match tie-break";
     else if (match.tiebreak) badgeText = "Tiebreak";
-    else if (tt && pa >= (st.pointsTarget - 1) && pb >= (st.pointsTarget - 1)) badgeText = "Deuce";
+    else if (tt && pa >= (currentTarget() - 1) && pb >= (currentTarget() - 1)) badgeText = "Deuce";
     else if (!tt && pa === pb && pa >= 3 && goldenArmed(pa, pb)) badgeText = "Golden point";
   }
 
@@ -1486,15 +1599,6 @@ function render() {
   el("undoBtn").disabled = historyStack.length === 0;
   syncSettingsUI();
   firstRender = false;   // subsequent renders may animate score changes
-}
-
-function renderSetDots(id, count) {
-  const need = setsToWin();
-  // free play: no fixed target — show only the won-set dots (the .sets row reserves its height)
-  const total = need === Infinity ? count : need;
-  let html = "";
-  for (let k = 0; k < total; k++) html += `<span class="dot ${k < count ? "on" : ""}"></span>`;
-  el(id).innerHTML = html;
 }
 
 // Scale the winning name to be as large as fits the screen width (capped by height)
@@ -1591,7 +1695,8 @@ function announceCorrection() {
     text = "Correction. Match to " + match.names[match.winner];
   } else if (isTargetSport() || match.tiebreak) {
     const s = match.server, r = 1 - s;
-    text = "Correction. " + match.points[s] + ", " + match.points[r];
+    const a = match.points[s], b = match.points[r];
+    text = "Correction. " + (a === b ? (a + " all") : (a + ", " + b));
   } else {
     text = "Correction. " + tennisCall();   // server's score first, e.g. "30, 15" / "deuce"
   }
@@ -1812,6 +1917,28 @@ function courtSVG(sport) {
       <line x1="40" y1="308" x2="260" y2="308"/>
       <line x1="150" y1="40" x2="150" y2="212"/>
       <line x1="150" y1="308" x2="150" y2="480"/>`;
+  } else if (sport === "volleyball") {
+    lines = `<rect x="50" y="60" width="200" height="400"/>
+      <line x1="34" y1="260" x2="266" y2="260"/>
+      <line x1="50" y1="185" x2="250" y2="185"/>
+      <line x1="50" y1="335" x2="250" y2="335"/>`;
+  } else if (sport === "badminton") {
+    lines = `<rect x="52" y="45" width="196" height="430"/>
+      <line x1="36" y1="260" x2="264" y2="260"/>
+      <line x1="76" y1="45" x2="76" y2="475"/>
+      <line x1="224" y1="45" x2="224" y2="475"/>
+      <line x1="52" y1="210" x2="248" y2="210"/>
+      <line x1="52" y1="310" x2="248" y2="310"/>
+      <line x1="52" y1="70" x2="248" y2="70"/>
+      <line x1="52" y1="450" x2="248" y2="450"/>
+      <line x1="150" y1="45" x2="150" y2="210"/>
+      <line x1="150" y1="310" x2="150" y2="475"/>`;
+  } else if (sport === "squash") {
+    lines = `<rect x="74" y="60" width="152" height="400"/>
+      <line x1="74" y1="325" x2="226" y2="325"/>
+      <line x1="150" y1="325" x2="150" y2="460"/>
+      <rect x="74" y="325" width="44" height="44"/>
+      <rect x="182" y="325" width="44" height="44"/>`;
   } else { // tennis
     lines = `<rect x="40" y="40" width="220" height="440"/>
       <line x1="66" y1="40" x2="66" y2="480"/>
@@ -1831,12 +1958,11 @@ function syncSetupUI() {
   el("setupAdvGroup").style.display = target ? "none" : "";
   el("setupPointsGroup").style.display = target ? "" : "none";
   if (target) fillPoints("setupPoints", pendingSetup.sport);
-  // padel is always doubles — hide the Type selector entirely
-  el("setupModeGroup").style.display = pendingSetup.sport === "padel" ? "none" : "";
+  // padel & volleyball are team games — hide the singles/doubles selector entirely
+  el("setupModeGroup").style.display = (pendingSetup.sport === "padel" || pendingSetup.sport === "volleyball") ? "none" : "";
   fillBestOf("setupLength", pendingSetup.sport);
 
-  document.querySelectorAll("#setupSport button").forEach(b =>
-    b.classList.toggle("active", b.dataset.sport === pendingSetup.sport));
+  syncSportDropdown();
   document.querySelectorAll("#setupMode button").forEach(b =>
     b.classList.toggle("active", b.dataset.mode === pendingSetup.mode));
   document.querySelectorAll("#setupLength button").forEach(b =>
@@ -1864,19 +1990,75 @@ function syncSetupUI() {
     b.classList.toggle("active", Number(b.dataset.winby) === pendingSetup.winBy));
 }
 
-el("setupSport").addEventListener("click", (e) => {
-  const b = e.target.closest("button[data-sport]"); if (!b) return;
-  const sport = b.dataset.sport;
+// Sport selection + its canonical defaults (shared by the dropdown's click & keyboard paths)
+function selectSport(sport) {
   pendingSetup.sport = sport;
-  // padel & pickleball are usually doubles; tennis & table tennis default to singles
-  pendingSetup.mode = (sport === "padel" || sport === "pickleball") ? "doubles" : "singles";
-  // keep bestOf valid for the sport's options
-  const allowed = bestOfOptions(sport).map(o => o[0]);
-  if (!allowed.includes(pendingSetup.bestOf)) pendingSetup.bestOf = sport === "tabletennis" ? 5 : 3;
-  // keep the points target valid for the sport
-  if (isTargetSport(sport) && !pointsOptions(sport).includes(pendingSetup.pointsTarget)) pendingSetup.pointsTarget = 11;
+  // padel/pickleball/volleyball are team games; the rest default to singles
+  pendingSetup.mode = (sport === "padel" || sport === "pickleball" || sport === "volleyball") ? "doubles" : "singles";
+  // apply the sport's canonical format so each sport opens with its real-world defaults
+  pendingSetup.bestOf = defaultBestOf(sport);
+  if (isTargetSport(sport)) pendingSetup.pointsTarget = defaultPoints(sport);
+  if (sport !== "pickleball") pendingSetup.winBy = 2;   // win-by-1 is a pickleball-only option
   syncSetupUI();
+}
+
+/* ---- sport dropdown (custom accessible listbox — native <select> can't show the ball SVGs) ---- */
+const SPORT_LIST = [
+  ["tennis", "Tennis"], ["padel", "Padel"], ["tabletennis", "Table Tennis"],
+  ["pickleball", "Pickleball"], ["squash", "Squash"], ["badminton", "Badminton"], ["volleyball", "Volleyball"]
+];
+const sportDrop = el("sportDrop"), sportTrigger = el("sportTrigger"), sportList = el("sportList");
+let sportActiveIdx = -1;   // highlighted option while the list is open
+
+sportList.innerHTML = SPORT_LIST.map(([s, label]) =>
+  `<li role="option" id="sport-opt-${s}" data-sport="${s}" aria-selected="false">
+     <span class="dropBall" aria-hidden="true">${ballSVG(s)}</span><span>${label}</span></li>`).join("");
+
+// reflect pendingSetup.sport in the trigger (ball + name) and the list's selected row
+function syncSportDropdown() {
+  const sp = pendingSetup.sport;
+  el("sportTriggerBall").innerHTML = ballSVG(sp);
+  el("sportTriggerName").textContent = sportLabel(sp);
+  Array.from(sportList.children).forEach(li =>
+    li.setAttribute("aria-selected", String(li.dataset.sport === sp)));
+}
+function highlightSport(i) {
+  sportActiveIdx = (i + SPORT_LIST.length) % SPORT_LIST.length;
+  Array.from(sportList.children).forEach((li, idx) => li.classList.toggle("active", idx === sportActiveIdx));
+  const li = sportList.children[sportActiveIdx];
+  if (li) { sportList.setAttribute("aria-activedescendant", li.id); li.scrollIntoView({ block: "nearest" }); }
+}
+function openSportList() {
+  sportList.hidden = false;
+  sportDrop.classList.add("open");
+  sportTrigger.setAttribute("aria-expanded", "true");
+  highlightSport(SPORT_LIST.findIndex(([s]) => s === pendingSetup.sport));
+  sportList.focus();
+}
+function closeSportList(focusTrigger) {
+  sportList.hidden = true;
+  sportDrop.classList.remove("open");
+  sportTrigger.setAttribute("aria-expanded", "false");
+  sportList.removeAttribute("aria-activedescendant");
+  if (focusTrigger) sportTrigger.focus();
+}
+function chooseSport(sport) { selectSport(sport); closeSportList(true); }
+
+sportTrigger.addEventListener("click", (e) => { e.stopPropagation(); sportList.hidden ? openSportList() : closeSportList(true); });
+sportTrigger.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") { e.preventDefault(); openSportList(); }
 });
+sportList.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowDown") { e.preventDefault(); highlightSport(sportActiveIdx + 1); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); highlightSport(sportActiveIdx - 1); }
+  else if (e.key === "Home") { e.preventDefault(); highlightSport(0); }
+  else if (e.key === "End") { e.preventDefault(); highlightSport(SPORT_LIST.length - 1); }
+  else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); chooseSport(SPORT_LIST[sportActiveIdx][0]); }
+  else if (e.key === "Escape") { e.preventDefault(); closeSportList(true); }
+  else if (e.key === "Tab") { closeSportList(false); }
+});
+sportList.addEventListener("click", (e) => { const li = e.target.closest("li[data-sport]"); if (li) chooseSport(li.dataset.sport); });
+document.addEventListener("click", (e) => { if (!sportList.hidden && !sportDrop.contains(e.target)) closeSportList(false); });
 el("setupMode").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-mode]"); if (!b || b.disabled) return;
   pendingSetup.mode = b.dataset.mode; syncSetupUI();
