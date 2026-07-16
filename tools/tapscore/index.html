@@ -391,6 +391,13 @@
   .help .stepIcon svg { width: 30px; height: 30px; display: block; }
   .help .stepText h3 { margin: 3px 0 5px; font-size: 16px; font-weight: 600; }
   .help .stepText p { margin: 0; font-size: 14px; line-height: 1.45; opacity: .78; }
+  .help .stepText p + p { margin-top: 8px; }
+  .help .stepText .tip {
+    font-size: 13px; opacity: 1;
+    padding: 9px 11px; border-radius: 10px;
+    background: rgba(201,230,75,.08); border: 1px solid rgba(201,230,75,.22);
+  }
+  .help .stepText .tip strong { color: var(--primary); }
   .help .stepText p .ball { display: inline-block; width: 1em; height: 1em; vertical-align: -0.15em; }
   .help .keys { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
   .help .keys li { display: flex; align-items: center; gap: 10px; font-size: 14px; opacity: .85; }
@@ -837,6 +844,7 @@
         <div class="stepText">
           <h3>Hear the score out loud</h3>
           <p>Tap the speaker button in the bottom bar to have each point called out. Pair a Bluetooth speaker and everyone hears the running score — no need to glance at the phone.</p>
+          <p class="tip"><strong>iPhone tip:</strong> if the voice sounds robotic, download a better one in <em>Settings → Accessibility → Spoken Content → Voices → English</em> (pick an “Enhanced” or “Premium” voice). TapScore will use it automatically.</p>
         </div>
       </div>
 
