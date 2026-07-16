@@ -581,42 +581,22 @@ function englishOverrideVoice() {
       || null;
 }
 
-// Keep the audio output route "warm" with an inaudible tone so Android doesn't power it down
-// between announcements (that power-up is the click). Must be started from a user gesture.
-let audioKeepAlive = null;
-function startAudioKeepAlive() {
-  try {
-    const Ctx = window.AudioContext || window.webkitAudioContext;
-    if (!Ctx) return;
-    if (!audioKeepAlive) {
-      const ctx = new Ctx();
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      gain.gain.value = 0.0015;        // essentially inaudible, but enough to hold the route open
-      osc.frequency.value = 60;
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.start();
-      audioKeepAlive = { ctx, osc };
-    }
-    if (audioKeepAlive.ctx.state === "suspended") audioKeepAlive.ctx.resume();
-  } catch (e) {}
-}
-function stopAudioKeepAlive() {
-  try {
-    if (audioKeepAlive) { audioKeepAlive.osc.stop(); audioKeepAlive.ctx.close(); audioKeepAlive = null; }
-  } catch (e) {}
-}
-
 function speak(text) {
   if (!voiceOn || !text || !("speechSynthesis" in window)) return;
   try {
-    startAudioKeepAlive();             // ensure the route is warm (this call is inside a tap gesture)
-    window.speechSynthesis.cancel();   // drop any backlog so fast tapping doesn't pile up
+    const synth = window.speechSynthesis;
+    synth.cancel();   // drop any backlog so fast tapping doesn't pile up
+    // Android powers up the audio route when TTS starts, producing a click. Queue a short silent
+    // utterance first so that click lands on silence, and keep it queued (no cancel) so the route
+    // stays open for the real announcement that follows.
+    const warm = new SpeechSynthesisUtterance(" ");
+    warm.volume = 0;
+    synth.speak(warm);
     const u = new SpeechSynthesisUtterance(text);
     const v = englishOverrideVoice();
     if (v) { u.voice = v; u.lang = v.lang || "en-US"; }   // only intervene on non-English-default devices
     u.rate = 1.05;
-    window.speechSynthesis.speak(u);
+    synth.speak(u);
   } catch (e) {}
 }
 
@@ -1034,15 +1014,10 @@ el("voiceBtn").addEventListener("click", (e) => {
   e.stopPropagation();
   voiceOn = !voiceOn;
   try { localStorage.setItem("tennisTracker.voice", voiceOn ? "1" : "0"); } catch (e) {}
-  if (voiceOn) {
-    startAudioKeepAlive();   // open the audio route now (on this gesture) so the first call doesn't click
-    if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-      try { window.speechSynthesis.speak(new SpeechSynthesisUtterance("")); } catch (e) {}  // silent prime
-    }
-  } else {
-    stopAudioKeepAlive();
-    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+    // prime on this tap gesture with a silent utterance (also warms the audio route)
+    if (voiceOn) { try { window.speechSynthesis.speak(new SpeechSynthesisUtterance(" ")); } catch (e) {} }
   }
   syncVoiceBtn();
 });
