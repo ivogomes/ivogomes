@@ -17,12 +17,13 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
 <style>
   :root {
-    --a: #2563eb;      /* side A */
-    --a-dark: #1e3a8a;
-    --b: #e11d48;      /* side B */
-    --b-dark: #881337;
+    --a: #0ea5e9;      /* side A — azure */
+    --a-dark: #0369a1;
+    --b: #f43f5e;      /* side B — coral */
+    --b-dark: #be123c;
     --ink: #f8fafc;
-    --primary: #2563eb;
+    --primary: #c9e64b;      /* lime — the app's signature accent */
+    --on-primary: #0b1220;   /* text/icons on a lime fill */
     /* Material-style elevation & motion */
     --elev-1: 0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(0,0,0,.24);
     --elev-2: 0 3px 6px rgba(0,0,0,.32), 0 2px 4px rgba(0,0,0,.22);
@@ -189,7 +190,7 @@
   .winner .newmatch {
     position: relative; overflow: hidden;
     font: inherit; font-weight: 600; font-size: 17px; letter-spacing: .3px;
-    color: #062b12; background: #22c55e; border: 0;
+    color: var(--on-primary); background: var(--primary); border: 0;
     border-radius: 999px; padding: 15px 32px; cursor: pointer;
     box-shadow: var(--elev-2);
     transition: box-shadow .2s var(--ease), transform .1s var(--ease);
@@ -247,16 +248,16 @@
   }
   .seg button:first-child { border-left: 0; }
   .seg button:hover:not(.active):not(:disabled) { background: rgba(255,255,255,.08); }
-  .seg button.active { background: var(--primary); color: #fff; border-left-color: transparent; }
+  .seg button.active { background: var(--primary); color: var(--on-primary); border-left-color: transparent; }
   .seg button.active + button { border-left-color: transparent; }
   .seg button:disabled { opacity: .35; cursor: not-allowed; }
   .switch { width: 52px; height: 30px; border-radius: 999px; background: rgba(255,255,255,.15); position: relative; cursor: pointer; border: 0; transition: background-color .2s var(--ease); }
-  .switch.on { background: #22c55e; }
+  .switch.on { background: var(--primary); }
   .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: var(--elev-1); transition: left .2s var(--ease); }
   .switch.on::after { left: 25px; }
   .sheet .done, .help .done {
     width: 100%; margin-top: 16px; padding: 14px;
-    font: inherit; font-weight: 600; letter-spacing: .3px; color: #fff;
+    font: inherit; font-weight: 600; letter-spacing: .3px; color: var(--on-primary);
     background: var(--primary); border: 0; border-radius: 999px; cursor: pointer;
     position: relative; overflow: hidden;
     box-shadow: var(--elev-2);
@@ -288,7 +289,7 @@
   }
   .modal .cancel { background: rgba(255,255,255,.08); color: var(--ink); border: 1px solid rgba(255,255,255,.2); }
   .modal .cancel:hover { background: rgba(255,255,255,.14); }
-  .modal .confirm { background: #e11d48; color: #fff; box-shadow: var(--elev-1); }
+  .modal .confirm { background: var(--b); color: #fff; box-shadow: var(--elev-1); }
   .modal .confirm:hover { box-shadow: var(--elev-2); }
   .modal .actions button:active { transform: translateY(1px); }
 
@@ -405,7 +406,7 @@
   .startBtn {
     width: 100%; margin-top: 26px; padding: 16px;
     font: inherit; font-weight: 600; font-size: 18px; letter-spacing: .3px;
-    color: #062b12; background: #22c55e; border: 0; border-radius: 999px; cursor: pointer;
+    color: var(--on-primary); background: var(--primary); border: 0; border-radius: 999px; cursor: pointer;
     position: relative; overflow: hidden;
     box-shadow: var(--elev-2);
     transition: box-shadow .2s var(--ease), transform .1s var(--ease);
@@ -1271,7 +1272,7 @@ function launchConfetti() {
   const ctx = c.getContext("2d");
   const W = c.width = window.innerWidth;
   const H = c.height = window.innerHeight;
-  const colors = ["#2563eb", "#e11d48", "#22c55e", "#f59e0b", "#f8fafc", "#38bdf8"];
+  const colors = ["#0ea5e9", "#f43f5e", "#c9e64b", "#f8fafc", "#38bdf8", "#a3e635"];
   const parts = [];
   for (let i = 0; i < 170; i++) {
     const angle = (Math.PI * 2 * i) / 170 + Math.random() * 0.5;
