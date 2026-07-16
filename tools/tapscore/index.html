@@ -79,7 +79,7 @@
   .games { font-size: clamp(18px, 4vh, 40px); font-weight: 700; opacity: .9; line-height: 1; }
   .point {
     /* game score fills the side's box — sized to the container, not a fixed cap */
-    font-size: min(66cqw, 52cqh);
+    font-size: min(66cqw, 60cqh);
     font-weight: 800;
     line-height: .85;
     letter-spacing: -0.055em;   /* tighten — the default digit spacing reads too loose at this size */
@@ -88,11 +88,12 @@
   .hint { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: .55; }
   .serve {
     font-size: clamp(15px, 2.4vh, 22px);
-    line-height: 1; flex: none;
+    line-height: 0; flex: none;
     background: transparent; border: 0; padding: 0; margin: 0;
     cursor: pointer;
     transition: opacity .12s ease;
   }
+  .serve svg { width: 1.15em; height: 1.15em; display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
   .serve.inactive { opacity: .16; }
   .serve.gone { display: none; }
 
@@ -142,6 +143,8 @@
     cursor: pointer; backdrop-filter: blur(6px);
   }
   .controls button:active { transform: translateY(1px); }
+  .controls .iconbtn { padding: 11px; display: inline-flex; align-items: center; }
+  .controls .iconbtn svg { width: 20px; height: 20px; display: block; }
 
   /* Winner overlay */
   .winner {
@@ -271,7 +274,7 @@
   /* Portrait / vertical: stack the sides top & bottom. Placed last so it overrides the base rules above. */
   @media (orientation: portrait) {
     .court { flex-direction: column; }
-    .point { font-size: min(62cqw, 33cqh); }   /* leave a clear middle band for the scoreboard */
+    .point { font-size: min(62cqw, 50cqh); }   /* leave a clear middle band for the scoreboard */
     .matchinfo { display: none; }              /* would collide with the top side's name pill */
     .center { max-width: 80vw; }
     .history { flex-direction: row; flex-wrap: wrap; gap: 10px; }  /* keep history a compact row in portrait */
@@ -304,7 +307,7 @@
   <div class="court">
     <div class="side side-a" id="sideA" role="button" aria-label="Score point for side A">
       <div class="namepill">
-        <button class="serve" id="serveA" title="Serving — tap to give serve to this side">🎾</button>
+        <button class="serve" id="serveA" title="Serving — tap to give serve to this side" aria-label="Serving"></button>
         <input class="name" id="nameA" value="Player 1" maxlength="24" size="9" aria-label="Side A name" />
       </div>
       <div class="sets" id="setsA"></div>
@@ -314,7 +317,7 @@
     </div>
     <div class="side side-b" id="sideB" role="button" aria-label="Score point for side B">
       <div class="namepill">
-        <button class="serve" id="serveB" title="Serving — tap to give serve to this side">🎾</button>
+        <button class="serve" id="serveB" title="Serving — tap to give serve to this side" aria-label="Serving"></button>
         <input class="name" id="nameB" value="Player 2" maxlength="24" size="9" aria-label="Side B name" />
       </div>
       <div class="sets" id="setsB"></div>
@@ -331,7 +334,8 @@
   </div>
 
   <div class="controls">
-    <button id="undoBtn" title="Undo last point">← Undo</button>
+    <button id="undoBtn" title="Undo last point">Undo</button>
+    <button id="voiceBtn" class="iconbtn" title="Announce score" aria-label="Announce score" aria-pressed="false"></button>
     <button id="settingsBtn" title="Settings">⚙︎</button>
     <button id="resetBtn" title="New match">Reset</button>
   </div>
@@ -440,7 +444,7 @@
         <strong>Adv</strong> = win by two (standard). <strong>Golden</strong> = sudden death on the first deuce.
         <strong>+1</strong> / <strong>+2</strong> = play 1 or 2 advantages first, then a golden point.
       </p>
-      
+
       <button class="done" id="sheetDone">Done</button>
     </div>
   </div>
@@ -545,17 +549,76 @@ function snapshot() {
 function addPoint(i) {
   if (match.over) return;
   snapshot();
-  const a0 = match.sets[0], b0 = match.sets[1];
+  const before = { games: match.games.slice(), sets: match.sets.slice(), tiebreak: match.tiebreak };
   if (isTargetSport()) tableTennisPoint(i);
   else if (match.tiebreak) tiebreakPoint(i);
   else regularPoint(i);
   save();
   render();
+  announceScore(before);
   // celebrate a set win (but not the final set — the winner screen handles that)
   if (!match.over) {
-    if (match.sets[0] > a0) celebrateSet(0);
-    else if (match.sets[1] > b0) celebrateSet(1);
+    if (match.sets[0] > before.sets[0]) celebrateSet(0);
+    else if (match.sets[1] > before.sets[1]) celebrateSet(1);
   }
+}
+
+/* ---- score announcements (Web Speech API) ---- */
+let voiceOn = false;
+try { voiceOn = localStorage.getItem("tennisTracker.voice") === "1"; } catch (e) {}
+
+function speak(text) {
+  if (!voiceOn || !text || !("speechSynthesis" in window)) return;
+  try {
+    window.speechSynthesis.cancel();   // drop any backlog so fast tapping doesn't pile up
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 1.05;
+    window.speechSynthesis.speak(u);
+  } catch (e) {}
+}
+
+// tennis/padel in-game call, server's score first (love / 15 / 30 / 40 / deuce / advantage)
+function tennisCall() {
+  const P = ["love", "15", "30", "40"];
+  const s = match.server, r = 1 - s;
+  const a = match.points[s], b = match.points[r];
+  if (a >= 3 && b >= 3) {
+    if (a === b) return "deuce";
+    return "advantage " + match.names[a > b ? s : r];
+  }
+  if (a === b) return (a === 0 ? "love" : P[a]) + " all";
+  return P[a] + ", " + P[b];
+}
+
+// spoken running tally with correct grammar, e.g. "Ivo leads 3 games to 2", "1 set all",
+// "Ivo leads one set to love" (love/singular only for racquet sports)
+function tally(x0, x1, unit, useLove) {
+  const noun = (n) => (n === 1 ? unit.replace(/s$/, "") : unit);        // "set"/"sets", "game"/"games"
+  const num = (n) => (useLove && n === 0) ? "love" : String(n);
+  if (x0 === x1) return x0 + " " + noun(x0) + " all";
+  const hi = Math.max(x0, x1), lo = Math.min(x0, x1), leader = x0 > x1 ? 0 : 1;
+  return match.names[leader] + " leads " + hi + " " + noun(hi) + " to " + num(lo);
+}
+
+function announceScore(before) {
+  if (!voiceOn) return;
+  const target = isTargetSport();
+  const s = match.server, r = 1 - s;
+  let text;
+  if (match.over) {
+    text = (target ? "Game, set, and match. " : "Game, set, and match, ") + match.names[match.winner] + " wins";
+  } else if (match.sets[0] + match.sets[1] > before.sets[0] + before.sets[1]) {
+    const w = match.sets[0] > before.sets[0] ? 0 : 1;
+    text = (target ? "Game, " : "Set, ") + match.names[w] + ". " + tally(match.sets[0], match.sets[1], target ? "games" : "sets", !target);
+  } else if (!target && (match.games[0] + match.games[1] > before.games[0] + before.games[1])) {
+    const w = match.games[0] > before.games[0] ? 0 : 1;
+    text = "Game, " + match.names[w] + ". " + tally(match.games[0], match.games[1], "games", true);
+  } else if (target || match.tiebreak) {
+    text = match.points[s] + ", " + match.points[r];   // e.g. "seven, five"
+  } else {
+    text = tennisCall();
+  }
+  speak(text);
 }
 
 // brief flash + pulse on the side that just won a set, to soften the reset to 0–0
@@ -671,6 +734,27 @@ function pointDisplay() {
 
 /* ---- render ---- */
 const el = id => document.getElementById(id);
+
+// Ball icon for the serve indicator (inline SVG — avoids inconsistent emoji rendering across platforms)
+function ballSVG(sport) {
+  const svg = (inner) => `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${inner}</svg>`;
+  if (sport === "tabletennis") {
+    // white ping-pong ball with a soft highlight
+    return svg(`<circle cx="12" cy="12" r="10" fill="#f4f5f7" stroke="rgba(0,0,0,.18)" stroke-width="1"/>
+      <circle cx="9" cy="9" r="3.2" fill="#ffffff" opacity="0.7"/>`);
+  }
+  if (sport === "pickleball") {
+    // yellow ball with holes
+    const holes = [[12, 6.5], [8, 10], [16, 10], [9.5, 14.5], [14.5, 14.5]]
+      .map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.5" fill="#8f951a"/>`).join("");
+    return svg(`<circle cx="12" cy="12" r="10" fill="#e6ec2e"/>${holes}`);
+  }
+  // tennis & padel — yellow-green ball with the curved seam
+  return svg(`<circle cx="12" cy="12" r="10" fill="#c9e64b"/>
+    <path d="M4.6 7.5 Q12 12 4.6 16.5" fill="none" stroke="#fbfee2" stroke-width="1.5"/>
+    <path d="M19.4 7.5 Q12 12 19.4 16.5" fill="none" stroke="#fbfee2" stroke-width="1.5"/>`);
+}
+
 function render() {
   if (document.activeElement !== el("nameA")) el("nameA").value = match.names[0];
   if (document.activeElement !== el("nameB")) el("nameB").value = match.names[1];
@@ -695,11 +779,11 @@ function render() {
     renderSetDots("setsB", match.sets[1]);
   }
 
-  // serve indicator — sport-aware glyph, dimmed on the non-serving side, hidden when the match is over
-  const glyph = match.settings.sport === "tabletennis" ? "🏓" : "🎾";
+  // serve indicator — sport-aware ball (SVG), dimmed on the non-serving side, hidden when the match is over
+  const ball = ballSVG(match.settings.sport);
   ["serveA", "serveB"].forEach((id, idx) => {
     const b = el(id);
-    b.textContent = glyph;
+    b.innerHTML = ball;
     b.classList.toggle("gone", match.over);
     b.classList.toggle("inactive", match.server !== idx);
   });
@@ -887,6 +971,34 @@ el("advSeg").addEventListener("click", (e) => {
   match.settings.advantages = raw === "unlimited" ? "unlimited" : Number(raw);
   save(); render();   // applied live; deuce rule doesn't invalidate the current score
 });
+
+// Voice announce toggle lives on the bottom bar
+function voiceIconSVG(on) {
+  const spk = `<path d="M3 9 h3.5 l4.5 -3.5 v13 l-4.5 -3.5 H3 z" fill="currentColor"/>`;
+  const extra = on
+    ? `<path d="M14.5 8.5 a4.2 4.2 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+       <path d="M17 6 a7.6 7.6 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`
+    : `<line x1="15.5" y1="9" x2="21" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+       <line x1="21" y1="9" x2="15.5" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${spk}${extra}</svg>`;
+}
+function syncVoiceBtn() {
+  const b = el("voiceBtn");
+  b.innerHTML = voiceIconSVG(voiceOn);   // waves = on, slash = off — icon is the only indicator
+  b.setAttribute("aria-pressed", String(voiceOn));
+}
+el("voiceBtn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  voiceOn = !voiceOn;
+  try { localStorage.setItem("tennisTracker.voice", voiceOn ? "1" : "0"); } catch (e) {}
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+    // prime the speech engine on this tap gesture, silently (no spoken confirmation)
+    if (voiceOn) { try { window.speechSynthesis.speak(new SpeechSynthesisUtterance("")); } catch (e) {} }
+  }
+  syncVoiceBtn();
+});
+syncVoiceBtn();
 
 function syncSettingsUI() {
   const tt = isTargetSport();
