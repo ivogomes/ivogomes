@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+<meta name="theme-color" content="#0b1220" />
+<title>TapScore</title>
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="TapScore" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<style>
+  :root {
+    --a: #2563eb;      /* side A */
+    --a-dark: #1e3a8a;
+    --b: #e11d48;      /* side B */
+    --b-dark: #881337;
+    --ink: #f8fafc;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #0b1220;
+    color: var(--ink);
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .court { display: flex; flex-direction: row; height: 100dvh; width: 100vw; }
+  .side {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(4px, 2vh, 20px);
+    cursor: pointer;
+    position: relative;
+    transition: filter .08s ease;
+    touch-action: manipulation;
+    container-type: size;
+    padding: env(safe-area-inset-top) 8px calc(env(safe-area-inset-bottom) + 78px);
+  }
+  .side:active { filter: brightness(1.18); }
+  .side-a { background: linear-gradient(160deg, var(--a), var(--a-dark)); }
+  .side-b { background: linear-gradient(160deg, var(--b), var(--b-dark)); }
+
+  /* pill holds the serve ball + the editable name so they never clash with anything else */
+  .namepill {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 6px 12px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(0,0,0,.15);
+    max-width: 92%;
+  }
+  .namepill:focus-within { border-color: rgba(255,255,255,.7); background: rgba(0,0,0,.3); }
+  .name {
+    font-size: clamp(15px, 2.6vh, 24px);
+    font-weight: 600; opacity: .92; letter-spacing: .3px;
+    color: var(--ink); font-family: inherit;
+    background: transparent; border: 0; outline: none; padding: 0;
+    text-align: center; cursor: text;
+    width: auto; min-width: 0;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .sets { display: flex; gap: 8px; min-height: 16px; align-items: center; }
+  .sets .dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,.25); }
+  .sets .dot.on { background: #fff; }
+  .games { font-size: clamp(18px, 4vh, 40px); font-weight: 700; opacity: .9; line-height: 1; }
+  .point {
+    /* game score fills the side's box — sized to the container, not a fixed cap */
+    font-size: min(66cqw, 52cqh);
+    font-weight: 800;
+    line-height: .85;
+    letter-spacing: -0.055em;   /* tighten — the default digit spacing reads too loose at this size */
+    text-shadow: 0 4px 20px rgba(0,0,0,.35);
+  }
+  .hint { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: .55; }
+  .serve {
+    font-size: clamp(15px, 2.4vh, 22px);
+    line-height: 1; flex: none;
+    background: transparent; border: 0; padding: 0; margin: 0;
+    cursor: pointer;
+    transition: opacity .12s ease;
+  }
+  .serve.inactive { opacity: .16; }
+  .serve.gone { display: none; }
+
+  /* Center scoreboard: set history + status, in the middle of the court (the gap between the two sides) */
+  .center {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    max-width: 30vw;
+    text-align: center;
+    pointer-events: none;
+    z-index: 4;
+  }
+  .history {
+    display: flex; gap: 4px; justify-content: center; align-items: center;
+    flex-direction: column;              /* landscape: one score per line */
+    font-variant-numeric: tabular-nums;
+    font-size: 15px; font-weight: 700;
+    background: rgba(0,0,0,.35);
+    padding: 8px 12px; border-radius: 14px;
+    backdrop-filter: blur(4px);
+  }
+  .history:empty { display: none; }
+  .badge {
+    margin-top: 8px; display: inline-block;
+    font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #f59e0b; color: #1c1207;
+    padding: 4px 10px; border-radius: 999px;
+  }
+  .badge.hidden { display: none; }
+
+  /* Controls */
+  .controls {
+    position: fixed;
+    left: 50%; transform: translateX(-50%);
+    bottom: calc(env(safe-area-inset-bottom) + 14px);
+    display: flex; gap: 10px; z-index: 5;
+  }
+  .controls button {
+    font: inherit; font-weight: 600;
+    color: var(--ink);
+    background: rgba(15,23,42,.85);
+    border: 1px solid rgba(255,255,255,.18);
+    padding: 12px 18px; border-radius: 14px;
+    cursor: pointer; backdrop-filter: blur(6px);
+  }
+  .controls button:active { transform: translateY(1px); }
+
+  /* Winner overlay */
+  .winner {
+    position: fixed; inset: 0; z-index: 8;
+    display: none; flex-direction: column;
+    align-items: center; justify-content: center; gap: 18px;
+    background: rgba(2,6,23,.82); backdrop-filter: blur(6px);
+    text-align: center; padding: 24px;
+  }
+  .winner.show { display: flex; }
+  .winner .wtrophy { position: relative; font-size: clamp(30px, 7vh, 56px); line-height: 1; }
+  /* winning name — sized to fit the screen by JS (fitWinnerName) */
+  .winner .wname {
+    position: relative; display: inline-block;
+    font-weight: 800; line-height: 1; letter-spacing: -0.02em;
+    white-space: nowrap; font-size: 40px;
+  }
+  /* set-score summary as pills, matching the in-game scoreboard */
+  .winner .scoreline { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; position: relative; }
+  .winner .scoreline span {
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16);
+    padding: 8px 14px; border-radius: 12px;
+    font-weight: 700; font-variant-numeric: tabular-nums; font-size: clamp(16px, 2.4vh, 20px);
+  }
+  .winner .newmatch {
+    position: relative;
+    font: inherit; font-weight: 700; font-size: 17px;
+    color: #062b12; background: #22c55e; border: 0;
+    border-radius: 14px; padding: 15px 30px; cursor: pointer;
+  }
+  .winner .newmatch:active { transform: translateY(1px); }
+  #confetti { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+  /* Settings sheet */
+  .sheet {
+    position: fixed; inset: 0; z-index: 9;
+    display: none; align-items: flex-end; justify-content: center;
+    background: rgba(2,6,23,.6);
+  }
+  .sheet.show { display: flex; }
+  .sheet .panel {
+    width: 100%; max-width: 460px;
+    background: #0f172a;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 20px 20px 0 0;
+    padding: 20px 20px calc(env(safe-area-inset-bottom) + 20px);
+  }
+  .sheet h2 { margin: 0 0 14px; font-size: 20px; }
+  .row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.08); }
+  .row:first-of-type { border-top: 0; }
+  .row label { font-weight: 600; }
+  .row .desc { display: block; font-weight: 400; opacity: .6; font-size: 13px; margin-top: 2px; }
+  .seg { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .seg button {
+    font: inherit; color: var(--ink); background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.15); padding: 8px 12px; border-radius: 10px; cursor: pointer;
+  }
+  .seg button.active { background: #2563eb; border-color: #2563eb; }
+  .seg button:disabled { opacity: .3; cursor: not-allowed; }
+  .switch { width: 52px; height: 30px; border-radius: 999px; background: rgba(255,255,255,.15); position: relative; cursor: pointer; border: 0; }
+  .switch.on { background: #22c55e; }
+  .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; transition: left .12s ease; }
+  .switch.on::after { left: 25px; }
+  .sheet .done { width: 100%; margin-top: 16px; padding: 14px; font: inherit; font-weight: 700; color: #fff; background: #2563eb; border: 0; border-radius: 12px; cursor: pointer; }
+
+  /* Confirm dialog (custom, not native confirm() which some environments block) */
+  .modal {
+    position: fixed; inset: 0; z-index: 11;
+    display: none; align-items: center; justify-content: center;
+    background: rgba(2,6,23,.6); padding: 24px;
+  }
+  .modal.show { display: flex; }
+  .modal .box {
+    width: 100%; max-width: 360px;
+    background: #0f172a; border: 1px solid rgba(255,255,255,.12);
+    border-radius: 18px; padding: 22px; text-align: center;
+  }
+  .modal .box p { margin: 0 0 20px; font-size: 16px; line-height: 1.4; }
+  .modal .actions { display: flex; gap: 10px; }
+  .modal .actions button { flex: 1; font: inherit; font-weight: 700; padding: 13px; border-radius: 12px; cursor: pointer; border: 0; }
+  .modal .cancel { background: rgba(255,255,255,.08); color: var(--ink); border: 1px solid rgba(255,255,255,.18); }
+  .modal .confirm { background: #e11d48; color: #fff; }
+  .modal .actions button:active { transform: translateY(1px); }
+
+  /* Setup / welcome screen */
+  .setup {
+    position: fixed; inset: 0; z-index: 10;
+    display: none; align-items: center; justify-content: center;
+    gap: clamp(16px, 4vw, 48px); flex-wrap: wrap;
+    background: #0b1220; overflow: auto;
+    padding: max(20px, env(safe-area-inset-top)) 18px calc(20px + env(safe-area-inset-bottom));
+  }
+  .setup.show { display: flex; }
+  /* top accent bar echoing the two match sides (blue / red) */
+  .setup .topbar {
+    position: fixed; top: 0; left: 0; right: 0; height: 6px; z-index: 2;
+    background: linear-gradient(90deg, var(--a) 0 50%, var(--b) 50% 100%);
+    pointer-events: none;
+  }
+  /* court diagram beside the settings (hidden on phones, where there's no room) */
+  .courtbg { flex: 0 0 auto; width: min(30vw, 250px); display: flex; align-items: center; justify-content: center; pointer-events: none; }
+  .courtbg svg { width: 100%; height: auto; max-height: 74vh; }
+  .courtbg .cl { fill: none; stroke: rgba(148,163,184,0.28); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .setup .card { flex: 0 1 460px; width: 100%; max-width: 460px; }
+  .setup h1 { margin: 0 0 4px; font-size: clamp(24px, 6vw, 30px); }
+  .setup .tagline { opacity: .6; margin: 0 0 22px; }
+  .setup .group { margin: 18px 0; }
+  .setup .group > label { display: block; font-weight: 600; margin-bottom: 8px; }
+  .setup .seg { flex-wrap: nowrap; justify-content: stretch; align-items: stretch; }
+  .setup .seg button { flex: 1 1 0; min-width: 0; padding: 11px 4px; white-space: normal; line-height: 1.15; text-align: center; }
+  .startBtn {
+    width: 100%; margin-top: 26px; padding: 16px;
+    font: inherit; font-weight: 700; font-size: 18px;
+    color: #062b12; background: #22c55e; border: 0; border-radius: 14px; cursor: pointer;
+  }
+  .startBtn:active { transform: translateY(1px); }
+
+  .matchinfo {
+    position: fixed;
+    top: calc(env(safe-area-inset-top) + 8px);
+    left: 50%; transform: translateX(-50%);
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    opacity: .5; white-space: nowrap;
+    pointer-events: none; z-index: 3;
+  }
+
+  /* Portrait / vertical: stack the sides top & bottom. Placed last so it overrides the base rules above. */
+  @media (orientation: portrait) {
+    .court { flex-direction: column; }
+    .point { font-size: min(62cqw, 33cqh); }   /* leave a clear middle band for the scoreboard */
+    .matchinfo { display: none; }              /* would collide with the top side's name pill */
+    .center { max-width: 80vw; }
+    .history { flex-direction: row; flex-wrap: wrap; gap: 10px; }  /* keep history a compact row in portrait */
+  }
+
+  /* Setup screen on small viewports — placed last so these override the base .setup rules above.
+     Narrow (portrait phone): drop the side court, top-align so long forms scroll from the top. */
+  @media (max-width: 680px) {
+    .setup { align-items: flex-start; }
+    .courtbg { display: none; }
+  }
+  /* Short (landscape phone): two-column settings + compact spacing so it fits with minimal scrolling. */
+  @media (max-height: 560px) {
+    .setup { align-items: flex-start; }
+    .courtbg { display: none; }
+    .setup .card { max-width: 640px; }
+    .card .groups { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; align-items: start; }
+    .card .groups .group { margin: 7px 0; }
+    .card .groups .seg button { font-size: 14px; padding: 9px 4px; }
+    .setup h1 { font-size: 20px; margin: 0 0 2px; }
+    .setup .tagline { font-size: 13px; margin: 0 0 8px; }
+    .startBtn { margin-top: 12px; padding: 12px; font-size: 16px; }
+    #setupCancel { margin-top: 6px !important; padding: 8px !important; }
+  }
+</style>
+</head>
+<body>
+  <div class="court">
+    <div class="side side-a" id="sideA" role="button" aria-label="Score point for side A">
+      <div class="namepill">
+        <button class="serve" id="serveA" title="Serving — tap to give serve to this side">🎾</button>
+        <input class="name" id="nameA" value="Player 1" maxlength="24" size="9" aria-label="Side A name" />
+      </div>
+      <div class="sets" id="setsA"></div>
+      <div class="games" id="gamesA">0</div>
+      <div class="point" id="pointA">0</div>
+      <div class="hint">Tap to score</div>
+    </div>
+    <div class="side side-b" id="sideB" role="button" aria-label="Score point for side B">
+      <div class="namepill">
+        <button class="serve" id="serveB" title="Serving — tap to give serve to this side">🎾</button>
+        <input class="name" id="nameB" value="Player 2" maxlength="24" size="9" aria-label="Side B name" />
+      </div>
+      <div class="sets" id="setsB"></div>
+      <div class="games" id="gamesB">0</div>
+      <div class="point" id="pointB">0</div>
+      <div class="hint">Tap to score</div>
+    </div>
+  </div>
+
+  <div class="matchinfo" id="matchInfo"></div>
+  <div class="center">
+    <div class="history" id="history"></div>
+    <div class="badge hidden" id="badge">Tiebreak</div>
+  </div>
+
+  <div class="controls">
+    <button id="undoBtn" title="Undo last point">← Undo</button>
+    <button id="settingsBtn" title="Settings">⚙︎</button>
+    <button id="resetBtn" title="New match">Reset</button>
+  </div>
+
+  <div class="winner" id="winner">
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <div class="wtrophy" aria-hidden="true">🏆</div>
+    <div class="wname" id="winnerName"></div>
+    <div class="scoreline" id="winnerScore"></div>
+    <button class="newmatch" id="winnerNew">New match</button>
+  </div>
+
+  <div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="box">
+      <p>Start a new match?<br />The current score will be lost.</p>
+      <div class="actions">
+        <button class="cancel" id="confirmCancel">Cancel</button>
+        <button class="confirm" id="confirmOk">New match</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="setup" id="setup">
+    <div class="topbar" aria-hidden="true"></div>
+    <div class="courtbg" id="courtBg" aria-hidden="true"></div>
+    <div class="card">
+      <h1>TapScore</h1>
+      <p class="tagline">Tennis, padel &amp; table tennis — tap to score</p>
+
+      <div class="groups">
+      <div class="group">
+        <label>Sport</label>
+        <div class="seg" id="setupSport">
+          <button data-sport="tennis">Tennis</button>
+          <button data-sport="padel">Padel</button>
+          <button data-sport="tabletennis">Table Tennis</button>
+          <button data-sport="pickleball">Pickleball</button>
+        </div>
+      </div>
+
+      <div class="group" id="setupModeGroup">
+        <label>Type</label>
+        <div class="seg" id="setupMode">
+          <button data-mode="singles">Singles</button>
+          <button data-mode="doubles">Doubles</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <label>Match length</label>
+        <div class="seg" id="setupLength"></div>
+      </div>
+
+      <div class="group" id="setupPointsGroup" style="display:none">
+        <label>Points to win a game</label>
+        <div class="seg" id="setupPoints"></div>
+      </div>
+
+      <div class="group" id="setupAdvGroup">
+        <label>Advantage rules</label>
+        <div class="seg" id="setupAdv">
+          <button data-adv="unlimited">Adv</button>
+          <button data-adv="0">Golden</button>
+          <button data-adv="1">+1</button>
+          <button data-adv="2">+2</button>
+        </div>
+        <p class="desc" style="margin:8px 0 0; opacity:.6; font-size:13px">
+          <strong>Adv</strong> = win by two. <strong>Golden</strong> = sudden death at deuce.
+          <strong>+1</strong>/<strong>+2</strong> = play N advantages, then a golden point.
+        </p>
+      </div>
+      </div>
+
+      <button class="startBtn" id="startBtn">Start match</button>
+      <button id="setupCancel" style="width:100%;margin-top:10px;padding:12px;font:inherit;color:var(--ink);background:transparent;border:0;opacity:.6;cursor:pointer">Cancel</button>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet">
+    <div class="panel">
+      <h2>Match settings</h2>
+      <div class="row">
+        <div>
+          <label>Match length</label>
+          <span class="desc">Sets needed to win the match. Changing the match length starts a new match.</span>
+        </div>
+        <div class="seg" id="formatSeg">
+          <button data-bestof="1">1 set</button>
+          <button data-bestof="3">Best of 3</button>
+          <button data-bestof="5">Best of 5</button>
+        </div>
+      </div>
+      <div class="row" id="advRow">
+        <div>
+          <label>Advantage rules</label>
+          <span class="desc">How a deuce (40–40) is decided</span>
+        </div>
+        <div class="seg" id="advSeg">
+          <button data-adv="unlimited">Adv</button>
+          <button data-adv="0">Golden</button>
+          <button data-adv="1">+1</button>
+          <button data-adv="2">+2</button>
+        </div>
+      </div>
+      <p class="desc" id="advDesc" style="margin:6px 0 0">
+        <strong>Adv</strong> = win by two (standard). <strong>Golden</strong> = sudden death on the first deuce.
+        <strong>+1</strong> / <strong>+2</strong> = play 1 or 2 advantages first, then a golden point.
+      </p>
+      
+      <button class="done" id="sheetDone">Done</button>
+    </div>
+  </div>
+
+<script>
+"use strict";
+const STORE_KEY = "tennisTracker.v1";
+const POINT_LABELS = ["0", "15", "30", "40"];
+
+function freshMatch(settings) {
+  return {
+    names: ["Player 1", "Player 2"],
+    sets: [0, 0],
+    games: [0, 0],
+    points: [0, 0],
+    completedSets: [],   // array of [gamesA, gamesB]
+    tiebreak: false,
+    over: false,
+    winner: null,
+    server: 0,           // side currently serving (0 or 1)
+    serveStart: 0,       // table tennis: who served first in the current game
+    tbFirstServer: 0,    // tennis/padel: who served the tiebreak's first point
+    settings: settings || { sport: "tennis", mode: "singles", bestOf: 3, advantages: "unlimited", pointsTarget: 11 }
+  };
+}
+
+// sport: "tennis" | "padel" (points→games→sets, deuce/adv) | "tabletennis" (points→games, win by 2 to target)
+// advantages: "unlimited" (win by two) | 0 (golden at 1st deuce) | 1 | 2 (play N advs, then golden)
+function normalizeSettings(s) {
+  s = s || {};
+  if (s.advantages === undefined) s.advantages = s.golden ? 0 : "unlimited";
+  if (s.bestOf === undefined) s.bestOf = 3;
+  if (s.sport === undefined) s.sport = "tennis";
+  if (s.mode === undefined) s.mode = "singles";
+  if (s.pointsTarget === undefined) s.pointsTarget = 11;
+  delete s.golden;
+  return s;
+}
+
+// target-scored sports (rally to a points target, win by 2, best-of games — no games/sets or deuce/advantage)
+function isTargetSport(sp) { const s = sp || match.settings.sport; return s === "tabletennis" || s === "pickleball"; }
+function sportLabel(sp) {
+  return sp === "padel" ? "Padel" : sp === "tabletennis" ? "Table Tennis" : sp === "pickleball" ? "Pickleball" : "Tennis";
+}
+// Best-of options differ by sport: racket sports offer a single set; target sports are best-of games.
+function bestOfOptions(sport) {
+  return isTargetSport(sport)
+    ? [[3, "Best of 3"], [5, "Best of 5"], [7, "Best of 7"], ["inf", "Free"]]
+    : [[1, "1 set"], [3, "Best of 3"], [5, "Best of 5"], ["inf", "Free"]];
+}
+// Points-to-win options per target sport
+function pointsOptions(sport) {
+  return sport === "pickleball" ? [11, 15, 21] : [11, 21];
+}
+function fillPoints(containerId, sport) {
+  el(containerId).innerHTML = pointsOptions(sport)
+    .map((v) => `<button data-pts="${v}">${v}</button>`).join("");
+}
+function parseBestOf(raw) { return raw === "inf" ? "inf" : Number(raw); }
+function fillBestOf(containerId, sport) {
+  el(containerId).innerHTML = bestOfOptions(sport)
+    .map(([v, l]) => `<button data-bestof="${v}">${l}</button>`).join("");
+}
+
+let match = load();
+const firstRun = !match;
+if (!match) match = freshMatch();
+match.settings = normalizeSettings(match.settings);
+// migrate older saved matches that predate serve tracking
+if (match.server === undefined) match.server = 0;
+if (match.serveStart === undefined) match.serveStart = match.server;
+if (match.tbFirstServer === undefined) match.tbFirstServer = 0;
+let historyStack = [];   // snapshots for undo
+let winnerShown = match.over;   // true when the winner screen is already up (avoids re-firing confetti on resume)
+
+// selections shown on the setup screen (prefilled from the current/last match)
+let pendingSetup = {
+  sport: match.settings.sport,
+  mode: match.settings.mode,
+  bestOf: match.settings.bestOf,
+  advantages: match.settings.advantages,
+  pointsTarget: match.settings.pointsTarget
+};
+
+function setsToWin() { const b = match.settings.bestOf; return b === "inf" ? Infinity : Math.ceil(b / 2); }
+
+function load() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+function save() {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(match)); } catch (e) {}
+}
+
+function snapshot() {
+  historyStack.push(JSON.stringify(match));
+  if (historyStack.length > 200) historyStack.shift();
+}
+
+function addPoint(i) {
+  if (match.over) return;
+  snapshot();
+  if (isTargetSport()) tableTennisPoint(i);
+  else if (match.tiebreak) tiebreakPoint(i);
+  else regularPoint(i);
+  save();
+  render();
+}
+
+// Table tennis: rally point to the target (default 11), win by 2. A "game" = one set counter.
+function tableTennisPoint(i) {
+  match.points[i]++;
+  const [a, b] = match.points;
+  const target = match.settings.pointsTarget || 11;
+  if (Math.max(a, b) >= target && Math.abs(a - b) >= 2) {
+    const w = a > b ? 0 : 1;
+    match.completedSets.push([a, b]);
+    match.sets[w]++;
+    match.points = [0, 0];
+    // next game: the previous game's receiver serves first
+    match.serveStart = 1 - match.serveStart;
+    match.server = match.serveStart;
+    if (match.sets[w] >= setsToWin()) { match.over = true; match.winner = w; }
+    return;
+  }
+  // serve changes every `block` points (5 at 21-point, else 2); every point once at deuce
+  const total = a + b;
+  const block = target >= 21 ? 5 : 2;
+  const deuce = a >= target - 1 && b >= target - 1;
+  if (deuce || total % block === 0) match.server = 1 - match.server;
+}
+
+// Sudden death armed once the number of deuces reached exceeds the advantages allowed.
+// 3-3 is deuce #1, 4-4 is deuce #2, ... adv=0 arms at deuce #1, adv=1 at deuce #2, etc.
+function goldenArmed(a, b) {
+  const adv = match.settings.advantages;
+  if (adv === "unlimited" || adv == null) return false;
+  if (Math.min(a, b) < 3) return false;
+  const deuces = Math.min(a, b) - 2;
+  return deuces >= adv + 1;
+}
+
+function regularPoint(i) {
+  match.points[i]++;
+  const [a, b] = match.points;
+  const max = Math.max(a, b), diff = Math.abs(a - b);
+  const won = goldenArmed(a, b) ? (diff >= 1) : (max >= 4 && diff >= 2);
+  if (won) winGame(a > b ? 0 : 1);
+}
+
+function tiebreakPoint(i) {
+  match.points[i]++;
+  const [a, b] = match.points;
+  if (Math.max(a, b) >= 7 && Math.abs(a - b) >= 2) {
+    const w = a > b ? 0 : 1;
+    match.games[w]++;            // 7-6
+    match.tiebreak = false;
+    match.points = [0, 0];
+    match.server = 1 - match.tbFirstServer;  // next set opens with the tiebreak's first receiver
+    winSet(w);
+    return;
+  }
+  // serve changes after the 1st point, then every 2 points
+  if ((a + b) % 2 === 1) match.server = 1 - match.server;
+}
+
+function winGame(i) {
+  match.games[i]++;
+  match.points = [0, 0];
+  match.server = 1 - match.server;   // serve passes to the other side each game
+  if (match.games[0] === 6 && match.games[1] === 6) {
+    match.tiebreak = true;
+    match.tbFirstServer = match.server;   // whoever is up next serves the tiebreak's first point
+    return;
+  }
+  if (match.games[i] >= 6 && (match.games[i] - match.games[1 - i]) >= 2) winSet(i);
+}
+
+function winSet(i) {
+  match.completedSets.push([match.games[0], match.games[1]]);
+  match.sets[i]++;
+  match.games = [0, 0];
+  if (match.sets[i] >= setsToWin()) { match.over = true; match.winner = i; }
+}
+
+/* ---- display helpers ---- */
+function pointDisplay() {
+  if (isTargetSport() || match.tiebreak) return [String(match.points[0]), String(match.points[1])];
+  const [a, b] = match.points;
+  if (a >= 3 && b >= 3) {
+    if (a === b) return ["40", "40"];
+    return a > b ? ["Ad", "40"] : ["40", "Ad"];
+  }
+  return [POINT_LABELS[a], POINT_LABELS[b]];
+}
+
+/* ---- render ---- */
+const el = id => document.getElementById(id);
+function render() {
+  if (document.activeElement !== el("nameA")) el("nameA").value = match.names[0];
+  if (document.activeElement !== el("nameB")) el("nameB").value = match.names[1];
+
+  const pts = pointDisplay();
+  el("pointA").textContent = pts[0];
+  el("pointB").textContent = pts[1];
+
+  const tt = isTargetSport();
+  // The "set score" is the big number: games-in-current-set for tennis/padel, games-won for table tennis.
+  if (tt) {
+    el("gamesA").textContent = match.sets[0];
+    el("gamesB").textContent = match.sets[1];
+    el("setsA").style.display = "none";
+    el("setsB").style.display = "none";
+  } else {
+    el("gamesA").textContent = match.games[0];
+    el("gamesB").textContent = match.games[1];
+    el("setsA").style.display = "";
+    el("setsB").style.display = "";
+    renderSetDots("setsA", match.sets[0]);
+    renderSetDots("setsB", match.sets[1]);
+  }
+
+  // serve indicator — sport-aware glyph, dimmed on the non-serving side, hidden when the match is over
+  const glyph = match.settings.sport === "tabletennis" ? "🏓" : "🎾";
+  ["serveA", "serveB"].forEach((id, idx) => {
+    const b = el(id);
+    b.textContent = glyph;
+    b.classList.toggle("gone", match.over);
+    b.classList.toggle("inactive", match.server !== idx);
+  });
+
+  const st = match.settings;
+  const lenLabel = st.bestOf === "inf" ? "Free play" : st.bestOf === 1 ? "1 set" : "Best of " + st.bestOf;
+  const info = [sportLabel(st.sport), st.mode === "doubles" ? "Doubles" : "Singles", lenLabel];
+  if (tt) info.push(st.pointsTarget + " pts");
+  el("matchInfo").textContent = info.join(" · ");
+
+  el("history").innerHTML = match.completedSets
+    .map(s => `<span>${s[0]}–${s[1]}</span>`).join("");
+
+  const badge = el("badge");
+  const [pa, pb] = match.points;
+  if (match.tiebreak) {
+    badge.textContent = "Tiebreak"; badge.classList.remove("hidden");
+  } else if (tt && pa >= (st.pointsTarget - 1) && pb >= (st.pointsTarget - 1)) {
+    badge.textContent = "Deuce"; badge.classList.remove("hidden");
+  } else if (!tt && pa === pb && pa >= 3 && goldenArmed(pa, pb)) {
+    badge.textContent = "Golden point"; badge.classList.remove("hidden");
+  } else {
+    badge.classList.add("hidden");
+  }
+
+  const win = el("winner");
+  if (match.over) {
+    el("winnerName").textContent = match.names[match.winner];
+    el("winnerScore").innerHTML = match.completedSets.map(s => `<span>${s[0]}–${s[1]}</span>`).join("");
+    win.classList.add("show");
+    requestAnimationFrame(fitWinnerName);   // scale the name to fill the screen
+    if (!winnerShown) { winnerShown = true; launchConfetti(); }   // fire once, on the transition to a win
+  } else {
+    win.classList.remove("show");
+    winnerShown = false;
+  }
+
+  el("undoBtn").disabled = historyStack.length === 0;
+  syncSettingsUI();
+}
+
+function renderSetDots(id, count) {
+  const need = setsToWin();
+  // free play: no fixed target — show only the won-set dots (the .sets row reserves its height)
+  const total = need === Infinity ? count : need;
+  let html = "";
+  for (let k = 0; k < total; k++) html += `<span class="dot ${k < count ? "on" : ""}"></span>`;
+  el(id).innerHTML = html;
+}
+
+// Scale the winning name to be as large as fits the screen width (capped by height)
+function fitWinnerName() {
+  const n = el("winnerName");
+  if (!n || !n.textContent) return;
+  const maxW = Math.min(window.innerWidth * 0.92, window.innerWidth - 44);
+  const maxH = window.innerHeight * 0.34;
+  let size = maxH;
+  n.style.fontSize = size + "px";
+  let guard = 0;
+  while (n.offsetWidth > maxW && size > 14 && guard < 40) {
+    size = Math.max(14, size * (maxW / n.offsetWidth) * 0.98);
+    n.style.fontSize = size + "px";
+    guard++;
+  }
+}
+window.addEventListener("resize", () => { if (el("winner").classList.contains("show")) fitWinnerName(); });
+
+// Confetti burst on the winner screen (self-contained canvas animation)
+function launchConfetti() {
+  const c = el("confetti");
+  if (!c || !c.getContext) return;
+  const ctx = c.getContext("2d");
+  const W = c.width = window.innerWidth;
+  const H = c.height = window.innerHeight;
+  const colors = ["#2563eb", "#e11d48", "#22c55e", "#f59e0b", "#f8fafc", "#38bdf8"];
+  const parts = [];
+  for (let i = 0; i < 170; i++) {
+    const angle = (Math.PI * 2 * i) / 170 + Math.random() * 0.5;
+    const speed = 5 + Math.random() * 10;
+    parts.push({
+      x: W / 2, y: H * 0.4,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - 4,
+      g: 0.16 + Math.random() * 0.14,
+      w: 6 + Math.random() * 7,
+      color: colors[i % colors.length],
+      rot: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.35
+    });
+  }
+  let frame = 0;
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+    let alive = 0;
+    for (const p of parts) {
+      p.vy += p.g; p.vx *= 0.99; p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+      if (p.y < H + 30) alive++;
+      ctx.save();
+      ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.w / 2, p.w, p.w * 0.6);
+      ctx.restore();
+    }
+    frame++;
+    if (alive > 0 && frame < 280) requestAnimationFrame(tick);
+    else ctx.clearRect(0, 0, W, H);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ---- interactions ---- */
+el("sideA").addEventListener("click", () => addPoint(0));
+el("sideB").addEventListener("click", () => addPoint(1));
+
+// Editable names inline — no native prompt() (some environments block it)
+function wireName(nameId, idx) {
+  const input = el(nameId);
+  ["click", "pointerdown", "mousedown", "touchstart"].forEach(ev =>
+    input.addEventListener(ev, e => e.stopPropagation()));   // don't score when tapping the name
+  input.addEventListener("input", () => { match.names[idx] = input.value.slice(0, 24); save(); });
+  input.addEventListener("blur", () => {
+    if (!input.value.trim()) { match.names[idx] = idx === 0 ? "Player 1" : "Player 2"; render(); }
+  });
+  input.addEventListener("keydown", e => { if (e.key === "Enter") input.blur(); });
+}
+wireName("nameA", 0);
+wireName("nameB", 1);
+
+// Tap a serve ball to give/correct serve for that side (doesn't score)
+function setServer(i) {
+  match.server = i;
+  if (match.points[0] === 0 && match.points[1] === 0) match.serveStart = i; // also fix the game's first server
+  save(); render();
+}
+el("serveA").addEventListener("click", (e) => { e.stopPropagation(); setServer(0); });
+el("serveB").addEventListener("click", (e) => { e.stopPropagation(); setServer(1); });
+
+el("undoBtn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (!historyStack.length) return;
+  match = JSON.parse(historyStack.pop());
+  save(); render();
+});
+
+// Reset asks for confirmation via a custom dialog (native confirm() is blocked in some environments)
+const confirmModal = el("confirmModal");
+const closeConfirm = () => confirmModal.classList.remove("show");
+el("resetBtn").addEventListener("click", (e) => { e.stopPropagation(); confirmModal.classList.add("show"); });
+el("confirmCancel").addEventListener("click", closeConfirm);
+el("confirmOk").addEventListener("click", () => { closeConfirm(); showSetup(); });
+confirmModal.addEventListener("click", (e) => { if (e.target === confirmModal) closeConfirm(); });
+
+el("winnerNew").addEventListener("click", showSetup);
+
+/* ---- settings sheet ---- */
+const sheet = el("sheet");
+el("settingsBtn").addEventListener("click", (e) => { e.stopPropagation(); sheet.classList.add("show"); });
+el("sheetDone").addEventListener("click", () => sheet.classList.remove("show"));
+sheet.addEventListener("click", (e) => { if (e.target === sheet) sheet.classList.remove("show"); });
+
+el("formatSeg").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-bestof]");
+  if (!btn) return;
+  const bestOf = parseBestOf(btn.dataset.bestof);
+  if (bestOf === match.settings.bestOf) return;
+  const settings = { ...match.settings, bestOf };
+  const names = match.names.slice();
+  match = freshMatch(settings);
+  match.names = names;
+  historyStack = [];
+  save(); render();
+});
+
+el("advSeg").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-adv]");
+  if (!btn) return;
+  const raw = btn.dataset.adv;
+  match.settings.advantages = raw === "unlimited" ? "unlimited" : Number(raw);
+  save(); render();   // applied live; deuce rule doesn't invalidate the current score
+});
+
+function syncSettingsUI() {
+  const tt = isTargetSport();
+  fillBestOf("formatSeg", match.settings.sport);
+  document.querySelectorAll("#formatSeg button").forEach(b =>
+    b.classList.toggle("active", parseBestOf(b.dataset.bestof) === match.settings.bestOf));
+  el("advRow").style.display = tt ? "none" : "";
+  el("advDesc").style.display = tt ? "none" : "";
+  document.querySelectorAll("#advSeg button").forEach(b => {
+    const v = b.dataset.adv === "unlimited" ? "unlimited" : Number(b.dataset.adv);
+    b.classList.toggle("active", v === match.settings.advantages);
+  });
+}
+
+/* ---- setup / welcome screen ---- */
+function showSetup() {
+  // prefill from the current/last match so the picker remembers your choices
+  pendingSetup = {
+    sport: match.settings.sport,
+    mode: match.settings.mode,
+    bestOf: match.settings.bestOf,
+    advantages: match.settings.advantages,
+    pointsTarget: match.settings.pointsTarget
+  };
+  syncSetupUI();
+  el("setup").classList.add("show");
+}
+
+// top-down court diagram shown beside the settings, per sport
+function courtSVG(sport) {
+  let lines;
+  if (sport === "tabletennis") {
+    lines = `<rect x="66" y="110" width="168" height="300" rx="4"/>
+      <line x1="150" y1="110" x2="150" y2="410"/>
+      <line x1="50" y1="260" x2="250" y2="260"/>`;
+  } else if (sport === "padel") {
+    lines = `<rect x="52" y="55" width="196" height="410" rx="3"/>
+      <line x1="52" y1="260" x2="248" y2="260"/>
+      <line x1="52" y1="150" x2="248" y2="150"/>
+      <line x1="52" y1="370" x2="248" y2="370"/>
+      <line x1="150" y1="150" x2="150" y2="370"/>`;
+  } else if (sport === "pickleball") {
+    lines = `<rect x="40" y="40" width="220" height="440"/>
+      <line x1="18" y1="260" x2="282" y2="260"/>
+      <line x1="40" y1="212" x2="260" y2="212"/>
+      <line x1="40" y1="308" x2="260" y2="308"/>
+      <line x1="150" y1="40" x2="150" y2="212"/>
+      <line x1="150" y1="308" x2="150" y2="480"/>`;
+  } else { // tennis
+    lines = `<rect x="40" y="40" width="220" height="440"/>
+      <line x1="66" y1="40" x2="66" y2="480"/>
+      <line x1="234" y1="40" x2="234" y2="480"/>
+      <line x1="18" y1="260" x2="282" y2="260"/>
+      <line x1="66" y1="175" x2="234" y2="175"/>
+      <line x1="66" y1="345" x2="234" y2="345"/>
+      <line x1="150" y1="175" x2="150" y2="345"/>`;
+  }
+  return `<svg viewBox="0 0 300 520" xmlns="http://www.w3.org/2000/svg"><g class="cl">${lines}</g></svg>`;
+}
+
+function syncSetupUI() {
+  const target = isTargetSport(pendingSetup.sport);
+  el("courtBg").innerHTML = courtSVG(pendingSetup.sport);
+  // target sports (table tennis, pickleball) have no deuce/advantage; they use a points target instead
+  el("setupAdvGroup").style.display = target ? "none" : "";
+  el("setupPointsGroup").style.display = target ? "" : "none";
+  if (target) fillPoints("setupPoints", pendingSetup.sport);
+  // padel is always doubles — hide the Type selector entirely
+  el("setupModeGroup").style.display = pendingSetup.sport === "padel" ? "none" : "";
+  fillBestOf("setupLength", pendingSetup.sport);
+
+  document.querySelectorAll("#setupSport button").forEach(b =>
+    b.classList.toggle("active", b.dataset.sport === pendingSetup.sport));
+  document.querySelectorAll("#setupMode button").forEach(b =>
+    b.classList.toggle("active", b.dataset.mode === pendingSetup.mode));
+  document.querySelectorAll("#setupLength button").forEach(b =>
+    b.classList.toggle("active", parseBestOf(b.dataset.bestof) === pendingSetup.bestOf));
+  document.querySelectorAll("#setupPoints button").forEach(b =>
+    b.classList.toggle("active", Number(b.dataset.pts) === pendingSetup.pointsTarget));
+  document.querySelectorAll("#setupAdv button").forEach(b => {
+    const v = b.dataset.adv === "unlimited" ? "unlimited" : Number(b.dataset.adv);
+    b.classList.toggle("active", v === pendingSetup.advantages);
+  });
+}
+
+el("setupSport").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-sport]"); if (!b) return;
+  const sport = b.dataset.sport;
+  pendingSetup.sport = sport;
+  // padel & pickleball are usually doubles; tennis & table tennis default to singles
+  pendingSetup.mode = (sport === "padel" || sport === "pickleball") ? "doubles" : "singles";
+  // keep bestOf valid for the sport's options
+  const allowed = bestOfOptions(sport).map(o => o[0]);
+  if (!allowed.includes(pendingSetup.bestOf)) pendingSetup.bestOf = sport === "tabletennis" ? 5 : 3;
+  // keep the points target valid for the sport
+  if (isTargetSport(sport) && !pointsOptions(sport).includes(pendingSetup.pointsTarget)) pendingSetup.pointsTarget = 11;
+  syncSetupUI();
+});
+el("setupMode").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-mode]"); if (!b || b.disabled) return;
+  pendingSetup.mode = b.dataset.mode; syncSetupUI();
+});
+el("setupLength").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-bestof]"); if (!b) return;
+  pendingSetup.bestOf = parseBestOf(b.dataset.bestof); syncSetupUI();
+});
+el("setupPoints").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-pts]"); if (!b) return;
+  pendingSetup.pointsTarget = Number(b.dataset.pts); syncSetupUI();
+});
+el("setupAdv").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-adv]"); if (!b) return;
+  pendingSetup.advantages = b.dataset.adv === "unlimited" ? "unlimited" : Number(b.dataset.adv);
+  syncSetupUI();
+});
+
+el("startBtn").addEventListener("click", () => {
+  match = freshMatch({
+    sport: pendingSetup.sport,
+    mode: pendingSetup.mode,
+    bestOf: pendingSetup.bestOf,
+    advantages: pendingSetup.advantages,
+    pointsTarget: pendingSetup.pointsTarget
+  });
+  match.names = pendingSetup.mode === "doubles" ? ["Team 1", "Team 2"] : ["Player 1", "Player 2"];
+  historyStack = [];
+  save();
+  el("setup").classList.remove("show");
+  render();
+});
+
+// Cancel just closes the setup and resumes whatever match is in memory
+el("setupCancel").addEventListener("click", () => el("setup").classList.remove("show"));
+
+render();
+if (firstRun) showSetup();
+</script>
+<script>
+  // Register the service worker so the app installs & works offline (needs http(s); no-op on file://)
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  }
+</script>
+</body>
+</html>
