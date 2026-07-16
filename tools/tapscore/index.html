@@ -48,6 +48,12 @@
   .side:active { filter: brightness(1.18); }
   .side-a { background: linear-gradient(160deg, var(--a), var(--a-dark)); }
   .side-b { background: linear-gradient(160deg, var(--b), var(--b-dark)); }
+  /* set-won celebration: a quick white flash over the side + a pulse of the set score */
+  .side::after { content: ""; position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+  .side.setwon::after { animation: setflash 1.1s ease-out; }
+  @keyframes setflash { 0% { opacity: 0; } 12% { opacity: .45; } 100% { opacity: 0; } }
+  .side.setwon .games, .side.setwon .sets { animation: setpop .6s ease .12s; }
+  @keyframes setpop { 0% { transform: scale(1); } 35% { transform: scale(1.28); } 100% { transform: scale(1); } }
 
   /* pill holds the serve ball + the editable name so they never clash with anything else */
   .namepill {
@@ -269,6 +275,8 @@
     .matchinfo { display: none; }              /* would collide with the top side's name pill */
     .center { max-width: 80vw; }
     .history { flex-direction: row; flex-wrap: wrap; gap: 10px; }  /* keep history a compact row in portrait */
+    .controls { gap: 8px; bottom: calc(env(safe-area-inset-bottom) + 10px); }
+    .controls button { padding: 8px 13px; font-size: 13px; border-radius: 11px; }
   }
 
   /* Setup screen on small viewports — placed last so these override the base .setup rules above.
@@ -537,11 +545,41 @@ function snapshot() {
 function addPoint(i) {
   if (match.over) return;
   snapshot();
+  const a0 = match.sets[0], b0 = match.sets[1];
   if (isTargetSport()) tableTennisPoint(i);
   else if (match.tiebreak) tiebreakPoint(i);
   else regularPoint(i);
   save();
   render();
+  // celebrate a set win (but not the final set — the winner screen handles that)
+  if (!match.over) {
+    if (match.sets[0] > a0) celebrateSet(0);
+    else if (match.sets[1] > b0) celebrateSet(1);
+  }
+}
+
+// brief flash + pulse on the side that just won a set, to soften the reset to 0–0
+function celebrateSet(side) {
+  const s = el(side === 0 ? "sideA" : "sideB");
+  s.classList.remove("setwon");
+  void s.offsetWidth;           // restart the animation if one is already running
+  s.classList.add("setwon");
+  setTimeout(() => s.classList.remove("setwon"), 1200);
+}
+
+// Would side i win the set / match by taking the next point? (simulated through the real scoring logic)
+function outcomeIfWin(i) {
+  const saved = match;
+  try {
+    match = JSON.parse(JSON.stringify(saved));
+    const before = match.sets[i];
+    if (isTargetSport()) tableTennisPoint(i);
+    else if (match.tiebreak) tiebreakPoint(i);
+    else regularPoint(i);
+    return { matchWon: match.over, setWon: match.sets[i] > before };
+  } finally {
+    match = saved;
+  }
 }
 
 // Table tennis: rally point to the target (default 11), win by 2. A "game" = one set counter.
@@ -677,14 +715,22 @@ function render() {
 
   const badge = el("badge");
   const [pa, pb] = match.points;
-  if (match.tiebreak) {
-    badge.textContent = "Tiebreak"; badge.classList.remove("hidden");
-  } else if (tt && pa >= (st.pointsTarget - 1) && pb >= (st.pointsTarget - 1)) {
-    badge.textContent = "Deuce"; badge.classList.remove("hidden");
-  } else if (!tt && pa === pb && pa >= 3 && goldenArmed(pa, pb)) {
-    badge.textContent = "Golden point"; badge.classList.remove("hidden");
+  let badgeText = "";
+  if (!match.over) {
+    const winA = outcomeIfWin(0), winB = outcomeIfWin(1);
+    if (winA.matchWon || winB.matchWon) badgeText = "Match point";
+    else if (winA.setWon || winB.setWon) badgeText = "Set point";
+    else if (match.tiebreak) badgeText = "Tiebreak";
+    else if (tt && pa >= (st.pointsTarget - 1) && pb >= (st.pointsTarget - 1)) badgeText = "Deuce";
+    else if (!tt && pa === pb && pa >= 3 && goldenArmed(pa, pb)) badgeText = "Golden point";
+  }
+
+  if (badgeText) {
+    badge.textContent = badgeText; badge.classList.remove("hidden");
+    el("history").style.display = "none";   // badge replaces the set summary — keep the center clean
   } else {
     badge.classList.add("hidden");
+    el("history").style.display = "";
   }
 
   const win = el("winner");
