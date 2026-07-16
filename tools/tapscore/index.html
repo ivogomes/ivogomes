@@ -254,7 +254,7 @@
   .switch.on { background: #22c55e; }
   .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: var(--elev-1); transition: left .2s var(--ease); }
   .switch.on::after { left: 25px; }
-  .sheet .done {
+  .sheet .done, .help .done {
     width: 100%; margin-top: 16px; padding: 14px;
     font: inherit; font-weight: 600; letter-spacing: .3px; color: #fff;
     background: var(--primary); border: 0; border-radius: 999px; cursor: pointer;
@@ -262,8 +262,8 @@
     box-shadow: var(--elev-2);
     transition: box-shadow .2s var(--ease), transform .1s var(--ease);
   }
-  .sheet .done:hover { box-shadow: var(--elev-3); }
-  .sheet .done:active { transform: translateY(1px); box-shadow: var(--elev-1); }
+  .sheet .done:hover, .help .done:hover { box-shadow: var(--elev-3); }
+  .sheet .done:active, .help .done:active { transform: translateY(1px); box-shadow: var(--elev-1); }
 
   /* Confirm dialog (custom, not native confirm() which some environments block) */
   .modal {
@@ -291,6 +291,68 @@
   .modal .confirm { background: #e11d48; color: #fff; box-shadow: var(--elev-1); }
   .modal .confirm:hover { box-shadow: var(--elev-2); }
   .modal .actions button:active { transform: translateY(1px); }
+
+  /* Help overlay — how to use the app */
+  .help {
+    position: fixed; inset: 0; z-index: 10;
+    display: none; align-items: center; justify-content: center;
+    background: rgba(2,6,23,.7); backdrop-filter: blur(4px);
+    padding: max(16px, env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom));
+  }
+  .help.show { display: flex; }
+  .help .panel {
+    position: relative;
+    width: 100%; max-width: 480px;
+    max-height: 92dvh; overflow-y: auto;
+    overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+    background: #0f172a;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 20px;
+    padding: 24px 22px calc(env(safe-area-inset-bottom) + 22px);
+    box-shadow: var(--elev-3);
+  }
+  .help h2 { margin: 0 40px 4px 0; font-size: 22px; letter-spacing: -0.01em; }
+  .help .sub { margin: 0 0 20px; opacity: .6; font-size: 14px; line-height: 1.4; }
+  .help .helpClose {
+    position: absolute; top: 14px; right: 14px;
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font: inherit; font-size: 22px; line-height: 1; color: var(--ink);
+    background: rgba(255,255,255,.08); border: 0; cursor: pointer;
+    transition: background-color .18s var(--ease);
+  }
+  .help .helpClose:hover { background: rgba(255,255,255,.16); }
+  .help .step { display: flex; gap: 15px; align-items: flex-start; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08); }
+  .help .step:first-of-type { border-top: 0; padding-top: 4px; }
+  .help .stepIcon {
+    flex: 0 0 auto; width: 50px; height: 50px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+  }
+  .help .stepIcon svg { width: 30px; height: 30px; display: block; }
+  .help .stepText h3 { margin: 3px 0 5px; font-size: 16px; font-weight: 600; }
+  .help .stepText p { margin: 0; font-size: 14px; line-height: 1.45; opacity: .78; }
+  .help .stepText p .ball { display: inline-block; width: 1em; height: 1em; vertical-align: -0.15em; }
+  .help .keys { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .help .keys li { display: flex; align-items: center; gap: 10px; font-size: 14px; opacity: .85; }
+  .help .keys .k {
+    flex: 0 0 auto; min-width: 66px; text-align: center;
+    font-size: 12px; font-weight: 600; letter-spacing: .3px;
+    padding: 5px 10px; border-radius: 8px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+  }
+  .help .done { margin-top: 20px; }
+  .help .done:focus-visible, .help .helpClose:focus-visible {
+    outline: 2px solid #93c5fd; outline-offset: 2px;
+  }
+  /* subtle "How to use" link on the setup screen */
+  .setup .helpLink {
+    display: inline-flex; align-items: center; gap: 6px; margin: 10px 0 0;
+    font: inherit; font-size: 14px; color: var(--ink);
+    background: transparent; border: 0; opacity: .6; cursor: pointer;
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+  .setup .helpLink:hover { opacity: 1; }
 
   /* Setup / welcome screen */
   .setup {
@@ -412,7 +474,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .ripple { display: none; }
-    .controls button, .seg button, .startBtn, .sheet .done,
+    .controls button, .seg button, .startBtn, .sheet .done, .help .done,
     .winner .newmatch, .modal .actions button, .switch, .switch::after {
       transition-duration: .001ms;
     }
@@ -452,7 +514,19 @@
   <div class="controls">
     <button id="undoBtn" title="Undo last point">Undo</button>
     <button id="voiceBtn" class="iconbtn" title="Announce score" aria-label="Announce score" aria-pressed="false"></button>
-    <button id="settingsBtn" title="Settings">⚙︎</button>
+    <button id="helpBtn" class="iconbtn" title="How to use" aria-label="How to use">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button id="settingsBtn" class="iconbtn" title="Settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
     <button id="resetBtn" title="New match">Reset</button>
   </div>
 
@@ -570,6 +644,9 @@
 
       <button class="startBtn" id="startBtn">Start match</button>
       <button id="setupCancel" style="width:100%;margin-top:10px;padding:12px;font:inherit;color:var(--ink);background:transparent;border:0;opacity:.6;cursor:pointer">Cancel</button>
+      <div style="text-align:center">
+        <button class="helpLink" id="setupHelp" type="button">How to use TapScore</button>
+      </div>
     </div>
   </div>
 
@@ -631,6 +708,77 @@
       </div>
 
       <button class="done" id="sheetDone">Done</button>
+    </div>
+  </div>
+
+  <div class="help" id="help" role="dialog" aria-modal="true" aria-labelledby="helpTitle" aria-hidden="true">
+    <div class="panel">
+      <button class="helpClose" id="helpClose" aria-label="Close help">&times;</button>
+      <h2 id="helpTitle">How to use TapScore</h2>
+      <p class="sub">Prop your phone up courtside and score the whole match with taps — it keeps the points, games, sets and serve for you.</p>
+
+      <div class="step">
+        <div class="stepIcon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="18" height="32" rx="3" fill="var(--a)"/>
+            <rect x="26" y="8" width="18" height="32" rx="3" fill="var(--b)"/>
+            <circle cx="13" cy="24" r="7" fill="#fff" opacity=".28"/>
+            <circle cx="13" cy="24" r="3.4" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="stepText">
+          <h3>Tap to score</h3>
+          <p>Tap anywhere on a player's side of the screen to give them the point. Points roll up into games and sets automatically. Made a mistake? Hit <strong>Undo</strong>.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="stepIcon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="12" fill="#c9e64b"/>
+            <path d="M14.5 15 Q24 24 14.5 33" fill="none" stroke="#fbfee2" stroke-width="1.8"/>
+            <path d="M33.5 15 Q24 24 33.5 33" fill="none" stroke="#fbfee2" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <div class="stepText">
+          <h3>Tap the ball to switch serve</h3>
+          <p>The ball next to a name marks who's serving. It moves on its own as games go by — but if it ever gets out of sync, just tap it on the correct side to fix it.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="stepIcon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="6" width="16" height="36" rx="8" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="15" r="3.2" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="stepText">
+          <h3>Score with a Bluetooth clicker</h3>
+          <p>Pair any Bluetooth clicker or remote that types like a keyboard (a camera shutter or presentation remote works), then set the phone aside where everyone can see the score:</p>
+          <ul class="keys">
+            <li><span class="k">1 click</span> Point for your team</li>
+            <li><span class="k">2 clicks</span> Point for the opponents</li>
+            <li><span class="k">Hold</span> Undo the last point</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="stepIcon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9 h3.5 l4.5 -3.5 v13 l-4.5 -3.5 H3 z" fill="currentColor"/>
+            <path d="M14.5 8.5 a4.2 4.2 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M17 6 a7.6 7.6 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="stepText">
+          <h3>Hear the score out loud</h3>
+          <p>Tap the speaker button in the bottom bar to have each point called out. Pair a Bluetooth speaker and everyone hears the running score — no need to glance at the phone.</p>
+        </div>
+      </div>
+
+      <button class="done" id="helpDone">Got it</button>
     </div>
   </div>
 
@@ -1217,6 +1365,16 @@ confirmModal.addEventListener("click", (e) => { if (e.target === confirmModal) c
 
 el("winnerNew").addEventListener("click", showSetup);
 
+/* ---- help overlay ---- */
+const help = el("help");
+const openHelp = () => help.classList.add("show");
+const closeHelp = () => help.classList.remove("show");
+el("helpBtn").addEventListener("click", (e) => { e.stopPropagation(); openHelp(); });
+el("setupHelp").addEventListener("click", (e) => { e.stopPropagation(); openHelp(); });
+el("helpClose").addEventListener("click", closeHelp);
+el("helpDone").addEventListener("click", closeHelp);
+help.addEventListener("click", (e) => { if (e.target === help) closeHelp(); });
+
 /* ---- settings sheet ---- */
 const sheet = el("sheet");
 el("settingsBtn").addEventListener("click", (e) => { e.stopPropagation(); sheet.classList.add("show"); });
@@ -1267,12 +1425,13 @@ el("winBySeg").addEventListener("click", (e) => {
 
 // Voice announce toggle lives on the bottom bar
 function voiceIconSVG(on) {
-  const spk = `<path d="M3 9 h3.5 l4.5 -3.5 v13 l-4.5 -3.5 H3 z" fill="currentColor"/>`;
+  // Stroked volume icon, matching the help & settings icon set (Lucide-style, 1.8 stroke, round caps)
+  const spk = `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`;
   const extra = on
-    ? `<path d="M14.5 8.5 a4.2 4.2 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-       <path d="M17 6 a7.6 7.6 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`
-    : `<line x1="15.5" y1="9" x2="21" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-       <line x1="21" y1="9" x2="15.5" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`;
+    ? `<path d="M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+       <path d="M19.07 4.93a10 10 0 0 1 0 14.14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`
+    : `<line x1="16" y1="9" x2="22" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+       <line x1="22" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`;
   return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${spk}${extra}</svg>`;
 }
 function syncVoiceBtn() {
@@ -1522,7 +1681,7 @@ function remoteActive() {
   const ae = document.activeElement;
   if (ae && (ae.tagName === "INPUT" || ae.isContentEditable)) return false;
   if (match.over) return false;
-  return !["setup", "sheet", "winner", "confirmModal"].some(id => el(id).classList.contains("show"));
+  return !["setup", "sheet", "winner", "confirmModal", "help"].some(id => el(id).classList.contains("show"));
 }
 function resolveRemoteTaps() {
   const n = rTaps; rTaps = 0; rTapTimer = null;
