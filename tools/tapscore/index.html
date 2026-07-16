@@ -274,7 +274,7 @@
   /* Portrait / vertical: stack the sides top & bottom. Placed last so it overrides the base rules above. */
   @media (orientation: portrait) {
     .court { flex-direction: column; }
-    .point { font-size: min(62cqw, 50cqh); }   /* leave a clear middle band for the scoreboard */
+    .point { font-size: min(62cqw, 48cqh); }   /* leave a clear middle band for the scoreboard */
     .matchinfo { display: none; }              /* would collide with the top side's name pill */
     .center { max-width: 80vw; }
     .history { flex-direction: row; flex-wrap: wrap; gap: 10px; }  /* keep history a compact row in portrait */
@@ -567,29 +567,12 @@ function addPoint(i) {
 let voiceOn = false;
 try { voiceOn = localStorage.getItem("tennisTracker.voice") === "1"; } catch (e) {}
 
-// Force English regardless of the device's default TTS locale
-let enVoice = null;
-function pickEnglishVoice() {
-  if (!("speechSynthesis" in window)) return;
-  const voices = window.speechSynthesis.getVoices() || [];
-  enVoice = voices.find(v => /^en[-_]us/i.test(v.lang))
-         || voices.find(v => /^en[-_]gb/i.test(v.lang))
-         || voices.find(v => /^en\b/i.test(v.lang) || /^en[-_]/i.test(v.lang))
-         || null;
-}
-if ("speechSynthesis" in window) {
-  pickEnglishVoice();
-  window.speechSynthesis.addEventListener("voiceschanged", pickEnglishVoice);   // voices load async on some platforms
-}
-
 function speak(text) {
   if (!voiceOn || !text || !("speechSynthesis" in window)) return;
   try {
     window.speechSynthesis.cancel();   // drop any backlog so fast tapping doesn't pile up
-    if (!enVoice) pickEnglishVoice();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = "en-US";
-    if (enVoice) u.voice = enVoice;
+    u.lang = "en-US";                  // force English; let the engine pick its own best matching voice
     u.rate = 1.05;
     window.speechSynthesis.speak(u);
   } catch (e) {}
@@ -624,7 +607,7 @@ function announceScore(before) {
   const s = match.server, r = 1 - s;
   let text;
   if (match.over) {
-    text = (target ? "Game, set, and match. " : "Game, set, and match, ") + match.names[match.winner] + " wins";
+    text = (target ? "Game, set, and match. " : "Game, set, and match, ") + match.names[match.winner];
   } else if (match.sets[0] + match.sets[1] > before.sets[0] + before.sets[1]) {
     const w = match.sets[0] > before.sets[0] ? 0 : 1;
     text = (target ? "Game, " : "Set, ") + match.names[w] + ". " + tally(match.sets[0], match.sets[1], target ? "games" : "sets", !target);
