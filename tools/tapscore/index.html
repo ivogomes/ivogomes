@@ -313,6 +313,19 @@
   .switch.on { background: var(--primary); }
   .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: var(--elev-1); transition: left .2s var(--ease); }
   .switch.on::after { left: 25px; }
+  /* announcer voice picker — native select styled for the dark sheet */
+  .voiceSel {
+    width: 100%; min-height: 48px;
+    font: inherit; color: var(--ink);
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.3); border-radius: 12px;
+    padding: 10px 40px 10px 14px; cursor: pointer;
+    -webkit-appearance: none; appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%23f8fafc' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px;
+  }
+  .voiceSel:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+  .voiceSel option { color: #0b1220; }   /* native dropdown list uses the OS palette */
   .sheet .done, .help .done {
     width: 100%; margin-top: 16px; padding: 14px;
     font: inherit; font-weight: 600; letter-spacing: .3px; color: var(--on-primary);
@@ -426,12 +439,12 @@
     display: none; align-items: center; justify-content: center;
     gap: clamp(16px, 4vw, 48px); flex-wrap: wrap;
     background: #0b1220; overflow: auto;
-    padding: max(20px, env(safe-area-inset-top)) 18px calc(20px + env(safe-area-inset-bottom));
+    padding: calc(env(safe-area-inset-top) + 20px) max(18px, env(safe-area-inset-right)) calc(20px + env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
   }
   .setup.show { display: flex; }
-  /* top accent bar echoing the two match sides (blue / red) */
+  /* top accent bar echoing the two match sides — sits below the status bar / notch, not under it */
   .setup .topbar {
-    position: fixed; top: 0; left: 0; right: 0; height: 6px; z-index: 2;
+    position: fixed; top: env(safe-area-inset-top); left: 0; right: 0; height: 6px; z-index: 2;
     background: linear-gradient(90deg, var(--a) 0 50%, var(--b) 50% 100%);
     pointer-events: none;
   }
@@ -775,6 +788,15 @@
           <button data-winby="1">Straight</button>
         </div>
       </div>
+      <div class="row" id="voiceRow">
+        <div>
+          <label>Announcer voice</label>
+          <span class="desc">Only the voices your device exposes to the browser appear here. On iPhone, download extra voices in Settings → Accessibility → Spoken Content → Voices; if a voice isn't listed below, iOS isn't sharing it with web apps.</span>
+        </div>
+        <select id="voiceSelect" class="voiceSel" aria-label="Announcer voice">
+          <option value="">Automatic (best available)</option>
+        </select>
+      </div>
 
       <button class="done" id="sheetDone">Done</button>
     </div>
@@ -1000,12 +1022,32 @@ function addPoint(i) {
 let voiceOn = false;
 try { voiceOn = localStorage.getItem("tennisTracker.voice") === "1"; } catch (e) {}
 
+// A specific voice the user picked in settings (by voiceURI). Empty = automatic.
+let chosenVoiceURI = "";
+try { chosenVoiceURI = localStorage.getItem("tennisTracker.voiceURI") || ""; } catch (e) {}
+
 // Voices load asynchronously on some platforms (notably iOS/Safari) — cache them and refresh.
 let cachedVoices = [];
-function refreshVoices() { try { cachedVoices = window.speechSynthesis.getVoices() || []; } catch (e) {} }
+function allVoices() {
+  return cachedVoices.length ? cachedVoices
+    : (("speechSynthesis" in window) ? window.speechSynthesis.getVoices() : []);
+}
+function refreshVoices() {
+  try { cachedVoices = window.speechSynthesis.getVoices() || []; } catch (e) {}
+}
 if ("speechSynthesis" in window) {
   refreshVoices();
-  window.speechSynthesis.addEventListener("voiceschanged", refreshVoices);
+  // voiceschanged fires asynchronously (after init), so it's safe to touch the DOM/select here
+  window.speechSynthesis.addEventListener("voiceschanged", () => { refreshVoices(); populateVoiceSelect(); });
+}
+
+// The voice actually used: the user's explicit pick if it's still available, else the best English one.
+function pickVoice() {
+  if (chosenVoiceURI) {
+    const hit = allVoices().find(v => v.voiceURI === chosenVoiceURI);
+    if (hit) return hit;
+  }
+  return bestEnglishVoice();
 }
 
 // Pick the most natural English voice available — don't just keep the device default.
@@ -1013,8 +1055,7 @@ if ("speechSynthesis" in window) {
 // (same name, different voiceURI) once the user downloads them; desktop/Android expose
 // Google / Natural / Neural voices. We rank by those quality hints and prefer en-US.
 function bestEnglishVoice() {
-  const voices = cachedVoices.length ? cachedVoices
-    : (("speechSynthesis" in window) ? window.speechSynthesis.getVoices() : []);
+  const voices = allVoices();
   let best = null, bestScore = -1;
   for (const v of voices) {
     if (!/^en/i.test(v.lang || "")) continue;
@@ -1044,8 +1085,8 @@ function speak(text) {
     warm.volume = 0;
     synth.speak(warm);
     const u = new SpeechSynthesisUtterance(text);
-    const v = bestEnglishVoice();
-    if (v) { u.voice = v; u.lang = v.lang || "en-US"; }   // prefer the most natural English voice
+    const v = pickVoice();
+    if (v) { u.voice = v; u.lang = v.lang || "en-US"; }   // user's pick, or the most natural English voice
     u.rate = 1.0;
     u.pitch = 1.0;
     synth.speak(u);
@@ -1570,7 +1611,11 @@ help.addEventListener("click", (e) => { if (e.target === help) closeHelp(); });
 
 /* ---- settings sheet ---- */
 const sheet = el("sheet");
-el("settingsBtn").addEventListener("click", (e) => { e.stopPropagation(); sheet.classList.add("show"); });
+el("settingsBtn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  refreshVoices(); populateVoiceSelect();   // some platforms only fill the voice list after a first interaction
+  sheet.classList.add("show");
+});
 el("sheetDone").addEventListener("click", () => sheet.classList.remove("show"));
 sheet.addEventListener("click", (e) => { if (e.target === sheet) sheet.classList.remove("show"); });
 
@@ -1644,6 +1689,39 @@ el("voiceBtn").addEventListener("click", (e) => {
   syncVoiceBtn();
 });
 syncVoiceBtn();
+
+// Fill the announcer-voice picker with whatever voices this device exposes (English first).
+function populateVoiceSelect() {
+  const sel = el("voiceSelect");
+  if (!sel) return;
+  if (!("speechSynthesis" in window)) { el("voiceRow").style.display = "none"; return; }
+  const voices = allVoices().slice().sort((a, b) => {
+    const ae = /^en/i.test(a.lang || ""), be = /^en/i.test(b.lang || "");
+    if (ae !== be) return ae ? -1 : 1;                       // English voices first
+    return (a.name || "").localeCompare(b.name || "");
+  });
+  // rebuild options, keeping the leading "Automatic" entry
+  sel.length = 1;
+  for (const v of voices) {
+    const o = document.createElement("option");
+    o.value = v.voiceURI;
+    o.textContent = /^en/i.test(v.lang || "") ? v.name : `${v.name} (${v.lang})`;
+    sel.appendChild(o);
+  }
+  // reflect the stored choice if it's still present; otherwise fall back to Automatic
+  sel.value = chosenVoiceURI && voices.some(v => v.voiceURI === chosenVoiceURI) ? chosenVoiceURI : "";
+}
+el("voiceSelect").addEventListener("change", (e) => {
+  chosenVoiceURI = e.target.value;
+  try { localStorage.setItem("tennisTracker.voiceURI", chosenVoiceURI); } catch (e) {}
+  // audition the pick so the choice is obvious
+  if ("speechSynthesis" in window) {
+    const wasOn = voiceOn; voiceOn = true;   // sample even if announcements are currently off
+    speak("Fifteen, love");
+    voiceOn = wasOn;
+  }
+});
+populateVoiceSelect();
 
 function syncSettingsUI() {
   const tt = isTargetSport();
