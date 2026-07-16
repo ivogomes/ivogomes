@@ -47,6 +47,9 @@
     --elev-3: 0 10px 22px rgba(0,0,0,.4), 0 4px 8px rgba(0,0,0,.28);
     --ease: cubic-bezier(.2, 0, 0, 1);   /* Material standard easing */
   }
+  /* iOS-only copy — shown only when the root has .is-ios (set in JS) */
+  .ios-only { display: none; }
+  .is-ios .ios-only { display: revert; }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { height: 100%; margin: 0; }
   body {
@@ -791,7 +794,7 @@
       <div class="row" id="voiceRow">
         <div>
           <label>Announcer voice</label>
-          <span class="desc">Only the voices your device exposes to the browser appear here. On iPhone, download extra voices in Settings → Accessibility → Spoken Content → Voices; if a voice isn't listed below, iOS isn't sharing it with web apps.</span>
+          <span class="desc">Only the voices your device exposes to the browser appear here.<span class="ios-only"> On iPhone, download extra voices in Settings → Accessibility → Spoken Content → Voices; if a voice isn't listed below, iOS isn't sharing it with web apps.</span></span>
         </div>
         <select id="voiceSelect" class="voiceSel" aria-label="Announcer voice">
           <option value="">Automatic (best available)</option>
@@ -866,7 +869,7 @@
         <div class="stepText">
           <h3>Hear the score out loud</h3>
           <p>Tap the speaker button in the bottom bar to have each point called out. Pair a Bluetooth speaker and everyone hears the running score — no need to glance at the phone.</p>
-          <p class="tip"><strong>iPhone tip:</strong> if the voice sounds robotic, download a better one in <em>Settings → Accessibility → Spoken Content → Voices → English</em> (pick an “Enhanced” or “Premium” voice). TapScore will use it automatically.</p>
+          <p class="tip ios-only"><strong>iPhone tip:</strong> if the voice sounds robotic, download a better one in <em>Settings → Accessibility → Spoken Content → Voices → English</em> (pick an “Enhanced” or “Premium” voice), then choose it under <em>Settings → Announcer voice</em> in TapScore.</p>
         </div>
       </div>
 
@@ -1050,22 +1053,35 @@ function pickVoice() {
   return bestEnglishVoice();
 }
 
-// Pick the most natural English voice available — don't just keep the device default.
-// iOS defaults to a robotic "compact" voice but exposes better "enhanced"/"premium" variants
-// (same name, different voiceURI) once the user downloads them; desktop/Android expose
-// Google / Natural / Neural voices. We rank by those quality hints and prefer en-US.
+const IS_IOS = /iP(hone|od|ad)/.test(navigator.userAgent)
+  || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);   // iPadOS reports as Mac
+if (IS_IOS) document.documentElement.classList.add("is-ios");   // gates iOS-only help text (.ios-only)
+
+// Auto-select a voice for "Automatic". This is deliberately conservative on iOS: forcing a voice
+// there — especially a downloaded "enhanced"/"premium" one — frequently produces NO audio, so we
+// keep iOS's own default (return null → don't set utterance.voice) unless the default isn't English.
+// Desktop/Android reliably play their voices, so there we upgrade to Google/Natural/enhanced ones.
 function bestEnglishVoice() {
   const voices = allVoices();
+  if (!voices.length) return null;
+
+  if (IS_IOS) {
+    const def = voices.find(v => v.default);
+    if (!def || /^en/i.test(def.lang || "")) return null;     // English default already speaks — leave it
+    // non-English default: pick a built-in (compact) English voice, which does play on iOS
+    return voices.find(v => /^en/i.test(v.lang) && /compact/i.test(v.voiceURI || ""))
+        || voices.find(v => /^en[-_]us/i.test(v.lang))
+        || voices.find(v => /^en/i.test(v.lang)) || null;
+  }
+
   let best = null, bestScore = -1;
   for (const v of voices) {
     if (!/^en/i.test(v.lang || "")) continue;
     const uri = (v.voiceURI || "").toLowerCase(), name = (v.name || "").toLowerCase();
     let s = 2;                                     // unknown quality baseline
-    if (/premium/.test(uri)) s = 6;                // iOS premium (best)
-    else if (/enhanced/.test(uri)) s = 5;          // iOS enhanced
-    else if (/compact/.test(uri)) s = 1;           // iOS default — the robotic one
     if (/google|natural|neural/.test(name)) s += 4;   // Chrome/Android/Edge high-quality voices
-    if (/siri/.test(uri) || /siri/.test(name)) s += 3;
+    if (/premium/.test(uri)) s += 3;
+    else if (/enhanced/.test(uri)) s += 2;
     if (/en[-_]us/i.test(v.lang)) s += 1;
     if (v.localService) s += 0.5;
     if (s > bestScore) { bestScore = s; best = v; }
