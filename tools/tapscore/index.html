@@ -3251,38 +3251,6 @@ const YOUR_SIDE = 0;           // side A = "your team"; double-click scores the 
 const REMOTE_IGNORE = new Set(["Shift", "Control", "Alt", "Meta", "Escape", "Tab", "CapsLock"]);
 let rDownAt = 0, rLongFired = false, rTaps = 0, rTapTimer = null;
 
-/* TEMP clicker diagnostic — shows the raw event stream on screen (web + native) so we can see
-   what the clicker actually emits: key events, pointer/tap events, or clicks. Capture-phase
-   listeners below catch EVERYTHING. Set REMOTE_DEBUG = false (or delete this block) before shipping. */
-const REMOTE_DEBUG = false;   // flip to true to re-show the on-screen clicker event stream
-let rDbgEl = null, rDbgPrev = 0, rDbgLines = [];
-function remoteDebug(type, e) {
-  if (!REMOTE_DEBUG) return;
-  if (!rDbgEl) {
-    rDbgEl = document.createElement("div");
-    rDbgEl.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(0,0,0,.9);color:#c9e64b;font:11px/1.3 ui-monospace,monospace;padding:8px;white-space:pre;pointer-events:none;max-height:60vh;overflow:hidden";
-    document.body.appendChild(rDbgEl);
-  }
-  const now = performance.now();
-  const dt = rDbgPrev ? Math.round(now - rDbgPrev) : 0;
-  rDbgPrev = now;
-  const t = e.target;
-  const tgt = t ? (t.id ? "#" + t.id : (t.tagName || "").toLowerCase() + (typeof t.className === "string" && t.className ? "." + t.className.split(" ")[0] : "")) : "";
-  let line = type.padEnd(11) + "dt=" + String(dt).padStart(4) + "ms";
-  if (e.key !== undefined) line += " key=" + JSON.stringify(e.key || "") + " rpt=" + (e.repeat ? 1 : 0);
-  if (e.pointerType !== undefined) line += " ptr=" + (e.pointerType || "?");
-  if (e.clientX !== undefined && (e.clientX || e.clientY)) line += " @" + Math.round(e.clientX) + "," + Math.round(e.clientY);
-  line += "  →" + tgt;
-  rDbgLines.unshift(line);
-  if (rDbgLines.length > 16) rDbgLines.length = 16;
-  rDbgEl.textContent = "CLICKER DEBUG · touchDevice=" + ((navigator.maxTouchPoints || 0) > 0) + " · lastPtr=" + lastPointerType + "\n(newest first · dt = ms since previous event)\n\n" + rDbgLines.join("\n");
-}
-// Capture-phase listeners so we log every event type before any handler can stop it.
-if (REMOTE_DEBUG) {
-  ["keydown", "keyup", "keypress", "pointerdown", "pointerup", "click", "mousedown", "mouseup"]
-    .forEach((t) => document.addEventListener(t, (e) => remoteDebug(t, e), true));
-}
-
 // Only act on remote keys during live play — not while typing a name or with an overlay open
 function remoteActive() {
   const ae = document.activeElement;
@@ -3309,9 +3277,8 @@ function remoteUndo() {
    (pointer/mouse cascade) at a fixed spot, so the keyboard handler above never sees it. We track the
    pointer type of the last pointerdown; the side click handlers route mouse clicks here (finger taps
    stay instant per-side). Counting clicks in a window gives the same 1/2/3 = team A / team B / undo. */
-let lastPointerType = "touch";   // (used only by the debug readout above)
-document.addEventListener("pointerdown", (e) => { lastPointerType = e.pointerType || "mouse"; }, true);
-// Called for every side tap while Clicker mode is on. Count taps in the window, then resolve:
+// Called for every side tap routed to the clicker (auto-detected, or forced via Clicker mode).
+// Count taps in the window, then resolve:
 // 1 = your team, 2 = opponents, 3 = undo — reusing the same counter/resolver as the keyboard remote.
 function clickerTap() {
   if (!remoteActive()) return;
