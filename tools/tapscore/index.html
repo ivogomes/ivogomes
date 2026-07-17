@@ -2649,14 +2649,15 @@ function launchConfetti() {
 
 /* ---- interactions ----
    A finger tap (pointerType "touch") scores that side instantly. A Bluetooth clicker enumerates as a
-   MOUSE and always clicks the same spot, so mouse clicks are routed to clickerTap() instead: it counts
-   clicks in a short window (1 = your team, 2 = opponents, 3 = undo). See the clicker section below. */
+   MOUSE and always clicks the same spot. On a touch device (phone) that mouse can only be the clicker,
+   so its clicks are routed to clickerTap() (1 = your team, 2 = opponents, 3 = undo). On desktop a mouse
+   is a real mouse, so clicks score the side you click, instantly. See the clicker section below. */
 el("sideA").addEventListener("click", (e) => {
-  if (lastPointerType === "mouse") { clickerTap(); return; }
+  if (lastPointerType === "mouse" && IS_TOUCH_DEVICE) { clickerTap(); return; }
   if (!match.over) scoreSplash(el("sideA"), e); addPoint(0);
 });
 el("sideB").addEventListener("click", (e) => {
-  if (lastPointerType === "mouse") { clickerTap(); return; }
+  if (lastPointerType === "mouse" && IS_TOUCH_DEVICE) { clickerTap(); return; }
   if (!match.over) scoreSplash(el("sideB"), e); addPoint(1);
 });
 
@@ -3208,7 +3209,7 @@ let rDownAt = 0, rLongFired = false, rTaps = 0, rTapTimer = null;
 /* TEMP clicker diagnostic — shows the raw event stream on screen (web + native) so we can see
    what the clicker actually emits: key events, pointer/tap events, or clicks. Capture-phase
    listeners below catch EVERYTHING. Set REMOTE_DEBUG = false (or delete this block) before shipping. */
-const REMOTE_DEBUG = false;   // flip to true to re-show the on-screen clicker event stream
+const REMOTE_DEBUG = true;   // flip to false to hide the on-screen clicker event stream
 let rDbgEl = null, rDbgPrev = 0, rDbgLines = [];
 function remoteDebug(type, e) {
   if (!REMOTE_DEBUG) return;
@@ -3224,10 +3225,12 @@ function remoteDebug(type, e) {
   const tgt = t ? (t.id ? "#" + t.id : (t.tagName || "").toLowerCase() + (typeof t.className === "string" && t.className ? "." + t.className.split(" ")[0] : "")) : "";
   let line = type.padEnd(11) + "dt=" + String(dt).padStart(4) + "ms";
   if (e.key !== undefined) line += " key=" + JSON.stringify(e.key || "") + " rpt=" + (e.repeat ? 1 : 0);
+  if (e.pointerType !== undefined) line += " ptr=" + (e.pointerType || "?");
+  if (e.clientX !== undefined && (e.clientX || e.clientY)) line += " @" + Math.round(e.clientX) + "," + Math.round(e.clientY);
   line += "  →" + tgt;
   rDbgLines.unshift(line);
   if (rDbgLines.length > 16) rDbgLines.length = 16;
-  rDbgEl.textContent = "CLICKER DEBUG — press: 1×, then 2×, then hold\n(newest first · dt = ms since previous event)\n\n" + rDbgLines.join("\n");
+  rDbgEl.textContent = "CLICKER DEBUG · touchDevice=" + ((navigator.maxTouchPoints || 0) > 0) + " · lastPtr=" + lastPointerType + "\n(newest first · dt = ms since previous event)\n\n" + rDbgLines.join("\n");
 }
 // Capture-phase listeners so we log every event type before any handler can stop it.
 if (REMOTE_DEBUG) {
@@ -3263,6 +3266,9 @@ function remoteUndo() {
    stay instant per-side). Counting clicks in a window gives the same 1/2/3 = team A / team B / undo. */
 let lastPointerType = "touch";
 document.addEventListener("pointerdown", (e) => { lastPointerType = e.pointerType || "mouse"; }, true);
+// Only treat a "mouse" pointer as the clicker on a touch device (a phone). On a desktop (no touch)
+// a mouse is a real mouse, so clicks score the side you actually click — normal behaviour.
+const IS_TOUCH_DEVICE = (navigator.maxTouchPoints || 0) > 0;
 function clickerTap() {
   if (!remoteActive()) return;
   rTaps++;                                    // reuse the same counter + resolver as the keyboard path
