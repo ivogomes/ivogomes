@@ -1151,7 +1151,7 @@
         </div>
         <div class="stepText">
           <h3 data-i18n="helpClickH">Score with a Bluetooth clicker</h3>
-          <p data-i18n="helpClickP">Pair any Bluetooth clicker or remote (a camera shutter or presentation remote works), turn on Clicker mode in Settings, then set the phone aside where everyone can see the score:</p>
+          <p data-i18n="helpClickP">Pair any Bluetooth clicker or remote (a camera shutter or presentation remote works), then set the phone aside where everyone can see the score:</p>
           <ul class="keys">
             <li><span class="k" data-i18n="kClick1">1 click</span> <span data-i18n="kClick1d">Point for your team</span></li>
             <li><span class="k" data-i18n="kClick2">2 clicks</span> <span data-i18n="kClick2d">Point for the opponents</span></li>
@@ -1249,14 +1249,14 @@ const STR = {
     tbDesc2: "First to this many (win by 2) takes the tie-break",
     voiceLbl: "Announcer voice", voiceDesc: "Only the voices your device exposes to the browser appear here.",
     voiceAuto: "Automatic (best available)", done: "Done",
-    clickerLbl: "Clicker mode", clickerDesc: "For a single-button Bluetooth clicker: 1 tap scores your team, 2 the opponents, 3 undoes. Turn off for normal tapping.",
+    clickerLbl: "Clicker mode", clickerDesc: "A Bluetooth clicker is detected automatically. Turn this on only to force it: 1 tap scores your team, 2 the opponents, 3 undoes.",
     // change-ends descriptions (built dynamically): "End of set"/"Standard" prefixes
     ceEndOfSet: "End of set", ceStandard: "Standard",
     // help
     helpTitle: "How to use TapScore", helpSub: "Prop your phone up courtside and score the whole match with taps — it keeps the points, games, sets and serve for you.",
     helpTapH: "Tap to score", helpTapP: "Tap anywhere on a player's side of the screen to give them the point. Points roll up into games and sets automatically. Made a mistake? Hit <strong>Undo</strong>.",
     helpServeH: "Tap the ball to switch serve", helpServeP: "The ball next to a name marks who's serving. It moves on its own as games go by — but if it ever gets out of sync, just tap it on the correct side to fix it.",
-    helpClickH: "Score with a Bluetooth clicker", helpClickP: "Pair any Bluetooth clicker or remote (a camera shutter or presentation remote works), turn on Clicker mode in Settings, then set the phone aside where everyone can see the score:",
+    helpClickH: "Score with a Bluetooth clicker", helpClickP: "Pair any Bluetooth clicker or remote (a camera shutter or presentation remote works), then set the phone aside where everyone can see the score:",
     kClick1: "1 click", kClick1d: "Point for your team", kClick2: "2 clicks", kClick2d: "Point for the opponents", kClick3: "3 clicks", kClick3d: "Undo the last point", kHold: "Hold", kHoldd: "Undo (if your clicker supports holding)",
     helpVoiceH: "Hear the score out loud", helpVoiceP: "Tap the speaker button in the bottom bar to have each point called out. Pair a Bluetooth speaker and everyone hears the running score — no need to glance at the phone.",
     helpGot: "Got it",
@@ -1311,7 +1311,7 @@ const STR = {
     tbDesc2: "El primero en llegar (por 2) gana el tie-break",
     voiceLbl: "Voz del locutor", voiceDesc: "Solo aparecen las voces que tu dispositivo ofrece al navegador.",
     voiceAuto: "Automática (la mejor)", done: "Listo",
-    clickerLbl: "Modo clicker", clickerDesc: "Para un clicker Bluetooth de un botón: 1 toque para tu equipo, 2 para el rival, 3 deshace. Desactívalo para tocar normal.",
+    clickerLbl: "Modo clicker", clickerDesc: "El clicker Bluetooth se detecta automáticamente. Actívalo solo para forzarlo: 1 toque para tu equipo, 2 para el rival, 3 deshace.",
     ceEndOfSet: "Fin del set", ceStandard: "Estándar",
     helpTitle: "Cómo usar TapScore", helpSub: "Coloca el móvil junto a la pista y puntúa todo el partido con toques — lleva puntos, juegos, sets y saque por ti.",
     helpTapH: "Toca para puntuar", helpTapP: "Toca en el lado de un jugador para darle el punto. Los puntos suman juegos y sets automáticamente. ¿Error? Pulsa <strong>Deshacer</strong>.",
@@ -1369,7 +1369,7 @@ const STR = {
     tbDesc2: "O primeiro a chegar (por 2) ganha o tie-break",
     voiceLbl: "Voz do locutor", voiceDesc: "Só aparecem as vozes que o teu dispositivo disponibiliza ao navegador.",
     voiceAuto: "Automática (a melhor)", done: "Concluir",
-    clickerLbl: "Modo clicker", clickerDesc: "Para um clicker Bluetooth de um botão: 1 toque para a tua equipa, 2 para o adversário, 3 desfaz. Desliga para tocar normalmente.",
+    clickerLbl: "Modo clicker", clickerDesc: "O clicker Bluetooth é detetado automaticamente. Liga só para forçar: 1 toque para a tua equipa, 2 para o adversário, 3 desfaz.",
     ceEndOfSet: "Fim do set", ceStandard: "Padrão",
     helpTitle: "Como usar o TapScore", helpSub: "Coloca o telemóvel junto ao campo e pontua o jogo todo com toques — conta pontos, jogos, sets e serviço por ti.",
     helpTapH: "Toca para pontuar", helpTapP: "Toca no lado de um jogador para lhe dar o ponto. Os pontos somam jogos e sets automaticamente. Enganaste-te? Toca em <strong>Desfazer</strong>.",
@@ -1427,7 +1427,7 @@ const STR = {
     tbDesc2: "Le premier à ce total (par 2) gagne le jeu décisif",
     voiceLbl: "Voix de l'annonceur", voiceDesc: "Seules les voix que votre appareil expose au navigateur apparaissent ici.",
     voiceAuto: "Automatique (la meilleure)", done: "OK",
-    clickerLbl: "Mode télécommande", clickerDesc: "Pour une télécommande Bluetooth à un bouton : 1 clic pour votre équipe, 2 pour l'adversaire, 3 annule. Désactivez pour taper normalement.",
+    clickerLbl: "Mode télécommande", clickerDesc: "La télécommande Bluetooth est détectée automatiquement. Activez uniquement pour forcer : 1 clic pour votre équipe, 2 pour l'adversaire, 3 annule.",
     ceEndOfSet: "Fin de set", ceStandard: "Standard",
     helpTitle: "Utiliser TapScore", helpSub: "Posez le téléphone au bord du terrain et marquez tout le match d'un doigt — points, jeux, sets et service comptés pour vous.",
     helpTapH: "Touchez pour marquer", helpTapP: "Touchez le côté d'un joueur pour lui donner le point. Les points forment jeux et sets automatiquement. Erreur ? Touchez <strong>Annuler</strong>.",
@@ -1485,12 +1485,12 @@ const STR = {
     tbDesc2: "Wer zuerst so viele hat (mit 2), gewinnt den Tie-Break",
     voiceLbl: "Ansagestimme", voiceDesc: "Es erscheinen nur Stimmen, die dein Gerät dem Browser bereitstellt.",
     voiceAuto: "Automatisch (beste)", done: "Fertig",
-    clickerLbl: "Clicker-Modus", clickerDesc: "Für einen Bluetooth-Clicker mit einer Taste: 1 Tipp für dein Team, 2 für die Gegner, 3 macht rückgängig. Zum normalen Tippen ausschalten.",
+    clickerLbl: "Clicker-Modus", clickerDesc: "Ein Bluetooth-Clicker wird automatisch erkannt. Nur zum Erzwingen einschalten: 1 Tipp für dein Team, 2 für die Gegner, 3 macht rückgängig.",
     ceEndOfSet: "Satzende", ceStandard: "Standard",
     helpTitle: "TapScore verwenden", helpSub: "Stell das Telefon an den Platzrand und zähle das ganze Match per Tipp — Punkte, Spiele, Sätze und Aufschlag inklusive.",
     helpTapH: "Zum Punkten tippen", helpTapP: "Tippe auf die Seite eines Spielers, um ihm den Punkt zu geben. Punkte werden automatisch zu Spielen und Sätzen. Vertippt? Tippe auf <strong>Zurück</strong>.",
     helpServeH: "Auf den Ball tippen für Aufschlagwechsel", helpServeP: "Der Ball neben dem Namen zeigt, wer aufschlägt. Er wandert automatisch; stimmt es nicht, tippe ihn auf der richtigen Seite an.",
-    helpClickH: "Mit Bluetooth-Clicker punkten", helpClickP: "Koppel einen Bluetooth-Clicker oder eine Fernbedienung, schalte den Clicker-Modus in den Einstellungen ein und leg das Telefon gut sichtbar hin:",
+    helpClickH: "Mit Bluetooth-Clicker punkten", helpClickP: "Koppel einen Bluetooth-Clicker oder eine Fernbedienung und leg das Telefon gut sichtbar hin:",
     kClick1: "1 Klick", kClick1d: "Punkt für dein Team", kClick2: "2 Klicks", kClick2d: "Punkt für die Gegner", kClick3: "3 Klicks", kClick3d: "Letzten Punkt zurück", kHold: "Halten", kHoldd: "Rückgängig (wenn dein Clicker Halten unterstützt)",
     helpVoiceH: "Punktestand hören", helpVoiceP: "Tippe unten auf den Lautsprecher, um jeden Punkt ansagen zu lassen. Verbinde eine Bluetooth-Box und alle hören den Stand.",
     helpGot: "Verstanden",
@@ -2666,18 +2666,32 @@ function launchConfetti() {
 }
 
 /* ---- interactions ----
-   Normally a tap scores the side you touch. But a single-button Bluetooth clicker registers as an
-   ordinary tap (same pointer type and pixel as a finger), so it can't be told apart automatically —
-   when "Clicker mode" is on, every tap is routed to clickerTap() instead: it counts taps in a short
-   window (1 = your team, 2 = opponents, 3 = undo). See the clicker section below. */
-el("sideA").addEventListener("click", (e) => {
-  if (clickerMode) { clickerTap(); return; }
-  if (!match.over) scoreSplash(el("sideA"), e); addPoint(0);
-});
-el("sideB").addEventListener("click", (e) => {
-  if (clickerMode) { clickerTap(); return; }
-  if (!match.over) scoreSplash(el("sideB"), e); addPoint(1);
-});
+   Normally a tap scores the side you touch. A single-button Bluetooth clicker fires its press at the
+   EXACT same pixel every time, whereas a finger never repeats a pixel — so a tap that exactly repeats
+   the previous tap's position is the clicker. We learn that spot and route taps there through the click
+   counter (1 = your team, 2 = opponents, 3 = undo); everything else scores the side you touch, instantly.
+   No setting required. (The Clicker-mode switch just forces this on, as a fallback.) */
+let clickerPt = null, prevTapX = -999, prevTapY = -999, prevTapAt = 0;
+function scoreSide(side, e) {
+  if (!match.over) scoreSplash(el(side === 0 ? "sideA" : "sideB"), e);
+  addPoint(side);
+}
+function sideTap(side, e) {
+  if (clickerMode) { clickerTap(); return; }                       // manual override: always a clicker press
+  const x = Math.round(e.clientX), y = Math.round(e.clientY), now = performance.now();
+  const near = (bx, by) => Math.abs(x - bx) <= 1 && Math.abs(y - by) <= 1;
+  if (clickerPt && near(clickerPt.x, clickerPt.y)) {
+    clickerTap();                                                  // known clicker spot → clean deferred multi-click
+  } else if (near(prevTapX, prevTapY) && (now - prevTapAt) < REMOTE_MULTI_MS) {
+    clickerPt = { x, y };                                          // exact repeat → it's the clicker; learn the spot
+    doUndo(); rTaps = 1; clickerTap();                             // undo the press just scored; recount (prev=1, this=2)
+  } else {
+    scoreSide(side, e);                                            // finger / first press → instant, per-side
+  }
+  prevTapX = x; prevTapY = y; prevTapAt = now;
+}
+el("sideA").addEventListener("click", (e) => sideTap(0, e));
+el("sideB").addEventListener("click", (e) => sideTap(1, e));
 
 // Editable names inline — no native prompt() (some environments block it)
 function wireName(nameId, idx) {
