@@ -1176,6 +1176,17 @@
 const STORE_KEY = "tennisTracker.v1";
 const POINT_LABELS = ["0", "15", "30", "40"];
 
+/* ==================== native bridge (Capacitor) ====================
+   All no-ops on the plain web/PWA build; only active when running inside
+   the native iOS/Android shell, where window.Capacitor is injected. */
+const Cap = typeof window !== "undefined" ? window.Capacitor : undefined;
+const IS_NATIVE = !!(Cap && Cap.isNativePlatform && Cap.isNativePlatform());
+function nativeHaptic() {
+  const H = IS_NATIVE && Cap.Plugins && Cap.Plugins.Haptics;
+  if (H) { try { H.impact({ style: "LIGHT" }); return true; } catch (e) {} }
+  return false;
+}
+
 /* ==================== i18n ==================== */
 const LANGS = { en: "English", es: "Español", pt: "Português", fr: "Français", de: "Deutsch" };
 const BCP = { en: "en-US", es: "es-ES", pt: "pt-PT", fr: "fr-FR", de: "de-DE" };  // TTS locale per language
@@ -1705,7 +1716,7 @@ function snapshot() {
 function addPoint(i) {
   if (match.over) return;
   // a tiny haptic tick so a scored point feels registered even without looking
-  if (!prefersReducedMotion() && navigator.vibrate) { try { navigator.vibrate(12); } catch (e) {} }
+  if (!prefersReducedMotion() && !nativeHaptic() && navigator.vibrate) { try { navigator.vibrate(12); } catch (e) {} }
   snapshot();
   const before = { games: match.games.slice(), sets: match.sets.slice(), points: match.points.slice(), tiebreak: match.tiebreak };
 
@@ -1868,7 +1879,19 @@ function bestVoice() {
 }
 
 function speak(text) {
-  if (!voiceOn || !text || !("speechSynthesis" in window)) return;
+  if (!voiceOn || !text) return;
+  // Native shell: use the platform text-to-speech plugin. The Android System WebView doesn't
+  // implement the Web Speech API (getVoices() is empty and speak() is a no-op), so we can't
+  // rely on window.speechSynthesis inside the app.
+  if (IS_NATIVE && Cap.Plugins && Cap.Plugins.TextToSpeech) {
+    try {
+      const TTS = Cap.Plugins.TextToSpeech;
+      TTS.stop().catch(() => {});   // drop any backlog so fast tapping doesn't pile up
+      TTS.speak({ text, lang: BCP[lang] || "en-US", rate: 1.0, pitch: 1.0, volume: 1.0 }).catch(() => {});
+    } catch (e) {}
+    return;
+  }
+  if (!("speechSynthesis" in window)) return;
   try {
     const synth = window.speechSynthesis;
     synth.cancel();   // drop any backlog so fast tapping doesn't pile up
@@ -3213,7 +3236,11 @@ document.addEventListener("keyup", (e) => {
 let wakeLock = null;
 async function keepAwake() {
   try {
-    if ("wakeLock" in navigator && !match.over && (!wakeLock || wakeLock.released)) {
+    if (match.over) return;
+    // Native shell: use the KeepAwake plugin (WKWebView has no Screen Wake Lock API).
+    const KA = IS_NATIVE && Cap.Plugins && Cap.Plugins.KeepAwake;
+    if (KA) { try { await KA.keepAwake(); } catch (e) {} return; }
+    if ("wakeLock" in navigator && (!wakeLock || wakeLock.released)) {
       wakeLock = await navigator.wakeLock.request("screen");
     }
   } catch (e) {}
@@ -3227,9 +3254,17 @@ setInterval(updateTimer, 1000);   // live match timer
 if (firstRun) showSetup();
 </script>
 <script>
-  // Register the service worker so the app installs & works offline (needs http(s); no-op on file://)
-  if ("serviceWorker" in navigator) {
+  // Register the service worker so the app installs & works offline (needs http(s); no-op on file://).
+  // Skipped inside the native shell — assets are bundled locally, and a SW could serve stale content across app updates.
+  if (!IS_NATIVE && "serviceWorker" in navigator) {
     window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  }
+  // Native: match the status bar to the dark theme and hide the splash once the shell is ready.
+  if (IS_NATIVE && Cap.Plugins) {
+    window.addEventListener("load", () => {
+      try { Cap.Plugins.StatusBar && Cap.Plugins.StatusBar.setStyle({ style: "DARK" }); } catch (e) {}
+      try { Cap.Plugins.SplashScreen && Cap.Plugins.SplashScreen.hide(); } catch (e) {}
+    });
   }
 </script>
 </body>
