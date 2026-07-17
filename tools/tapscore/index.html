@@ -2647,9 +2647,18 @@ function launchConfetti() {
   requestAnimationFrame(tick);
 }
 
-/* ---- interactions ---- */
-el("sideA").addEventListener("click", (e) => { if (!match.over) scoreSplash(el("sideA"), e); addPoint(0); });
-el("sideB").addEventListener("click", (e) => { if (!match.over) scoreSplash(el("sideB"), e); addPoint(1); });
+/* ---- interactions ----
+   A finger tap (pointerType "touch") scores that side instantly. A Bluetooth clicker enumerates as a
+   MOUSE and always clicks the same spot, so mouse clicks are routed to clickerTap() instead: it counts
+   clicks in a short window (1 = your team, 2 = opponents, 3 = undo). See the clicker section below. */
+el("sideA").addEventListener("click", (e) => {
+  if (lastPointerType === "mouse") { clickerTap(); return; }
+  if (!match.over) scoreSplash(el("sideA"), e); addPoint(0);
+});
+el("sideB").addEventListener("click", (e) => {
+  if (lastPointerType === "mouse") { clickerTap(); return; }
+  if (!match.over) scoreSplash(el("sideB"), e); addPoint(1);
+});
 
 // Editable names inline — no native prompt() (some environments block it)
 function wireName(nameId, idx) {
@@ -3191,7 +3200,7 @@ document.addEventListener("pointerdown", (e) => {
    when physically held, so there's no held key for the long-press timer to catch — but we keep the
    long-press path too for remotes that do hold. This lets a single-button remote drive everything. */
 const REMOTE_LONG_MS = 600;    // hold this long → undo (for clickers that actually hold the key down)
-const REMOTE_MULTI_MS = 450;   // window to catch further clicks for a double/triple (forgiving of slower presses)
+const REMOTE_MULTI_MS = 350;   // window to catch further clicks for a double/triple; also the single-click delay
 const YOUR_SIDE = 0;           // side A = "your team"; double-click scores the opponents
 const REMOTE_IGNORE = new Set(["Shift", "Control", "Alt", "Meta", "Escape", "Tab", "CapsLock"]);
 let rDownAt = 0, rLongFired = false, rTaps = 0, rTapTimer = null;
@@ -3199,7 +3208,7 @@ let rDownAt = 0, rLongFired = false, rTaps = 0, rTapTimer = null;
 /* TEMP clicker diagnostic — shows the raw event stream on screen (web + native) so we can see
    what the clicker actually emits: key events, pointer/tap events, or clicks. Capture-phase
    listeners below catch EVERYTHING. Set REMOTE_DEBUG = false (or delete this block) before shipping. */
-const REMOTE_DEBUG = true;
+const REMOTE_DEBUG = false;   // flip to true to re-show the on-screen clicker event stream
 let rDbgEl = null, rDbgPrev = 0, rDbgLines = [];
 function remoteDebug(type, e) {
   if (!REMOTE_DEBUG) return;
@@ -3245,6 +3254,20 @@ function remoteUndo() {
   rTaps = 0;
   if (rTapTimer) { clearTimeout(rTapTimer); rTapTimer = null; }
   doUndo();
+}
+
+/* ---- pointer-based clicker (Bluetooth mouse) ----
+   Many one-button clickers enumerate as a MOUSE, not a keyboard: each press fires a real click
+   (pointer/mouse cascade) at a fixed spot, so the keyboard handler above never sees it. We track the
+   pointer type of the last pointerdown; the side click handlers route mouse clicks here (finger taps
+   stay instant per-side). Counting clicks in a window gives the same 1/2/3 = team A / team B / undo. */
+let lastPointerType = "touch";
+document.addEventListener("pointerdown", (e) => { lastPointerType = e.pointerType || "mouse"; }, true);
+function clickerTap() {
+  if (!remoteActive()) return;
+  rTaps++;                                    // reuse the same counter + resolver as the keyboard path
+  if (rTapTimer) clearTimeout(rTapTimer);
+  rTapTimer = setTimeout(resolveRemoteTaps, REMOTE_MULTI_MS);
 }
 document.addEventListener("keydown", (e) => {
   if (REMOTE_IGNORE.has(e.key) || !remoteActive()) return;
