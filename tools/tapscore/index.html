@@ -1147,7 +1147,8 @@
           <ul class="keys">
             <li><span class="k" data-i18n="kClick1">1 click</span> <span data-i18n="kClick1d">Point for your team</span></li>
             <li><span class="k" data-i18n="kClick2">2 clicks</span> <span data-i18n="kClick2d">Point for the opponents</span></li>
-            <li><span class="k" data-i18n="kHold">Hold</span> <span data-i18n="kHoldd">Undo the last point</span></li>
+            <li><span class="k" data-i18n="kClick3">3 clicks</span> <span data-i18n="kClick3d">Undo the last point</span></li>
+            <li><span class="k" data-i18n="kHold">Hold</span> <span data-i18n="kHoldd">Undo (if your clicker supports holding)</span></li>
           </ul>
         </div>
       </div>
@@ -1247,7 +1248,7 @@ const STR = {
     helpTapH: "Tap to score", helpTapP: "Tap anywhere on a player's side of the screen to give them the point. Points roll up into games and sets automatically. Made a mistake? Hit <strong>Undo</strong>.",
     helpServeH: "Tap the ball to switch serve", helpServeP: "The ball next to a name marks who's serving. It moves on its own as games go by — but if it ever gets out of sync, just tap it on the correct side to fix it.",
     helpClickH: "Score with a Bluetooth clicker", helpClickP: "Pair any Bluetooth clicker or remote that types like a keyboard (a camera shutter or presentation remote works), then set the phone aside where everyone can see the score:",
-    kClick1: "1 click", kClick1d: "Point for your team", kClick2: "2 clicks", kClick2d: "Point for the opponents", kHold: "Hold", kHoldd: "Undo the last point",
+    kClick1: "1 click", kClick1d: "Point for your team", kClick2: "2 clicks", kClick2d: "Point for the opponents", kClick3: "3 clicks", kClick3d: "Undo the last point", kHold: "Hold", kHoldd: "Undo (if your clicker supports holding)",
     helpVoiceH: "Hear the score out loud", helpVoiceP: "Tap the speaker button in the bottom bar to have each point called out. Pair a Bluetooth speaker and everyone hears the running score — no need to glance at the phone.",
     helpGot: "Got it",
     helpIosTip: "<strong>iPhone tip:</strong> if the voice sounds robotic, download a better one in <em>Settings → Accessibility → Spoken Content → Voices → English</em> (pick an “Enhanced” or “Premium” voice), then choose it under <em>Settings → Announcer voice</em> in TapScore.",
@@ -1306,7 +1307,7 @@ const STR = {
     helpTapH: "Toca para puntuar", helpTapP: "Toca en el lado de un jugador para darle el punto. Los puntos suman juegos y sets automáticamente. ¿Error? Pulsa <strong>Deshacer</strong>.",
     helpServeH: "Toca la bola para cambiar el saque", helpServeP: "La bola junto al nombre indica quién saca. Se mueve sola con los juegos, pero si se desajusta, tócala en el lado correcto.",
     helpClickH: "Puntúa con un mando Bluetooth", helpClickP: "Empareja un mando o disparador Bluetooth que funcione como teclado, y deja el teléfono a la vista de todos:",
-    kClick1: "1 clic", kClick1d: "Punto para tu equipo", kClick2: "2 clics", kClick2d: "Punto para el rival", kHold: "Mantener", kHoldd: "Deshacer el punto",
+    kClick1: "1 clic", kClick1d: "Punto para tu equipo", kClick2: "2 clics", kClick2d: "Punto para el rival", kClick3: "3 clics", kClick3d: "Deshacer el punto", kHold: "Mantener", kHoldd: "Deshacer (si tu clicker permite mantener)",
     helpVoiceH: "Escucha el marcador", helpVoiceP: "Pulsa el altavoz de la barra inferior para que cante cada punto. Conecta un altavoz Bluetooth y todos oirán el marcador.",
     helpGot: "Entendido",
     helpIosTip: "<strong>Consejo iPhone:</strong> si la voz suena robótica, descarga una mejor en <em>Ajustes → Accesibilidad → Contenido hablado → Voces → Español</em> (elige una “Mejorada” o “Premium”) y selecciónala en <em>Ajustes → Voz del locutor</em> de TapScore.",
@@ -1363,7 +1364,7 @@ const STR = {
     helpTapH: "Toca para pontuar", helpTapP: "Toca no lado de um jogador para lhe dar o ponto. Os pontos somam jogos e sets automaticamente. Enganaste-te? Toca em <strong>Desfazer</strong>.",
     helpServeH: "Toca na bola para trocar o serviço", helpServeP: "A bola ao lado do nome mostra quem serve. Move-se sozinha com os jogos, mas se desalinhar, toca-lhe no lado certo.",
     helpClickH: "Pontua com um comando Bluetooth", helpClickP: "Emparelha um comando ou disparador Bluetooth que funcione como teclado e deixa o telemóvel à vista de todos:",
-    kClick1: "1 clique", kClick1d: "Ponto para a tua equipa", kClick2: "2 cliques", kClick2d: "Ponto para o adversário", kHold: "Manter", kHoldd: "Desfazer o ponto",
+    kClick1: "1 clique", kClick1d: "Ponto para a tua equipa", kClick2: "2 cliques", kClick2d: "Ponto para o adversário", kClick3: "3 cliques", kClick3d: "Desfazer o ponto", kHold: "Manter", kHoldd: "Desfazer (se o teu clicker permitir manter)",
     helpVoiceH: "Ouve o resultado", helpVoiceP: "Toca no altifalante da barra inferior para anunciar cada ponto. Liga uma coluna Bluetooth e todos ouvem o resultado.",
     helpGot: "Percebi",
     helpIosTip: "<strong>Dica iPhone:</strong> se a voz soar robótica, descarrega uma melhor em <em>Definições → Acessibilidade → Conteúdo falado → Vozes → Português</em> (escolhe uma “Melhorada” ou “Premium”) e seleciona-a em <em>Definições → Voz do locutor</em> no TapScore.",
@@ -1420,7 +1421,7 @@ const STR = {
     helpTapH: "Touchez pour marquer", helpTapP: "Touchez le côté d'un joueur pour lui donner le point. Les points forment jeux et sets automatiquement. Erreur ? Touchez <strong>Annuler</strong>.",
     helpServeH: "Touchez la balle pour changer le service", helpServeP: "La balle près d'un nom indique qui sert. Elle se déplace seule au fil des jeux ; si besoin, touchez-la du bon côté.",
     helpClickH: "Marquez avec une télécommande Bluetooth", helpClickP: "Associez une télécommande ou un déclencheur Bluetooth qui agit comme un clavier, puis posez le téléphone bien en vue :",
-    kClick1: "1 clic", kClick1d: "Point pour votre équipe", kClick2: "2 clics", kClick2d: "Point pour l'adversaire", kHold: "Maintenir", kHoldd: "Annuler le point",
+    kClick1: "1 clic", kClick1d: "Point pour votre équipe", kClick2: "2 clics", kClick2d: "Point pour l'adversaire", kClick3: "3 clics", kClick3d: "Annuler le point", kHold: "Maintenir", kHoldd: "Annuler (si votre clicker permet de maintenir)",
     helpVoiceH: "Écoutez le score", helpVoiceP: "Touchez le haut-parleur en bas pour annoncer chaque point. Reliez une enceinte Bluetooth et tout le monde entend le score.",
     helpGot: "Compris",
     helpIosTip: "<strong>Astuce iPhone :</strong> si la voix semble robotique, téléchargez-en une meilleure dans <em>Réglages → Accessibilité → Contenu énoncé → Voix → Français</em> (choisissez « Améliorée » ou « Premium »), puis sélectionnez-la dans <em>Réglages → Voix de l’annonceur</em> de TapScore.",
@@ -1477,7 +1478,7 @@ const STR = {
     helpTapH: "Zum Punkten tippen", helpTapP: "Tippe auf die Seite eines Spielers, um ihm den Punkt zu geben. Punkte werden automatisch zu Spielen und Sätzen. Vertippt? Tippe auf <strong>Zurück</strong>.",
     helpServeH: "Auf den Ball tippen für Aufschlagwechsel", helpServeP: "Der Ball neben dem Namen zeigt, wer aufschlägt. Er wandert automatisch; stimmt es nicht, tippe ihn auf der richtigen Seite an.",
     helpClickH: "Mit Bluetooth-Clicker punkten", helpClickP: "Koppel einen Bluetooth-Clicker oder eine Fernbedienung, die wie eine Tastatur funktioniert, und leg das Telefon gut sichtbar hin:",
-    kClick1: "1 Klick", kClick1d: "Punkt für dein Team", kClick2: "2 Klicks", kClick2d: "Punkt für die Gegner", kHold: "Halten", kHoldd: "Letzten Punkt zurück",
+    kClick1: "1 Klick", kClick1d: "Punkt für dein Team", kClick2: "2 Klicks", kClick2d: "Punkt für die Gegner", kClick3: "3 Klicks", kClick3d: "Letzten Punkt zurück", kHold: "Halten", kHoldd: "Rückgängig (wenn dein Clicker Halten unterstützt)",
     helpVoiceH: "Punktestand hören", helpVoiceP: "Tippe unten auf den Lautsprecher, um jeden Punkt ansagen zu lassen. Verbinde eine Bluetooth-Box und alle hören den Stand.",
     helpGot: "Verstanden",
     helpIosTip: "<strong>iPhone-Tipp:</strong> Klingt die Stimme roboterhaft, lade in <em>Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → Deutsch</em> eine bessere („Erweitert“ oder „Premium“) und wähle sie in TapScore unter <em>Einstellungen → Ansagestimme</em>.",
@@ -3185,10 +3186,12 @@ document.addEventListener("pointerdown", (e) => {
 
 /* ---- external clicker / remote support ----
    Any Bluetooth remote that pairs as a keyboard sends key events; we don't care which key.
-   One click → your team (side A), double-click → opponents (side B), long press → undo.
-   This lets a single-button remote score for both sides without touching the screen. */
-const REMOTE_LONG_MS = 600;    // hold this long → undo
-const REMOTE_MULTI_MS = 320;   // window to catch a second click for a double
+   One click → your team (side A), double-click → opponents (side B), triple-click OR long press → undo.
+   Triple-click is the reliable undo: most one-button clickers fire an instant press+release even
+   when physically held, so there's no held key for the long-press timer to catch — but we keep the
+   long-press path too for remotes that do hold. This lets a single-button remote drive everything. */
+const REMOTE_LONG_MS = 600;    // hold this long → undo (for clickers that actually hold the key down)
+const REMOTE_MULTI_MS = 450;   // window to catch further clicks for a double/triple (forgiving of slower presses)
 const YOUR_SIDE = 0;           // side A = "your team"; double-click scores the opponents
 const REMOTE_IGNORE = new Set(["Shift", "Control", "Alt", "Meta", "Escape", "Tab", "CapsLock"]);
 let rDownAt = 0, rLongFired = false, rTaps = 0, rTapTimer = null;
@@ -3203,7 +3206,8 @@ function remoteActive() {
 function resolveRemoteTaps() {
   const n = rTaps; rTaps = 0; rTapTimer = null;
   if (n <= 0) return;
-  const side = n === 1 ? YOUR_SIDE : 1 - YOUR_SIDE;   // 1 click = your team, 2+ = opponents
+  if (n >= 3) { doUndo(); return; }                   // 3+ clicks = undo (works on any one-button clicker)
+  const side = n === 1 ? YOUR_SIDE : 1 - YOUR_SIDE;   // 1 click = your team, 2 = opponents
   if (!match.over) scoreSplash(el(side === 0 ? "sideA" : "sideB"), null);   // splash from the side's centre
   addPoint(side);
 }
