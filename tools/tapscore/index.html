@@ -255,6 +255,7 @@
     border: 0;
     padding: 12px 20px; border-radius: 999px;
     cursor: pointer; backdrop-filter: blur(6px);
+    white-space: nowrap; flex: 0 0 auto;    /* size to the label so translations don't wrap/clip */
     position: relative; overflow: hidden;   /* clip ripple to the pill */
     box-shadow: var(--elev-1);
     transition: box-shadow .2s var(--ease), background-color .2s var(--ease), transform .1s var(--ease);
@@ -487,6 +488,55 @@
     .dropChev, .dropdown.open .dropChev { transform: rotate(-90deg); }
   }
   /* announcer voice picker — native select styled for the dark sheet */
+  /* language selector — custom dropdown at the top-right of the welcome screen, by the logo */
+  .setup .card { position: relative; }
+  .langPick { position: absolute; top: 0; right: 0; z-index: 5; }
+  .langTrigger {
+    display: inline-flex; align-items: center; gap: 7px;
+    font: inherit; font-size: 12.5px; font-weight: 700; letter-spacing: .6px; color: var(--ink);
+    background-color: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 999px; padding: 8px 12px; cursor: pointer;
+    box-shadow: var(--elev-1); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    transition: background-color .18s var(--ease), border-color .18s var(--ease),
+                box-shadow .18s var(--ease), transform .1s var(--ease);
+  }
+  .langTrigger .langGlobe { color: #cbd5e1; flex: 0 0 auto; display: block; }
+  .langTrigger .langAbbr { line-height: 1; }
+  .langTrigger .langChev { color: #cbd5e1; flex: 0 0 auto; display: block; transition: transform .2s var(--ease); }
+  .langPick.open .langChev { transform: rotate(180deg); }
+  .langTrigger:hover, .langPick.open .langTrigger {
+    background-color: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.26);
+    box-shadow: var(--elev-2);
+  }
+  .langTrigger:hover .langGlobe, .langTrigger:hover .langChev,
+  .langPick.open .langGlobe, .langPick.open .langChev { color: var(--ink); }
+  .langTrigger:active { transform: translateY(1px); }
+  .langTrigger:focus-visible {
+    outline: 2px solid var(--primary); outline-offset: 2px;
+    border-color: rgba(255,255,255,.26);
+  }
+  /* the popup list — mirrors the sport picker's inline dropdown, anchored to the right edge */
+  .langMenu {
+    position: absolute; top: calc(100% + 6px); right: 0; z-index: 6;
+    list-style: none; margin: 0; padding: 6px; min-width: 172px;
+    background: #0f172a; border: 1px solid rgba(255,255,255,.16); border-radius: 14px;
+    box-shadow: var(--elev-3);
+  }
+  .langPick:not(.open) .langMenu { display: none; }
+  .langMenu li {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 12px; border-radius: 10px; cursor: pointer;
+    font-weight: 600; font-size: 15px; white-space: nowrap;
+  }
+  .langMenu li + li { margin-top: 2px; }
+  .langMenu .langMenuName { flex: 1 1 auto; }
+  .langMenu .langMenuAbbr { flex: 0 0 auto; font-size: 11px; font-weight: 700; letter-spacing: .5px; opacity: .6; }
+  .langMenu li:hover:not([aria-selected="true"]),
+  .langMenu li.active:not([aria-selected="true"]) { background: rgba(255,255,255,.08); }
+  .langMenu li[aria-selected="true"] { background: var(--primary); color: var(--on-primary); }
+  .langMenu li[aria-selected="true"] .langMenuAbbr { opacity: .7; }
   .voiceSel {
     width: 100%; min-height: 48px;
     font: inherit; color: var(--ink);
@@ -779,22 +829,22 @@
   <div class="toast" id="toast" role="status" aria-live="polite" aria-hidden="true"></div>
 
   <div class="controls">
-    <button id="undoBtn" title="Undo last point">Undo</button>
-    <button id="voiceBtn" class="iconbtn" title="Announce score" aria-label="Announce score" aria-pressed="false"></button>
-    <button id="helpBtn" class="iconbtn" title="How to use" aria-label="How to use">
+    <button id="undoBtn" data-i18n="undo" data-i18n-title="undo">Undo</button>
+    <button id="voiceBtn" class="iconbtn" data-i18n-title="announce" data-i18n-aria="announce" aria-pressed="false"></button>
+    <button id="helpBtn" class="iconbtn" data-i18n-title="howto" data-i18n-aria="howto">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
         <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
       </svg>
     </button>
-    <button id="settingsBtn" class="iconbtn" title="Settings" aria-label="Settings">
+    <button id="settingsBtn" class="iconbtn" data-i18n-title="settings" data-i18n-aria="settings">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
-    <button id="resetBtn" title="New match">Reset</button>
+    <button id="resetBtn" data-i18n="reset" data-i18n-title="reset">Reset</button>
   </div>
 
   <canvas id="setConfetti" aria-hidden="true"></canvas>
@@ -805,26 +855,26 @@
     <div class="wname" id="winnerName"></div>
     <div class="wresults">
       <div class="scoreline" id="winnerScore"></div>
-      <button class="statsbtn" id="winnerStatsBtn">Match stats</button>
+      <button class="statsbtn" id="winnerStatsBtn" data-i18n="matchStats">Match stats</button>
     </div>
-    <button class="newmatch" id="winnerNew">New match</button>
+    <button class="newmatch" id="winnerNew" data-i18n="newMatch">New match</button>
   </div>
 
   <div class="help" id="statsScreen" role="dialog" aria-modal="true" aria-labelledby="statsTitle" aria-hidden="true">
     <div class="panel">
       <button class="helpClose" id="statsClose" aria-label="Close stats">&times;</button>
-      <h2 id="statsTitle">Match stats</h2>
+      <h2 id="statsTitle" data-i18n="statsTitle">Match stats</h2>
       <div class="matchstats" id="statsBody"></div>
-      <button class="done" id="statsDone">Done</button>
+      <button class="done" id="statsDone" data-i18n="done">Done</button>
     </div>
   </div>
 
   <div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="box">
-      <p>Start a new match?<br />The current score will be lost.</p>
+      <p><span data-i18n="confirmMsg">Start a new match?</span><br /><span data-i18n="confirmSub">The current score will be lost.</span></p>
       <div class="actions">
-        <button class="cancel" id="confirmCancel">Cancel</button>
-        <button class="confirm" id="confirmOk">New match</button>
+        <button class="cancel" id="confirmCancel" data-i18n="cancel">Cancel</button>
+        <button class="confirm" id="confirmOk" data-i18n="newMatch">New match</button>
       </div>
     </div>
   </div>
@@ -834,13 +884,21 @@
     <div class="botbar" aria-hidden="true"></div>
     <div class="courtbg" id="courtBg" aria-hidden="true"></div>
     <div class="card">
+      <div class="langPick" id="langPick">
+        <button type="button" class="langTrigger" id="langTrigger" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="langLbl">
+          <svg class="langGlobe" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
+          <span class="langAbbr" id="langAbbr">EN</span>
+          <svg class="langChev" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="langMenu" id="langMenu" role="listbox" tabindex="-1" data-i18n-aria="langLbl"></ul>
+      </div>
       <div class="balls" id="setupBalls" aria-hidden="true"></div>
       <h1>TapScore</h1>
-      <p class="tagline">Tap either side to score — it tracks points, games, sets and serve for you</p>
+      <p class="tagline" data-i18n="tagline">Tap either side to score — it tracks points, games, sets and serve for you</p>
 
       <div class="groups">
       <div class="group">
-        <label id="sportLabel">Sport</label>
+        <label id="sportLabel" data-i18n="sport">Sport</label>
         <div class="dropdown" id="sportDrop">
           <button type="button" class="dropTrigger" id="sportTrigger" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="sportLabel sportTriggerName">
             <span class="dropBall" id="sportTriggerBall" aria-hidden="true"></span>
@@ -851,192 +909,192 @@
       </div>
 
       <div class="group">
-        <label>Match length</label>
+        <label data-i18n="matchLength">Match length</label>
         <div class="seg" id="setupLength"></div>
       </div>
       </div>
 
       <button id="moreBtn" class="moreBtn" aria-expanded="false" aria-controls="setupMore">
-        <span id="moreLabel">More options</span>
+        <span id="moreLabel" data-i18n="moreOptions">More options</span>
         <svg class="chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
 
       <div class="groups" id="setupMore" style="display:none">
       <div class="group" id="setupModeGroup">
-        <label>Type</label>
-        <span class="desc">Singles or doubles</span>
+        <label data-i18n="typeLbl">Type</label>
+        <span class="desc" data-i18n="typeDesc">Singles or doubles</span>
         <div class="seg" id="setupMode">
-          <button data-mode="singles">Singles</button>
-          <button data-mode="doubles">Doubles</button>
+          <button data-mode="singles" data-i18n="singles">Singles</button>
+          <button data-mode="doubles" data-i18n="doubles">Doubles</button>
         </div>
       </div>
 
-
       <div class="group" id="setupPointsGroup" style="display:none">
-        <label>Points to win a game</label>
-        <span class="desc">First to this many wins a game</span>
+        <label data-i18n="pointsLbl">Points to win a game</label>
+        <span class="desc" data-i18n="pointsDesc">First to this many wins a game</span>
         <div class="seg" id="setupPoints"></div>
       </div>
 
       <div class="group" id="setupScoringGroup" style="display:none">
-        <label>Scoring</label>
-        <span class="desc"><strong>Rally</strong>: every rally scores. <strong>Side-out</strong>: only the serving side scores (traditional; doubles uses two servers).</span>
+        <label data-i18n="scoringLbl">Scoring</label>
+        <span class="desc" data-i18n-html="scoringDesc"></span>
         <div class="seg" id="setupScoring">
-          <button data-scoring="rally">Rally</button>
-          <button data-scoring="sideout">Side-out</button>
+          <button data-scoring="rally" data-i18n="scRally">Rally</button>
+          <button data-scoring="sideout" data-i18n="scSideout">Side-out</button>
         </div>
       </div>
 
       <div class="group" id="setupAdvGroup">
-        <label>Advantage rules</label>
-        <span class="desc"><strong>Adv</strong>: win by two. <strong>Golden</strong>: sudden death at the first deuce. <strong>+1</strong>/<strong>+2</strong>: play 1 or 2 more deuces, then a golden point.</span>
+        <label data-i18n="advLbl">Advantage rules</label>
+        <span class="desc" data-i18n-html="advDesc"></span>
         <div class="seg" id="setupAdv">
-          <button data-adv="unlimited">Adv</button>
-          <button data-adv="0">Golden</button>
+          <button data-adv="unlimited" data-i18n="advAdv">Adv</button>
+          <button data-adv="0" data-i18n="advGolden">Golden</button>
           <button data-adv="1">+1</button>
           <button data-adv="2">+2</button>
         </div>
       </div>
 
       <div class="group" id="setupSetLenGroup">
-        <label>Games per set</label>
-        <span class="desc">Games needed to win a set</span>
+        <label data-i18n="gpsLbl">Games per set</label>
+        <span class="desc" data-i18n="gpsDesc">Games needed to win a set</span>
         <div class="seg" id="setupSetLen">
-          <button data-games="6">6 games</button>
-          <button data-games="4">4 games</button>
+          <button data-games="6" data-i18n="games6">6 games</button>
+          <button data-games="4" data-i18n="games4">4 games</button>
         </div>
       </div>
 
       <div class="group" id="setupTbGroup">
-        <label>Tie-break points</label>
-        <span class="desc">Points to win a set tie-break</span>
+        <label data-i18n="tbLbl">Tie-break points</label>
+        <span class="desc" data-i18n="tbDesc">Points to win a set tie-break</span>
         <div class="seg" id="setupTb">
-          <button data-tb="7">7 points</button>
-          <button data-tb="10">10 points</button>
+          <button data-tb="7" data-i18n="tb7">7 points</button>
+          <button data-tb="10" data-i18n="tb10">10 points</button>
         </div>
       </div>
 
       <div class="group" id="setupDeciderGroup">
-        <label>Deciding set</label>
-        <span class="desc"><strong>Full set</strong>: play the last set out normally. <strong>Match tie-break</strong>: a first-to-10 (win by 2) tie-break replaces the final set.</span>
+        <label data-i18n="deciderLbl">Deciding set</label>
+        <span class="desc" data-i18n-html="deciderDesc"></span>
         <div class="seg" id="setupDecider">
-          <button data-decider="set">Full set</button>
-          <button data-decider="matchTB">Match tie-break</button>
+          <button data-decider="set" data-i18n="deciderFull">Full set</button>
+          <button data-decider="matchTB" data-i18n="deciderTB">Match tie-break</button>
         </div>
       </div>
 
       <div class="group" id="setupWinByGroup">
-        <label>Win by</label>
-        <span class="desc">Margin needed to win a game</span>
+        <label data-i18n="winbyLbl">Win by</label>
+        <span class="desc" data-i18n="winbyDesc">Margin needed to win a game</span>
         <div class="seg" id="setupWinBy">
-          <button data-winby="2">Win by 2</button>
-          <button data-winby="1">Straight</button>
+          <button data-winby="2" data-i18n="winby2">Win by 2</button>
+          <button data-winby="1" data-i18n="winby1">Straight</button>
         </div>
       </div>
 
       <div class="group" id="setupChangeEndsGroup">
-        <label>Change-ends reminder</label>
+        <label data-i18n="ceLbl">Change-ends reminder</label>
         <span class="desc">Prompt to switch sides during the match</span>
         <div class="seg" id="setupChangeEnds">
-          <button data-cends="off">Off</button>
-          <button data-cends="set">End of set</button>
-          <button data-cends="standard">Standard</button>
+          <button data-cends="off" data-i18n="ceOff">Off</button>
+          <button data-cends="set" data-i18n="ceSet">End of set</button>
+          <button data-cends="standard" data-i18n="ceStd">Standard</button>
         </div>
       </div>
+
       </div>
 
-      <button class="startBtn" id="startBtn">Start match</button>
-      <button id="setupCancel" style="width:100%;margin-top:10px;padding:12px;font:inherit;color:var(--ink);background:transparent;border:0;opacity:.6;cursor:pointer">Cancel</button>
+      <button class="startBtn" id="startBtn" data-i18n="startMatch">Start match</button>
+      <button id="setupCancel" data-i18n="cancel" style="width:100%;margin-top:10px;padding:12px;font:inherit;color:var(--ink);background:transparent;border:0;opacity:.6;cursor:pointer">Cancel</button>
       <div style="text-align:center">
-        <button class="helpLink" id="setupHelp" type="button">How to use TapScore</button>
+        <button class="helpLink" id="setupHelp" type="button" data-i18n="helpTitle">How to use TapScore</button>
       </div>
     </div>
   </div>
 
   <div class="sheet" id="sheet">
     <div class="panel">
-      <h2>Match settings</h2>
+      <h2 data-i18n="matchSettings">Match settings</h2>
       <div class="row">
         <div>
-          <label>Match length</label>
-          <span class="desc">Sets needed to win the match. Changing the match length starts a new match.</span>
+          <label data-i18n="matchLength">Match length</label>
+          <span class="desc" data-i18n="mlDesc">Sets needed to win the match. Changing the match length starts a new match.</span>
         </div>
         <div class="seg" id="formatSeg">
-          <button data-bestof="1">1 set</button>
-          <button data-bestof="3">Best of 3</button>
-          <button data-bestof="5">Best of 5</button>
+          <button data-bestof="1" data-i18n="set1">1 set</button>
+          <button data-bestof="3" data-i18n="bo3">Best of 3</button>
+          <button data-bestof="5" data-i18n="bo5">Best of 5</button>
         </div>
       </div>
       <div class="row" id="deciderRow">
         <div>
-          <label>Deciding set</label>
-          <span class="desc"><strong>Full set</strong>: play it out normally. <strong>Match tie-break</strong>: first-to-10 (win by 2) instead of a final set.</span>
+          <label data-i18n="deciderLbl">Deciding set</label>
+          <span class="desc" data-i18n-html="deciderDesc2"></span>
         </div>
         <div class="seg" id="deciderSeg">
-          <button data-decider="set">Full set</button>
-          <button data-decider="matchTB">Match tie-break</button>
+          <button data-decider="set" data-i18n="deciderFull">Full set</button>
+          <button data-decider="matchTB" data-i18n="deciderTB">Match tie-break</button>
         </div>
       </div>
       <div class="row" id="tbRow">
         <div>
-          <label>Tie-break points</label>
-          <span class="desc">First to this many (win by 2) takes the tie-break</span>
+          <label data-i18n="tbLbl">Tie-break points</label>
+          <span class="desc" data-i18n="tbDesc2">First to this many (win by 2) takes the tie-break</span>
         </div>
         <div class="seg" id="tbSeg">
-          <button data-tb="7">7 points</button>
-          <button data-tb="10">10 points</button>
+          <button data-tb="7" data-i18n="tb7">7 points</button>
+          <button data-tb="10" data-i18n="tb10">10 points</button>
         </div>
       </div>
       <div class="row" id="advRow">
         <div>
-          <label>Advantage rules</label>
-          <span class="desc"><strong>Adv</strong>: win by two. <strong>Golden</strong>: sudden death at the first deuce. <strong>+1</strong>/<strong>+2</strong>: play 1 or 2 more deuces, then a golden point.</span>
+          <label data-i18n="advLbl">Advantage rules</label>
+          <span class="desc" data-i18n-html="advDesc"></span>
         </div>
         <div class="seg" id="advSeg">
-          <button data-adv="unlimited">Adv</button>
-          <button data-adv="0">Golden</button>
+          <button data-adv="unlimited" data-i18n="advAdv">Adv</button>
+          <button data-adv="0" data-i18n="advGolden">Golden</button>
           <button data-adv="1">+1</button>
           <button data-adv="2">+2</button>
         </div>
       </div>
       <div class="row" id="winByRow">
         <div>
-          <label>Win by</label>
-          <span class="desc">Margin needed to win a game</span>
+          <label data-i18n="winbyLbl">Win by</label>
+          <span class="desc" data-i18n="winbyDesc">Margin needed to win a game</span>
         </div>
         <div class="seg" id="winBySeg">
-          <button data-winby="2">Win by 2</button>
-          <button data-winby="1">Straight</button>
+          <button data-winby="2" data-i18n="winby2">Win by 2</button>
+          <button data-winby="1" data-i18n="winby1">Straight</button>
         </div>
       </div>
       <div class="row" id="changeEndsRow">
         <div>
-          <label>Change-ends reminder</label>
-          <span class="desc"><strong>End of set</strong>: only between sets/games. <strong>Standard</strong>: every conventional change (odd games, tiebreaks, deciding‑game halfway).</span>
+          <label data-i18n="ceLbl">Change-ends reminder</label>
+          <span class="desc"></span>
         </div>
         <div class="seg" id="changeEndsSeg">
-          <button data-cends="off">Off</button>
-          <button data-cends="set">End of set</button>
-          <button data-cends="standard">Standard</button>
+          <button data-cends="off" data-i18n="ceOff">Off</button>
+          <button data-cends="set" data-i18n="ceSet">End of set</button>
+          <button data-cends="standard" data-i18n="ceStd">Standard</button>
         </div>
       </div>
       <div class="row" id="voiceRow">
         <div>
-          <label>Announcer voice</label>
-          <span class="desc">Only the voices your device exposes to the browser appear here.<span class="ios-only"> On iPhone, download extra voices in Settings → Accessibility → Spoken Content → Voices; if a voice isn't listed below, iOS isn't sharing it with web apps.</span></span>
+          <label data-i18n="voiceLbl">Announcer voice</label>
+          <span class="desc"><span data-i18n="voiceDesc">Only the voices your device exposes to the browser appear here.</span><span class="ios-only"> On iPhone, download extra voices in Settings → Accessibility → Spoken Content → Voices; if a voice isn't listed below, iOS isn't sharing it with web apps.</span></span>
         </div>
-        <select id="voiceSelect" class="voiceSel" aria-label="Announcer voice">
-          <option value="">Automatic (best available)</option>
+        <select id="voiceSelect" class="voiceSel" data-i18n-aria="voiceLbl">
+          <option value="" data-i18n="voiceAuto">Automatic (best available)</option>
         </select>
       </div>
 
-      <button class="done" id="sheetDone">Done</button>
+      <button class="done" id="sheetDone" data-i18n="done">Done</button>
     </div>
   </div>
 
   <div class="sheet sportsheet" id="sportSheet" role="dialog" aria-modal="true" aria-labelledby="sportSheetTitle" aria-hidden="true">
     <div class="panel">
-      <h2 id="sportSheetTitle">Choose a sport</h2>
+      <h2 id="sportSheetTitle" data-i18n="chooseSport">Choose a sport</h2>
       <ul class="sportOptions" id="sportList" role="listbox" aria-label="Sport" tabindex="-1"></ul>
     </div>
   </div>
@@ -1044,8 +1102,8 @@
   <div class="help" id="help" role="dialog" aria-modal="true" aria-labelledby="helpTitle" aria-hidden="true">
     <div class="panel">
       <button class="helpClose" id="helpClose" aria-label="Close help">&times;</button>
-      <h2 id="helpTitle">How to use TapScore</h2>
-      <p class="sub">Prop your phone up courtside and score the whole match with taps — it keeps the points, games, sets and serve for you.</p>
+      <h2 id="helpTitle" data-i18n="helpTitle">How to use TapScore</h2>
+      <p class="sub" data-i18n="helpSub">Prop your phone up courtside and score the whole match with taps — it keeps the points, games, sets and serve for you.</p>
 
       <div class="step">
         <div class="stepIcon" aria-hidden="true">
@@ -1057,8 +1115,8 @@
           </svg>
         </div>
         <div class="stepText">
-          <h3>Tap to score</h3>
-          <p>Tap anywhere on a player's side of the screen to give them the point. Points roll up into games and sets automatically. Made a mistake? Hit <strong>Undo</strong>.</p>
+          <h3 data-i18n="helpTapH">Tap to score</h3>
+          <p data-i18n-html="helpTapP">Tap anywhere on a player's side of the screen to give them the point. Points roll up into games and sets automatically. Made a mistake? Hit <strong>Undo</strong>.</p>
         </div>
       </div>
 
@@ -1071,8 +1129,8 @@
           </svg>
         </div>
         <div class="stepText">
-          <h3>Tap the ball to switch serve</h3>
-          <p>The ball next to a name marks who's serving. It moves on its own as games go by — but if it ever gets out of sync, just tap it on the correct side to fix it.</p>
+          <h3 data-i18n="helpServeH">Tap the ball to switch serve</h3>
+          <p data-i18n="helpServeP">The ball next to a name marks who's serving. It moves on its own as games go by — but if it ever gets out of sync, just tap it on the correct side to fix it.</p>
         </div>
       </div>
 
@@ -1084,12 +1142,12 @@
           </svg>
         </div>
         <div class="stepText">
-          <h3>Score with a Bluetooth clicker</h3>
-          <p>Pair any Bluetooth clicker or remote that types like a keyboard (a camera shutter or presentation remote works), then set the phone aside where everyone can see the score:</p>
+          <h3 data-i18n="helpClickH">Score with a Bluetooth clicker</h3>
+          <p data-i18n="helpClickP">Pair any Bluetooth clicker or remote that types like a keyboard (a camera shutter or presentation remote works), then set the phone aside where everyone can see the score:</p>
           <ul class="keys">
-            <li><span class="k">1 click</span> Point for your team</li>
-            <li><span class="k">2 clicks</span> Point for the opponents</li>
-            <li><span class="k">Hold</span> Undo the last point</li>
+            <li><span class="k" data-i18n="kClick1">1 click</span> <span data-i18n="kClick1d">Point for your team</span></li>
+            <li><span class="k" data-i18n="kClick2">2 clicks</span> <span data-i18n="kClick2d">Point for the opponents</span></li>
+            <li><span class="k" data-i18n="kHold">Hold</span> <span data-i18n="kHoldd">Undo the last point</span></li>
           </ul>
         </div>
       </div>
@@ -1103,13 +1161,13 @@
           </svg>
         </div>
         <div class="stepText">
-          <h3>Hear the score out loud</h3>
-          <p>Tap the speaker button in the bottom bar to have each point called out. Pair a Bluetooth speaker and everyone hears the running score — no need to glance at the phone.</p>
-          <p class="tip ios-only"><strong>iPhone tip:</strong> if the voice sounds robotic, download a better one in <em>Settings → Accessibility → Spoken Content → Voices → English</em> (pick an “Enhanced” or “Premium” voice), then choose it under <em>Settings → Announcer voice</em> in TapScore.</p>
+          <h3 data-i18n="helpVoiceH">Hear the score out loud</h3>
+          <p data-i18n="helpVoiceP">Tap the speaker button in the bottom bar to have each point called out. Pair a Bluetooth speaker and everyone hears the running score — no need to glance at the phone.</p>
+          <p class="tip ios-only" data-i18n-html="helpIosTip"><strong>iPhone tip:</strong> if the voice sounds robotic, download a better one in <em>Settings → Accessibility → Spoken Content → Voices → English</em> (pick an “Enhanced” or “Premium” voice), then choose it under <em>Settings → Announcer voice</em> in TapScore.</p>
         </div>
       </div>
 
-      <button class="done" id="helpDone">Got it</button>
+      <button class="done" id="helpDone" data-i18n="helpGot">Got it</button>
     </div>
   </div>
 
@@ -1118,9 +1176,346 @@
 const STORE_KEY = "tennisTracker.v1";
 const POINT_LABELS = ["0", "15", "30", "40"];
 
+/* ==================== i18n ==================== */
+const LANGS = { en: "English", es: "Español", pt: "Português", fr: "Français", de: "Deutsch" };
+const BCP = { en: "en-US", es: "es-ES", pt: "pt-PT", fr: "fr-FR", de: "de-DE" };  // TTS locale per language
+let lang = "en";
+try {
+  const saved = localStorage.getItem("tennisTracker.lang");
+  lang = saved || (navigator.language || "en").slice(0, 2).toLowerCase();
+} catch (e) {}
+if (!LANGS[lang]) lang = "en";
+
+// UI + voice strings. Missing keys fall back to English. "%s" is a placeholder filled by tf().
+const STR = {
+  en: {
+    // scoreboard
+    tapScore: "Tap to score", tapWin: "Tap to win rally",
+    player1: "Player 1", player2: "Player 2", team1: "Team 1", team2: "Team 2",
+    serving: "Serving", changeEnds: "Change ends",
+    bMatchPoint: "Match point", bSetPoint: "Set point", bMatchTB: "Match tie-break",
+    bTiebreak: "Tiebreak", bDeuce: "Deuce", bGolden: "Golden point",
+    singles: "Singles", doubles: "Doubles", oneSet: "1 set", bestOf: "Best of %s", freePlay: "Free play", pts: "%s pts",
+    // controls / winner / confirm
+    undo: "Undo", announce: "Announce score", howto: "How to use", settings: "Settings",
+    reset: "New match", newMatch: "New match", matchStats: "Match stats",
+    confirmMsg: "Start a new match?", confirmSub: "The current score will be lost.", cancel: "Cancel",
+    // sports
+    sp_tennis: "Tennis", sp_padel: "Padel", sp_tabletennis: "Table Tennis", sp_pickleball: "Pickleball",
+    sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Volleyball", sp_beachvolley: "Beach Volleyball",
+    // setup
+    tagline: "Tap either side to score — it tracks points, games, sets and serve for you",
+    sport: "Sport", chooseSport: "Choose a sport", matchLength: "Match length",
+    moreOptions: "More options", fewerOptions: "Fewer options",
+    typeLbl: "Type", typeDesc: "Singles or doubles",
+    pointsLbl: "Points to win a game", pointsDesc: "First to this many wins a game",
+    scoringLbl: "Scoring", scoringDesc: "<strong>Rally</strong>: every rally scores. <strong>Side-out</strong>: only the serving side scores (traditional; doubles uses two servers).",
+    scRally: "Rally", scSideout: "Side-out",
+    advLbl: "Advantage rules", advDesc: "<strong>Adv</strong>: win by two. <strong>Golden</strong>: sudden death at the first deuce. <strong>+1</strong>/<strong>+2</strong>: play 1 or 2 more deuces, then a golden point.",
+    advAdv: "Adv", advGolden: "Golden",
+    gpsLbl: "Games per set", gpsDesc: "Games needed to win a set", games6: "6 games", games4: "4 games",
+    tbLbl: "Tie-break points", tbDesc: "Points to win a set tie-break", tb7: "7 points", tb10: "10 points",
+    deciderLbl: "Deciding set", deciderDesc: "<strong>Full set</strong>: play the last set out normally. <strong>Match tie-break</strong>: a first-to-10 (win by 2) tie-break replaces the final set.",
+    deciderFull: "Full set", deciderTB: "Match tie-break",
+    winbyLbl: "Win by", winbyDesc: "Margin needed to win a game", winby2: "Win by 2", winby1: "Straight",
+    ceLbl: "Change-ends reminder", ceDesc2: "Prompt to switch sides during the match",
+    ceOff: "Off", ceSet: "End of set", ceStd: "Standard",
+    startMatch: "Start match", langLbl: "Language",
+    // settings sheet
+    matchSettings: "Match settings",
+    mlDesc: "Sets needed to win the match. Changing the match length starts a new match.",
+    set1: "1 set", bo3: "Best of 3", bo5: "Best of 5",
+    deciderDesc2: "<strong>Full set</strong>: play it out normally. <strong>Match tie-break</strong>: first-to-10 (win by 2) instead of a final set.",
+    tbDesc2: "First to this many (win by 2) takes the tie-break",
+    voiceLbl: "Announcer voice", voiceDesc: "Only the voices your device exposes to the browser appear here.",
+    voiceAuto: "Automatic (best available)", done: "Done",
+    // change-ends descriptions (built dynamically): "End of set"/"Standard" prefixes
+    ceEndOfSet: "End of set", ceStandard: "Standard",
+    // help
+    helpTitle: "How to use TapScore", helpSub: "Prop your phone up courtside and score the whole match with taps — it keeps the points, games, sets and serve for you.",
+    helpTapH: "Tap to score", helpTapP: "Tap anywhere on a player's side of the screen to give them the point. Points roll up into games and sets automatically. Made a mistake? Hit <strong>Undo</strong>.",
+    helpServeH: "Tap the ball to switch serve", helpServeP: "The ball next to a name marks who's serving. It moves on its own as games go by — but if it ever gets out of sync, just tap it on the correct side to fix it.",
+    helpClickH: "Score with a Bluetooth clicker", helpClickP: "Pair any Bluetooth clicker or remote that types like a keyboard (a camera shutter or presentation remote works), then set the phone aside where everyone can see the score:",
+    kClick1: "1 click", kClick1d: "Point for your team", kClick2: "2 clicks", kClick2d: "Point for the opponents", kHold: "Hold", kHoldd: "Undo the last point",
+    helpVoiceH: "Hear the score out loud", helpVoiceP: "Tap the speaker button in the bottom bar to have each point called out. Pair a Bluetooth speaker and everyone hears the running score — no need to glance at the phone.",
+    helpGot: "Got it",
+    helpIosTip: "<strong>iPhone tip:</strong> if the voice sounds robotic, download a better one in <em>Settings → Accessibility → Spoken Content → Voices → English</em> (pick an “Enhanced” or “Premium” voice), then choose it under <em>Settings → Announcer voice</em> in TapScore.",
+    // stats
+    statsTitle: "Match stats", stDuration: "Duration", stPoints: "Points", stAvg: "Avg point*",
+    stServe: "Points won on serve", stHead: "Head to head", stPointsWon: "Points won",
+    stBreaks: "Breaks of serve", stLongRun: "Longest run", stMomentum: "Momentum", stMomentumSub: "cumulative point lead",
+    stLeadChg: "Lead changes", stBigLead: "Biggest lead", stComeback: "Biggest comeback",
+    stDeuces: "Deuces", stTiebreaks: "Tiebreaks", stBigMargin: "Biggest margin", stLongPoint: "Longest point*", stLongest: "Longest %s",
+    stBySet: "By %s", stNote: "* point times are measured tap-to-tap, so they include the time between rallies",
+    unitGame: "Game", unitSet: "Set",
+    // voice words / templates
+    v_love: "love", v_deuce: "deuce", v_all: "all", v_adv: "advantage %s",
+    v_lead: "leads", v_to: "to", v_game1: "game", v_gameN: "games", v_set1: "set", v_setN: "sets",
+    v_gsm: "Game, set, and match, %s", v_matchTo: "Match to %s", v_gameWon: "Game, %s", v_setWon: "Set, %s",
+    v_wGame: "Game", v_wSet: "Set", v_correction: "Correction. ", v_allN: "%s all",
+  },
+  es: {
+    tapScore: "Toca para puntuar", tapWin: "Toca al ganador del punto",
+    player1: "Jugador 1", player2: "Jugador 2", team1: "Equipo 1", team2: "Equipo 2",
+    serving: "Al saque", changeEnds: "Cambio de lado",
+    bMatchPoint: "Punto de partido", bSetPoint: "Punto de set", bMatchTB: "Súper tie-break",
+    bTiebreak: "Tie-break", bDeuce: "Iguales", bGolden: "Punto de oro",
+    singles: "Individual", doubles: "Dobles", oneSet: "1 set", bestOf: "Al mejor de %s", freePlay: "Libre", pts: "%s ptos",
+    undo: "Deshacer", announce: "Anunciar marcador", howto: "Cómo se usa", settings: "Ajustes",
+    reset: "Nuevo partido", newMatch: "Nuevo partido", matchStats: "Estadísticas",
+    confirmMsg: "¿Empezar un partido nuevo?", confirmSub: "Se perderá el marcador actual.", cancel: "Cancelar",
+    sp_tennis: "Tenis", sp_padel: "Pádel", sp_tabletennis: "Tenis de mesa", sp_pickleball: "Pickleball",
+    sp_squash: "Squash", sp_badminton: "Bádminton", sp_volleyball: "Voleibol", sp_beachvolley: "Vóley playa",
+    tagline: "Toca cualquier lado para puntuar — lleva la cuenta de puntos, juegos, sets y saque",
+    sport: "Deporte", chooseSport: "Elige un deporte", matchLength: "Duración del partido",
+    moreOptions: "Más opciones", fewerOptions: "Menos opciones",
+    typeLbl: "Modalidad", typeDesc: "Individual o dobles",
+    pointsLbl: "Puntos para ganar un juego", pointsDesc: "El primero en llegar gana el juego",
+    scoringLbl: "Puntuación", scoringDesc: "<strong>Rally</strong>: cada punto cuenta. <strong>Side-out</strong>: solo puntúa quien saca (tradicional; en dobles, dos sacadores).",
+    scRally: "Rally", scSideout: "Side-out",
+    advLbl: "Reglas de ventaja", advDesc: "<strong>Vent.</strong>: ganar por dos. <strong>Oro</strong>: muerte súbita en el primer iguales. <strong>+1</strong>/<strong>+2</strong>: 1 o 2 iguales más y luego punto de oro.",
+    advAdv: "Vent.", advGolden: "Oro",
+    gpsLbl: "Juegos por set", gpsDesc: "Juegos para ganar un set", games6: "6 juegos", games4: "4 juegos",
+    tbLbl: "Puntos del tie-break", tbDesc: "Puntos para ganar el tie-break", tb7: "7 puntos", tb10: "10 puntos",
+    deciderLbl: "Set decisivo", deciderDesc: "<strong>Set completo</strong>: se juega normal. <strong>Súper tie-break</strong>: un tie-break a 10 (por 2) sustituye al set final.",
+    deciderFull: "Set completo", deciderTB: "Súper tie-break",
+    winbyLbl: "Diferencia", winbyDesc: "Margen para ganar un juego", winby2: "Por 2", winby1: "Directo",
+    ceLbl: "Aviso de cambio de lado", ceDesc2: "Avisar de cambiar de lado durante el partido",
+    ceOff: "No", ceSet: "Fin del set", ceStd: "Estándar",
+    startMatch: "Empezar partido", langLbl: "Idioma",
+    matchSettings: "Ajustes del partido",
+    mlDesc: "Sets para ganar el partido. Cambiarlo inicia un partido nuevo.",
+    set1: "1 set", bo3: "Al mejor de 3", bo5: "Al mejor de 5",
+    deciderDesc2: "<strong>Set completo</strong>: se juega normal. <strong>Súper tie-break</strong>: a 10 (por 2) en vez de set final.",
+    tbDesc2: "El primero en llegar (por 2) gana el tie-break",
+    voiceLbl: "Voz del locutor", voiceDesc: "Solo aparecen las voces que tu dispositivo ofrece al navegador.",
+    voiceAuto: "Automática (la mejor)", done: "Listo",
+    ceEndOfSet: "Fin del set", ceStandard: "Estándar",
+    helpTitle: "Cómo usar TapScore", helpSub: "Coloca el móvil junto a la pista y puntúa todo el partido con toques — lleva puntos, juegos, sets y saque por ti.",
+    helpTapH: "Toca para puntuar", helpTapP: "Toca en el lado de un jugador para darle el punto. Los puntos suman juegos y sets automáticamente. ¿Error? Pulsa <strong>Deshacer</strong>.",
+    helpServeH: "Toca la bola para cambiar el saque", helpServeP: "La bola junto al nombre indica quién saca. Se mueve sola con los juegos, pero si se desajusta, tócala en el lado correcto.",
+    helpClickH: "Puntúa con un mando Bluetooth", helpClickP: "Empareja un mando o disparador Bluetooth que funcione como teclado, y deja el teléfono a la vista de todos:",
+    kClick1: "1 clic", kClick1d: "Punto para tu equipo", kClick2: "2 clics", kClick2d: "Punto para el rival", kHold: "Mantener", kHoldd: "Deshacer el punto",
+    helpVoiceH: "Escucha el marcador", helpVoiceP: "Pulsa el altavoz de la barra inferior para que cante cada punto. Conecta un altavoz Bluetooth y todos oirán el marcador.",
+    helpGot: "Entendido",
+    helpIosTip: "<strong>Consejo iPhone:</strong> si la voz suena robótica, descarga una mejor en <em>Ajustes → Accesibilidad → Contenido hablado → Voces → Español</em> (elige una “Mejorada” o “Premium”) y selecciónala en <em>Ajustes → Voz del locutor</em> de TapScore.",
+    statsTitle: "Estadísticas", stDuration: "Duración", stPoints: "Puntos", stAvg: "Punto medio*",
+    stServe: "Puntos ganados al saque", stHead: "Cara a cara", stPointsWon: "Puntos ganados",
+    stBreaks: "Roturas de saque", stLongRun: "Mejor racha", stMomentum: "Momentum", stMomentumSub: "ventaja acumulada de puntos",
+    stLeadChg: "Cambios de líder", stBigLead: "Mayor ventaja", stComeback: "Mayor remontada",
+    stDeuces: "Iguales", stTiebreaks: "Tie-breaks", stBigMargin: "Mayor diferencia", stLongPoint: "Punto más largo*", stLongest: "%s más largo",
+    stBySet: "Por %s", stNote: "* los tiempos se miden entre toques, así que incluyen el tiempo entre puntos",
+    unitGame: "Juego", unitSet: "Set",
+    v_love: "cero", v_deuce: "iguales", v_all: "iguales", v_adv: "ventaja %s",
+    v_lead: "gana", v_to: "a", v_game1: "juego", v_gameN: "juegos", v_set1: "set", v_setN: "sets",
+    v_gsm: "Juego, set y partido, %s", v_matchTo: "Partido para %s", v_gameWon: "Juego, %s", v_setWon: "Set, %s",
+    v_wGame: "Juego", v_wSet: "Set", v_correction: "Corrección. ", v_allN: "%s iguales",
+  },
+  pt: {
+    tapScore: "Toca para pontuar", tapWin: "Toca em quem ganhou",
+    player1: "Jogador 1", player2: "Jogador 2", team1: "Equipa 1", team2: "Equipa 2",
+    serving: "A servir", changeEnds: "Mudança de lado",
+    bMatchPoint: "Ponto de partida", bSetPoint: "Ponto de set", bMatchTB: "Super tie-break",
+    bTiebreak: "Tie-break", bDeuce: "Iguais", bGolden: "Ponto de ouro",
+    singles: "Singulares", doubles: "Pares", oneSet: "1 set", bestOf: "À melhor de %s", freePlay: "Livre", pts: "%s ptos",
+    undo: "Desfazer", announce: "Anunciar resultado", howto: "Como usar", settings: "Definições",
+    reset: "Novo jogo", newMatch: "Novo jogo", matchStats: "Estatísticas",
+    confirmMsg: "Começar um novo jogo?", confirmSub: "O resultado atual será perdido.", cancel: "Cancelar",
+    sp_tennis: "Ténis", sp_padel: "Padel", sp_tabletennis: "Ténis de mesa", sp_pickleball: "Pickleball",
+    sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Voleibol", sp_beachvolley: "Vólei de praia",
+    tagline: "Toca em qualquer lado para pontuar — conta pontos, jogos, sets e serviço por ti",
+    sport: "Modalidade", chooseSport: "Escolhe uma modalidade", matchLength: "Duração do jogo",
+    moreOptions: "Mais opções", fewerOptions: "Menos opções",
+    typeLbl: "Tipo", typeDesc: "Singulares ou pares",
+    pointsLbl: "Pontos para ganhar um jogo", pointsDesc: "O primeiro a chegar ganha o jogo",
+    scoringLbl: "Pontuação", scoringDesc: "<strong>Rally</strong>: cada ponto conta. <strong>Side-out</strong>: só pontua quem serve (tradicional; em pares, dois servidores).",
+    scRally: "Rally", scSideout: "Side-out",
+    advLbl: "Regras de vantagem", advDesc: "<strong>Vant.</strong>: ganhar por dois. <strong>Ouro</strong>: morte súbita no primeiro iguais. <strong>+1</strong>/<strong>+2</strong>: mais 1 ou 2 iguais e depois ponto de ouro.",
+    advAdv: "Vant.", advGolden: "Ouro",
+    gpsLbl: "Jogos por set", gpsDesc: "Jogos para ganhar um set", games6: "6 jogos", games4: "4 jogos",
+    tbLbl: "Pontos do tie-break", tbDesc: "Pontos para ganhar o tie-break", tb7: "7 pontos", tb10: "10 pontos",
+    deciderLbl: "Set decisivo", deciderDesc: "<strong>Set completo</strong>: joga-se normal. <strong>Super tie-break</strong>: um tie-break a 10 (por 2) substitui o set final.",
+    deciderFull: "Set completo", deciderTB: "Super tie-break",
+    winbyLbl: "Diferença", winbyDesc: "Margem para ganhar um jogo", winby2: "Por 2", winby1: "Direto",
+    ceLbl: "Aviso de mudança de lado", ceDesc2: "Avisar para trocar de lado durante o jogo",
+    ceOff: "Não", ceSet: "Fim do set", ceStd: "Padrão",
+    startMatch: "Começar jogo", langLbl: "Idioma",
+    matchSettings: "Definições do jogo",
+    mlDesc: "Sets para ganhar o jogo. Alterar inicia um novo jogo.",
+    set1: "1 set", bo3: "À melhor de 3", bo5: "À melhor de 5",
+    deciderDesc2: "<strong>Set completo</strong>: joga-se normal. <strong>Super tie-break</strong>: a 10 (por 2) em vez de set final.",
+    tbDesc2: "O primeiro a chegar (por 2) ganha o tie-break",
+    voiceLbl: "Voz do locutor", voiceDesc: "Só aparecem as vozes que o teu dispositivo disponibiliza ao navegador.",
+    voiceAuto: "Automática (a melhor)", done: "Concluir",
+    ceEndOfSet: "Fim do set", ceStandard: "Padrão",
+    helpTitle: "Como usar o TapScore", helpSub: "Coloca o telemóvel junto ao campo e pontua o jogo todo com toques — conta pontos, jogos, sets e serviço por ti.",
+    helpTapH: "Toca para pontuar", helpTapP: "Toca no lado de um jogador para lhe dar o ponto. Os pontos somam jogos e sets automaticamente. Enganaste-te? Toca em <strong>Desfazer</strong>.",
+    helpServeH: "Toca na bola para trocar o serviço", helpServeP: "A bola ao lado do nome mostra quem serve. Move-se sozinha com os jogos, mas se desalinhar, toca-lhe no lado certo.",
+    helpClickH: "Pontua com um comando Bluetooth", helpClickP: "Emparelha um comando ou disparador Bluetooth que funcione como teclado e deixa o telemóvel à vista de todos:",
+    kClick1: "1 clique", kClick1d: "Ponto para a tua equipa", kClick2: "2 cliques", kClick2d: "Ponto para o adversário", kHold: "Manter", kHoldd: "Desfazer o ponto",
+    helpVoiceH: "Ouve o resultado", helpVoiceP: "Toca no altifalante da barra inferior para anunciar cada ponto. Liga uma coluna Bluetooth e todos ouvem o resultado.",
+    helpGot: "Percebi",
+    helpIosTip: "<strong>Dica iPhone:</strong> se a voz soar robótica, descarrega uma melhor em <em>Definições → Acessibilidade → Conteúdo falado → Vozes → Português</em> (escolhe uma “Melhorada” ou “Premium”) e seleciona-a em <em>Definições → Voz do locutor</em> no TapScore.",
+    statsTitle: "Estatísticas", stDuration: "Duração", stPoints: "Pontos", stAvg: "Ponto médio*",
+    stServe: "Pontos ganhos ao serviço", stHead: "Frente a frente", stPointsWon: "Pontos ganhos",
+    stBreaks: "Quebras de serviço", stLongRun: "Melhor sequência", stMomentum: "Momentum", stMomentumSub: "vantagem acumulada de pontos",
+    stLeadChg: "Trocas de liderança", stBigLead: "Maior vantagem", stComeback: "Maior recuperação",
+    stDeuces: "Iguais", stTiebreaks: "Tie-breaks", stBigMargin: "Maior diferença", stLongPoint: "Ponto mais longo*", stLongest: "%s mais longo",
+    stBySet: "Por %s", stNote: "* os tempos são medidos entre toques, por isso incluem o tempo entre pontos",
+    unitGame: "Jogo", unitSet: "Set",
+    v_love: "zero", v_deuce: "iguais", v_all: "iguais", v_adv: "vantagem %s",
+    v_lead: "vence", v_to: "a", v_game1: "jogo", v_gameN: "jogos", v_set1: "set", v_setN: "sets",
+    v_gsm: "Jogo, set e partida, %s", v_matchTo: "Partida para %s", v_gameWon: "Jogo, %s", v_setWon: "Set, %s",
+    v_wGame: "Jogo", v_wSet: "Set", v_correction: "Correção. ", v_allN: "%s iguais",
+  },
+  fr: {
+    tapScore: "Touchez pour marquer", tapWin: "Touchez le gagnant du point",
+    player1: "Joueur 1", player2: "Joueur 2", team1: "Équipe 1", team2: "Équipe 2",
+    serving: "Au service", changeEnds: "Changement de côté",
+    bMatchPoint: "Balle de match", bSetPoint: "Balle de set", bMatchTB: "Super jeu décisif",
+    bTiebreak: "Jeu décisif", bDeuce: "Égalité", bGolden: "Point en or",
+    singles: "Simple", doubles: "Double", oneSet: "1 set", bestOf: "Au meilleur de %s", freePlay: "Libre", pts: "%s pts",
+    undo: "Annuler", announce: "Annoncer le score", howto: "Mode d'emploi", settings: "Réglages",
+    reset: "Nouveau match", newMatch: "Nouveau match", matchStats: "Statistiques",
+    confirmMsg: "Commencer un nouveau match ?", confirmSub: "Le score actuel sera perdu.", cancel: "Annuler",
+    sp_tennis: "Tennis", sp_padel: "Padel", sp_tabletennis: "Tennis de table", sp_pickleball: "Pickleball",
+    sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Volley", sp_beachvolley: "Beach-volley",
+    tagline: "Touchez un côté pour marquer — points, jeux, sets et service comptés pour vous",
+    sport: "Sport", chooseSport: "Choisissez un sport", matchLength: "Format du match",
+    moreOptions: "Plus d'options", fewerOptions: "Moins d'options",
+    typeLbl: "Type", typeDesc: "Simple ou double",
+    pointsLbl: "Points pour gagner un jeu", pointsDesc: "Le premier à ce total gagne le jeu",
+    scoringLbl: "Comptage", scoringDesc: "<strong>Rally</strong> : chaque échange compte. <strong>Side-out</strong> : seul le serveur marque (traditionnel ; en double, deux serveurs).",
+    scRally: "Rally", scSideout: "Side-out",
+    advLbl: "Règle d'avantage", advDesc: "<strong>Avant.</strong> : gagner par deux. <strong>Or</strong> : mort subite à la première égalité. <strong>+1</strong>/<strong>+2</strong> : 1 ou 2 égalités de plus, puis point en or.",
+    advAdv: "Avant.", advGolden: "Or",
+    gpsLbl: "Jeux par set", gpsDesc: "Jeux pour gagner un set", games6: "6 jeux", games4: "4 jeux",
+    tbLbl: "Points du jeu décisif", tbDesc: "Points pour gagner le jeu décisif", tb7: "7 points", tb10: "10 points",
+    deciderLbl: "Set décisif", deciderDesc: "<strong>Set complet</strong> : joué normalement. <strong>Super jeu décisif</strong> : un jeu décisif en 10 (par 2) remplace le dernier set.",
+    deciderFull: "Set complet", deciderTB: "Super jeu décisif",
+    winbyLbl: "Écart", winbyDesc: "Écart pour gagner un jeu", winby2: "Par 2", winby1: "Direct",
+    ceLbl: "Rappel de changement de côté", ceDesc2: "Rappeler de changer de côté pendant le match",
+    ceOff: "Non", ceSet: "Fin de set", ceStd: "Standard",
+    startMatch: "Commencer", langLbl: "Langue",
+    matchSettings: "Réglages du match",
+    mlDesc: "Sets pour gagner le match. Le changer démarre un nouveau match.",
+    set1: "1 set", bo3: "Au meilleur de 3", bo5: "Au meilleur de 5",
+    deciderDesc2: "<strong>Set complet</strong> : joué normalement. <strong>Super jeu décisif</strong> : en 10 (par 2) au lieu d'un dernier set.",
+    tbDesc2: "Le premier à ce total (par 2) gagne le jeu décisif",
+    voiceLbl: "Voix de l'annonceur", voiceDesc: "Seules les voix que votre appareil expose au navigateur apparaissent ici.",
+    voiceAuto: "Automatique (la meilleure)", done: "OK",
+    ceEndOfSet: "Fin de set", ceStandard: "Standard",
+    helpTitle: "Utiliser TapScore", helpSub: "Posez le téléphone au bord du terrain et marquez tout le match d'un doigt — points, jeux, sets et service comptés pour vous.",
+    helpTapH: "Touchez pour marquer", helpTapP: "Touchez le côté d'un joueur pour lui donner le point. Les points forment jeux et sets automatiquement. Erreur ? Touchez <strong>Annuler</strong>.",
+    helpServeH: "Touchez la balle pour changer le service", helpServeP: "La balle près d'un nom indique qui sert. Elle se déplace seule au fil des jeux ; si besoin, touchez-la du bon côté.",
+    helpClickH: "Marquez avec une télécommande Bluetooth", helpClickP: "Associez une télécommande ou un déclencheur Bluetooth qui agit comme un clavier, puis posez le téléphone bien en vue :",
+    kClick1: "1 clic", kClick1d: "Point pour votre équipe", kClick2: "2 clics", kClick2d: "Point pour l'adversaire", kHold: "Maintenir", kHoldd: "Annuler le point",
+    helpVoiceH: "Écoutez le score", helpVoiceP: "Touchez le haut-parleur en bas pour annoncer chaque point. Reliez une enceinte Bluetooth et tout le monde entend le score.",
+    helpGot: "Compris",
+    helpIosTip: "<strong>Astuce iPhone :</strong> si la voix semble robotique, téléchargez-en une meilleure dans <em>Réglages → Accessibilité → Contenu énoncé → Voix → Français</em> (choisissez « Améliorée » ou « Premium »), puis sélectionnez-la dans <em>Réglages → Voix de l’annonceur</em> de TapScore.",
+    statsTitle: "Statistiques", stDuration: "Durée", stPoints: "Points", stAvg: "Point moyen*",
+    stServe: "Points gagnés au service", stHead: "Face à face", stPointsWon: "Points gagnés",
+    stBreaks: "Breaks", stLongRun: "Meilleure série", stMomentum: "Dynamique", stMomentumSub: "avance cumulée de points",
+    stLeadChg: "Changements de tête", stBigLead: "Plus grande avance", stComeback: "Plus gros retour",
+    stDeuces: "Égalités", stTiebreaks: "Jeux décisifs", stBigMargin: "Plus grand écart", stLongPoint: "Point le plus long*", stLongest: "%s le plus long",
+    stBySet: "Par %s", stNote: "* les durées sont mesurées entre les touches, elles incluent donc le temps entre les points",
+    unitGame: "Jeu", unitSet: "Set",
+    v_love: "zéro", v_deuce: "égalité", v_all: "partout", v_adv: "avantage %s",
+    v_lead: "mène", v_to: "à", v_game1: "jeu", v_gameN: "jeux", v_set1: "set", v_setN: "sets",
+    v_gsm: "Jeu, set et match, %s", v_matchTo: "Match pour %s", v_gameWon: "Jeu, %s", v_setWon: "Set, %s",
+    v_wGame: "Jeu", v_wSet: "Set", v_correction: "Correction. ", v_allN: "%s partout",
+  },
+  de: {
+    tapScore: "Zum Punkten tippen", tapWin: "Auf den Punktgewinner tippen",
+    player1: "Spieler 1", player2: "Spieler 2", team1: "Team 1", team2: "Team 2",
+    serving: "Aufschlag", changeEnds: "Seitenwechsel",
+    bMatchPoint: "Matchball", bSetPoint: "Satzball", bMatchTB: "Match-Tie-Break",
+    bTiebreak: "Tie-Break", bDeuce: "Einstand", bGolden: "Golden Point",
+    singles: "Einzel", doubles: "Doppel", oneSet: "1 Satz", bestOf: "Best of %s", freePlay: "Frei", pts: "%s Pkt.",
+    undo: "Zurück", announce: "Punkte ansagen", howto: "Anleitung", settings: "Einstellungen",
+    reset: "Neues Match", newMatch: "Neues Match", matchStats: "Statistiken",
+    confirmMsg: "Neues Match starten?", confirmSub: "Der aktuelle Stand geht verloren.", cancel: "Abbrechen",
+    sp_tennis: "Tennis", sp_padel: "Padel", sp_tabletennis: "Tischtennis", sp_pickleball: "Pickleball",
+    sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Volleyball", sp_beachvolley: "Beachvolleyball",
+    tagline: "Tippe auf eine Seite, um zu punkten — Punkte, Spiele, Sätze und Aufschlag werden gezählt",
+    sport: "Sportart", chooseSport: "Sportart wählen", matchLength: "Match-Format",
+    moreOptions: "Mehr Optionen", fewerOptions: "Weniger Optionen",
+    typeLbl: "Modus", typeDesc: "Einzel oder Doppel",
+    pointsLbl: "Punkte für ein Spiel", pointsDesc: "Wer zuerst so viele hat, gewinnt das Spiel",
+    scoringLbl: "Zählweise", scoringDesc: "<strong>Rally</strong>: jeder Ballwechsel zählt. <strong>Side-out</strong>: nur die aufschlagende Seite punktet (traditionell; Doppel mit zwei Aufschlägern).",
+    scRally: "Rally", scSideout: "Side-out",
+    advLbl: "Vorteilsregel", advDesc: "<strong>Vorteil</strong>: zwei Punkte Vorsprung. <strong>Golden</strong>: Sudden Death beim ersten Einstand. <strong>+1</strong>/<strong>+2</strong>: 1 oder 2 weitere Einstände, dann Golden Point.",
+    advAdv: "Vorteil", advGolden: "Golden",
+    gpsLbl: "Spiele pro Satz", gpsDesc: "Spiele, um einen Satz zu gewinnen", games6: "6 Spiele", games4: "4 Spiele",
+    tbLbl: "Tie-Break-Punkte", tbDesc: "Punkte, um den Tie-Break zu gewinnen", tb7: "7 Punkte", tb10: "10 Punkte",
+    deciderLbl: "Entscheidungssatz", deciderDesc: "<strong>Ganzer Satz</strong>: normal ausspielen. <strong>Match-Tie-Break</strong>: ein Tie-Break bis 10 (mit 2) statt letztem Satz.",
+    deciderFull: "Ganzer Satz", deciderTB: "Match-Tie-Break",
+    winbyLbl: "Vorsprung", winbyDesc: "Nötiger Vorsprung für ein Spiel", winby2: "Mit 2", winby1: "Direkt",
+    ceLbl: "Seitenwechsel-Hinweis", ceDesc2: "Während des Matches an den Seitenwechsel erinnern",
+    ceOff: "Aus", ceSet: "Satzende", ceStd: "Standard",
+    startMatch: "Match starten", langLbl: "Sprache",
+    matchSettings: "Match-Einstellungen",
+    mlDesc: "Sätze zum Matchgewinn. Ändern startet ein neues Match.",
+    set1: "1 Satz", bo3: "Best of 3", bo5: "Best of 5",
+    deciderDesc2: "<strong>Ganzer Satz</strong>: normal. <strong>Match-Tie-Break</strong>: bis 10 (mit 2) statt letztem Satz.",
+    tbDesc2: "Wer zuerst so viele hat (mit 2), gewinnt den Tie-Break",
+    voiceLbl: "Ansagestimme", voiceDesc: "Es erscheinen nur Stimmen, die dein Gerät dem Browser bereitstellt.",
+    voiceAuto: "Automatisch (beste)", done: "Fertig",
+    ceEndOfSet: "Satzende", ceStandard: "Standard",
+    helpTitle: "TapScore verwenden", helpSub: "Stell das Telefon an den Platzrand und zähle das ganze Match per Tipp — Punkte, Spiele, Sätze und Aufschlag inklusive.",
+    helpTapH: "Zum Punkten tippen", helpTapP: "Tippe auf die Seite eines Spielers, um ihm den Punkt zu geben. Punkte werden automatisch zu Spielen und Sätzen. Vertippt? Tippe auf <strong>Zurück</strong>.",
+    helpServeH: "Auf den Ball tippen für Aufschlagwechsel", helpServeP: "Der Ball neben dem Namen zeigt, wer aufschlägt. Er wandert automatisch; stimmt es nicht, tippe ihn auf der richtigen Seite an.",
+    helpClickH: "Mit Bluetooth-Clicker punkten", helpClickP: "Koppel einen Bluetooth-Clicker oder eine Fernbedienung, die wie eine Tastatur funktioniert, und leg das Telefon gut sichtbar hin:",
+    kClick1: "1 Klick", kClick1d: "Punkt für dein Team", kClick2: "2 Klicks", kClick2d: "Punkt für die Gegner", kHold: "Halten", kHoldd: "Letzten Punkt zurück",
+    helpVoiceH: "Punktestand hören", helpVoiceP: "Tippe unten auf den Lautsprecher, um jeden Punkt ansagen zu lassen. Verbinde eine Bluetooth-Box und alle hören den Stand.",
+    helpGot: "Verstanden",
+    helpIosTip: "<strong>iPhone-Tipp:</strong> Klingt die Stimme roboterhaft, lade in <em>Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → Deutsch</em> eine bessere („Erweitert“ oder „Premium“) und wähle sie in TapScore unter <em>Einstellungen → Ansagestimme</em>.",
+    statsTitle: "Statistiken", stDuration: "Dauer", stPoints: "Punkte", stAvg: "Ø Punkt*",
+    stServe: "Punkte am eigenen Aufschlag", stHead: "Direktvergleich", stPointsWon: "Gewonnene Punkte",
+    stBreaks: "Breaks", stLongRun: "Längste Serie", stMomentum: "Momentum", stMomentumSub: "kumulierter Punktevorsprung",
+    stLeadChg: "Führungswechsel", stBigLead: "Größte Führung", stComeback: "Größtes Comeback",
+    stDeuces: "Einstände", stTiebreaks: "Tie-Breaks", stBigMargin: "Größter Abstand", stLongPoint: "Längster Punkt*", stLongest: "Längster %s",
+    stBySet: "Nach %s", stNote: "* Zeiten werden von Tipp zu Tipp gemessen und enthalten die Zeit zwischen den Ballwechseln",
+    unitGame: "Spiel", unitSet: "Satz",
+    v_love: "null", v_deuce: "Einstand", v_all: "beide", v_adv: "Vorteil %s",
+    v_lead: "führt", v_to: "zu", v_game1: "Spiel", v_gameN: "Spiele", v_set1: "Satz", v_setN: "Sätze",
+    v_gsm: "Spiel, Satz und Sieg, %s", v_matchTo: "Match für %s", v_gameWon: "Spiel, %s", v_setWon: "Satz, %s",
+    v_wGame: "Spiel", v_wSet: "Satz", v_correction: "Korrektur. ", v_allN: "%s beide",
+  },
+};
+function t(k) { const L = STR[lang] || STR.en; return (k in L ? L[k] : (k in STR.en ? STR.en[k] : k)); }
+function tf(k) { const args = [].slice.call(arguments, 1); let s = t(k), i = 0; return s.replace(/%s/g, () => args[i++]); }
+// apply translations to static markup: [data-i18n]=textContent, -html=innerHTML, -aria / -title = attribute
+function applyI18n() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(e => e.textContent = t(e.dataset.i18n));
+  document.querySelectorAll("[data-i18n-html]").forEach(e => e.innerHTML = t(e.dataset.i18nHtml));
+  document.querySelectorAll("[data-i18n-aria]").forEach(e => e.setAttribute("aria-label", t(e.dataset.i18nAria)));
+  document.querySelectorAll("[data-i18n-title]").forEach(e => e.title = t(e.dataset.i18nTitle));
+  syncLangSegs();
+}
+function setLang(l) {
+  if (!LANGS[l]) return;
+  lang = l;
+  try { localStorage.setItem("tennisTracker.lang", l); } catch (e) {}
+  applyI18n();
+  buildSportList();          // sport names
+  if (typeof render === "function") render();
+  if (typeof syncSetupUI === "function") syncSetupUI();
+  if (typeof populateVoiceSelect === "function") populateVoiceSelect();
+  syncLangSegs();
+}
+function syncLangSegs() {
+  const abbr = document.getElementById("langAbbr");
+  if (abbr) abbr.textContent = lang.toUpperCase();
+  const menu = document.getElementById("langMenu");
+  if (menu) Array.from(menu.children).forEach(li =>
+    li.setAttribute("aria-selected", String(li.dataset.lang === lang)));
+}
+
 function freshMatch(settings) {
   return {
-    names: ["Player 1", "Player 2"],
+    names: [t("player1"), t("player2")],
     sets: [0, 0],
     games: [0, 0],
     points: [0, 0],
@@ -1178,11 +1573,7 @@ function isTargetSport(sp) {
   return s === "tabletennis" || s === "pickleball" || s === "squash" || s === "badminton"
       || s === "volleyball" || s === "beachvolley";
 }
-function sportLabel(sp) {
-  return sp === "padel" ? "Padel" : sp === "tabletennis" ? "Table Tennis" : sp === "pickleball" ? "Pickleball"
-    : sp === "squash" ? "Squash" : sp === "badminton" ? "Badminton" : sp === "volleyball" ? "Volleyball"
-    : sp === "beachvolley" ? "Beach Volleyball" : "Tennis";
-}
+function sportLabel(sp) { return t("sp_" + (sp || "tennis")); }
 // Per-sport rule quirks for the target engine.
 //  rallyServe   – the rally winner serves next (squash/badminton/volleyball) vs a fixed rotation (table tennis)
 //  cap          – hard ceiling where the next point wins outright, ignoring win-by-2 (badminton 29–29 → 30)
@@ -1210,9 +1601,10 @@ function defaultBestOf(sport) {
 function defaultPoints(sport) { return pointsOptions(sport)[0]; }
 // Best-of options differ by sport: racket sports offer a single set; target sports are best-of games.
 function bestOfOptions(sport) {
+  const bo = (n) => tf("bestOf", n);
   return isTargetSport(sport)
-    ? [[3, "Best of 3"], [5, "Best of 5"], [7, "Best of 7"], ["inf", "Free"]]
-    : [[1, "1 set"], [3, "Best of 3"], [5, "Best of 5"], ["inf", "Free"]];
+    ? [[3, bo(3)], [5, bo(5)], [7, bo(7)], ["inf", t("freePlay")]]
+    : [[1, t("oneSet")], [3, bo(3)], [5, bo(5)], ["inf", t("freePlay")]];
 }
 // Points-to-win options per target sport (first entry is the default)
 function pointsOptions(sport) {
@@ -1357,11 +1749,17 @@ let toastTimer = null;
 // describe what "Standard" means for the given sport (matches maybeChangeEnds' behaviour)
 function changeEndsDesc(sport) {
   const s = sport || match.settings.sport;
-  let std;
-  if (s === "tennis" || s === "padel") std = "on odd games, and every 6 points in a tiebreak";
-  else if (s === "volleyball" || s === "beachvolley") std = "after each set, and midway through the deciding set";
-  else std = "after each game, and midway through the deciding game";
-  return `<strong>End of set</strong>: only between sets/games. <strong>Standard</strong>: ${std}.`;
+  const grp = (s === "tennis" || s === "padel") ? "racket" : (s === "volleyball" || s === "beachvolley") ? "volley" : "game";
+  const STD = {
+    en: { racket: "on odd games, and every 6 points in a tiebreak", volley: "after each set, and midway through the deciding set", game: "after each game, and midway through the deciding game" },
+    es: { racket: "en juegos impares y cada 6 puntos en el tie-break", volley: "tras cada set y a mitad del set decisivo", game: "tras cada juego y a mitad del juego decisivo" },
+    pt: { racket: "em jogos ímpares e a cada 6 pontos no tie-break", volley: "após cada set e a meio do set decisivo", game: "após cada jogo e a meio do jogo decisivo" },
+    fr: { racket: "aux jeux impairs et tous les 6 points au jeu décisif", volley: "après chaque set et à mi-parcours du set décisif", game: "après chaque jeu et à mi-parcours du jeu décisif" },
+    de: { racket: "bei ungeraden Spielen und alle 6 Punkte im Tie-Break", volley: "nach jedem Satz und zur Hälfte des Entscheidungssatzes", game: "nach jedem Spiel und zur Hälfte des Entscheidungsspiels" },
+  };
+  const only = { en: "only between sets/games.", es: "solo entre sets/juegos.", pt: "só entre sets/jogos.", fr: "seulement entre les sets/jeux.", de: "nur zwischen Sätzen/Spielen." };
+  const std = (STD[lang] || STD.en)[grp];
+  return `<strong>${t("ceEndOfSet")}</strong>: ${only[lang] || only.en} <strong>${t("ceStandard")}</strong>: ${std}.`;
 }
 function showToast(text) {
   const t = el("toast");
@@ -1402,7 +1800,7 @@ function maybeChangeEnds(before) {
           && (match.games[0] + match.games[1]) % 2 === 1) {
     due = true;                                          // odd game within the set
   }
-  if (due) showToast("Change ends");
+  if (due) showToast(t("changeEnds"));
 }
 
 /* ---- score announcements (Web Speech API) ---- */
@@ -1428,45 +1826,41 @@ if ("speechSynthesis" in window) {
   window.speechSynthesis.addEventListener("voiceschanged", () => { refreshVoices(); populateVoiceSelect(); });
 }
 
-// The voice actually used: the user's explicit pick if it's still available, else the best English one.
+// The voice actually used: the user's explicit pick if it's still available, else the best for the language.
 function pickVoice() {
   if (chosenVoiceURI) {
     const hit = allVoices().find(v => v.voiceURI === chosenVoiceURI);
     if (hit) return hit;
   }
-  return bestEnglishVoice();
+  return bestVoice();
 }
 
 const IS_IOS = /iP(hone|od|ad)/.test(navigator.userAgent)
   || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);   // iPadOS reports as Mac
 if (IS_IOS) document.documentElement.classList.add("is-ios");   // gates iOS-only help text (.ios-only)
 
-// Auto-select a voice for "Automatic". This is deliberately conservative on iOS: forcing a voice
-// there — especially a downloaded "enhanced"/"premium" one — frequently produces NO audio, so we
-// keep iOS's own default (return null → don't set utterance.voice) unless the default isn't English.
-// Desktop/Android reliably play their voices, so there we upgrade to Google/Natural/enhanced ones.
-function bestEnglishVoice() {
+// Auto-select the most natural voice for the current app language. On iOS, forcing a voice can
+// silence it, so if the device default already matches the language we leave it (return null).
+function bestVoice() {
   const voices = allVoices();
   if (!voices.length) return null;
+  const isLang = (v) => new RegExp("^" + lang, "i").test(v.lang || "");   // "en","es","pt","fr","de"
 
   if (IS_IOS) {
     const def = voices.find(v => v.default);
-    if (!def || /^en/i.test(def.lang || "")) return null;     // English default already speaks — leave it
-    // non-English default: pick a built-in (compact) English voice, which does play on iOS
-    return voices.find(v => /^en/i.test(v.lang) && /compact/i.test(v.voiceURI || ""))
-        || voices.find(v => /^en[-_]us/i.test(v.lang))
-        || voices.find(v => /^en/i.test(v.lang)) || null;
+    if (def && isLang(def)) return null;      // device default already in this language → let iOS use it
+    return voices.find(v => isLang(v) && /compact/i.test(v.voiceURI || ""))
+        || voices.find(v => isLang(v)) || null;
   }
 
   let best = null, bestScore = -1;
   for (const v of voices) {
-    if (!/^en/i.test(v.lang || "")) continue;
+    if (!isLang(v)) continue;
     const uri = (v.voiceURI || "").toLowerCase(), name = (v.name || "").toLowerCase();
     let s = 2;                                     // unknown quality baseline
-    if (/google|natural|neural/.test(name)) s += 4;   // Chrome/Android/Edge high-quality voices
+    if (/google|natural|neural/.test(name)) s += 4;   // high-quality voices
     if (/premium/.test(uri)) s += 3;
     else if (/enhanced/.test(uri)) s += 2;
-    if (/en[-_]us/i.test(v.lang)) s += 1;
     if (v.localService) s += 0.5;
     if (s > bestScore) { bestScore = s; best = v; }
   }
@@ -1486,7 +1880,8 @@ function speak(text) {
     synth.speak(warm);
     const u = new SpeechSynthesisUtterance(text);
     const v = pickVoice();
-    if (v) { u.voice = v; u.lang = v.lang || "en-US"; }   // user's pick, or the most natural English voice
+    u.lang = (v && v.lang) || BCP[lang] || "en-US";       // hint the locale even when no explicit voice
+    if (v) u.voice = v;                                   // user's pick, or the most natural voice for the language
     u.rate = 1.0;
     u.pitch = 1.0;
     synth.speak(u);
@@ -1494,54 +1889,55 @@ function speak(text) {
 }
 
 // tennis/padel in-game call, server's score first (love / 15 / 30 / 40 / deuce / advantage)
+// tennis/padel in-game call, server's score first — localized umpire terms (love/zéro/null, deuce, advantage)
 function tennisCall() {
-  const P = ["love", "15", "30", "40"];
+  const P = [t("v_love"), "15", "30", "40"];   // 15/30/40 spoken by the locale's voice
   const s = match.server, r = 1 - s;
   const a = match.points[s], b = match.points[r];
   if (a >= 3 && b >= 3) {
-    if (a === b) return "deuce";
-    return "advantage " + match.names[a > b ? s : r];
+    if (a === b) return t("v_deuce");
+    return tf("v_adv", match.names[a > b ? s : r]);
   }
-  if (a === b) return (a === 0 ? "love" : P[a]) + " all";
+  if (a === b) return P[a] + " " + t("v_all");       // "love all" / "cero iguales" / "zéro partout"
   return P[a] + ", " + P[b];
 }
 
-// spoken running tally with correct grammar, e.g. "Ivo leads 3 games to 2", "1 set all",
-// "Ivo leads one set to love" (love/singular only for racquet sports)
-function tally(x0, x1, unit, useLove) {
-  const noun = (n) => (n === 1 ? unit.replace(/s$/, "") : unit);        // "set"/"sets", "game"/"games"
-  const num = (n) => (useLove && n === 0) ? "love" : String(n);
-  if (x0 === x1) return x0 + " " + noun(x0) + " all";
+// spoken running tally, e.g. "Ivo leads 3 games to 2" / "Ivo mène 3 jeux à 2" / "3 games all".
+// kind = "game" | "set"; useLove speaks 0 as the localized love/zéro word (racquet sports only).
+function tally(x0, x1, kind, useLove) {
+  const noun = (n) => (n === 1 ? t("v_" + kind + "1") : t("v_" + kind + "N"));
+  const num = (n) => (useLove && n === 0) ? t("v_love") : String(n);
+  if (x0 === x1) return x0 + " " + noun(x0) + " " + t("v_all");
   const hi = Math.max(x0, x1), lo = Math.min(x0, x1), leader = x0 > x1 ? 0 : 1;
-  return match.names[leader] + " leads " + hi + " " + noun(hi) + " to " + num(lo);
+  return match.names[leader] + " " + t("v_lead") + " " + hi + " " + noun(hi) + " " + t("v_to") + " " + num(lo);
 }
 
-// What one "set counter" is called for the current sport (plural; tally() singularises it):
-// table tennis / squash / badminton / pickleball play "games"; tennis, padel and volleyball play "sets".
+// "games" for table tennis/squash/badminton/pickleball; "sets" for tennis/padel/volleyball/beach volley
 function setUnit() {
   const sp = match.settings.sport;
   return (isTargetSport() && sp !== "volleyball" && sp !== "beachvolley") ? "games" : "sets";
 }
-function unitWonWord() { return setUnit() === "games" ? "Game" : "Set"; }
+function unitWonWord() { return setUnit() === "games" ? t("v_wGame") : t("v_wSet"); }
 
 function announceScore(before) {
   if (!voiceOn) return;
   const target = isTargetSport();
   const s = match.server, r = 1 - s;
+  const kind = setUnit() === "games" ? "game" : "set";
   let text;
   if (match.over) {
     // tennis/padel keep the classic call; rally sports simply declare the match
-    text = target ? ("Match to " + match.names[match.winner] + ".")
-                  : ("Game, set, and match, " + match.names[match.winner] + ".");
+    text = (target ? tf("v_matchTo", match.names[match.winner]) : tf("v_gsm", match.names[match.winner])) + ".";
   } else if (match.sets[0] + match.sets[1] > before.sets[0] + before.sets[1]) {
     const w = match.sets[0] > before.sets[0] ? 0 : 1;
-    text = unitWonWord() + ", " + match.names[w] + ". " + tally(match.sets[0], match.sets[1], setUnit(), !target);
+    const won = kind === "game" ? tf("v_gameWon", match.names[w]) : tf("v_setWon", match.names[w]);
+    text = won + ". " + tally(match.sets[0], match.sets[1], kind, !target);
   } else if (!target && (match.games[0] + match.games[1] > before.games[0] + before.games[1])) {
     const w = match.games[0] > before.games[0] ? 0 : 1;
-    text = "Game, " + match.names[w] + ". " + tally(match.games[0], match.games[1], "games", true);
+    text = tf("v_gameWon", match.names[w]) + ". " + tally(match.games[0], match.games[1], "game", true);
   } else if (target || match.tiebreak) {
     const a = match.points[s], b = match.points[r];          // server's score first
-    text = (a === b) ? (a + " all") : (a + ", " + b);        // "20 all" when level, else "21, 19"
+    text = (a === b) ? tf("v_allN", a) : (a + ", " + b);     // "20 all" when level, else "21, 19"
   } else {
     text = tennisCall();
   }
@@ -1972,7 +2368,7 @@ function render() {
   const sideOut = isSideOut();
   ["sideA", "sideB"].forEach((sid, idx) => {
     const h = el(sid).querySelector(".hint");
-    if (h) h.textContent = sideOut ? (match.server === idx ? "Tap to score" : "Tap to win rally") : "Tap to score";
+    if (h) h.textContent = sideOut ? (match.server === idx ? t("tapScore") : t("tapWin")) : t("tapScore");
   });
   // pickleball side-out doubles: show the current server number (1/2) on the serving side
   const showSnum = sideOut && match.settings.mode === "doubles" && !match.over;
@@ -1984,9 +2380,9 @@ function render() {
   });
 
   const st = match.settings;
-  const lenLabel = st.bestOf === "inf" ? "Free play" : st.bestOf === 1 ? "1 set" : "Best of " + st.bestOf;
-  const info = [sportLabel(st.sport), st.mode === "doubles" ? "Doubles" : "Singles", lenLabel];
-  if (tt) info.push(st.pointsTarget + " pts");
+  const lenLabel = st.bestOf === "inf" ? t("freePlay") : st.bestOf === 1 ? t("oneSet") : tf("bestOf", st.bestOf);
+  const info = [sportLabel(st.sport), st.mode === "doubles" ? t("doubles") : t("singles"), lenLabel];
+  if (tt) info.push(tf("pts", st.pointsTarget));
   el("matchInfo").textContent = info.join(" · ");
 
   // Match summary: completed sets plus the live current set, always on. The current set is highlighted.
@@ -2002,12 +2398,12 @@ function render() {
   let badgeText = "";
   if (!match.over) {
     const winA = outcomeIfWin(0), winB = outcomeIfWin(1);
-    if (winA.matchWon || winB.matchWon) badgeText = "Match point";
-    else if (winA.setWon || winB.setWon) badgeText = "Set point";
-    else if (match.matchTB) badgeText = "Match tie-break";
-    else if (match.tiebreak) badgeText = "Tiebreak";
-    else if (tt && pa >= (currentTarget() - 1) && pb >= (currentTarget() - 1)) badgeText = "Deuce";
-    else if (!tt && pa === pb && pa >= 3 && goldenArmed(pa, pb)) badgeText = "Golden point";
+    if (winA.matchWon || winB.matchWon) badgeText = t("bMatchPoint");
+    else if (winA.setWon || winB.setWon) badgeText = t("bSetPoint");
+    else if (match.matchTB) badgeText = t("bMatchTB");
+    else if (match.tiebreak) badgeText = t("bTiebreak");
+    else if (tt && pa >= (currentTarget() - 1) && pb >= (currentTarget() - 1)) badgeText = t("bDeuce");
+    else if (!tt && pa === pb && pa >= 3 && goldenArmed(pa, pb)) badgeText = t("bGolden");
   }
 
   if (badgeText) {
@@ -2086,13 +2482,13 @@ function buildStatsHTML() {
   const setMargins = match.completedSets.map(s => Math.abs(s[0] - s[1]));
   const longestSet = setTotals.length ? Math.max(...setTotals) : 0;
   const biggestMargin = setMargins.length ? Math.max(...setMargins) : 0;
-  const setUnitCap = setUnit() === "games" ? "Game" : "Set";
+  const setUnitCap = setUnit() === "games" ? t("unitGame") : t("unitSet");
 
   // ---- header tiles ----
   const tiles = [
-    ["Duration", fmtDur(total)],
-    ["Points", String(match.rallies)],
-    ["Avg point*", avgPt],
+    [t("stDuration"), fmtDur(total)],
+    [t("stPoints"), String(match.rallies)],
+    [t("stAvg"), avgPt],
   ].map(([l, v]) => `<div class="stile"><div class="sval">${v}</div><div class="slbl">${l}</div></div>`).join("");
 
   // ---- head-to-head split bars (who did better on each two-sided stat) ----
@@ -2103,10 +2499,10 @@ function buildStatsHTML() {
         <div class="cmp-bar"><div class="cmp-fa" style="width:${wa.toFixed(1)}%"></div><div class="cmp-fb" style="width:${(100 - wa).toFixed(1)}%"></div></div>
         <span class="cmp-n">${b}</span></div></div>`;
   };
-  const cmpBlock = `<div class="statsec"><div class="statsec-h">Head to head</div>` +
-    cmpBar("Points won", match.rallyWins[0], match.rallyWins[1]) +
-    (racket ? cmpBar("Breaks of serve", match.breaks[0], match.breaks[1]) : "") +
-    cmpBar("Longest run", match.longestRun[0], match.longestRun[1]) +
+  const cmpBlock = `<div class="statsec"><div class="statsec-h">${t("stHead")}</div>` +
+    cmpBar(t("stPointsWon"), match.rallyWins[0], match.rallyWins[1]) +
+    (racket ? cmpBar(t("stBreaks"), match.breaks[0], match.breaks[1]) : "") +
+    cmpBar(t("stLongRun"), match.longestRun[0], match.longestRun[1]) +
     `</div>`;
 
   // ---- serve won % (mini bars) ----
@@ -2115,7 +2511,7 @@ function buildStatsHTML() {
     <div class="sb-track"><div class="sb-fill sb-${i}" style="width:${pct(i)}%"></div></div>
     <div class="sb-val">${served[i] ? pct(i) + "%" : "—"}</div></div>`;
   const serveBlock = log.length
-    ? `<div class="statsec"><div class="statsec-h">Points won on serve</div>${bar(0)}${bar(1)}</div>` : "";
+    ? `<div class="statsec"><div class="statsec-h">${t("stServe")}</div>${bar(0)}${bar(1)}</div>` : "";
 
   // ---- momentum area chart (filled with the leading side's colour above/below the centre line) ----
   const spark = (() => {
@@ -2127,7 +2523,7 @@ function buildStatsHTML() {
     const linePts = margins.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`);
     // close the line back along the centre line → the band between the line and centre gets filled
     const areaPts = [...linePts, `${x(margins.length - 1).toFixed(1)},${cy}`, `${x(0).toFixed(1)},${cy}`].join(" ");
-    return `<div class="statsec"><div class="statsec-h">Momentum <span class="muted">(cumulative point lead)</span></div>
+    return `<div class="statsec"><div class="statsec-h">${t("stMomentum")} <span class="muted">(${t("stMomentumSub")})</span></div>
       <svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
         <defs>
           <clipPath id="mTop"><rect x="0" y="0" width="${W}" height="${cy}"/></clipPath>
@@ -2142,15 +2538,15 @@ function buildStatsHTML() {
 
   // ---- key/value grid ----
   const rows = [];
-  rows.push(["Lead changes", String(leadChanges)]);
+  rows.push([t("stLeadChg"), String(leadChanges)]);
   const leadSide = maxLead >= -minLead ? 0 : 1;   // who held the biggest points lead
-  rows.push(["Biggest lead", `${biggestLead} pts ${dot(leadSide)}`]);
-  rows.push(["Biggest comeback", comeback ? `${comeback} pts ${dot(w)}` : "—"]);
-  rows.push(["Deuces", String(match.deuces)]);
-  if (racket) rows.push(["Tiebreaks", String(match.tiebreaks)]);
-  rows.push([`Longest ${setUnitCap.toLowerCase()}`, longestSet + " pts"]);
-  rows.push(["Biggest margin", biggestMargin]);
-  if (maxGap > 4000) rows.push(["Longest point*", fmtDur(maxGap)]);
+  rows.push([t("stBigLead"), `${tf("pts", biggestLead)} ${dot(leadSide)}`]);
+  rows.push([t("stComeback"), comeback ? `${tf("pts", comeback)} ${dot(w)}` : "—"]);
+  rows.push([t("stDeuces"), String(match.deuces)]);
+  if (racket) rows.push([t("stTiebreaks"), String(match.tiebreaks)]);
+  rows.push([tf("stLongest", setUnitCap), tf("pts", longestSet)]);
+  rows.push([t("stBigMargin"), biggestMargin]);
+  if (maxGap > 4000) rows.push([t("stLongPoint"), fmtDur(maxGap)]);
   const grid = `<div class="statgrid">${rows.map(([l, v]) =>
     `<div class="sg-row"><span class="sg-l">${l}</span><span class="sg-v">${v}</span></div>`).join("")}</div>`;
 
@@ -2161,9 +2557,9 @@ function buildStatsHTML() {
     const mid = `<span class="sr-mid">${wSide === 0 ? dot(0) : ""}<span class="sr-score">${s[0]}–${s[1]}</span>${wSide === 1 ? dot(1) : ""}</span>`;
     return `<div class="setrow"><span class="sr-label">${setUnitCap} ${i + 1}</span>${mid}${dur}</div>`;
   }).join("");
-  const setBlock = setRows ? `<div class="statsec"><div class="statsec-h">By ${setUnitCap.toLowerCase()}</div><div class="setlist">${setRows}</div></div>` : "";
+  const setBlock = setRows ? `<div class="statsec"><div class="statsec-h">${tf("stBySet", setUnitCap)}</div><div class="setlist">${setRows}</div></div>` : "";
 
-  const note = match.startedAt ? `<div class="statnote">* point times are measured tap‑to‑tap, so they include the time between rallies</div>` : "";
+  const note = match.startedAt ? `<div class="statnote">${t("stNote")}</div>` : "";
   // serve chart first — it carries the names, so it doubles as the colour key for the bars/dots below
   return `<div class="stiles">${tiles}</div>${serveBlock}${cmpBlock}${spark}${grid}${setBlock}${note}`;
 }
@@ -2257,15 +2653,16 @@ el("serveB").addEventListener("click", (e) => { e.stopPropagation(); setServer(1
 // After an undo, speak the resulting (corrected) score so players hear where it stands
 function announceCorrection() {
   if (!voiceOn) return;
+  const pre = t("v_correction");
   let text;
   if (match.over) {
-    text = "Correction. Match to " + match.names[match.winner];
+    text = pre + tf("v_matchTo", match.names[match.winner]);
   } else if (isTargetSport() || match.tiebreak) {
     const s = match.server, r = 1 - s;
     const a = match.points[s], b = match.points[r];
-    text = "Correction. " + (a === b ? (a + " all") : (a + ", " + b));
+    text = pre + (a === b ? tf("v_allN", a) : (a + ", " + b));
   } else {
-    text = "Correction. " + tennisCall();   // server's score first, e.g. "30, 15" / "deuce"
+    text = pre + tennisCall();
   }
   speak(text);
 }
@@ -2505,7 +2902,7 @@ function syncMore() {
   el("setupMore").style.display = moreOpen ? "" : "none";
   el("moreBtn").classList.toggle("open", moreOpen);
   el("moreBtn").setAttribute("aria-expanded", String(moreOpen));
-  el("moreLabel").textContent = moreOpen ? "Fewer options" : "More options";
+  el("moreLabel").textContent = moreOpen ? t("fewerOptions") : t("moreOptions");
 }
 el("moreBtn").addEventListener("click", () => { moreOpen = !moreOpen; syncMore(); });
 
@@ -2571,18 +2968,17 @@ function selectSport(sport) {
 
 /* ---- sport picker: an inline dropdown on large screens, a bottom sheet on small ones ----
    The single options list is re-parented into whichever host fits the viewport when opened. */
-const SPORT_LIST = [
-  ["tennis", "Tennis"], ["padel", "Padel"], ["tabletennis", "Table Tennis"],
-  ["pickleball", "Pickleball"], ["squash", "Squash"], ["badminton", "Badminton"],
-  ["volleyball", "Volleyball"], ["beachvolley", "Beach Volleyball"]
-];
+const SPORT_LIST = ["tennis", "padel", "tabletennis", "pickleball", "squash", "badminton", "volleyball", "beachvolley"];
 const sportDrop = el("sportDrop"), sportTrigger = el("sportTrigger"), sportSheet = el("sportSheet");
 const sportSheetPanel = sportSheet.querySelector(".panel"), sportList = el("sportList");
 let sportActiveIdx = -1;   // highlighted option while open
 
-sportList.innerHTML = SPORT_LIST.map(([s, label]) =>
-  `<li role="option" id="sport-opt-${s}" data-sport="${s}" aria-selected="false">
-     <span class="dropBall" aria-hidden="true">${ballSVG(s)}</span><span>${label}</span></li>`).join("");
+function buildSportList() {
+  sportList.innerHTML = SPORT_LIST.map(s =>
+    `<li role="option" id="sport-opt-${s}" data-sport="${s}" aria-selected="false">
+       <span class="dropBall" aria-hidden="true">${ballSVG(s)}</span><span>${sportLabel(s)}</span></li>`).join("");
+}
+buildSportList();
 
 // reflect pendingSetup.sport in the trigger (ball + name) and the list's selected row
 function syncSportDropdown() {
@@ -2611,7 +3007,7 @@ function sportOpen() {
     sportDrop.appendChild(sportList);              // move it under the trigger as a dropdown
     sportDrop.classList.add("open");
   }
-  highlightSport(SPORT_LIST.findIndex(([s]) => s === pendingSetup.sport));
+  highlightSport(SPORT_LIST.indexOf(pendingSetup.sport));
   sportList.focus();
 }
 function sportClose(focusTrigger) {
@@ -2632,7 +3028,7 @@ sportList.addEventListener("keydown", (e) => {
   else if (e.key === "ArrowUp") { e.preventDefault(); highlightSport(sportActiveIdx - 1); }
   else if (e.key === "Home") { e.preventDefault(); highlightSport(0); }
   else if (e.key === "End") { e.preventDefault(); highlightSport(SPORT_LIST.length - 1); }
-  else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); chooseSport(SPORT_LIST[sportActiveIdx][0]); }
+  else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); chooseSport(SPORT_LIST[sportActiveIdx]); }
   else if (e.key === "Escape") { e.preventDefault(); sportClose(true); }
 });
 sportList.addEventListener("click", (e) => { const li = e.target.closest("li[data-sport]"); if (li) chooseSport(li.dataset.sport); });
@@ -2646,6 +3042,51 @@ el("setupScoring").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-scoring]"); if (!b) return;
   pendingSetup.scoring = b.dataset.scoring; syncSetupUI();
 });
+/* ---- language picker: a custom dropdown mirroring the sport picker ---- */
+const LANG_LIST = Object.keys(LANGS);
+const langPick = el("langPick"), langTrigger = el("langTrigger"), langMenu = el("langMenu");
+let langActiveIdx = -1;
+function buildLangList() {
+  langMenu.innerHTML = LANG_LIST.map(l =>
+    `<li role="option" id="lang-opt-${l}" data-lang="${l}" aria-selected="${l === lang}">
+       <span class="langMenuName">${LANGS[l]}</span><span class="langMenuAbbr">${l.toUpperCase()}</span></li>`).join("");
+}
+buildLangList();
+function highlightLang(i) {
+  langActiveIdx = (i + LANG_LIST.length) % LANG_LIST.length;
+  Array.from(langMenu.children).forEach((li, idx) => li.classList.toggle("active", idx === langActiveIdx));
+  const li = langMenu.children[langActiveIdx];
+  if (li) { langMenu.setAttribute("aria-activedescendant", li.id); li.scrollIntoView({ block: "nearest" }); }
+}
+function langIsOpen() { return langPick.classList.contains("open"); }
+function langOpen() {
+  langPick.classList.add("open");
+  langTrigger.setAttribute("aria-expanded", "true");
+  highlightLang(Math.max(0, LANG_LIST.indexOf(lang)));
+  langMenu.focus();
+}
+function langClose(focusTrigger) {
+  langPick.classList.remove("open");
+  langTrigger.setAttribute("aria-expanded", "false");
+  langMenu.removeAttribute("aria-activedescendant");
+  Array.from(langMenu.children).forEach(li => li.classList.remove("active"));
+  if (focusTrigger) langTrigger.focus();
+}
+function chooseLang(l) { setLang(l); langClose(true); }
+langTrigger.addEventListener("click", (e) => { e.stopPropagation(); langIsOpen() ? langClose(true) : langOpen(); });
+langTrigger.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") { e.preventDefault(); langOpen(); }
+});
+langMenu.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowDown") { e.preventDefault(); highlightLang(langActiveIdx + 1); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); highlightLang(langActiveIdx - 1); }
+  else if (e.key === "Home") { e.preventDefault(); highlightLang(0); }
+  else if (e.key === "End") { e.preventDefault(); highlightLang(LANG_LIST.length - 1); }
+  else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); chooseLang(LANG_LIST[langActiveIdx]); }
+  else if (e.key === "Escape") { e.preventDefault(); langClose(true); }
+});
+langMenu.addEventListener("click", (e) => { const li = e.target.closest("li[data-lang]"); if (li) chooseLang(li.dataset.lang); });
+document.addEventListener("click", (e) => { if (langIsOpen() && !langPick.contains(e.target)) langClose(false); });
 el("setupLength").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-bestof]"); if (!b) return;
   pendingSetup.bestOf = parseBestOf(b.dataset.bestof); syncSetupUI();
@@ -2692,7 +3133,7 @@ el("startBtn").addEventListener("click", () => {
     winBy: pendingSetup.winBy,
     scoring: pendingSetup.scoring || "rally"
   });
-  match.names = pendingSetup.mode === "doubles" ? ["Team 1", "Team 2"] : ["Player 1", "Player 2"];
+  match.names = pendingSetup.mode === "doubles" ? [t("team1"), t("team2")] : [t("player1"), t("player2")];
   historyStack = [];
   save();
   el("setup").classList.remove("show");
@@ -2780,6 +3221,7 @@ async function keepAwake() {
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") keepAwake(); });
 keepAwake();
 
+applyI18n();                      // translate static markup for the current language
 render();
 setInterval(updateTimer, 1000);   // live match timer
 if (firstRun) showSetup();
