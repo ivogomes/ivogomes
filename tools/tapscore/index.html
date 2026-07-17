@@ -3196,6 +3196,25 @@ const YOUR_SIDE = 0;           // side A = "your team"; double-click scores the 
 const REMOTE_IGNORE = new Set(["Shift", "Control", "Alt", "Meta", "Escape", "Tab", "CapsLock"]);
 let rDownAt = 0, rLongFired = false, rTaps = 0, rTapTimer = null;
 
+/* TEMP clicker diagnostic — native app only. Shows the raw key-event stream on screen so we can
+   see what the clicker actually emits. Set REMOTE_DEBUG = false (or delete this block) before shipping. */
+const REMOTE_DEBUG = true;
+let rDbgEl = null, rDbgPrev = 0, rDbgLines = [];
+function remoteDebug(type, e) {
+  if (!REMOTE_DEBUG || !IS_NATIVE) return;
+  if (!rDbgEl) {
+    rDbgEl = document.createElement("div");
+    rDbgEl.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(0,0,0,.88);color:#c9e64b;font:12px/1.3 ui-monospace,monospace;padding:8px;white-space:pre;pointer-events:none;max-height:55vh;overflow:hidden";
+    document.body.appendChild(rDbgEl);
+  }
+  const now = performance.now();
+  const dt = rDbgPrev ? Math.round(now - rDbgPrev) : 0;
+  rDbgPrev = now;
+  rDbgLines.unshift(type.padEnd(8) + " key=" + JSON.stringify(e.key || "") + " code=" + (e.code || "") + " rpt=" + (e.repeat ? 1 : 0) + " dt=" + dt + "ms");
+  if (rDbgLines.length > 14) rDbgLines.length = 14;
+  rDbgEl.textContent = "CLICKER DEBUG — try: 1 press, then a double, then a hold\n(newest first · dt = ms since previous event)\n\n" + rDbgLines.join("\n");
+}
+
 // Only act on remote keys during live play — not while typing a name or with an overlay open
 function remoteActive() {
   const ae = document.activeElement;
@@ -3217,6 +3236,7 @@ function remoteUndo() {
   doUndo();
 }
 document.addEventListener("keydown", (e) => {
+  remoteDebug("keydown", e);
   if (REMOTE_IGNORE.has(e.key) || !remoteActive()) return;
   e.preventDefault();
   if (e.repeat) {   // key auto-repeats while held → treat a long hold as undo
@@ -3226,6 +3246,7 @@ document.addEventListener("keydown", (e) => {
   rDownAt = performance.now(); rLongFired = false;
 });
 document.addEventListener("keyup", (e) => {
+  remoteDebug("keyup", e);
   if (REMOTE_IGNORE.has(e.key) || !remoteActive()) return;
   if (rLongFired) { rLongFired = false; rDownAt = 0; return; }
   if (!rDownAt) return;
