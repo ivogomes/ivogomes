@@ -3198,10 +3198,10 @@ let rDownAt = 0, rLongFired = false, rTaps = 0, rTapTimer = null;
 
 /* TEMP clicker diagnostic — native app only. Shows the raw key-event stream on screen so we can
    see what the clicker actually emits. Set REMOTE_DEBUG = false (or delete this block) before shipping. */
-const REMOTE_DEBUG = true;
+const REMOTE_DEBUG = true;   // TEMP: shows raw clicker events on web + native while debugging
 let rDbgEl = null, rDbgPrev = 0, rDbgLines = [];
 function remoteDebug(type, e) {
-  if (!REMOTE_DEBUG || !IS_NATIVE) return;
+  if (!REMOTE_DEBUG) return;
   if (!rDbgEl) {
     rDbgEl = document.createElement("div");
     rDbgEl.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(0,0,0,.88);color:#c9e64b;font:12px/1.3 ui-monospace,monospace;padding:8px;white-space:pre;pointer-events:none;max-height:55vh;overflow:hidden";
