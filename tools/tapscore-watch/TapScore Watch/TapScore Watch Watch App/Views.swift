@@ -21,17 +21,27 @@ struct ScoringView: View {
         let m = model.match
         let labels = model.pointLabels
         return ZStack {
-            // Full-bleed tappable color halves (they own the taps; content above ignores hits).
+            // Full-bleed tappable color halves (they own the taps).
             VStack(spacing: 0) {
                 Theme.azure.contentShape(Rectangle()).onTapGesture { model.score(0) }
                 Theme.coral.contentShape(Rectangle()).onTapGesture { model.score(1) }
             }
             .ignoresSafeArea()
 
-            // Content respects the safe area so labels clear the bezel and the system clock.
+            // Scores: full-bleed halves that match the colors exactly, so each number is
+            // dead-center of its blue/red area.
             VStack(spacing: 0) {
-                zoneContent(label: "YOU", score: labels[0], serving: m.server == 0, alignTop: true)
-                zoneContent(label: "OPP", score: labels[1], serving: m.server == 1, alignTop: false)
+                scoreCell(labels[0])
+                scoreCell(labels[1])
+            }
+            .ignoresSafeArea()
+            .allowsHitTesting(false)
+
+            // Labels + serve dots stay inside the safe area (clear of the clock and bezel).
+            VStack(spacing: 0) {
+                labelRow("YOU", serving: m.server == 0)
+                Spacer(minLength: 0)
+                labelRow("OPP", serving: m.server == 1)
             }
             .allowsHitTesting(false)
 
@@ -63,23 +73,12 @@ struct ScoringView: View {
         }
     }
 
-    /// One half's overlay content: outer-edge label (+ serve dot, kept left to avoid the clock)
-    /// and a large centered score.
-    private func zoneContent(label: String, score: String, serving: Bool, alignTop: Bool) -> some View {
-        ZStack {
-            // Score dead-center of the half.
-            Text(score)
-                .font(.system(size: 64, weight: .heavy, design: .rounded))
-                .foregroundStyle(.white).minimumScaleFactor(0.5).lineLimit(1)
-            // Label pinned to the outer edge, independent of the score.
-            VStack(spacing: 0) {
-                if !alignTop { Spacer(minLength: 0) }
-                labelRow(label, serving: serving)
-                if alignTop { Spacer(minLength: 0) }
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.horizontal, 10)
+    /// A large score centered in one full-bleed half.
+    private func scoreCell(_ score: String) -> some View {
+        Text(score)
+            .font(.system(size: 64, weight: .heavy, design: .rounded))
+            .foregroundStyle(.white).minimumScaleFactor(0.5).lineLimit(1)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private func labelRow(_ label: String, serving: Bool) -> some View {
