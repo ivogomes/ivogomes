@@ -1234,6 +1234,7 @@
     </div>
   </div>
 
+<script src="scoring.js"></script>
 <script>
 "use strict";
 const STORE_KEY = "tennisTracker.v1";
@@ -1604,84 +1605,31 @@ function syncLangSegs() {
 }
 
 function freshMatch(settings) {
-  return {
-    names: [t("player1"), t("player2")],
-    sets: [0, 0],
-    games: [0, 0],
-    points: [0, 0],
-    completedSets: [],   // array of [gamesA, gamesB]
-    tiebreak: false,
-    matchTB: false,      // the deciding set is being played as a match tie-break (first to 10)
-    over: false,
-    winner: null,
-    server: 0,           // side currently serving (0 or 1)
-    serverNum: 2,        // pickleball side-out doubles: 1st or 2nd server (game opener starts on 2)
-    serveStart: 0,       // table tennis: who served first in the current game
-    tbFirstServer: 0,    // tennis/padel: who served the tiebreak's first point
-    startedAt: 0,        // timestamp of the first point (ms)
-    endedAt: 0,          // timestamp the match ended (ms)
-    setStart: 0,         // timestamp the current set began (ms)
-    setDurations: [],    // ms taken to win each completed set/game
-    rallies: 0,          // total points/rallies played
-    rallyWins: [0, 0],   // rallies won by each side
-    streakSide: -1, streakLen: 0, longestRun: [0, 0],   // longest run of consecutive points
-    pointLog: [],        // per rally: { w: winner, s: server, t: timestamp } — powers the stats page
-    breaks: [0, 0],      // racket: games won by the returning side
-    deuces: 0,           // times the game reached deuce
-    tiebreaks: 0,        // tiebreaks played
-    settings: settings || { sport: "tennis", mode: "singles", bestOf: 3, advantages: "unlimited", pointsTarget: 11, decider: "set", gamesPerSet: 6, tbPoints: 7, winBy: 2, scoring: "rally" }
-  };
+  // Scoring fields come from the shared engine; the app layers presentation/stats/timers on top.
+  const m = TapScore.createState(settings || TapScore.defaultSettings());
+  m.names = [t("player1"), t("player2")];
+  m.startedAt = 0;         // timestamp of the first point (ms)
+  m.endedAt = 0;           // timestamp the match ended (ms)
+  m.setStart = 0;          // timestamp the current set began (ms)
+  m.setDurations = [];     // ms taken to win each completed set/game
+  m.rallies = 0;           // total points/rallies played
+  m.rallyWins = [0, 0];    // rallies won by each side
+  m.streakSide = -1; m.streakLen = 0; m.longestRun = [0, 0];   // longest run of consecutive points
+  m.pointLog = [];         // per rally: { w, s, t } — powers the stats page
+  return m;
 }
 function nowMs() { try { return Date.now(); } catch (e) { return 0; } }
 
 // sport: "tennis" | "padel" (points→games→sets, deuce/adv) | "tabletennis" (points→games, win by 2 to target)
 // advantages: "unlimited" (win by two) | 0 (golden at 1st deuce) | 1 | 2 (play N advs, then golden)
-function normalizeSettings(s) {
-  s = s || {};
-  if (s.advantages === undefined) s.advantages = s.golden ? 0 : "unlimited";
-  if (s.bestOf === undefined) s.bestOf = 3;
-  if (s.sport === undefined) s.sport = "tennis";
-  if (s.mode === undefined) s.mode = "singles";
-  if (s.pointsTarget === undefined) s.pointsTarget = 11;
-  if (s.decider === undefined) s.decider = "set";        // tennis/padel: how the final set is played
-  if (s.gamesPerSet === undefined) s.gamesPerSet = 6;    // tennis/padel: 6 (standard) or 4 (short sets)
-  if (s.tbPoints === undefined) s.tbPoints = 7;          // tennis/padel: points to win a set tie-break
-  if (s.winBy === undefined) s.winBy = 2;                // target sports: win by 2 or straight to target
-  if (s.scoring === undefined) s.scoring = "rally";      // pickleball: "rally" or "sideout" (traditional)
-  delete s.golden;
-  return s;
-}
-// pickleball only: traditional side-out scoring (only the serving side can score)
-function isSideOut() { return match.settings.sport === "pickleball" && match.settings.scoring === "sideout"; }
-
-// target-scored sports (rally to a points target, win by 2, best-of games — no games/sets or deuce/advantage)
-// Target/rally sports: score every rally to a points target, win by 2, best-of games
-// (no games/sets/deuce). Table tennis, pickleball, squash, badminton and volleyball all work this way.
-// NB: keep this a self-contained function (no module-level const) — it's called during early init.
-function isTargetSport(sp) {
-  const s = sp || match.settings.sport;
-  return s === "tabletennis" || s === "pickleball" || s === "squash" || s === "badminton"
-      || s === "volleyball" || s === "beachvolley";
-}
+// ---- thin wrappers around the shared scoring engine (TapScore, from scoring.js) ----
+// They keep the app's existing no-arg / current-match call style; the rules live in the engine.
+function normalizeSettings(s) { return TapScore.normalizeSettings(s); }
+function isSideOut() { return TapScore.isSideOut(match.settings); }
+function isTargetSport(sp) { return TapScore.isTargetSport(sp || match.settings.sport); }
 function sportLabel(sp) { return t("sp_" + (sp || "tennis")); }
-// Per-sport rule quirks for the target engine.
-//  rallyServe   – the rally winner serves next (squash/badminton/volleyball) vs a fixed rotation (table tennis)
-//  cap          – hard ceiling where the next point wins outright, ignoring win-by-2 (badminton 29–29 → 30)
-//  deciderTarget – a shorter target for the deciding set (volleyball final set to 15)
-function sportRules(sp) {
-  sp = sp || match.settings.sport;
-  return {
-    rallyServe: sp === "squash" || sp === "badminton" || sp === "volleyball" || sp === "beachvolley",
-    cap: sp === "badminton" ? 30 : 0,
-    deciderTarget: (sp === "volleyball" || sp === "beachvolley") ? 15 : 0,
-  };
-}
-// The points target for the set currently in play (honours volleyball's shorter deciding set).
-function currentTarget() {
-  const r = sportRules();
-  if (r.deciderTarget && isDecidingSet()) return r.deciderTarget;
-  return match.settings.pointsTarget || 11;
-}
+function sportRules(sp) { return TapScore.sportRules(sp || match.settings.sport); }
+function currentTarget() { return TapScore.currentTarget(match); }
 // Sensible defaults applied when a sport is picked on the setup screen.
 function defaultBestOf(sport) {
   if (sport === "badminton" || sport === "pickleball" || sport === "beachvolley") return 3;
@@ -1711,7 +1659,7 @@ function fillPoints(containerId, sport) {
   el(containerId).innerHTML = pointsOptions(sport)
     .map((v) => `<button data-pts="${v}">${v}</button>`).join("");
 }
-function parseBestOf(raw) { return raw === "inf" ? "inf" : Number(raw); }
+function parseBestOf(raw) { return TapScore.parseBestOf(raw); }
 function fillBestOf(containerId, sport) {
   el(containerId).innerHTML = bestOfOptions(sport)
     .map(([v, l]) => `<button data-bestof="${v}">${l}</button>`).join("");
@@ -1758,24 +1706,10 @@ let pendingSetup = {
   scoring: match.settings.scoring
 };
 
-function setsToWin() { const b = match.settings.bestOf; return b === "inf" ? Infinity : Math.ceil(b / 2); }
+function setsToWin() { return TapScore.setsToWin(match.settings); }
 function isRacket() { return !isTargetSport(); }
-// Deciding set = both sides one set from winning (only meaningful in a best-of-3/5)
-function isDecidingSet() {
-  const need = setsToWin();
-  return need !== Infinity && need >= 2 && match.sets[0] === need - 1 && match.sets[1] === need - 1;
-}
-// When the "deciding set = match tie-break" option is on, open that final set as a first-to-10 tie-break
-function maybeStartMatchTB() {
-  if (isRacket() && match.settings.decider === "matchTB" && !match.over && !match.tiebreak
-      && isDecidingSet() && match.games[0] === 0 && match.games[1] === 0) {
-    match.tiebreak = true;
-    match.matchTB = true;
-    match.points = [0, 0];
-    match.tbFirstServer = match.server;
-    match.tiebreaks++;
-  }
-}
+function isDecidingSet() { return TapScore.isDecidingSet(match); }
+function maybeStartMatchTB() { TapScore.maybeStartMatchTB(match); }
 
 function load() {
   try {
@@ -1808,10 +1742,7 @@ function addPoint(i) {
   if (match.streakLen > match.longestRun[i]) match.longestRun[i] = match.streakLen;
   match.pointLog.push({ w: i, s: match.server, t: t });   // server is the one about to (maybe) score
 
-  if (isSideOut()) pickleballSideOutPoint(i);
-  else if (isTargetSport()) tableTennisPoint(i);
-  else if (match.tiebreak) tiebreakPoint(i);
-  else regularPoint(i);
+  TapScore.scorePoint(match, i);   // points → games → sets → match (shared engine)
 
   // a set/game just finished → record how long it took
   if ((match.sets[0] + match.sets[1]) > (before.sets[0] + before.sets[1])) {
@@ -2111,165 +2042,19 @@ function tickBurst() {
   else { ctx.clearRect(0, 0, canvas.width, canvas.height); burstRunning = false; }
 }
 
-// Would side i win the set / match by taking the next point? (simulated through the real scoring logic)
+// Would side i win the set / match by taking the next point? (simulated on a clone via the real engine)
 function outcomeIfWin(i) {
-  const saved = match;
-  try {
-    match = JSON.parse(JSON.stringify(saved));
-    const before = match.sets[i];
-    if (isTargetSport()) tableTennisPoint(i);
-    else if (match.tiebreak) tiebreakPoint(i);
-    else regularPoint(i);
-    return { matchWon: match.over, setWon: match.sets[i] > before };
-  } finally {
-    match = saved;
-  }
+  const sim = JSON.parse(JSON.stringify(match));
+  const before = sim.sets[i];
+  TapScore.scorePoint(sim, i);
+  return { matchWon: sim.over, setWon: sim.sets[i] > before };
 }
 
-// Rally-scored sports: every rally is a point to the target, win by 2. A "game"/"set" = one set counter.
-// Handles table tennis, pickleball, squash, badminton (29–29 → 30 cap) and volleyball (final set to 15).
-function tableTennisPoint(i) {
-  match.points[i]++;
-  const [a, b] = match.points;
-  const rules = sportRules();
-  const target = currentTarget();
-  const winBy = match.settings.winBy || 2;
-  const max = Math.max(a, b), diff = Math.abs(a - b);
-  const won = (max >= target && diff >= winBy) || (rules.cap && max >= rules.cap);
-  if (won) {
-    const w = a > b ? 0 : 1;
-    match.completedSets.push([a, b]);
-    match.sets[w]++;
-    match.points = [0, 0];
-    if (rules.rallyServe) {
-      match.serveStart = w;                    // squash/badminton/volleyball: the game's winner serves next game
-    } else {
-      match.serveStart = 1 - match.serveStart; // table tennis: the previous game's receiver serves first
-    }
-    match.server = match.serveStart;
-    if (match.sets[w] >= setsToWin()) { match.over = true; match.winner = w; }
-    return;
-  }
-  if (a === b && a >= target - 1) match.deuces++;   // reached deuce (both at target-1)
-  if (rules.rallyServe) {
-    match.server = i;   // squash/badminton/volleyball: the side that won the rally serves next
-    return;
-  }
-  // table tennis: serve changes every `block` points (5 at 21-point, else 2); every point once at deuce
-  const total = a + b;
-  const block = target >= 21 ? 5 : 2;
-  const deuce = a >= target - 1 && b >= target - 1;
-  if (deuce || total % block === 0) match.server = 1 - match.server;
-}
-
-// Pickleball traditional (side-out): only the serving side scores. `w` = side that won the rally.
-// Doubles has two servers per turn; the game opener gets only one (starts on server #2 → "0-0-2").
-function pickleballSideOutPoint(w) {
-  const target = match.settings.pointsTarget || 11;
-  const winBy = match.settings.winBy || 2;
-  if (w === match.server) {                       // serving side won the rally → a point
-    match.points[w]++;
-    const [a, b] = match.points;
-    if (Math.max(a, b) >= target && Math.abs(a - b) >= winBy) {
-      const win = a > b ? 0 : 1;
-      match.completedSets.push([a, b]);
-      match.sets[win]++;
-      match.points = [0, 0];
-      match.server = win;                         // winner serves the next game…
-      match.serverNum = 2;                        // …as the lone opening server
-      if (match.sets[win] >= setsToWin()) { match.over = true; match.winner = win; }
-    }
-    return;
-  }
-  // receiving side won → fault for the server
-  if (match.settings.mode === "doubles" && match.serverNum === 1) {
-    match.serverNum = 2;                          // second server of the same team
-  } else {
-    match.server = w;                             // side-out: serve passes to the other side
-    match.serverNum = 1;
-  }
-}
-
-// Sudden death armed once the number of deuces reached exceeds the advantages allowed.
-// 3-3 is deuce #1, 4-4 is deuce #2, ... adv=0 arms at deuce #1, adv=1 at deuce #2, etc.
-function goldenArmed(a, b) {
-  const adv = match.settings.advantages;
-  if (adv === "unlimited" || adv == null) return false;
-  if (Math.min(a, b) < 3) return false;
-  const deuces = Math.min(a, b) - 2;
-  return deuces >= adv + 1;
-}
-
-function regularPoint(i) {
-  match.points[i]++;
-  const [a, b] = match.points;
-  const max = Math.max(a, b), diff = Math.abs(a - b);
-  if (a === b && a >= 3) match.deuces++;   // reached deuce
-  const won = goldenArmed(a, b) ? (diff >= 1) : (max >= 4 && diff >= 2);
-  if (won) winGame(a > b ? 0 : 1);
-}
-
-function tiebreakPoint(i) {
-  match.points[i]++;
-  const [a, b] = match.points;
-  const target = match.matchTB ? 10 : (match.settings.tbPoints || 7);   // match tie-break is always to 10
-  if (Math.max(a, b) >= target && Math.abs(a - b) >= 2) {
-    const w = a > b ? 0 : 1;
-    match.tiebreak = false;
-    if (match.matchTB) {
-      // a match tie-break decides the set (and the match); record its points as the set score
-      match.matchTB = false;
-      match.completedSets.push([a, b]);
-      match.sets[w]++;
-      match.points = [0, 0];
-      if (match.sets[w] >= setsToWin()) { match.over = true; match.winner = w; }
-      return;
-    }
-    match.games[w]++;            // 7-6
-    match.points = [0, 0];
-    match.server = 1 - match.tbFirstServer;  // next set opens with the tiebreak's first receiver
-    winSet(w);
-    return;
-  }
-  if (a === b && a >= target - 1) match.deuces++;   // tiebreak deuce
-  // serve changes after the 1st point, then every 2 points
-  if ((a + b) % 2 === 1) match.server = 1 - match.server;
-}
-
-function winGame(i) {
-  const gameServer = match.server;   // who served this game (serve passes below)
-  match.games[i]++;
-  match.points = [0, 0];
-  match.server = 1 - match.server;   // serve passes to the other side each game
-  if (i !== gameServer) match.breaks[i]++;   // the returning side won → break of serve
-  const G = match.settings.gamesPerSet || 6;
-  if (match.games[0] === G && match.games[1] === G) {
-    match.tiebreak = true;
-    match.tbFirstServer = match.server;   // whoever is up next serves the tiebreak's first point
-    match.tiebreaks++;
-    return;
-  }
-  if (match.games[i] >= G && (match.games[i] - match.games[1 - i]) >= 2) winSet(i);
-}
-
-function winSet(i) {
-  match.completedSets.push([match.games[0], match.games[1]]);
-  match.sets[i]++;
-  match.games = [0, 0];
-  if (match.sets[i] >= setsToWin()) { match.over = true; match.winner = i; }
-  else maybeStartMatchTB();   // the next set may be a match-tie-break decider
-}
+// goldenArmed is also read by the stats page; the scoring transitions themselves live in scoring.js.
+function goldenArmed(a, b) { return TapScore.goldenArmed(match, a, b); }
 
 /* ---- display helpers ---- */
-function pointDisplay() {
-  if (isTargetSport() || match.tiebreak) return [String(match.points[0]), String(match.points[1])];
-  const [a, b] = match.points;
-  if (a >= 3 && b >= 3) {
-    if (a === b) return ["40", "40"];
-    return a > b ? ["Ad", "40"] : ["40", "Ad"];
-  }
-  return [POINT_LABELS[a], POINT_LABELS[b]];
-}
+function pointDisplay() { return TapScore.pointDisplay(match); }
 
 /* ---- render ---- */
 const el = id => document.getElementById(id);

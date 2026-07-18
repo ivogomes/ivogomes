@@ -20,7 +20,7 @@ const OUT = join(here, 'www');
 const FONTS = join(here, 'fonts'); // optional self-hosted font (outfit.css + .woff2)
 
 // Files/dirs we never copy into the native bundle.
-const SKIP = new Set(['sw.js', '.DS_Store', '.claude']);
+const SKIP = new Set(['sw.js', '.DS_Store', '.claude', 'scoring.test.cjs']);
 const SKIP_PREFIX = ['splash-']; // iOS apple-touch-startup-image PNGs — native uses its own splash
 
 async function exists(p) { try { await access(p); return true; } catch { return false; } }
