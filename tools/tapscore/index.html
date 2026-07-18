@@ -4,6 +4,16 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
 <meta name="theme-color" content="#0b1220" />
+<script>
+  /* Resolve the theme before first paint so there's no flash of the wrong mode. */
+  (function () {
+    try {
+      var p = localStorage.getItem("tennisTracker.theme") || "system";
+      var dark = p === "dark" || (p !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.dataset.theme = dark ? "dark" : "light";
+    } catch (e) { document.documentElement.dataset.theme = "dark"; }
+  })();
+</script>
 <title>TapScore</title>
 <link rel="manifest" href="manifest.webmanifest" />
 <meta name="mobile-web-app-capable" content="yes" />
@@ -52,6 +62,36 @@
     --elev-2: 0 3px 6px rgba(0,0,0,.32), 0 2px 4px rgba(0,0,0,.22);
     --elev-3: 0 10px 22px rgba(0,0,0,.4), 0 4px 8px rgba(0,0,0,.28);
     --ease: cubic-bezier(.2, 0, 0, 1);   /* Material standard easing */
+    /* Theme surfaces (dark defaults; light values in [data-theme="light"] below).
+       The court/scoreboard stays colored in both themes — only this "chrome" re-themes. */
+    --bg: #0b1220;                       /* app background behind the chrome */
+    --surface: #0f172a;                  /* raised panels: sheets, dropdowns, modals */
+    --ink-dim: rgba(248,250,252,.6);     /* secondary text (labels, descriptions) */
+    --fill-1: rgba(255,255,255,.05);     /* faint fills / quiet button surfaces */
+    --fill-2: rgba(255,255,255,.08);     /* hover fills */
+    --fill-3: rgba(255,255,255,.14);     /* stronger fills */
+    --fill-strong: rgba(255,255,255,.18);
+    --line: rgba(255,255,255,.16);       /* visible borders */
+    --line-soft: rgba(255,255,255,.08);  /* subtle dividers */
+    --scrim: rgba(2,6,23,.6);            /* modal/sheet backdrop */
+    --focus: #93c5fd;
+  }
+  :root[data-theme="light"] {
+    --ink: #0b1220;
+    --bg: #eef1f7;
+    --surface: #ffffff;
+    --ink-dim: rgba(11,18,32,.55);
+    --fill-1: rgba(11,18,32,.04);
+    --fill-2: rgba(11,18,32,.06);
+    --fill-3: rgba(11,18,32,.1);
+    --fill-strong: rgba(11,18,32,.14);
+    --line: rgba(11,18,32,.14);
+    --line-soft: rgba(11,18,32,.08);
+    --scrim: rgba(15,23,42,.32);
+    --focus: #2563eb;
+    --elev-1: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08);
+    --elev-2: 0 3px 6px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.08);
+    --elev-3: 0 10px 22px rgba(0,0,0,.16), 0 4px 8px rgba(0,0,0,.1);
   }
   /* iOS-only copy — shown only when the root has .is-ios (set in JS) */
   .ios-only { display: none; }
@@ -60,12 +100,15 @@
   html, body { height: 100%; margin: 0; }
   body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: #0b1220;
-    color: var(--ink);
+    background: var(--bg);
+    color: #f8fafc;                 /* court/scoreboard default — light text on colored/dark surfaces */
     overflow: hidden;
     user-select: none;
     -webkit-user-select: none;
   }
+  /* Chrome (screens/menus over the app background) uses themed ink so text flips in light mode.
+     The court, controls and winner overlay keep the light body text (they sit on colored/dark). */
+  .setup, .settingspage, .help, .modal, .sheet { color: var(--ink); }
 
   .court { display: flex; flex-direction: row; height: 100dvh; width: 100vw; }
   .side {
@@ -136,7 +179,7 @@
   .name {
     font-size: clamp(15px, 2.6vh, 24px);
     font-weight: 600; opacity: .92; letter-spacing: .3px;
-    color: var(--ink); font-family: inherit;
+    color: #f8fafc; font-family: inherit;
     background: transparent; border: 0; outline: none; padding: 0;
     text-align: center; cursor: text;
     width: auto; min-width: 0;
@@ -204,7 +247,7 @@
     min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px;
     align-items: center; justify-content: center;
     font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums;
-    background: rgba(0,0,0,.28); color: var(--ink);
+    background: rgba(0,0,0,.28); color: #f8fafc;
   }
   /* the freshly-recorded set score springs into the summary when a set is won */
   .history span.justwon { animation: pillpop .55s var(--ease); }
@@ -230,7 +273,7 @@
     transform: translate(-50%, 10px);
     display: inline-flex; align-items: center; gap: 8px;
     max-width: 88vw; white-space: nowrap;
-    background: rgba(15,23,42,.96); color: var(--ink);
+    background: rgba(15,23,42,.96); color: #f8fafc;
     border: 1px solid rgba(255,255,255,.18);
     padding: 10px 18px; border-radius: 999px;
     font-weight: 600; letter-spacing: .3px;
@@ -250,7 +293,7 @@
   }
   .controls button {
     font: inherit; font-weight: 500; letter-spacing: .3px;
-    color: var(--ink);
+    color: #f8fafc;
     background: rgba(30,41,59,.9);
     border: 0;
     padding: 12px 20px; border-radius: 999px;
@@ -282,7 +325,7 @@
   .matchstats .stiles { display: flex; gap: 10px; justify-content: center; }
   .matchstats .stile {
     flex: 1 1 0; min-width: 0;
-    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+    background: var(--fill-1); border: 1px solid var(--line);
     border-radius: 14px; padding: 12px 8px;
   }
   .matchstats .sval { font-family: var(--score-font); font-weight: 700; font-size: 20px; font-variant-numeric: tabular-nums; }
@@ -292,7 +335,7 @@
   .matchstats .setlist { display: flex; flex-direction: column; gap: 4px; margin-top: 2px; }
   .matchstats .setrow {
     display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    font-size: 13px; padding: 6px 12px; border-radius: 10px; background: rgba(255,255,255,.05);
+    font-size: 13px; padding: 6px 12px; border-radius: 10px; background: var(--fill-1);
   }
   .matchstats .setrow .sr-label { opacity: .6; }
   .matchstats .setrow .sr-mid { display: inline-flex; align-items: center; gap: 6px; }
@@ -304,14 +347,14 @@
   .matchstats .statsec-h .muted { text-transform: none; letter-spacing: 0; opacity: .8; }
   .matchstats .statbar { display: flex; align-items: center; gap: 10px; font-size: 13px; }
   .matchstats .sb-name { flex: 0 0 30%; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .matchstats .sb-track { flex: 1 1 auto; height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+  .matchstats .sb-track { flex: 1 1 auto; height: 8px; border-radius: 999px; background: var(--fill-2); overflow: hidden; }
   .matchstats .sb-fill { height: 100%; border-radius: 999px; }
   .matchstats .sb-fill.sb-0 { background: var(--a); }
   .matchstats .sb-fill.sb-1 { background: var(--b); }
   .matchstats .sb-val { flex: 0 0 auto; font-variant-numeric: tabular-nums; font-weight: 700; min-width: 36px; text-align: right; }
   .matchstats .spark { width: 100%; height: 56px; display: block; }
   .matchstats .statgrid { display: grid; grid-template-columns: 1fr; gap: 2px; }
-  .matchstats .sg-row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; font-size: 14px; padding: 7px 12px; border-radius: 8px; background: rgba(255,255,255,.04); }
+  .matchstats .sg-row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; font-size: 14px; padding: 7px 12px; border-radius: 8px; background: var(--fill-1); }
   .matchstats .sg-l { opacity: .6; }
   .matchstats .sg-v { font-weight: 600; text-align: right; }
   .matchstats .statnote { font-size: 11px; opacity: .45; }
@@ -325,7 +368,7 @@
   .matchstats .cmp-line { display: flex; align-items: center; gap: 10px; }
   .matchstats .cmp-n { flex: 0 0 auto; min-width: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
   .matchstats .cmp-line .cmp-n:last-child { text-align: right; }
-  .matchstats .cmp-bar { flex: 1 1 auto; display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,.08); }
+  .matchstats .cmp-bar { flex: 1 1 auto; display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: var(--fill-2); }
   .matchstats .cmp-fa { background: var(--a); }
   .matchstats .cmp-fb { background: var(--b); margin-left: auto; }
   @media (min-width: 420px) { .matchstats .statgrid { grid-template-columns: 1fr 1fr; } }
@@ -340,7 +383,7 @@
   /* set-score summary as pills, matching the in-game scoreboard */
   .winner .scoreline { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; position: relative; }
   .winner .scoreline span {
-    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16);
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
     padding: 8px 14px; border-radius: 12px;
     font-family: var(--score-font);
     font-weight: 700; font-variant-numeric: tabular-nums; font-size: clamp(16px, 2.4vh, 20px);
@@ -361,13 +404,13 @@
   .winner .statsbtn {
     position: relative;
     font: inherit; font-weight: 600; font-size: 14px; letter-spacing: .3px;
-    color: var(--ink); background: transparent;
+    color: #f8fafc; background: transparent;
     border: 1px solid rgba(255,255,255,.28); border-radius: 999px;
     padding: 9px 18px; cursor: pointer;
     transition: background-color .2s var(--ease);
   }
   .winner .statsbtn:hover { background: rgba(255,255,255,.08); }
-  .winner .statsbtn:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+  .winner .statsbtn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   #confetti { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
   /* set-win confetti burst — flies over the court (not the overlays) */
   #setConfetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 7; }
@@ -376,7 +419,7 @@
   .sheet {
     position: fixed; inset: 0; z-index: 9;
     display: none; align-items: flex-end; justify-content: center;
-    background: rgba(2,6,23,.6);
+    background: var(--scrim);
   }
   .sheet.show { display: flex; }
   /* slide the panel up + fade the backdrop on open; reverse on close (.closing added by JS) */
@@ -394,25 +437,42 @@
     overflow-y: auto;                  /* … scroll inside when it is (e.g. landscape phones) */
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
-    background: #0f172a;
-    border: 1px solid rgba(255,255,255,.12);
+    background: var(--surface);
+    border: 1px solid var(--line);
     border-radius: 20px 20px 0 0;
     padding: 20px 20px calc(env(safe-area-inset-bottom) + 20px);
     box-shadow: var(--elev-3);
   }
   .sheet h2 { margin: 0 0 14px; font-size: 20px; }
   /* Each setting stacks: label + description, then the control full-width below it */
-  .row { display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08); }
+  .row { display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding: 16px 0; border-top: 1px solid var(--line-soft); }
   .row:first-of-type { border-top: 0; }
   .row label { font-weight: 600; }
   .row .desc { display: block; font-weight: 400; opacity: .6; font-size: 13px; margin-top: 2px; }
+  /* a toggle row: text on the left, switch on the right (standard mobile settings layout) */
+  .row.rowswitch { flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; }
+  .row.rowswitch > div { flex: 1 1 auto; min-width: 0; }
+  .row.rowswitch .switch { flex: 0 0 auto; }
+  /* a tappable settings row that navigates (e.g. "How to use") — label left, chevron right */
+  /* .row.rowlink (not just .rowlink) so this beats .row:first-of-type, which otherwise matches this
+     button (it's the only <button> among the rows) and zeroes the divider border. */
+  .row.rowlink {
+    flex-direction: row; align-items: center; justify-content: space-between;
+    width: 100%; font: inherit; color: var(--ink); text-align: left; cursor: pointer;
+    background: transparent; border: 0; border-top: 1px solid var(--line);
+    margin-top: 10px;   /* clearer divider separating "How to use" from the settings above */
+  }
+  .rowlink .rowlink-label { font-weight: 600; }
+  .rowlink .rowlink-chev { color: #94a3b8; flex: 0 0 auto; }
+  .rowlink:hover { background: var(--fill-1); }
+  .rowlink:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
   /* Material 3 segmented button — one connected control for "pick one of these", not loose buttons */
   .seg {
     display: flex; width: 100%;
-    border: 1px solid rgba(255,255,255,.3);
+    border: 1px solid var(--line);
     border-radius: 999px; overflow: hidden;
-    background: rgba(255,255,255,.04);
+    background: var(--fill-1);
   }
   .seg button {
     flex: 1 1 0; min-width: 0;
@@ -421,7 +481,7 @@
     min-height: 48px;
     font: inherit; font-weight: 500; color: var(--ink);
     background: transparent; border: 0;
-    border-left: 1px solid rgba(255,255,255,.16);
+    border-left: 1px solid var(--line);
     padding: 5px 8px; cursor: pointer;
     line-height: 1.15; text-align: center;
     white-space: normal; overflow-wrap: break-word; hyphens: auto;
@@ -429,11 +489,11 @@
     transition: background-color .18s var(--ease), color .18s var(--ease);
   }
   .seg button:first-child { border-left: 0; }
-  .seg button:hover:not(.active):not(:disabled) { background: rgba(255,255,255,.08); }
+  .seg button:hover:not(.active):not(:disabled) { background: var(--fill-2); }
   .seg button.active { background: var(--primary); color: var(--on-primary); border-left-color: transparent; }
   .seg button.active + button { border-left-color: transparent; }
   .seg button:disabled { opacity: .35; cursor: not-allowed; }
-  .switch { width: 52px; height: 30px; border-radius: 999px; background: rgba(255,255,255,.15); position: relative; cursor: pointer; border: 0; transition: background-color .2s var(--ease); }
+  .switch { width: 52px; height: 30px; border-radius: 999px; background: var(--fill-3); position: relative; cursor: pointer; border: 0; transition: background-color .2s var(--ease); }
   .switch.on { background: var(--primary); }
   .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: var(--elev-1); transition: left .2s var(--ease); }
   .switch.on::after { left: 25px; }
@@ -443,14 +503,14 @@
     width: 100%; display: flex; align-items: center; gap: 11px;
     min-height: 52px; padding: 8px 14px;
     font: inherit; color: var(--ink); text-align: left;
-    background: rgba(255,255,255,.05);
-    border: 1px solid rgba(255,255,255,.3); border-radius: 12px;
+    background: var(--fill-1);
+    border: 1px solid var(--line); border-radius: 12px;
     cursor: pointer; position: relative; overflow: hidden;   /* clip ripple */
     transition: border-color .18s var(--ease), background-color .18s var(--ease);
   }
-  .dropTrigger:hover { background: rgba(255,255,255,.08); }
+  .dropTrigger:hover { background: var(--fill-2); }
   .dropTrigger .dropName { flex: 1 1 auto; font-weight: 600; }
-  .dropTrigger:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+  .dropTrigger:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .dropChev { flex: 0 0 auto; opacity: .7; transition: transform .2s var(--ease); }
   .dropdown.open .dropChev { transform: rotate(180deg); }
   .dropBall { width: 24px; height: 24px; flex: 0 0 auto; display: block; }
@@ -464,14 +524,14 @@
   }
   .sportOptions li + li { margin-top: 2px; }
   .sportOptions li:hover:not([aria-selected="true"]),
-  .sportOptions li.active:not([aria-selected="true"]) { background: rgba(255,255,255,.08); }
+  .sportOptions li.active:not([aria-selected="true"]) { background: var(--fill-2); }
   .sportOptions li[aria-selected="true"] { background: var(--primary); color: var(--on-primary); }
   .sportOptions .dropBall { width: 26px; height: 26px; }
 
   /* large screens: an inline dropdown anchored under the trigger (behaves like a select) */
   .dropdown .sportOptions {
     position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 6;
-    background: #0f172a; border: 1px solid rgba(255,255,255,.16); border-radius: 14px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
     box-shadow: var(--elev-3);
     padding: 6px; max-height: 320px; overflow-y: auto; overscroll-behavior: contain;
   }
@@ -487,67 +547,18 @@
   @media (max-width: 680px), (max-height: 560px) {
     .dropChev, .dropdown.open .dropChev { transform: rotate(-90deg); }
   }
-  /* announcer voice picker — native select styled for the dark sheet */
-  /* language selector — custom dropdown at the top-right of the welcome screen, by the logo */
-  .setup .card { position: relative; }
-  .langPick { position: absolute; top: 0; right: 0; z-index: 5; }
-  .langTrigger {
-    display: inline-flex; align-items: center; gap: 7px;
-    font: inherit; font-size: 12.5px; font-weight: 700; letter-spacing: .6px; color: var(--ink);
-    background-color: rgba(255,255,255,.05);
-    border: 1px solid rgba(255,255,255,.14);
-    border-radius: 999px; padding: 8px 12px; cursor: pointer;
-    box-shadow: var(--elev-1); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-    transition: background-color .18s var(--ease), border-color .18s var(--ease),
-                box-shadow .18s var(--ease), transform .1s var(--ease);
-  }
-  .langTrigger .langGlobe { color: #cbd5e1; flex: 0 0 auto; display: block; }
-  .langTrigger .langAbbr { line-height: 1; }
-  .langTrigger .langChev { color: #cbd5e1; flex: 0 0 auto; display: block; transition: transform .2s var(--ease); }
-  .langPick.open .langChev { transform: rotate(180deg); }
-  .langTrigger:hover, .langPick.open .langTrigger {
-    background-color: rgba(255,255,255,.1);
-    border-color: rgba(255,255,255,.26);
-    box-shadow: var(--elev-2);
-  }
-  .langTrigger:hover .langGlobe, .langTrigger:hover .langChev,
-  .langPick.open .langGlobe, .langPick.open .langChev { color: var(--ink); }
-  .langTrigger:active { transform: translateY(1px); }
-  .langTrigger:focus-visible {
-    outline: 2px solid var(--primary); outline-offset: 2px;
-    border-color: rgba(255,255,255,.26);
-  }
-  /* the popup list — mirrors the sport picker's inline dropdown, anchored to the right edge */
-  .langMenu {
-    position: absolute; top: calc(100% + 6px); right: 0; z-index: 6;
-    list-style: none; margin: 0; padding: 6px; min-width: 172px;
-    background: #0f172a; border: 1px solid rgba(255,255,255,.16); border-radius: 14px;
-    box-shadow: var(--elev-3);
-  }
-  .langPick:not(.open) .langMenu { display: none; }
-  .langMenu li {
-    display: flex; align-items: center; gap: 12px;
-    padding: 10px 12px; border-radius: 10px; cursor: pointer;
-    font-weight: 600; font-size: 15px; white-space: nowrap;
-  }
-  .langMenu li + li { margin-top: 2px; }
-  .langMenu .langMenuName { flex: 1 1 auto; }
-  .langMenu .langMenuAbbr { flex: 0 0 auto; font-size: 11px; font-weight: 700; letter-spacing: .5px; opacity: .6; }
-  .langMenu li:hover:not([aria-selected="true"]),
-  .langMenu li.active:not([aria-selected="true"]) { background: rgba(255,255,255,.08); }
-  .langMenu li[aria-selected="true"] { background: var(--primary); color: var(--on-primary); }
-  .langMenu li[aria-selected="true"] .langMenuAbbr { opacity: .7; }
+  /* announcer voice + language pickers — native selects styled for the dark sheet */
   .voiceSel {
     width: 100%; min-height: 48px;
     font: inherit; color: var(--ink);
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.3); border-radius: 12px;
+    background: var(--fill-1);
+    border: 1px solid var(--line); border-radius: 12px;
     padding: 10px 40px 10px 14px; cursor: pointer;
     -webkit-appearance: none; appearance: none;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%23f8fafc' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
     background-repeat: no-repeat; background-position: right 12px center; background-size: 18px;
   }
-  .voiceSel:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+  .voiceSel:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .voiceSel option { color: #0b1220; }   /* native dropdown list uses the OS palette */
   .sheet .done, .help .done {
     width: 100%; margin-top: 16px; padding: 14px;
@@ -564,34 +575,36 @@
   .modal {
     position: fixed; inset: 0; z-index: 11;
     display: none; align-items: center; justify-content: center;
-    background: rgba(2,6,23,.6); padding: 24px;
+    background: var(--scrim); padding: 24px;
   }
   .modal.show { display: flex; }
   .modal .box {
     width: 100%; max-width: 360px;
-    background: #0f172a; border: 1px solid rgba(255,255,255,.12);
+    background: var(--surface); border: 1px solid var(--line);
     border-radius: 24px; padding: 24px; text-align: center;
     box-shadow: var(--elev-3);
   }
   .modal .box p { margin: 0 0 20px; font-size: 16px; line-height: 1.4; }
-  .modal .actions { display: flex; gap: 10px; }
+  .modal .actions { display: flex; flex-direction: column; gap: 10px; }
   .modal .actions button {
     flex: 1; font: inherit; font-weight: 600; letter-spacing: .3px; padding: 13px;
     border-radius: 999px; cursor: pointer; border: 0;
     position: relative; overflow: hidden;
     transition: background-color .2s var(--ease), box-shadow .2s var(--ease), transform .1s var(--ease);
   }
-  .modal .cancel { background: rgba(255,255,255,.08); color: var(--ink); border: 1px solid rgba(255,255,255,.2); }
-  .modal .cancel:hover { background: rgba(255,255,255,.14); }
+  .modal .finish { background: var(--primary); color: var(--on-primary); box-shadow: var(--elev-1); }
+  .modal .finish:hover { box-shadow: var(--elev-2); }
+  .modal .cancel { background: var(--fill-2); color: var(--ink); border: 1px solid var(--line); }
+  .modal .cancel:hover { background: var(--fill-3); }
   .modal .confirm { background: var(--b); color: #fff; box-shadow: var(--elev-1); }
   .modal .confirm:hover { box-shadow: var(--elev-2); }
   .modal .actions button:active { transform: translateY(1px); }
 
   /* Help overlay — how to use the app */
   .help {
-    position: fixed; inset: 0; z-index: 10;
+    position: fixed; inset: 0; z-index: 20;   /* above the Settings page (13) so it can open over it */
     display: none; align-items: center; justify-content: center;
-    background: rgba(2,6,23,.7); backdrop-filter: blur(4px);
+    background: var(--scrim); backdrop-filter: blur(4px);
     padding: max(16px, env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom));
   }
   .help.show { display: flex; }
@@ -600,8 +613,8 @@
     width: 100%; max-width: 480px;
     max-height: 92dvh; overflow-y: auto;
     overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
-    background: #0f172a;
-    border: 1px solid rgba(255,255,255,.12);
+    background: var(--surface);
+    border: 1px solid var(--line);
     border-radius: 20px;
     padding: 24px 22px calc(env(safe-area-inset-bottom) + 22px);
     box-shadow: var(--elev-3);
@@ -613,16 +626,16 @@
     width: 36px; height: 36px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font: inherit; font-size: 22px; line-height: 1; color: var(--ink);
-    background: rgba(255,255,255,.08); border: 0; cursor: pointer;
+    background: var(--fill-2); border: 0; cursor: pointer;
     transition: background-color .18s var(--ease);
   }
-  .help .helpClose:hover { background: rgba(255,255,255,.16); }
-  .help .step { display: flex; gap: 15px; align-items: flex-start; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08); }
+  .help .helpClose:hover { background: var(--fill-3); }
+  .help .step { display: flex; gap: 15px; align-items: flex-start; padding: 16px 0; border-top: 1px solid var(--line-soft); }
   .help .step:first-of-type { border-top: 0; padding-top: 4px; }
   .help .stepIcon {
     flex: 0 0 auto; width: 50px; height: 50px; border-radius: 14px;
     display: flex; align-items: center; justify-content: center;
-    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+    background: var(--fill-1); border: 1px solid var(--line-soft);
   }
   .help .stepIcon svg { width: 30px; height: 30px; display: block; }
   .help .stepText h3 { margin: 3px 0 5px; font-size: 16px; font-weight: 600; }
@@ -641,50 +654,70 @@
     flex: 0 0 auto; min-width: 66px; text-align: center;
     font-size: 12px; font-weight: 600; letter-spacing: .3px;
     padding: 5px 10px; border-radius: 8px;
-    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+    background: var(--fill-2); border: 1px solid var(--line);
   }
   .help .done { margin-top: 20px; }
   .help .done:focus-visible, .help .helpClose:focus-visible {
-    outline: 2px solid #93c5fd; outline-offset: 2px;
+    outline: 2px solid var(--focus); outline-offset: 2px;
   }
-  /* subtle "How to use" link on the setup screen */
-  .setup .helpLink {
-    display: inline-flex; align-items: center; gap: 6px; margin: 10px 0 0;
-    font: inherit; font-size: 14px; color: var(--ink);
-    background: transparent; border: 0; opacity: .6; cursor: pointer;
-    text-decoration: underline; text-underline-offset: 3px;
+  /* Top app bar — shared by the setup screen and the Settings page */
+  .appbar {
+    flex: 0 0 auto; display: flex; align-items: center; gap: 6px;
+    padding: calc(env(safe-area-inset-top) + 6px) max(8px, env(safe-area-inset-right)) 6px max(8px, env(safe-area-inset-left));
   }
-  .setup .helpLink:hover { opacity: 1; }
+  .setup .appbar { justify-content: flex-end; }   /* only the settings gear, on the right */
+  .appbar-title { font-size: 18px; font-weight: 700; }
+  .appbar-btn {
+    width: 44px; height: 44px; flex: 0 0 auto;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--ink); background: transparent; border: 0; border-radius: 12px; cursor: pointer;
+    transition: background-color .2s var(--ease), transform .1s var(--ease);
+  }
+  .appbar-btn:hover { background: var(--fill-2); }
+  .appbar-btn:active { transform: translateY(1px); }
+  .appbar-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
-  /* Setup / welcome screen */
+  /* Setup / welcome screen — native app layout: top app bar · scrollable content · pinned footer */
   .setup {
     position: fixed; inset: 0; z-index: 10;
-    display: none; align-items: center; justify-content: center;
-    gap: clamp(16px, 4vw, 48px); flex-wrap: wrap;
-    background: #0b1220; overflow: auto;
-    padding: calc(env(safe-area-inset-top) + 20px) max(18px, env(safe-area-inset-right)) calc(20px + env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+    display: none; flex-direction: column;
+    background: var(--bg);
   }
   .setup.show { display: flex; }
-  /* accent bars echoing the two match sides. Landscape (sides left/right): one top bar split
-     left→right. Portrait (sides top/bottom): a solid bar top (A) and bottom (B) to match. */
-  .setup .topbar {
-    position: fixed; top: env(safe-area-inset-top); left: 0; right: 0; height: 6px; z-index: 2;
-    background: linear-gradient(90deg, var(--a) 0 50%, var(--b) 50% 100%);
-    pointer-events: none;
+  .setup-scroll {
+    flex: 1 1 auto; overflow: auto;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    gap: clamp(16px, 4vw, 40px);
+    padding: 4px max(18px, env(safe-area-inset-right)) 24px max(18px, env(safe-area-inset-left));
   }
-  .setup .botbar {
-    position: fixed; bottom: env(safe-area-inset-bottom); left: 0; right: 0; height: 6px; z-index: 2;
-    background: var(--b); pointer-events: none; display: none;
+  .setup-footer {
+    flex: 0 0 auto; background: var(--bg); border-top: 1px solid var(--line-soft);
+    padding: 12px max(18px, env(safe-area-inset-right)) calc(env(safe-area-inset-bottom) + 14px) max(18px, env(safe-area-inset-left));
   }
-  @media (orientation: portrait) {
-    .setup .topbar { background: var(--a); }   /* side A sits on top when stacked vertically */
-    .setup .botbar { display: block; }         /* side B on the bottom */
-  }
-  /* court diagram beside the settings (hidden on phones, where there's no room) */
-  .courtbg { flex: 0 0 auto; width: min(30vw, 250px); display: flex; align-items: center; justify-content: center; pointer-events: none; }
-  .courtbg svg { width: 100%; height: auto; max-height: 74vh; }
+  .setup-footer .startBtn { display: block; width: 100%; max-width: 460px; margin: 0 auto; }
+  .setup .card { width: 100%; max-width: 460px; }
+  /* court illustration beside the form — large screens only (iPad / desktop) */
+  .courtbg { display: none; flex: 0 0 auto; width: min(30vw, 250px); align-items: center; justify-content: center; pointer-events: none; }
+  .courtbg svg { width: 100%; height: auto; max-height: 70vh; }
   .courtbg .cl { fill: none; stroke: rgba(148,163,184,0.28); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-  .setup .card { flex: 0 1 460px; width: 100%; max-width: 460px; }
+  @media (min-width: 820px) and (min-height: 620px) {
+    /* court stays put (centered, non-scrolling); only the settings column scrolls */
+    .setup-scroll { flex-direction: row; align-items: stretch; justify-content: center; overflow: hidden; gap: clamp(24px, 5vw, 64px); padding-top: 0; padding-bottom: 0; }
+    .courtbg { display: flex; align-self: center; }
+    .setup-scroll .card { align-self: stretch; overflow-y: auto; flex: 0 1 460px; padding: 20px 4px 20px; }
+  }
+
+  /* Full-screen app Settings page */
+  .settingspage {
+    position: fixed; inset: 0; z-index: 13;
+    display: none; flex-direction: column; background: var(--bg);
+  }
+  .settingspage.show { display: flex; }
+  .settings-scroll {
+    flex: 1 1 auto; overflow: auto;
+    padding: 0 max(18px, env(safe-area-inset-right)) calc(env(safe-area-inset-bottom) + 24px) max(18px, env(safe-area-inset-left));
+  }
+  .settings-inner { width: 100%; max-width: 560px; margin: 0 auto; }
   .setup .balls { display: flex; gap: 12px; margin: 0 0 14px; }
   .setup .balls svg { width: 38px; height: 38px; display: block; filter: drop-shadow(0 3px 7px rgba(0,0,0,.45)); }
   .setup .balls svg:nth-child(1) { transform: rotate(-14deg); }
@@ -699,18 +732,22 @@
   /* Secondary controls — setup "More options" and the in-match settings — use a quiet neutral
      selected fill, not the vibrant primary reserved for the main-choice controls */
   #setupMore .seg button.active,
-  #sheet .seg button.active { background: rgba(255,255,255,.18); color: #fff; font-weight: 600; }
+  #themeSeg button.active,
+  #matchSection .seg button.active { background: var(--fill-strong); color: var(--ink); font-weight: 600; }
+  /* Settings: subheading above the in-match Match section, and the locked (needs-new-match) row */
+  .settings-subhead { margin: 22px 0 2px; font-size: 13px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; opacity: .5; }
+  .row.locked label { opacity: .6; }
   /* "More options" expander */
   .moreBtn {
     width: 100%; margin-top: 8px; padding: 12px;
     display: flex; align-items: center; justify-content: center; gap: 8px;
     font: inherit; font-weight: 600; color: var(--ink);
-    background: transparent; border: 1px solid rgba(255,255,255,.2); border-radius: 999px;
+    background: transparent; border: 1px solid var(--line); border-radius: 999px;
     cursor: pointer; opacity: .85;
     position: relative; overflow: hidden;
     transition: background-color .2s var(--ease), opacity .2s var(--ease);
   }
-  .moreBtn:hover { background: rgba(255,255,255,.06); opacity: 1; }
+  .moreBtn:hover { background: var(--fill-1); opacity: 1; }
   .moreBtn .chev { transition: transform .2s var(--ease); }
   .moreBtn.open .chev { transform: rotate(180deg); }
   .startBtn {
@@ -746,15 +783,9 @@
 
   /* Setup screen on small viewports — placed last so these override the base .setup rules above.
      Narrow (portrait phone): drop the side court, top-align so long forms scroll from the top. */
-  @media (max-width: 680px) {
-    .setup { align-items: flex-start; }
-    .courtbg { display: none; }
-  }
-  /* Short (landscape phone): two-column settings + compact spacing so it fits with minimal scrolling. */
+  /* Short (landscape phone): two-column "More" section + compact spacing to reduce scrolling. */
   @media (max-height: 560px) {
-    .setup { align-items: flex-start; }
-    .courtbg { display: none; }
-    .setup .card { max-width: 640px; flex-grow: 1; }   /* actually widen the card so the 2-col groups get room */
+    .setup .card { max-width: 640px; }
     /* only the "More" section goes two-column; primary Sport/Match length stay full-width rows */
     #setupMore { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; align-items: start; }
     .setup .group { margin: 7px 0; }
@@ -763,15 +794,13 @@
     .setup .balls svg { width: 28px; height: 28px; }
     .setup h1 { font-size: 20px; margin: 0 0 2px; }
     .setup .tagline { font-size: 13px; margin: 0 0 8px; }
-    .startBtn { margin-top: 12px; padding: 12px; font-size: 16px; }
-    #setupCancel { margin-top: 6px !important; padding: 8px !important; }
   }
 
   /* Clear keyboard focus ring for the menu/control buttons */
   .controls button:focus-visible, .seg button:focus-visible, .startBtn:focus-visible,
   .sheet .done:focus-visible, .winner .newmatch:focus-visible, .modal .actions button:focus-visible,
-  .switch:focus-visible, #setupCancel:focus-visible {
-    outline: 2px solid #93c5fd; outline-offset: 2px;
+  .switch:focus-visible {
+    outline: 2px solid var(--focus); outline-offset: 2px;
   }
 
   /* Material tap ripple (added to buttons by JS) */
@@ -844,7 +873,8 @@
         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
-    <button id="resetBtn" data-i18n="reset" data-i18n-title="reset">Reset</button>
+    <button id="endBtn" data-i18n="endMatch" data-i18n-title="endMatch" style="display:none">End match</button>
+    <button id="resetBtn" data-i18n="endGame" data-i18n-title="endGame">End game</button>
   </div>
 
   <canvas id="setConfetti" aria-hidden="true"></canvas>
@@ -857,7 +887,7 @@
       <div class="scoreline" id="winnerScore"></div>
       <button class="statsbtn" id="winnerStatsBtn" data-i18n="matchStats">Match stats</button>
     </div>
-    <button class="newmatch" id="winnerNew" data-i18n="newMatch">New match</button>
+    <button class="newmatch" id="winnerNew" data-i18n="endGame">End game</button>
   </div>
 
   <div class="help" id="statsScreen" role="dialog" aria-modal="true" aria-labelledby="statsTitle" aria-hidden="true">
@@ -871,27 +901,24 @@
 
   <div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="box">
-      <p><span data-i18n="confirmMsg">Start a new match?</span><br /><span data-i18n="confirmSub">The current score will be lost.</span></p>
+      <p><span data-i18n="confirmMsg">End this game?</span></p>
       <div class="actions">
+        <button class="finish" id="confirmFinish" data-i18n="finishResult">Finish &amp; see result</button>
+        <button class="confirm" id="confirmOk" data-i18n="discard">Discard</button>
         <button class="cancel" id="confirmCancel" data-i18n="cancel">Cancel</button>
-        <button class="confirm" id="confirmOk" data-i18n="newMatch">New match</button>
       </div>
     </div>
   </div>
 
   <div class="setup" id="setup">
-    <div class="topbar" aria-hidden="true"></div>
-    <div class="botbar" aria-hidden="true"></div>
+    <div class="appbar">
+      <button class="appbar-btn" id="setupSettings" type="button" data-i18n-aria="settings" data-i18n-title="settings">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="setup-scroll">
     <div class="courtbg" id="courtBg" aria-hidden="true"></div>
     <div class="card">
-      <div class="langPick" id="langPick">
-        <button type="button" class="langTrigger" id="langTrigger" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="langLbl">
-          <svg class="langGlobe" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
-          <span class="langAbbr" id="langAbbr">EN</span>
-          <svg class="langChev" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <ul class="langMenu" id="langMenu" role="listbox" tabindex="-1" data-i18n-aria="langLbl"></ul>
-      </div>
       <div class="balls" id="setupBalls" aria-hidden="true"></div>
       <h1>TapScore</h1>
       <p class="tagline" data-i18n="tagline">Tap either side to score — it tracks points, games, sets and serve for you</p>
@@ -1002,101 +1029,128 @@
       </div>
 
       </div>
-
+    </div>
+    </div>
+    <div class="setup-footer">
       <button class="startBtn" id="startBtn" data-i18n="startMatch">Start match</button>
-      <button id="setupCancel" data-i18n="cancel" style="width:100%;margin-top:10px;padding:12px;font:inherit;color:var(--ink);background:transparent;border:0;opacity:.6;cursor:pointer">Cancel</button>
-      <div style="text-align:center">
-        <button class="helpLink" id="setupHelp" type="button" data-i18n="helpTitle">How to use TapScore</button>
-      </div>
     </div>
   </div>
 
-  <div class="sheet" id="sheet">
-    <div class="panel">
-      <h2 data-i18n="matchSettings">Match settings</h2>
-      <div class="row">
-        <div>
-          <label data-i18n="matchLength">Match length</label>
-          <span class="desc" data-i18n="mlDesc">Sets needed to win the match. Changing the match length starts a new match.</span>
+  <!-- Full-screen app Settings page (opened from the home screen and the in-match menu) -->
+  <div class="settingspage" id="settingsPage" role="dialog" aria-modal="true" aria-labelledby="settingsPageTitle" aria-hidden="true">
+    <div class="appbar appbar-page">
+      <button class="appbar-btn" id="settingsBack" type="button" data-i18n-aria="done">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <span class="appbar-title" id="settingsPageTitle" data-i18n="settings">Settings</span>
+    </div>
+    <div class="settings-scroll">
+      <div class="settings-inner">
+        <!-- App preferences — shown from the home screen only -->
+        <div id="appSettings">
+        <div class="row">
+          <div><label data-i18n="themeLbl">Appearance</label></div>
+          <div class="seg" id="themeSeg">
+            <button data-theme-pref="system" data-i18n="themeSystem">System</button>
+            <button data-theme-pref="light" data-i18n="themeLight">Light</button>
+            <button data-theme-pref="dark" data-i18n="themeDark">Dark</button>
+          </div>
         </div>
-        <div class="seg" id="formatSeg">
-          <button data-bestof="1" data-i18n="set1">1 set</button>
-          <button data-bestof="3" data-i18n="bo3">Best of 3</button>
-          <button data-bestof="5" data-i18n="bo5">Best of 5</button>
+        <div class="row">
+          <div><label data-i18n="langLbl">Language</label></div>
+          <select id="langSelect" class="voiceSel" data-i18n-aria="langLbl"></select>
         </div>
-      </div>
-      <div class="row" id="deciderRow">
-        <div>
-          <label data-i18n="deciderLbl">Deciding set</label>
-          <span class="desc" data-i18n-html="deciderDesc2"></span>
+        <div class="row" id="voiceRow">
+          <div>
+            <label data-i18n="voiceLbl">Announcer voice</label>
+            <span class="desc"><span data-i18n="voiceDesc">Only the voices your device exposes to the browser appear here.</span><span class="ios-only"> On iPhone, download extra voices in Settings → Accessibility → Spoken Content → Voices; if a voice isn't listed below, iOS isn't sharing it with web apps.</span></span>
+          </div>
+          <select id="voiceSelect" class="voiceSel" data-i18n-aria="voiceLbl">
+            <option value="" data-i18n="voiceAuto">Automatic (best available)</option>
+          </select>
         </div>
-        <div class="seg" id="deciderSeg">
-          <button data-decider="set" data-i18n="deciderFull">Full set</button>
-          <button data-decider="matchTB" data-i18n="deciderTB">Match tie-break</button>
+        <div class="row rowswitch" id="clickerRow">
+          <div>
+            <label data-i18n="clickerLbl">Clicker mode</label>
+            <span class="desc" data-i18n="clickerDesc">For a single-button Bluetooth clicker: 1 tap scores your team, 2 the opponents, 3 undoes. Turn off for normal tapping.</span>
+          </div>
+          <button class="switch" id="clickerSwitch" role="switch" aria-checked="false" data-i18n-aria="clickerLbl"></button>
         </div>
-      </div>
-      <div class="row" id="tbRow">
-        <div>
-          <label data-i18n="tbLbl">Tie-break points</label>
-          <span class="desc" data-i18n="tbDesc2">First to this many (win by 2) takes the tie-break</span>
+        <button class="row rowlink" id="howtoRow" type="button">
+          <span class="rowlink-label" data-i18n="helpTitle">How to use TapScore</span>
+          <svg class="rowlink-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
         </div>
-        <div class="seg" id="tbSeg">
-          <button data-tb="7" data-i18n="tb7">7 points</button>
-          <button data-tb="10" data-i18n="tb10">10 points</button>
-        </div>
-      </div>
-      <div class="row" id="advRow">
-        <div>
-          <label data-i18n="advLbl">Advantage rules</label>
-          <span class="desc" data-i18n-html="advDesc"></span>
-        </div>
-        <div class="seg" id="advSeg">
-          <button data-adv="unlimited" data-i18n="advAdv">Adv</button>
-          <button data-adv="0" data-i18n="advGolden">Golden</button>
-          <button data-adv="1">+1</button>
-          <button data-adv="2">+2</button>
-        </div>
-      </div>
-      <div class="row" id="winByRow">
-        <div>
-          <label data-i18n="winbyLbl">Win by</label>
-          <span class="desc" data-i18n="winbyDesc">Margin needed to win a game</span>
-        </div>
-        <div class="seg" id="winBySeg">
-          <button data-winby="2" data-i18n="winby2">Win by 2</button>
-          <button data-winby="1" data-i18n="winby1">Straight</button>
-        </div>
-      </div>
-      <div class="row" id="changeEndsRow">
-        <div>
-          <label data-i18n="ceLbl">Change-ends reminder</label>
-          <span class="desc"></span>
-        </div>
-        <div class="seg" id="changeEndsSeg">
-          <button data-cends="off" data-i18n="ceOff">Off</button>
-          <button data-cends="set" data-i18n="ceSet">End of set</button>
-          <button data-cends="standard" data-i18n="ceStd">Standard</button>
-        </div>
-      </div>
-      <div class="row" id="voiceRow">
-        <div>
-          <label data-i18n="voiceLbl">Announcer voice</label>
-          <span class="desc"><span data-i18n="voiceDesc">Only the voices your device exposes to the browser appear here.</span><span class="ios-only"> On iPhone, download extra voices in Settings → Accessibility → Spoken Content → Voices; if a voice isn't listed below, iOS isn't sharing it with web apps.</span></span>
-        </div>
-        <select id="voiceSelect" class="voiceSel" data-i18n-aria="voiceLbl">
-          <option value="" data-i18n="voiceAuto">Automatic (best available)</option>
-        </select>
-      </div>
 
-      <div class="row" id="clickerRow">
-        <div>
-          <label data-i18n="clickerLbl">Clicker mode</label>
-          <span class="desc" data-i18n="clickerDesc">For a single-button Bluetooth clicker: 1 tap scores your team, 2 the opponents, 3 undoes. Turn off for normal tapping.</span>
+        <!-- Match settings — shown during a match only; length is locked (changing it needs a new match) -->
+        <div id="matchSection">
+          <h3 class="settings-subhead" data-i18n="matchSettings">Match settings</h3>
+          <div class="row" id="matchLenRow">
+            <div>
+              <label data-i18n="matchLength">Match length</label>
+              <span class="desc" data-i18n-html="mlDesc">Sets needed to win the match. <strong>Changing this starts a new game.</strong></span>
+            </div>
+            <div class="seg" id="formatSeg">
+              <button data-bestof="1" data-i18n="set1">1 set</button>
+              <button data-bestof="3" data-i18n="bo3">Best of 3</button>
+              <button data-bestof="5" data-i18n="bo5">Best of 5</button>
+            </div>
+          </div>
+          <div class="row" id="deciderRow">
+            <div>
+              <label data-i18n="deciderLbl">Deciding set</label>
+              <span class="desc" data-i18n-html="deciderDesc2"></span>
+            </div>
+            <div class="seg" id="deciderSeg">
+              <button data-decider="set" data-i18n="deciderFull">Full set</button>
+              <button data-decider="matchTB" data-i18n="deciderTB">Match tie-break</button>
+            </div>
+          </div>
+          <div class="row" id="tbRow">
+            <div>
+              <label data-i18n="tbLbl">Tie-break points</label>
+              <span class="desc" data-i18n="tbDesc2">First to this many (win by 2) takes the tie-break</span>
+            </div>
+            <div class="seg" id="tbSeg">
+              <button data-tb="7" data-i18n="tb7">7 points</button>
+              <button data-tb="10" data-i18n="tb10">10 points</button>
+            </div>
+          </div>
+          <div class="row" id="advRow">
+            <div>
+              <label data-i18n="advLbl">Advantage rules</label>
+              <span class="desc" data-i18n-html="advDesc"></span>
+            </div>
+            <div class="seg" id="advSeg">
+              <button data-adv="unlimited" data-i18n="advAdv">Adv</button>
+              <button data-adv="0" data-i18n="advGolden">Golden</button>
+              <button data-adv="1">+1</button>
+              <button data-adv="2">+2</button>
+            </div>
+          </div>
+          <div class="row" id="winByRow">
+            <div>
+              <label data-i18n="winbyLbl">Win by</label>
+              <span class="desc" data-i18n="winbyDesc">Margin needed to win a game</span>
+            </div>
+            <div class="seg" id="winBySeg">
+              <button data-winby="2" data-i18n="winby2">Win by 2</button>
+              <button data-winby="1" data-i18n="winby1">Straight</button>
+            </div>
+          </div>
+          <div class="row" id="changeEndsRow">
+            <div>
+              <label data-i18n="ceLbl">Change-ends reminder</label>
+              <span class="desc"></span>
+            </div>
+            <div class="seg" id="changeEndsSeg">
+              <button data-cends="off" data-i18n="ceOff">Off</button>
+              <button data-cends="set" data-i18n="ceSet">End of set</button>
+              <button data-cends="standard" data-i18n="ceStd">Standard</button>
+            </div>
+          </div>
         </div>
-        <button class="switch" id="clickerSwitch" role="switch" aria-checked="false" data-i18n-aria="clickerLbl"></button>
       </div>
-
-      <button class="done" id="sheetDone" data-i18n="done">Done</button>
     </div>
   </div>
 
@@ -1218,8 +1272,9 @@ const STR = {
     singles: "Singles", doubles: "Doubles", oneSet: "1 set", bestOf: "Best of %s", freePlay: "Free play", pts: "%s pts",
     // controls / winner / confirm
     undo: "Undo", announce: "Announce score", howto: "How to use", settings: "Settings",
+    endMatch: "End match", endGame: "End game", finishResult: "Finish & see result", discard: "Discard", tie: "It's a tie",
     reset: "New match", newMatch: "New match", matchStats: "Match stats",
-    confirmMsg: "Start a new match?", confirmSub: "The current score will be lost.", cancel: "Cancel",
+    confirmMsg: "End this game?", confirmSub: "The current score will be lost.", cancel: "Cancel",
     // sports
     sp_tennis: "Tennis", sp_padel: "Padel", sp_tabletennis: "Table Tennis", sp_pickleball: "Pickleball",
     sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Volleyball", sp_beachvolley: "Beach Volleyball",
@@ -1243,13 +1298,14 @@ const STR = {
     startMatch: "Start match", langLbl: "Language",
     // settings sheet
     matchSettings: "Match settings",
-    mlDesc: "Sets needed to win the match. Changing the match length starts a new match.",
+    mlDesc: "Sets needed to win the match. <strong>Changing this starts a new game.</strong>",
     set1: "1 set", bo3: "Best of 3", bo5: "Best of 5",
     deciderDesc2: "<strong>Full set</strong>: play it out normally. <strong>Match tie-break</strong>: first-to-10 (win by 2) instead of a final set.",
     tbDesc2: "First to this many (win by 2) takes the tie-break",
     voiceLbl: "Announcer voice", voiceDesc: "Only the voices your device exposes to the browser appear here.",
     voiceAuto: "Automatic (best available)", done: "Done",
     clickerLbl: "Clicker mode", clickerDesc: "A Bluetooth clicker is detected automatically. Turn this on only to force it: 1 tap scores your team, 2 the opponents, 3 undoes.",
+    themeLbl: "Appearance", themeSystem: "System", themeLight: "Light", themeDark: "Dark",
     // change-ends descriptions (built dynamically): "End of set"/"Standard" prefixes
     ceEndOfSet: "End of set", ceStandard: "Standard",
     // help
@@ -1283,8 +1339,10 @@ const STR = {
     bTiebreak: "Tie-break", bDeuce: "Iguales", bGolden: "Punto de oro",
     singles: "Individual", doubles: "Dobles", oneSet: "1 set", bestOf: "Al mejor de %s", freePlay: "Libre", pts: "%s ptos",
     undo: "Deshacer", announce: "Anunciar marcador", howto: "Cómo se usa", settings: "Ajustes",
+    endMatch: "Terminar",
+    endGame: "Terminar partido", finishResult: "Finalizar y ver resultado", discard: "Descartar", tie: "Empate",
     reset: "Nuevo partido", newMatch: "Nuevo partido", matchStats: "Estadísticas",
-    confirmMsg: "¿Empezar un partido nuevo?", confirmSub: "Se perderá el marcador actual.", cancel: "Cancelar",
+    confirmMsg: "¿Terminar este partido?", confirmSub: "Se perderá el marcador actual.", cancel: "Cancelar",
     sp_tennis: "Tenis", sp_padel: "Pádel", sp_tabletennis: "Tenis de mesa", sp_pickleball: "Pickleball",
     sp_squash: "Squash", sp_badminton: "Bádminton", sp_volleyball: "Voleibol", sp_beachvolley: "Vóley playa",
     tagline: "Toca cualquier lado para puntuar — lleva la cuenta de puntos, juegos, sets y saque",
@@ -1305,13 +1363,14 @@ const STR = {
     ceOff: "No", ceSet: "Fin del set", ceStd: "Estándar",
     startMatch: "Empezar partido", langLbl: "Idioma",
     matchSettings: "Ajustes del partido",
-    mlDesc: "Sets para ganar el partido. Cambiarlo inicia un partido nuevo.",
+    mlDesc: "Sets para ganar el partido. <strong>Cambiarlo inicia un partido nuevo.</strong>",
     set1: "1 set", bo3: "Al mejor de 3", bo5: "Al mejor de 5",
     deciderDesc2: "<strong>Set completo</strong>: se juega normal. <strong>Súper tie-break</strong>: a 10 (por 2) en vez de set final.",
     tbDesc2: "El primero en llegar (por 2) gana el tie-break",
     voiceLbl: "Voz del locutor", voiceDesc: "Solo aparecen las voces que tu dispositivo ofrece al navegador.",
     voiceAuto: "Automática (la mejor)", done: "Listo",
     clickerLbl: "Modo clicker", clickerDesc: "El clicker Bluetooth se detecta automáticamente. Actívalo solo para forzarlo: 1 toque para tu equipo, 2 para el rival, 3 deshace.",
+    themeLbl: "Apariencia", themeSystem: "Sistema", themeLight: "Claro", themeDark: "Oscuro",
     ceEndOfSet: "Fin del set", ceStandard: "Estándar",
     helpTitle: "Cómo usar TapScore", helpSub: "Coloca el móvil junto a la pista y puntúa todo el partido con toques — lleva puntos, juegos, sets y saque por ti.",
     helpTapH: "Toca para puntuar", helpTapP: "Toca en el lado de un jugador para darle el punto. Los puntos suman juegos y sets automáticamente. ¿Error? Pulsa <strong>Deshacer</strong>.",
@@ -1341,8 +1400,10 @@ const STR = {
     bTiebreak: "Tie-break", bDeuce: "Iguais", bGolden: "Ponto de ouro",
     singles: "Singulares", doubles: "Pares", oneSet: "1 set", bestOf: "À melhor de %s", freePlay: "Livre", pts: "%s ptos",
     undo: "Desfazer", announce: "Anunciar resultado", howto: "Como usar", settings: "Definições",
+    endMatch: "Terminar",
+    endGame: "Terminar jogo", finishResult: "Finalizar e ver resultado", discard: "Descartar", tie: "Empate",
     reset: "Novo jogo", newMatch: "Novo jogo", matchStats: "Estatísticas",
-    confirmMsg: "Começar um novo jogo?", confirmSub: "O resultado atual será perdido.", cancel: "Cancelar",
+    confirmMsg: "Terminar este jogo?", confirmSub: "O resultado atual será perdido.", cancel: "Cancelar",
     sp_tennis: "Ténis", sp_padel: "Padel", sp_tabletennis: "Ténis de mesa", sp_pickleball: "Pickleball",
     sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Voleibol", sp_beachvolley: "Vólei de praia",
     tagline: "Toca em qualquer lado para pontuar — conta pontos, jogos, sets e serviço por ti",
@@ -1363,13 +1424,14 @@ const STR = {
     ceOff: "Não", ceSet: "Fim do set", ceStd: "Padrão",
     startMatch: "Começar jogo", langLbl: "Idioma",
     matchSettings: "Definições do jogo",
-    mlDesc: "Sets para ganhar o jogo. Alterar inicia um novo jogo.",
+    mlDesc: "Sets para ganhar o jogo. <strong>Alterar inicia um novo jogo.</strong>",
     set1: "1 set", bo3: "À melhor de 3", bo5: "À melhor de 5",
     deciderDesc2: "<strong>Set completo</strong>: joga-se normal. <strong>Super tie-break</strong>: a 10 (por 2) em vez de set final.",
     tbDesc2: "O primeiro a chegar (por 2) ganha o tie-break",
     voiceLbl: "Voz do locutor", voiceDesc: "Só aparecem as vozes que o teu dispositivo disponibiliza ao navegador.",
     voiceAuto: "Automática (a melhor)", done: "Concluir",
     clickerLbl: "Modo clicker", clickerDesc: "O clicker Bluetooth é detetado automaticamente. Liga só para forçar: 1 toque para a tua equipa, 2 para o adversário, 3 desfaz.",
+    themeLbl: "Aparência", themeSystem: "Sistema", themeLight: "Claro", themeDark: "Escuro",
     ceEndOfSet: "Fim do set", ceStandard: "Padrão",
     helpTitle: "Como usar o TapScore", helpSub: "Coloca o telemóvel junto ao campo e pontua o jogo todo com toques — conta pontos, jogos, sets e serviço por ti.",
     helpTapH: "Toca para pontuar", helpTapP: "Toca no lado de um jogador para lhe dar o ponto. Os pontos somam jogos e sets automaticamente. Enganaste-te? Toca em <strong>Desfazer</strong>.",
@@ -1399,8 +1461,10 @@ const STR = {
     bTiebreak: "Jeu décisif", bDeuce: "Égalité", bGolden: "Point en or",
     singles: "Simple", doubles: "Double", oneSet: "1 set", bestOf: "Au meilleur de %s", freePlay: "Libre", pts: "%s pts",
     undo: "Annuler", announce: "Annoncer le score", howto: "Mode d'emploi", settings: "Réglages",
+    endMatch: "Terminer",
+    endGame: "Terminer le match", finishResult: "Terminer et voir le résultat", discard: "Abandonner", tie: "Égalité",
     reset: "Nouveau match", newMatch: "Nouveau match", matchStats: "Statistiques",
-    confirmMsg: "Commencer un nouveau match ?", confirmSub: "Le score actuel sera perdu.", cancel: "Annuler",
+    confirmMsg: "Terminer ce match ?", confirmSub: "Le score actuel sera perdu.", cancel: "Annuler",
     sp_tennis: "Tennis", sp_padel: "Padel", sp_tabletennis: "Tennis de table", sp_pickleball: "Pickleball",
     sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Volley", sp_beachvolley: "Beach-volley",
     tagline: "Touchez un côté pour marquer — points, jeux, sets et service comptés pour vous",
@@ -1421,13 +1485,14 @@ const STR = {
     ceOff: "Non", ceSet: "Fin de set", ceStd: "Standard",
     startMatch: "Commencer", langLbl: "Langue",
     matchSettings: "Réglages du match",
-    mlDesc: "Sets pour gagner le match. Le changer démarre un nouveau match.",
+    mlDesc: "Sets pour gagner le match. <strong>Le changer démarre un nouveau match.</strong>",
     set1: "1 set", bo3: "Au meilleur de 3", bo5: "Au meilleur de 5",
     deciderDesc2: "<strong>Set complet</strong> : joué normalement. <strong>Super jeu décisif</strong> : en 10 (par 2) au lieu d'un dernier set.",
     tbDesc2: "Le premier à ce total (par 2) gagne le jeu décisif",
     voiceLbl: "Voix de l'annonceur", voiceDesc: "Seules les voix que votre appareil expose au navigateur apparaissent ici.",
     voiceAuto: "Automatique (la meilleure)", done: "OK",
     clickerLbl: "Mode télécommande", clickerDesc: "La télécommande Bluetooth est détectée automatiquement. Activez uniquement pour forcer : 1 clic pour votre équipe, 2 pour l'adversaire, 3 annule.",
+    themeLbl: "Apparence", themeSystem: "Système", themeLight: "Clair", themeDark: "Sombre",
     ceEndOfSet: "Fin de set", ceStandard: "Standard",
     helpTitle: "Utiliser TapScore", helpSub: "Posez le téléphone au bord du terrain et marquez tout le match d'un doigt — points, jeux, sets et service comptés pour vous.",
     helpTapH: "Touchez pour marquer", helpTapP: "Touchez le côté d'un joueur pour lui donner le point. Les points forment jeux et sets automatiquement. Erreur ? Touchez <strong>Annuler</strong>.",
@@ -1457,8 +1522,10 @@ const STR = {
     bTiebreak: "Tie-Break", bDeuce: "Einstand", bGolden: "Golden Point",
     singles: "Einzel", doubles: "Doppel", oneSet: "1 Satz", bestOf: "Best of %s", freePlay: "Frei", pts: "%s Pkt.",
     undo: "Zurück", announce: "Punkte ansagen", howto: "Anleitung", settings: "Einstellungen",
+    endMatch: "Beenden",
+    endGame: "Spiel beenden", finishResult: "Beenden & Ergebnis", discard: "Verwerfen", tie: "Unentschieden",
     reset: "Neues Match", newMatch: "Neues Match", matchStats: "Statistiken",
-    confirmMsg: "Neues Match starten?", confirmSub: "Der aktuelle Stand geht verloren.", cancel: "Abbrechen",
+    confirmMsg: "Dieses Spiel beenden?", confirmSub: "Der aktuelle Stand geht verloren.", cancel: "Abbrechen",
     sp_tennis: "Tennis", sp_padel: "Padel", sp_tabletennis: "Tischtennis", sp_pickleball: "Pickleball",
     sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Volleyball", sp_beachvolley: "Beachvolleyball",
     tagline: "Tippe auf eine Seite, um zu punkten — Punkte, Spiele, Sätze und Aufschlag werden gezählt",
@@ -1479,13 +1546,14 @@ const STR = {
     ceOff: "Aus", ceSet: "Satzende", ceStd: "Standard",
     startMatch: "Match starten", langLbl: "Sprache",
     matchSettings: "Match-Einstellungen",
-    mlDesc: "Sätze zum Matchgewinn. Ändern startet ein neues Match.",
+    mlDesc: "Sätze zum Matchgewinn. <strong>Ändern startet ein neues Match.</strong>",
     set1: "1 Satz", bo3: "Best of 3", bo5: "Best of 5",
     deciderDesc2: "<strong>Ganzer Satz</strong>: normal. <strong>Match-Tie-Break</strong>: bis 10 (mit 2) statt letztem Satz.",
     tbDesc2: "Wer zuerst so viele hat (mit 2), gewinnt den Tie-Break",
     voiceLbl: "Ansagestimme", voiceDesc: "Es erscheinen nur Stimmen, die dein Gerät dem Browser bereitstellt.",
     voiceAuto: "Automatisch (beste)", done: "Fertig",
     clickerLbl: "Clicker-Modus", clickerDesc: "Ein Bluetooth-Clicker wird automatisch erkannt. Nur zum Erzwingen einschalten: 1 Tipp für dein Team, 2 für die Gegner, 3 macht rückgängig.",
+    themeLbl: "Darstellung", themeSystem: "System", themeLight: "Hell", themeDark: "Dunkel",
     ceEndOfSet: "Satzende", ceStandard: "Standard",
     helpTitle: "TapScore verwenden", helpSub: "Stell das Telefon an den Platzrand und zähle das ganze Match per Tipp — Punkte, Spiele, Sätze und Aufschlag inklusive.",
     helpTapH: "Zum Punkten tippen", helpTapP: "Tippe auf die Seite eines Spielers, um ihm den Punkt zu geben. Punkte werden automatisch zu Spielen und Sätzen. Vertippt? Tippe auf <strong>Zurück</strong>.",
@@ -1531,11 +1599,8 @@ function setLang(l) {
   syncLangSegs();
 }
 function syncLangSegs() {
-  const abbr = document.getElementById("langAbbr");
-  if (abbr) abbr.textContent = lang.toUpperCase();
-  const menu = document.getElementById("langMenu");
-  if (menu) Array.from(menu.children).forEach(li =>
-    li.setAttribute("aria-selected", String(li.dataset.lang === lang)));
+  const sel = document.getElementById("langSelect");
+  if (sel) sel.value = lang;
 }
 
 function freshMatch(settings) {
@@ -2458,12 +2523,14 @@ function render() {
 
   const win = el("winner");
   if (match.over) {
-    el("winnerTrophy").innerHTML = trophySVG(match.settings.sport, match.winner);
-    el("winnerName").textContent = match.names[match.winner];
+    const tie = match.winner < 0;   // manual finish with everything level
+    el("winnerTrophy").style.display = tie ? "none" : "";
+    el("winnerTrophy").innerHTML = tie ? "" : trophySVG(match.settings.sport, match.winner);
+    el("winnerName").textContent = tie ? t("tie") : match.names[match.winner];
     el("winnerScore").innerHTML = match.completedSets.map(s => `<span>${s[0]}–${s[1]}</span>`).join("");
     win.classList.add("show");
     requestAnimationFrame(fitWinnerName);   // scale the name to fill the screen
-    if (!winnerShown) { winnerShown = true; launchConfetti(); }   // fire once, on the transition to a win
+    if (!winnerShown) { winnerShown = true; if (!tie) launchConfetti(); }   // celebrate a win, not a tie
   } else {
     win.classList.remove("show");
     winnerShown = false;
@@ -2471,6 +2538,10 @@ function render() {
 
   updateTimer();
   el("undoBtn").disabled = historyStack.length === 0;
+  // Free play: show only "End match" (it finishes the game); hide "New match" while playing
+  const freePlayLive = match.settings.bestOf === "inf" && !match.over;
+  el("endBtn").style.display = freePlayLive ? "" : "none";
+  el("resetBtn").style.display = freePlayLive ? "none" : "";
   syncSettingsUI();
   firstRender = false;   // subsequent renders may animate score changes
 }
@@ -2722,7 +2793,7 @@ function announceCorrection() {
   const pre = t("v_correction");
   let text;
   if (match.over) {
-    text = pre + tf("v_matchTo", match.names[match.winner]);
+    text = pre + (match.winner < 0 ? t("tie") : tf("v_matchTo", match.names[match.winner]));
   } else if (isTargetSport() || match.tiebreak) {
     const s = match.server, r = 1 - s;
     const a = match.points[s], b = match.points[r];
@@ -2744,11 +2815,26 @@ el("undoBtn").addEventListener("click", (e) => { e.stopPropagation(); doUndo(); 
 const confirmModal = el("confirmModal");
 const closeConfirm = () => confirmModal.classList.remove("show");
 el("resetBtn").addEventListener("click", (e) => { e.stopPropagation(); confirmModal.classList.add("show"); });
+// Finish the match in its current state and show the winner + stats. Winner = most sets, then games,
+// then points; if everything's level it's a tie (match.winner = -1). Used by free play and "Finish & see result".
+function finishMatch() {
+  if (match.over) return;
+  const [s0, s1] = match.sets, [g0, g1] = match.games, [p0, p1] = match.points;
+  match.winner = (s0 !== s1) ? (s0 > s1 ? 0 : 1)
+               : (g0 !== g1) ? (g0 > g1 ? 0 : 1)
+               : (p0 !== p1) ? (p0 > p1 ? 0 : 1)
+               : -1;                       // fully level → tie
+  match.over = true;
+  match.endedAt = nowMs();
+  save(); render();
+}
+el("endBtn").addEventListener("click", (e) => { e.stopPropagation(); finishMatch(); });
 el("confirmCancel").addEventListener("click", closeConfirm);
-el("confirmOk").addEventListener("click", () => { closeConfirm(); showSetup(); });
+el("confirmFinish").addEventListener("click", () => { closeConfirm(); finishMatch(); });
+el("confirmOk").addEventListener("click", () => { closeConfirm(); showSetup(true); });
 confirmModal.addEventListener("click", (e) => { if (e.target === confirmModal) closeConfirm(); });
 
-el("winnerNew").addEventListener("click", showSetup);
+el("winnerNew").addEventListener("click", () => showSetup(true));
 
 /* ---- match stats page ---- */
 const statsScreen = el("statsScreen");
@@ -2771,7 +2857,6 @@ const help = el("help");
 const openHelp = () => help.classList.add("show");
 const closeHelp = () => help.classList.remove("show");
 el("helpBtn").addEventListener("click", (e) => { e.stopPropagation(); openHelp(); });
-el("setupHelp").addEventListener("click", (e) => { e.stopPropagation(); openHelp(); });
 el("helpClose").addEventListener("click", closeHelp);
 el("helpDone").addEventListener("click", closeHelp);
 help.addEventListener("click", (e) => { if (e.target === help) closeHelp(); });
@@ -2797,15 +2882,31 @@ function sheetClose(elm) {
   panel.addEventListener("animationend", done);
 }
 
-/* ---- settings sheet ---- */
-const sheet = el("sheet");
-el("settingsBtn").addEventListener("click", (e) => {
-  e.stopPropagation();
-  refreshVoices(); populateVoiceSelect();   // some platforms only fill the voice list after a first interaction
-  sheetOpen(sheet);
-});
-el("sheetDone").addEventListener("click", () => sheetClose(sheet));
-sheet.addEventListener("click", (e) => { if (e.target === sheet) sheetClose(sheet); });
+/* ---- Settings (one full-screen page for home + in-match) ----
+   From home: app prefs only. In-match: also show the Match section, but disable Match length
+   (the only setting that would restart the match); the rest apply live. */
+const settingsPage = el("settingsPage");
+function openSettingsPage(inMatch) {
+  // In-match: ONLY the current match's settings. From home: ONLY app preferences.
+  el("appSettings").style.display = inMatch ? "none" : "";
+  el("matchSection").style.display = inMatch ? "" : "none";
+  el("settingsPageTitle").textContent = inMatch ? t("matchSettings") : t("settings");
+  if (inMatch) {
+    syncSettingsUI();   // reflect the live match's format + row visibility; all rows are editable
+  } else {
+    refreshVoices(); populateVoiceSelect();             // only needed for the app-prefs voice picker
+  }
+  settingsPage.classList.add("show");
+  settingsPage.setAttribute("aria-hidden", "false");
+}
+function closeSettingsPage() {
+  settingsPage.classList.remove("show");
+  settingsPage.setAttribute("aria-hidden", "true");
+}
+el("setupSettings").addEventListener("click", (e) => { e.stopPropagation(); openSettingsPage(false); });   // home: app prefs
+el("settingsBtn").addEventListener("click", (e) => { e.stopPropagation(); openSettingsPage(true); });       // in-match: + match settings
+el("settingsBack").addEventListener("click", closeSettingsPage);
+el("howtoRow").addEventListener("click", () => openHelp());   // opens over the Settings page; closing help returns to it
 
 // the setting lives in two places (start screen + in-match sheet); keep both in sync
 function syncChangeEndsSeg() {
@@ -2887,7 +2988,9 @@ syncVoiceBtn();
 function populateVoiceSelect() {
   const sel = el("voiceSelect");
   if (!sel) return;
-  if (!("speechSynthesis" in window)) { el("voiceRow").style.display = "none"; return; }
+  // Native app: TTS goes through the OS plugin, which uses the system voice for the language —
+  // the web voice list here has no effect, so hide the picker. (Voices are chosen in iOS/Android Settings.)
+  if (IS_NATIVE || !("speechSynthesis" in window)) { el("voiceRow").style.display = "none"; return; }
   const voices = allVoices().slice().sort((a, b) => {
     const ae = /^en/i.test(a.lang || ""), be = /^en/i.test(b.lang || "");
     if (ae !== be) return ae ? -1 : 1;                       // English voices first
@@ -2910,7 +3013,7 @@ el("voiceSelect").addEventListener("change", (e) => {
   // audition the pick so the choice is obvious
   if ("speechSynthesis" in window) {
     const wasOn = voiceOn; voiceOn = true;   // sample even if announcements are currently off
-    speak("Fifteen, love");
+    speak("15, " + t("v_love"));   // localized sample so the test is spoken in the selected language
     voiceOn = wasOn;
   }
 });
@@ -2928,6 +3031,38 @@ el("clickerSwitch").addEventListener("click", () => {
   syncClickerSwitch();
 });
 syncClickerSwitch();
+
+/* ---- appearance / theme (dark · light · system) ---- */
+let themePref = "system";
+try { themePref = localStorage.getItem("tennisTracker.theme") || "system"; } catch (e) {}
+const darkMQ = window.matchMedia ? matchMedia("(prefers-color-scheme: dark)") : null;
+function resolvedTheme() {
+  return (themePref === "dark" || (themePref === "system" && (!darkMQ || darkMQ.matches))) ? "dark" : "light";
+}
+function syncThemeSeg() {
+  document.querySelectorAll("#themeSeg button").forEach(b =>
+    b.classList.toggle("active", b.dataset.themePref === themePref));
+}
+function applyTheme() {
+  const t = resolvedTheme();
+  document.documentElement.dataset.theme = t;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = (t === "dark") ? "#0b1220" : "#eef1f7";
+  if (IS_NATIVE && Cap.Plugins && Cap.Plugins.StatusBar) {
+    try { Cap.Plugins.StatusBar.setStyle({ style: t === "dark" ? "DARK" : "LIGHT" }); } catch (e) {}
+  }
+  syncThemeSeg();
+}
+function setTheme(p) {
+  themePref = p;
+  try { localStorage.setItem("tennisTracker.theme", p); } catch (e) {}
+  applyTheme();
+}
+el("themeSeg").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-theme-pref]"); if (b) setTheme(b.dataset.themePref);
+});
+if (darkMQ) { try { darkMQ.addEventListener("change", () => { if (themePref === "system") applyTheme(); }); } catch (e) {} }
+applyTheme();
 
 function syncSettingsUI() {
   const tt = isTargetSport();
@@ -2955,7 +3090,7 @@ function syncSettingsUI() {
 }
 
 /* ---- setup / welcome screen ---- */
-function showSetup() {
+function showSetup(cancellable) {
   // prefill from the current/last match so the picker remembers your choices
   pendingSetup = {
     sport: match.settings.sport,
@@ -2989,7 +3124,7 @@ el("moreBtn").addEventListener("click", () => { moreOpen = !moreOpen; syncMore()
 
 function syncSetupUI() {
   const target = isTargetSport(pendingSetup.sport);
-  el("courtBg").innerHTML = courtSVG(pendingSetup.sport);
+  const cb = el("courtBg"); if (cb) cb.innerHTML = courtSVG(pendingSetup.sport);   // court diagram (large screens)
   // target sports (table tennis, pickleball) have no deuce/advantage; they use a points target instead
   el("setupAdvGroup").style.display = target ? "none" : "";
   el("setupPointsGroup").style.display = target ? "" : "none";
@@ -3121,51 +3256,15 @@ el("setupScoring").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-scoring]"); if (!b) return;
   pendingSetup.scoring = b.dataset.scoring; syncSetupUI();
 });
-/* ---- language picker: a custom dropdown mirroring the sport picker ---- */
+/* ---- language: a native select in the Settings sheet ---- */
 const LANG_LIST = Object.keys(LANGS);
-const langPick = el("langPick"), langTrigger = el("langTrigger"), langMenu = el("langMenu");
-let langActiveIdx = -1;
-function buildLangList() {
-  langMenu.innerHTML = LANG_LIST.map(l =>
-    `<li role="option" id="lang-opt-${l}" data-lang="${l}" aria-selected="${l === lang}">
-       <span class="langMenuName">${LANGS[l]}</span><span class="langMenuAbbr">${l.toUpperCase()}</span></li>`).join("");
-}
-buildLangList();
-function highlightLang(i) {
-  langActiveIdx = (i + LANG_LIST.length) % LANG_LIST.length;
-  Array.from(langMenu.children).forEach((li, idx) => li.classList.toggle("active", idx === langActiveIdx));
-  const li = langMenu.children[langActiveIdx];
-  if (li) { langMenu.setAttribute("aria-activedescendant", li.id); li.scrollIntoView({ block: "nearest" }); }
-}
-function langIsOpen() { return langPick.classList.contains("open"); }
-function langOpen() {
-  langPick.classList.add("open");
-  langTrigger.setAttribute("aria-expanded", "true");
-  highlightLang(Math.max(0, LANG_LIST.indexOf(lang)));
-  langMenu.focus();
-}
-function langClose(focusTrigger) {
-  langPick.classList.remove("open");
-  langTrigger.setAttribute("aria-expanded", "false");
-  langMenu.removeAttribute("aria-activedescendant");
-  Array.from(langMenu.children).forEach(li => li.classList.remove("active"));
-  if (focusTrigger) langTrigger.focus();
-}
-function chooseLang(l) { setLang(l); langClose(true); }
-langTrigger.addEventListener("click", (e) => { e.stopPropagation(); langIsOpen() ? langClose(true) : langOpen(); });
-langTrigger.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") { e.preventDefault(); langOpen(); }
-});
-langMenu.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowDown") { e.preventDefault(); highlightLang(langActiveIdx + 1); }
-  else if (e.key === "ArrowUp") { e.preventDefault(); highlightLang(langActiveIdx - 1); }
-  else if (e.key === "Home") { e.preventDefault(); highlightLang(0); }
-  else if (e.key === "End") { e.preventDefault(); highlightLang(LANG_LIST.length - 1); }
-  else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); chooseLang(LANG_LIST[langActiveIdx]); }
-  else if (e.key === "Escape") { e.preventDefault(); langClose(true); }
-});
-langMenu.addEventListener("click", (e) => { const li = e.target.closest("li[data-lang]"); if (li) chooseLang(li.dataset.lang); });
-document.addEventListener("click", (e) => { if (langIsOpen() && !langPick.contains(e.target)) langClose(false); });
+(function buildLangSelect() {
+  const sel = el("langSelect");
+  if (!sel) return;
+  sel.innerHTML = LANG_LIST.map(l => `<option value="${l}">${LANGS[l]}</option>`).join("");
+  sel.value = lang;
+  sel.addEventListener("change", (e) => setLang(e.target.value));
+})();
 el("setupLength").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-bestof]"); if (!b) return;
   pendingSetup.bestOf = parseBestOf(b.dataset.bestof); syncSetupUI();
@@ -3220,7 +3319,6 @@ el("startBtn").addEventListener("click", () => {
 });
 
 // Cancel just closes the setup and resumes whatever match is in memory
-el("setupCancel").addEventListener("click", () => el("setup").classList.remove("show"));
 
 // Material-style tap ripple on menu/control buttons (not the scoring sides, serve balls, or switches)
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -3325,7 +3423,9 @@ keepAwake();
 applyI18n();                      // translate static markup for the current language
 render();
 setInterval(updateTimer, 1000);   // live match timer
-if (firstRun) showSetup();
+// Open the home screen on first run, or when the last match already ended (don't reopen a finished game)
+// Always open on the home screen — don't resume a previous game on launch.
+showSetup(false);
 </script>
 <script>
   // Register the service worker so the app installs & works offline (needs http(s); no-op on file://).

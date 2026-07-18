@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App background — matches theme_color / background_color in the web manifest -->
+    <color name="tapscoreBg">#0b1220</color>
+</resources>

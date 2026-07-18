@@ -1,0 +1,22 @@
+{
+  "appId": "com.ivogomes.tapscore",
+  "appName": "TapScore",
+  "webDir": "www",
+  "backgroundColor": "#0b1220",
+  "ios": {
+    "scrollEnabled": false,
+    "contentInset": "never",
+    "backgroundColor": "#0b1220"
+  },
+  "android": {
+    "backgroundColor": "#0b1220"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false,
+      "backgroundColor": "#0b1220",
+      "showSpinner": false,
+      "androidScaleType": "CENTER_CROP"
+    }
+  }
+}
