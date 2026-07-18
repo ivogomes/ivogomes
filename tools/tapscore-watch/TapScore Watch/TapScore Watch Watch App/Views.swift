@@ -4,7 +4,7 @@ import TapScoreEngine
 // MARK: - Scoring (the two-zone main screen)
 
 struct ScoringView: View {
-    @ObservedObject var model: MatchModel
+    var model: MatchModel   // @Observable: reads auto-track
     @State private var crown = 0.0
     @State private var lastCrown = 0.0
     @State private var showMenu = false
@@ -21,28 +21,37 @@ struct ScoringView: View {
         let m = model.match
         let labels = model.pointLabels
         return ZStack {
+            // Full-bleed tappable color halves (they own the taps; content above ignores hits).
             VStack(spacing: 0) {
-                zone(side: 0, color: Theme.azure, label: "YOU", score: labels[0],
-                     games: m.games[0], serving: m.server == 0, alignTop: true,
-                     showGames: !ScoringEngine.isTargetSport(m.settings.sport))
-                zone(side: 1, color: Theme.coral, label: "OPP", score: labels[1],
-                     games: m.games[1], serving: m.server == 1, alignTop: false,
-                     showGames: !ScoringEngine.isTargetSport(m.settings.sport))
+                Theme.azure.contentShape(Rectangle()).onTapGesture { model.score(0) }
+                Theme.coral.contentShape(Rectangle()).onTapGesture { model.score(1) }
             }
-            // sets/tie pill on the split line
-            Text(m.tiebreak ? "TIE-BREAK" : model.setsLine)
-                .font(.system(size: 12, weight: .bold))
+            .ignoresSafeArea()
+
+            // Content respects the safe area so labels clear the bezel and the system clock.
+            VStack(spacing: 0) {
+                zoneContent(label: "YOU", score: labels[0], serving: m.server == 0, alignTop: true)
+                zoneContent(label: "OPP", score: labels[1], serving: m.server == 1, alignTop: false)
+            }
+            .allowsHitTesting(false)
+
+            // Scoreline / tie pill sits on the split line.
+            Text(m.tiebreak ? "TIE-BREAK" : model.scorePill)
+                .font(.system(size: 13, weight: .bold, design: .rounded))
                 .foregroundStyle(m.tiebreak ? Theme.lime : .white)
+                .lineLimit(1).minimumScaleFactor(0.7)
                 .padding(.horizontal, 10).padding(.vertical, 4)
                 .background(Capsule().fill(Theme.bg))
                 .overlay(Capsule().stroke(m.tiebreak ? Theme.lime.opacity(0.6) : .white.opacity(0.25)))
+                .allowsHitTesting(false)
         }
-        .ignoresSafeArea()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Theme.bg)
         .focusable(true)
         // Digital Crown → undo (each downward notch). Sensitivity may need on-device tuning.
         .digitalCrownRotation($crown, from: -1000, through: 1000, by: 1,
                               sensitivity: .low, isContinuous: true, isHapticFeedbackEnabled: false)
-        .onChange(of: crown) { newValue in
+        .onChange(of: crown) { _, newValue in
             if newValue < lastCrown - 0.5 { model.undo() }
             lastCrown = newValue
         }
@@ -54,45 +63,38 @@ struct ScoringView: View {
         }
     }
 
-    private func zone(side: Int, color: Color, label: String, score: String,
-                      games: Int, serving: Bool, alignTop: Bool, showGames: Bool) -> some View {
+    /// One half's overlay content: outer-edge label (+ serve dot, kept left to avoid the clock)
+    /// and a large centered score.
+    private func zoneContent(label: String, score: String, serving: Bool, alignTop: Bool) -> some View {
         ZStack {
-            color
-            VStack(spacing: 2) {
+            // Score dead-center of the half.
+            Text(score)
+                .font(.system(size: 64, weight: .heavy, design: .rounded))
+                .foregroundStyle(.white).minimumScaleFactor(0.5).lineLimit(1)
+            // Label pinned to the outer edge, independent of the score.
+            VStack(spacing: 0) {
                 if !alignTop { Spacer(minLength: 0) }
-                HStack {
-                    Text(label).font(.system(size: 13, weight: .heavy)).foregroundStyle(.white.opacity(0.95))
-                    Spacer()
-                    if serving { Circle().fill(Theme.lime).frame(width: 9, height: 9) }
-                }
-                .padding(.horizontal, 10)
-                .opacity(alignTop ? 1 : 0)              // label sits at the outer edge of each half
-                Spacer(minLength: 0)
-                Text(score).font(.system(size: 46, weight: .heavy, design: .rounded))
-                    .foregroundStyle(.white).minimumScaleFactor(0.5).lineLimit(1)
-                if showGames { Text("\(games) GAMES").font(.system(size: 10, weight: .semibold)).foregroundStyle(.white.opacity(0.85)) }
-                Spacer(minLength: 0)
-                HStack {
-                    Text(label).font(.system(size: 13, weight: .heavy)).foregroundStyle(.white.opacity(0.95))
-                    Spacer()
-                    if serving { Circle().fill(Theme.lime).frame(width: 9, height: 9) }
-                }
-                .padding(.horizontal, 10)
-                .opacity(alignTop ? 0 : 1)
+                labelRow(label, serving: serving)
                 if alignTop { Spacer(minLength: 0) }
             }
-            .padding(.vertical, 6)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .contentShape(Rectangle())
-        .onTapGesture { model.score(side) }
+        .padding(.horizontal, 10)
+    }
+
+    private func labelRow(_ label: String, serving: Bool) -> some View {
+        HStack(spacing: 6) {
+            Text(label).font(.system(size: 13, weight: .heavy)).foregroundStyle(.white.opacity(0.95))
+            if serving { Circle().fill(Theme.lime).frame(width: 9, height: 9) }
+            Spacer()
+        }
     }
 }
 
 // MARK: - Start (standalone quick launch)
 
 struct StartView: View {
-    @ObservedObject var model: MatchModel
+    var model: MatchModel   // @Observable: reads auto-track
     private let sports = ["tennis", "padel", "tabletennis", "pickleball", "squash", "badminton", "volleyball", "beachvolley"]
     private let sportNames = ["tennis": "Tennis", "padel": "Padel", "tabletennis": "Table tennis",
                               "pickleball": "Pickleball", "squash": "Squash", "badminton": "Badminton",
@@ -129,7 +131,7 @@ struct StartView: View {
 // MARK: - End (winner / tie)
 
 struct EndView: View {
-    @ObservedObject var model: MatchModel
+    var model: MatchModel   // @Observable: reads auto-track
     var body: some View {
         let m = model.match
         let tie = (m.winner == nil)

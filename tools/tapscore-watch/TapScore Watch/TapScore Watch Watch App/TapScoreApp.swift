@@ -7,7 +7,7 @@ import WatchKit
 
 @main
 struct TapScoreApp: App {
-    @StateObject private var model = MatchModel()
+    @State private var model = MatchModel()   // @Observable model is owned with @State
     var body: some Scene {
         WindowGroup {
             RootView(model: model)
@@ -17,7 +17,7 @@ struct TapScoreApp: App {
 
 /// Routes between Start and Scoring based on whether a match is active.
 struct RootView: View {
-    @ObservedObject var model: MatchModel
+    var model: MatchModel   // @Observable: plain property; reads in body auto-track
     var body: some View {
         if model.active {
             ScoringView(model: model)
@@ -44,5 +44,5 @@ enum Haptics {
     static func game()     { WKInterfaceDevice.current().play(.directionUp) }
     static func setWon()   { WKInterfaceDevice.current().play(.success) }
     static func matchWon() { WKInterfaceDevice.current().play(.success) }
-    static func undo()     { WKInterfaceDevice.current().play(.retract) }
+    static func undo()     { WKInterfaceDevice.current().play(.directionDown) }
 }

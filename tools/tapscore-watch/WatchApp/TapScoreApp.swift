@@ -44,5 +44,5 @@ enum Haptics {
     static func game()     { WKInterfaceDevice.current().play(.directionUp) }
     static func setWon()   { WKInterfaceDevice.current().play(.success) }
     static func matchWon() { WKInterfaceDevice.current().play(.success) }
-    static func undo()     { WKInterfaceDevice.current().play(.retract) }
+    static func undo()     { WKInterfaceDevice.current().play(.directionDown) }
 }

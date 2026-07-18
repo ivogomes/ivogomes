@@ -28,6 +28,18 @@ final class MatchModel {
         return "\(noun) \(match.sets[0])-\(match.sets[1])"
     }
 
+    /// Full scoreline for the center pill, like the phone board: completed sets + current games,
+    /// e.g. "6-4  3-6  2-1". Target sports (no games) show their finished-game point scores.
+    var scorePill: String {
+        let m = match
+        var parts = m.completedSets.map { "\($0[0])-\($0[1])" }
+        if !ScoringEngine.isTargetSport(m.settings.sport) {
+            parts.append("\(m.games[0])-\(m.games[1])")   // current set's games
+        }
+        if parts.isEmpty { parts = ["0-0"] }              // target sport, first game
+        return parts.joined(separator: "  ")
+    }
+
     // MARK: actions
 
     func score(_ side: Int) {

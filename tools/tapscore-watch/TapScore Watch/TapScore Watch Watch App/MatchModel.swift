@@ -1,13 +1,16 @@
-import SwiftUI
+import Foundation
+import Observation
 import TapScoreEngine
 
 /// Owns the live match, drives the shared engine, plays haptics, and remembers the last format.
 /// Scoring rules are NOT here — they live in TapScoreEngine (single source of truth).
-final class MatchModel: ObservableObject {
-    @Published private(set) var match: MatchState
-    @Published var active: Bool = false          // false = show Start screen; true = scoring
+/// Uses the @Observable macro (watchOS 10+) — views observe reads automatically, no Combine.
+@Observable
+final class MatchModel {
+    private(set) var match: MatchState
+    var active: Bool = false                      // false = show Start screen; true = scoring
 
-    private var history: [MatchState] = []        // undo stack (snapshots)
+    @ObservationIgnored private var history: [MatchState] = []   // undo stack (snapshots); not observed
     private static let settingsKey = "tapscore.lastSettings"
 
     init() {
@@ -23,6 +26,18 @@ final class MatchModel: ObservableObject {
     var setsLine: String {
         let noun = ScoringEngine.isTargetSport(match.settings.sport) ? "GAME" : "SET"
         return "\(noun) \(match.sets[0])-\(match.sets[1])"
+    }
+
+    /// Full scoreline for the center pill, like the phone board: completed sets + current games,
+    /// e.g. "6-4  3-6  2-1". Target sports (no games) show their finished-game point scores.
+    var scorePill: String {
+        let m = match
+        var parts = m.completedSets.map { "\($0[0])-\($0[1])" }
+        if !ScoringEngine.isTargetSport(m.settings.sport) {
+            parts.append("\(m.games[0])-\(m.games[1])")   // current set's games
+        }
+        if parts.isEmpty { parts = ["0-0"] }              // target sport, first game
+        return parts.joined(separator: "  ")
     }
 
     // MARK: actions
