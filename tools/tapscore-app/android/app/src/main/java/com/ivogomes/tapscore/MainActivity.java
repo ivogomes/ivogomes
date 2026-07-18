@@ -2,6 +2,7 @@ package com.ivogomes.tapscore;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.PointerIcon;
 import android.view.WindowManager;
 
 import androidx.core.view.WindowCompat;
@@ -16,13 +17,23 @@ public class MainActivity extends BridgeActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         enableFullscreen();
+        hidePointer();
     }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         // Re-hide the bars after they're transiently revealed (swipe) or after returning to the app.
-        if (hasFocus) enableFullscreen();
+        if (hasFocus) { enableFullscreen(); hidePointer(); }
+    }
+
+    // A Bluetooth clicker enumerates as a mouse and draws a system cursor over the WebView.
+    // CSS `cursor: none` doesn't suppress Android's OS pointer, so hide it natively (API 24+).
+    private void hidePointer() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
+            && getBridge() != null && getBridge().getWebView() != null) {
+            getBridge().getWebView().setPointerIcon(PointerIcon.getSystemIcon(this, PointerIcon.TYPE_NULL));
+        }
     }
 
     private void enableFullscreen() {

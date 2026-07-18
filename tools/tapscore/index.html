@@ -97,6 +97,8 @@
   .ios-only { display: none; }
   .is-ios .ios-only { display: revert; }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  /* On touch devices / the native app the only "mouse" is a Bluetooth clicker — hide its pointer. */
+  html.hide-cursor, html.hide-cursor * { cursor: none !important; }
   html, body { height: 100%; margin: 0; }
   body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -126,9 +128,11 @@
     container-type: size;
     padding: env(safe-area-inset-top) 8px calc(env(safe-area-inset-bottom) + 78px);
   }
-  .side:active { filter: brightness(1.18); }
   .side-a { background: linear-gradient(160deg, var(--a), var(--a-dark)); }
   .side-b { background: linear-gradient(160deg, var(--b), var(--b-dark)); }
+  /* Whole-side flash when THIS team scores a point (not on every tap/press). */
+  .side.pointflash { animation: pointpulse .32s ease-out; }
+  @keyframes pointpulse { 0% { filter: brightness(1.35); } 100% { filter: brightness(1); } }
   /* set-won celebration: a quick white flash over the side + a pulse of the set score */
   .side::after { content: ""; position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
   .side.setwon::after { animation: setflash 1.1s ease-out; }
@@ -585,6 +589,7 @@
     box-shadow: var(--elev-3);
   }
   .modal .box p { margin: 0 0 20px; font-size: 16px; line-height: 1.4; }
+  .modal-sub { display: inline-block; margin-top: 8px; font-size: 13px; opacity: .6; font-weight: 400; }
   .modal .actions { display: flex; flex-direction: column; gap: 10px; }
   .modal .actions button {
     flex: 1; font: inherit; font-weight: 600; letter-spacing: .3px; padding: 13px;
@@ -910,6 +915,16 @@
     </div>
   </div>
 
+  <div class="modal" id="clickerModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="box">
+      <p><span data-i18n="clickerFoundMsg">Bluetooth clicker detected</span><br /><span class="modal-sub" data-i18n="clickerFoundSub">Turn on Clicker mode? 1 press = your team, 2 = opponents, 3 = undo.</span></p>
+      <div class="actions">
+        <button class="finish" id="clickerEnable" data-i18n="clickerTurnOn">Turn on</button>
+        <button class="cancel" id="clickerDismiss" data-i18n="notNow">Not now</button>
+      </div>
+    </div>
+  </div>
+
   <div class="setup" id="setup">
     <div class="appbar">
       <button class="appbar-btn" id="setupSettings" type="button" data-i18n-aria="settings" data-i18n-title="settings">
@@ -1046,9 +1061,8 @@
     </div>
     <div class="settings-scroll">
       <div class="settings-inner">
-        <!-- App preferences — shown from the home screen only -->
-        <div id="appSettings">
-        <div class="row">
+        <!-- Appearance / Language / Voice / How-to are home-only; Clicker mode shows in-match too. -->
+        <div class="row home-only">
           <div><label data-i18n="themeLbl">Appearance</label></div>
           <div class="seg" id="themeSeg">
             <button data-theme-pref="system" data-i18n="themeSystem">System</button>
@@ -1056,11 +1070,11 @@
             <button data-theme-pref="dark" data-i18n="themeDark">Dark</button>
           </div>
         </div>
-        <div class="row">
+        <div class="row home-only">
           <div><label data-i18n="langLbl">Language</label></div>
           <select id="langSelect" class="voiceSel" data-i18n-aria="langLbl"></select>
         </div>
-        <div class="row" id="voiceRow">
+        <div class="row home-only" id="voiceRow">
           <div>
             <label data-i18n="voiceLbl">Announcer voice</label>
             <span class="desc"><span data-i18n="voiceDesc">Only the voices your device exposes to the browser appear here.</span><span class="ios-only"> On iPhone, download extra voices in Settings → Accessibility → Spoken Content → Voices; if a voice isn't listed below, iOS isn't sharing it with web apps.</span></span>
@@ -1076,11 +1090,10 @@
           </div>
           <button class="switch" id="clickerSwitch" role="switch" aria-checked="false" data-i18n-aria="clickerLbl"></button>
         </div>
-        <button class="row rowlink" id="howtoRow" type="button">
+        <button class="row rowlink home-only" id="howtoRow" type="button">
           <span class="rowlink-label" data-i18n="helpTitle">How to use TapScore</span>
           <svg class="rowlink-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
         </button>
-        </div>
 
         <!-- Match settings — shown during a match only; length is locked (changing it needs a new match) -->
         <div id="matchSection">
@@ -1245,6 +1258,11 @@ const POINT_LABELS = ["0", "15", "30", "40"];
    the native iOS/Android shell, where window.Capacitor is injected. */
 const Cap = typeof window !== "undefined" ? window.Capacitor : undefined;
 const IS_NATIVE = !!(Cap && Cap.isNativePlatform && Cap.isNativePlatform());
+// Touch devices / native app: a connected Bluetooth clicker shows a mouse pointer — hide it.
+// (Desktop keeps its cursor for normal use.)
+if (IS_NATIVE || (typeof navigator !== "undefined" && (navigator.maxTouchPoints || 0) > 0)) {
+  document.documentElement.classList.add("hide-cursor");
+}
 function nativeHaptic() {
   const H = IS_NATIVE && Cap.Plugins && Cap.Plugins.Haptics;
   if (H) { try { H.impact({ style: "LIGHT" }); return true; } catch (e) {} }
@@ -1307,6 +1325,7 @@ const STR = {
     voiceAuto: "Automatic (best available)", done: "Done",
     clickerLbl: "Clicker mode", clickerDesc: "A Bluetooth clicker is detected automatically. Turn this on only to force it: 1 tap scores your team, 2 the opponents, 3 undoes.",
     themeLbl: "Appearance", themeSystem: "System", themeLight: "Light", themeDark: "Dark",
+    clickerFoundMsg: "Bluetooth clicker detected", clickerFoundSub: "Turn on Clicker mode? 1 press = your team, 2 = opponents, 3 = undo.", clickerTurnOn: "Turn on", notNow: "Not now",
     // change-ends descriptions (built dynamically): "End of set"/"Standard" prefixes
     ceEndOfSet: "End of set", ceStandard: "Standard",
     // help
@@ -1372,6 +1391,7 @@ const STR = {
     voiceAuto: "Automática (la mejor)", done: "Listo",
     clickerLbl: "Modo clicker", clickerDesc: "El clicker Bluetooth se detecta automáticamente. Actívalo solo para forzarlo: 1 toque para tu equipo, 2 para el rival, 3 deshace.",
     themeLbl: "Apariencia", themeSystem: "Sistema", themeLight: "Claro", themeDark: "Oscuro",
+    clickerFoundMsg: "Clicker Bluetooth detectado", clickerFoundSub: "¿Activar el modo clicker? 1 = tu equipo, 2 = rival, 3 = deshacer.", clickerTurnOn: "Activar", notNow: "Ahora no",
     ceEndOfSet: "Fin del set", ceStandard: "Estándar",
     helpTitle: "Cómo usar TapScore", helpSub: "Coloca el móvil junto a la pista y puntúa todo el partido con toques — lleva puntos, juegos, sets y saque por ti.",
     helpTapH: "Toca para puntuar", helpTapP: "Toca en el lado de un jugador para darle el punto. Los puntos suman juegos y sets automáticamente. ¿Error? Pulsa <strong>Deshacer</strong>.",
@@ -1433,6 +1453,7 @@ const STR = {
     voiceAuto: "Automática (a melhor)", done: "Concluir",
     clickerLbl: "Modo clicker", clickerDesc: "O clicker Bluetooth é detetado automaticamente. Liga só para forçar: 1 toque para a tua equipa, 2 para o adversário, 3 desfaz.",
     themeLbl: "Aparência", themeSystem: "Sistema", themeLight: "Claro", themeDark: "Escuro",
+    clickerFoundMsg: "Clicker Bluetooth detetado", clickerFoundSub: "Ativar o modo clicker? 1 = a tua equipa, 2 = adversário, 3 = desfazer.", clickerTurnOn: "Ativar", notNow: "Agora não",
     ceEndOfSet: "Fim do set", ceStandard: "Padrão",
     helpTitle: "Como usar o TapScore", helpSub: "Coloca o telemóvel junto ao campo e pontua o jogo todo com toques — conta pontos, jogos, sets e serviço por ti.",
     helpTapH: "Toca para pontuar", helpTapP: "Toca no lado de um jogador para lhe dar o ponto. Os pontos somam jogos e sets automaticamente. Enganaste-te? Toca em <strong>Desfazer</strong>.",
@@ -1494,6 +1515,7 @@ const STR = {
     voiceAuto: "Automatique (la meilleure)", done: "OK",
     clickerLbl: "Mode télécommande", clickerDesc: "La télécommande Bluetooth est détectée automatiquement. Activez uniquement pour forcer : 1 clic pour votre équipe, 2 pour l'adversaire, 3 annule.",
     themeLbl: "Apparence", themeSystem: "Système", themeLight: "Clair", themeDark: "Sombre",
+    clickerFoundMsg: "Télécommande Bluetooth détectée", clickerFoundSub: "Activer le mode télécommande ? 1 = votre équipe, 2 = adversaire, 3 = annuler.", clickerTurnOn: "Activer", notNow: "Plus tard",
     ceEndOfSet: "Fin de set", ceStandard: "Standard",
     helpTitle: "Utiliser TapScore", helpSub: "Posez le téléphone au bord du terrain et marquez tout le match d'un doigt — points, jeux, sets et service comptés pour vous.",
     helpTapH: "Touchez pour marquer", helpTapP: "Touchez le côté d'un joueur pour lui donner le point. Les points forment jeux et sets automatiquement. Erreur ? Touchez <strong>Annuler</strong>.",
@@ -1555,6 +1577,7 @@ const STR = {
     voiceAuto: "Automatisch (beste)", done: "Fertig",
     clickerLbl: "Clicker-Modus", clickerDesc: "Ein Bluetooth-Clicker wird automatisch erkannt. Nur zum Erzwingen einschalten: 1 Tipp für dein Team, 2 für die Gegner, 3 macht rückgängig.",
     themeLbl: "Darstellung", themeSystem: "System", themeLight: "Hell", themeDark: "Dunkel",
+    clickerFoundMsg: "Bluetooth-Clicker erkannt", clickerFoundSub: "Clicker-Modus aktivieren? 1 = dein Team, 2 = Gegner, 3 = rückgängig.", clickerTurnOn: "Aktivieren", notNow: "Nicht jetzt",
     ceEndOfSet: "Satzende", ceStandard: "Standard",
     helpTitle: "TapScore verwenden", helpSub: "Stell das Telefon an den Platzrand und zähle das ganze Match per Tipp — Punkte, Spiele, Sätze und Aufschlag inklusive.",
     helpTapH: "Zum Punkten tippen", helpTapP: "Tippe auf die Seite eines Spielers, um ihm den Punkt zu geben. Punkte werden automatisch zu Spielen und Sätzen. Vertippt? Tippe auf <strong>Zurück</strong>.",
@@ -1730,6 +1753,7 @@ function addPoint(i) {
   if (match.over) return;
   // a tiny haptic tick so a scored point feels registered even without looking
   if (!prefersReducedMotion() && !nativeHaptic() && navigator.vibrate) { try { navigator.vibrate(12); } catch (e) {} }
+  replayAnim(el(i === 0 ? "sideA" : "sideB"), "pointflash");   // highlight the team that scored
   snapshot();
   const before = { games: match.games.slice(), sets: match.sets.slice(), points: match.points.slice(), tiebreak: match.tiebreak };
 
@@ -2541,6 +2565,7 @@ function sideTap(side, e) {
   } else if (near(prevTapX, prevTapY) && (now - prevTapAt) < REMOTE_MULTI_MS) {
     clickerPt = { x, y };                                          // exact repeat → it's the clicker; learn the spot
     doUndo(); rTaps = 1; clickerTap();                             // undo the press just scored; recount (prev=1, this=2)
+    offerClickerMode();                                           // first detection → offer to force Clicker mode
   } else {
     scoreSide(side, e);                                            // finger / first press → instant, per-side
   }
@@ -2672,10 +2697,11 @@ function sheetClose(elm) {
    (the only setting that would restart the match); the rest apply live. */
 const settingsPage = el("settingsPage");
 function openSettingsPage(inMatch) {
-  // In-match: ONLY the current match's settings. From home: ONLY app preferences.
-  el("appSettings").style.display = inMatch ? "none" : "";
+  // In-match: match settings + Clicker mode. From home: app preferences + Clicker mode.
+  document.querySelectorAll("#settingsPage .home-only").forEach(e => e.style.display = inMatch ? "none" : "");
   el("matchSection").style.display = inMatch ? "" : "none";
   el("settingsPageTitle").textContent = inMatch ? t("matchSettings") : t("settings");
+  syncClickerSwitch();   // reflect current clicker-mode state (shown in both contexts)
   if (inMatch) {
     syncSettingsUI();   // reflect the live match's format + row visibility; all rows are editable
   } else {
@@ -2810,12 +2836,34 @@ function syncClickerSwitch() {
   b.classList.toggle("on", clickerMode);
   b.setAttribute("aria-checked", String(clickerMode));
 }
-el("clickerSwitch").addEventListener("click", () => {
-  clickerMode = !clickerMode;
-  try { localStorage.setItem("tennisTracker.clicker", clickerMode ? "1" : "0"); } catch (e) {}
+function setClickerMode(on) {
+  clickerMode = on;
+  try { localStorage.setItem("tennisTracker.clicker", on ? "1" : "0"); } catch (e) {}
   syncClickerSwitch();
-});
+}
+el("clickerSwitch").addEventListener("click", () => setClickerMode(!clickerMode));
 syncClickerSwitch();
+
+/* ---- "clicker detected" prompt ----
+   We can't see a Bluetooth HID connection from the web layer, but the first time a clicker is
+   used (a learned fixed-pixel tap, or a remote key press) we offer to switch on Clicker mode. */
+let clickerAsked = false;
+try { clickerAsked = localStorage.getItem("tennisTracker.clickerAsked") === "1"; } catch (e) {}
+const clickerModal = el("clickerModal");
+function markClickerAsked() {
+  clickerAsked = true;
+  try { localStorage.setItem("tennisTracker.clickerAsked", "1"); } catch (e) {}
+}
+function offerClickerMode() {
+  if (clickerMode || clickerAsked || match.over) return;
+  if (el("setup").classList.contains("show") || el("settingsPage").classList.contains("show")) return;
+  clickerModal.classList.add("show");
+  clickerModal.setAttribute("aria-hidden", "false");
+}
+function closeClickerModal() { clickerModal.classList.remove("show"); clickerModal.setAttribute("aria-hidden", "true"); }
+el("clickerEnable").addEventListener("click", () => { setClickerMode(true); markClickerAsked(); closeClickerModal(); });
+el("clickerDismiss").addEventListener("click", () => { markClickerAsked(); closeClickerModal(); });
+clickerModal.addEventListener("click", (e) => { if (e.target === clickerModal) { markClickerAsked(); closeClickerModal(); } });
 
 /* ---- appearance / theme (dark · light · system) ---- */
 let themePref = "system";
@@ -3139,7 +3187,10 @@ function remoteActive() {
   const ae = document.activeElement;
   if (ae && (ae.tagName === "INPUT" || ae.isContentEditable)) return false;
   if (match.over) return false;
-  return !["setup", "sheet", "winner", "confirmModal", "help"].some(id => el(id).classList.contains("show"));
+  // Don't act on remote/clicker input while any full-screen surface or dialog is open.
+  // (null-guarded so a renamed/removed overlay id can never throw and silently kill scoring.)
+  return !["setup", "settingsPage", "sportSheet", "winner", "confirmModal", "help", "statsScreen"]
+    .some(id => { const e = el(id); return e && e.classList.contains("show"); });
 }
 function resolveRemoteTaps() {
   const n = rTaps; rTaps = 0; rTapTimer = null;
@@ -3172,6 +3223,7 @@ function clickerTap() {
 document.addEventListener("keydown", (e) => {
   if (REMOTE_IGNORE.has(e.key) || !remoteActive()) return;
   e.preventDefault();
+  if (!e.repeat) offerClickerMode();   // a physical key = an external clicker/keyboard → offer Clicker mode
   if (e.repeat) {   // key auto-repeats while held → treat a long hold as undo
     if (!rLongFired && performance.now() - rDownAt >= REMOTE_LONG_MS) { rLongFired = true; remoteUndo(); }
     return;
