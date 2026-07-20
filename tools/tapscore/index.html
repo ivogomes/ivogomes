@@ -272,7 +272,7 @@
 
   /* Change-ends reminder toast — a brief pill above the controls */
   .toast {
-    position: fixed; left: 50%; z-index: 6;
+    position: fixed; left: 50%; z-index: 21;   /* above the winner screen so the trial nudge shows at match end */
     bottom: calc(env(safe-area-inset-bottom) + 74px);
     transform: translate(-50%, 10px);
     display: inline-flex; align-items: center; gap: 8px;
@@ -605,6 +605,54 @@
   .modal .confirm:hover { box-shadow: var(--elev-2); }
   .modal .actions button:active { transform: translateY(1px); }
 
+  /* ---- TapScore Pro: trial pill, settings banner, paywall ---- */
+  /* trial / upgrade pill in the home app bar */
+  .proPill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font: inherit; font-size: 13px; font-weight: 700; letter-spacing: .2px;
+    padding: 7px 12px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--fill-2); color: var(--ink);
+  }
+  .proPill.accent { background: linear-gradient(135deg, var(--a), var(--primary)); color: #fff; border: 0; }
+  .proPill:hover { box-shadow: var(--elev-1); }
+  .proPill[hidden] { display: none; }
+  /* settings Pro banner */
+  .proBanner {
+    display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+    font: inherit; cursor: pointer; margin-bottom: 8px;
+    padding: 14px 16px; border-radius: 16px; border: 0;
+    background: linear-gradient(135deg, var(--a), var(--primary)); color: #fff;
+    box-shadow: var(--elev-1);
+  }
+  .proBanner .pbIcon { font-size: 22px; line-height: 1; }
+  .proBanner .pbText { display: flex; flex-direction: column; gap: 2px; }
+  .proBanner .pbTitle { font-weight: 800; font-size: 15px; }
+  .proBanner .pbSub { font-size: 12.5px; opacity: .92; font-weight: 500; }
+  .proBanner .pbChev { margin-left: auto; opacity: .9; }
+  .proBanner[hidden] { display: none; }
+  /* paywall dialog (wider than a plain modal, left-aligned feature list) */
+  .paywall { z-index: 22; }   /* above the Settings page (13) & help (20) so it shows when opened from the banner */
+  .paywall .box { max-width: 380px; text-align: center; }
+  /* "PRO" badge on the TapScore logo once Pro is owned (scales with the h1) */
+  .logoPro {
+    display: inline-block; vertical-align: middle;
+    font-size: .32em; font-weight: 800; letter-spacing: .5px;
+    padding: .32em .5em; border-radius: .5em; margin-left: .45em;
+    background: linear-gradient(135deg, var(--a), var(--primary)); color: #fff;
+    transform: translateY(-.4em);
+  }
+  .logoPro[hidden] { display: none; }
+  .paywall h2 { margin: 4px 0 4px; font-size: 22px; }
+  .paywall .pwSub { margin: 0 0 16px; font-size: 14px; opacity: .7; }
+  .paywall .feats { list-style: none; margin: 0 0 16px; padding: 0; text-align: left; }
+  .paywall .feats li { display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 14.5px; }
+  .paywall .feats li svg { flex: 0 0 auto; color: var(--primary); }
+  .paywall .pwTrial { margin: 0 0 14px; font-size: 13px; opacity: .7; }
+  .paywall .restore {
+    background: none; border: 0; color: var(--ink); opacity: .7;
+    font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; padding: 8px;
+  }
+
   /* Help overlay — how to use the app */
   .help {
     position: fixed; inset: 0; z-index: 20;   /* above the Settings page (13) so it can open over it */
@@ -670,7 +718,8 @@
     flex: 0 0 auto; display: flex; align-items: center; gap: 6px;
     padding: calc(env(safe-area-inset-top) + 6px) max(8px, env(safe-area-inset-right)) 6px max(8px, env(safe-area-inset-left));
   }
-  .setup .appbar { justify-content: flex-end; }   /* only the settings gear, on the right */
+  .setup .appbar { justify-content: flex-end; }   /* settings gear on the right */
+  .setup .appbar .proPill { margin-right: auto; }  /* trial/upgrade pill sits on the left */
   .appbar-title { font-size: 18px; font-weight: 700; }
   .appbar-btn {
     width: 44px; height: 44px; flex: 0 0 auto;
@@ -925,8 +974,28 @@
     </div>
   </div>
 
+  <div class="modal paywall" id="paywallModal" role="dialog" aria-modal="true" aria-labelledby="paywallTitle" aria-hidden="true">
+    <div class="box">
+      <h2 id="paywallTitle" data-i18n="pro_title">TapScore Pro</h2>
+      <p class="pwSub" id="paywallSub" data-i18n="pro_sub_default">Unlock the full experience</p>
+      <ul class="feats">
+        <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="pro_feat_sports">All 8 sports</span></li>
+        <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="pro_feat_formats">Advanced formats, rules &amp; tie-breaks</span></li>
+        <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="pro_feat_stats">Match stats &amp; history</span></li>
+        <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span id="pwWatchFeat">Apple Watch &amp; Wear OS apps</span></li>
+      </ul>
+      <p class="pwTrial" id="paywallTrial"></p>
+      <div class="actions">
+        <button class="finish" id="paywallBuy">Unlock</button>
+        <button class="cancel" id="paywallLater" data-i18n="pro_later">Maybe later</button>
+      </div>
+      <button class="restore" id="paywallRestore" data-i18n="pro_restore">Restore purchase</button>
+    </div>
+  </div>
+
   <div class="setup" id="setup">
     <div class="appbar">
+      <button class="proPill" id="proPill" type="button" hidden></button>
       <button class="appbar-btn" id="setupSettings" type="button" data-i18n-aria="settings" data-i18n-title="settings">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -935,7 +1004,7 @@
     <div class="courtbg" id="courtBg" aria-hidden="true"></div>
     <div class="card">
       <div class="balls" id="setupBalls" aria-hidden="true"></div>
-      <h1>TapScore</h1>
+      <h1>TapScore<span class="logoPro" id="logoPro" hidden>PRO</span></h1>
       <p class="tagline" data-i18n="tagline">Tap either side to score — it tracks points, games, sets and serve for you</p>
 
       <div class="groups">
@@ -1061,6 +1130,11 @@
     </div>
     <div class="settings-scroll">
       <div class="settings-inner">
+        <button class="proBanner" id="proBanner" type="button" hidden>
+          <span class="pbIcon" aria-hidden="true">★</span>
+          <span class="pbText"><span class="pbTitle" data-i18n="pro_title">TapScore Pro</span><span class="pbSub" id="proBannerSub"></span></span>
+          <svg class="pbChev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
         <!-- Appearance / Language / Voice / How-to are home-only; Clicker mode shows in-match too. -->
         <div class="row home-only">
           <div><label data-i18n="themeLbl">Appearance</label></div>
@@ -1600,6 +1674,90 @@ const STR = {
     v_wGame: "Spiel", v_wSet: "Satz", v_correction: "Korrektur. ", v_allN: "%s beide",
   },
 };
+// TapScore Pro strings — merged into STR so each language block stays focused. English is the fallback.
+const PRO_STR = {
+  en: {
+    pro_title: "TapScore Pro", pro_sub_default: "Unlock the full experience",
+    pro_sub_sports: "That sport is part of TapScore Pro",
+    pro_sub_formats: "Advanced formats are part of TapScore Pro",
+    pro_sub_stats: "Match stats are part of TapScore Pro",
+    pro_feat_sports: "All 8 sports", pro_feat_formats: "Advanced formats, rules & tie-breaks",
+    pro_feat_stats: "Match stats & history", pro_feat_watch: "Apple Watch & Wear OS apps",
+    pro_feat_watch_ios: "Apple Watch app", pro_feat_watch_android: "Wear OS app",
+    pro_unlock: "Unlock — %s", pro_restore: "Restore purchase", pro_later: "Maybe later",
+    pro_unlocked: "TapScore Pro unlocked — thanks!", pro_restore_none: "Nothing to restore yet",
+    pro_pill_trial: "Pro trial: %s left", pro_pill_ended: "Unlock Pro", pro_pill_owned: "Pro",
+    trial_left_toast: "%s free Pro games left",
+    trial_ended_toast: "Free trial ended — unlock Pro to keep these features",
+    pro_banner_trial: "%s of %s free Pro games left",
+    pro_banner_ended: "Your free trial has ended", pro_banner_owned: "You have Pro — thank you!",
+  },
+  es: {
+    pro_title: "TapScore Pro", pro_sub_default: "Desbloquea la experiencia completa",
+    pro_sub_sports: "Ese deporte es parte de TapScore Pro",
+    pro_sub_formats: "Los formatos avanzados son parte de TapScore Pro",
+    pro_sub_stats: "Las estadísticas son parte de TapScore Pro",
+    pro_feat_sports: "Los 8 deportes", pro_feat_formats: "Formatos, reglas y tie-breaks avanzados",
+    pro_feat_stats: "Estadísticas e historial", pro_feat_watch: "Apps para Apple Watch y Wear OS",
+    pro_feat_watch_ios: "App para Apple Watch", pro_feat_watch_android: "App para Wear OS",
+    pro_unlock: "Desbloquear — %s", pro_restore: "Restaurar compra", pro_later: "Quizás luego",
+    pro_unlocked: "¡TapScore Pro desbloqueado, gracias!", pro_restore_none: "Nada que restaurar todavía",
+    pro_pill_trial: "Prueba Pro: quedan %s", pro_pill_ended: "Desbloquear Pro", pro_pill_owned: "Pro",
+    trial_left_toast: "Quedan %s partidos Pro gratis",
+    trial_ended_toast: "Prueba terminada: desbloquea Pro para seguir",
+    pro_banner_trial: "Quedan %s de %s partidos Pro gratis",
+    pro_banner_ended: "Tu prueba gratuita ha terminado", pro_banner_owned: "Tienes Pro. ¡Gracias!",
+  },
+  pt: {
+    pro_title: "TapScore Pro", pro_sub_default: "Desbloqueia a experiência completa",
+    pro_sub_sports: "Esse desporto faz parte do TapScore Pro",
+    pro_sub_formats: "Os formatos avançados fazem parte do TapScore Pro",
+    pro_sub_stats: "As estatísticas fazem parte do TapScore Pro",
+    pro_feat_sports: "Todos os 8 desportos", pro_feat_formats: "Formatos, regras e tie-breaks avançados",
+    pro_feat_stats: "Estatísticas e histórico", pro_feat_watch: "Apps para Apple Watch e Wear OS",
+    pro_feat_watch_ios: "App para Apple Watch", pro_feat_watch_android: "App para Wear OS",
+    pro_unlock: "Desbloquear — %s", pro_restore: "Restaurar compra", pro_later: "Talvez depois",
+    pro_unlocked: "TapScore Pro desbloqueado — obrigado!", pro_restore_none: "Nada para restaurar ainda",
+    pro_pill_trial: "Teste Pro: faltam %s", pro_pill_ended: "Desbloquear Pro", pro_pill_owned: "Pro",
+    trial_left_toast: "Faltam %s jogos Pro grátis",
+    trial_ended_toast: "Teste terminado — desbloqueia o Pro para continuar",
+    pro_banner_trial: "Faltam %s de %s jogos Pro grátis",
+    pro_banner_ended: "O teu teste gratuito terminou", pro_banner_owned: "Tens o Pro — obrigado!",
+  },
+  fr: {
+    pro_title: "TapScore Pro", pro_sub_default: "Débloquez l'expérience complète",
+    pro_sub_sports: "Ce sport fait partie de TapScore Pro",
+    pro_sub_formats: "Les formats avancés font partie de TapScore Pro",
+    pro_sub_stats: "Les statistiques font partie de TapScore Pro",
+    pro_feat_sports: "Les 8 sports", pro_feat_formats: "Formats, règles et tie-breaks avancés",
+    pro_feat_stats: "Statistiques et historique", pro_feat_watch: "Apps Apple Watch et Wear OS",
+    pro_feat_watch_ios: "App Apple Watch", pro_feat_watch_android: "App Wear OS",
+    pro_unlock: "Débloquer — %s", pro_restore: "Restaurer l'achat", pro_later: "Plus tard",
+    pro_unlocked: "TapScore Pro débloqué — merci !", pro_restore_none: "Rien à restaurer pour l'instant",
+    pro_pill_trial: "Essai Pro : %s restants", pro_pill_ended: "Débloquer Pro", pro_pill_owned: "Pro",
+    trial_left_toast: "%s parties Pro gratuites restantes",
+    trial_ended_toast: "Essai terminé — débloquez Pro pour continuer",
+    pro_banner_trial: "%s parties Pro gratuites sur %s restantes",
+    pro_banner_ended: "Votre essai gratuit est terminé", pro_banner_owned: "Vous avez Pro — merci !",
+  },
+  de: {
+    pro_title: "TapScore Pro", pro_sub_default: "Schalte alle Funktionen frei",
+    pro_sub_sports: "Diese Sportart gehört zu TapScore Pro",
+    pro_sub_formats: "Erweiterte Formate gehören zu TapScore Pro",
+    pro_sub_stats: "Statistiken gehören zu TapScore Pro",
+    pro_feat_sports: "Alle 8 Sportarten", pro_feat_formats: "Erweiterte Formate, Regeln & Tie-Breaks",
+    pro_feat_stats: "Statistiken & Verlauf", pro_feat_watch: "Apple Watch & Wear OS Apps",
+    pro_feat_watch_ios: "Apple Watch App", pro_feat_watch_android: "Wear OS App",
+    pro_unlock: "Freischalten — %s", pro_restore: "Kauf wiederherstellen", pro_later: "Später",
+    pro_unlocked: "TapScore Pro freigeschaltet — danke!", pro_restore_none: "Nichts wiederherzustellen",
+    pro_pill_trial: "Pro-Test: %s übrig", pro_pill_ended: "Pro freischalten", pro_pill_owned: "Pro",
+    trial_left_toast: "%s kostenlose Pro-Spiele übrig",
+    trial_ended_toast: "Test beendet — schalte Pro frei, um weiterzuspielen",
+    pro_banner_trial: "%s von %s kostenlosen Pro-Spielen übrig",
+    pro_banner_ended: "Dein kostenloser Test ist beendet", pro_banner_owned: "Du hast Pro — danke!",
+  },
+};
+Object.keys(PRO_STR).forEach(l => { if (STR[l]) Object.assign(STR[l], PRO_STR[l]); });
 function t(k) { const L = STR[lang] || STR.en; return (k in L ? L[k] : (k in STR.en ? STR.en[k] : k)); }
 function tf(k) { const args = [].slice.call(arguments, 1); let s = t(k), i = 0; return s.replace(/%s/g, () => args[i++]); }
 // apply translations to static markup: [data-i18n]=textContent, -html=innerHTML, -aria / -title = attribute
@@ -2339,7 +2497,7 @@ function render() {
     el("winnerScore").innerHTML = match.completedSets.map(s => `<span>${s[0]}–${s[1]}</span>`).join("");
     win.classList.add("show");
     requestAnimationFrame(fitWinnerName);   // scale the name to fill the screen
-    if (!winnerShown) { winnerShown = true; if (!tie) launchConfetti(); }   // celebrate a win, not a tie
+    if (!winnerShown) { winnerShown = true; consumeTrialGame(); if (!tie) launchConfetti(); }   // celebrate a win, not a tie
   } else {
     win.classList.remove("show");
     winnerShown = false;
@@ -2701,6 +2859,7 @@ function openSettingsPage(inMatch) {
   document.querySelectorAll("#settingsPage .home-only").forEach(e => e.style.display = inMatch ? "none" : "");
   el("matchSection").style.display = inMatch ? "" : "none";
   el("settingsPageTitle").textContent = inMatch ? t("matchSettings") : t("settings");
+  refreshProUI();        // Pro banner reflects trial / owned status
   syncClickerSwitch();   // reflect current clicker-mode state (shown in both contexts)
   if (inMatch) {
     syncSettingsUI();   // reflect the live match's format + row visibility; all rows are editable
@@ -2897,6 +3056,105 @@ el("themeSeg").addEventListener("click", (e) => {
 if (darkMQ) { try { darkMQ.addEventListener("change", () => { if (themePref === "system") applyTheme(); }); } catch (e) {} }
 applyTheme();
 
+/* ==================== TapScore Pro (free trial → one-time unlock) ====================
+   The whole app — every sport, every format, stats, the works — is free for the first 3 completed
+   games (the trial). After that, a one-time Pro unlock is needed to start new matches. Nothing is
+   gated by sport or feature; the only gate is "Start match" once the 3 free games are used up.
+   Purchases are stubbed behind Billing.* — wire StoreKit 2 / Play Billing there later. */
+const PRO_KEY = "tennisTracker.pro";
+const TRIAL_KEY = "tennisTracker.trialGames";
+const TRIAL_LIMIT = 3;
+const PRO_PRICE = "$4.99";                 // display only; the store returns the real localized price
+
+let proOwned = false, trialUsed = 0;
+try { proOwned = localStorage.getItem(PRO_KEY) === "1"; } catch (e) {}
+try { trialUsed = parseInt(localStorage.getItem(TRIAL_KEY), 10) || 0; } catch (e) {}
+
+function trialRemaining() { return Math.max(0, TRIAL_LIMIT - trialUsed); }
+function trialActive() { return !proOwned && trialRemaining() > 0; }
+function isPro() { return proOwned || trialActive(); }          // may start a match (owned or trial left)
+
+// Purchase layer — STUB. Today it unlocks locally so the flow is testable on web and native.
+// TODO: wire real IAP (StoreKit 2 on iOS, Play Billing on Android — e.g. a Capacitor IAP plugin
+// or RevenueCat) and set proOwned from the *verified* entitlement instead of unconditionally.
+const Billing = {
+  async purchase() { grantPro(); return true; },
+  async restore() { return proOwned; },      // real impl: query entitlements, then grantPro() if owned
+};
+
+function grantPro() {
+  proOwned = true;
+  try { localStorage.setItem(PRO_KEY, "1"); } catch (e) {}
+  refreshProUI();
+}
+
+// Called once when a match completes (from render). Every completed game counts toward the trial.
+function consumeTrialGame() {
+  if (proOwned) return;
+  if (!(match.rallies > 0)) return;          // don't burn a game on an empty finish
+  if (trialRemaining() <= 0) return;
+  trialUsed++;
+  try { localStorage.setItem(TRIAL_KEY, String(trialUsed)); } catch (e) {}
+  const left = trialRemaining();
+  showToast(left > 0 ? tf("trial_left_toast", left) : t("trial_ended_toast"));
+  refreshProUI();
+}
+
+/* ---- paywall dialog ---- */
+const paywallModal = el("paywallModal");
+// Apple Watch pairs only with iPhone; Wear OS only with Android — so name the right one per platform.
+function appPlatform() { try { return (Cap && Cap.getPlatform) ? Cap.getPlatform() : "web"; } catch (e) { return "web"; } }
+function openPaywall() {
+  el("paywallSub").textContent = t("pro_sub_default");
+  el("paywallBuy").textContent = tf("pro_unlock", PRO_PRICE);
+  const plat = appPlatform();
+  el("pwWatchFeat").textContent = plat === "ios" ? t("pro_feat_watch_ios")
+    : plat === "android" ? t("pro_feat_watch_android")
+    : t("pro_feat_watch");   // plain web build: mention both
+  const line = proOwned ? "" : (trialActive() ? tf("pro_banner_trial", trialRemaining(), TRIAL_LIMIT) : t("pro_banner_ended"));
+  el("paywallTrial").textContent = line;
+  el("paywallTrial").style.display = line ? "" : "none";
+  paywallModal.classList.add("show");
+  paywallModal.setAttribute("aria-hidden", "false");
+}
+function closePaywall() { paywallModal.classList.remove("show"); paywallModal.setAttribute("aria-hidden", "true"); }
+el("paywallLater").addEventListener("click", closePaywall);
+paywallModal.addEventListener("click", (e) => { if (e.target === paywallModal) closePaywall(); });
+el("paywallBuy").addEventListener("click", async () => {
+  try { await Billing.purchase(); } catch (e) {}
+  if (proOwned) { closePaywall(); showToast(t("pro_unlocked")); }
+});
+el("paywallRestore").addEventListener("click", async () => {
+  let ok = false;
+  try { ok = await Billing.restore(); } catch (e) {}
+  if (ok) { grantPro(); closePaywall(); showToast(t("pro_unlocked")); }
+  else showToast(t("pro_restore_none"));
+});
+
+// Reflect trial/entitlement status in the home pill and the settings banner.
+function refreshProUI() {
+  const pill = el("proPill");
+  if (pill) {
+    if (proOwned) { pill.hidden = true; }
+    else {
+      pill.hidden = false;
+      pill.classList.toggle("accent", !trialActive());   // solid accent once the trial has ended
+      pill.textContent = trialActive() ? tf("pro_pill_trial", trialRemaining()) : t("pro_pill_ended");
+    }
+  }
+  const banner = el("proBanner"), sub = el("proBannerSub");
+  if (banner && sub) {
+    banner.hidden = proOwned;   // owned users don't need an upsell banner — the logo badge acknowledges Pro
+    if (!proOwned) {
+      sub.textContent = trialActive() ? tf("pro_banner_trial", trialRemaining(), TRIAL_LIMIT) : t("pro_banner_ended");
+    }
+  }
+  const logoPro = el("logoPro");
+  if (logoPro) logoPro.hidden = !proOwned;   // badge the TapScore logo once Pro is owned
+}
+el("proPill").addEventListener("click", () => openPaywall());
+el("proBanner").addEventListener("click", () => { if (!proOwned) openPaywall(); });
+
 function syncSettingsUI() {
   const tt = isTargetSport();
   fillBestOf("formatSeg", match.settings.sport);
@@ -2940,6 +3198,7 @@ function showSetup(cancellable) {
   moreOpen = false;   // always start collapsed so the screen opens simple
   syncMore();
   syncSetupUI();
+  refreshProUI();     // trial pill reflects games remaining
   el("setup").classList.add("show");
 }
 
@@ -3132,6 +3391,7 @@ el("setupWinBy").addEventListener("click", (e) => {
 el("setupBalls").innerHTML = ["tennis", "tabletennis", "pickleball"].map(s => ballSVG(s)).join("");
 
 el("startBtn").addEventListener("click", () => {
+  if (!isPro()) { openPaywall(); return; }   // free trial used up → unlock Pro to start new matches
   match = freshMatch({
     sport: pendingSetup.sport,
     mode: pendingSetup.mode,
