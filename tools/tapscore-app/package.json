@@ -14,6 +14,8 @@
     "run:android": "npm run sync && cap run android",
     "apk:build": "npm run sync && cd android && JAVA_HOME=\"/Applications/Android Studio.app/Contents/jbr/Contents/Home\" ./gradlew assembleDebug && echo \"\\nAPK: tools/tapscore-app/android/app/build/outputs/apk/debug/app-debug.apk\"",
     "apk": "npm run apk:build && \"$HOME/Library/Android/sdk/platform-tools/adb\" install -r android/app/build/outputs/apk/debug/app-debug.apk",
+    "aab": "npm run sync && cd android && JAVA_HOME=\"/Applications/Android Studio.app/Contents/jbr/Contents/Home\" ./gradlew bundleRelease && echo \"\\nAAB (upload this to Play Console): tools/tapscore-app/android/app/build/outputs/bundle/release/app-release.aab\"",
+    "shots": "bash screenshots/capture.sh",
     "ios": "npm run sync && cap run ios",
     "ios:list": "cap run ios --list",
     "assets": "npx --yes @capacitor/assets@3 generate --iconBackgroundColor '#0b1220' --splashBackgroundColor '#0b1220'"
