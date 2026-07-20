@@ -77,15 +77,16 @@ fun ScoringScreen(model: MatchModel) {
             .focusable()
     ) {
         // Full-bleed tappable halves, each with its own centered score + outer-edge label.
+        // A = lime bg + dark-blue ink; B = dark-blue bg + lime ink.
         Column(Modifier.fillMaxSize()) {
             ScoreHalf(
-                color = Theme.azure, label = "YOU", score = labels[0],
+                color = Theme.sideA, ink = Theme.sideAInk, label = "YOU", score = labels[0],
                 serving = m.server == 0, alignTop = true,
                 modifier = Modifier.weight(1f),
                 onScore = { model.score(0) }, onLong = { showMenu = true }
             )
             ScoreHalf(
-                color = Theme.coral, label = "OPP", score = labels[1],
+                color = Theme.sideB, ink = Theme.sideBInk, label = "OPP", score = labels[1],
                 serving = m.server == 1, alignTop = false,
                 modifier = Modifier.weight(1f),
                 onScore = { model.score(1) }, onLong = { showMenu = true }
@@ -118,7 +119,7 @@ fun ScoringScreen(model: MatchModel) {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun ScoreHalf(
-    color: Color, label: String, score: String, serving: Boolean, alignTop: Boolean,
+    color: Color, ink: Color, label: String, score: String, serving: Boolean, alignTop: Boolean,
     modifier: Modifier, onScore: () -> Unit, onLong: () -> Unit,
 ) {
     Box(
@@ -127,11 +128,11 @@ private fun ScoreHalf(
             .background(color)
             .combinedClickable(onClick = onScore, onLongClick = onLong)
     ) {
-        // Big score dead-center of the half.
+        // Big score dead-center of the half, inked for its side.
         BasicText(
             text = score,
             modifier = Modifier.align(Alignment.Center),
-            style = TextStyle(color = Color.White, fontSize = 60.sp, fontWeight = FontWeight.Black)
+            style = TextStyle(color = ink, fontSize = 60.sp, fontWeight = FontWeight.Black, fontFamily = Theme.scoreFont)
         )
         // Label + serve dot pinned to the outer edge (top for YOU, bottom for OPP).
         Row(
@@ -140,10 +141,10 @@ private fun ScoreHalf(
                 .padding(horizontal = 12.dp, vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            BasicText(text = label, style = TextStyle(color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Black))
+            BasicText(text = label, style = TextStyle(color = ink, fontSize = 13.sp, fontWeight = FontWeight.Black))
             if (serving) {
                 Spacer(Modifier.width(6.dp))
-                Box(Modifier.size(9.dp).clip(CircleShape).background(Theme.lime))
+                Box(Modifier.size(9.dp).clip(CircleShape).background(ink))
             }
         }
     }
@@ -164,9 +165,9 @@ private fun MatchMenu(model: MatchModel, onDismiss: () -> Unit) {
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             if (model.canUndo) {
-                PillButton("Undo point", Theme.azure, Color.White) { model.undo(); onDismiss() }
+                PillButton("Undo point", Theme.lime, Theme.onLime) { model.undo(); onDismiss() }
             }
-            PillButton("End match", Theme.coral, Color.White) { model.endMatch(); onDismiss() }
+            PillButton("End match", Theme.danger, Color.White) { model.endMatch(); onDismiss() }
             PillButton("Cancel", Color(0xFF243247), Color.White, onClick = onDismiss)
         }
     }

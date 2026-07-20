@@ -68,6 +68,17 @@ integrate it as a phone companion later). Click-by-click:
   **Minimum Deployments** to **watchOS 10.0+** (project ▸ target ▸ General ▸ Minimum Deployments).
   The model uses the modern `@Observable` macro (no Combine), which needs watchOS 10+.
 
+## Score font (Outfit)
+
+The scoreboard uses the same lime / dark-blue inversion as the phone (side A = lime bg + dark-blue
+score, side B = dark-blue bg + lime score) and the **Outfit** score font. `Theme.score(_:)` calls
+`Font.custom("Outfit", …)`, which falls back to the system font until Outfit is bundled:
+
+1. Get the Outfit `.ttf` files (Bold + ExtraBold) from Google Fonts (or download directly).
+2. Drag them into the **watch target** (tick it under *Add to targets*).
+3. Add each filename under **Info.plist → "Fonts provided by application" (UIAppFonts)**.
+4. Verify the family name is `Outfit` (Font Book), then rebuild.
+
 ## 3. What works in v1
 
 - Standalone: opens to **Start** (last-used sport + best-of remembered), one tap to play.

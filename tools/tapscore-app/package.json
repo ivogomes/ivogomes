@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "copy:web": "node copy-web.mjs",
+    "fonts": "bash fonts/fetch-outfit.sh",
     "sync": "npm run copy:web && cap sync",
     "open:ios": "cap open ios",
     "open:android": "cap open android",

@@ -6,14 +6,30 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontFamily
 
 /** Palette mirrors the phone/web app tokens; the watch is always dark. */
 object Theme {
-    val bg = Color(0xFF0B1220)
-    val azure = Color(0xFF0EA5E9)   // side 0 (YOU)
-    val coral = Color(0xFFF43F5E)   // side 1 (OPP)
-    val lime = Color(0xFFC9E64B)    // serve dot / accents
-    val onLime = Color(0xFF0B1220)  // text on lime buttons
+    val bg = Color(0xFF0B1220)      // dark blue (app bg + side B)
+    val lime = Color(0xFFC9E64B)
+    val ink = Color(0xFF0B1220)     // dark-blue text on lime
+    val onLime = ink
+    val gold = Color(0xFFF7C948)    // winner accent
+    val danger = Color(0xFFF43F5E)  // destructive (End match)
+
+    // Scoring sides mirror the phone: A = lime bg + dark-blue score; B = dark-blue bg + lime score.
+    val sideA = lime
+    val sideAInk = ink
+    val sideB = bg
+    val sideBInk = lime
+
+    // Score font. Falls back to the system font until Outfit is bundled: drop outfit_bold.ttf /
+    // outfit_extrabold.ttf into res/font/, then swap Default for the commented family below (see README).
+    val scoreFont: FontFamily = FontFamily.Default
+    // val scoreFont = FontFamily(
+    //     Font(R.font.outfit_bold, FontWeight.Bold),
+    //     Font(R.font.outfit_extrabold, FontWeight.ExtraBold),
+    // )
 }
 
 /**

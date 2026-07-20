@@ -58,6 +58,19 @@ Instead of step 2, create a plain Kotlin/Android library module `:engine`, drop 
 (and the test) there, and add `implementation(project(":engine"))` to the Wear app module. This keeps
 the pure engine free of Android deps and lets it be shared with a future phone app.
 
+## Score font (Outfit)
+
+The scoreboard uses the same lime / dark-blue inversion as the phone (side A = lime bg + dark-blue
+score, side B = dark-blue bg + lime score) and the **Outfit** score font. `Theme.scoreFont` defaults
+to the system font until Outfit is bundled:
+
+1. Download Outfit `.ttf` (Bold + ExtraBold); name them `outfit_bold.ttf` / `outfit_extrabold.ttf`
+   (lowercase, underscores) and drop them in `app/src/main/res/font/`.
+2. In `Theme.kt`, replace `val scoreFont = FontFamily.Default` with the commented `FontFamily(Font(…))`
+   block below it, and add imports `androidx.compose.ui.text.font.Font`,
+   `androidx.compose.ui.text.font.FontWeight`, and your app's `R`.
+3. Rebuild.
+
 ## What works in v1
 - Standalone: opens to **Start** (last sport + best-of remembered), one tap to play.
 - Two-zone scoring, serve dot, scoreline/tie pill on the split, per-event **haptics**

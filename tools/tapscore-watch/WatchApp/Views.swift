@@ -22,26 +22,27 @@ struct ScoringView: View {
         let labels = model.pointLabels
         return ZStack {
             // Full-bleed tappable color halves (they own the taps).
+            // A = lime bg + dark-blue score; B = dark-blue bg + lime score.
             VStack(spacing: 0) {
-                Theme.azure.contentShape(Rectangle()).onTapGesture { model.score(0) }
-                Theme.coral.contentShape(Rectangle()).onTapGesture { model.score(1) }
+                Theme.sideA.contentShape(Rectangle()).onTapGesture { model.score(0) }
+                Theme.sideB.contentShape(Rectangle()).onTapGesture { model.score(1) }
             }
             .ignoresSafeArea()
 
             // Scores: full-bleed halves that match the colors exactly, so each number is
-            // dead-center of its blue/red area.
+            // dead-center of its area, with per-side ink for contrast.
             VStack(spacing: 0) {
-                scoreCell(labels[0])
-                scoreCell(labels[1])
+                scoreCell(labels[0], ink: Theme.sideAInk)
+                scoreCell(labels[1], ink: Theme.sideBInk)
             }
             .ignoresSafeArea()
             .allowsHitTesting(false)
 
             // Labels + serve dots stay inside the safe area (clear of the clock and bezel).
             VStack(spacing: 0) {
-                labelRow("YOU", serving: m.server == 0)
+                labelRow("YOU", serving: m.server == 0, ink: Theme.sideAInk)
                 Spacer(minLength: 0)
-                labelRow("OPP", serving: m.server == 1)
+                labelRow("OPP", serving: m.server == 1, ink: Theme.sideBInk)
             }
             .allowsHitTesting(false)
 
@@ -73,18 +74,18 @@ struct ScoringView: View {
         }
     }
 
-    /// A large score centered in one full-bleed half.
-    private func scoreCell(_ score: String) -> some View {
+    /// A large score centered in one full-bleed half, inked for its side.
+    private func scoreCell(_ score: String, ink: Color) -> some View {
         Text(score)
-            .font(.system(size: 64, weight: .heavy, design: .rounded))
-            .foregroundStyle(.white).minimumScaleFactor(0.5).lineLimit(1)
+            .font(Theme.score(64))
+            .foregroundStyle(ink).minimumScaleFactor(0.5).lineLimit(1)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
-    private func labelRow(_ label: String, serving: Bool) -> some View {
+    private func labelRow(_ label: String, serving: Bool, ink: Color) -> some View {
         HStack(spacing: 6) {
-            Text(label).font(.system(size: 13, weight: .heavy)).foregroundStyle(.white.opacity(0.95))
-            if serving { Circle().fill(Theme.lime).frame(width: 9, height: 9) }
+            Text(label).font(.system(size: 13, weight: .heavy)).foregroundStyle(ink.opacity(0.95))
+            if serving { Circle().fill(ink).frame(width: 9, height: 9) }
             Spacer()
         }
     }
@@ -138,7 +139,7 @@ struct EndView: View {
         return ScrollView {
             VStack(spacing: 8) {
                 Image(systemName: tie ? "equal.circle.fill" : "trophy.fill")
-                    .font(.system(size: 34)).foregroundStyle(Theme.lime)
+                    .font(.system(size: 34)).foregroundStyle(tie ? Theme.lime : Theme.gold)
                 Text(tie ? "It's a tie" : "\(names[m.winner ?? 0]) win\(m.winner == 0 ? "" : "s")!")
                     .font(.system(size: 20, weight: .heavy)).foregroundStyle(.white)
                 Text(m.completedSets.map { "\($0[0])-\($0[1])" }.joined(separator: " · "))

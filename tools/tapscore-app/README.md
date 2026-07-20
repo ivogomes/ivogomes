@@ -85,16 +85,22 @@ being installed. After a clean install you should see ~1 low-impact warning
 (`tar`, pulled in by the Capacitor CLI to fetch official platform templates).
 **Do not run `npm audit fix --force`** — it breaks the Capacitor CLI version.
 
-## (Optional) Bundle the Outfit font for pixel-perfect parity
+## Bundle the Outfit score font (recommended)
 
 The web build loads Outfit from Google Fonts; the native build strips that
-network call and falls back to the system font. To keep Outfit exactly:
+network call, so **without a self-hosted copy the score readout falls back to
+system-ui**. To ship Outfit in the native apps:
 
-1. Download the Outfit `600/700/800` woff2 files (e.g. from
-   [google-webfonts-helper](https://gwfh.mranftl.com/fonts/outfit)).
-2. Put them in `./fonts/` next to a `./fonts/outfit.css` with `@font-face`
-   rules pointing at them (`font-display: swap`).
-3. `npm run copy:web` auto-detects `./fonts/outfit.css` and wires it in.
+```bash
+npm run fonts   # downloads Outfit 600/700/800 woff2 + writes fonts/outfit.css (needs internet)
+npm run sync    # copy-web.mjs auto-detects fonts/outfit.css and bundles it
+```
+
+`npm run fonts` runs `fonts/fetch-outfit.sh`, which pulls the exact woff2 files
+Google serves and generates `fonts/outfit.css` (with `font-display: swap` and the
+original `unicode-range` blocks). The downloaded binaries are git-ignored —
+re-run `npm run fonts` on a fresh checkout. `copy-web.mjs` prints whether the
+self-hosted font was found or it fell back to system-ui.
 
 ---
 

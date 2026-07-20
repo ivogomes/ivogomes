@@ -1,0 +1,3 @@
+# Downloaded font binaries + generated CSS (regenerate with: npm run fonts)
+*.woff2
+outfit.css
