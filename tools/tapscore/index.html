@@ -511,6 +511,26 @@
   .clk-action:hover { background: var(--fill-3); }
   .clk-off { display: block; width: 100%; background: none; border: 0; color: var(--danger); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; padding: 12px; margin-top: 4px; }
 
+  /* Match history list */
+  .histlist { display: flex; flex-direction: column; gap: 8px; margin: 4px 0 12px; }
+  .histrow { display: flex; gap: 12px; align-items: center; padding: 11px 12px; border-radius: 14px; background: var(--fill-1); width: 100%; text-align: left; font: inherit; color: var(--ink); border: 0; }
+  .histrow.tappable { cursor: pointer; }
+  .histrow.tappable:hover { background: var(--fill-2); }
+  .histrow.tappable:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .hist-chev { flex: 0 0 auto; color: #94a3b8; }
+  .hist-ball { width: 32px; height: 32px; flex: 0 0 auto; }
+  .hist-ball svg { width: 100%; height: 100%; display: block; }
+  .hist-main { flex: 1 1 auto; min-width: 0; }
+  .hist-top { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+  .hist-win { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hist-date { font-size: 12px; opacity: .6; white-space: nowrap; flex: 0 0 auto; }
+  .hist-score { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 5px; font-family: var(--score-font); font-weight: 700; font-size: 14px; }
+  .hist-score span { background: var(--fill-2); padding: 1px 8px; border-radius: 6px; }
+  .hist-meta { font-size: 12px; opacity: .55; margin-top: 4px; }
+  .hist-empty { opacity: .6; text-align: center; padding: 28px 8px; line-height: 1.5; }
+  .hist-clear { display: block; width: 100%; background: none; border: 0; color: var(--danger); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; padding: 12px; }
+  .hist-clear[hidden] { display: none; }
+
   /* Material 3 segmented button — one connected control for "pick one of these", not loose buttons */
   .seg {
     display: flex; width: 100%;
@@ -995,6 +1015,21 @@
     </div>
   </div>
 
+  <div class="settingspage" id="historyScreen" role="dialog" aria-modal="true" aria-labelledby="historyTitle" aria-hidden="true">
+    <div class="appbar appbar-page">
+      <button class="appbar-btn" id="historyBack" type="button" data-i18n-aria="done">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <span class="appbar-title" id="historyTitle" data-i18n="historyTitle">Match history</span>
+    </div>
+    <div class="settings-scroll">
+      <div class="settings-inner">
+        <div class="histlist" id="historyBody"></div>
+        <button class="hist-clear" id="historyClear" data-i18n="historyClear">Clear history</button>
+      </div>
+    </div>
+  </div>
+
   <div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="box">
       <p><span data-i18n="confirmMsg">End this game?</span></p>
@@ -1045,6 +1080,9 @@
   <div class="setup" id="setup">
     <div class="appbar">
       <button class="proPill" id="proPill" type="button" hidden></button>
+      <button class="appbar-btn" id="historyBtn" type="button" data-i18n-aria="historyTitle" data-i18n-title="historyTitle">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 5v4h4"/><path d="M3.5 9a8.5 8.5 0 1 1-1 4"/><path d="M12 7.5V12l3 2"/></svg>
+      </button>
       <button class="appbar-btn" id="setupSettings" type="button" data-i18n-aria="settings" data-i18n-title="settings">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -1460,7 +1498,7 @@ const STR = {
     helpGot: "Got it",
     helpIosTip: "<strong>iPhone tip:</strong> if the voice sounds robotic, download a better one in <em>Settings → Accessibility → Spoken Content → Voices → English</em> (pick an “Enhanced” or “Premium” voice), then choose it under <em>Settings → Announcer voice</em> in TapScore.",
     // stats
-    statsTitle: "Match stats", stDuration: "Duration", stPoints: "Points", stAvg: "Avg point*",
+    statsTitle: "Match stats", historyTitle: "Match history", historyEmpty: "No games yet. Finished matches show up here.", historyClear: "Clear history", historyClearConfirm: "Tap again to clear", stDuration: "Duration", stPoints: "Points", stAvg: "Avg point*",
     stServe: "Points won on serve", stHead: "Head to head", stPointsWon: "Points won",
     stBreaks: "Breaks of serve", stLongRun: "Longest run", stMomentum: "Momentum", stMomentumSub: "cumulative point lead",
     stLeadChg: "Lead changes", stBigLead: "Biggest lead", stComeback: "Biggest comeback",
@@ -1523,7 +1561,7 @@ const STR = {
     helpVoiceH: "Escucha el marcador", helpVoiceP: "Pulsa el altavoz de la barra inferior para que cante cada punto. Conecta un altavoz Bluetooth y todos oirán el marcador.",
     helpGot: "Entendido",
     helpIosTip: "<strong>Consejo iPhone:</strong> si la voz suena robótica, descarga una mejor en <em>Ajustes → Accesibilidad → Contenido hablado → Voces → Español</em> (elige una “Mejorada” o “Premium”) y selecciónala en <em>Ajustes → Voz del locutor</em> de TapScore.",
-    statsTitle: "Estadísticas", stDuration: "Duración", stPoints: "Puntos", stAvg: "Punto medio*",
+    statsTitle: "Estadísticas", historyTitle: "Historial", historyEmpty: "Aún no hay partidos. Los partidos terminados aparecen aquí.", historyClear: "Borrar historial", historyClearConfirm: "Toca otra vez para borrar", stDuration: "Duración", stPoints: "Puntos", stAvg: "Punto medio*",
     stServe: "Puntos ganados al saque", stHead: "Cara a cara", stPointsWon: "Puntos ganados",
     stBreaks: "Roturas de saque", stLongRun: "Mejor racha", stMomentum: "Momentum", stMomentumSub: "ventaja acumulada de puntos",
     stLeadChg: "Cambios de líder", stBigLead: "Mayor ventaja", stComeback: "Mayor remontada",
@@ -1585,7 +1623,7 @@ const STR = {
     helpVoiceH: "Ouve o resultado", helpVoiceP: "Toca no altifalante da barra inferior para anunciar cada ponto. Liga uma coluna Bluetooth e todos ouvem o resultado.",
     helpGot: "Percebi",
     helpIosTip: "<strong>Dica iPhone:</strong> se a voz soar robótica, descarrega uma melhor em <em>Definições → Acessibilidade → Conteúdo falado → Vozes → Português</em> (escolhe uma “Melhorada” ou “Premium”) e seleciona-a em <em>Definições → Voz do locutor</em> no TapScore.",
-    statsTitle: "Estatísticas", stDuration: "Duração", stPoints: "Pontos", stAvg: "Ponto médio*",
+    statsTitle: "Estatísticas", historyTitle: "Histórico", historyEmpty: "Ainda não há jogos. Os jogos terminados aparecem aqui.", historyClear: "Limpar histórico", historyClearConfirm: "Toca de novo para limpar", stDuration: "Duração", stPoints: "Pontos", stAvg: "Ponto médio*",
     stServe: "Pontos ganhos ao serviço", stHead: "Frente a frente", stPointsWon: "Pontos ganhos",
     stBreaks: "Quebras de serviço", stLongRun: "Melhor sequência", stMomentum: "Momentum", stMomentumSub: "vantagem acumulada de pontos",
     stLeadChg: "Trocas de liderança", stBigLead: "Maior vantagem", stComeback: "Maior recuperação",
@@ -1647,7 +1685,7 @@ const STR = {
     helpVoiceH: "Écoutez le score", helpVoiceP: "Touchez le haut-parleur en bas pour annoncer chaque point. Reliez une enceinte Bluetooth et tout le monde entend le score.",
     helpGot: "Compris",
     helpIosTip: "<strong>Astuce iPhone :</strong> si la voix semble robotique, téléchargez-en une meilleure dans <em>Réglages → Accessibilité → Contenu énoncé → Voix → Français</em> (choisissez « Améliorée » ou « Premium »), puis sélectionnez-la dans <em>Réglages → Voix de l’annonceur</em> de TapScore.",
-    statsTitle: "Statistiques", stDuration: "Durée", stPoints: "Points", stAvg: "Point moyen*",
+    statsTitle: "Statistiques", historyTitle: "Historique", historyEmpty: "Aucun match pour l'instant. Les matchs terminés apparaissent ici.", historyClear: "Effacer l'historique", historyClearConfirm: "Touchez encore pour effacer", stDuration: "Durée", stPoints: "Points", stAvg: "Point moyen*",
     stServe: "Points gagnés au service", stHead: "Face à face", stPointsWon: "Points gagnés",
     stBreaks: "Breaks", stLongRun: "Meilleure série", stMomentum: "Dynamique", stMomentumSub: "avance cumulée de points",
     stLeadChg: "Changements de tête", stBigLead: "Plus grande avance", stComeback: "Plus gros retour",
@@ -1709,7 +1747,7 @@ const STR = {
     helpVoiceH: "Punktestand hören", helpVoiceP: "Tippe unten auf den Lautsprecher, um jeden Punkt ansagen zu lassen. Verbinde eine Bluetooth-Box und alle hören den Stand.",
     helpGot: "Verstanden",
     helpIosTip: "<strong>iPhone-Tipp:</strong> Klingt die Stimme roboterhaft, lade in <em>Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → Deutsch</em> eine bessere („Erweitert“ oder „Premium“) und wähle sie in TapScore unter <em>Einstellungen → Ansagestimme</em>.",
-    statsTitle: "Statistiken", stDuration: "Dauer", stPoints: "Punkte", stAvg: "Ø Punkt*",
+    statsTitle: "Statistiken", historyTitle: "Verlauf", historyEmpty: "Noch keine Spiele. Beendete Spiele erscheinen hier.", historyClear: "Verlauf löschen", historyClearConfirm: "Zum Löschen erneut tippen", stDuration: "Dauer", stPoints: "Punkte", stAvg: "Ø Punkt*",
     stServe: "Punkte am eigenen Aufschlag", stHead: "Direktvergleich", stPointsWon: "Gewonnene Punkte",
     stBreaks: "Breaks", stLongRun: "Längste Serie", stMomentum: "Momentum", stMomentumSub: "kumulierter Punktevorsprung",
     stLeadChg: "Führungswechsel", stBigLead: "Größte Führung", stComeback: "Größtes Comeback",
@@ -2635,7 +2673,7 @@ function render() {
     el("winnerScore").innerHTML = match.completedSets.map(s => `<span>${s[0]}–${s[1]}</span>`).join("");
     win.classList.add("show");
     requestAnimationFrame(fitWinnerName);   // scale the name to fill the screen
-    if (!winnerShown) { winnerShown = true; consumeTrialGame(); if (!tie) launchConfetti(); }   // celebrate a win, not a tie
+    if (!winnerShown) { winnerShown = true; recordMatch(); consumeTrialGame(); if (!tie) launchConfetti(); }   // save to history, count trial, celebrate
   } else {
     win.classList.remove("show");
     winnerShown = false;
@@ -2928,8 +2966,13 @@ el("winnerNew").addEventListener("click", () => showSetup(true));
 
 /* ---- match stats page ---- */
 const statsScreen = el("statsScreen");
-function openStats() {
-  el("statsBody").innerHTML = buildStatsHTML();
+// `m` optional: a past match snapshot from history. buildStatsHTML + its helpers read the global
+// `match`, so briefly point it at the snapshot while rendering, then restore (synchronous, safe).
+function openStats(m) {
+  const prev = match;
+  if (m && m.settings) match = m;
+  try { el("statsBody").innerHTML = buildStatsHTML(); }
+  finally { match = prev; }
   statsScreen.classList.add("show");
   statsScreen.setAttribute("aria-hidden", "false");
 }
@@ -2937,10 +2980,86 @@ function closeStats() {
   statsScreen.classList.remove("show");
   statsScreen.setAttribute("aria-hidden", "true");
 }
-el("winnerStatsBtn").addEventListener("click", openStats);
+el("winnerStatsBtn").addEventListener("click", () => openStats());
 el("statsClose").addEventListener("click", closeStats);
 el("statsDone").addEventListener("click", closeStats);
 statsScreen.addEventListener("click", (e) => { if (e.target === statsScreen) closeStats(); });
+
+/* ---- match history (results of past games) ---- */
+const HIST_KEY = "tennisTracker.history";
+const historyScreen = el("historyScreen");
+function loadHistory() {
+  try { const j = JSON.parse(localStorage.getItem(HIST_KEY) || "[]"); return Array.isArray(j) ? j : []; } catch (e) { return []; }
+}
+// Save a finished game once (guarded by match.recorded; empty finishes are skipped).
+// The full match snapshot is stored so a past game's stats can be reopened later.
+function recordMatch() {
+  if (match.recorded || !(match.rallies > 0)) return;
+  match.recorded = true;
+  const list = loadHistory();
+  list.unshift(JSON.parse(JSON.stringify(match)));
+  if (list.length > 50) list.length = 50;   // bound storage (full snapshots are larger)
+  try { localStorage.setItem(HIST_KEY, JSON.stringify(list)); } catch (e) {}
+  save();
+}
+// Read display fields from a history entry (supports the current full-snapshot shape).
+function histSport(e) { return e.settings ? e.settings.sport : e.sport; }
+function histWinner(e) { return e.winner == null ? -1 : e.winner; }
+function histSets(e) { return e.completedSets || e.sets || []; }
+function histTs(e) { return e.endedAt || e.ts || 0; }
+function histDur(e) { return (e.endedAt && e.startedAt) ? (e.endedAt - e.startedAt) : (e.dur || 0); }
+function histFull(e) { return !!(e.settings && Array.isArray(e.pointLog)); }   // has data for a full stats view
+function histEsc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function histDate(ts) {
+  try { return new Date(ts).toLocaleDateString(BCP[lang] || undefined, { day: "numeric", month: "short", year: "numeric" }); }
+  catch (e) { return ""; }
+}
+function buildHistoryHTML() {
+  const list = loadHistory();
+  if (!list.length) return `<p class="hist-empty">${t("historyEmpty")}</p>`;
+  return list.map((e, i) => {
+    const tie = histWinner(e) < 0;
+    const names = e.names || ["", ""];
+    const wname = tie ? t("tie") : (names[histWinner(e)] || "");
+    const score = histSets(e).map(s => `<span>${s[0]}–${s[1]}</span>`).join("") || "<span>—</span>";
+    const meta = [sportLabel(histSport(e)), histDur(e) ? fmtDur(histDur(e)) : ""].filter(Boolean).join(" · ");
+    const full = histFull(e);
+    const chev = full ? `<svg class="hist-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>` : "";
+    return `<button class="histrow${full ? " tappable" : ""}" type="button" data-i="${i}"${full ? "" : " disabled"}>
+      <span class="hist-ball" aria-hidden="true">${ballSVG(histSport(e))}</span>
+      <div class="hist-main">
+        <div class="hist-top"><span class="hist-win">${histEsc(wname)}</span><span class="hist-date">${histDate(histTs(e))}</span></div>
+        <div class="hist-score">${score}</div>
+        <div class="hist-meta">${histEsc(meta)}</div>
+      </div>
+      ${chev}
+    </button>`;
+  }).join("");
+}
+function openHistory() {
+  el("historyBody").innerHTML = buildHistoryHTML();
+  el("historyClear").hidden = loadHistory().length === 0;   // nothing to clear → no button
+  historyScreen.classList.add("show"); historyScreen.setAttribute("aria-hidden", "false");
+}
+function closeHistory() { historyScreen.classList.remove("show"); historyScreen.setAttribute("aria-hidden", "true"); }
+const histBtn = el("historyBtn"); if (histBtn) histBtn.addEventListener("click", openHistory);
+el("historyBack").addEventListener("click", closeHistory);
+// Tap a past game → open its stats.
+el("historyBody").addEventListener("click", (e) => {
+  const row = e.target.closest(".histrow"); if (!row || row.disabled) return;
+  const entry = loadHistory()[+row.dataset.i];
+  if (entry) openStats(entry);
+});
+// Clear history — two-tap confirm to avoid accidental wipes.
+let histClearArmed = false, histClearTimer = null;
+el("historyClear").addEventListener("click", () => {
+  const b = el("historyClear");
+  if (!histClearArmed) { histClearArmed = true; b.textContent = t("historyClearConfirm"); histClearTimer = setTimeout(() => { histClearArmed = false; b.textContent = t("historyClear"); }, 3000); return; }
+  histClearArmed = false; clearTimeout(histClearTimer); b.textContent = t("historyClear");
+  try { localStorage.removeItem(HIST_KEY); } catch (e) {}
+  el("historyBody").innerHTML = buildHistoryHTML();
+  b.hidden = true;   // empty now
+});
 
 /* ---- help overlay ---- */
 const help = el("help");
