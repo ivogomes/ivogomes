@@ -30,11 +30,20 @@ struct RootView: View {
 // MARK: - Theme (mirrors the phone app's tokens; the watch is always dark)
 
 enum Theme {
-    static let bg    = Color(red: 0x0b/255, green: 0x12/255, blue: 0x20/255)
-    static let azure = Color(red: 0x0e/255, green: 0xa5/255, blue: 0xe9/255)
-    static let coral = Color(red: 0xf4/255, green: 0x3f/255, blue: 0x5e/255)
-    static let lime  = Color(red: 0xc9/255, green: 0xe6/255, blue: 0x4b/255)
-    static let onLime = Color(red: 0x0b/255, green: 0x12/255, blue: 0x20/255)
+    static let bg     = Color(red: 0x0b/255, green: 0x12/255, blue: 0x20/255)  // dark blue (app bg + side B)
+    static let lime   = Color(red: 0xc9/255, green: 0xe6/255, blue: 0x4b/255)
+    static let ink    = Color(red: 0x0b/255, green: 0x12/255, blue: 0x20/255)  // dark-blue text on lime
+    static let onLime = ink
+    static let gold   = Color(red: 0xf7/255, green: 0xc9/255, blue: 0x48/255)  // winner trophy
+
+    // Scoring sides, mirroring the phone: A = lime bg + dark-blue score, B = dark-blue bg + lime score.
+    static let sideA    = lime
+    static let sideAInk = ink
+    static let sideB    = bg
+    static let sideBInk = lime
+
+    /// Score font — Outfit if bundled, otherwise the system font (see README to add Outfit-*.ttf).
+    static func score(_ size: CGFloat) -> Font { Font.custom("Outfit", size: size).weight(.heavy) }
 }
 
 // MARK: - Haptics (distinct feedback per scoring event)

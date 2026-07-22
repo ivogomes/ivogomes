@@ -97,7 +97,11 @@
     --line-soft: rgba(11,18,32,.08);
     --scrim: rgba(15,23,42,.32);
     --focus: #2563eb;
-    /* the scoreboard's lime/dark-blue sides stay identical in light mode; only chrome + charts re-theme */
+    /* Light mode: side A stays lime; side B becomes light gray with dark-blue numbers (the near-black
+       side reads too heavy on a light UI). Both sides keep dark-blue ink. */
+    --b: #cbd5e1;             /* side B — light gray */
+    --b-dark: #b6c0d0;        /* gray gradient foot */
+    --b-ink: #0b1220;         /* dark-blue score/text on the light-gray side */
     --primary-fg: #4c6a0e;    /* darker green so lime reads as text/icon on light surfaces */
     --danger: #e11d48;
     --chart-a: #6a8f16;       /* stats team A — green readable on white */
@@ -250,12 +254,17 @@
   }
   .history:empty { display: none; }
   .history span { padding: 1px 7px; border-radius: 6px; }
-  /* live match timer, centred in the court gap */
+  /* live match timer — pinned to the top-right corner, clear of the centred name pill / match info */
   .mtimer {
+    position: fixed; z-index: 5;
+    top: calc(env(safe-area-inset-top) + 8px);
+    right: calc(env(safe-area-inset-right) + 10px);
     font-variant-numeric: tabular-nums; font-weight: 700; font-size: 13px;
-    letter-spacing: .5px; opacity: .5;
-    background: rgba(0,0,0,.28); padding: 3px 10px; border-radius: 999px;
-    backdrop-filter: blur(4px);
+    letter-spacing: .5px; color: #fff;
+    background: rgba(0,0,0,.55); padding: 4px 12px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(6px);
+    pointer-events: none;
   }
   .mtimer:empty { display: none; }
   /* pickleball side-out doubles: which server (1 or 2) is up */
@@ -483,6 +492,24 @@
   .rowlink .rowlink-chev { color: #94a3b8; flex: 0 0 auto; }
   .rowlink:hover { background: var(--fill-1); }
   .rowlink:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  /* Bluetooth clicker setup (native only; .native-only nodes are removed from the web build via JS) */
+  .clk-row-right { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+  .clk-status { font-size: 13px; opacity: .6; font-weight: 500; }
+  #clickerRow .rowlink-label { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .clk-capture { margin: 12px 0 16px; padding: 22px 16px; border-radius: 16px; border: 1px dashed var(--line); background: var(--fill-1); text-align: center; }
+  .clk-capture.armed { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, var(--fill-1)); }
+  .clk-prompt { font-weight: 700; font-size: 16px; }
+  .clk-hint { margin-top: 6px; font-size: 13px; opacity: .65; min-height: 1.2em; }
+  .clk-map { display: flex; flex-direction: column; gap: 8px; margin: 0 0 14px; }
+  .clk-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 14px; border-radius: 12px; background: var(--fill-1); font-size: 14px; font-weight: 600; transition: background-color .15s var(--ease); }
+  .clk-item.flash { background: color-mix(in srgb, var(--primary) 32%, var(--fill-1)); }
+  .clk-item .clk-key { color: var(--primary-fg); }
+  .clk-note { font-size: 13px; opacity: .72; line-height: 1.5; padding: 2px 2px 6px; }
+  .clk-diag { font-size: 12px; opacity: .55; text-align: center; min-height: 1.2em; margin: 2px 0 10px; font-variant-numeric: tabular-nums; }
+  .clk-action { width: 100%; font: inherit; font-weight: 600; padding: 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--fill-2); color: var(--ink); cursor: pointer; margin-bottom: 8px; }
+  .clk-action:hover { background: var(--fill-3); }
+  .clk-off { display: block; width: 100%; background: none; border: 0; color: var(--danger); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; padding: 12px; margin-top: 4px; }
 
   /* Material 3 segmented button — one connected control for "pick one of these", not loose buttons */
   .seg {
@@ -846,6 +873,8 @@
     .history { flex-direction: row; flex-wrap: wrap; gap: 10px; }  /* keep history a compact row in portrait */
     .controls { gap: 8px; bottom: calc(env(safe-area-inset-bottom) + 10px); }
     .controls button { padding: 9px 15px; font-size: 13px; }
+    /* hug the corner in portrait (more headroom up top than in landscape) */
+    .mtimer { top: calc(env(safe-area-inset-top) + 2px); right: calc(env(safe-area-inset-right) + 6px); }
   }
 
   /* Setup screen on small viewports — placed last so these override the base .setup rules above.
@@ -917,8 +946,8 @@
   </div>
 
   <div class="matchinfo" id="matchInfo"></div>
+  <div class="mtimer" id="matchTimer" aria-hidden="true"></div>
   <div class="center">
-    <div class="mtimer" id="matchTimer" aria-hidden="true"></div>
     <div class="history" id="history"></div>
     <div class="badge hidden" id="badge">Tiebreak</div>
   </div>
@@ -977,13 +1006,20 @@
     </div>
   </div>
 
-  <div class="modal" id="clickerModal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="box">
-      <p><span data-i18n="clickerFoundMsg">Bluetooth clicker detected</span><br /><span class="modal-sub" data-i18n="clickerFoundSub">Turn on Clicker mode? 1 press = your team, 2 = opponents, 3 = undo.</span></p>
-      <div class="actions">
-        <button class="finish" id="clickerEnable" data-i18n="clickerTurnOn">Turn on</button>
-        <button class="cancel" id="clickerDismiss" data-i18n="notNow">Not now</button>
+  <div class="help native-only" id="clickerSetup" role="dialog" aria-modal="true" aria-labelledby="clkTitle" aria-hidden="true">
+    <div class="panel">
+      <button class="helpClose" id="clkClose" aria-label="Close">&times;</button>
+      <h2 id="clkTitle" data-i18n="clkTitle">Bluetooth clicker</h2>
+      <p class="sub" id="clkSub"></p>
+      <div class="clk-capture" id="clkCapture">
+        <div class="clk-prompt" id="clkPrompt"></div>
+        <div class="clk-hint" id="clkHint"></div>
       </div>
+      <div class="clk-map" id="clkMap"></div>
+      <div class="clk-diag" id="clkDiag" aria-live="polite"></div>
+      <div id="clkActions"></div>
+      <button class="done" id="clkDone" data-i18n="done">Done</button>
+      <button class="clk-off" id="clkOff" data-i18n="clkTurnOff">Turn off clicker</button>
     </div>
   </div>
 
@@ -1170,13 +1206,16 @@
             <option value="" data-i18n="voiceAuto">Automatic (best available)</option>
           </select>
         </div>
-        <div class="row rowswitch" id="clickerRow">
-          <div>
-            <label data-i18n="clickerLbl">Clicker mode</label>
-            <span class="desc" data-i18n="clickerDesc">For a single-button Bluetooth clicker: 1 tap scores your team, 2 the opponents, 3 undoes. Turn off for normal tapping.</span>
-          </div>
-          <button class="switch" id="clickerSwitch" role="switch" aria-checked="false" data-i18n-aria="clickerLbl"></button>
-        </div>
+        <button class="row rowlink native-only" id="clickerRow" type="button">
+          <span class="rowlink-label">
+            <span data-i18n="clickerLbl">Bluetooth clicker</span>
+            <span class="desc" data-i18n="clickerDesc">Score hands-free with a paired Bluetooth clicker — tap to set up its buttons.</span>
+          </span>
+          <span class="clk-row-right">
+            <span class="clk-status" id="clickerStatus"></span>
+            <svg class="rowlink-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </span>
+        </button>
         <button class="row rowlink home-only" id="howtoRow" type="button">
           <span class="rowlink-label" data-i18n="helpTitle">How to use TapScore</span>
           <svg class="rowlink-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
@@ -1296,7 +1335,7 @@
         </div>
       </div>
 
-      <div class="step">
+      <div class="step native-only">
         <div class="stepIcon" aria-hidden="true">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="16" y="6" width="16" height="36" rx="8" stroke="currentColor" stroke-width="2"/>
@@ -1305,13 +1344,7 @@
         </div>
         <div class="stepText">
           <h3 data-i18n="helpClickH">Score with a Bluetooth clicker</h3>
-          <p data-i18n="helpClickP">Pair any Bluetooth clicker or remote (a camera shutter or presentation remote works), then set the phone aside where everyone can see the score:</p>
-          <ul class="keys">
-            <li><span class="k" data-i18n="kClick1">1 click</span> <span data-i18n="kClick1d">Point for your team</span></li>
-            <li><span class="k" data-i18n="kClick2">2 clicks</span> <span data-i18n="kClick2d">Point for the opponents</span></li>
-            <li><span class="k" data-i18n="kClick3">3 clicks</span> <span data-i18n="kClick3d">Undo the last point</span></li>
-            <li><span class="k" data-i18n="kHold">Hold</span> <span data-i18n="kHoldd">Undo (if your clicker supports holding)</span></li>
-          </ul>
+          <p data-i18n="helpClickP">Pair any Bluetooth clicker or remote in your phone's Bluetooth settings, then open <strong>Settings → Bluetooth clicker</strong> and press each button once to map it to a team (and optionally undo). During a match those buttons score for you — set the phone aside where everyone can see it.</p>
         </div>
       </div>
 
@@ -1350,6 +1383,8 @@ const IS_NATIVE = !!(Cap && Cap.isNativePlatform && Cap.isNativePlatform());
 if (IS_NATIVE || (typeof navigator !== "undefined" && (navigator.maxTouchPoints || 0) > 0)) {
   document.documentElement.classList.add("hide-cursor");
 }
+// The Bluetooth clicker is native-only — strip its UI (settings row, setup dialog, help step) on the web.
+if (!IS_NATIVE) document.querySelectorAll(".native-only").forEach(e => e.remove());
 function nativeHaptic() {
   const H = IS_NATIVE && Cap.Plugins && Cap.Plugins.Haptics;
   if (H) { try { H.impact({ style: "LIGHT" }); return true; } catch (e) {} }
@@ -1436,7 +1471,7 @@ const STR = {
     v_love: "love", v_deuce: "deuce", v_all: "all", v_adv: "advantage %s",
     v_lead: "leads", v_to: "to", v_game1: "game", v_gameN: "games", v_set1: "set", v_setN: "sets",
     v_gsm: "Game, set, and match, %s", v_matchTo: "Match to %s", v_gameWon: "Game, %s", v_setWon: "Set, %s",
-    v_wGame: "Game", v_wSet: "Set", v_correction: "Correction. ", v_allN: "%s all",
+    v_wGame: "Game", v_wSet: "Set", v_correction: "Correction. ", v_allN: "%s all", v_matchPoint: "Match point, %s", v_matchPointG: "Match point", v_setPoint: "Set point, %s", v_setPointG: "Set point", v_gamePoint: "Game point, %s", v_gamePointG: "Game point", v_breakPoint: "Break point, %s", v_breakPointG: "Break point",
   },
   es: {
     tapScore: "Toca para puntuar", tapWin: "Toca al ganador del punto",
@@ -1498,7 +1533,7 @@ const STR = {
     v_love: "cero", v_deuce: "iguales", v_all: "iguales", v_adv: "ventaja %s",
     v_lead: "gana", v_to: "a", v_game1: "juego", v_gameN: "juegos", v_set1: "set", v_setN: "sets",
     v_gsm: "Juego, set y partido, %s", v_matchTo: "Partido para %s", v_gameWon: "Juego, %s", v_setWon: "Set, %s",
-    v_wGame: "Juego", v_wSet: "Set", v_correction: "Corrección. ", v_allN: "%s iguales",
+    v_wGame: "Juego", v_wSet: "Set", v_correction: "Corrección. ", v_allN: "%s iguales", v_matchPoint: "Punto de partido, %s", v_matchPointG: "Punto de partido", v_setPoint: "Punto de set, %s", v_setPointG: "Punto de set", v_gamePoint: "Punto de juego, %s", v_gamePointG: "Punto de juego", v_breakPoint: "Punto de break, %s", v_breakPointG: "Punto de break",
   },
   pt: {
     tapScore: "Toca para pontuar", tapWin: "Toca em quem ganhou",
@@ -1558,9 +1593,9 @@ const STR = {
     stBySet: "Por %s", stNote: "* os tempos são medidos entre toques, por isso incluem o tempo entre pontos",
     unitGame: "Jogo", unitSet: "Set",
     v_love: "zero", v_deuce: "iguais", v_all: "iguais", v_adv: "vantagem %s",
-    v_lead: "vence", v_to: "a", v_game1: "jogo", v_gameN: "jogos", v_set1: "set", v_setN: "sets",
-    v_gsm: "Jogo, set e partida, %s", v_matchTo: "Partida para %s", v_gameWon: "Jogo, %s", v_setWon: "Set, %s",
-    v_wGame: "Jogo", v_wSet: "Set", v_correction: "Correção. ", v_allN: "%s iguais",
+    v_lead: "vence", v_to: "a", v_game1: "jogo", v_gameN: "jogos", v_set1: "parcial", v_setN: "parciais",
+    v_gsm: "Jogo, parcial e partida, %s", v_matchTo: "Partida para %s", v_gameWon: "Jogo, %s", v_setWon: "Parcial, %s",
+    v_wGame: "Jogo", v_wSet: "Parcial", v_correction: "Correção. ", v_allN: "%s iguais", v_matchPoint: "Ponto de partida, %s", v_matchPointG: "Ponto de partida", v_setPoint: "Ponto de parcial, %s", v_setPointG: "Ponto de parcial", v_gamePoint: "Ponto de jogo, %s", v_gamePointG: "Ponto de jogo", v_breakPoint: "Ponto de break, %s", v_breakPointG: "Ponto de break",
   },
   fr: {
     tapScore: "Touchez pour marquer", tapWin: "Touchez le gagnant du point",
@@ -1622,7 +1657,7 @@ const STR = {
     v_love: "zéro", v_deuce: "égalité", v_all: "partout", v_adv: "avantage %s",
     v_lead: "mène", v_to: "à", v_game1: "jeu", v_gameN: "jeux", v_set1: "set", v_setN: "sets",
     v_gsm: "Jeu, set et match, %s", v_matchTo: "Match pour %s", v_gameWon: "Jeu, %s", v_setWon: "Set, %s",
-    v_wGame: "Jeu", v_wSet: "Set", v_correction: "Correction. ", v_allN: "%s partout",
+    v_wGame: "Jeu", v_wSet: "Set", v_correction: "Correction. ", v_allN: "%s partout", v_matchPoint: "Balle de match, %s", v_matchPointG: "Balle de match", v_setPoint: "Balle de set, %s", v_setPointG: "Balle de set", v_gamePoint: "Balle de jeu, %s", v_gamePointG: "Balle de jeu", v_breakPoint: "Balle de break, %s", v_breakPointG: "Balle de break",
   },
   de: {
     tapScore: "Zum Punkten tippen", tapWin: "Auf den Punktgewinner tippen",
@@ -1684,7 +1719,7 @@ const STR = {
     v_love: "null", v_deuce: "Einstand", v_all: "beide", v_adv: "Vorteil %s",
     v_lead: "führt", v_to: "zu", v_game1: "Spiel", v_gameN: "Spiele", v_set1: "Satz", v_setN: "Sätze",
     v_gsm: "Spiel, Satz und Sieg, %s", v_matchTo: "Match für %s", v_gameWon: "Spiel, %s", v_setWon: "Satz, %s",
-    v_wGame: "Spiel", v_wSet: "Satz", v_correction: "Korrektur. ", v_allN: "%s beide",
+    v_wGame: "Spiel", v_wSet: "Satz", v_correction: "Korrektur. ", v_allN: "%s beide", v_matchPoint: "Matchball, %s", v_matchPointG: "Matchball", v_setPoint: "Satzball, %s", v_setPointG: "Satzball", v_gamePoint: "Spielball, %s", v_gamePointG: "Spielball", v_breakPoint: "Breakball, %s", v_breakPointG: "Breakball",
   },
 };
 // TapScore Pro strings — merged into STR so each language block stays focused. English is the fallback.
@@ -1771,6 +1806,75 @@ const PRO_STR = {
   },
 };
 Object.keys(PRO_STR).forEach(l => { if (STR[l]) Object.assign(STR[l], PRO_STR[l]); });
+// Bluetooth clicker setup strings (native only). Overrides clickerLbl/clickerDesc and adds the setup flow.
+const CLK_STR = {
+  en: {
+    clickerLbl: "Bluetooth clicker", clickerDesc: "Score hands-free with a paired Bluetooth clicker — tap to set up its buttons.",
+    clkTitle: "Bluetooth clicker",
+    clk_intro: "Pair your clicker in your phone's Bluetooth settings first, then press its buttons here to map them.",
+    clk_press_a: "Press the button for you", clk_press_b: "Now press the button for the opponent", clk_press_undo: "Press the button for Undo",
+    clk_hint_pair: "Press your clicker button now — not the screen…", clk_hint_or_single: "…or choose “One button only” below.", clk_hint_skip: "…or skip to leave undo unmapped.",
+    clk_one_button: "One button only", clk_skip: "Skip", clk_reconfigure: "Set up again",
+    clk_team1: "You", clk_team2: "Opponent", clk_undo: "Undo", clk_none: "Not set", clk_btn: "Clicker button", clk_button: "Button",
+    clk_single_note: "One-button clicker: 1 press = you, 2 presses = opponent, 3 presses = undo.",
+    clk_same: "That's the same button — press a different one, or choose “One button only”.",
+    clk_dup: "That button is already used — try another.",
+    clkTurnOff: "Turn off clicker", clk_status_off: "Off", clk_status_on: "On", clk_status_single: "1 button", clk_seen: "Detected:", clk_hint_triple: "…or use triple-click for undo (no third button needed).", clk_use_triple: "Use triple-click for undo", clk_triple_val: "Triple-click", clk_triple_note: "No undo button: triple-press either button to undo.",
+  },
+  es: {
+    clickerLbl: "Clicker Bluetooth", clickerDesc: "Puntúa sin manos con un clicker Bluetooth emparejado — toca para configurar sus botones.",
+    clkTitle: "Clicker Bluetooth",
+    clk_intro: "Empareja el clicker en los ajustes Bluetooth del teléfono y luego pulsa sus botones aquí para asignarlos.",
+    clk_press_a: "Pulsa el botón para ti", clk_press_b: "Ahora pulsa el botón para el rival", clk_press_undo: "Pulsa el botón para Deshacer",
+    clk_hint_pair: "Pulsa ahora el botón del clicker — no la pantalla…", clk_hint_or_single: "…o elige “Un solo botón” abajo.", clk_hint_skip: "…u omite para no asignar deshacer.",
+    clk_one_button: "Un solo botón", clk_skip: "Omitir", clk_reconfigure: "Configurar de nuevo",
+    clk_team1: "Tú", clk_team2: "Rival", clk_undo: "Deshacer", clk_none: "Sin asignar", clk_btn: "Botón del clicker", clk_button: "Botón",
+    clk_single_note: "Clicker de un botón: 1 pulsación = tú, 2 = rival, 3 = deshacer.",
+    clk_same: "Es el mismo botón — pulsa uno distinto o elige “Un solo botón”.",
+    clk_dup: "Ese botón ya está en uso — prueba otro.",
+    clkTurnOff: "Desactivar clicker", clk_status_off: "Desactivado", clk_status_on: "Activado", clk_status_single: "1 botón", clk_seen: "Detectado:", clk_hint_triple: "…o usa el triple clic para deshacer (sin tercer botón).", clk_use_triple: "Usar triple clic para deshacer", clk_triple_val: "Triple clic", clk_triple_note: "Sin botón de deshacer: triple pulsación en cualquier botón para deshacer.",
+  },
+  pt: {
+    clickerLbl: "Clicker Bluetooth", clickerDesc: "Pontua sem mãos com um clicker Bluetooth emparelhado — toca para configurar os botões.",
+    clkTitle: "Clicker Bluetooth",
+    clk_intro: "Emparelha o clicker nas definições Bluetooth do telemóvel e depois prime os botões aqui para os mapear.",
+    clk_press_a: "Prime o botão para ti", clk_press_b: "Agora prime o botão para o adversário", clk_press_undo: "Prime o botão de Anular",
+    clk_hint_pair: "Prime agora o botão do clicker — não o ecrã…", clk_hint_or_single: "…ou escolhe “Só um botão” abaixo.", clk_hint_skip: "…ou ignora para não mapear anular.",
+    clk_one_button: "Só um botão", clk_skip: "Ignorar", clk_reconfigure: "Configurar de novo",
+    clk_team1: "Tu", clk_team2: "Adversário", clk_undo: "Anular", clk_none: "Por definir", clk_btn: "Botão do clicker", clk_button: "Botão",
+    clk_single_note: "Clicker de um botão: 1 pressão = tu, 2 = adversário, 3 = anular.",
+    clk_same: "É o mesmo botão — prime outro ou escolhe “Só um botão”.",
+    clk_dup: "Esse botão já está em uso — tenta outro.",
+    clkTurnOff: "Desligar clicker", clk_status_off: "Desligado", clk_status_on: "Ligado", clk_status_single: "1 botão", clk_seen: "Detetado:", clk_hint_triple: "…ou usa o triplo clique para anular (sem terceiro botão).", clk_use_triple: "Usar triplo clique para anular", clk_triple_val: "Triplo clique", clk_triple_note: "Sem botão de anular: triplo toque em qualquer botão para anular.",
+  },
+  fr: {
+    clickerLbl: "Télécommande Bluetooth", clickerDesc: "Marquez sans les mains avec une télécommande Bluetooth associée — touchez pour configurer ses boutons.",
+    clkTitle: "Télécommande Bluetooth",
+    clk_intro: "Associez d'abord la télécommande dans les réglages Bluetooth du téléphone, puis appuyez sur ses boutons ici pour les associer.",
+    clk_press_a: "Appuyez sur le bouton pour vous", clk_press_b: "Appuyez maintenant sur le bouton pour l'adversaire", clk_press_undo: "Appuyez sur le bouton Annuler",
+    clk_hint_pair: "Appuyez sur le bouton de la télécommande — pas l'écran…", clk_hint_or_single: "…ou choisissez « Un seul bouton » ci-dessous.", clk_hint_skip: "…ou passez pour ne pas associer Annuler.",
+    clk_one_button: "Un seul bouton", clk_skip: "Passer", clk_reconfigure: "Reconfigurer",
+    clk_team1: "Vous", clk_team2: "Adversaire", clk_undo: "Annuler", clk_none: "Non défini", clk_btn: "Bouton", clk_button: "Bouton",
+    clk_single_note: "Télécommande à un bouton : 1 appui = vous, 2 = adversaire, 3 = annuler.",
+    clk_same: "C'est le même bouton — appuyez sur un autre ou choisissez « Un seul bouton ».",
+    clk_dup: "Ce bouton est déjà utilisé — essayez-en un autre.",
+    clkTurnOff: "Désactiver la télécommande", clk_status_off: "Désactivé", clk_status_on: "Activé", clk_status_single: "1 bouton", clk_seen: "Détecté :", clk_hint_triple: "…ou utilisez le triple clic pour annuler (sans 3e bouton).", clk_use_triple: "Utiliser le triple clic pour annuler", clk_triple_val: "Triple clic", clk_triple_note: "Pas de bouton annuler : triple appui sur un bouton pour annuler.",
+  },
+  de: {
+    clickerLbl: "Bluetooth-Clicker", clickerDesc: "Freihändig punkten mit einem gekoppelten Bluetooth-Clicker — zum Einrichten tippen.",
+    clkTitle: "Bluetooth-Clicker",
+    clk_intro: "Koppel den Clicker zuerst in den Bluetooth-Einstellungen des Telefons und drücke dann hier seine Tasten, um sie zuzuordnen.",
+    clk_press_a: "Drücke die Taste für dich", clk_press_b: "Drücke jetzt die Taste für den Gegner", clk_press_undo: "Drücke die Taste für Rückgängig",
+    clk_hint_pair: "Drücke jetzt die Clicker-Taste — nicht den Bildschirm…", clk_hint_or_single: "…oder wähle unten „Nur eine Taste“.", clk_hint_skip: "…oder überspringe, um Rückgängig nicht zuzuordnen.",
+    clk_one_button: "Nur eine Taste", clk_skip: "Überspringen", clk_reconfigure: "Neu einrichten",
+    clk_team1: "Du", clk_team2: "Gegner", clk_undo: "Rückgängig", clk_none: "Nicht gesetzt", clk_btn: "Clicker-Taste", clk_button: "Taste",
+    clk_single_note: "Ein-Tasten-Clicker: 1 Druck = du, 2 = Gegner, 3 = rückgängig.",
+    clk_same: "Das ist dieselbe Taste — drücke eine andere oder wähle „Nur eine Taste“.",
+    clk_dup: "Diese Taste wird bereits verwendet — versuche eine andere.",
+    clkTurnOff: "Clicker ausschalten", clk_status_off: "Aus", clk_status_on: "Ein", clk_status_single: "1 Taste", clk_seen: "Erkannt:", clk_hint_triple: "…oder nutze Dreifachklick zum Rückgängigmachen (keine 3. Taste nötig).", clk_use_triple: "Dreifachklick für Rückgängig", clk_triple_val: "Dreifachklick", clk_triple_note: "Keine Rückgängig-Taste: dreimal auf eine Taste drücken zum Rückgängigmachen.",
+  },
+};
+Object.keys(CLK_STR).forEach(l => { if (STR[l]) Object.assign(STR[l], CLK_STR[l]); });
 function t(k) { const L = STR[lang] || STR.en; return (k in L ? L[k] : (k in STR.en ? STR.en[k] : k)); }
 function tf(k) { const args = [].slice.call(arguments, 1); let s = t(k), i = 0; return s.replace(/%s/g, () => args[i++]); }
 // apply translations to static markup: [data-i18n]=textContent, -html=innerHTML, -aria / -title = attribute
@@ -1987,46 +2091,45 @@ function showToast(text) {
   if (toastTimer) clearTimeout(toastTimer);
   toastTimer = setTimeout(() => { t.classList.remove("show"); t.setAttribute("aria-hidden", "true"); }, 3200);
 }
-// Prompt to switch sides at the conventional moment for each sport (squash never changes ends).
-function maybeChangeEnds(before) {
-  if (changeEndsMode === "off" || match.over) return;
+// Is it a conventional moment to switch sides for this sport? (squash never changes ends.)
+function changeEndsDue(before) {
+  if (changeEndsMode === "off" || match.over) return false;
   const sp = match.settings.sport;
-  if (sp === "squash") return;
+  if (sp === "squash") return false;
   const setWon = (match.sets[0] + match.sets[1]) > (before.sets[0] + before.sets[1]);
-  let due = false;
-
-  if (changeEndsMode === "set") {
-    due = setWon;                                        // only between sets/games
-  } else if (isTargetSport()) {
-    if (setWon) due = true;                              // change after every completed game/set
-    else if (isDecidingSet()) {                          // deciding game/set: switch at the halfway mark
-      const t = currentTarget();
-      const half = (sp === "tabletennis") ? Math.floor(t / 2) : Math.ceil(t / 2);
+  if (changeEndsMode === "set") return setWon;           // only between sets/games
+  if (isTargetSport()) {
+    if (setWon) return true;                             // change after every completed game/set
+    if (isDecidingSet()) {                               // deciding game/set: switch at the halfway mark
+      const tgt = currentTarget();
+      const half = (sp === "tabletennis") ? Math.floor(tgt / 2) : Math.ceil(tgt / 2);
       const now = Math.max(match.points[0], match.points[1]);
       const prev = Math.max(before.points[0], before.points[1]);
-      if (now === half && prev === half - 1) due = true;
+      return now === half && prev === half - 1;
     }
-  } else if (match.tiebreak) {
-    const tp = match.points[0] + match.points[1];
-    if (tp > 0 && tp % 6 === 0) due = true;              // tennis tiebreak: every 6 points
-  } else if (setWon) {
-    const last = match.completedSets[match.completedSets.length - 1];
-    if (last && (last[0] + last[1]) % 2 === 1) due = true; // end of an odd-total set
-  } else if ((match.games[0] + match.games[1]) > (before.games[0] + before.games[1])
-          && (match.games[0] + match.games[1]) % 2 === 1) {
-    due = true;                                          // odd game within the set
+    return false;
   }
-  if (due) showToast(t("changeEnds"));
+  if (match.tiebreak) {
+    const tp = match.points[0] + match.points[1];
+    return tp > 0 && tp % 6 === 0;                       // tennis tiebreak: every 6 points
+  }
+  if (setWon) {
+    const last = match.completedSets[match.completedSets.length - 1];
+    return !!(last && (last[0] + last[1]) % 2 === 1);    // end of an odd-total set
+  }
+  return (match.games[0] + match.games[1]) > (before.games[0] + before.games[1])
+      && (match.games[0] + match.games[1]) % 2 === 1;    // odd game within the set
+}
+// Prompt to switch sides (visual toast; the voice call is folded into the score announcement).
+function maybeChangeEnds(before) {
+  if (changeEndsDue(before)) showToast(t("changeEnds"));
 }
 
 /* ---- score announcements (Web Speech API) ---- */
 let voiceOn = false;
 try { voiceOn = localStorage.getItem("tennisTracker.voice") === "1"; } catch (e) {}
 
-// Clicker mode: when on, every tap is treated as a single-button clicker press (1 = your team,
-// 2 = opponents, 3 = undo) instead of scoring the side you touch. See the clicker section.
-let clickerMode = false;
-try { clickerMode = localStorage.getItem("tennisTracker.clicker") === "1"; } catch (e) {}
+// Bluetooth clicker: config + logic live in the clicker section below (native only).
 
 // A specific voice the user picked in settings (by voiceURI). Empty = automatic.
 let chosenVoiceURI = "";
@@ -2174,6 +2277,10 @@ function announceScore(before) {
   } else {
     text = tennisCall();
   }
+  // append "match point" / "set point" / "break point" when one point away
+  if (!match.over) { const sit = situationCall(); if (sit) text += ". " + sit; }
+  // and announce the change of ends at the conventional moment (spoken with the score, not after it)
+  if (changeEndsDue(before)) text += ". " + t("changeEnds");
   speak(text);
 }
 
@@ -2241,9 +2348,26 @@ function tickBurst() {
 // Would side i win the set / match by taking the next point? (simulated on a clone via the real engine)
 function outcomeIfWin(i) {
   const sim = JSON.parse(JSON.stringify(match));
-  const before = sim.sets[i];
+  const setBefore = sim.sets[i];
+  const gamesBefore = sim.games[0] + sim.games[1];
   TapScore.scorePoint(sim, i);
-  return { matchWon: sim.over, setWon: sim.sets[i] > before };
+  return { matchWon: sim.over, setWon: sim.sets[i] > setBefore, gameWon: (sim.games[0] + sim.games[1]) > gamesBefore };
+}
+
+// Spoken "point-away" situation for the CURRENT state — "Match point" / "Set point" / "Break point"
+// (no player name), or "" if none. Routine game points are intentionally NOT announced (too frequent).
+function situationCall() {
+  if (match.over) return "";
+  const o = [outcomeIfWin(0), outcomeIfWin(1)];
+  if (o[0].matchWon || o[1].matchWon) return t("v_matchPointG");
+  if (isTargetSport()) return "";                    // target sports: a "set" is a game → don't call game points
+  if (o[0].setWon || o[1].setWon) return t("v_setPointG");
+  if (!match.tiebreak) {
+    // a break point = the returner is one point from the game (never a routine game point)
+    const brk = [0, 1].some(i => o[i].gameWon && i !== match.server && !o[i].setWon && !o[i].matchWon);
+    if (brk) return t("v_breakPointG");
+  }
+  return "";
 }
 
 // goldenArmed is also read by the stats page; the scoring transitions themselves live in scoring.js.
@@ -2525,6 +2649,7 @@ function render() {
   el("resetBtn").style.display = freePlayLive ? "none" : "";
   syncSettingsUI();
   firstRender = false;   // subsequent renders may animate score changes
+  if (window.updateVolumeCapture) updateVolumeCapture();   // keep volume-key interception in sync with play state
 }
 
 // mm:ss (or h:mm:ss past an hour)
@@ -2719,33 +2844,15 @@ function launchConfetti() {
 }
 
 /* ---- interactions ----
-   Normally a tap scores the side you touch. A single-button Bluetooth clicker fires its press at the
-   EXACT same pixel every time, whereas a finger never repeats a pixel — so a tap that exactly repeats
-   the previous tap's position is the clicker. We learn that spot and route taps there through the click
-   counter (1 = your team, 2 = opponents, 3 = undo); everything else scores the side you touch, instantly.
-   No setting required. (The Clicker-mode switch just forces this on, as a fallback.) */
-let clickerPt = null, prevTapX = -999, prevTapY = -999, prevTapAt = 0;
+   A tap always scores the side you touch. Bluetooth clicker input is handled separately, through
+   explicitly mapped key events (see the clicker section) — never via tap/coordinate heuristics, so a
+   normal tap can never be mistaken for a double-click. */
 function scoreSide(side, e) {
   if (!match.over) scoreSplash(el(side === 0 ? "sideA" : "sideB"), e);
   addPoint(side);
 }
-function sideTap(side, e) {
-  if (clickerMode) { clickerTap(); return; }                       // manual override: always a clicker press
-  const x = Math.round(e.clientX), y = Math.round(e.clientY), now = performance.now();
-  const near = (bx, by) => Math.abs(x - bx) <= 1 && Math.abs(y - by) <= 1;
-  if (clickerPt && near(clickerPt.x, clickerPt.y)) {
-    clickerTap();                                                  // known clicker spot → clean deferred multi-click
-  } else if (near(prevTapX, prevTapY) && (now - prevTapAt) < REMOTE_MULTI_MS) {
-    clickerPt = { x, y };                                          // exact repeat → it's the clicker; learn the spot
-    doUndo(); rTaps = 1; clickerTap();                             // undo the press just scored; recount (prev=1, this=2)
-    offerClickerMode();                                           // first detection → offer to force Clicker mode
-  } else {
-    scoreSide(side, e);                                            // finger / first press → instant, per-side
-  }
-  prevTapX = x; prevTapY = y; prevTapAt = now;
-}
-el("sideA").addEventListener("click", (e) => sideTap(0, e));
-el("sideB").addEventListener("click", (e) => sideTap(1, e));
+el("sideA").addEventListener("click", (e) => scoreSide(0, e));
+el("sideB").addEventListener("click", (e) => scoreSide(1, e));
 
 // Editable names inline — no native prompt() (some environments block it)
 function wireName(nameId, idx) {
@@ -2870,12 +2977,13 @@ function sheetClose(elm) {
    (the only setting that would restart the match); the rest apply live. */
 const settingsPage = el("settingsPage");
 function openSettingsPage(inMatch) {
-  // In-match: match settings + Clicker mode. From home: app preferences + Clicker mode.
+  // In-match: match settings + clicker. From home: app preferences + clicker.
   document.querySelectorAll("#settingsPage .home-only").forEach(e => e.style.display = inMatch ? "none" : "");
   el("matchSection").style.display = inMatch ? "" : "none";
   el("settingsPageTitle").textContent = inMatch ? t("matchSettings") : t("settings");
   refreshProUI();        // Pro banner reflects trial / owned status
-  syncClickerSwitch();   // reflect current clicker-mode state (shown in both contexts)
+  updateClkRow();        // reflect clicker on/off status (native only; no-op on web)
+  if (window.updateVolumeCapture) updateVolumeCapture();   // stop grabbing volume while settings are open
   if (inMatch) {
     syncSettingsUI();   // reflect the live match's format + row visibility; all rows are editable
   } else {
@@ -2887,6 +2995,7 @@ function openSettingsPage(inMatch) {
 function closeSettingsPage() {
   settingsPage.classList.remove("show");
   settingsPage.setAttribute("aria-hidden", "true");
+  if (window.updateVolumeCapture) updateVolumeCapture();
 }
 el("setupSettings").addEventListener("click", (e) => { e.stopPropagation(); openSettingsPage(false); });   // home: app prefs
 el("settingsBtn").addEventListener("click", (e) => { e.stopPropagation(); openSettingsPage(true); });       // in-match: + match settings
@@ -3004,40 +3113,224 @@ el("voiceSelect").addEventListener("change", (e) => {
 });
 populateVoiceSelect();
 
-// Clicker-mode toggle
-function syncClickerSwitch() {
-  const b = el("clickerSwitch");
-  b.classList.toggle("on", clickerMode);
-  b.setAttribute("aria-checked", String(clickerMode));
+/* ---- Bluetooth clicker (native only) ----
+   Map each clicker button to an action by pressing it (learn flow); during play a mapped KEY event
+   fires its action directly. Key events only — screen taps are never involved, so normal tapping can
+   never be misread as a double-click. Single-button clickers use press-count (1 = Team 1, 2 = Team 2,
+   3 = undo). Removed from the web build (see the .native-only nodes) to avoid device quirks. */
+const CLK_KEY = "tennisTracker.clickerCfg";
+const CLK_MULTI_MS = 350;                       // window to gather presses on a single-button clicker
+const REMOTE_IGNORE = new Set(["Shift", "Control", "Alt", "Meta", "Escape", "Tab", "CapsLock"]);
+function loadClk() {
+  try {
+    const j = JSON.parse(localStorage.getItem(CLK_KEY) || "null");
+    if (j && typeof j === "object") {
+      ["a", "b", "undo"].forEach(k => { if (j[k] && !/^[kp]:/.test(j[k])) j[k] = "k:" + j[k]; });  // migrate old bare codes
+      return j;
+    }
+  } catch (e) {}
+  return { enabled: false, single: false, triple: false, a: null, b: null, undo: null };
 }
-function setClickerMode(on) {
-  clickerMode = on;
-  try { localStorage.setItem("tennisTracker.clicker", on ? "1" : "0"); } catch (e) {}
-  syncClickerSwitch();
+let clk = loadClk();
+function saveClk() { try { localStorage.setItem(CLK_KEY, JSON.stringify(clk)); } catch (e) {} }
+function clkActive() { return IS_NATIVE && clk.enabled && clk.a != null; }
+function keySig(e) { return e.code || e.key || ""; }
+const KEY_LABELS = { AudioVolumeUp: "Volume Up", AudioVolumeDown: "Volume Down", VolumeUp: "Volume Up", VolumeDown: "Volume Down",
+  Enter: "Enter", NumpadEnter: "Enter", Return: "Enter", Space: "Space", " ": "Space",
+  ArrowUp: "Up", ArrowDown: "Down", ArrowLeft: "Left", ArrowRight: "Right", PageUp: "Page Up", PageDown: "Page Down" };
+// A clicker button is stored as a signature: "k:<code>" for key presses, "p:<x>,<y>" for a
+// pointer/touch clicker that fires at a fixed pixel. Both cases are captured and matched the same way.
+function ptrSig(e) { return "p:" + Math.round(e.clientX) + "," + Math.round(e.clientY); }
+function parsePtr(sig) { const m = /^p:(-?\d+),(-?\d+)$/.exec(sig || ""); return m ? { x: +m[1], y: +m[2] } : null; }
+function ptrMatch(sig, x, y) { const p = parsePtr(sig); return !!p && Math.abs(p.x - x) <= 4 && Math.abs(p.y - y) <= 4; }
+function sigLabel(sig) {
+  if (!sig) return t("clk_none");
+  if (sig.indexOf("p:") === 0) return t("clk_btn");
+  const k = sig.indexOf("k:") === 0 ? sig.slice(2) : sig;
+  return KEY_LABELS[k] || k.replace(/^Key|^Digit/, "");
 }
-el("clickerSwitch").addEventListener("click", () => setClickerMode(!clickerMode));
-syncClickerSwitch();
 
-/* ---- "clicker detected" prompt ----
-   We can't see a Bluetooth HID connection from the web layer, but the first time a clicker is
-   used (a learned fixed-pixel tap, or a remote key press) we offer to switch on Clicker mode. */
-let clickerAsked = false;
-try { clickerAsked = localStorage.getItem("tennisTracker.clickerAsked") === "1"; } catch (e) {}
-const clickerModal = el("clickerModal");
-function markClickerAsked() {
-  clickerAsked = true;
-  try { localStorage.setItem("tennisTracker.clickerAsked", "1"); } catch (e) {}
+function updateClkRow() {
+  const s = el("clickerStatus");
+  if (!s) return;
+  s.textContent = clk.enabled ? (clk.single ? t("clk_status_single") : t("clk_status_on")) : t("clk_status_off");
 }
-function offerClickerMode() {
-  if (clickerMode || clickerAsked || match.over) return;
-  if (el("setup").classList.contains("show") || el("settingsPage").classList.contains("show")) return;
-  clickerModal.classList.add("show");
-  clickerModal.setAttribute("aria-hidden", "false");
+
+/* setup / learn flow */
+const clkSetup = el("clickerSetup");
+let clkState = "idle", clkDraft = null;
+function openClkSetup() {
+  clkDraft = { single: clk.single, triple: clk.triple, a: clk.a, b: clk.b, undo: clk.undo };
+  clkState = (clk.enabled && clk.a != null) ? "done" : "a";
+  renderClk();
+  clkSetup.classList.add("show"); clkSetup.setAttribute("aria-hidden", "false");
+  if (window.updateVolumeCapture) updateVolumeCapture();
 }
-function closeClickerModal() { clickerModal.classList.remove("show"); clickerModal.setAttribute("aria-hidden", "true"); }
-el("clickerEnable").addEventListener("click", () => { setClickerMode(true); markClickerAsked(); closeClickerModal(); });
-el("clickerDismiss").addEventListener("click", () => { markClickerAsked(); closeClickerModal(); });
-clickerModal.addEventListener("click", (e) => { if (e.target === clickerModal) { markClickerAsked(); closeClickerModal(); } });
+function closeClkSetup() { clkSetup.classList.remove("show"); clkSetup.setAttribute("aria-hidden", "true"); updateClkRow(); if (window.updateVolumeCapture) updateVolumeCapture(); }
+function commitClk() { clk = { enabled: true, single: clkDraft.single, triple: clkDraft.triple, a: clkDraft.a, b: clkDraft.b, undo: clkDraft.undo }; saveClk(); if (window.updateVolumeCapture) updateVolumeCapture(); }
+function clkAddAction(label, fn) { const b = document.createElement("button"); b.className = "clk-action"; b.textContent = label; b.addEventListener("click", fn); el("clkActions").appendChild(b); }
+function clkRow(label, value, sig) {
+  const d = document.createElement("div"); d.className = "clk-item"; d.dataset.sig = sig || "";
+  const l = document.createElement("span"); l.textContent = label;
+  const k = document.createElement("span"); k.className = "clk-key"; k.textContent = value;
+  d.append(l, k); return d;
+}
+function clkItem(label, sig) { return clkRow(label, sigLabel(sig), sig); }
+function renderClk() {
+  const capturing = (clkState === "a" || clkState === "b" || clkState === "undo");
+  el("clkSub").textContent = t("clk_intro");
+  el("clkActions").innerHTML = ""; el("clkMap").innerHTML = "";
+  el("clkCapture").style.display = capturing ? "" : "none";
+  el("clkCapture").classList.toggle("armed", capturing);
+  el("clkDone").style.display = capturing ? "none" : "";
+  el("clkOff").style.display = (!capturing && clk.enabled) ? "" : "none";
+  if (clkState === "a") {
+    el("clkPrompt").textContent = t("clk_press_a"); el("clkHint").textContent = t("clk_hint_pair");
+  } else if (clkState === "b") {
+    el("clkPrompt").textContent = t("clk_press_b"); el("clkHint").textContent = t("clk_hint_or_single");
+    clkAddAction(t("clk_one_button"), () => { clkDraft.single = true; clkDraft.triple = false; clkDraft.b = null; clkDraft.undo = null; clkState = "done"; commitClk(); renderClk(); });
+  } else if (clkState === "undo") {
+    // A third distinct button → direct undo. No third button → offer triple-click undo instead.
+    el("clkPrompt").textContent = t("clk_press_undo"); el("clkHint").textContent = t("clk_hint_triple");
+    clkAddAction(t("clk_use_triple"), () => { clkDraft.triple = true; clkDraft.undo = null; clkState = "done"; commitClk(); renderClk(); });
+  } else {
+    if (clkDraft.single) {
+      el("clkMap").appendChild(clkItem(t("clk_button"), clkDraft.a));
+      const note = document.createElement("div"); note.className = "clk-note"; note.textContent = t("clk_single_note"); el("clkMap").appendChild(note);
+    } else {
+      el("clkMap").appendChild(clkItem(t("clk_team1"), clkDraft.a));
+      el("clkMap").appendChild(clkItem(t("clk_team2"), clkDraft.b));
+      if (clkDraft.triple) {
+        el("clkMap").appendChild(clkRow(t("clk_undo"), t("clk_triple_val"), ""));
+        const note = document.createElement("div"); note.className = "clk-note"; note.textContent = t("clk_triple_note"); el("clkMap").appendChild(note);
+      } else {
+        el("clkMap").appendChild(clkItem(t("clk_undo"), clkDraft.undo));
+      }
+    }
+    el("clkHint").textContent = "";
+    clkAddAction(t("clk_reconfigure"), () => { clkDraft = { single: false, triple: false, a: null, b: null, undo: null }; clkState = "a"; renderClk(); });
+  }
+}
+function clkCapture(s) {
+  if (clkState === "a") { clkDraft.a = s; clkState = "b"; renderClk(); }
+  else if (clkState === "b") {
+    if (s === clkDraft.a) { el("clkHint").textContent = t("clk_same"); return; }
+    clkDraft.b = s; clkDraft.single = false; clkState = "undo"; renderClk();
+  } else if (clkState === "undo") {
+    if (s === clkDraft.a || s === clkDraft.b) { el("clkHint").textContent = t("clk_dup"); return; }
+    clkDraft.undo = s; clkState = "done"; commitClk(); renderClk();
+  }
+}
+function flashClkItem(s) {
+  const p = parsePtr(s);
+  el("clkMap").querySelectorAll(".clk-item").forEach(it => {
+    const sig = it.dataset.sig;
+    if (sig && (sig === s || (p && ptrMatch(sig, p.x, p.y)))) {
+      it.classList.add("flash"); setTimeout(() => it.classList.remove("flash"), 220);
+    }
+  });
+}
+
+/* play-time input: a mapped key OR the registered clicker pixel fires its action.
+   Press-counting is used ONLY where there's no dedicated button for an action:
+   • single button      → 1 press = you, 2 = opponent, 3 = undo
+   • two buttons + triple → each scoring button: 1 press scores its team, 3 presses = undo
+   With three distinct buttons every action is its own button and fires instantly (no counting). */
+let clkTaps = 0, clkTimer = null, clkKind = null;
+function clkFire(side) { if (!match.over) scoreSplash(el(side === 0 ? "sideA" : "sideB"), null); addPoint(side); }
+function resolveClk() {
+  const n = clkTaps, kind = clkKind; clkTaps = 0; clkTimer = null; clkKind = null;
+  if (n <= 0) return;
+  if (kind === "single") { if (n >= 3) doUndo(); else clkFire(n === 1 ? 0 : 1); }
+  else { if (n >= 3) doUndo(); else clkFire(kind === "a" ? 0 : 1); }   // two-button + triple
+}
+function clkCount(kind) {
+  if (clkKind && kind !== clkKind && clkTimer) { clearTimeout(clkTimer); resolveClk(); }   // switched button → settle the last one
+  clkKind = kind; clkTaps++;
+  if (clkTimer) clearTimeout(clkTimer);
+  clkTimer = setTimeout(resolveClk, CLK_MULTI_MS);
+}
+// Which mapped action matches this input? Keys match their code exactly; pointer clickers match
+// their registered pixel (±4px). `x`/`y` are null for key events.
+function clkActionFor(sig, x, y) {
+  const hit = (m) => !!m && ((sig && m === sig) || (x != null && ptrMatch(m, x, y)));
+  if (clk.single) return hit(clk.a) ? "single" : null;
+  if (hit(clk.a)) return "a"; if (hit(clk.b)) return "b"; if (hit(clk.undo)) return "undo"; return null;
+}
+function runClk(act) {
+  if (act === "single") return clkCount("single");
+  if (clk.triple && (act === "a" || act === "b")) return clkCount(act);   // two-button: triple = undo
+  if (act === "a") clkFire(0); else if (act === "b") clkFire(1); else if (act === "undo") doUndo();
+}
+
+if (IS_NATIVE && clkSetup) {
+  const row = el("clickerRow"); if (row) row.addEventListener("click", openClkSetup);
+  el("clkClose").addEventListener("click", closeClkSetup);
+  el("clkDone").addEventListener("click", closeClkSetup);
+  el("clkOff").addEventListener("click", () => { clk.enabled = false; saveClk(); closeClkSetup(); });
+  clkSetup.addEventListener("click", (e) => { if (e.target === clkSetup) closeClkSetup(); });
+
+  // A single press can surface as several DOM events (pointerdown → click, key repeat, native
+  // forward). During setup we debounce so one press = one captured signature, and show a live
+  // "detected" line so you can tell the clicker is reaching the app at all.
+  let clkCapAt = 0;
+  function clkSetupInput(sig, desc) {
+    const diag = el("clkDiag"); if (diag) diag.textContent = t("clk_seen") + " " + desc;
+    const now = performance.now();
+    if (now - clkCapAt < 400) return;                  // ignore the rest of the same press
+    clkCapAt = now;
+    if (clkState === "done") flashClkItem(sig); else clkCapture(sig);
+  }
+
+  // Key clickers (enter / arrows / media) arrive as DOM keydown; volume keys come via window.__tsKey (native).
+  function onClkKey(code) {
+    if (!code) return false;
+    if (clkSetup.classList.contains("show")) { clkSetupInput("k:" + code, KEY_LABELS[code] || code); return true; }
+    if (clkActive() && remoteActive()) { const act = clkActionFor("k:" + code, null, null); if (act) { runClk(act); return true; } }
+    return false;
+  }
+  document.addEventListener("keydown", (e) => {
+    if (!keySig(e) || REMOTE_IGNORE.has(e.key) || e.repeat) return;
+    if (onClkKey(keySig(e))) e.preventDefault();
+  });
+  window.__tsKey = function (code) { try { onClkKey(code); } catch (e) {} };
+
+  // Volume buttons are swallowed by Android before the WebView sees them, so we ask the native shell
+  // to intercept + forward them — but only while we'd actually use them, so normal volume still works.
+  function isVolSig(s) { return s === "k:AudioVolumeUp" || s === "k:AudioVolumeDown" || s === "k:VolumeUp" || s === "k:VolumeDown"; }
+  function volMapped() { return isVolSig(clk.a) || isVolSig(clk.b) || isVolSig(clk.undo); }
+  // Tell the native shell how to treat the volume rocker:
+  //   "learn" (setup open) — grab any volume key so we can learn which device is the clicker
+  //   "play"  — grab volume only from the learned clicker device; the phone's own buttons still work
+  //   "off"   — don't touch volume
+  window.updateVolumeCapture = function () {
+    let mode = "off";
+    if (IS_NATIVE) {
+      if (clkSetup && clkSetup.classList.contains("show")) mode = "learn";
+      else if (clkActive() && volMapped() && remoteActive()) mode = "play";
+    }
+    try { if (window.TapScoreNative && TapScoreNative.setVolumeMode) TapScoreNative.setVolumeMode(mode); } catch (e) {}
+  };
+
+  // Pointer/touch clickers fire at a fixed pixel. Capture BOTH pointerdown (most reliable) and click,
+  // in the capture phase so a matched press drives the mapped action instead of scoring the side.
+  function onClkPointer(e, isClick) {
+    if (clkSetup.classList.contains("show")) {
+      if (e.target.closest("#clkActions, .helpClose, .done, .clk-off")) return;   // dialog controls = the user
+      e.preventDefault(); e.stopImmediatePropagation();
+      clkSetupInput(ptrSig(e), Math.round(e.clientX) + "," + Math.round(e.clientY));
+      return;
+    }
+    if (!isClick) return;                              // during play act on click only (avoid pointerdown+click double-fire)
+    if (!clkActive() || !remoteActive()) return;
+    const act = clkActionFor(null, e.clientX, e.clientY);
+    if (act) { e.preventDefault(); e.stopImmediatePropagation(); runClk(act); }
+  }
+  document.addEventListener("pointerdown", (e) => onClkPointer(e, false), true);
+  document.addEventListener("click", (e) => onClkPointer(e, true), true);
+
+  updateClkRow();
+}
 
 /* ---- appearance / theme (dark · light · system) ---- */
 let themePref = "system";
@@ -3445,76 +3738,15 @@ document.addEventListener("pointerdown", (e) => {
   btn.appendChild(span);
 });
 
-/* ---- external clicker / remote support ----
-   Any Bluetooth remote that pairs as a keyboard sends key events; we don't care which key.
-   One click → your team (side A), double-click → opponents (side B), triple-click OR long press → undo.
-   Triple-click is the reliable undo: most one-button clickers fire an instant press+release even
-   when physically held, so there's no held key for the long-press timer to catch — but we keep the
-   long-press path too for remotes that do hold. This lets a single-button remote drive everything. */
-const REMOTE_LONG_MS = 600;    // hold this long → undo (for clickers that actually hold the key down)
-const REMOTE_MULTI_MS = 350;   // window to catch further clicks for a double/triple; also the single-click delay
-const YOUR_SIDE = 0;           // side A = "your team"; double-click scores the opponents
-const REMOTE_IGNORE = new Set(["Shift", "Control", "Alt", "Meta", "Escape", "Tab", "CapsLock"]);
-let rDownAt = 0, rLongFired = false, rTaps = 0, rTapTimer = null;
-
-// Only act on remote keys during live play — not while typing a name or with an overlay open
+// Only act on clicker keys during live play — not while typing a name or with an overlay open.
+// (null-guarded so a renamed/removed overlay id can never throw and silently kill scoring.)
 function remoteActive() {
   const ae = document.activeElement;
   if (ae && (ae.tagName === "INPUT" || ae.isContentEditable)) return false;
   if (match.over) return false;
-  // Don't act on remote/clicker input while any full-screen surface or dialog is open.
-  // (null-guarded so a renamed/removed overlay id can never throw and silently kill scoring.)
-  return !["setup", "settingsPage", "sportSheet", "winner", "confirmModal", "help", "statsScreen"]
+  return !["setup", "settingsPage", "sportSheet", "winner", "confirmModal", "help", "statsScreen", "clickerSetup"]
     .some(id => { const e = el(id); return e && e.classList.contains("show"); });
 }
-function resolveRemoteTaps() {
-  const n = rTaps; rTaps = 0; rTapTimer = null;
-  if (n <= 0) return;
-  if (n >= 3) { doUndo(); return; }                   // 3+ clicks = undo (works on any one-button clicker)
-  const side = n === 1 ? YOUR_SIDE : 1 - YOUR_SIDE;   // 1 click = your team, 2 = opponents
-  if (!match.over) scoreSplash(el(side === 0 ? "sideA" : "sideB"), null);   // splash from the side's centre
-  addPoint(side);
-}
-function remoteUndo() {
-  rTaps = 0;
-  if (rTapTimer) { clearTimeout(rTapTimer); rTapTimer = null; }
-  doUndo();
-}
-
-/* ---- pointer-based clicker (Bluetooth mouse) ----
-   Many one-button clickers enumerate as a MOUSE, not a keyboard: each press fires a real click
-   (pointer/mouse cascade) at a fixed spot, so the keyboard handler above never sees it. We track the
-   pointer type of the last pointerdown; the side click handlers route mouse clicks here (finger taps
-   stay instant per-side). Counting clicks in a window gives the same 1/2/3 = team A / team B / undo. */
-// Called for every side tap routed to the clicker (auto-detected, or forced via Clicker mode).
-// Count taps in the window, then resolve:
-// 1 = your team, 2 = opponents, 3 = undo — reusing the same counter/resolver as the keyboard remote.
-function clickerTap() {
-  if (!remoteActive()) return;
-  rTaps++;
-  if (rTapTimer) clearTimeout(rTapTimer);
-  rTapTimer = setTimeout(resolveRemoteTaps, REMOTE_MULTI_MS);
-}
-document.addEventListener("keydown", (e) => {
-  if (REMOTE_IGNORE.has(e.key) || !remoteActive()) return;
-  e.preventDefault();
-  if (!e.repeat) offerClickerMode();   // a physical key = an external clicker/keyboard → offer Clicker mode
-  if (e.repeat) {   // key auto-repeats while held → treat a long hold as undo
-    if (!rLongFired && performance.now() - rDownAt >= REMOTE_LONG_MS) { rLongFired = true; remoteUndo(); }
-    return;
-  }
-  rDownAt = performance.now(); rLongFired = false;
-});
-document.addEventListener("keyup", (e) => {
-  if (REMOTE_IGNORE.has(e.key) || !remoteActive()) return;
-  if (rLongFired) { rLongFired = false; rDownAt = 0; return; }
-  if (!rDownAt) return;
-  const held = performance.now() - rDownAt; rDownAt = 0;
-  if (held >= REMOTE_LONG_MS) { remoteUndo(); return; }   // long press (remotes that only send down/up)
-  rTaps++;
-  if (rTapTimer) clearTimeout(rTapTimer);
-  rTapTimer = setTimeout(resolveRemoteTaps, REMOTE_MULTI_MS);
-});
 
 // Keep the screen awake during a match so the phone doesn't sleep between points
 let wakeLock = null;
