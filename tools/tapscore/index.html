@@ -83,6 +83,8 @@
     --line-soft: rgba(255,255,255,.08);  /* subtle dividers */
     --scrim: rgba(2,6,23,.6);            /* modal/sheet backdrop */
     --focus: #93c5fd;
+    --seg-track: rgba(255,255,255,0.10);   /* iOS segmented control: inset track */
+    --seg-thumb: #37476a;                  /* iOS segmented control: raised selected thumb */
   }
   :root[data-theme="light"] {
     --ink: #0b1220;
@@ -97,6 +99,8 @@
     --line-soft: rgba(11,18,32,.08);
     --scrim: rgba(15,23,42,.32);
     --focus: #2563eb;
+    --seg-track: rgba(60,60,67,0.12);      /* iOS segmented control: inset track (light) */
+    --seg-thumb: #ffffff;                  /* iOS segmented control: white raised thumb (light) */
     /* Light mode: side A stays lime; side B becomes light gray with dark-blue numbers (the near-black
        side reads too heavy on a light UI). Both sides keep dark-blue ink. */
     --b: #cbd5e1;             /* side B — light gray */
@@ -311,29 +315,24 @@
   .toast svg { width: 18px; height: 18px; flex: none; }
 
   /* Controls */
-  .controls {
-    position: fixed;
-    left: 50%; transform: translateX(-50%);
-    bottom: calc(env(safe-area-inset-bottom) + 14px);
-    display: flex; gap: 10px; z-index: 5;
-  }
+  /* In-match controls live inside a shared .floatbar; each item is a tonal pill/icon button. */
   .controls button {
-    font: inherit; font-weight: 500; letter-spacing: .3px;
-    color: #f8fafc;
-    background: rgba(30,41,59,.9);
-    border: 0;
-    padding: 12px 20px; border-radius: 999px;
-    cursor: pointer; backdrop-filter: blur(6px);
-    white-space: nowrap; flex: 0 0 auto;    /* size to the label so translations don't wrap/clip */
-    position: relative; overflow: hidden;   /* clip ripple to the pill */
-    box-shadow: var(--elev-1);
-    transition: box-shadow .2s var(--ease), background-color .2s var(--ease), transform .1s var(--ease);
+    font: inherit; font-weight: 600; letter-spacing: .2px; color: var(--ink);
+    background: var(--fill-2); border: 0; cursor: pointer;
+    height: 46px; min-width: 46px; padding: 0 16px; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    white-space: nowrap; flex: 0 0 auto;
+    position: relative; overflow: hidden;    /* clip ripple */
+    transition: background-color .18s var(--ease), transform .1s var(--ease);
   }
-  .controls button:hover { box-shadow: var(--elev-2); background: rgba(43,56,79,.92); }
-  .controls button:active { transform: translateY(1px); box-shadow: var(--elev-1); }
-  .controls button:disabled { opacity: .45; box-shadow: none; }
-  .controls .iconbtn { padding: 11px; display: inline-flex; align-items: center; }
+  .controls button:hover { background: var(--fill-3); }
+  .controls button:active { transform: translateY(1px); }
+  .controls button:disabled { opacity: .4; }
+  .controls .iconbtn { width: 46px; padding: 0; }
   .controls .iconbtn svg { width: 20px; height: 20px; display: block; }
+  /* the End game / End match action reads as the accent, like Start on the home bar */
+  .controls .ctl-end { background: var(--primary); color: var(--on-primary); font-weight: 800; padding: 0 20px; }
+  .controls .ctl-end:hover { background: var(--primary); box-shadow: var(--elev-1); }
 
   /* Winner overlay */
   .winner {
@@ -557,6 +556,33 @@
   .seg button.active { background: var(--primary); color: var(--on-primary); border-left-color: transparent; }
   .seg button.active + button { border-left-color: transparent; }
   .seg button:disabled { opacity: .35; cursor: not-allowed; }
+
+  /* iOS: UISegmentedControl look — a neutral inset track with a raised selected "thumb"
+     (instead of Material's connected buttons with a filled active segment). */
+  .plat-ios .seg {
+    border: 0; border-radius: 9px; overflow: visible;
+    background: var(--seg-track); padding: 2px; gap: 2px;
+  }
+  .plat-ios .seg button {
+    border-left: 0; border-radius: 7px; min-height: 40px;
+    color: var(--ink); font-weight: 500;
+  }
+  .plat-ios .seg button:hover:not(.active):not(:disabled) { background: transparent; }
+  .plat-ios .seg button:active:not(.active) { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+  .plat-ios .seg button.active,
+  .plat-ios #setupMore .seg button.active,
+  .plat-ios #matchSection .seg button.active {
+    background: var(--seg-thumb); color: var(--ink); font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2), 0 0 0.5px rgba(0,0,0,.06);
+    border-left-color: transparent;
+  }
+  /* Match length + Appearance keep the lime selection on iOS (id specificity beats the thumb rule above) */
+  .plat-ios #setupLength button.active,
+  .plat-ios #themeSeg button.active,
+  .plat-ios #matchSection #formatSeg button.active {
+    background: var(--primary); color: var(--on-primary);
+    box-shadow: 0 1px 3px rgba(0,0,0,.22);
+  }
   .switch { width: 52px; height: 30px; border-radius: 999px; background: var(--fill-3); position: relative; cursor: pointer; border: 0; transition: background-color .2s var(--ease); }
   .switch.on { background: var(--primary); }
   .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: var(--elev-1); transition: left .2s var(--ease); }
@@ -664,6 +690,62 @@
   .modal .confirm { background: var(--danger); color: #fff; box-shadow: var(--elev-1); }
   .modal .confirm:hover { box-shadow: var(--elev-2); }
   .modal .actions button:active { transform: translateY(1px); }
+
+  /* ---- iOS: bottom-sheet grabber + iOS-style alerts + iOS switch ---- */
+  .plat-ios .sheet .panel { position: relative; padding-top: 28px; border-radius: 12px 12px 0 0; }
+  .plat-ios .sheet .panel::before {
+    content: ""; position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+    width: 36px; height: 5px; border-radius: 3px;
+    background: color-mix(in srgb, var(--ink) 22%, transparent);
+  }
+  /* Alerts (not the paywall, which keeps its custom sheet): iOS look — compact, frosted,
+     edge-to-edge text buttons separated by hairlines, tinted default + red destructive. */
+  .plat-ios .modal:not(.paywall) .box {
+    max-width: 300px; border-radius: 14px; padding: 20px 0 0; overflow: hidden;
+    background: color-mix(in srgb, var(--surface) 84%, transparent);
+    -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%);
+  }
+  .plat-ios .modal:not(.paywall) .box p { padding: 0 18px; margin: 0 0 18px; }
+  .plat-ios .modal:not(.paywall) .actions { flex-direction: column; gap: 0; }
+  .plat-ios .modal:not(.paywall) .actions button {
+    border: 0; border-top: 0.5px solid var(--line); border-radius: 0;
+    padding: 13px; font-weight: 400; letter-spacing: 0;
+    background: transparent; color: var(--primary-fg); box-shadow: none;
+  }
+  .plat-ios .modal:not(.paywall) .actions button:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); box-shadow: none; }
+  .plat-ios .modal:not(.paywall) .actions .finish { font-weight: 600; }   /* preferred action */
+  .plat-ios .modal:not(.paywall) .actions .confirm { color: #ff453b; }    /* destructive */
+
+  /* iOS switch (not currently used in the UI — kept iOS-correct for any future toggle) */
+  .plat-ios .switch { width: 51px; height: 31px; background: color-mix(in srgb, var(--ink) 16%, transparent); }
+  .plat-ios .switch.on { background: #34c759; }
+  .plat-ios .switch::after { top: 2px; left: 2px; width: 27px; height: 27px; }
+  .plat-ios .switch.on::after { left: 22px; }
+
+  /* iOS: top app-bar buttons become frosted glass circles */
+  .plat-ios .appbar-btn {
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--ink) 7%, transparent);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
+  }
+  .plat-ios .appbar-btn:hover { background: color-mix(in srgb, var(--ink) 12%, transparent); }
+  /* iOS: glassier match timer (stays a dark translucent pill so white reads over any side colour) */
+  .plat-ios .mtimer {
+    background: rgba(0,0,0,.4); border-color: rgba(255,255,255,.28);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    backdrop-filter: blur(18px) saturate(180%);
+  }
+  /* iOS: grouped inset list — each .sgroup becomes a rounded card, rows split by hairlines */
+  .plat-ios .row { border-top-width: 0.5px; }
+  .plat-ios .sgroup {
+    display: block;
+    background: var(--surface); border: 0.5px solid var(--line);
+    border-radius: 12px; overflow: hidden; margin: 0 0 22px;
+  }
+  .plat-ios .sgroup > .row { border-top: 0.5px solid var(--line); margin: 0; padding: 12px 16px; }
+  .plat-ios .sgroup > .row:first-child { border-top: 0; }
+  .plat-ios .settings-subhead { text-transform: uppercase; font-size: 12.5px; letter-spacing: .4px; font-weight: 600; opacity: .55; margin: 6px 6px 8px; }
 
   /* ---- TapScore Pro: trial pill, settings banner, paywall ---- */
   /* trial / upgrade pill in the home app bar */
@@ -802,13 +884,55 @@
     flex: 1 1 auto; overflow: auto;
     display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
     gap: clamp(16px, 4vw, 40px);
-    padding: 4px max(18px, env(safe-area-inset-right)) 24px max(18px, env(safe-area-inset-left));
+    /* extra bottom room so the last field clears the floating toolbar */
+    padding: 4px max(18px, env(safe-area-inset-right)) calc(env(safe-area-inset-bottom) + 104px) max(18px, env(safe-area-inset-left));
   }
-  .setup-footer {
-    flex: 0 0 auto; background: var(--bg); border-top: 1px solid var(--line-soft);
-    padding: 12px max(18px, env(safe-area-inset-right)) calc(env(safe-area-inset-bottom) + 14px) max(18px, env(safe-area-inset-left));
+  /* Material 3 floating toolbar: an elevated rounded pill floating above the content.
+     Shared by the home actions (.ftoolbar) and the in-match controls (.controls). */
+  .floatbar {
+    position: fixed; z-index: 6;
+    left: 50%; transform: translateX(-50%);
+    bottom: calc(env(safe-area-inset-bottom) + 16px);
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--line);
+    box-shadow: var(--elev-3);
+    max-width: calc(100vw - 24px);
   }
-  .setup-footer .startBtn { display: block; width: 100%; max-width: 460px; margin: 0 auto; }
+  .ft-btn {
+    flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--fill-2); color: var(--ink); border: 0; cursor: pointer;
+    position: relative; overflow: hidden;
+    transition: background-color .18s var(--ease), transform .1s var(--ease);
+  }
+  .ft-btn:hover { background: var(--fill-3); }
+  .ft-btn:active { transform: translateY(1px); }
+  .ft-start {
+    flex: 0 1 auto; min-width: 0;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    height: 52px; padding: 0 26px; border-radius: 999px;
+    background: var(--primary); color: var(--on-primary); border: 0; cursor: pointer;
+    font: inherit; font-weight: 800; letter-spacing: .3px; font-size: 16px; white-space: nowrap;
+    position: relative; overflow: hidden;
+    box-shadow: var(--elev-1);
+    transition: box-shadow .2s var(--ease), transform .1s var(--ease);
+  }
+  .ft-start:hover { box-shadow: var(--elev-2); }
+  .ft-start:active { transform: translateY(1px); }
+
+  /* iOS: translucent "Liquid Glass" toolbar (both toolbars) instead of the solid M3 surface */
+  .plat-ios .floatbar {
+    background: color-mix(in srgb, var(--surface) 55%, transparent);
+    border-color: color-mix(in srgb, var(--ink) 16%, transparent);
+    box-shadow: 0 10px 34px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.22);
+    -webkit-backdrop-filter: blur(26px) saturate(200%);
+    backdrop-filter: blur(26px) saturate(200%);
+    gap: 10px; padding: 9px;
+  }
+  .plat-ios .ft-btn, .plat-ios .controls button:not(.ctl-end) { background: color-mix(in srgb, var(--ink) 8%, transparent); }
+  .plat-ios .ft-btn:hover, .plat-ios .controls button:not(.ctl-end):hover { background: color-mix(in srgb, var(--ink) 14%, transparent); }
+  .plat-ios .ft-start, .plat-ios .controls .ctl-end { font-weight: 600; letter-spacing: 0; }   /* End stays the lime accent */
   .setup .card { width: 100%; max-width: 460px; }
   /* court illustration beside the form — large screens only (iPad / desktop) */
   .courtbg { display: none; flex: 0 0 auto; width: min(30vw, 250px); align-items: center; justify-content: center; pointer-events: none; }
@@ -818,7 +942,7 @@
     /* court stays put (centered, non-scrolling); only the settings column scrolls */
     .setup-scroll { flex-direction: row; align-items: stretch; justify-content: center; overflow: hidden; gap: clamp(24px, 5vw, 64px); padding-top: 0; padding-bottom: 0; }
     .courtbg { display: flex; align-self: center; }
-    .setup-scroll .card { align-self: stretch; overflow-y: auto; flex: 0 1 460px; padding: 20px 4px 20px; }
+    .setup-scroll .card { align-self: stretch; overflow-y: auto; flex: 0 1 460px; padding: 20px 4px 96px; }
   }
 
   /* Full-screen app Settings page */
@@ -832,6 +956,8 @@
     padding: 0 max(18px, env(safe-area-inset-right)) calc(env(safe-area-inset-bottom) + 24px) max(18px, env(safe-area-inset-left));
   }
   .settings-inner { width: 100%; max-width: 560px; margin: 0 auto; }
+  /* row groups: invisible to layout by default (rows stay flat), a rounded card on iOS */
+  .sgroup { display: contents; }
   .setup .balls { display: flex; gap: 12px; margin: 0 0 14px; }
   .setup .balls svg { width: 38px; height: 38px; display: block; filter: drop-shadow(0 3px 7px rgba(0,0,0,.45)); }
   .setup .balls svg:nth-child(1) { transform: rotate(-14deg); }
@@ -891,8 +1017,9 @@
     .matchinfo { display: none; }              /* would collide with the top side's name pill */
     .center { max-width: 80vw; }
     .history { flex-direction: row; flex-wrap: wrap; gap: 10px; }  /* keep history a compact row in portrait */
-    .controls { gap: 8px; bottom: calc(env(safe-area-inset-bottom) + 10px); }
-    .controls button { padding: 9px 15px; font-size: 13px; }
+    .floatbar { bottom: calc(env(safe-area-inset-bottom) + 10px); gap: 6px; }
+    .controls button { height: 44px; min-width: 44px; padding: 0 13px; font-size: 13px; }
+    .controls .iconbtn { width: 44px; padding: 0; }
     /* hug the corner in portrait (more headroom up top than in landscape) */
     .mtimer { top: calc(env(safe-area-inset-top) + 2px); right: calc(env(safe-area-inset-right) + 6px); }
   }
@@ -973,8 +1100,10 @@
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite" aria-hidden="true"></div>
 
-  <div class="controls">
-    <button id="undoBtn" data-i18n="undo" data-i18n-title="undo">Undo</button>
+  <div class="controls floatbar">
+    <button id="undoBtn" class="iconbtn" data-i18n-title="undo" data-i18n-aria="undo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg>
+    </button>
     <button id="voiceBtn" class="iconbtn" data-i18n-title="announce" data-i18n-aria="announce" aria-pressed="false"></button>
     <button id="helpBtn" class="iconbtn" data-i18n-title="howto" data-i18n-aria="howto">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -989,8 +1118,8 @@
         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
-    <button id="endBtn" data-i18n="endMatch" data-i18n-title="endMatch" style="display:none">End match</button>
-    <button id="resetBtn" data-i18n="endGame" data-i18n-title="endGame">End game</button>
+    <button id="endBtn" class="ctl-end" data-i18n="endMatch" data-i18n-title="endMatch" style="display:none">End match</button>
+    <button id="resetBtn" class="ctl-end" data-i18n="endGame" data-i18n-title="endGame">End game</button>
   </div>
 
   <canvas id="setConfetti" aria-hidden="true"></canvas>
@@ -1080,9 +1209,6 @@
   <div class="setup" id="setup">
     <div class="appbar">
       <button class="proPill" id="proPill" type="button" hidden></button>
-      <button class="appbar-btn" id="historyBtn" type="button" data-i18n-aria="historyTitle" data-i18n-title="historyTitle">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 5v4h4"/><path d="M3.5 9a8.5 8.5 0 1 1-1 4"/><path d="M12 7.5V12l3 2"/></svg>
-      </button>
       <button class="appbar-btn" id="setupSettings" type="button" data-i18n-aria="settings" data-i18n-title="settings">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -1202,8 +1328,14 @@
       </div>
     </div>
     </div>
-    <div class="setup-footer">
-      <button class="startBtn" id="startBtn" data-i18n="startMatch">Start match</button>
+    <div class="ftoolbar floatbar" role="toolbar" data-i18n-aria="startMatch">
+      <button class="ft-btn" id="historyBtn" type="button" data-i18n-aria="historyTitle" data-i18n-title="historyTitle">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5v4h4"/><path d="M3.5 9a8.5 8.5 0 1 1-1 4"/><path d="M12 7.5V12l3 2"/></svg>
+      </button>
+      <button class="ft-start" id="startBtn" type="button">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <span data-i18n="startMatch">Start match</span>
+      </button>
     </div>
   </div>
 
@@ -1222,8 +1354,11 @@
           <span class="pbText"><span class="pbTitle" data-i18n="pro_title">TapScore Pro</span><span class="pbSub" id="proBannerSub"></span></span>
           <svg class="pbChev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
         </button>
-        <!-- Appearance / Language / Voice / How-to are home-only; Clicker mode shows in-match too. -->
-        <div class="row home-only">
+        <!-- Grouped into .sgroup cards: iOS renders each as a rounded inset card; other platforms
+             keep flat stacked rows (.sgroup is display:contents there). Appearance/Language/Voice/
+             How-to are home-only; the clicker group shows in-match too. -->
+        <div class="sgroup home-only">
+        <div class="row">
           <div><label data-i18n="themeLbl">Appearance</label></div>
           <div class="seg" id="themeSeg">
             <button data-theme-pref="system" data-i18n="themeSystem">System</button>
@@ -1231,11 +1366,11 @@
             <button data-theme-pref="dark" data-i18n="themeDark">Dark</button>
           </div>
         </div>
-        <div class="row home-only">
+        <div class="row">
           <div><label data-i18n="langLbl">Language</label></div>
           <select id="langSelect" class="voiceSel" data-i18n-aria="langLbl"></select>
         </div>
-        <div class="row home-only" id="voiceRow">
+        <div class="row" id="voiceRow">
           <div>
             <label data-i18n="voiceLbl">Announcer voice</label>
             <span class="desc"><span data-i18n="voiceDesc">Only the voices your device exposes to the browser appear here.</span><span class="ios-only"> On iPhone, download extra voices in Settings → Accessibility → Spoken Content → Voices; if a voice isn't listed below, iOS isn't sharing it with web apps.</span></span>
@@ -1244,7 +1379,9 @@
             <option value="" data-i18n="voiceAuto">Automatic (best available)</option>
           </select>
         </div>
-        <button class="row rowlink native-only" id="clickerRow" type="button">
+        </div><!-- /sgroup appearance -->
+        <div class="sgroup native-only">
+        <button class="row rowlink" id="clickerRow" type="button">
           <span class="rowlink-label">
             <span data-i18n="clickerLbl">Bluetooth clicker</span>
             <span class="desc" data-i18n="clickerDesc">Score hands-free with a paired Bluetooth clicker — tap to set up its buttons.</span>
@@ -1254,14 +1391,18 @@
             <svg class="rowlink-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
           </span>
         </button>
-        <button class="row rowlink home-only" id="howtoRow" type="button">
+        </div>
+        <div class="sgroup home-only">
+        <button class="row rowlink" id="howtoRow" type="button">
           <span class="rowlink-label" data-i18n="helpTitle">How to use TapScore</span>
           <svg class="rowlink-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
         </button>
+        </div>
 
         <!-- Match settings — shown during a match only; length is locked (changing it needs a new match) -->
         <div id="matchSection">
           <h3 class="settings-subhead" data-i18n="matchSettings">Match settings</h3>
+          <div class="sgroup">
           <div class="row" id="matchLenRow">
             <div>
               <label data-i18n="matchLength">Match length</label>
@@ -1326,6 +1467,7 @@
               <button data-cends="standard" data-i18n="ceStd">Standard</button>
             </div>
           </div>
+          </div><!-- /sgroup match settings -->
         </div>
       </div>
     </div>
@@ -1416,6 +1558,15 @@ const POINT_LABELS = ["0", "15", "30", "40"];
    the native iOS/Android shell, where window.Capacitor is injected. */
 const Cap = typeof window !== "undefined" ? window.Capacitor : undefined;
 const IS_NATIVE = !!(Cap && Cap.isNativePlatform && Cap.isNativePlatform());
+// Tag the platform so the UI can adopt native styling (e.g. iOS "glass" chrome).
+// Falls back to the user agent so iOS/Android *web* (Safari/Chrome) get the same treatment as the app.
+let PLATFORM = (Cap && Cap.getPlatform) ? Cap.getPlatform() : "web";
+if (PLATFORM === "web" && typeof navigator !== "undefined") {
+  const ua = navigator.userAgent || "";
+  if (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && (navigator.maxTouchPoints || 0) > 1)) PLATFORM = "ios";
+  else if (/Android/.test(ua)) PLATFORM = "android";
+}
+try { document.documentElement.classList.add("plat-" + PLATFORM); } catch (e) {}
 // Touch devices / native app: a connected Bluetooth clicker shows a mouse pointer — hide it.
 // (Desktop keeps its cursor for normal use.)
 if (IS_NATIVE || (typeof navigator !== "undefined" && (navigator.maxTouchPoints || 0) > 0)) {
