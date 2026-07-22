@@ -425,6 +425,8 @@
   .winner .newmatch:active { transform: translateY(1px); box-shadow: var(--elev-1); }
   /* results group: set scores, with the "Match stats" button on its own line below them */
   .winner .wresults { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .winner .wbtns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .winner .statsbtn { display: inline-flex; align-items: center; gap: 7px; }
   /* secondary "Match stats" button (ghost), sitting next to the results */
   .winner .statsbtn {
     position: relative;
@@ -691,30 +693,13 @@
   .modal .confirm:hover { box-shadow: var(--elev-2); }
   .modal .actions button:active { transform: translateY(1px); }
 
-  /* ---- iOS: bottom-sheet grabber + iOS-style alerts + iOS switch ---- */
+  /* ---- iOS: bottom-sheet grabber + iOS switch ---- */
   .plat-ios .sheet .panel { position: relative; padding-top: 28px; border-radius: 12px 12px 0 0; }
   .plat-ios .sheet .panel::before {
     content: ""; position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
     width: 36px; height: 5px; border-radius: 3px;
     background: color-mix(in srgb, var(--ink) 22%, transparent);
   }
-  /* Alerts (not the paywall, which keeps its custom sheet): iOS look — compact, frosted,
-     edge-to-edge text buttons separated by hairlines, tinted default + red destructive. */
-  .plat-ios .modal:not(.paywall) .box {
-    max-width: 300px; border-radius: 14px; padding: 20px 0 0; overflow: hidden;
-    background: color-mix(in srgb, var(--surface) 84%, transparent);
-    -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%);
-  }
-  .plat-ios .modal:not(.paywall) .box p { padding: 0 18px; margin: 0 0 18px; }
-  .plat-ios .modal:not(.paywall) .actions { flex-direction: column; gap: 0; }
-  .plat-ios .modal:not(.paywall) .actions button {
-    border: 0; border-top: 0.5px solid var(--line); border-radius: 0;
-    padding: 13px; font-weight: 400; letter-spacing: 0;
-    background: transparent; color: var(--primary-fg); box-shadow: none;
-  }
-  .plat-ios .modal:not(.paywall) .actions button:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); box-shadow: none; }
-  .plat-ios .modal:not(.paywall) .actions .finish { font-weight: 600; }   /* preferred action */
-  .plat-ios .modal:not(.paywall) .actions .confirm { color: #ff453b; }    /* destructive */
 
   /* iOS switch (not currently used in the UI — kept iOS-correct for any future toggle) */
   .plat-ios .switch { width: 51px; height: 31px; background: color-mix(in srgb, var(--ink) 16%, transparent); }
@@ -746,6 +731,29 @@
   .plat-ios .sgroup > .row { border-top: 0.5px solid var(--line); margin: 0; padding: 12px 16px; }
   .plat-ios .sgroup > .row:first-child { border-top: 0; }
   .plat-ios .settings-subhead { text-transform: uppercase; font-size: 12.5px; letter-spacing: .4px; font-weight: 600; opacity: .55; margin: 6px 6px 8px; }
+  /* iOS: History rows collapse into one inset card; match-stats blocks become inset surface rows */
+  .plat-ios #historyBody { background: var(--surface); border: 0.5px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .plat-ios #historyBody .histrow { background: transparent; border-radius: 0; border-top: 0.5px solid var(--line); }
+  .plat-ios #historyBody .histrow:first-child { border-top: 0; }
+  .plat-ios #historyBody .histrow.tappable:active { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+  .plat-ios .matchstats .sg-row { background: var(--surface); border: 0.5px solid var(--line); }
+
+  /* M3/iOS list items: a leading icon on tappable settings rows */
+  .rowlink .rl-icon { flex: 0 0 auto; width: 24px; height: 24px; color: var(--ink-dim); }
+  .row.rowlink { gap: 12px; }
+  .row.rowlink .rowlink-label { flex: 1 1 auto; min-width: 0; }
+
+  /* ---- Material 3 refinements (Android/web; iOS uses its own treatments above) ---- */
+  /* Tonal elevation: elevated surfaces pick up a faint primary tint (M3 surface tint) */
+  html:not(.plat-ios) .floatbar,
+  html:not(.plat-ios) .sheet .panel {
+    background: color-mix(in srgb, var(--primary) 5%, var(--surface));
+  }
+  /* State layers: consistent press feedback on interactive surfaces (complements the ripple) */
+  html:not(.plat-ios) .ft-btn:active,
+  html:not(.plat-ios) .controls button:not(.ctl-end):active,
+  html:not(.plat-ios) .rowlink:active { background: color-mix(in srgb, var(--ink) 14%, transparent); }
+  html:not(.plat-ios) .seg button:not(.active):active { background: var(--fill-3); }
 
   /* ---- TapScore Pro: trial pill, settings banner, paywall ---- */
   /* trial / upgrade pill in the home app bar */
@@ -1130,7 +1138,13 @@
     <div class="wname" id="winnerName"></div>
     <div class="wresults">
       <div class="scoreline" id="winnerScore"></div>
-      <button class="statsbtn" id="winnerStatsBtn" data-i18n="matchStats">Match stats</button>
+      <div class="wbtns">
+        <button class="statsbtn" id="winnerStatsBtn" data-i18n="matchStats">Match stats</button>
+        <button class="statsbtn" id="winnerShare">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+          <span data-i18n="share">Share</span>
+        </button>
+      </div>
     </div>
     <button class="newmatch" id="winnerNew" data-i18n="endGame">End game</button>
   </div>
@@ -1382,6 +1396,7 @@
         </div><!-- /sgroup appearance -->
         <div class="sgroup native-only">
         <button class="row rowlink" id="clickerRow" type="button">
+          <svg class="rl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg>
           <span class="rowlink-label">
             <span data-i18n="clickerLbl">Bluetooth clicker</span>
             <span class="desc" data-i18n="clickerDesc">Score hands-free with a paired Bluetooth clicker — tap to set up its buttons.</span>
@@ -1394,6 +1409,7 @@
         </div>
         <div class="sgroup home-only">
         <button class="row rowlink" id="howtoRow" type="button">
+          <svg class="rl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
           <span class="rowlink-label" data-i18n="helpTitle">How to use TapScore</span>
           <svg class="rowlink-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
         </button>
@@ -1603,7 +1619,7 @@ const STR = {
     // controls / winner / confirm
     undo: "Undo", announce: "Announce score", howto: "How to use", settings: "Settings",
     endMatch: "End match", endGame: "End game", finishResult: "Finish & see result", discard: "Discard", tie: "It's a tie",
-    reset: "New match", newMatch: "New match", matchStats: "Match stats",
+    reset: "New match", newMatch: "New match", matchStats: "Match stats", share: "Share", shareTag: "Scored with TapScore", shareWin: "VICTORY!", shareDominant: "DOMINANT!", shareClose: "NAIL-BITER!", shareTie: "DEADLOCK",
     confirmMsg: "End this game?", confirmSub: "The current score will be lost.", cancel: "Cancel",
     // sports
     sp_tennis: "Tennis", sp_padel: "Padel", sp_tabletennis: "Table Tennis", sp_pickleball: "Pickleball",
@@ -1651,7 +1667,7 @@ const STR = {
     // stats
     statsTitle: "Match stats", historyTitle: "Match history", historyEmpty: "No games yet. Finished matches show up here.", historyClear: "Clear history", historyClearConfirm: "Tap again to clear", stDuration: "Duration", stPoints: "Points", stAvg: "Avg point*",
     stServe: "Points won on serve", stHead: "Head to head", stPointsWon: "Points won",
-    stBreaks: "Breaks of serve", stLongRun: "Longest run", stMomentum: "Momentum", stMomentumSub: "cumulative point lead",
+    stBreaks: "Breaks of serve", stLongRun: "Longest run", stMomentum: "Momentum", stMomentumSub: "who's winning recent points",
     stLeadChg: "Lead changes", stBigLead: "Biggest lead", stComeback: "Biggest comeback",
     stDeuces: "Deuces", stTiebreaks: "Tiebreaks", stBigMargin: "Biggest margin", stLongPoint: "Longest point*", stLongest: "Longest %s",
     stBySet: "By %s", stNote: "* point times are measured tap-to-tap, so they include the time between rallies",
@@ -1672,7 +1688,7 @@ const STR = {
     undo: "Deshacer", announce: "Anunciar marcador", howto: "Cómo se usa", settings: "Ajustes",
     endMatch: "Terminar",
     endGame: "Terminar partido", finishResult: "Finalizar y ver resultado", discard: "Descartar", tie: "Empate",
-    reset: "Nuevo partido", newMatch: "Nuevo partido", matchStats: "Estadísticas",
+    reset: "Nuevo partido", newMatch: "Nuevo partido", matchStats: "Estadísticas", share: "Compartir", shareTag: "Marcado con TapScore", shareWin: "¡VICTORIA!", shareDominant: "¡DOMINANTE!", shareClose: "¡AL LÍMITE!", shareTie: "EMPATE",
     confirmMsg: "¿Terminar este partido?", confirmSub: "Se perderá el marcador actual.", cancel: "Cancelar",
     sp_tennis: "Tenis", sp_padel: "Pádel", sp_tabletennis: "Tenis de mesa", sp_pickleball: "Pickleball",
     sp_squash: "Squash", sp_badminton: "Bádminton", sp_volleyball: "Voleibol", sp_beachvolley: "Vóley playa",
@@ -1714,7 +1730,7 @@ const STR = {
     helpIosTip: "<strong>Consejo iPhone:</strong> si la voz suena robótica, descarga una mejor en <em>Ajustes → Accesibilidad → Contenido hablado → Voces → Español</em> (elige una “Mejorada” o “Premium”) y selecciónala en <em>Ajustes → Voz del locutor</em> de TapScore.",
     statsTitle: "Estadísticas", historyTitle: "Historial", historyEmpty: "Aún no hay partidos. Los partidos terminados aparecen aquí.", historyClear: "Borrar historial", historyClearConfirm: "Toca otra vez para borrar", stDuration: "Duración", stPoints: "Puntos", stAvg: "Punto medio*",
     stServe: "Puntos ganados al saque", stHead: "Cara a cara", stPointsWon: "Puntos ganados",
-    stBreaks: "Roturas de saque", stLongRun: "Mejor racha", stMomentum: "Momentum", stMomentumSub: "ventaja acumulada de puntos",
+    stBreaks: "Roturas de saque", stLongRun: "Mejor racha", stMomentum: "Momentum", stMomentumSub: "quién gana los últimos puntos",
     stLeadChg: "Cambios de líder", stBigLead: "Mayor ventaja", stComeback: "Mayor remontada",
     stDeuces: "Iguales", stTiebreaks: "Tie-breaks", stBigMargin: "Mayor diferencia", stLongPoint: "Punto más largo*", stLongest: "%s más largo",
     stBySet: "Por %s", stNote: "* los tiempos se miden entre toques, así que incluyen el tiempo entre puntos",
@@ -1734,7 +1750,7 @@ const STR = {
     undo: "Desfazer", announce: "Anunciar resultado", howto: "Como usar", settings: "Definições",
     endMatch: "Terminar",
     endGame: "Terminar jogo", finishResult: "Finalizar e ver resultado", discard: "Descartar", tie: "Empate",
-    reset: "Novo jogo", newMatch: "Novo jogo", matchStats: "Estatísticas",
+    reset: "Novo jogo", newMatch: "Novo jogo", matchStats: "Estatísticas", share: "Partilhar", shareTag: "Marcado com o TapScore", shareWin: "VITÓRIA!", shareDominant: "DOMINANTE!", shareClose: "DECIDIDO NO FIM!", shareTie: "EMPATE",
     confirmMsg: "Terminar este jogo?", confirmSub: "O resultado atual será perdido.", cancel: "Cancelar",
     sp_tennis: "Ténis", sp_padel: "Padel", sp_tabletennis: "Ténis de mesa", sp_pickleball: "Pickleball",
     sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Voleibol", sp_beachvolley: "Vólei de praia",
@@ -1776,7 +1792,7 @@ const STR = {
     helpIosTip: "<strong>Dica iPhone:</strong> se a voz soar robótica, descarrega uma melhor em <em>Definições → Acessibilidade → Conteúdo falado → Vozes → Português</em> (escolhe uma “Melhorada” ou “Premium”) e seleciona-a em <em>Definições → Voz do locutor</em> no TapScore.",
     statsTitle: "Estatísticas", historyTitle: "Histórico", historyEmpty: "Ainda não há jogos. Os jogos terminados aparecem aqui.", historyClear: "Limpar histórico", historyClearConfirm: "Toca de novo para limpar", stDuration: "Duração", stPoints: "Pontos", stAvg: "Ponto médio*",
     stServe: "Pontos ganhos ao serviço", stHead: "Frente a frente", stPointsWon: "Pontos ganhos",
-    stBreaks: "Quebras de serviço", stLongRun: "Melhor sequência", stMomentum: "Momentum", stMomentumSub: "vantagem acumulada de pontos",
+    stBreaks: "Quebras de serviço", stLongRun: "Melhor sequência", stMomentum: "Momentum", stMomentumSub: "quem ganha os pontos recentes",
     stLeadChg: "Trocas de liderança", stBigLead: "Maior vantagem", stComeback: "Maior recuperação",
     stDeuces: "Iguais", stTiebreaks: "Tie-breaks", stBigMargin: "Maior diferença", stLongPoint: "Ponto mais longo*", stLongest: "%s mais longo",
     stBySet: "Por %s", stNote: "* os tempos são medidos entre toques, por isso incluem o tempo entre pontos",
@@ -1796,7 +1812,7 @@ const STR = {
     undo: "Annuler", announce: "Annoncer le score", howto: "Mode d'emploi", settings: "Réglages",
     endMatch: "Terminer",
     endGame: "Terminer le match", finishResult: "Terminer et voir le résultat", discard: "Abandonner", tie: "Égalité",
-    reset: "Nouveau match", newMatch: "Nouveau match", matchStats: "Statistiques",
+    reset: "Nouveau match", newMatch: "Nouveau match", matchStats: "Statistiques", share: "Partager", shareTag: "Marqué avec TapScore", shareWin: "VICTOIRE !", shareDominant: "DOMINATION !", shareClose: "SUSPENSE !", shareTie: "ÉGALITÉ",
     confirmMsg: "Terminer ce match ?", confirmSub: "Le score actuel sera perdu.", cancel: "Annuler",
     sp_tennis: "Tennis", sp_padel: "Padel", sp_tabletennis: "Tennis de table", sp_pickleball: "Pickleball",
     sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Volley", sp_beachvolley: "Beach-volley",
@@ -1838,7 +1854,7 @@ const STR = {
     helpIosTip: "<strong>Astuce iPhone :</strong> si la voix semble robotique, téléchargez-en une meilleure dans <em>Réglages → Accessibilité → Contenu énoncé → Voix → Français</em> (choisissez « Améliorée » ou « Premium »), puis sélectionnez-la dans <em>Réglages → Voix de l’annonceur</em> de TapScore.",
     statsTitle: "Statistiques", historyTitle: "Historique", historyEmpty: "Aucun match pour l'instant. Les matchs terminés apparaissent ici.", historyClear: "Effacer l'historique", historyClearConfirm: "Touchez encore pour effacer", stDuration: "Durée", stPoints: "Points", stAvg: "Point moyen*",
     stServe: "Points gagnés au service", stHead: "Face à face", stPointsWon: "Points gagnés",
-    stBreaks: "Breaks", stLongRun: "Meilleure série", stMomentum: "Dynamique", stMomentumSub: "avance cumulée de points",
+    stBreaks: "Breaks", stLongRun: "Meilleure série", stMomentum: "Dynamique", stMomentumSub: "qui gagne les derniers points",
     stLeadChg: "Changements de tête", stBigLead: "Plus grande avance", stComeback: "Plus gros retour",
     stDeuces: "Égalités", stTiebreaks: "Jeux décisifs", stBigMargin: "Plus grand écart", stLongPoint: "Point le plus long*", stLongest: "%s le plus long",
     stBySet: "Par %s", stNote: "* les durées sont mesurées entre les touches, elles incluent donc le temps entre les points",
@@ -1858,7 +1874,7 @@ const STR = {
     undo: "Zurück", announce: "Punkte ansagen", howto: "Anleitung", settings: "Einstellungen",
     endMatch: "Beenden",
     endGame: "Spiel beenden", finishResult: "Beenden & Ergebnis", discard: "Verwerfen", tie: "Unentschieden",
-    reset: "Neues Match", newMatch: "Neues Match", matchStats: "Statistiken",
+    reset: "Neues Match", newMatch: "Neues Match", matchStats: "Statistiken", share: "Teilen", shareTag: "Gezählt mit TapScore", shareWin: "SIEG!", shareDominant: "DOMINANT!", shareClose: "NERVENKITZEL!", shareTie: "UNENTSCHIEDEN",
     confirmMsg: "Dieses Spiel beenden?", confirmSub: "Der aktuelle Stand geht verloren.", cancel: "Abbrechen",
     sp_tennis: "Tennis", sp_padel: "Padel", sp_tabletennis: "Tischtennis", sp_pickleball: "Pickleball",
     sp_squash: "Squash", sp_badminton: "Badminton", sp_volleyball: "Volleyball", sp_beachvolley: "Beachvolleyball",
@@ -1900,7 +1916,7 @@ const STR = {
     helpIosTip: "<strong>iPhone-Tipp:</strong> Klingt die Stimme roboterhaft, lade in <em>Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → Deutsch</em> eine bessere („Erweitert“ oder „Premium“) und wähle sie in TapScore unter <em>Einstellungen → Ansagestimme</em>.",
     statsTitle: "Statistiken", historyTitle: "Verlauf", historyEmpty: "Noch keine Spiele. Beendete Spiele erscheinen hier.", historyClear: "Verlauf löschen", historyClearConfirm: "Zum Löschen erneut tippen", stDuration: "Dauer", stPoints: "Punkte", stAvg: "Ø Punkt*",
     stServe: "Punkte am eigenen Aufschlag", stHead: "Direktvergleich", stPointsWon: "Gewonnene Punkte",
-    stBreaks: "Breaks", stLongRun: "Längste Serie", stMomentum: "Momentum", stMomentumSub: "kumulierter Punktevorsprung",
+    stBreaks: "Breaks", stLongRun: "Längste Serie", stMomentum: "Momentum", stMomentumSub: "wer gerade die Punkte macht",
     stLeadChg: "Führungswechsel", stBigLead: "Größte Führung", stComeback: "Größtes Comeback",
     stDeuces: "Einstände", stTiebreaks: "Tie-Breaks", stBigMargin: "Größter Abstand", stLongPoint: "Längster Punkt*", stLongest: "Längster %s",
     stBySet: "Nach %s", stNote: "* Zeiten werden von Tipp zu Tipp gemessen und enthalten die Zeit zwischen den Ballwechseln",
@@ -2855,6 +2871,16 @@ function updateTimer() {
   t.textContent = fmtDur((match.endedAt || nowMs()) - match.startedAt);
 }
 // end-of-match stats — returns HTML for the dedicated stats page
+// Rolling "momentum": net points won over a sliding window (NOT a running total), so an early
+// blowout doesn't permanently skew the chart — a close, back-and-forth match oscillates around 0,
+// and a genuine comeback crosses the centre line. Window scales with match length.
+function rollingMomentum(log) {
+  const seq = (log || []).map(p => (p.w === 0 ? 1 : -1));
+  const P = seq.length, win = Math.max(6, Math.round(P / 12));
+  const mom = [0]; let sum = 0;
+  for (let i = 0; i < P; i++) { sum += seq[i]; if (i >= win) sum -= seq[i - win]; mom.push(sum); }
+  return { mom, max: Math.max(3, win) };
+}
 function buildStatsHTML() {
   const esc = (s) => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
   const n = [esc(match.names[0]), esc(match.names[1])];
@@ -2923,14 +2949,14 @@ function buildStatsHTML() {
 
   // ---- momentum area chart (filled with the leading side's colour above/below the centre line) ----
   const spark = (() => {
-    if (margins.length < 3) return "";
+    const { mom, max: maxAbs } = rollingMomentum(log);
+    if (mom.length < 3) return "";
     const W = 300, H = 60, pad = 3, cy = H / 2;
-    const maxAbs = Math.max(1, biggestLead);
-    const x = (i) => pad + (W - 2 * pad) * (i / (margins.length - 1));
+    const x = (i) => pad + (W - 2 * pad) * (i / (mom.length - 1));
     const y = (v) => cy - (v / maxAbs) * (cy - pad);
-    const linePts = margins.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`);
+    const linePts = mom.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`);
     // close the line back along the centre line → the band between the line and centre gets filled
-    const areaPts = [...linePts, `${x(margins.length - 1).toFixed(1)},${cy}`, `${x(0).toFixed(1)},${cy}`].join(" ");
+    const areaPts = [...linePts, `${x(mom.length - 1).toFixed(1)},${cy}`, `${x(0).toFixed(1)},${cy}`].join(" ");
     return `<div class="statsec"><div class="statsec-h">${t("stMomentum")} <span class="muted">(${t("stMomentumSub")})</span></div>
       <svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
         <defs>
@@ -3132,6 +3158,151 @@ function closeStats() {
   statsScreen.setAttribute("aria-hidden", "true");
 }
 el("winnerStatsBtn").addEventListener("click", () => openStats());
+
+/* ---- share a result card (Instagram story / post) ---- */
+function roundRectPath(g, x, y, w, h, r) {
+  g.beginPath();
+  g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r);
+  g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath();
+}
+function clipName(s, n) { s = String(s || ""); return s.length > n ? s.slice(0, n - 1) + "…" : s; }
+function loadImg(src) { return new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = src; }); }
+// draw centered text, shrinking the font until it fits maxW (so translations never overflow)
+function fitText(g, text, x, y, maxW, weight, size, F, color) {
+  g.fillStyle = color; let s = size;
+  do { g.font = weight + " " + s + "px " + F; if (g.measureText(text).width <= maxW) break; s -= 2; } while (s > 14);
+  g.fillText(text, x, y);
+}
+// Draw a 1080×1920 (9:16 story) result card onto a canvas and return it. Async: loads the court art.
+async function buildShareCanvas(m) {
+  const W = 1080, H = 1920, cx = W / 2;
+  const c = document.createElement("canvas"); c.width = W; c.height = H;
+  const g = c.getContext("2d");
+  const grad = g.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, "#12203a"); grad.addColorStop(1, "#080d18");
+  g.fillStyle = grad; g.fillRect(0, 0, W, H);
+  const lime = "#c9e64b", white = "#f1f5f9", dim = "#9fb0c7", F = "Outfit, system-ui, -apple-system, sans-serif";
+  const tie = (m.winner == null || m.winner < 0);
+  const names = m.names || ["Player 1", "Player 2"];
+  const sets = m.completedSets || [];
+  const w = m.winner;
+
+  // faint court background (reuses the setup-screen court art, tinted lime + inline-styled for canvas)
+  try {
+    const svg = courtSVG(m.settings.sport)
+      .replace(">", "><style>.cl{fill:none;stroke:rgba(201,230,75,0.10);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style>");
+    const img = await loadImg("data:image/svg+xml;utf8," + encodeURIComponent(svg));
+    const cw = 760, ch = cw * 520 / 300;
+    g.drawImage(img, cx - cw / 2, 470, cw, ch);
+  } catch (e) {}
+
+  // the match's sport ball is the crest at the top
+  try {
+    const ball = await loadImg("data:image/svg+xml;utf8," + encodeURIComponent(ballSVG(m.settings.sport)));
+    const bs = 132; g.drawImage(ball, cx - bs / 2, 80, bs, bs);
+  } catch (e) {}
+  g.textAlign = "center"; g.fillStyle = dim; g.font = "500 33px " + F;
+  g.fillText((sportLabel(m.settings.sport) + "  ·  " + histDate(m.endedAt || nowMs())).toUpperCase(), cx, 270);
+
+  // fun title based on how the match went
+  const loserSets = tie ? 0 : sets.filter(s => s[1 - w] > s[w]).length;
+  const titleKey = tie ? "shareTie" : (loserSets >= 1 ? "shareClose" : (sets.length >= 2 ? "shareDominant" : "shareWin"));
+  fitText(g, t(titleKey), cx, 400, W - 120, "900", 104, F, lime);
+  // who won
+  const nameLine = tie ? (clipName(names[0], 10) + "  ·  " + clipName(names[1], 10)) : clipName(names[w], 18);
+  fitText(g, nameLine, cx, 480, W - 140, "700", 56, F, white);
+
+  // scoreboard card
+  const cardX = 150, cardW = 780, cardY = 560, rowH = 108, cardH = rowH * 2 + 46;
+  roundRectPath(g, cardX, cardY, cardW, cardH, 28); g.fillStyle = "rgba(15,23,42,0.78)"; g.fill();
+  const n = sets.length, colW = 74, rightX = cardX + cardW - 52;
+  [0, 1].forEach((side) => {
+    const y = cardY + 23 + rowH * side + rowH / 2 + 15;
+    const win = !tie && w === side;
+    g.textAlign = "left"; g.fillStyle = win ? lime : white; g.font = (win ? "800" : "600") + " 44px " + F;
+    g.fillText(clipName(names[side], 11), cardX + 44, y);
+    g.textAlign = "center"; g.font = "700 44px " + F; g.fillStyle = win ? lime : dim;
+    sets.forEach((s, i) => g.fillText(String(s[side]), rightX - (n - 1 - i) * colW, y));
+  });
+
+  // stat tiles: duration · points · best streak (— when a stat isn't available)
+  const dur = (m.endedAt && m.startedAt) ? fmtDur(m.endedAt - m.startedAt) : "—";
+  const pts = (m.rallies > 0) ? String(m.rallies) : "—";
+  const streak = (m.longestRun) ? String(Math.max(m.longestRun[0] || 0, m.longestRun[1] || 0)) : "—";
+  const tiles = [[dur, t("stDuration")], [pts, t("stPoints")], [streak, t("stLongRun")]];
+  const tW = 250, gap = 24, tY = cardY + cardH + 64, totalW = tiles.length * tW + (tiles.length - 1) * gap, sx = cx - totalW / 2;
+  tiles.forEach((tl, i) => {
+    const x = sx + i * (tW + gap);
+    roundRectPath(g, x, tY, tW, 176, 24); g.fillStyle = "rgba(255,255,255,0.06)"; g.fill();
+    fitText(g, tl[0], x + tW / 2, tY + 88, tW - 28, "800", 50, F, white);
+    fitText(g, tl[1].toUpperCase(), x + tW / 2, tY + 138, tW - 24, "600", 25, F, dim);
+  });
+
+  // momentum chart — rolling point momentum (side A above the line, side B below)
+  const log = m.pointLog || [];
+  if (log.length > 1) {
+    const roll = rollingMomentum(log), margins = roll.mom, maxAbs = roll.max;
+    const N = margins.length, chL = 150, chR = W - 150, chW = chR - chL;
+    const chTop = 1170, chH = 300, chCy = chTop + chH / 2;
+    const xAt = (i) => chL + (N <= 1 ? 0 : (i / (N - 1)) * chW);
+    const yAt = (v) => chCy - (v / maxAbs) * (chH / 2 - 8);
+    g.textAlign = "left"; g.fillStyle = dim; g.font = "600 26px " + F;
+    g.fillText(t("stMomentum").toUpperCase(), chL, chTop - 24);
+    const poly = () => { g.beginPath(); g.moveTo(xAt(0), chCy); for (let i = 0; i < N; i++) g.lineTo(xAt(i), yAt(margins[i])); g.lineTo(xAt(N - 1), chCy); g.closePath(); };
+    g.save(); g.beginPath(); g.rect(chL - 6, chTop - 8, chW + 12, chCy - (chTop - 8)); g.clip(); g.globalAlpha = 0.85; poly(); g.fillStyle = lime; g.fill(); g.restore();
+    g.save(); g.beginPath(); g.rect(chL - 6, chCy, chW + 12, (chTop + chH) - chCy + 8); g.clip(); g.globalAlpha = 0.85; poly(); g.fillStyle = "#6ea8fe"; g.fill(); g.restore();
+    g.globalAlpha = 1;
+    g.strokeStyle = "rgba(255,255,255,0.18)"; g.lineWidth = 2; g.beginPath(); g.moveTo(chL, chCy); g.lineTo(chR, chCy); g.stroke();
+    g.strokeStyle = "rgba(255,255,255,0.6)"; g.lineWidth = 3; g.lineJoin = "round"; g.beginPath();
+    for (let i = 0; i < N; i++) { const X = xAt(i), Y = yAt(margins[i]); i ? g.lineTo(X, Y) : g.moveTo(X, Y); } g.stroke();
+  }
+
+  // footer brand lockup: app logo + "TapScore"
+  try {
+    const logo = await loadImg("icon-512.png");
+    const ls = 60, label = "TapScore", gp = 16;
+    g.font = "800 44px " + F; const lw = g.measureText(label).width;
+    const rowY = H - 165, startX = cx - (ls + gp + lw) / 2;
+    g.save(); roundRectPath(g, startX, rowY, ls, ls, 15); g.clip(); g.drawImage(logo, startX, rowY, ls, ls); g.restore();
+    g.textAlign = "left"; g.fillStyle = white; g.fillText(label, startX + ls + gp, rowY + 42);
+  } catch (e) {
+    g.textAlign = "center"; g.fillStyle = white; g.font = "800 44px " + F; g.fillText("TapScore", cx, H - 130);
+  }
+  return c;
+}
+async function shareStory(m) {
+  let canvas;
+  try { canvas = await buildShareCanvas(m); } catch (e) { return; }
+  const caption = (m.winner == null || m.winner < 0)
+    ? t("shareTag")
+    : (m.names[m.winner] + " · " + (m.completedSets || []).map(s => s[0] + "-" + s[1]).join(" ") + " · TapScore");
+
+  // Native: write the PNG to disk and use the OS share sheet (reliable on iOS + Android).
+  const FS = IS_NATIVE && Cap.Plugins && Cap.Plugins.Filesystem;
+  const SH = IS_NATIVE && Cap.Plugins && Cap.Plugins.Share;
+  if (FS && SH) {
+    try {
+      const base64 = canvas.toDataURL("image/png").split(",")[1];
+      const name = "tapscore-" + nowMs() + ".png";
+      const w = await FS.writeFile({ path: name, data: base64, directory: "CACHE" });
+      await SH.share({ files: [w.uri], text: caption });
+      return;
+    } catch (e) { if (e && /cancel/i.test(e.message || "")) return; /* else fall through */ }
+  }
+
+  // Web / fallback: Web Share with the file, else download the PNG.
+  const blob = await new Promise((res) => canvas.toBlob(res, "image/png"));
+  if (!blob) return;
+  const file = new File([blob], "tapscore.png", { type: "image/png" });
+  if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    try { await navigator.share({ files: [file], text: caption }); return; }
+    catch (e) { if (e && e.name === "AbortError") return; }
+  }
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a"); a.href = url; a.download = "tapscore.png"; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+el("winnerShare").addEventListener("click", () => shareStory(match));
 el("statsClose").addEventListener("click", closeStats);
 el("statsDone").addEventListener("click", closeStats);
 statsScreen.addEventListener("click", (e) => { if (e.target === statsScreen) closeStats(); });
