@@ -95,6 +95,7 @@ struct ScoringView: View {
 
 struct StartView: View {
     var model: MatchModel   // @Observable: reads auto-track
+    var onRemote: () -> Void = {}
     private let sports = ["tennis", "padel", "tabletennis", "pickleball", "squash", "badminton", "volleyball", "beachvolley"]
     private let sportNames = ["tennis": "Tennis", "padel": "Padel", "tabletennis": "Table tennis",
                               "pickleball": "Pickleball", "squash": "Squash", "badminton": "Badminton",
@@ -122,6 +123,10 @@ struct StartView: View {
                     Text("Start").font(.system(size: 17, weight: .bold)).frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent).tint(Theme.lime).foregroundStyle(Theme.onLime)
+                Button(action: onRemote) {
+                    Label("Control phone", systemImage: "iphone.gen3").font(.system(size: 14, weight: .semibold)).frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered).tint(.gray)
             }
             .padding(.horizontal, 6)
         }

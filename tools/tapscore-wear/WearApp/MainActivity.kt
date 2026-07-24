@@ -3,7 +3,11 @@ package com.ivogomes.tapscore.wear
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 
 /**
@@ -19,7 +23,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             val context = LocalContext.current
             val model = remember { MatchModel(context) }
-            RootScreen(model)
+            val remote = remember { RemoteModel(context) }
+            var remoteMode by remember { mutableStateOf(false) }
+            DisposableEffect(remoteMode) {
+                if (remoteMode) remote.start()
+                onDispose { if (remoteMode) remote.stop() }
+            }
+            if (remoteMode) RemoteScreen(remote, onExit = { remoteMode = false })
+            else RootScreen(model, onRemote = { remoteMode = true })
         }
     }
 }

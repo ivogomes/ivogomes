@@ -30,6 +30,7 @@ public class MainActivity extends BridgeActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        registerPlugin(WatchLinkPlugin.class);   // must be before super.onCreate
         super.onCreate(savedInstanceState);
         clickerDescriptor = getSharedPreferences(PREFS, MODE_PRIVATE).getString(KEY_DESC, null);
         enableFullscreen();

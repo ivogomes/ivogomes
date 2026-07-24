@@ -2855,6 +2855,7 @@ function render() {
   syncSettingsUI();
   firstRender = false;   // subsequent renders may animate score changes
   if (window.updateVolumeCapture) updateVolumeCapture();   // keep volume-key interception in sync with play state
+  sendWatchState();      // mirror the live match to a paired watch (no-op without the native bridge)
 }
 
 // mm:ss (or h:mm:ss past an hour)
@@ -3303,6 +3304,47 @@ async function shareStory(m) {
   setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 el("winnerShare").addEventListener("click", () => shareStory(match));
+
+/* ---- watch remote bridge (phone side) ----
+   A paired watch can act as a remote for the match running here. The native shell relays messages:
+   watch → phone commands arrive via window.__wcCommand(json); phone → watch state is pushed through
+   the native WatchLink plugin. Both are no-ops on the plain web build (and until the shell is built).
+   The phone stays the source of truth — the watch just sends score/undo and mirrors what we broadcast. */
+function wcState() {
+  const labels = TapScore.pointDisplay(match);
+  const parts = match.completedSets.map(s => s[0] + "-" + s[1]);
+  if (!isTargetSport()) parts.push(match.games[0] + "-" + match.games[1]);
+  const pill = match.tiebreak ? "TIE-BREAK" : (parts.length ? parts.join("  ") : "0-0");
+  return {
+    t: "state",
+    active: !el("setup").classList.contains("show"),      // is a match on-screen to control?
+    over: !!match.over,
+    winner: match.over ? (match.winner == null ? -1 : match.winner) : null,
+    names: [match.names[0], match.names[1]],
+    you: String(labels[0]), opp: String(labels[1]),
+    pill: pill,
+    server: match.server,
+    sport: match.settings.sport,
+  };
+}
+function sendWatchState() {
+  const WL = IS_NATIVE && Cap.Plugins && Cap.Plugins.WatchLink;
+  if (!WL || !WL.send) return;
+  try { WL.send({ json: JSON.stringify(wcState()) }); } catch (e) {}
+}
+// Called by the native shell when a command arrives from the watch.
+window.__wcCommand = function (json) {
+  let msg; try { msg = JSON.parse(json); } catch (e) { return; }
+  if (!msg) return;
+  if (msg.t === "score" && (msg.side === 0 || msg.side === 1)) {
+    if (!match.over && !el("setup").classList.contains("show")) addPoint(msg.side);   // addPoint → render → sendWatchState
+    else sendWatchState();
+  } else if (msg.t === "undo") {
+    doUndo();
+  } else if (msg.t === "sync") {
+    sendWatchState();
+  }
+};
 el("statsClose").addEventListener("click", closeStats);
 el("statsDone").addEventListener("click", closeStats);
 statsScreen.addEventListener("click", (e) => { if (e.target === statsScreen) closeStats(); });
@@ -3949,6 +3991,7 @@ function showSetup(cancellable) {
   syncSetupUI();
   refreshProUI();     // trial pill reflects games remaining
   el("setup").classList.add("show");
+  sendWatchState();   // tell a paired watch the phone is idle (no active match to control)
 }
 
 // "More options" expander on the setup screen

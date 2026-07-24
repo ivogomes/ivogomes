@@ -1,6 +1,6 @@
 /* Service worker: precache the app shell so the tracker installs and runs fully offline.
    Bump CACHE whenever index.html (or any shell file) changes so clients pick up the update. */
-const CACHE = "tennis-tracker-v72";
+const CACHE = "tennis-tracker-v73";
 const SHELL = [
   "./",
   "./index.html",

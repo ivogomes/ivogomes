@@ -44,9 +44,9 @@ import com.ivogomes.tapscore.engine.Settings
 
 /** Routes between Start, Scoring, and End based on match state. */
 @Composable
-fun RootScreen(model: MatchModel) {
+fun RootScreen(model: MatchModel, onRemote: () -> Unit = {}) {
     when {
-        !model.active -> StartScreen(model)
+        !model.active -> StartScreen(model, onRemote)
         model.match.over -> EndScreen(model)
         else -> ScoringScreen(model)
     }
@@ -176,7 +176,7 @@ private fun MatchMenu(model: MatchModel, onDismiss: () -> Unit) {
 // MARK: - Start (standalone quick launch)
 
 @Composable
-fun StartScreen(model: MatchModel) {
+fun StartScreen(model: MatchModel, onRemote: () -> Unit = {}) {
     val sports = listOf("tennis", "padel", "tabletennis", "pickleball", "squash", "badminton", "volleyball", "beachvolley")
     val sportNames = mapOf(
         "tennis" to "Tennis", "padel" to "Padel", "tabletennis" to "Table tennis",
@@ -214,6 +214,7 @@ fun StartScreen(model: MatchModel) {
             if (ScoringEngine.isTargetSport(sport)) s.pointsTarget = 11
             model.startMatch(s)
         }
+        PillButton("Control phone", Color(0xFF243247), Color.White, onClick = onRemote)
     }
 }
 
@@ -250,7 +251,7 @@ fun EndScreen(model: MatchModel) {
 // MARK: - Shared button
 
 @Composable
-private fun PillButton(text: String, bg: Color, fg: Color, onClick: () -> Unit) {
+fun PillButton(text: String, bg: Color, fg: Color, onClick: () -> Unit) {
     Box(
         Modifier
             .fillMaxWidth()

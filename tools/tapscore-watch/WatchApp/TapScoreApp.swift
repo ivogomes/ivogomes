@@ -7,22 +7,28 @@ import WatchKit
 
 @main
 struct TapScoreApp: App {
-    @State private var model = MatchModel()   // @Observable model is owned with @State
+    @State private var model = MatchModel()      // @Observable model is owned with @State
+    @State private var remote = RemoteModel()    // remote-control (phone) session
+    @State private var remoteMode = false
     var body: some Scene {
         WindowGroup {
-            RootView(model: model)
+            RootView(model: model, remote: remote, remoteMode: $remoteMode)
         }
     }
 }
 
-/// Routes between Start and Scoring based on whether a match is active.
+/// Routes between Start, Scoring, and Remote (control the phone).
 struct RootView: View {
-    var model: MatchModel   // @Observable: plain property; reads in body auto-track
+    var model: MatchModel
+    var remote: RemoteModel
+    @Binding var remoteMode: Bool
     var body: some View {
-        if model.active {
+        if remoteMode {
+            RemoteView(model: remote, onExit: { remoteMode = false })
+        } else if model.active {
             ScoringView(model: model)
         } else {
-            StartView(model: model)
+            StartView(model: model, onRemote: { remote.requestSync(); remoteMode = true })
         }
     }
 }
