@@ -126,26 +126,34 @@ private fun ScoreHalf(
         modifier
             .fillMaxWidth()
             .background(color)
-            .combinedClickable(onClick = onScore, onLongClick = onLong)
+            .combinedClickable(onClick = onScore, onLongClick = onLong),
+        contentAlignment = Alignment.Center
     ) {
-        // Big score dead-center of the half, inked for its side.
-        BasicText(
-            text = score,
-            modifier = Modifier.align(Alignment.Center),
-            style = TextStyle(color = ink, fontSize = 60.sp, fontWeight = FontWeight.Black, fontFamily = Theme.scoreFont)
-        )
-        // Label + serve dot pinned to the outer edge (top for YOU, bottom for OPP).
-        Row(
-            Modifier
-                .align(if (alignTop) Alignment.TopStart else Alignment.BottomStart)
-                .padding(horizontal = 12.dp, vertical = 8.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            BasicText(text = label, style = TextStyle(color = ink, fontSize = 13.sp, fontWeight = FontWeight.Black))
-            if (serving) {
-                Spacer(Modifier.width(6.dp))
-                Box(Modifier.size(9.dp).clip(CircleShape).background(ink))
+        // Label + score stacked and centered within each half. On a ROUND watch the
+        // top/bottom corners get clipped, so nothing is pinned to an edge — everything
+        // lives in the vertical-center band (the widest, always-visible part of the arc).
+        // Label sits on the outer side of the score (above for YOU, below for OPP).
+        val labelRow: @Composable () -> Unit = {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                BasicText(text = label, style = TextStyle(color = ink, fontSize = 14.sp, fontWeight = FontWeight.Black))
+                if (serving) {
+                    Spacer(Modifier.width(6.dp))
+                    Box(Modifier.size(9.dp).clip(CircleShape).background(ink))
+                }
             }
+        }
+        val scoreText: @Composable () -> Unit = {
+            BasicText(
+                text = score,
+                style = TextStyle(color = ink, fontSize = 54.sp, fontWeight = FontWeight.Black, fontFamily = Theme.scoreFont)
+            )
+        }
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            if (alignTop) { labelRow(); Spacer(Modifier.height(2.dp)); scoreText() }
+            else { scoreText(); Spacer(Modifier.height(2.dp)); labelRow() }
         }
     }
 }

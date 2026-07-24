@@ -29,34 +29,38 @@ scoring rules in `scoring.js` first, keep `scoring.test.cjs` green, then mirror 
 
 ## 2. Build the watch app in Xcode
 
-Capacitor can't target watchOS, so this is a native app. **Build it as a companion Watch App target
-inside your existing iOS app — the full click-by-click is in [REMOTE.md](REMOTE.md).**
+Xcode can't wrap this with Capacitor, so the watch app is a small native app you assemble once. You build
+it as a **companion Watch App target inside your existing iPhone app** — that one watch app both **plays
+standalone on the wrist** *and* adds the **"Control phone"** remote mode.
 
-That one watch app is everything you need: it **plays standalone on the wrist** *and* adds the
-**"Control phone"** remote mode. (There's deliberately no separate "standalone-only" build — a watch-only
-app with no host iOS app would work on the wrist but could never control the phone, so it isn't worth
-shipping. To just experiment with the watch UI in isolation you *can* make a plain watchOS project, but
-for anything real use the companion setup.)
+👉 **The full, beginner-friendly click-by-click is in [REMOTE.md](REMOTE.md)** — every button, plus the
+gotchas (the empty companion dropdown, linking the engine package, the blank app icon). Follow that.
 
-In short, REMOTE.md walks you through: add a watchOS **App** target to `tools/tapscore-app/ios` ▸ delete
-the generated starter files ▸ drag in `WatchApp/*.swift` and add the local **TapScoreEngine** package ▸
-set **Minimum Deployments = watchOS 10.0** ▸ register the `WatchLink` plugin ▸ run.
+The gist of what REMOTE.md has you do:
+1. Open `tools/tapscore-app/ios/App/App.xcworkspace` (the **workspace**, not the project).
+2. **File ▸ New ▸ Target ▸ watchOS ▸ App** → "Watch App for Existing iOS App" → pick **App**.
+3. Delete the two generated starter files; drag in our `WatchApp/*.swift` (tick the watch target).
+4. Add the local **TapScoreEngine** package **and confirm it's linked** to the watch target.
+5. Set **Minimum Deployments = watchOS 10.0**.
+6. Add the `WatchLink` bridge to the iPhone app + set the storyboard's class to `MainViewController`.
+7. Give the watch an app icon, then **Run the watch scheme** onto a paired watch.
+
+> There's deliberately no separate "standalone-only" build: a watch app with no host iPhone app works on
+> the wrist but can never control the phone, so it isn't worth shipping. (You *can* make a plain watchOS
+> project just to poke at the UI, but for anything real use the companion setup above.)
 
 ### If the build complains
 - **"'main' attribute can only apply to one type"** → you didn't delete *both* Xcode-generated starter
   files; our `TapScoreApp.swift` is the real `@main`.
-- **"Cannot find 'ScoringEngine' / 'MatchState' in scope"** → the local `Engine` package isn't attached
-  to the watch target (File ▸ Add Package Dependencies ▸ Add Local).
-- **Files added but not compiling** → select each ▸ File inspector ▸ tick the watch target under
-  **Target Membership**.
+- **"Cannot find 'ScoringEngine' / 'MatchState' in scope"** → the `TapScoreEngine` package is referenced
+  but not **linked** to the watch target → watch target ▸ General ▸ *Frameworks, Libraries, and Embedded
+  Content* ▸ **+** ▸ add `TapScoreEngine` (REMOTE.md step 1.7).
+- **Files added but not compiling** → select each file ▸ File inspector (right panel) ▸ tick the watch
+  target under **Target Membership**.
 - **"'Observable' is only available in watchOS 10.0 or newer"** → set the watch target's **Minimum
   Deployments** to **watchOS 10.0**.
-- **"'main' attribute can only apply to one type"** → you didn't delete *both* starter files (step 4).
-- **"Cannot find 'ScoringEngine' / 'MatchState' in scope"** → the engine package isn't attached to the
-  target (step 6).
-- **Files added but not compiling** → select each → File inspector (right panel) → tick your watch target
-  under **Target Membership**.
-- **"'Observable' is only available in watchOS 10.0 or newer"** → do step 7.
+- **No app icon on the watch / can't find it** → run the **watch** scheme directly (not just the iPhone
+  scheme), and add a 1024×1024 icon (REMOTE.md steps 3–4).
 
 ## Score font (Outfit)
 
