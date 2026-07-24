@@ -1,0 +1,112 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "TapScoreEngine-arm64-apple-macosx-debug.module": ["<TapScoreEngine-arm64-apple-macosx-debug.module>"]
+  "TapScoreEnginePackageTests-arm64-apple-macosx-debug.module": ["<TapScoreEnginePackageTests-arm64-apple-macosx-debug.module>"]
+  "TapScoreEnginePackageTests-arm64-apple-macosx-debug.test": ["<TapScoreEnginePackageTests-arm64-apple-macosx-debug.test>"]
+  "TapScoreEngineTests-arm64-apple-macosx-debug.module": ["<TapScoreEngineTests-arm64-apple-macosx-debug.module>"]
+  "main": ["<TapScoreEngine-arm64-apple-macosx-debug.module>"]
+  "test": ["<TapScoreEngine-arm64-apple-macosx-debug.module>","<TapScoreEnginePackageTests-arm64-apple-macosx-debug.test>","<TapScoreEngineTests-arm64-apple-macosx-debug.module>"]
+default: "main"
+nodes:
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Sources/TapScoreEngine/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Tests/TapScoreEngineTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Sources/TapScoreEngine/ScoringEngine.swift"]
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/sources"]
+    description: "Write auxiliary file /Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/sources"
+
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.derived/runner.swift"]
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/sources"]
+    description: "Write auxiliary file /Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/sources"
+
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.derived/runner.swift"]
+
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/ScoringEngine.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/runner.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/ScoringEngineTests.swift.o"]
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.product/Objects.LinkFileList"
+
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Tests/TapScoreEngineTests/ScoringEngineTests.swift"]
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/sources"]
+    description: "Write auxiliary file /Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/sources"
+
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<TapScoreEngine-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/ScoringEngine.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngine.swiftmodule"]
+    outputs: ["<TapScoreEngine-arm64-apple-macosx-debug.module>"]
+
+  "<TapScoreEnginePackageTests-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/runner.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEnginePackageTests.swiftmodule"]
+    outputs: ["<TapScoreEnginePackageTests-arm64-apple-macosx-debug.module>"]
+
+  "<TapScoreEnginePackageTests-arm64-apple-macosx-debug.test>":
+    tool: phony
+    inputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.xctest/Contents/MacOS/TapScoreEnginePackageTests"]
+    outputs: ["<TapScoreEnginePackageTests-arm64-apple-macosx-debug.test>"]
+
+  "<TapScoreEngineTests-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/ScoringEngineTests.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngineTests.swiftmodule"]
+    outputs: ["<TapScoreEngineTests-arm64-apple-macosx-debug.module>"]
+
+  "C.TapScoreEngine-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Sources/TapScoreEngine/ScoringEngine.swift","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/sources"]
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/ScoringEngine.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngine.swiftmodule"]
+    description: "Compiling Swift Module 'TapScoreEngine' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","TapScoreEngine","-emit-dependencies","-emit-module","-emit-module-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngine.swiftmodule","-output-file-map","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/sources","-I","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j10","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/include/TapScoreEngine-Swift.h","-color-diagnostics","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","engine"]
+
+  "C.TapScoreEnginePackageTests-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.derived/runner.swift","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngineTests.swiftmodule","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/sources"]
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/runner.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEnginePackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'TapScoreEnginePackageTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","TapScoreEnginePackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEnginePackageTests.swiftmodule","-output-file-map","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/sources","-I","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j10","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/include/TapScoreEnginePackageTests-Swift.h","-color-diagnostics","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","engine"]
+
+  "C.TapScoreEnginePackageTests-arm64-apple-macosx-debug.test":
+    tool: shell
+    inputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/ScoringEngine.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/runner.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/ScoringEngineTests.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.xctest/Contents/MacOS/TapScoreEnginePackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.xctest/Contents/MacOS/TapScoreEnginePackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug","-o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.xctest/Contents/MacOS/TapScoreEnginePackageTests","-module-name","TapScoreEnginePackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngine.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEnginePackageTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngineTests.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.TapScoreEngineTests-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Tests/TapScoreEngineTests/ScoringEngineTests.swift","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngine.swiftmodule","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/sources"]
+    outputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/ScoringEngineTests.swift.o","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngineTests.swiftmodule"]
+    description: "Compiling Swift Module 'TapScoreEngineTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","TapScoreEngineTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules/TapScoreEngineTests.swiftmodule","-output-file-map","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngineTests.build/sources","-I","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx14.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j10","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","engine"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Sources/TapScoreEngine/","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Tests/TapScoreEngineTests/","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Package.swift","/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

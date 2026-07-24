@@ -10,10 +10,12 @@ tools/tapscore-wear/
 │   ├── ScoringEngine.kt        ← faithful port of ../tapscore/scoring.js
 │   └── ScoringEngineTest.kt    ← JUnit spec mirroring ../tapscore/scoring.test.cjs
 └── WearApp/                    Compose for Wear OS sources to add to a Wear OS app module
-    ├── MainActivity.kt         entry point (setContent → RootScreen)
-    ├── MatchModel.kt           drives the engine, haptics, undo stack, remembers last format
+    ├── MainActivity.kt         entry point (routes standalone / remote)
+    ├── MatchModel.kt           standalone match: engine, haptics, undo, last format
     ├── Theme.kt                palette + per-event Haptics (Vibrator)
-    └── Screens.kt              ScoringScreen (two zones) · StartScreen · EndScreen
+    ├── Screens.kt              ScoringScreen (two zones) · StartScreen · EndScreen
+    ├── RemoteModel.kt          "Control phone" mode — MessageClient (see REMOTE.md)
+    └── RemoteScreen.kt         remote mirror + tap-to-score
 ```
 
 ## The engine is validated
@@ -22,36 +24,46 @@ of `scoring.test.cjs`, mirrored in `ScoringEngineTest.kt`). **Rule:** change sco
 first, keep `scoring.test.cjs` green, then mirror into the Kotlin **and** Swift ports and keep both
 test suites green. JS ⇄ Kotlin ⇄ Swift must never disagree.
 
-## Create the Wear OS app in Android Studio
+## Build the Wear OS app in Android Studio
 
-Capacitor can't target Wear OS, so this is a native app. Click-by-click:
+Capacitor can't target Wear OS, so this is a native app.
 
-1. **New project.** Android Studio ▸ **File ▸ New ▸ New Project…** ▸ template category **Wear OS** ▸
-   **Empty Wear App** (Compose) ▸ Next.
-   - Name: `TapScore Wear` · Package name: `com.ivogomes.tapscore.wear` · Language: **Kotlin** ▸ Finish.
-   - This matches the `package` declarations in the source files (no editing needed).
+> **Recommended → build the companion-capable app.** Use the steps below, but set the module's
+> **`applicationId` to the phone's (`com.ivogomes.tapscore`)** and sign with the **same key** — see
+> **[REMOTE.md](REMOTE.md)**. That *same* app plays standalone on the watch **and** unlocks "Control phone".
+>
+> A pure-standalone build (keeping its own `…​.wear` applicationId) works on the wrist but can **never**
+> control the phone. Fine for quick testing; for release use the companion-capable setup.
 
-2. **Add the engine.** In the Project view, open the app module's `java/com.ivogomes.tapscore` folder
-   and create a sub-package **`engine`**, then drop in `engine/ScoringEngine.kt` (its package is
-   `com.ivogomes.tapscore.engine`). *(Or keep the engine as its own library module — see below.)*
+### Steps
+Plan: make an empty Wear app → drop in the engine + our UI → set the applicationId → run.
 
-3. **Add the UI.** Copy the four `WearApp/*.kt` files into the app module's
-   `java/com.ivogomes.tapscore/wear/` package (they declare `package com.ivogomes.tapscore.wear`).
-   Delete the generated `MainActivity.kt`/`ContentView`-style starter if it clashes — ours is the real
-   `MainActivity`. Make sure `AndroidManifest.xml`'s `<activity android:name=".MainActivity">` points
-   at it (the default generated manifest already uses `.MainActivity`).
+1. **Android Studio → File → New → New Project.**
+2. Choose the **Wear OS** category → **Empty Wear App** (Compose) → **Next**.
+3. Fill in and finish:
+   - **Name:** `TapScore Wear`
+   - **Package name:** `com.ivogomes.tapscore.wear` *(matches our files — don't change it)*
+   - **Language:** Kotlin → **Finish**, then let Gradle finish syncing.
+4. **Add the engine.** In the Project panel (Android view) expand `app → kotlin+java →
+   com.ivogomes.tapscore`. Right-click the package → **New → Package** → name it **engine**. Drag
+   `engine/ScoringEngine.kt` into it (it declares `package com.ivogomes.tapscore.engine`).
+5. **Add the UI.** Make another sub-package **wear** the same way, then drag in **all six** `WearApp/*.kt`
+   files (`MainActivity.kt`, `MatchModel.kt`, `Theme.kt`, `Screens.kt`, `RemoteModel.kt`, `RemoteScreen.kt`).
+   If Android Studio generated a starter `MainActivity`, delete it — ours is the real one. Confirm
+   `AndroidManifest.xml` has `<activity android:name=".MainActivity" …>` (the default already does).
+6. **Module `build.gradle`.** For the companion/remote build, set
+   `android { defaultConfig { applicationId "com.ivogomes.tapscore" } }` (must equal the phone app; the
+   Kotlin `package` stays `com.ivogomes.tapscore.wear`), and add the Data-Layer dependency:
+   `implementation("com.google.android.gms:play-services-wearable:18.1.0")`. The Compose-for-Wear
+   template covers everything else. *(For a throwaway standalone-only test you can skip both.)*
+7. **(Optional) tests.** Put `engine/ScoringEngineTest.kt` under
+   `app/src/test/java/com/ivogomes/tapscore/engine/`, ensure `testImplementation("junit:junit:4.13.2")`,
+   then run `./gradlew test` (or right-click the class → Run).
+8. **Run.** Create a **Wear OS emulator** (Tools → Device Manager → Add → Wear OS) or pair a watch, then
+   **Run ▶**. You should land on the **Start** screen — pick a sport and tap **Start**.
 
-4. **Tests (optional but recommended).** Put `engine/ScoringEngineTest.kt` under `src/test/java/…/engine/`
-   and ensure `testImplementation("junit:junit:4.13.2")` is in the module's `build.gradle`. Run with
-   **`./gradlew test`** (or right-click the test class ▸ Run). It mirrors the web spec.
-
-5. **Dependencies.** The Compose-for-Wear template already includes what the UI needs
-   (`androidx.compose.foundation`, `androidx.wear.compose`). The UI is built on foundation primitives
-   (`Box`/`Column`/`BasicText`/`combinedClickable`/`onRotaryScrollEvent`), so no extra libraries.
-
-6. **Run.** Pick a **Wear OS emulator** (Tools ▸ Device Manager ▸ create e.g. "Wear OS Large Round")
-   or a paired watch ▸ **Run ▶**. Installing to a physical watch works over the same adb/Wi‑Fi flow as
-   the phone APK.
+> Standalone "Control phone" won't connect (no host phone app with the matching id). For that, follow
+> [REMOTE.md](REMOTE.md).
 
 ### Engine as a separate module (cleaner, optional)
 Instead of step 2, create a plain Kotlin/Android library module `:engine`, drop `ScoringEngine.kt`
@@ -78,9 +90,11 @@ to the system font until Outfit is bundled:
 - **Undo** via the rotating bezel / Digital Crown and the long-press menu.
 - **End screen** on completion (winner or tie) → New match / Home.
 
+## Remote mode (implemented)
+The **"Control phone"** mode mirrors and controls the phone's live match over the Wearable Data Layer —
+code is written; assemble/test on device per [REMOTE.md](REMOTE.md).
+
 ## Not yet wired (next steps)
-- **Phone ↔ watch sync** (Wearable Data Layer / MessageClient): mirror + handoff to the phone board.
-  `MatchState`/`Settings` mirror the web JSON field names to make this straightforward.
 - On-watch advanced format (points target, advantage rules, tie-break points) — v1 uses sensible
   defaults; full setup stays on the phone.
 - Free-play "End match → winner/tie" entry point on the watch.

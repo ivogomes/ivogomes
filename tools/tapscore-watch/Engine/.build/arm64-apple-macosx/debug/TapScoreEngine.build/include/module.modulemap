@@ -1,0 +1,3 @@
+module TapScoreEngine {
+    header "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/include/TapScoreEngine-Swift.h"
+}

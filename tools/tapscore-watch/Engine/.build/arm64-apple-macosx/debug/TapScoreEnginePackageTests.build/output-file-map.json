@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/primary.swiftdeps"
+  },
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.derived/runner.swift": {
+    "dependencies": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/runner.d",
+    "object": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEnginePackageTests.build/runner.dia"
+  }
+}

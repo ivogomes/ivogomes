@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/primary.swiftdeps"
+  },
+  "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/Sources/TapScoreEngine/ScoringEngine.swift": {
+    "dependencies": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/ScoringEngine.d",
+    "object": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/ScoringEngine.swift.o",
+    "swiftmodule": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/ScoringEngine~partial.swiftmodule",
+    "swift-dependencies": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/ScoringEngine.swiftdeps",
+    "diagnostics": "/Users/igomes/Sites/ivogomes/tools/tapscore-watch/Engine/.build/arm64-apple-macosx/debug/TapScoreEngine.build/ScoringEngine.dia"
+  }
+}
