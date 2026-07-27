@@ -3602,7 +3602,7 @@ populateVoiceSelect();
    never be misread as a double-click. Single-button clickers use press-count (1 = Team 1, 2 = Team 2,
    3 = undo). Removed from the web build (see the .native-only nodes) to avoid device quirks. */
 const CLK_KEY = "tennisTracker.clickerCfg";
-const CLK_MULTI_MS = 350;                       // window to gather presses on a single-button clicker
+const CLK_MULTI_MS = 800;                       // window to gather presses on a single-button clicker
 const REMOTE_IGNORE = new Set(["Shift", "Control", "Alt", "Meta", "Escape", "Tab", "CapsLock"]);
 function loadClk() {
   try {
