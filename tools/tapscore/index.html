@@ -143,7 +143,7 @@
     gap: clamp(4px, 2vh, 20px);
     cursor: pointer;
     position: relative;
-    overflow: hidden;               /* clip the tap splash to this half */
+    overflow: hidden;               /* keep score/celebration effects clipped to this half */
     transition: filter .08s ease;
     touch-action: manipulation;
     container-type: size;
@@ -162,7 +162,7 @@
   @keyframes setpop { 0% { transform: scale(1); } 35% { transform: scale(1.28); } 100% { transform: scale(1); } }
 
   /* scoring delight: the score "rolls" like a gas-pump counter — the old value rolls up
-     and out while the new one rolls up into place — plus a soft splash from the tap */
+     and out while the new one rolls up into place */
   .point, .games { position: relative; display: flex; align-items: center; justify-content: center; }
   .point .pv, .games .pv { display: block; }
   .point .pv.rollin, .games .pv.rollin { animation: rollin .3s var(--ease); }
@@ -180,18 +180,6 @@
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(-0.6em); opacity: 0; }
   }
-  .splash {
-    position: absolute; width: 46px; height: 46px; border-radius: 50%;
-    pointer-events: none; z-index: 2; opacity: 0;
-    background: radial-gradient(circle, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 70%);
-    transform: translate(-50%, -50%) scale(0);
-  }
-  .splash.go { animation: splash .55s var(--ease) forwards; }
-  @keyframes splash {
-    0% { transform: translate(-50%, -50%) scale(0); opacity: .85; }
-    100% { transform: translate(-50%, -50%) scale(9); opacity: 0; }
-  }
-
   /* pill holds the serve ball + the editable name so they never clash with anything else */
   .namepill {
     display: inline-flex; align-items: center; gap: 7px;
@@ -322,7 +310,7 @@
     height: 46px; min-width: 46px; padding: 0 16px; border-radius: 999px;
     display: inline-flex; align-items: center; justify-content: center; gap: 6px;
     white-space: nowrap; flex: 0 0 auto;
-    position: relative; overflow: hidden;    /* clip ripple */
+    position: relative; overflow: hidden;    /* clip the press state layer to the rounded shape */
     transition: background-color .18s var(--ease), transform .1s var(--ease);
   }
   .controls button:hover { background: var(--fill-3); }
@@ -507,17 +495,29 @@
   .clk-item.flash { background: color-mix(in srgb, var(--primary) 32%, var(--fill-1)); }
   .clk-item .clk-key { color: var(--primary-fg); }
   .clk-note { font-size: 13px; opacity: .72; line-height: 1.5; padding: 2px 2px 6px; }
-  .clk-diag { font-size: 12px; opacity: .55; text-align: center; min-height: 1.2em; margin: 2px 0 10px; font-variant-numeric: tabular-nums; }
   .clk-action { width: 100%; font: inherit; font-weight: 600; padding: 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--fill-2); color: var(--ink); cursor: pointer; margin-bottom: 8px; }
   .clk-action:hover { background: var(--fill-3); }
   .clk-off { display: block; width: 100%; background: none; border: 0; color: var(--danger); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; padding: 12px; margin-top: 4px; }
+  /* Watch remote: reuse the clicker "capture" card; tint it by test result */
+  .watch-box.ok { border-style: solid; border-color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, var(--fill-1)); }
+  .watch-box.fail { border-style: solid; border-color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, var(--fill-1)); }
+  #watchTestBtn[disabled] { opacity: .6; cursor: default; }
 
   /* Match history list */
   .histlist { display: flex; flex-direction: column; gap: 8px; margin: 4px 0 12px; }
-  .histrow { display: flex; gap: 12px; align-items: center; padding: 11px 12px; border-radius: 14px; background: var(--fill-1); width: 100%; text-align: left; font: inherit; color: var(--ink); border: 0; }
-  .histrow.tappable { cursor: pointer; }
-  .histrow.tappable:hover { background: var(--fill-2); }
-  .histrow.tappable:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .histrow { display: flex; gap: 2px; align-items: center; padding: 5px; border-radius: 14px; background: var(--fill-1); width: 100%; }
+  .histopen { display: flex; gap: 12px; align-items: center; flex: 1 1 auto; min-width: 0; padding: 6px 7px; border-radius: 10px; text-align: left; font: inherit; color: var(--ink); background: none; border: 0; }
+  .histopen.tappable { cursor: pointer; }
+  .histopen.tappable:hover { background: var(--fill-2); }
+  .histopen.tappable:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .histdel {
+    flex: 0 0 auto; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; border: 0; background: none; color: var(--danger); cursor: pointer;
+    transition: background-color .18s var(--ease), color .18s var(--ease);
+  }
+  .histdel:hover { background: color-mix(in srgb, var(--danger) 14%, transparent); }
+  .histdel:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .histdel.armed { background: var(--danger); color: #fff; }
   .hist-chev { flex: 0 0 auto; color: #94a3b8; }
   .hist-ball { width: 32px; height: 32px; flex: 0 0 auto; }
   .hist-ball svg { width: 100%; height: 100%; display: block; }
@@ -550,7 +550,7 @@
     padding: 5px 8px; cursor: pointer;
     line-height: 1.15; text-align: center;
     white-space: normal; overflow-wrap: break-word; hyphens: auto;
-    position: relative; overflow: hidden;   /* clip ripple to the segment */
+    position: relative; overflow: hidden;   /* clip the press state layer to the segment */
     transition: background-color .18s var(--ease), color .18s var(--ease);
   }
   .seg button:first-child { border-left: 0; }
@@ -597,7 +597,7 @@
     font: inherit; color: var(--ink); text-align: left;
     background: var(--fill-1);
     border: 1px solid var(--line); border-radius: 12px;
-    cursor: pointer; position: relative; overflow: hidden;   /* clip ripple */
+    cursor: pointer; position: relative; overflow: hidden;   /* clip the press state layer */
     transition: border-color .18s var(--ease), background-color .18s var(--ease);
   }
   .dropTrigger:hover { background: var(--fill-2); }
@@ -662,6 +662,17 @@
   }
   .sheet .done:hover, .help .done:hover { box-shadow: var(--elev-3); }
   .sheet .done:active, .help .done:active { transform: translateY(1px); box-shadow: var(--elev-1); }
+  .statsActions { display: flex; align-items: stretch; gap: 10px; margin-top: 16px; }
+  .help .statsActions .done { width: auto; flex: 1 1 0; margin: 0; display: inline-flex; align-items: center; justify-content: center; }
+  .statshare {
+    flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+    font: inherit; font-weight: 600; letter-spacing: .3px; color: var(--ink);
+    background: transparent; border: 1px solid var(--line); border-radius: 999px;
+    padding: 14px; cursor: pointer;
+    transition: background-color .18s var(--ease);
+  }
+  .statshare:hover { background: var(--fill-2); }
+  .statshare:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
   /* Confirm dialog (custom, not native confirm() which some environments block) */
   .modal {
@@ -735,7 +746,7 @@
   .plat-ios #historyBody { background: var(--surface); border: 0.5px solid var(--line); border-radius: 12px; overflow: hidden; }
   .plat-ios #historyBody .histrow { background: transparent; border-radius: 0; border-top: 0.5px solid var(--line); }
   .plat-ios #historyBody .histrow:first-child { border-top: 0; }
-  .plat-ios #historyBody .histrow.tappable:active { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+  .plat-ios #historyBody .histopen.tappable:active { background: color-mix(in srgb, var(--ink) 6%, transparent); }
   .plat-ios .matchstats .sg-row { background: var(--surface); border: 0.5px solid var(--line); }
 
   /* M3/iOS list items: a leading icon on tappable settings rows */
@@ -749,7 +760,7 @@
   html:not(.plat-ios) .sheet .panel {
     background: color-mix(in srgb, var(--primary) 5%, var(--surface));
   }
-  /* State layers: consistent press feedback on interactive surfaces (complements the ripple) */
+  /* State layers: consistent press feedback on interactive surfaces */
   html:not(.plat-ios) .ft-btn:active,
   html:not(.plat-ios) .controls button:not(.ctl-end):active,
   html:not(.plat-ios) .rowlink:active { background: color-mix(in srgb, var(--ink) 14%, transparent); }
@@ -976,6 +987,18 @@
   .setup .group > label { display: block; font-weight: 600; margin-bottom: 8px; }
   .setup .group > label:has(+ .desc) { margin-bottom: 2px; }   /* tighten only when a description follows */
   .setup .group .desc { display: block; font-weight: 400; opacity: .55; font-size: 13px; margin: 0 0 8px; }
+  /* Setup: name-your-players fields (two text inputs, stacked) */
+  .nameFields { display: flex; flex-direction: column; gap: 8px; }
+  .setup-name {
+    width: 100%; font: inherit; color: var(--ink);
+    background: var(--fill-1); border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px 14px;
+    -webkit-appearance: none; appearance: none;
+    transition: border-color .15s var(--ease), background-color .15s var(--ease);
+  }
+  .setup-name::placeholder { color: var(--ink); opacity: .38; }
+  .setup-name:focus { outline: none; border-color: var(--focus); background: var(--fill-2); }
+  .setup-name:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   /* setup uses the same segmented control (height comes from the shared min-height) */
   /* Secondary controls — setup "More options" and the in-match settings — use a quiet neutral
      selected fill, not the vibrant primary reserved for the main-choice controls */
@@ -1054,17 +1077,8 @@
     outline: 2px solid var(--focus); outline-offset: 2px;
   }
 
-  /* Material tap ripple (added to buttons by JS) */
-  .ripple {
-    position: absolute; border-radius: 50%;
-    background: currentColor; opacity: .28;
-    transform: scale(0); pointer-events: none;
-    animation: ripple .5s var(--ease);
-  }
-  @keyframes ripple { to { transform: scale(2.4); opacity: 0; } }
-
   @media (prefers-reduced-motion: reduce) {
-    .ripple, .splash, .pv-ghost { display: none; }
+    .pv-ghost { display: none; }
     .point .pv.rollin, .games .pv.rollin { animation: none; }
     .sheet.show, .sheet.show .panel, .sheet.closing, .sheet.closing .panel { animation: none; }
     .controls button, .seg button, .startBtn, .sheet .done, .help .done,
@@ -1154,7 +1168,13 @@
       <button class="helpClose" id="statsClose" aria-label="Close stats">&times;</button>
       <h2 id="statsTitle" data-i18n="statsTitle">Match stats</h2>
       <div class="matchstats" id="statsBody"></div>
-      <button class="done" id="statsDone" data-i18n="done">Done</button>
+      <div class="statsActions">
+        <button class="statshare" id="statsShare" type="button">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+          <span data-i18n="share">Share</span>
+        </button>
+        <button class="done" id="statsDone" data-i18n="done">Done</button>
+      </div>
     </div>
   </div>
 
@@ -1194,10 +1214,23 @@
         <div class="clk-hint" id="clkHint"></div>
       </div>
       <div class="clk-map" id="clkMap"></div>
-      <div class="clk-diag" id="clkDiag" aria-live="polite"></div>
       <div id="clkActions"></div>
       <button class="done" id="clkDone" data-i18n="done">Done</button>
       <button class="clk-off" id="clkOff" data-i18n="clkTurnOff">Turn off clicker</button>
+    </div>
+  </div>
+
+  <div class="help native-only" id="watchSetup" role="dialog" aria-modal="true" aria-labelledby="watchDlgTitle" aria-hidden="true">
+    <div class="panel">
+      <button class="helpClose" id="watchClose" aria-label="Close">&times;</button>
+      <h2 id="watchDlgTitle">Watch remote</h2>
+      <p class="sub" id="watchDlgSub"></p>
+      <div class="clk-capture watch-box" id="watchStatusBox">
+        <div class="clk-prompt" id="watchStatusTitle"></div>
+        <div class="clk-hint" id="watchStatusMsg"></div>
+      </div>
+      <button class="clk-action" id="watchTestBtn"></button>
+      <button class="done" id="watchDlgDone" data-i18n="done">Done</button>
     </div>
   </div>
 
@@ -1249,6 +1282,15 @@
       <div class="group">
         <label data-i18n="matchLength">Match length</label>
         <div class="seg" id="setupLength"></div>
+      </div>
+
+      <div class="group" id="setupNamesGroup">
+        <label id="setupNamesLabel" data-i18n="playersLbl">Players</label>
+        <span class="desc" data-i18n="namesDesc">Name each side now — or just tap a name during the match to change it.</span>
+        <div class="nameFields">
+          <input class="setup-name" id="setupNameA" type="text" maxlength="24" autocomplete="off" autocapitalize="words" spellcheck="false" />
+          <input class="setup-name" id="setupNameB" type="text" maxlength="24" autocomplete="off" autocapitalize="words" spellcheck="false" />
+        </div>
       </div>
       </div>
 
@@ -1403,6 +1445,17 @@
           </span>
           <span class="clk-row-right">
             <span class="clk-status" id="clickerStatus"></span>
+            <svg class="rowlink-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </span>
+        </button>
+        <button class="row rowlink" id="watchRow" type="button">
+          <svg class="rl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 6l.5-3h5l.5 3M9 18l.5 3h5l.5-3"/></svg>
+          <span class="rowlink-label">
+            <span id="watchRowLabel" data-i18n="watchLbl">Watch remote</span>
+            <span class="desc" data-i18n="watchDesc">Score from your wrist — tap to check the connection.</span>
+          </span>
+          <span class="clk-row-right">
+            <span class="clk-status" id="watchStatus"></span>
             <svg class="rowlink-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
           </span>
         </button>
@@ -1629,6 +1682,7 @@ const STR = {
     sport: "Sport", chooseSport: "Choose a sport", matchLength: "Match length",
     moreOptions: "More options", fewerOptions: "Fewer options",
     typeLbl: "Type", typeDesc: "Singles or doubles",
+    playersLbl: "Players", teamsLbl: "Teams", namesDesc: "Name each side now — or just tap a name during the match to change it.",
     pointsLbl: "Points to win a game", pointsDesc: "First to this many wins a game",
     scoringLbl: "Scoring", scoringDesc: "<strong>Rally</strong>: every rally scores. <strong>Side-out</strong>: only the serving side scores (traditional; doubles uses two servers).",
     scRally: "Rally", scSideout: "Side-out",
@@ -1665,7 +1719,7 @@ const STR = {
     helpGot: "Got it",
     helpIosTip: "<strong>iPhone tip:</strong> if the voice sounds robotic, download a better one in <em>Settings → Accessibility → Spoken Content → Voices → English</em> (pick an “Enhanced” or “Premium” voice), then choose it under <em>Settings → Announcer voice</em> in TapScore.",
     // stats
-    statsTitle: "Match stats", historyTitle: "Match history", historyEmpty: "No games yet. Finished matches show up here.", historyClear: "Clear history", historyClearConfirm: "Tap again to clear", stDuration: "Duration", stPoints: "Points", stAvg: "Avg point*",
+    statsTitle: "Match stats", historyTitle: "Match history", historyEmpty: "No games yet. Finished matches show up here.", historyClear: "Clear history", historyClearConfirm: "Tap again to clear", histDelete: "Delete match", histDeleteConfirm: "Tap again to delete", stDuration: "Duration", stPoints: "Points", stAvg: "Avg point*",
     stServe: "Points won on serve", stHead: "Head to head", stPointsWon: "Points won",
     stBreaks: "Breaks of serve", stLongRun: "Longest run", stMomentum: "Momentum", stMomentumSub: "who's winning recent points",
     stLeadChg: "Lead changes", stBigLead: "Biggest lead", stComeback: "Biggest comeback",
@@ -1696,6 +1750,7 @@ const STR = {
     sport: "Deporte", chooseSport: "Elige un deporte", matchLength: "Duración del partido",
     moreOptions: "Más opciones", fewerOptions: "Menos opciones",
     typeLbl: "Modalidad", typeDesc: "Individual o dobles",
+    playersLbl: "Jugadores", teamsLbl: "Equipos", namesDesc: "Pon nombre a cada lado ahora — o toca un nombre durante el partido para cambiarlo.",
     pointsLbl: "Puntos para ganar un juego", pointsDesc: "El primero en llegar gana el juego",
     scoringLbl: "Puntuación", scoringDesc: "<strong>Rally</strong>: cada punto cuenta. <strong>Side-out</strong>: solo puntúa quien saca (tradicional; en dobles, dos sacadores).",
     scRally: "Rally", scSideout: "Side-out",
@@ -1728,7 +1783,7 @@ const STR = {
     helpVoiceH: "Escucha el marcador", helpVoiceP: "Pulsa el altavoz de la barra inferior para que cante cada punto. Conecta un altavoz Bluetooth y todos oirán el marcador.",
     helpGot: "Entendido",
     helpIosTip: "<strong>Consejo iPhone:</strong> si la voz suena robótica, descarga una mejor en <em>Ajustes → Accesibilidad → Contenido hablado → Voces → Español</em> (elige una “Mejorada” o “Premium”) y selecciónala en <em>Ajustes → Voz del locutor</em> de TapScore.",
-    statsTitle: "Estadísticas", historyTitle: "Historial", historyEmpty: "Aún no hay partidos. Los partidos terminados aparecen aquí.", historyClear: "Borrar historial", historyClearConfirm: "Toca otra vez para borrar", stDuration: "Duración", stPoints: "Puntos", stAvg: "Punto medio*",
+    statsTitle: "Estadísticas", historyTitle: "Historial", historyEmpty: "Aún no hay partidos. Los partidos terminados aparecen aquí.", historyClear: "Borrar historial", historyClearConfirm: "Toca otra vez para borrar", histDelete: "Eliminar partido", histDeleteConfirm: "Toca otra vez para eliminar", stDuration: "Duración", stPoints: "Puntos", stAvg: "Punto medio*",
     stServe: "Puntos ganados al saque", stHead: "Cara a cara", stPointsWon: "Puntos ganados",
     stBreaks: "Roturas de saque", stLongRun: "Mejor racha", stMomentum: "Momentum", stMomentumSub: "quién gana los últimos puntos",
     stLeadChg: "Cambios de líder", stBigLead: "Mayor ventaja", stComeback: "Mayor remontada",
@@ -1758,6 +1813,7 @@ const STR = {
     sport: "Modalidade", chooseSport: "Escolhe uma modalidade", matchLength: "Duração do jogo",
     moreOptions: "Mais opções", fewerOptions: "Menos opções",
     typeLbl: "Tipo", typeDesc: "Singulares ou pares",
+    playersLbl: "Jogadores", teamsLbl: "Equipas", namesDesc: "Dá nome a cada lado agora — ou toca num nome durante o jogo para o mudar.",
     pointsLbl: "Pontos para ganhar um jogo", pointsDesc: "O primeiro a chegar ganha o jogo",
     scoringLbl: "Pontuação", scoringDesc: "<strong>Rally</strong>: cada ponto conta. <strong>Side-out</strong>: só pontua quem serve (tradicional; em pares, dois servidores).",
     scRally: "Rally", scSideout: "Side-out",
@@ -1790,7 +1846,7 @@ const STR = {
     helpVoiceH: "Ouve o resultado", helpVoiceP: "Toca no altifalante da barra inferior para anunciar cada ponto. Liga uma coluna Bluetooth e todos ouvem o resultado.",
     helpGot: "Percebi",
     helpIosTip: "<strong>Dica iPhone:</strong> se a voz soar robótica, descarrega uma melhor em <em>Definições → Acessibilidade → Conteúdo falado → Vozes → Português</em> (escolhe uma “Melhorada” ou “Premium”) e seleciona-a em <em>Definições → Voz do locutor</em> no TapScore.",
-    statsTitle: "Estatísticas", historyTitle: "Histórico", historyEmpty: "Ainda não há jogos. Os jogos terminados aparecem aqui.", historyClear: "Limpar histórico", historyClearConfirm: "Toca de novo para limpar", stDuration: "Duração", stPoints: "Pontos", stAvg: "Ponto médio*",
+    statsTitle: "Estatísticas", historyTitle: "Histórico", historyEmpty: "Ainda não há jogos. Os jogos terminados aparecem aqui.", historyClear: "Limpar histórico", historyClearConfirm: "Toca de novo para limpar", histDelete: "Eliminar jogo", histDeleteConfirm: "Toca de novo para eliminar", stDuration: "Duração", stPoints: "Pontos", stAvg: "Ponto médio*",
     stServe: "Pontos ganhos ao serviço", stHead: "Frente a frente", stPointsWon: "Pontos ganhos",
     stBreaks: "Quebras de serviço", stLongRun: "Melhor sequência", stMomentum: "Momentum", stMomentumSub: "quem ganha os pontos recentes",
     stLeadChg: "Trocas de liderança", stBigLead: "Maior vantagem", stComeback: "Maior recuperação",
@@ -1820,6 +1876,7 @@ const STR = {
     sport: "Sport", chooseSport: "Choisissez un sport", matchLength: "Format du match",
     moreOptions: "Plus d'options", fewerOptions: "Moins d'options",
     typeLbl: "Type", typeDesc: "Simple ou double",
+    playersLbl: "Joueurs", teamsLbl: "Équipes", namesDesc: "Nommez chaque côté maintenant — ou touchez un nom pendant le match pour le changer.",
     pointsLbl: "Points pour gagner un jeu", pointsDesc: "Le premier à ce total gagne le jeu",
     scoringLbl: "Comptage", scoringDesc: "<strong>Rally</strong> : chaque échange compte. <strong>Side-out</strong> : seul le serveur marque (traditionnel ; en double, deux serveurs).",
     scRally: "Rally", scSideout: "Side-out",
@@ -1852,7 +1909,7 @@ const STR = {
     helpVoiceH: "Écoutez le score", helpVoiceP: "Touchez le haut-parleur en bas pour annoncer chaque point. Reliez une enceinte Bluetooth et tout le monde entend le score.",
     helpGot: "Compris",
     helpIosTip: "<strong>Astuce iPhone :</strong> si la voix semble robotique, téléchargez-en une meilleure dans <em>Réglages → Accessibilité → Contenu énoncé → Voix → Français</em> (choisissez « Améliorée » ou « Premium »), puis sélectionnez-la dans <em>Réglages → Voix de l’annonceur</em> de TapScore.",
-    statsTitle: "Statistiques", historyTitle: "Historique", historyEmpty: "Aucun match pour l'instant. Les matchs terminés apparaissent ici.", historyClear: "Effacer l'historique", historyClearConfirm: "Touchez encore pour effacer", stDuration: "Durée", stPoints: "Points", stAvg: "Point moyen*",
+    statsTitle: "Statistiques", historyTitle: "Historique", historyEmpty: "Aucun match pour l'instant. Les matchs terminés apparaissent ici.", historyClear: "Effacer l'historique", historyClearConfirm: "Touchez encore pour effacer", histDelete: "Supprimer le match", histDeleteConfirm: "Touchez encore pour supprimer", stDuration: "Durée", stPoints: "Points", stAvg: "Point moyen*",
     stServe: "Points gagnés au service", stHead: "Face à face", stPointsWon: "Points gagnés",
     stBreaks: "Breaks", stLongRun: "Meilleure série", stMomentum: "Dynamique", stMomentumSub: "qui gagne les derniers points",
     stLeadChg: "Changements de tête", stBigLead: "Plus grande avance", stComeback: "Plus gros retour",
@@ -1882,6 +1939,7 @@ const STR = {
     sport: "Sportart", chooseSport: "Sportart wählen", matchLength: "Match-Format",
     moreOptions: "Mehr Optionen", fewerOptions: "Weniger Optionen",
     typeLbl: "Modus", typeDesc: "Einzel oder Doppel",
+    playersLbl: "Spieler", teamsLbl: "Teams", namesDesc: "Benenne jetzt beide Seiten — oder tippe während des Matches auf einen Namen, um ihn zu ändern.",
     pointsLbl: "Punkte für ein Spiel", pointsDesc: "Wer zuerst so viele hat, gewinnt das Spiel",
     scoringLbl: "Zählweise", scoringDesc: "<strong>Rally</strong>: jeder Ballwechsel zählt. <strong>Side-out</strong>: nur die aufschlagende Seite punktet (traditionell; Doppel mit zwei Aufschlägern).",
     scRally: "Rally", scSideout: "Side-out",
@@ -1914,7 +1972,7 @@ const STR = {
     helpVoiceH: "Punktestand hören", helpVoiceP: "Tippe unten auf den Lautsprecher, um jeden Punkt ansagen zu lassen. Verbinde eine Bluetooth-Box und alle hören den Stand.",
     helpGot: "Verstanden",
     helpIosTip: "<strong>iPhone-Tipp:</strong> Klingt die Stimme roboterhaft, lade in <em>Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → Deutsch</em> eine bessere („Erweitert“ oder „Premium“) und wähle sie in TapScore unter <em>Einstellungen → Ansagestimme</em>.",
-    statsTitle: "Statistiken", historyTitle: "Verlauf", historyEmpty: "Noch keine Spiele. Beendete Spiele erscheinen hier.", historyClear: "Verlauf löschen", historyClearConfirm: "Zum Löschen erneut tippen", stDuration: "Dauer", stPoints: "Punkte", stAvg: "Ø Punkt*",
+    statsTitle: "Statistiken", historyTitle: "Verlauf", historyEmpty: "Noch keine Spiele. Beendete Spiele erscheinen hier.", historyClear: "Verlauf löschen", historyClearConfirm: "Zum Löschen erneut tippen", histDelete: "Spiel löschen", histDeleteConfirm: "Zum Löschen erneut tippen", stDuration: "Dauer", stPoints: "Punkte", stAvg: "Ø Punkt*",
     stServe: "Punkte am eigenen Aufschlag", stHead: "Direktvergleich", stPointsWon: "Gewonnene Punkte",
     stBreaks: "Breaks", stLongRun: "Längste Serie", stMomentum: "Momentum", stMomentumSub: "wer gerade die Punkte macht",
     stLeadChg: "Führungswechsel", stBigLead: "Größte Führung", stComeback: "Größtes Comeback",
@@ -2080,6 +2138,61 @@ const CLK_STR = {
   },
 };
 Object.keys(CLK_STR).forEach(l => { if (STR[l]) Object.assign(STR[l], CLK_STR[l]); });
+
+// Watch remote strings (native only). watchLbl_ios/_android pick the right product name per platform.
+const WATCH_STR = {
+  en: {
+    watchLbl: "Watch remote", watchLbl_ios: "Apple Watch", watchLbl_android: "Wear OS",
+    watchDesc: "Score from your wrist — tap to check the connection.",
+    watch_intro: "Open TapScore on your watch and keep it nearby. Your phone keeps the score — the watch just sends taps and mirrors it.",
+    watch_test: "Test connection", watch_testing: "Checking…",
+    watch_idle_title: "Not tested yet", watch_idle_msg: "Tap “Test connection” to check your watch.",
+    watch_ok_title: "Connected", watch_ok_msg: "Your watch is linked. Scores will sync automatically.",
+    watch_fail_title: "Not connected", watch_fail_msg: "Couldn’t reach your watch. Open the TapScore watch app, keep it nearby, and try again.",
+    watch_st_on: "Connected", watch_st_off: "Not connected",
+  },
+  es: {
+    watchLbl: "Mando de reloj", watchLbl_ios: "Apple Watch", watchLbl_android: "Wear OS",
+    watchDesc: "Puntúa desde la muñeca — toca para comprobar la conexión.",
+    watch_intro: "Abre TapScore en el reloj y tenlo cerca. El teléfono lleva el marcador — el reloj solo envía toques y lo refleja.",
+    watch_test: "Probar conexión", watch_testing: "Comprobando…",
+    watch_idle_title: "Sin probar aún", watch_idle_msg: "Toca “Probar conexión” para comprobar el reloj.",
+    watch_ok_title: "Conectado", watch_ok_msg: "El reloj está enlazado. El marcador se sincronizará solo.",
+    watch_fail_title: "Sin conexión", watch_fail_msg: "No se pudo conectar con el reloj. Abre la app TapScore en el reloj, tenlo cerca e inténtalo de nuevo.",
+    watch_st_on: "Conectado", watch_st_off: "Sin conexión",
+  },
+  pt: {
+    watchLbl: "Comando do relógio", watchLbl_ios: "Apple Watch", watchLbl_android: "Wear OS",
+    watchDesc: "Pontua a partir do pulso — toca para verificar a ligação.",
+    watch_intro: "Abre o TapScore no relógio e mantém-no por perto. O telemóvel mantém o resultado — o relógio só envia toques e reflete-o.",
+    watch_test: "Testar ligação", watch_testing: "A verificar…",
+    watch_idle_title: "Ainda não testado", watch_idle_msg: "Toca em “Testar ligação” para verificar o relógio.",
+    watch_ok_title: "Ligado", watch_ok_msg: "O relógio está ligado. O resultado sincroniza automaticamente.",
+    watch_fail_title: "Sem ligação", watch_fail_msg: "Não foi possível contactar o relógio. Abre a app TapScore no relógio, mantém-no por perto e tenta de novo.",
+    watch_st_on: "Ligado", watch_st_off: "Sem ligação",
+  },
+  fr: {
+    watchLbl: "Télécommande montre", watchLbl_ios: "Apple Watch", watchLbl_android: "Wear OS",
+    watchDesc: "Marquez depuis votre poignet — touchez pour vérifier la connexion.",
+    watch_intro: "Ouvrez TapScore sur votre montre et gardez-la à proximité. Le téléphone garde le score — la montre envoie juste les touches et l'affiche.",
+    watch_test: "Tester la connexion", watch_testing: "Vérification…",
+    watch_idle_title: "Pas encore testé", watch_idle_msg: "Touchez « Tester la connexion » pour vérifier votre montre.",
+    watch_ok_title: "Connectée", watch_ok_msg: "Votre montre est liée. Le score se synchronisera automatiquement.",
+    watch_fail_title: "Non connectée", watch_fail_msg: "Impossible de joindre votre montre. Ouvrez l'app TapScore sur la montre, gardez-la à proximité et réessayez.",
+    watch_st_on: "Connectée", watch_st_off: "Non connectée",
+  },
+  de: {
+    watchLbl: "Uhr-Fernbedienung", watchLbl_ios: "Apple Watch", watchLbl_android: "Wear OS",
+    watchDesc: "Punkte vom Handgelenk — zum Prüfen der Verbindung tippen.",
+    watch_intro: "Öffne TapScore auf deiner Uhr und halte sie in der Nähe. Das Telefon führt den Punktestand — die Uhr sendet nur Tipps und spiegelt ihn.",
+    watch_test: "Verbindung testen", watch_testing: "Wird geprüft…",
+    watch_idle_title: "Noch nicht getestet", watch_idle_msg: "Tippe auf „Verbindung testen“, um deine Uhr zu prüfen.",
+    watch_ok_title: "Verbunden", watch_ok_msg: "Deine Uhr ist verbunden. Der Punktestand wird automatisch synchronisiert.",
+    watch_fail_title: "Nicht verbunden", watch_fail_msg: "Uhr nicht erreichbar. Öffne die TapScore-App auf der Uhr, halte sie in der Nähe und versuch es erneut.",
+    watch_st_on: "Verbunden", watch_st_off: "Nicht verbunden",
+  },
+};
+Object.keys(WATCH_STR).forEach(l => { if (STR[l]) Object.assign(STR[l], WATCH_STR[l]); });
 function t(k) { const L = STR[lang] || STR.en; return (k in L ? L[k] : (k in STR.en ? STR.en[k] : k)); }
 function tf(k) { const args = [].slice.call(arguments, 1); let s = t(k), i = 0; return s.replace(/%s/g, () => args[i++]); }
 // apply translations to static markup: [data-i18n]=textContent, -html=innerHTML, -aria / -title = attribute
@@ -2206,7 +2319,8 @@ let pendingSetup = {
   gamesPerSet: match.settings.gamesPerSet,
   tbPoints: match.settings.tbPoints,
   winBy: match.settings.winBy,
-  scoring: match.settings.scoring
+  scoring: match.settings.scoring,
+  names: ["", ""]   // custom side names typed on the setup screen ("" = use the default label)
 };
 
 function setsToWin() { return TapScore.setsToWin(match.settings); }
@@ -2593,21 +2707,6 @@ function replayAnim(node, cls) {
   node.classList.remove(cls);
   void node.offsetWidth;   // force reflow so the animation restarts
   node.classList.add(cls);
-}
-
-// soft splash that ripples out from where a side was tapped (centre if no coords, e.g. a clicker)
-function scoreSplash(side, e) {
-  if (!side || prefersReducedMotion()) return;
-  const r = side.getBoundingClientRect();
-  const x = (e && e.clientX != null) ? e.clientX - r.left : r.width / 2;
-  const y = (e && e.clientY != null) ? e.clientY - r.top : r.height / 2;
-  const s = document.createElement("span");
-  s.className = "splash";
-  s.style.left = x + "px";
-  s.style.top = y + "px";
-  side.appendChild(s);
-  requestAnimationFrame(() => s.classList.add("go"));
-  s.addEventListener("animationend", () => s.remove());
 }
 
 // Set a score value with a gas-pump "roll": the outgoing digit rolls up & fades out while
@@ -3063,12 +3162,9 @@ function launchConfetti() {
    A tap always scores the side you touch. Bluetooth clicker input is handled separately, through
    explicitly mapped key events (see the clicker section) — never via tap/coordinate heuristics, so a
    normal tap can never be mistaken for a double-click. */
-function scoreSide(side, e) {
-  if (!match.over) scoreSplash(el(side === 0 ? "sideA" : "sideB"), e);
-  addPoint(side);
-}
-el("sideA").addEventListener("click", (e) => scoreSide(0, e));
-el("sideB").addEventListener("click", (e) => scoreSide(1, e));
+function scoreSide(side) { addPoint(side); }
+el("sideA").addEventListener("click", () => scoreSide(0));
+el("sideB").addEventListener("click", () => scoreSide(1));
 
 // Editable names inline — no native prompt() (some environments block it)
 function wireName(nameId, idx) {
@@ -3144,11 +3240,15 @@ el("winnerNew").addEventListener("click", () => showSetup(true));
 
 /* ---- match stats page ---- */
 const statsScreen = el("statsScreen");
+// The match currently shown in the stats panel (live match or a past snapshot from history) — kept
+// around so its own Share button can pass the right data to shareStory().
+let statsCurrent = null;
 // `m` optional: a past match snapshot from history. buildStatsHTML + its helpers read the global
 // `match`, so briefly point it at the snapshot while rendering, then restore (synchronous, safe).
 function openStats(m) {
   const prev = match;
   if (m && m.settings) match = m;
+  statsCurrent = match;
   try { el("statsBody").innerHTML = buildStatsHTML(); }
   finally { match = prev; }
   statsScreen.classList.add("show");
@@ -3304,6 +3404,7 @@ async function shareStory(m) {
   setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 el("winnerShare").addEventListener("click", () => shareStory(match));
+el("statsShare").addEventListener("click", () => statsCurrent && shareStory(statsCurrent));
 
 /* ---- watch remote bridge (phone side) ----
    A paired watch can act as a remote for the match running here. The native shell relays messages:
@@ -3327,11 +3428,14 @@ function wcState() {
     sport: match.settings.sport,
   };
 }
-function sendWatchState() {
+// Low-level send of any message object to the watch (no-op without the native bridge).
+function sendWatch(obj) {
   const WL = IS_NATIVE && Cap.Plugins && Cap.Plugins.WatchLink;
-  if (!WL || !WL.send) return;
-  try { WL.send({ json: JSON.stringify(wcState()) }); } catch (e) {}
+  if (!WL || !WL.send) return false;
+  try { WL.send({ json: JSON.stringify(obj) }); return true; } catch (e) { return false; }
 }
+function sendWatchState() { sendWatch(wcState()); }
+let watchPingWaiter = null;   // resolver for an in-flight "test connection" ping (see the watch remote section)
 // Called by the native shell when a command arrives from the watch.
 window.__wcCommand = function (json) {
   let msg; try { msg = JSON.parse(json); } catch (e) { return; }
@@ -3343,8 +3447,91 @@ window.__wcCommand = function (json) {
     doUndo();
   } else if (msg.t === "sync") {
     sendWatchState();
+  } else if (msg.t === "ping") {
+    sendWatch({ t: "pong" });          // the watch is probing us — echo so it can confirm the link
+  } else if (msg.t === "pong") {
+    if (watchPingWaiter) watchPingWaiter();   // reply to our own "test connection" ping
   }
 };
+
+/* ---- watch remote: connect & test (settings, native only) ----
+   Mirrors the clicker flow: a settings row opens a small dialog with a "Test connection" button.
+   The test uses the native WatchLink plugin's getStatus() when available, and/or a ping→pong
+   round-trip over the same send/__wcCommand channel the live match already uses. */
+const watchSetup = el("watchSetup");
+let watchLastReachable = null;   // null = not tested yet; true/false = last known result
+function WLPlugin() { return (IS_NATIVE && Cap.Plugins && Cap.Plugins.WatchLink) || null; }
+function watchLabel() {
+  const p = appPlatform();
+  return p === "ios" ? t("watchLbl_ios") : p === "android" ? t("watchLbl_android") : t("watchLbl");
+}
+// Optional native reachability query — returns { reachable } or null if the bridge doesn't expose it.
+async function watchQueryStatus() {
+  const WL = WLPlugin();
+  if (WL && WL.getStatus) { try { return (await WL.getStatus()) || null; } catch (e) { return null; } }
+  return null;
+}
+// Round-trip ping: resolves true if the watch echoes a pong within the timeout.
+function watchPing(timeoutMs) {
+  if (!sendWatch({ t: "ping" })) return Promise.resolve(false);   // no bridge → can't reach it
+  return new Promise((resolve) => {
+    let done = false;
+    const finish = (v) => { if (done) return; done = true; watchPingWaiter = null; resolve(v); };
+    watchPingWaiter = () => finish(true);
+    setTimeout(() => finish(false), timeoutMs || 4000);
+  });
+}
+async function watchIsConnected() {
+  const WL = WLPlugin();
+  // Preferred: a passive reachability read from the native bridge — doesn't disturb the watch's
+  // mirrored score. When the bridge exposes it, trust it fully (no ping, which would clobber state).
+  if (WL && WL.getStatus) { const s = await watchQueryStatus(); return !!(s && s.reachable === true); }
+  // Legacy bridge without getStatus: fall back to a ping→pong round-trip (needs watch-app support).
+  return await watchPing(4000);
+}
+function updateWatchRow() {
+  const s = el("watchStatus"); if (!s) return;
+  s.textContent = watchLastReachable === true ? t("watch_st_on")
+                : watchLastReachable === false ? t("watch_st_off") : "";
+}
+function showWatchResult(ok) {
+  watchLastReachable = ok;
+  const box = el("watchStatusBox");
+  box.classList.toggle("ok", ok === true);
+  box.classList.toggle("fail", ok === false);
+  el("watchStatusTitle").textContent = ok ? t("watch_ok_title") : t("watch_fail_title");
+  el("watchStatusMsg").textContent = ok ? t("watch_ok_msg") : t("watch_fail_msg");
+}
+async function runWatchTest() {
+  const btn = el("watchTestBtn"); btn.disabled = true;
+  const box = el("watchStatusBox"); box.classList.remove("ok", "fail");
+  el("watchStatusTitle").textContent = t("watch_testing");
+  el("watchStatusMsg").textContent = "";
+  const ok = await watchIsConnected();
+  showWatchResult(ok);
+  btn.disabled = false;
+  updateWatchRow();
+}
+function openWatchSetup() {
+  el("watchDlgTitle").textContent = watchLabel();
+  el("watchDlgSub").textContent = t("watch_intro");
+  el("watchTestBtn").textContent = t("watch_test");
+  const box = el("watchStatusBox"); box.classList.remove("ok", "fail");
+  if (watchLastReachable === true) showWatchResult(true);
+  else if (watchLastReachable === false) showWatchResult(false);
+  else { el("watchStatusTitle").textContent = t("watch_idle_title"); el("watchStatusMsg").textContent = t("watch_idle_msg"); }
+  watchSetup.classList.add("show"); watchSetup.setAttribute("aria-hidden", "false");
+}
+function closeWatchSetup() { watchSetup.classList.remove("show"); watchSetup.setAttribute("aria-hidden", "true"); updateWatchRow(); }
+if (IS_NATIVE && watchSetup) {
+  const wr = el("watchRow");
+  if (wr) { el("watchRowLabel").textContent = watchLabel(); wr.addEventListener("click", openWatchSetup); }
+  el("watchClose").addEventListener("click", closeWatchSetup);
+  el("watchDlgDone").addEventListener("click", closeWatchSetup);
+  el("watchTestBtn").addEventListener("click", runWatchTest);
+  watchSetup.addEventListener("click", (e) => { if (e.target === watchSetup) closeWatchSetup(); });
+}
+
 el("statsClose").addEventListener("click", closeStats);
 el("statsDone").addEventListener("click", closeStats);
 statsScreen.addEventListener("click", (e) => { if (e.target === statsScreen) closeStats(); });
@@ -3378,6 +3565,11 @@ function histDate(ts) {
   try { return new Date(ts).toLocaleDateString(BCP[lang] || undefined, { day: "numeric", month: "short", year: "numeric" }); }
   catch (e) { return ""; }
 }
+const histDelIcon = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>`;
+const histDelConfirmIcon = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>`;
+// Two-tap confirm for deleting a single row, keyed by its index (mirrors the "Clear history" pattern below).
+let histDelArmed = null, histDelTimer = null;
+function disarmHistDel() { histDelArmed = null; clearTimeout(histDelTimer); }
 function buildHistoryHTML() {
   const list = loadHistory();
   if (!list.length) return `<p class="hist-empty">${t("historyEmpty")}</p>`;
@@ -3389,29 +3581,54 @@ function buildHistoryHTML() {
     const meta = [sportLabel(histSport(e)), histDur(e) ? fmtDur(histDur(e)) : ""].filter(Boolean).join(" · ");
     const full = histFull(e);
     const chev = full ? `<svg class="hist-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>` : "";
-    return `<button class="histrow${full ? " tappable" : ""}" type="button" data-i="${i}"${full ? "" : " disabled"}>
-      <span class="hist-ball" aria-hidden="true">${ballSVG(histSport(e))}</span>
-      <div class="hist-main">
-        <div class="hist-top"><span class="hist-win">${histEsc(wname)}</span><span class="hist-date">${histDate(histTs(e))}</span></div>
-        <div class="hist-score">${score}</div>
-        <div class="hist-meta">${histEsc(meta)}</div>
-      </div>
-      ${chev}
-    </button>`;
+    const armed = histDelArmed === i;
+    return `<div class="histrow">
+      <button class="histopen${full ? " tappable" : ""}" type="button" data-i="${i}"${full ? "" : " disabled"}>
+        <span class="hist-ball" aria-hidden="true">${ballSVG(histSport(e))}</span>
+        <div class="hist-main">
+          <div class="hist-top"><span class="hist-win">${histEsc(wname)}</span><span class="hist-date">${histDate(histTs(e))}</span></div>
+          <div class="hist-score">${score}</div>
+          <div class="hist-meta">${histEsc(meta)}</div>
+        </div>
+        ${chev}
+      </button>
+      <button class="histdel${armed ? " armed" : ""}" type="button" data-i="${i}" aria-label="${histEsc(armed ? t("histDeleteConfirm") : t("histDelete"))}">${armed ? histDelConfirmIcon : histDelIcon}</button>
+    </div>`;
   }).join("");
 }
-function openHistory() {
+function refreshHistoryBody() {
   el("historyBody").innerHTML = buildHistoryHTML();
   el("historyClear").hidden = loadHistory().length === 0;   // nothing to clear → no button
+}
+function openHistory() {
+  disarmHistDel();
+  refreshHistoryBody();
   historyScreen.classList.add("show"); historyScreen.setAttribute("aria-hidden", "false");
 }
-function closeHistory() { historyScreen.classList.remove("show"); historyScreen.setAttribute("aria-hidden", "true"); }
+function closeHistory() { disarmHistDel(); historyScreen.classList.remove("show"); historyScreen.setAttribute("aria-hidden", "true"); }
 const histBtn = el("historyBtn"); if (histBtn) histBtn.addEventListener("click", openHistory);
 el("historyBack").addEventListener("click", closeHistory);
-// Tap a past game → open its stats.
+// Tap a past game → open its stats. Tap the trash icon (twice, to confirm) → remove just that game.
 el("historyBody").addEventListener("click", (e) => {
-  const row = e.target.closest(".histrow"); if (!row || row.disabled) return;
-  const entry = loadHistory()[+row.dataset.i];
+  const del = e.target.closest(".histdel");
+  if (del) {
+    const i = +del.dataset.i;
+    if (histDelArmed !== i) {
+      histDelArmed = i;
+      clearTimeout(histDelTimer);
+      histDelTimer = setTimeout(() => { histDelArmed = null; refreshHistoryBody(); }, 3000);
+      refreshHistoryBody();
+      return;
+    }
+    disarmHistDel();
+    const list = loadHistory();
+    list.splice(i, 1);
+    try { localStorage.setItem(HIST_KEY, JSON.stringify(list)); } catch (e) {}
+    refreshHistoryBody();
+    return;
+  }
+  const open = e.target.closest(".histopen"); if (!open || open.disabled) return;
+  const entry = loadHistory()[+open.dataset.i];
   if (entry) openStats(entry);
 });
 // Clear history — two-tap confirm to avoid accidental wipes.
@@ -3421,7 +3638,8 @@ el("historyClear").addEventListener("click", () => {
   if (!histClearArmed) { histClearArmed = true; b.textContent = t("historyClearConfirm"); histClearTimer = setTimeout(() => { histClearArmed = false; b.textContent = t("historyClear"); }, 3000); return; }
   histClearArmed = false; clearTimeout(histClearTimer); b.textContent = t("historyClear");
   try { localStorage.removeItem(HIST_KEY); } catch (e) {}
-  el("historyBody").innerHTML = buildHistoryHTML();
+  disarmHistDel();
+  refreshHistoryBody();
   b.hidden = true;   // empty now
 });
 
@@ -3466,6 +3684,7 @@ function openSettingsPage(inMatch) {
   el("settingsPageTitle").textContent = inMatch ? t("matchSettings") : t("settings");
   refreshProUI();        // Pro banner reflects trial / owned status
   updateClkRow();        // reflect clicker on/off status (native only; no-op on web)
+  updateWatchRow();      // reflect last watch connection result (native only; no-op on web)
   if (window.updateVolumeCapture) updateVolumeCapture();   // stop grabbing volume while settings are open
   if (inMatch) {
     syncSettingsUI();   // reflect the live match's format + row visibility; all rows are editable
@@ -3626,6 +3845,14 @@ const KEY_LABELS = { AudioVolumeUp: "Volume Up", AudioVolumeDown: "Volume Down",
 function ptrSig(e) { return "p:" + Math.round(e.clientX) + "," + Math.round(e.clientY); }
 function parsePtr(sig) { const m = /^p:(-?\d+),(-?\d+)$/.exec(sig || ""); return m ? { x: +m[1], y: +m[2] } : null; }
 function ptrMatch(sig, x, y) { const p = parsePtr(sig); return !!p && Math.abs(p.x - x) <= 4 && Math.abs(p.y - y) <= 4; }
+// Same physical button? Keys compare exactly; pointer clickers rarely repeat the exact pixel, so
+// treat coordinates within the same ±4px tolerance used at play time (ptrMatch) as one button.
+function sameSig(a, b) {
+  if (!a || !b) return false;
+  if (a === b) return true;
+  const pa = parsePtr(a), pb = parsePtr(b);
+  return !!(pa && pb && Math.abs(pa.x - pb.x) <= 4 && Math.abs(pa.y - pb.y) <= 4);
+}
 function sigLabel(sig) {
   if (!sig) return t("clk_none");
   if (sig.indexOf("p:") === 0) return t("clk_btn");
@@ -3697,10 +3924,12 @@ function renderClk() {
 function clkCapture(s) {
   if (clkState === "a") { clkDraft.a = s; clkState = "b"; renderClk(); }
   else if (clkState === "b") {
-    if (s === clkDraft.a) { el("clkHint").textContent = t("clk_same"); return; }
+    // Re-pressing the "you" button means it's a one-button clicker → switch to 1/2/3-press mode.
+    if (sameSig(s, clkDraft.a)) { clkDraft.single = true; clkDraft.triple = false; clkDraft.b = null; clkDraft.undo = null; clkState = "done"; commitClk(); renderClk(); return; }
     clkDraft.b = s; clkDraft.single = false; clkState = "undo"; renderClk();
   } else if (clkState === "undo") {
-    if (s === clkDraft.a || s === clkDraft.b) { el("clkHint").textContent = t("clk_dup"); return; }
+    // Two distinct buttons but no free third one → use triple-click for undo rather than double-mapping a button.
+    if (sameSig(s, clkDraft.a) || sameSig(s, clkDraft.b)) { clkDraft.triple = true; clkDraft.undo = null; clkState = "done"; commitClk(); renderClk(); return; }
     clkDraft.undo = s; clkState = "done"; commitClk(); renderClk();
   }
 }
@@ -3720,7 +3949,7 @@ function flashClkItem(s) {
    • two buttons + triple → each scoring button: 1 press scores its team, 3 presses = undo
    With three distinct buttons every action is its own button and fires instantly (no counting). */
 let clkTaps = 0, clkTimer = null, clkKind = null;
-function clkFire(side) { if (!match.over) scoreSplash(el(side === 0 ? "sideA" : "sideB"), null); addPoint(side); }
+function clkFire(side) { addPoint(side); }
 function resolveClk() {
   const n = clkTaps, kind = clkKind; clkTaps = 0; clkTimer = null; clkKind = null;
   if (n <= 0) return;
@@ -3754,11 +3983,9 @@ if (IS_NATIVE && clkSetup) {
   clkSetup.addEventListener("click", (e) => { if (e.target === clkSetup) closeClkSetup(); });
 
   // A single press can surface as several DOM events (pointerdown → click, key repeat, native
-  // forward). During setup we debounce so one press = one captured signature, and show a live
-  // "detected" line so you can tell the clicker is reaching the app at all.
+  // forward). During setup we debounce so one press = one captured signature.
   let clkCapAt = 0;
-  function clkSetupInput(sig, desc) {
-    const diag = el("clkDiag"); if (diag) diag.textContent = t("clk_seen") + " " + desc;
+  function clkSetupInput(sig) {
     const now = performance.now();
     if (now - clkCapAt < 400) return;                  // ignore the rest of the same press
     clkCapAt = now;
@@ -3768,7 +3995,7 @@ if (IS_NATIVE && clkSetup) {
   // Key clickers (enter / arrows / media) arrive as DOM keydown; volume keys come via window.__tsKey (native).
   function onClkKey(code) {
     if (!code) return false;
-    if (clkSetup.classList.contains("show")) { clkSetupInput("k:" + code, KEY_LABELS[code] || code); return true; }
+    if (clkSetup.classList.contains("show")) { clkSetupInput("k:" + code); return true; }
     if (clkActive() && remoteActive()) { const act = clkActionFor("k:" + code, null, null); if (act) { runClk(act); return true; } }
     return false;
   }
@@ -3801,7 +4028,7 @@ if (IS_NATIVE && clkSetup) {
     if (clkSetup.classList.contains("show")) {
       if (e.target.closest("#clkActions, .helpClose, .done, .clk-off")) return;   // dialog controls = the user
       e.preventDefault(); e.stopImmediatePropagation();
-      clkSetupInput(ptrSig(e), Math.round(e.clientX) + "," + Math.round(e.clientY));
+      clkSetupInput(ptrSig(e));
       return;
     }
     if (!isClick) return;                              // during play act on click only (avoid pointerdown+click double-fire)
@@ -3851,11 +4078,11 @@ applyTheme();
    The whole app — every sport, every format, stats, the works — is free for the first 3 completed
    games (the trial). After that, a one-time Pro unlock is needed to start new matches. Nothing is
    gated by sport or feature; the only gate is "Start match" once the 3 free games are used up.
-   Purchases are stubbed behind Billing.* — wire StoreKit 2 / Play Billing there later. */
+   Purchases go through RevenueCat (Billing.* below); falls back to a local unlock on web/dev. */
 const PRO_KEY = "tennisTracker.pro";
 const TRIAL_KEY = "tennisTracker.trialGames";
 const TRIAL_LIMIT = 3;
-const PRO_PRICE = "$4.99";                 // display only; the store returns the real localized price
+let PRO_PRICE = "$4.99";                   // display fallback; overwritten with the store's localized price once loaded
 
 let proOwned = false, trialUsed = 0;
 try { proOwned = localStorage.getItem(PRO_KEY) === "1"; } catch (e) {}
@@ -3865,13 +4092,48 @@ function trialRemaining() { return Math.max(0, TRIAL_LIMIT - trialUsed); }
 function trialActive() { return !proOwned && trialRemaining() > 0; }
 function isPro() { return proOwned || trialActive(); }          // may start a match (owned or trial left)
 
-// Purchase layer — STUB. Today it unlocks locally so the flow is testable on web and native.
-// TODO: wire real IAP (StoreKit 2 on iOS, Play Billing on Android — e.g. a Capacitor IAP plugin
-// or RevenueCat) and set proOwned from the *verified* entitlement instead of unconditionally.
+/* Purchase layer — backed by RevenueCat (Cap.Plugins.Purchases) on native, no-op on web.
+   RevenueCat dashboard config this must match: entitlement id "pro", offering "default" with one
+   package for the pro_unlock non-consumable. Swap in your own API keys below. */
+const RC_API_KEY = { ios: "REVENUECAT_IOS_API_KEY", android: "REVENUECAT_ANDROID_API_KEY" };
+const RC_ENTITLEMENT = "pro";
+const RCPurchases = () => (IS_NATIVE && Cap.Plugins && Cap.Plugins.Purchases) || null;
+
+function entitlementActive(customerInfo) {
+  return !!(customerInfo && customerInfo.entitlements && customerInfo.entitlements.active && customerInfo.entitlements.active[RC_ENTITLEMENT]);
+}
+async function configureBilling() {
+  const RC = RCPurchases();
+  if (!RC) return;
+  try {
+    const apiKey = PLATFORM === "ios" ? RC_API_KEY.ios : RC_API_KEY.android;
+    await RC.configure({ apiKey });
+    const offerings = await RC.getOfferings();
+    const pkg = offerings && offerings.current && offerings.current.availablePackages && offerings.current.availablePackages[0];
+    if (pkg && pkg.product && pkg.product.priceString) PRO_PRICE = pkg.product.priceString;
+    const { customerInfo } = await RC.getCustomerInfo();
+    if (entitlementActive(customerInfo)) grantPro();
+  } catch (e) {}
+}
 const Billing = {
-  async purchase() { grantPro(); return true; },
-  async restore() { return proOwned; },      // real impl: query entitlements, then grantPro() if owned
+  async purchase() {
+    const RC = RCPurchases();
+    if (!RC) { grantPro(); return true; }                 // web/dev fallback: unlock locally so the flow is testable
+    const offerings = await RC.getOfferings();
+    const pkg = offerings && offerings.current && offerings.current.availablePackages && offerings.current.availablePackages[0];
+    if (!pkg) return false;
+    const { customerInfo } = await RC.purchasePackage({ aPackage: pkg });
+    if (entitlementActive(customerInfo)) { grantPro(); return true; }
+    return false;
+  },
+  async restore() {
+    const RC = RCPurchases();
+    if (!RC) return proOwned;
+    const { customerInfo } = await RC.restorePurchases();
+    return entitlementActive(customerInfo);
+  },
 };
+configureBilling();
 
 function grantPro() {
   proOwned = true;
@@ -3984,7 +4246,10 @@ function showSetup(cancellable) {
     gamesPerSet: match.settings.gamesPerSet,
     tbPoints: match.settings.tbPoints,
     winBy: match.settings.winBy,
-    scoring: match.settings.scoring
+    scoring: match.settings.scoring,
+    // remember custom names between matches; blank out the auto-defaults so the placeholder shows
+    names: [isDefaultName(match.names[0]) ? "" : match.names[0],
+            isDefaultName(match.names[1]) ? "" : match.names[1]]
   };
   moreOpen = false;   // always start collapsed so the screen opens simple
   syncMore();
@@ -4050,6 +4315,26 @@ function syncSetupUI() {
     b.classList.toggle("active", b.dataset.decider === pendingSetup.decider));
   document.querySelectorAll("#setupWinBy button").forEach(b =>
     b.classList.toggle("active", Number(b.dataset.winby) === pendingSetup.winBy));
+
+  // name fields: label + placeholders track singles/doubles (Players vs Teams)
+  const doublesMode = pendingSetup.mode === "doubles";
+  el("setupNamesLabel").textContent = doublesMode ? t("teamsLbl") : t("playersLbl");
+  const phNames = defaultNames(pendingSetup.mode);
+  const nA = el("setupNameA"), nB = el("setupNameB");
+  [nA, nB].forEach((inp, i) => {
+    inp.placeholder = phNames[i];
+    inp.setAttribute("aria-label", phNames[i]);
+    if (document.activeElement !== inp) inp.value = pendingSetup.names[i];   // don't clobber mid-edit
+  });
+}
+
+// Default side labels for a mode, and a test for "the user never named this side" so we know when
+// to fall back to those labels (covers the current-language defaults plus the English fallbacks).
+function defaultNames(mode) { return mode === "doubles" ? [t("team1"), t("team2")] : [t("player1"), t("player2")]; }
+function isDefaultName(name) {
+  if (!name) return true;
+  return [t("player1"), t("player2"), t("team1"), t("team2"),
+          "Player 1", "Player 2", "Team 1", "Team 2"].includes(name);
 }
 
 // Sport selection + its canonical defaults (shared by the dropdown's click & keyboard paths)
@@ -4178,6 +4463,12 @@ el("setupWinBy").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-winby]"); if (!b) return;
   pendingSetup.winBy = Number(b.dataset.winby); syncSetupUI();
 });
+// Name fields — stash what's typed; Enter just dismisses the keyboard (doesn't start the match).
+[["setupNameA", 0], ["setupNameB", 1]].forEach(([id, idx]) => {
+  const inp = el(id);
+  inp.addEventListener("input", () => { pendingSetup.names[idx] = inp.value.slice(0, 24); });
+  inp.addEventListener("keydown", (e) => { if (e.key === "Enter") inp.blur(); });
+});
 
 // Decorative ball icons in the setup header (the three distinct ball designs)
 el("setupBalls").innerHTML = ["tennis", "tabletennis", "pickleball"].map(s => ballSVG(s)).join("");
@@ -4196,7 +4487,9 @@ el("startBtn").addEventListener("click", () => {
     winBy: pendingSetup.winBy,
     scoring: pendingSetup.scoring || "rally"
   });
-  match.names = pendingSetup.mode === "doubles" ? [t("team1"), t("team2")] : [t("player1"), t("player2")];
+  const dfltNames = defaultNames(pendingSetup.mode);
+  match.names = [(pendingSetup.names[0] || "").trim() || dfltNames[0],
+                 (pendingSetup.names[1] || "").trim() || dfltNames[1]];
   historyStack = [];
   save();
   el("setup").classList.remove("show");
@@ -4205,30 +4498,13 @@ el("startBtn").addEventListener("click", () => {
 
 // Cancel just closes the setup and resumes whatever match is in memory
 
-// Material-style tap ripple on menu/control buttons (not the scoring sides, serve balls, or switches)
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-document.addEventListener("pointerdown", (e) => {
-  if (reduceMotion.matches) return;
-  const btn = e.target.closest("button:not(.serve):not(.switch)");
-  if (!btn || btn.disabled) return;
-  const r = btn.getBoundingClientRect();
-  const size = Math.max(r.width, r.height) * 2;
-  const span = document.createElement("span");
-  span.className = "ripple";
-  span.style.width = span.style.height = size + "px";
-  span.style.left = (e.clientX - r.left - size / 2) + "px";
-  span.style.top = (e.clientY - r.top - size / 2) + "px";
-  span.addEventListener("animationend", () => span.remove());
-  btn.appendChild(span);
-});
-
 // Only act on clicker keys during live play — not while typing a name or with an overlay open.
 // (null-guarded so a renamed/removed overlay id can never throw and silently kill scoring.)
 function remoteActive() {
   const ae = document.activeElement;
   if (ae && (ae.tagName === "INPUT" || ae.isContentEditable)) return false;
   if (match.over) return false;
-  return !["setup", "settingsPage", "sportSheet", "winner", "confirmModal", "help", "statsScreen", "clickerSetup"]
+  return !["setup", "settingsPage", "sportSheet", "winner", "confirmModal", "help", "statsScreen", "clickerSetup", "watchSetup"]
     .some(id => { const e = el(id); return e && e.classList.contains("show"); });
 }
 

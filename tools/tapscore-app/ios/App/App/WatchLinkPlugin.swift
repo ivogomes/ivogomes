@@ -11,7 +11,8 @@ public class WatchLinkPlugin: CAPPlugin, CAPBridgedPlugin, WCSessionDelegate {
     public let identifier = "WatchLinkPlugin"
     public let jsName = "WatchLink"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "send", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "send", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getStatus", returnType: CAPPluginReturnPromise)
     ]
 
     override public func load() {
@@ -36,6 +37,23 @@ public class WatchLinkPlugin: CAPPlugin, CAPBridgedPlugin, WCSessionDelegate {
             }
         }
         call.resolve()
+    }
+
+    // Passive reachability read for the "Test connection" flow in Settings. `reachable` is true only
+    // when the watch app is in the foreground and linked (WCSession.isReachable); paired/installed let
+    // the UI tell "no watch" apart from "watch app not open".
+    @objc func getStatus(_ call: CAPPluginCall) {
+        var supported = false, reachable = false, paired = false, installed = false
+        if WCSession.isSupported() {
+            supported = true
+            let s = WCSession.default
+            if s.activationState == .activated {
+                reachable = s.isReachable
+                paired = s.isPaired
+                installed = s.isWatchAppInstalled
+            }
+        }
+        call.resolve(["supported": supported, "reachable": reachable, "paired": paired, "installed": installed])
     }
 
     // watch → JS. base64 keeps the payload safe inside the evaluated JS string literal.

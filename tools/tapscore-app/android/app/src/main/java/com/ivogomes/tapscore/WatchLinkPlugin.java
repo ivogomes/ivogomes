@@ -2,6 +2,7 @@ package com.ivogomes.tapscore;
 
 import android.util.Base64;
 
+import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
@@ -40,6 +41,28 @@ public class WatchLinkPlugin extends Plugin implements MessageClient.OnMessageRe
             for (Node n : nodes) mc.sendMessage(n.getId(), PATH, data);
         });
         call.resolve();
+    }
+
+    // Passive reachability read for the "Test connection" flow in Settings: a connected Wear node
+    // (paired watch with the companion present) counts as reachable. No message is sent to the watch.
+    @PluginMethod
+    public void getStatus(PluginCall call) {
+        Wearable.getNodeClient(getContext()).getConnectedNodes()
+            .addOnSuccessListener(nodes -> {
+                boolean connected = nodes != null && !nodes.isEmpty();
+                JSObject r = new JSObject();
+                r.put("supported", true);
+                r.put("reachable", connected);
+                r.put("paired", connected);
+                r.put("installed", true);
+                call.resolve(r);
+            })
+            .addOnFailureListener(e -> {
+                JSObject r = new JSObject();
+                r.put("supported", true);
+                r.put("reachable", false);
+                call.resolve(r);
+            });
     }
 
     @Override
