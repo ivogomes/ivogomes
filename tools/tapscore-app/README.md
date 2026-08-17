@@ -187,10 +187,73 @@ The warning-free options:
 ### Android (Google Play)
 1. In Android Studio: Build ▸ Generate Signed Bundle (**.aab**), create an
    upload keystore (keep it safe — you can't rotate it later).
-2. In the Play Console: create the app, complete the Data safety form
-   (no data collected), content rating questionnaire, store listing
-   (icon, feature graphic 1024x500, screenshots), and set category (Sports).
+2. In the Play Console: create the app, complete the Data safety form,
+   content rating questionnaire, store listing (icon, feature graphic
+   1024x500, screenshots), and set category (Sports).
+   ⚠️ Data safety is **not** "no data collected" once RevenueCat ships — declare
+   purchase history + a device identifier, processed for app functionality. See
+   the In-app purchases section below and `../tapscore/privacy.html`.
 3. Roll out to internal testing first, then production.
+
+---
+
+## In-app purchases (TapScore Pro)
+
+The app code is already written against **RevenueCat** — see the
+`TapScore Pro (free trial ...)` block in `../tapscore/index.html`
+(`configureBilling()`, `syncBilling()`, `Billing.purchase()/restore()`). It expects
+entitlement id `pro`, a one-time product `pro_unlock`, and an offering marked
+**Current** whose first package is that product.
+
+Until the plugin is installed, `RCPurchases()` is `null`: the web/PWA build unlocks
+Pro locally (intentional, so the flow is testable) and native builds refuse to sell
+rather than giving Pro away.
+
+**1. Install the plugin.** Already declared in `package.json` as
+`@revenuecat/purchases-capacitor: ^9.2.1` — run `npm install && npm run sync`.
+
+`9.2.1` is the **highest version compatible with Capacitor 6**: `10.0.0` moved its
+`@capacitor/core` peer dep to `>=7.0.0` and the current `13.x` needs `>=8.0.0`. The
+caret is deliberately capped below `10.0.0`; don't widen it without upgrading Capacitor
+first. The plugin's `minSdkVersion` is 22, matching `variables.gradle`, so no bump.
+
+⚠️ Worth checking at first upload: the 9.x line bundles
+`purchases-hybrid-common:13.15.2`, and Google enforces a rolling minimum Play Billing
+Library version. If Play Console rejects the AAB over the Billing version, the fix is to
+upgrade Capacitor (6 ▸ 7 ▸ 8) and move to a newer plugin line — not to patch around it.
+
+**2. Play Console — payments profile.** Setup ▸ Payments profile (bank account,
+address, tax/NIF). Nothing can be sold without it and verification takes a few days,
+so start here.
+
+**3. Play Console — the product.** Monetize ▸ Products ▸ In-app products ▸ create
+`pro_unlock` as a one-time purchase, set price + localized name/description, and
+**Activate** it. Needs a release already uploaded to a track, built *after* step 1
+(the Billing library ships with the plugin).
+
+**4. Service account, so RevenueCat can verify purchases.** In Google Cloud: create a
+service account, enable the Google Play Android Developer API, download the JSON key.
+In Play Console ▸ Users & permissions: invite that service-account address with *View
+financial data* and *Manage orders and subscriptions*. Upload the JSON to RevenueCat.
+Permission changes can take ~24h to propagate.
+
+**5. RevenueCat dashboard.** Add a Google Play app for `com.ivogomes.tapscore`, import
+`pro_unlock`, attach it to an entitlement with the exact id `pro`, and add it to an
+offering marked **Current**. Then replace `REVENUECAT_ANDROID_API_KEY` in
+`../tapscore/index.html` with the public Android SDK key (`goog_…` — designed to be
+client-side, so it's fine in this repo).
+
+**6. Testing.** Play Console ▸ Setup ▸ License testing: add your accounts so purchases
+are free. Purchases only work for builds **installed via Play** (internal testing or
+internal app sharing) signed with the release key — a `npm run apk` debug install will
+always fail.
+
+**7. Don't forget the disclosures.** Adding RevenueCat means purchase and device
+identifiers leave the device, so the Play **Data safety** answers ("no data collected")
+and `../tapscore/privacy.html` both need revising before submitting.
+
+Purchase acknowledgment — Google auto-refunds purchases left unacknowledged for 3 days —
+is handled by the RevenueCat SDK.
 
 ---
 

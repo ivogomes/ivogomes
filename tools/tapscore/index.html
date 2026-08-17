@@ -1246,7 +1246,8 @@
       </ul>
       <p class="pwTrial" id="paywallTrial"></p>
       <div class="actions">
-        <button class="finish" id="paywallBuy">Unlock</button>
+        <!-- label is set by openPaywall(): store price if known, otherwise a plain "Unlock Pro" -->
+        <button class="finish" id="paywallBuy">Unlock Pro</button>
         <button class="cancel" id="paywallLater" data-i18n="pro_later">Maybe later</button>
       </div>
       <button class="restore" id="paywallRestore" data-i18n="pro_restore">Restore purchase</button>
@@ -1995,8 +1996,10 @@ const PRO_STR = {
     pro_feat_sports: "All 8 sports", pro_feat_formats: "Advanced formats, rules & tie-breaks",
     pro_feat_stats: "Match stats & history", pro_feat_watch: "Apple Watch & Wear OS apps",
     pro_feat_watch_ios: "Apple Watch app", pro_feat_watch_android: "Wear OS app",
-    pro_unlock: "Unlock — %s", pro_restore: "Restore purchase", pro_later: "Maybe later",
+    pro_unlock: "Unlock — %s", pro_unlock_plain: "Unlock Pro",
+    pro_restore: "Restore purchase", pro_later: "Maybe later",
     pro_unlocked: "TapScore Pro unlocked — thanks!", pro_restore_none: "Nothing to restore yet",
+    pro_store_error: "The store isn't available right now — please try again",
     pro_pill_trial: "Pro trial: %s left", pro_pill_ended: "Unlock Pro", pro_pill_owned: "Pro",
     trial_left_toast: "%s free Pro games left",
     trial_ended_toast: "Free trial ended — unlock Pro to keep these features",
@@ -2011,8 +2014,10 @@ const PRO_STR = {
     pro_feat_sports: "Los 8 deportes", pro_feat_formats: "Formatos, reglas y tie-breaks avanzados",
     pro_feat_stats: "Estadísticas e historial", pro_feat_watch: "Apps para Apple Watch y Wear OS",
     pro_feat_watch_ios: "App para Apple Watch", pro_feat_watch_android: "App para Wear OS",
-    pro_unlock: "Desbloquear — %s", pro_restore: "Restaurar compra", pro_later: "Quizás luego",
+    pro_unlock: "Desbloquear — %s", pro_unlock_plain: "Desbloquear Pro",
+    pro_restore: "Restaurar compra", pro_later: "Quizás luego",
     pro_unlocked: "¡TapScore Pro desbloqueado, gracias!", pro_restore_none: "Nada que restaurar todavía",
+    pro_store_error: "La tienda no está disponible ahora mismo — inténtalo de nuevo",
     pro_pill_trial: "Prueba Pro: quedan %s", pro_pill_ended: "Desbloquear Pro", pro_pill_owned: "Pro",
     trial_left_toast: "Quedan %s partidos Pro gratis",
     trial_ended_toast: "Prueba terminada: desbloquea Pro para seguir",
@@ -2027,8 +2032,10 @@ const PRO_STR = {
     pro_feat_sports: "Todos os 8 desportos", pro_feat_formats: "Formatos, regras e tie-breaks avançados",
     pro_feat_stats: "Estatísticas e histórico", pro_feat_watch: "Apps para Apple Watch e Wear OS",
     pro_feat_watch_ios: "App para Apple Watch", pro_feat_watch_android: "App para Wear OS",
-    pro_unlock: "Desbloquear — %s", pro_restore: "Restaurar compra", pro_later: "Talvez depois",
+    pro_unlock: "Desbloquear — %s", pro_unlock_plain: "Desbloquear o Pro",
+    pro_restore: "Restaurar compra", pro_later: "Talvez depois",
     pro_unlocked: "TapScore Pro desbloqueado — obrigado!", pro_restore_none: "Nada para restaurar ainda",
+    pro_store_error: "A loja não está disponível agora — tenta outra vez",
     pro_pill_trial: "Teste Pro: faltam %s", pro_pill_ended: "Desbloquear Pro", pro_pill_owned: "Pro",
     trial_left_toast: "Faltam %s jogos Pro grátis",
     trial_ended_toast: "Teste terminado — desbloqueia o Pro para continuar",
@@ -2043,8 +2050,10 @@ const PRO_STR = {
     pro_feat_sports: "Les 8 sports", pro_feat_formats: "Formats, règles et tie-breaks avancés",
     pro_feat_stats: "Statistiques et historique", pro_feat_watch: "Apps Apple Watch et Wear OS",
     pro_feat_watch_ios: "App Apple Watch", pro_feat_watch_android: "App Wear OS",
-    pro_unlock: "Débloquer — %s", pro_restore: "Restaurer l'achat", pro_later: "Plus tard",
+    pro_unlock: "Débloquer — %s", pro_unlock_plain: "Débloquer Pro",
+    pro_restore: "Restaurer l'achat", pro_later: "Plus tard",
     pro_unlocked: "TapScore Pro débloqué — merci !", pro_restore_none: "Rien à restaurer pour l'instant",
+    pro_store_error: "La boutique est indisponible pour le moment — réessayez",
     pro_pill_trial: "Essai Pro : %s restants", pro_pill_ended: "Débloquer Pro", pro_pill_owned: "Pro",
     trial_left_toast: "%s parties Pro gratuites restantes",
     trial_ended_toast: "Essai terminé — débloquez Pro pour continuer",
@@ -2059,8 +2068,10 @@ const PRO_STR = {
     pro_feat_sports: "Alle 8 Sportarten", pro_feat_formats: "Erweiterte Formate, Regeln & Tie-Breaks",
     pro_feat_stats: "Statistiken & Verlauf", pro_feat_watch: "Apple Watch & Wear OS Apps",
     pro_feat_watch_ios: "Apple Watch App", pro_feat_watch_android: "Wear OS App",
-    pro_unlock: "Freischalten — %s", pro_restore: "Kauf wiederherstellen", pro_later: "Später",
+    pro_unlock: "Freischalten — %s", pro_unlock_plain: "Pro freischalten",
+    pro_restore: "Kauf wiederherstellen", pro_later: "Später",
     pro_unlocked: "TapScore Pro freigeschaltet — danke!", pro_restore_none: "Nichts wiederherzustellen",
+    pro_store_error: "Der Store ist gerade nicht verfügbar — bitte erneut versuchen",
     pro_pill_trial: "Pro-Test: %s übrig", pro_pill_ended: "Pro freischalten", pro_pill_owned: "Pro",
     trial_left_toast: "%s kostenlose Pro-Spiele übrig",
     trial_ended_toast: "Test beendet — schalte Pro frei, um weiterzuspielen",
@@ -4082,7 +4093,12 @@ applyTheme();
 const PRO_KEY = "tennisTracker.pro";
 const TRIAL_KEY = "tennisTracker.trialGames";
 const TRIAL_LIMIT = 3;
-let PRO_PRICE = "$4.99";                   // display fallback; overwritten with the store's localized price once loaded
+/* The price is set per-region in the App Store / Play Console, so we never hard-code one — it stays
+   null until the store hands us a localized priceString, and the button reads "Unlock Pro" until then. */
+let proPriceString = null;
+function unlockLabel() {
+  return proPriceString ? tf("pro_unlock", proPriceString) : t("pro_unlock_plain");
+}
 
 let proOwned = false, trialUsed = 0;
 try { proOwned = localStorage.getItem(PRO_KEY) === "1"; } catch (e) {}
@@ -4093,14 +4109,36 @@ function trialActive() { return !proOwned && trialRemaining() > 0; }
 function isPro() { return proOwned || trialActive(); }          // may start a match (owned or trial left)
 
 /* Purchase layer — backed by RevenueCat (Cap.Plugins.Purchases) on native, no-op on web.
-   RevenueCat dashboard config this must match: entitlement id "pro", offering "default" with one
-   package for the pro_unlock non-consumable. Swap in your own API keys below. */
-const RC_API_KEY = { ios: "REVENUECAT_IOS_API_KEY", android: "REVENUECAT_ANDROID_API_KEY" };
+   Requires the @revenuecat/purchases-capacitor plugin (8.x line for Capacitor 6); without it
+   RCPurchases() is null and native builds refuse to sell rather than unlocking for free.
+   RevenueCat dashboard config this must match:
+     • entitlement id "pro" (RC_ENTITLEMENT below)
+     • a one-time product `pro_unlock`, attached to that entitlement
+     • an offering marked **Current** whose FIRST package is that product (we read availablePackages[0])
+   Swap the placeholder API keys below for the real public SDK keys (safe to ship client-side). */
+const RC_API_KEY = { ios: "REVENUECAT_IOS_API_KEY", android: "goog_whvXKmDepBOjbvzOFjhVnfAYlbw" };
 const RC_ENTITLEMENT = "pro";
 const RCPurchases = () => (IS_NATIVE && Cap.Plugins && Cap.Plugins.Purchases) || null;
+let billingReady = false;   // true only once configure() has succeeded — a purchase before that would throw
 
 function entitlementActive(customerInfo) {
   return !!(customerInfo && customerInfo.entitlements && customerInfo.entitlements.active && customerInfo.entitlements.active[RC_ENTITLEMENT]);
+}
+function currentPackage(offerings) {
+  return (offerings && offerings.current && offerings.current.availablePackages && offerings.current.availablePackages[0]) || null;
+}
+
+/* Pull the store's localized price and grant Pro if the entitlement is already owned. Safe to re-run:
+   startup may fail offline, so the paywall calls this again before it's shown. */
+async function syncBilling() {
+  const RC = RCPurchases();
+  if (!RC || !billingReady) return;
+  try {
+    const pkg = currentPackage(await RC.getOfferings());
+    if (pkg && pkg.product && pkg.product.priceString) proPriceString = pkg.product.priceString;
+    const { customerInfo } = await RC.getCustomerInfo();
+    if (entitlementActive(customerInfo)) grantPro();
+  } catch (e) {}
 }
 async function configureBilling() {
   const RC = RCPurchases();
@@ -4108,31 +4146,39 @@ async function configureBilling() {
   try {
     const apiKey = PLATFORM === "ios" ? RC_API_KEY.ios : RC_API_KEY.android;
     await RC.configure({ apiKey });
-    const offerings = await RC.getOfferings();
-    const pkg = offerings && offerings.current && offerings.current.availablePackages && offerings.current.availablePackages[0];
-    if (pkg && pkg.product && pkg.product.priceString) PRO_PRICE = pkg.product.priceString;
-    const { customerInfo } = await RC.getCustomerInfo();
-    if (entitlementActive(customerInfo)) grantPro();
-  } catch (e) {}
+    billingReady = true;
+  } catch (e) { return; }
+  await syncBilling();
 }
 const Billing = {
+  /* Resolves "owned" / "not owned". Throws only on a real store failure, so callers can tell the
+     difference between "user backed out" (no toast) and "billing is broken" (toast). */
   async purchase() {
     const RC = RCPurchases();
-    if (!RC) { grantPro(); return true; }                 // web/dev fallback: unlock locally so the flow is testable
-    const offerings = await RC.getOfferings();
-    const pkg = offerings && offerings.current && offerings.current.availablePackages && offerings.current.availablePackages[0];
-    if (!pkg) return false;
+    if (!RC || !billingReady) {
+      // No store to talk to. On web/dev that's expected — unlock locally so the flow stays testable.
+      // On native it means billing is misconfigured or offline, which must NOT be a free unlock.
+      if (IS_NATIVE) throw new Error("billing unavailable");
+      grantPro();
+      return true;
+    }
+    const pkg = currentPackage(await RC.getOfferings());
+    if (!pkg) throw new Error("no package in the current offering");
     const { customerInfo } = await RC.purchasePackage({ aPackage: pkg });
     if (entitlementActive(customerInfo)) { grantPro(); return true; }
     return false;
   },
   async restore() {
     const RC = RCPurchases();
-    if (!RC) return proOwned;
+    if (!RC || !billingReady) return proOwned;
     const { customerInfo } = await RC.restorePurchases();
     return entitlementActive(customerInfo);
   },
 };
+// RevenueCat surfaces a user-initiated cancel as an error — that's not something to apologise for.
+function isUserCancelled(e) {
+  return !!(e && (e.userCancelled || e.code === "1" || /cancel/i.test(e.message || "")));
+}
 configureBilling();
 
 function grantPro() {
@@ -4159,7 +4205,7 @@ const paywallModal = el("paywallModal");
 function appPlatform() { try { return (Cap && Cap.getPlatform) ? Cap.getPlatform() : "web"; } catch (e) { return "web"; } }
 function openPaywall() {
   el("paywallSub").textContent = t("pro_sub_default");
-  el("paywallBuy").textContent = tf("pro_unlock", PRO_PRICE);
+  el("paywallBuy").textContent = unlockLabel();
   const plat = appPlatform();
   el("pwWatchFeat").textContent = plat === "ios" ? t("pro_feat_watch_ios")
     : plat === "android" ? t("pro_feat_watch_android")
@@ -4169,17 +4215,35 @@ function openPaywall() {
   el("paywallTrial").style.display = line ? "" : "none";
   paywallModal.classList.add("show");
   paywallModal.setAttribute("aria-hidden", "false");
+  // The startup sync may have failed (offline, slow store). Retry now so the real localized price
+  // shows, and so an already-owned entitlement unlocks without the user having to hit Restore.
+  syncBilling().then(() => {
+    if (!paywallModal.classList.contains("show")) return;
+    if (proOwned) { closePaywall(); showToast(t("pro_unlocked")); return; }
+    el("paywallBuy").textContent = unlockLabel();   // the store price has usually arrived by now
+  });
 }
 function closePaywall() { paywallModal.classList.remove("show"); paywallModal.setAttribute("aria-hidden", "true"); }
 el("paywallLater").addEventListener("click", closePaywall);
 paywallModal.addEventListener("click", (e) => { if (e.target === paywallModal) closePaywall(); });
 el("paywallBuy").addEventListener("click", async () => {
-  try { await Billing.purchase(); } catch (e) {}
-  if (proOwned) { closePaywall(); showToast(t("pro_unlocked")); }
+  const btn = el("paywallBuy");
+  if (btn.disabled) return;                       // guard against a double-tap opening two store sheets
+  btn.disabled = true;
+  try {
+    await Billing.purchase();
+    if (proOwned) { closePaywall(); showToast(t("pro_unlocked")); }
+  } catch (e) {
+    if (!isUserCancelled(e)) showToast(t("pro_store_error"));
+  } finally {
+    btn.disabled = false;
+  }
 });
 el("paywallRestore").addEventListener("click", async () => {
   let ok = false;
-  try { ok = await Billing.restore(); } catch (e) {}
+  try { ok = await Billing.restore(); } catch (e) {
+    if (!isUserCancelled(e)) { showToast(t("pro_store_error")); return; }
+  }
   if (ok) { grantPro(); closePaywall(); showToast(t("pro_unlocked")); }
   else showToast(t("pro_restore_none"));
 });
