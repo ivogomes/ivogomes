@@ -1,27 +1,29 @@
 PODS:
-  - Capacitor (6.2.1):
+  - Capacitor (8.5.0):
     - CapacitorCordova
-  - CapacitorCommunityKeepAwake (5.0.1):
+  - CapacitorCommunityKeepAwake (8.0.1):
     - Capacitor
-  - CapacitorCommunityTextToSpeech (5.1.0):
+  - CapacitorCommunityTextToSpeech (8.0.2):
     - Capacitor
-  - CapacitorCordova (6.2.1)
-  - CapacitorFilesystem (6.0.4):
+  - CapacitorCordova (8.5.0)
+  - CapacitorFilesystem (8.1.2):
     - Capacitor
-  - CapacitorHaptics (6.0.3):
+    - IONFilesystemLib (~> 1.1.1)
+  - CapacitorHaptics (8.0.2):
     - Capacitor
-  - CapacitorShare (6.0.4):
+  - CapacitorShare (8.0.1):
     - Capacitor
-  - CapacitorSplashScreen (6.0.4):
+  - CapacitorSplashScreen (8.0.2):
     - Capacitor
-  - CapacitorStatusBar (6.0.3):
+  - CapacitorStatusBar (8.0.3):
     - Capacitor
-  - PurchasesHybridCommon (13.26.0):
-    - RevenueCat (= 5.20.0)
-  - RevenueCat (5.20.0)
-  - RevenuecatPurchasesCapacitor (9.2.2):
+  - IONFilesystemLib (1.1.2)
+  - PurchasesHybridCommon (18.29.0):
+    - RevenueCat (= 5.83.0)
+  - RevenueCat (5.83.0)
+  - RevenuecatPurchasesCapacitor (13.4.0):
     - Capacitor
-    - PurchasesHybridCommon (= 13.26.0)
+    - PurchasesHybridCommon (= 18.29.0)
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
@@ -37,6 +39,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - IONFilesystemLib
     - PurchasesHybridCommon
     - RevenueCat
 
@@ -63,19 +66,20 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@revenuecat/purchases-capacitor"
 
 SPEC CHECKSUMS:
-  Capacitor: c95400d761e376be9da6be5a05f226c0e865cebf
-  CapacitorCommunityKeepAwake: 6ca8e4c8db46f0cf99e33f1ca1162fbc97c8611e
-  CapacitorCommunityTextToSpeech: ed295743e9163fd4f8370a48ab4ae144fc7127c3
-  CapacitorCordova: 8d93e14982f440181be7304aa9559ca631d77fff
-  CapacitorFilesystem: 5b9aec35c0212bd0064e26d278c93e925864f212
-  CapacitorHaptics: 40f83026feeee9cfe36e89e9c98a3baaaf20c450
-  CapacitorShare: 77ff779e3b7c6ae9fb5461e52cf7ef805d429491
-  CapacitorSplashScreen: ef140a8b1ea7244e0c245ce2dd4ce5251e7ab86a
-  CapacitorStatusBar: 149cde8f1328ec3aa6cbdd872a55137ae3f98b16
-  PurchasesHybridCommon: fa166fc8b385cf80f581f923c91d8ccffe5dd7f8
-  RevenueCat: e47ff90dfd271fde155a4befe48e8fc02e8281e4
-  RevenuecatPurchasesCapacitor: 6727a4dc1455bdf2374259420719ce5dfbe957fa
+  Capacitor: 00b87168591cc006ea6f5c0de681ec5c39a2c8eb
+  CapacitorCommunityKeepAwake: d41922812644562e94a79acaf7f41e6d9413af8c
+  CapacitorCommunityTextToSpeech: a9f7c5bcdc424197d11bb7ae3e9010b415e931b0
+  CapacitorCordova: 9d3acbb574048e7167d2af127a0af2123e619f2f
+  CapacitorFilesystem: 2db285a1ac6e475cc27cae2e1bea999000f9e2be
+  CapacitorHaptics: 296f771ecd89c7a1bd92a7b6826a7d268e2e70f5
+  CapacitorShare: 0c58305114538568059bfc07111f22dcb9cb2a82
+  CapacitorSplashScreen: 7bf61c2001557ff9e195e601c6b87344480d3c65
+  CapacitorStatusBar: eca7bc2b58d9f886f1ef9edb66e57a9b29c121af
+  IONFilesystemLib: 21a63377696b2d8fab5632ecfb7d2ac67bddb68a
+  PurchasesHybridCommon: 94a0fde86cfecdc487fb64667b68f527af930265
+  RevenueCat: a83de0391a1061302699cb55eb1ff0662f5768b5
+  RevenuecatPurchasesCapacitor: 9205ff494ad81e19bccef77a88a34599c11ed319
 
-PODFILE CHECKSUM: 4e661aae0f2170b3b92eb8bf6b7d2b20a41b34a2
+PODFILE CHECKSUM: 38a685c91394cfffe8f604df54a24c59c6f1080d
 
 COCOAPODS: 1.17.0

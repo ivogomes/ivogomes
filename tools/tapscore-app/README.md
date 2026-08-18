@@ -32,9 +32,9 @@ a Mac with Xcode — so they couldn't be run in this environment.
 | | iOS | Android |
 |---|---|---|
 | Account | [Apple Developer](https://developer.apple.com/programs/) — **$99/yr** | [Google Play Console](https://play.google.com/console) — **$25 once** |
-| Tooling | **macOS + Xcode** + [CocoaPods](https://cocoapods.org) (`sudo gem install cocoapods`) | [Android Studio](https://developer.android.com/studio) (+ JDK 17) |
+| Tooling | **macOS + Xcode** + [CocoaPods](https://cocoapods.org) (`sudo gem install cocoapods`) | [Android Studio](https://developer.android.com/studio) (+ JDK 21) |
 
-Also: Node 18+ (you already have it).
+Also: Node 22+ (required by the Capacitor 8 CLI).
 
 ---
 
@@ -210,17 +210,27 @@ Pro locally (intentional, so the flow is testable) and native builds refuse to s
 rather than giving Pro away.
 
 **1. Install the plugin.** Already declared in `package.json` as
-`@revenuecat/purchases-capacitor: ^9.2.1` — run `npm install && npm run sync`.
+`@revenuecat/purchases-capacitor: ^13.4.0` — run `npm install && npm run sync`.
 
-`9.2.1` is the **highest version compatible with Capacitor 6**: `10.0.0` moved its
-`@capacitor/core` peer dep to `>=7.0.0` and the current `13.x` needs `>=8.0.0`. The
-caret is deliberately capped below `10.0.0`; don't widen it without upgrading Capacitor
-first. The plugin's `minSdkVersion` is 22, matching `variables.gradle`, so no bump.
+The `13.x` line needs `@capacitor/core >=8.0.0`, which is why the whole shell runs on
+Capacitor 8. That chain is what satisfies Google Play's Billing Library requirement:
 
-⚠️ Worth checking at first upload: the 9.x line bundles
-`purchases-hybrid-common:13.15.2`, and Google enforces a rolling minimum Play Billing
-Library version. If Play Console rejects the AAB over the Billing version, the fix is to
-upgrade Capacitor (6 ▸ 7 ▸ 8) and move to a newer plugin line — not to patch around it.
+```
+@revenuecat/purchases-capacitor 13.4.0
+  └─ purchases-hybrid-common 18.29.0
+       └─ purchases-android 10.16.0
+            └─ com.android.billingclient:billing 8.3.0   ← Play requires ≥ 8.0.0
+```
+
+Play enforces a rolling minimum Billing version (it dropped 7.x in 2026), and the
+Billing library is never a direct dependency here — it only ever arrives through
+RevenueCat. So the fix for a Billing-version rejection is always to move up the
+RevenueCat line (and, with it, Capacitor), never to force a `billingclient` version in
+Gradle: RevenueCat 8.x/9.x were compiled against APIs that Billing 8 removed, so a
+forced bump compiles and then crashes at runtime.
+
+The plugin requires `minSdkVersion` 24 and Java 21 — both set in `android/variables.gradle`
+and by `cap sync`.
 
 **2. Play Console — payments profile.** Setup ▸ Payments profile (bank account,
 address, tax/NIF). Nothing can be sold without it and verification takes a few days,

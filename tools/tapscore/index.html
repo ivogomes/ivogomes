@@ -4109,7 +4109,8 @@ function trialActive() { return !proOwned && trialRemaining() > 0; }
 function isPro() { return proOwned || trialActive(); }          // may start a match (owned or trial left)
 
 /* Purchase layer — backed by RevenueCat (Cap.Plugins.Purchases) on native, no-op on web.
-   Requires the @revenuecat/purchases-capacitor plugin (8.x line for Capacitor 6); without it
+   Requires the @revenuecat/purchases-capacitor plugin (13.x line for Capacitor 8 — that's the line
+   that ships Google Play Billing 8, which Play requires); without it
    RCPurchases() is null and native builds refuse to sell rather than unlocking for free.
    RevenueCat dashboard config this must match:
      • entitlement id "pro" (RC_ENTITLEMENT below)
