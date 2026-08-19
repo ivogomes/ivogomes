@@ -17,18 +17,24 @@ struct TapScoreApp: App {
     }
 }
 
-/// Routes between Start, Scoring, and Remote (control the phone).
+/// Routes between Home, Start (local setup), Scoring, and Remote (control the phone).
 struct RootView: View {
     var model: MatchModel
     var remote: RemoteModel
     @Binding var remoteMode: Bool
+    @State private var showLocalSetup = false
     var body: some View {
         if remoteMode {
             RemoteView(model: remote, onExit: { remoteMode = false })
         } else if model.active {
             ScoringView(model: model)
+        } else if showLocalSetup {
+            StartView(model: model, onBack: { showLocalSetup = false })
         } else {
-            StartView(model: model, onRemote: { remote.requestSync(); remoteMode = true })
+            HomeView(
+                onLocalMatch: { showLocalSetup = true },
+                onRemote: { remote.requestSync(); remoteMode = true }
+            )
         }
     }
 }

@@ -18,7 +18,7 @@ android {
         applicationId = "com.ivogomes.tapscore"
         minSdk = rootProject.ext.minSdkVersion
         targetSdk = rootProject.ext.targetSdkVersion
-        versionCode = 16
+        versionCode = 18
         versionName = "1.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {

@@ -10,6 +10,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
+import androidx.wear.compose.material3.AppScaffold
+import androidx.wear.compose.material3.MaterialTheme
+import androidx.wear.compose.material3.MotionScheme
 
 /**
  * Entry point for the TapScore Wear OS app. A Wear app is inherently full-screen;
@@ -32,8 +35,16 @@ class MainActivity : ComponentActivity() {
                 if (remoteMode) remote.start()
                 onDispose { if (remoteMode) remote.stop() }
             }
-            if (remoteMode) RemoteScreen(remote, onExit = { remoteMode = false })
-            else RootScreen(model, onRemote = { remoteMode = true })
+            MaterialTheme(
+                colorScheme = TapScoreColorScheme,
+                typography = TapScoreTypography,
+                motionScheme = MotionScheme.expressive(),
+            ) {
+                AppScaffold {
+                    if (remoteMode) RemoteScreen(remote, onExit = { remoteMode = false })
+                    else RootScreen(model, onRemote = { remoteMode = true })
+                }
+            }
         }
     }
 }

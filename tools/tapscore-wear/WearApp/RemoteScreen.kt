@@ -3,7 +3,6 @@ package com.ivogomes.tapscore.wear
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,24 +13,28 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.foundation.text.BasicText
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
+import androidx.wear.compose.foundation.lazy.rememberScalingLazyListState
+import androidx.wear.compose.material3.AlertDialog
+import androidx.wear.compose.material3.Button
+import androidx.wear.compose.material3.ButtonDefaults
+import androidx.wear.compose.material3.ChildButton
+import androidx.wear.compose.material3.MaterialTheme
+import androidx.wear.compose.material3.ScreenScaffold
+import androidx.wear.compose.material3.Text
 
 // Remote-control screen: mirrors the phone's match and sends score/undo back to it.
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun RemoteScreen(model: RemoteModel, onExit: () -> Unit) {
     when {
@@ -44,33 +47,53 @@ fun RemoteScreen(model: RemoteModel, onExit: () -> Unit) {
 
 @Composable
 private fun Status(msg: String, onExit: () -> Unit) {
-    Column(
-        Modifier.fillMaxSize().background(Theme.bg).padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterVertically)
-    ) {
-        BasicText(msg, style = TextStyle(color = Color.White, fontSize = 15.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center))
-        PillButton("Back", Color(0xFF243247), Color.White, onClick = onExit)
+    val scrollState = rememberScalingLazyListState()
+    ScreenScaffold(scrollState = scrollState) { contentPadding ->
+        ScalingLazyColumn(
+            state = scrollState,
+            contentPadding = contentPadding,
+            modifier = Modifier.fillMaxSize(),
+        ) {
+            item { Text(msg, style = MaterialTheme.typography.bodyMedium) }
+            item { ChildButton(onClick = onExit, label = { Text("Back") }) }
+        }
     }
 }
 
 @Composable
 private fun ResultMirror(model: RemoteModel, onExit: () -> Unit) {
     val tie = model.winner < 0
-    Column(
-        Modifier.fillMaxSize().background(Theme.bg).padding(14.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically)
-    ) {
-        BasicText(
-            if (tie) "It's a tie" else model.names[model.winner.coerceIn(0, 1)],
-            style = TextStyle(color = if (tie) Theme.lime else Theme.gold, fontSize = 20.sp, fontWeight = FontWeight.Black, textAlign = TextAlign.Center)
-        )
-        if (model.pill.isNotEmpty()) BasicText(model.pill, style = TextStyle(color = Color(0xFFB6C2D9), fontSize = 14.sp, fontWeight = FontWeight.SemiBold))
-        PillButton("Back", Color(0xFF243247), Color.White, onClick = onExit)
+    val scrollState = rememberScalingLazyListState()
+    ScreenScaffold(scrollState = scrollState) { contentPadding ->
+        ScalingLazyColumn(
+            state = scrollState,
+            contentPadding = contentPadding,
+            modifier = Modifier.fillMaxSize(),
+        ) {
+            item {
+                Text(
+                    if (tie) "It's a tie" else model.names[model.winner.coerceIn(0, 1)],
+                    color = if (tie) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.tertiary,
+                    style = MaterialTheme.typography.titleLarge,
+                )
+            }
+            if (model.pill.isNotEmpty()) {
+                item {
+                    Text(
+                        model.pill,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                }
+            }
+            item { ChildButton(onClick = onExit, label = { Text("Back") }) }
+        }
     }
 }
 
+// Full-bleed mirror of the phone's two-zone board — same rule as ScoringScreen: stays outside
+// Material3 (the whole point is that each half of the screen IS the tap target). Only the pause
+// menu below is a real Material3 dialog.
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun ScoringMirror(model: RemoteModel, onExit: () -> Unit) {
@@ -83,18 +106,28 @@ private fun ScoringMirror(model: RemoteModel, onExit: () -> Unit) {
                 { model.score(1) }, { showMenu = true })
         }
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Box(Modifier.clip(androidx.compose.foundation.shape.RoundedCornerShape(50)).background(Theme.bg).padding(horizontal = 10.dp, vertical = 4.dp)) {
-                BasicText(model.pill.ifEmpty { " " }, style = TextStyle(color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center))
+            Box(Modifier.clip(RoundedCornerShape(50)).background(Theme.bg).padding(horizontal = 10.dp, vertical = 4.dp)) {
+                Text(
+                    model.pill.ifEmpty { " " },
+                    color = Color.White,
+                    style = MaterialTheme.typography.labelMedium,
+                )
             }
         }
-        if (showMenu) {
-            Box(Modifier.fillMaxSize().background(Color(0xEE0B1220)).combinedClickable(onClick = { showMenu = false }, onLongClick = {}), contentAlignment = Alignment.Center) {
-                Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    PillButton("Undo point", Theme.lime, Theme.onLime) { model.undo(); showMenu = false }
-                    PillButton("Exit remote", Theme.danger, Color.White) { onExit() }
-                    PillButton("Cancel", Color(0xFF243247), Color.White) { showMenu = false }
-                }
+        AlertDialog(
+            visible = showMenu,
+            onDismissRequest = { showMenu = false },
+            title = { Text("Remote menu") },
+        ) {
+            item { Button(onClick = { model.undo(); showMenu = false }, label = { Text("Undo point") }) }
+            item {
+                Button(
+                    onClick = { onExit() },
+                    colors = ButtonDefaults.buttonColors(containerColor = Theme.danger, contentColor = Color.White),
+                    label = { Text("Exit remote") },
+                )
             }
+            item { ChildButton(onClick = { showMenu = false }, label = { Text("Cancel") }) }
         }
     }
 }
@@ -104,13 +137,17 @@ private fun ScoringMirror(model: RemoteModel, onExit: () -> Unit) {
 private fun half(color: Color, ink: Color, label: String, score: String, serving: Boolean, alignTop: Boolean,
                  modifier: Modifier, onScore: () -> Unit, onLong: () -> Unit) {
     Box(modifier.fillMaxWidth().background(color).combinedClickable(onClick = onScore, onLongClick = onLong)) {
-        BasicText(score, modifier = Modifier.align(Alignment.Center),
-            style = TextStyle(color = ink, fontSize = 60.sp, fontWeight = FontWeight.Black, fontFamily = Theme.scoreFont))
+        Text(
+            score,
+            modifier = Modifier.align(Alignment.Center),
+            color = ink,
+            style = MaterialTheme.typography.numeralExtraLarge,
+        )
         Row(
             Modifier.align(if (alignTop) Alignment.TopStart else Alignment.BottomStart).padding(horizontal = 12.dp, vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            BasicText(label, style = TextStyle(color = ink, fontSize = 13.sp, fontWeight = FontWeight.Black))
+            Text(label, color = ink, style = MaterialTheme.typography.labelMedium)
             if (serving) { Spacer(Modifier.width(6.dp)); Box(Modifier.size(9.dp).clip(CircleShape).background(ink)) }
         }
     }

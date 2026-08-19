@@ -2,7 +2,6 @@ package com.ivogomes.tapscore.wear
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Arrangement
@@ -16,11 +15,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.BasicText
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -34,25 +30,39 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.rotary.onRotaryScrollEvent
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
+import androidx.wear.compose.foundation.lazy.rememberScalingLazyListState
+import androidx.wear.compose.material3.AlertDialog
+import androidx.wear.compose.material3.Button
+import androidx.wear.compose.material3.ButtonDefaults
+import androidx.wear.compose.material3.ChildButton
+import androidx.wear.compose.material3.CompactButton
+import androidx.wear.compose.material3.EdgeButton
+import androidx.wear.compose.material3.FilledTonalButton
+import androidx.wear.compose.material3.MaterialTheme
+import androidx.wear.compose.material3.Picker
+import androidx.wear.compose.material3.ScreenScaffold
+import androidx.wear.compose.material3.Text
+import androidx.wear.compose.material3.rememberPickerState
 import com.ivogomes.tapscore.engine.ScoringEngine
 import com.ivogomes.tapscore.engine.Settings
 
-/** Routes between Start, Scoring, and End based on match state. */
+/** Routes between Home, Start (local setup), Scoring, and End based on match state. */
 @Composable
 fun RootScreen(model: MatchModel, onRemote: () -> Unit = {}) {
+    var showLocalSetup by remember { mutableStateOf(false) }
     when {
-        !model.active -> StartScreen(model, onRemote)
+        !model.active -> if (showLocalSetup) StartScreen(model, onBack = { showLocalSetup = false })
+                         else HomeScreen(onLocalMatch = { showLocalSetup = true }, onRemote = onRemote)
         model.match.over -> EndScreen(model)
         else -> ScoringScreen(model)
     }
 }
 
-// MARK: - Scoring (two-zone main screen)
+// MARK: - Scoring (two-zone main screen) — deliberately outside Material3: the whole point is that
+// each half of the screen IS the tap target, which Material's button padding/touch-target rules
+// would fight. Only the typography (score/label text) and the pause menu adopt Material3 below.
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -102,17 +112,15 @@ fun ScoringScreen(model: MatchModel) {
                     .background(Theme.bg)
                     .padding(horizontal = 10.dp, vertical = 4.dp)
             ) {
-                BasicText(
+                Text(
                     text = if (tie) "TIE-BREAK" else model.scorePill,
-                    style = TextStyle(
-                        color = if (tie) Theme.lime else Color.White,
-                        fontSize = 13.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center
-                    )
+                    color = if (tie) Theme.lime else Color.White,
+                    style = MaterialTheme.typography.labelMedium,
                 )
             }
         }
 
-        if (showMenu) MatchMenu(model, onDismiss = { showMenu = false })
+        MatchMenu(model, visible = showMenu, onDismiss = { showMenu = false })
     }
 }
 
@@ -135,7 +143,7 @@ private fun ScoreHalf(
         // Label sits on the outer side of the score (above for YOU, below for OPP).
         val labelRow: @Composable () -> Unit = {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                BasicText(text = label, style = TextStyle(color = ink, fontSize = 14.sp, fontWeight = FontWeight.Black))
+                Text(text = label, color = ink, style = MaterialTheme.typography.labelMedium)
                 if (serving) {
                     Spacer(Modifier.width(6.dp))
                     Box(Modifier.size(9.dp).clip(CircleShape).background(ink))
@@ -143,9 +151,10 @@ private fun ScoreHalf(
             }
         }
         val scoreText: @Composable () -> Unit = {
-            BasicText(
+            Text(
                 text = score,
-                style = TextStyle(color = ink, fontSize = 54.sp, fontWeight = FontWeight.Black, fontFamily = Theme.scoreFont)
+                color = ink,
+                style = MaterialTheme.typography.numeralExtraLarge,
             )
         }
         Column(
@@ -158,33 +167,67 @@ private fun ScoreHalf(
     }
 }
 
+// The pause menu is the one piece of the scoring screen that IS a real Material3 dialog — it's
+// ordinary chrome (a list of actions), not part of the tap-to-score board.
 @Composable
-private fun MatchMenu(model: MatchModel, onDismiss: () -> Unit) {
-    Box(
-        Modifier
-            .fillMaxSize()
-            .background(Color(0xEE0B1220))
-            .clickable(onClick = onDismiss),
-        contentAlignment = Alignment.Center
+private fun MatchMenu(model: MatchModel, visible: Boolean, onDismiss: () -> Unit) {
+    AlertDialog(
+        visible = visible,
+        onDismissRequest = onDismiss,
+        title = { Text("Match menu") },
     ) {
-        Column(
-            Modifier.fillMaxWidth().padding(horizontal = 16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            if (model.canUndo) {
-                PillButton("Undo point", Theme.lime, Theme.onLime) { model.undo(); onDismiss() }
+        if (model.canUndo) {
+            item {
+                Button(onClick = { model.undo(); onDismiss() }, label = { Text("Undo point") })
             }
-            PillButton("End match", Theme.danger, Color.White) { model.endMatch(); onDismiss() }
-            PillButton("Cancel", Color(0xFF243247), Color.White, onClick = onDismiss)
+        }
+        item {
+            Button(
+                onClick = { model.endMatch(); onDismiss() },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Theme.danger, contentColor = Color.White,
+                ),
+                label = { Text("End match") },
+            )
+        }
+        item {
+            ChildButton(onClick = onDismiss, label = { Text("Cancel") })
         }
     }
 }
 
-// MARK: - Start (standalone quick launch)
+// MARK: - Home (choose local match or remote control)
 
 @Composable
-fun StartScreen(model: MatchModel, onRemote: () -> Unit = {}) {
+fun HomeScreen(onLocalMatch: () -> Unit, onRemote: () -> Unit = {}) {
+    val scrollState = rememberScalingLazyListState()
+    ScreenScaffold(
+        scrollState = scrollState,
+        edgeButton = { EdgeButton(onClick = onLocalMatch) { Text("Local match") } },
+    ) { contentPadding ->
+        ScalingLazyColumn(
+            state = scrollState,
+            contentPadding = contentPadding,
+            modifier = Modifier.fillMaxSize(),
+        ) {
+            item {
+                Text(
+                    "TapScore",
+                    color = MaterialTheme.colorScheme.primary,
+                    style = MaterialTheme.typography.titleLarge,
+                )
+            }
+            item {
+                FilledTonalButton(onClick = onRemote, label = { Text("Control phone") })
+            }
+        }
+    }
+}
+
+// MARK: - Start (local match setup)
+
+@Composable
+fun StartScreen(model: MatchModel, onBack: () -> Unit = {}) {
     val sports = listOf("tennis", "padel", "tabletennis", "pickleball", "squash", "badminton", "volleyball", "beachvolley")
     val sportNames = mapOf(
         "tennis" to "Tennis", "padel" to "Padel", "tabletennis" to "Table tennis",
@@ -194,44 +237,88 @@ fun StartScreen(model: MatchModel, onRemote: () -> Unit = {}) {
     val formats = listOf(1 to "1 set", 3 to "Best of 3", 5 to "Best of 5")
 
     val saved = remember { model.loadSettings() }
-    var sportIdx by remember { mutableStateOf(sports.indexOf(saved.sport).coerceAtLeast(0)) }
-    var fmtIdx by remember { mutableStateOf(formats.indexOfFirst { it.first == (saved.bestOf ?: 3) }.coerceAtLeast(1)) }
+    val sportState = rememberPickerState(
+        initialNumberOfOptions = sports.size,
+        initiallySelectedIndex = sports.indexOf(saved.sport).coerceAtLeast(0),
+        shouldRepeatOptions = false,
+    )
+    val fmtState = rememberPickerState(
+        initialNumberOfOptions = formats.size,
+        initiallySelectedIndex = formats.indexOfFirst { it.first == (saved.bestOf ?: 3) }.coerceAtLeast(1),
+        shouldRepeatOptions = false,
+    )
+    val scrollState = rememberScalingLazyListState()
 
-    Column(
-        Modifier
-            .fillMaxSize()
-            .background(Theme.bg)
-            .verticalScroll(rememberScrollState())
-            .padding(horizontal = 12.dp, vertical = 24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        BasicText("TapScore", style = TextStyle(color = Theme.lime, fontSize = 22.sp, fontWeight = FontWeight.Black))
-        if (model.isPro) {
-            // Tap to cycle sport / format (compact, Wear-friendly — no fiddly pickers).
-            PillButton(sportNames[sports[sportIdx]] ?: sports[sportIdx], Color(0xFF243247), Color.White) {
-                sportIdx = (sportIdx + 1) % sports.size
+    if (model.isPro) {
+        ScreenScaffold(
+            scrollState = scrollState,
+            edgeButton = {
+                EdgeButton(onClick = {
+                    val sport = sports[sportState.selectedOptionIndex]
+                    val s = Settings()
+                    s.sport = sport
+                    s.bestOf = formats[fmtState.selectedOptionIndex].first
+                    if (ScoringEngine.isTargetSport(sport)) s.pointsTarget = 11
+                    model.startMatch(s)
+                }) { Text("Start") }
+            },
+        ) { contentPadding ->
+            ScalingLazyColumn(
+                state = scrollState,
+                contentPadding = contentPadding,
+                modifier = Modifier.fillMaxSize(),
+            ) {
+                item { CompactButton(onClick = onBack) { Text("‹") } }
+                item {
+                    Text(
+                        "Local match",
+                        color = MaterialTheme.colorScheme.primary,
+                        style = MaterialTheme.typography.titleMedium,
+                    )
+                }
+                item {
+                    Picker(
+                        state = sportState,
+                        contentDescription = { "Sport: ${sportNames[sports[sportState.selectedOptionIndex]]}" },
+                        modifier = Modifier.fillMaxWidth().height(72.dp),
+                    ) { index -> Text(sportNames[sports[index]] ?: sports[index]) }
+                }
+                item {
+                    Picker(
+                        state = fmtState,
+                        contentDescription = { "Format: ${formats[fmtState.selectedOptionIndex].second}" },
+                        modifier = Modifier.fillMaxWidth().height(72.dp),
+                    ) { index -> Text(formats[index].second) }
+                }
             }
-            PillButton(formats[fmtIdx].second, Color(0xFF243247), Color.White) {
-                fmtIdx = (fmtIdx + 1) % formats.size
-            }
-            PillButton("Start", Theme.lime, Theme.onLime) {
-                if (!model.isPro) return@PillButton
-                val sport = sports[sportIdx]
-                val s = Settings()
-                s.sport = sport
-                s.bestOf = formats[fmtIdx].first
-                if (ScoringEngine.isTargetSport(sport)) s.pointsTarget = 11
-                model.startMatch(s)
-            }
-        } else {
-            BasicText("Trial ended", style = TextStyle(color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold))
-            BasicText(
-                "Unlock Pro on your phone to keep playing here.",
-                style = TextStyle(color = Color(0xFFB6C2D9), fontSize = 13.sp, textAlign = TextAlign.Center)
-            )
         }
-        PillButton("Control phone", Color(0xFF243247), Color.White, onClick = onRemote)
+    } else {
+        ScreenScaffold(scrollState = scrollState) { contentPadding ->
+            ScalingLazyColumn(
+                state = scrollState,
+                contentPadding = contentPadding,
+                modifier = Modifier.fillMaxSize(),
+            ) {
+                item { CompactButton(onClick = onBack) { Text("‹") } }
+                item {
+                    Text(
+                        "Local match",
+                        color = MaterialTheme.colorScheme.primary,
+                        style = MaterialTheme.typography.titleMedium,
+                    )
+                }
+                item {
+                    Text("Trial ended", style = MaterialTheme.typography.titleSmall, color = Color.White)
+                }
+                item {
+                    Text(
+                        "Unlock Pro on your phone to keep playing here.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+        }
     }
 }
 
@@ -243,41 +330,38 @@ fun EndScreen(model: MatchModel) {
     val tie = m.winner == null
     val names = listOf("You", "Opponent")
     val setsLine = m.completedSets.joinToString("  ·  ") { "${it[0]}-${it[1]}" }
+    val scrollState = rememberScalingLazyListState()
 
-    Column(
-        Modifier
-            .fillMaxSize()
-            .background(Theme.bg)
-            .verticalScroll(rememberScrollState())
-            .padding(horizontal = 14.dp, vertical = 20.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        BasicText(
-            text = if (tie) "It's a tie" else "${names[m.winner ?: 0]} win${if (m.winner == 0) "" else "s"}!",
-            style = TextStyle(color = Color.White, fontSize = 20.sp, fontWeight = FontWeight.Black, textAlign = TextAlign.Center)
-        )
-        if (setsLine.isNotEmpty()) {
-            BasicText(setsLine, style = TextStyle(color = Color(0xFFB6C2D9), fontSize = 15.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center))
+    ScreenScaffold(
+        scrollState = scrollState,
+        edgeButton = {
+            EdgeButton(onClick = { if (model.isPro) model.rematch() else model.endMatch() }) {
+                Text("New match")
+            }
+        },
+    ) { contentPadding ->
+        ScalingLazyColumn(
+            state = scrollState,
+            contentPadding = contentPadding,
+            modifier = Modifier.fillMaxSize(),
+        ) {
+            item {
+                Text(
+                    text = if (tie) "It's a tie" else "${names[m.winner ?: 0]} win${if (m.winner == 0) "" else "s"}!",
+                    color = Color.White,
+                    style = MaterialTheme.typography.titleLarge,
+                )
+            }
+            if (setsLine.isNotEmpty()) {
+                item {
+                    Text(
+                        setsLine,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                }
+            }
+            item { ChildButton(onClick = { model.endMatch() }, label = { Text("Home") }) }
         }
-        PillButton("New match", Theme.lime, Theme.onLime) { if (model.isPro) model.rematch() else model.endMatch() }
-        PillButton("Home", Color(0xFF243247), Color.White) { model.endMatch() }
-    }
-}
-
-// MARK: - Shared button
-
-@Composable
-fun PillButton(text: String, bg: Color, fg: Color, onClick: () -> Unit) {
-    Box(
-        Modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(24.dp))
-            .background(bg)
-            .clickable(onClick = onClick)
-            .padding(vertical = 12.dp),
-        contentAlignment = Alignment.Center
-    ) {
-        BasicText(text, style = TextStyle(color = fg, fontSize = 16.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center))
     }
 }

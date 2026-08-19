@@ -11,9 +11,6 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.core.view.WindowInsetsControllerCompat;
 
 import com.getcapacitor.BridgeActivity;
 
@@ -35,7 +32,7 @@ public class MainActivity extends BridgeActivity {
         registerPlugin(BillingPlugin.class);
         super.onCreate(savedInstanceState);
         clickerDescriptor = getSharedPreferences(PREFS, MODE_PRIVATE).getString(KEY_DESC, null);
-        enableFullscreen();
+        setupEdgeToEdge();
         hidePointer();
         installNativeBridge();
     }
@@ -43,8 +40,7 @@ public class MainActivity extends BridgeActivity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        // Re-hide the bars after they're transiently revealed (swipe) or after returning to the app.
-        if (hasFocus) { enableFullscreen(); hidePointer(); }
+        if (hasFocus) hidePointer();
     }
 
     // Expose a tiny JS bridge so the web app can set the volume-capture mode.
@@ -100,11 +96,12 @@ public class MainActivity extends BridgeActivity {
         }
     }
 
-    private void enableFullscreen() {
-        // Draw the WebView edge-to-edge, behind the system bars (matches the PWA's display:fullscreen).
-        // EdgeToEdge.enable() is the sanctioned replacement for Window.setDecorFitsSystemWindows() plus
-        // the transparent statusBarColor/navigationBarColor theme attributes, all deprecated in Android 15.
-        // It handles the pre-15 releases internally; on API 35+ edge-to-edge is enforced regardless.
+    // Draw the WebView edge-to-edge, behind the (always-visible) system bars, so gesture navigation
+    // behaves normally throughout the app. EdgeToEdge.enable() is the sanctioned replacement for
+    // Window.setDecorFitsSystemWindows() plus the transparent statusBarColor/navigationBarColor theme
+    // attributes, all deprecated in Android 15. It handles the pre-15 releases internally; on API 35+
+    // edge-to-edge is enforced regardless.
+    private void setupEdgeToEdge() {
         EdgeToEdge.enable(this);
 
         // Extend content into the display cutout (camera notch) so there's no letterbox in landscape.
@@ -117,12 +114,5 @@ public class MainActivity extends BridgeActivity {
                     ? WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
                     : WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
         }
-
-        // Hide the status + navigation bars; a swipe from the edge reveals them transiently.
-        WindowInsetsControllerCompat controller =
-            WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
-        controller.hide(WindowInsetsCompat.Type.systemBars());
-        controller.setSystemBarsBehavior(
-            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
     }
 }

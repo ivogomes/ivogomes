@@ -7,6 +7,8 @@ import android.os.Vibrator
 import android.os.VibratorManager
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
+import androidx.wear.compose.material3.ColorScheme
+import androidx.wear.compose.material3.Typography
 
 /** Palette mirrors the phone/web app tokens; the watch is always dark. */
 object Theme {
@@ -30,6 +32,32 @@ object Theme {
     //     Font(R.font.outfit_bold, FontWeight.Bold),
     //     Font(R.font.outfit_extrabold, FontWeight.ExtraBold),
     // )
+}
+
+/**
+ * Material 3 Expressive theme tokens for the chrome screens (Home, local setup, End, remote
+ * status/menus) — built around the same lime/dark-blue brand as [Theme] rather than the library's
+ * generic defaults. The two full-bleed scoring boards (`ScoringScreen`/`ScoringMirror`) intentionally
+ * read [Theme]'s raw colors directly instead of these — Material's color roles are for chrome, not a
+ * two-color game board.
+ */
+val TapScoreColorScheme = ColorScheme(
+    primary = Theme.lime,
+    onPrimary = Theme.ink,
+    tertiary = Theme.gold,
+    onTertiary = Theme.ink,
+    background = Theme.bg,
+    onBackground = Color.White,
+    error = Theme.danger,
+)
+
+// Same type scale as the library's defaults, except the large numeral styles (used for the score
+// digits) pick up the Outfit font once it's bundled, matching the phone/watchOS scoreboards.
+val TapScoreTypography = Typography().let { base ->
+    base.copy(
+        numeralExtraLarge = base.numeralExtraLarge.copy(fontFamily = Theme.scoreFont),
+        numeralLarge = base.numeralLarge.copy(fontFamily = Theme.scoreFont),
+    )
 }
 
 /**

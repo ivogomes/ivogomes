@@ -87,7 +87,22 @@ This is the shared code that turns taps into tennis/padel scores.
    should read `android:name=".wear.MainActivity"` (since ours lives in the `wear` sub-package). If the
    template wrote a different path, fix it to `.wear.MainActivity`.
 
-### 5. Make it able to talk to the phone (one line + one dependency)
+### 5. Add Material 3 Expressive
+The screens (`Screens.kt`, `RemoteScreen.kt`, `Theme.kt`) are written against
+**Wear Compose Material 3** — this is required, the app won't compile without it. Open
+**`app/build.gradle`** (Module :app) and, inside `dependencies { … }`, add:
+```
+implementation("androidx.wear.compose:compose-material3:1.6.2")
+```
+Android Studio's Empty Wear App (Compose) template already brings compatible Compose/Kotlin
+versions, so this shouldn't need any other version wrangling. If Gradle sync complains about a
+version clash, bump to whatever stable version the sync error/IDE suggests instead of 1.6.2.
+
+One visible, intentional change that comes with this: the standard Wear clock (`TimeText`) now
+shows on every chrome screen (Home, local match setup, End, "Control phone" status/menus) — just
+not during actual scoring, which stays clock-free full-bleed like before.
+
+### 6. Make it able to talk to the phone (one line + one dependency)
 Open the **module** `build.gradle` — the one at **`app/build.gradle`** (also shown as
 **"build.gradle (Module :app)"**), *not* the project-level one. Then:
 1. Inside `android { defaultConfig { … } }`, set the app id to the **phone's** id:
@@ -102,17 +117,17 @@ Open the **module** `build.gradle` — the one at **`app/build.gradle`** (also s
    ```
 3. A yellow bar appears saying **"Sync Now"** — click it and wait for the sync to finish.
 
-> Just experimenting with the UI and don't care about phone control? You can skip step 5 entirely and keep
+> Just experimenting with the UI and don't care about phone control? You can skip step 6 entirely and keep
 > the template's defaults.
 
-### 6. Run it on a pretend watch (emulator)
+### 7. Run it on a pretend watch (emulator)
 1. Menu **Tools → Device Manager** → **Add a new device** (the **+**) → **Create Virtual Device** → pick
    the **Wear OS** category → choose any watch (e.g. *Wear OS Large Round*) → **Next** → pick a system image
    (download one if prompted) → **Finish**.
 2. In the toolbar at the top, make sure the device dropdown shows your new watch emulator, then press the
    green **Run ▶** button.
 3. First run installs everything and boots the watch — be patient. When it lands, you should see the
-   **Start** screen: pick a sport and tap **Start** to score. 🎉
+   **Home** screen: tap **Local match**, pick a sport, and tap **Start** to score. 🎉
 
 > The watch's **"Control phone"** button won't connect yet — that needs the phone app installed and paired.
 > Follow **[REMOTE.md](../tapscore-watch/REMOTE.md)** for the phone side.
@@ -123,7 +138,7 @@ Open the **module** `build.gradle` — the one at **`app/build.gradle`** (also s
 - **"Unresolved reference: ScoringEngine" (or MatchState)** → the engine file isn't in the `engine`
   package, or its first line isn't `package com.ivogomes.tapscore.engine`.
 - **Red imports everywhere / "Sync failed"** → click **File → Sync Project with Gradle Files** and wait;
-  if it mentions the wearable library, re-check step 5.2 then Sync again.
+  if it mentions the Material3 or wearable library, re-check steps 5 and 6.2 then Sync again.
 - **App runs but "Control phone" stays disconnected** → expected without the phone app; see REMOTE.md.
 
 ### (Optional) run the engine's tests

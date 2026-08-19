@@ -91,11 +91,33 @@ struct ScoringView: View {
     }
 }
 
-// MARK: - Start (standalone quick launch)
+// MARK: - Home (choose local match or remote control)
+
+struct HomeView: View {
+    var onLocalMatch: () -> Void
+    var onRemote: () -> Void
+
+    var body: some View {
+        VStack(spacing: 12) {
+            Text("TapScore").font(.system(size: 22, weight: .heavy)).foregroundStyle(Theme.lime)
+            Button(action: onLocalMatch) {
+                Label("Local match", systemImage: "sportscourt").font(.system(size: 16, weight: .bold)).frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent).tint(Theme.lime).foregroundStyle(Theme.onLime)
+            Button(action: onRemote) {
+                Label("Control phone", systemImage: "iphone.gen3").font(.system(size: 15, weight: .semibold)).frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.bordered).tint(.gray)
+        }
+        .padding(.horizontal, 10)
+    }
+}
+
+// MARK: - Start (local match setup)
 
 struct StartView: View {
     var model: MatchModel   // @Observable: reads auto-track
-    var onRemote: () -> Void = {}
+    var onBack: () -> Void = {}
     private let sports = ["tennis", "padel", "tabletennis", "pickleball", "squash", "badminton", "volleyball", "beachvolley"]
     private let sportNames = ["tennis": "Tennis", "padel": "Padel", "tabletennis": "Table tennis",
                               "pickleball": "Pickleball", "squash": "Squash", "badminton": "Badminton",
@@ -106,7 +128,11 @@ struct StartView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
-                Text("TapScore").font(.system(size: 22, weight: .heavy)).foregroundStyle(Theme.lime)
+                HStack {
+                    Button("Back") { onBack() }.font(.system(size: 14))
+                    Spacer()
+                }
+                Text("Local match").font(.system(size: 18, weight: .heavy)).foregroundStyle(Theme.lime)
                 if model.isPro {
                     Picker("Sport", selection: $sport) {
                         ForEach(sports, id: \.self) { Text(sportNames[$0] ?? $0).tag($0) }
@@ -134,10 +160,6 @@ struct StartView: View {
                     }
                     .padding(.vertical, 6)
                 }
-                Button(action: onRemote) {
-                    Label("Control phone", systemImage: "iphone.gen3").font(.system(size: 14, weight: .semibold)).frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.bordered).tint(.gray)
             }
             .padding(.horizontal, 6)
         }
