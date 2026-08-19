@@ -4,9 +4,12 @@ import android.content.Context
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import com.google.android.gms.wearable.MessageClient
+import com.google.android.gms.wearable.Wearable
 import com.ivogomes.tapscore.engine.MatchState
 import com.ivogomes.tapscore.engine.ScoringEngine
 import com.ivogomes.tapscore.engine.Settings
+import org.json.JSONObject
 
 /**
  * Owns the live match, drives the shared engine, plays haptics, and remembers the last format.
@@ -16,6 +19,8 @@ import com.ivogomes.tapscore.engine.Settings
  * Each score/undo swaps in a fresh MatchState instance so recomposition triggers reliably.
  */
 class MatchModel(context: Context) {
+    companion object { const val TRIAL_LIMIT = 3 }
+
     private val prefs = context.applicationContext.getSharedPreferences("tapscore", Context.MODE_PRIVATE)
     private val haptics = Haptics(context)
 
@@ -25,6 +30,40 @@ class MatchModel(context: Context) {
         private set
 
     private val history = ArrayDeque<MatchState>()   // undo stack (snapshots)
+
+    // MARK: Pro / trial (independent of the phone's own trial — the phone's genuine purchase is
+    // mirrored here over WatchLink; see the message listener below).
+
+    /** Computed, not cached: the listener below writes this key directly on a phone push, so every
+     * read must see that write immediately rather than risk a stale in-memory copy. */
+    val proOwned: Boolean get() = prefs.getBoolean("pro", false)
+    var trialUsed by mutableStateOf(prefs.getInt("trialGames", 0))
+        private set
+    val isPro: Boolean get() = proOwned || trialUsed < TRIAL_LIMIT
+
+    init {
+        // Registered unconditionally (unlike RemoteModel's listener, which only runs in "Control
+        // phone" mode) so a purchase reaches this watch while it's just being played standalone —
+        // Android allows multiple independent listeners on the same MessageClient, so this coexists
+        // safely with RemoteModel's own listener.
+        Wearable.getMessageClient(context.applicationContext).addListener(
+            MessageClient.OnMessageReceivedListener { e ->
+                if (e.path != "/tapscore") return@OnMessageReceivedListener
+                runCatching { JSONObject(String(e.data)) }.getOrNull()?.let { o ->
+                    // Sticky: only ever write true — a later false (trial-only, no purchase yet)
+                    // must never un-grant an earlier purchase.
+                    if (o.optBoolean("proOwned", false)) prefs.edit().putBoolean("pro", true).apply()
+                }
+            }
+        )
+    }
+
+    /** Every completed standalone match counts toward this watch's own 3-game trial. */
+    private fun consumeTrialGame() {
+        if (proOwned || trialUsed >= TRIAL_LIMIT) return
+        trialUsed += 1
+        prefs.edit().putInt("trialGames", trialUsed).apply()
+    }
 
     val pointLabels: List<String> get() = ScoringEngine.pointDisplay(match)
     val canUndo: Boolean get() = history.isNotEmpty()
@@ -50,7 +89,7 @@ class MatchModel(context: Context) {
         val next = match.deepCopy()
         ScoringEngine.scorePoint(next, side)
         when {
-            next.over -> haptics.matchWon()
+            next.over -> { haptics.matchWon(); consumeTrialGame() }
             setsTotal(next) > setsTotal(before) -> haptics.setWon()
             gamesTotal(next) > gamesTotal(before) -> haptics.game()
             else -> haptics.point()

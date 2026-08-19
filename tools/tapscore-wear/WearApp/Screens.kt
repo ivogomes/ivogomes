@@ -207,20 +207,29 @@ fun StartScreen(model: MatchModel, onRemote: () -> Unit = {}) {
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         BasicText("TapScore", style = TextStyle(color = Theme.lime, fontSize = 22.sp, fontWeight = FontWeight.Black))
-        // Tap to cycle sport / format (compact, Wear-friendly — no fiddly pickers).
-        PillButton(sportNames[sports[sportIdx]] ?: sports[sportIdx], Color(0xFF243247), Color.White) {
-            sportIdx = (sportIdx + 1) % sports.size
-        }
-        PillButton(formats[fmtIdx].second, Color(0xFF243247), Color.White) {
-            fmtIdx = (fmtIdx + 1) % formats.size
-        }
-        PillButton("Start", Theme.lime, Theme.onLime) {
-            val sport = sports[sportIdx]
-            val s = Settings()
-            s.sport = sport
-            s.bestOf = formats[fmtIdx].first
-            if (ScoringEngine.isTargetSport(sport)) s.pointsTarget = 11
-            model.startMatch(s)
+        if (model.isPro) {
+            // Tap to cycle sport / format (compact, Wear-friendly — no fiddly pickers).
+            PillButton(sportNames[sports[sportIdx]] ?: sports[sportIdx], Color(0xFF243247), Color.White) {
+                sportIdx = (sportIdx + 1) % sports.size
+            }
+            PillButton(formats[fmtIdx].second, Color(0xFF243247), Color.White) {
+                fmtIdx = (fmtIdx + 1) % formats.size
+            }
+            PillButton("Start", Theme.lime, Theme.onLime) {
+                if (!model.isPro) return@PillButton
+                val sport = sports[sportIdx]
+                val s = Settings()
+                s.sport = sport
+                s.bestOf = formats[fmtIdx].first
+                if (ScoringEngine.isTargetSport(sport)) s.pointsTarget = 11
+                model.startMatch(s)
+            }
+        } else {
+            BasicText("Trial ended", style = TextStyle(color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold))
+            BasicText(
+                "Unlock Pro on your phone to keep playing here.",
+                style = TextStyle(color = Color(0xFFB6C2D9), fontSize = 13.sp, textAlign = TextAlign.Center)
+            )
         }
         PillButton("Control phone", Color(0xFF243247), Color.White, onClick = onRemote)
     }
@@ -251,7 +260,7 @@ fun EndScreen(model: MatchModel) {
         if (setsLine.isNotEmpty()) {
             BasicText(setsLine, style = TextStyle(color = Color(0xFFB6C2D9), fontSize = 15.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center))
         }
-        PillButton("New match", Theme.lime, Theme.onLime) { model.rematch() }
+        PillButton("New match", Theme.lime, Theme.onLime) { if (model.isPro) model.rematch() else model.endMatch() }
         PillButton("Home", Color(0xFF243247), Color.White) { model.endMatch() }
     }
 }

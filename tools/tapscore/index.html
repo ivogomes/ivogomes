@@ -3437,6 +3437,7 @@ function wcState() {
     pill: pill,
     server: match.server,
     sport: match.settings.sport,
+    proOwned: proOwned,   // lets a paired watch mirror a genuine purchase (never the trial state)
   };
 }
 // Low-level send of any message object to the watch (no-op without the native bridge).
@@ -4172,6 +4173,7 @@ function grantPro() {
   proOwned = true;
   try { localStorage.setItem(PRO_KEY, "1"); } catch (e) {}
   refreshProUI();
+  sendWatchState();   // push the purchase to a paired watch right away, not just on the next render
 }
 
 // Called once when a match completes (from render). Every completed game counts toward the trial.
@@ -4221,14 +4223,7 @@ el("paywallBuy").addEventListener("click", async () => {
     await Billing.purchase();
     if (proOwned) { closePaywall(); showToast(t("pro_unlocked")); }
   } catch (e) {
-    if (!isUserCancelled(e)) {
-      // TEMPORARY — surfaces the real Billing/StoreKit error instead of the generic toast, so the new
-      // native plugins can be validated end-to-end. Revert to showToast(t("pro_store_error")) once
-      // purchase/restore/cancel are all confirmed working on both platforms.
-      console.error("Billing.purchase failed:", e);
-      const detail = String((e && (e.message || e.code)) || e || "unknown error").replace(/</g, "&lt;");
-      showToast(t("pro_store_error") + " — " + detail);
-    }
+    if (!isUserCancelled(e)) showToast(t("pro_store_error"));
   } finally {
     btn.disabled = false;
   }

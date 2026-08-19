@@ -13,8 +13,28 @@ final class MatchModel {
     @ObservationIgnored private var history: [MatchState] = []   // undo stack (snapshots); not observed
     private static let settingsKey = "tapscore.lastSettings"
 
+    // MARK: Pro / trial (independent of the phone's own trial — see RemoteModel.apply for how a
+    // genuine phone purchase reaches this watch)
+    static let proKey = "tapscore.pro"
+    private static let trialKey = "tapscore.trialGames"
+    static let trialLimit = 3
+
+    /// Computed, not cached: RemoteModel writes this key directly when the phone reports a purchase,
+    /// so every read must see that write immediately rather than risk a stale in-memory copy.
+    var proOwned: Bool { UserDefaults.standard.bool(forKey: MatchModel.proKey) }
+    private(set) var trialUsed: Int
+    var isPro: Bool { proOwned || trialUsed < MatchModel.trialLimit }
+
     init() {
         match = MatchState(settings: MatchModel.loadSettings())
+        trialUsed = UserDefaults.standard.integer(forKey: MatchModel.trialKey)
+    }
+
+    /// Every completed standalone match counts toward this watch's own 3-game trial.
+    private func consumeTrialGame() {
+        guard !proOwned, trialUsed < MatchModel.trialLimit else { return }
+        trialUsed += 1
+        UserDefaults.standard.set(trialUsed, forKey: MatchModel.trialKey)
     }
 
     // MARK: derived (for views)
@@ -49,6 +69,7 @@ final class MatchModel {
         ScoringEngine.scorePoint(&match, side)
         if match.over {
             Haptics.matchWon()
+            consumeTrialGame()
         } else if setsTotal(match) > setsTotal(before) {
             Haptics.setWon()
         } else if gamesTotal(match) > gamesTotal(before) {

@@ -52,6 +52,11 @@ final class RemoteModel: NSObject, WCSessionDelegate {
             self.pill = o["pill"] as? String ?? ""
             self.server = o["server"] as? Int ?? 0
             if let n = o["names"] as? [String], n.count == 2 { self.names = n }
+            // Mirror a genuine phone purchase onto this watch. Sticky: only ever write `true` — a
+            // later `false` (trial-only, or no purchase yet) must never un-grant an earlier purchase.
+            if (o["proOwned"] as? Bool) == true {
+                UserDefaults.standard.set(true, forKey: MatchModel.proKey)
+            }
         }
     }
 

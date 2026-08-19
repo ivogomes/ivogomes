@@ -107,22 +107,33 @@ struct StartView: View {
         ScrollView {
             VStack(spacing: 10) {
                 Text("TapScore").font(.system(size: 22, weight: .heavy)).foregroundStyle(Theme.lime)
-                Picker("Sport", selection: $sport) {
-                    ForEach(sports, id: \.self) { Text(sportNames[$0] ?? $0).tag($0) }
-                }.frame(height: 60)
-                Picker("Format", selection: $bestOf) {
-                    Text("1 set").tag(1); Text("Best of 3").tag(3); Text("Best of 5").tag(5)
-                }.frame(height: 60)
-                Button {
-                    var s = Settings()
-                    s.sport = sport
-                    s.bestOf = bestOf
-                    s.pointsTarget = ScoringEngine.isTargetSport(sport) ? 11 : s.pointsTarget
-                    model.startMatch(s)
-                } label: {
-                    Text("Start").font(.system(size: 17, weight: .bold)).frame(maxWidth: .infinity)
+                if model.isPro {
+                    Picker("Sport", selection: $sport) {
+                        ForEach(sports, id: \.self) { Text(sportNames[$0] ?? $0).tag($0) }
+                    }.frame(height: 60)
+                    Picker("Format", selection: $bestOf) {
+                        Text("1 set").tag(1); Text("Best of 3").tag(3); Text("Best of 5").tag(5)
+                    }.frame(height: 60)
+                    Button {
+                        guard model.isPro else { return }
+                        var s = Settings()
+                        s.sport = sport
+                        s.bestOf = bestOf
+                        s.pointsTarget = ScoringEngine.isTargetSport(sport) ? 11 : s.pointsTarget
+                        model.startMatch(s)
+                    } label: {
+                        Text("Start").font(.system(size: 17, weight: .bold)).frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent).tint(Theme.lime).foregroundStyle(Theme.onLime)
+                } else {
+                    VStack(spacing: 6) {
+                        Text("Trial ended").font(.system(size: 16, weight: .bold)).foregroundStyle(.white)
+                        Text("Unlock Pro on your phone to keep playing here.")
+                            .font(.system(size: 13)).foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(.vertical, 6)
                 }
-                .buttonStyle(.borderedProminent).tint(Theme.lime).foregroundStyle(Theme.onLime)
                 Button(action: onRemote) {
                     Label("Control phone", systemImage: "iphone.gen3").font(.system(size: 14, weight: .semibold)).frame(maxWidth: .infinity)
                 }
@@ -149,7 +160,7 @@ struct EndView: View {
                     .font(.system(size: 20, weight: .heavy)).foregroundStyle(.white)
                 Text(m.completedSets.map { "\($0[0])-\($0[1])" }.joined(separator: " · "))
                     .font(.system(size: 15, weight: .semibold)).foregroundStyle(.secondary)
-                Button { model.rematch() } label: {
+                Button { model.isPro ? model.rematch() : model.endMatch() } label: {
                     Text("New match").font(.system(size: 15, weight: .bold)).frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent).tint(Theme.lime).foregroundStyle(Theme.onLime)
