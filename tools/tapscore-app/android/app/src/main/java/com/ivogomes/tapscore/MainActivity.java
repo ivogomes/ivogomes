@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
@@ -31,6 +32,7 @@ public class MainActivity extends BridgeActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         registerPlugin(WatchLinkPlugin.class);   // must be before super.onCreate
+        registerPlugin(BillingPlugin.class);
         super.onCreate(savedInstanceState);
         clickerDescriptor = getSharedPreferences(PREFS, MODE_PRIVATE).getString(KEY_DESC, null);
         enableFullscreen();
@@ -100,10 +102,16 @@ public class MainActivity extends BridgeActivity {
 
     private void enableFullscreen() {
         // Draw the WebView edge-to-edge, behind the system bars (matches the PWA's display:fullscreen).
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+        // EdgeToEdge.enable() is the sanctioned replacement for Window.setDecorFitsSystemWindows() plus
+        // the transparent statusBarColor/navigationBarColor theme attributes, all deprecated in Android 15.
+        // It handles the pre-15 releases internally; on API 35+ edge-to-edge is enforced regardless.
+        EdgeToEdge.enable(this);
 
         // Extend content into the display cutout (camera notch) so there's no letterbox in landscape.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        // API 35+ already behaves as LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS and deprecated the other modes,
+        // so only older releases need this set by hand. ALWAYS itself only exists from API 30.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
+                && Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) {
             getWindow().getAttributes().layoutInDisplayCutoutMode =
                 (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
                     ? WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS

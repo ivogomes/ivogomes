@@ -4069,8 +4069,10 @@ function applyTheme() {
   document.documentElement.dataset.theme = t;
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.content = (t === "dark") ? "#0b1220" : "#eef1f7";
-  if (IS_NATIVE && Cap.Plugins && Cap.Plugins.StatusBar) {
-    try { Cap.Plugins.StatusBar.setStyle({ style: t === "dark" ? "DARK" : "LIGHT" }); } catch (e) {}
+  // SystemBars is a Capacitor 8 *core* plugin (both platforms) — it replaced @capacitor/status-bar,
+  // whose Android code still referenced the edge-to-edge APIs Android 15 deprecated.
+  if (IS_NATIVE && Cap.Plugins && Cap.Plugins.SystemBars) {
+    try { Cap.Plugins.SystemBars.setStyle({ style: t === "dark" ? "DARK" : "LIGHT" }); } catch (e) {}
   }
   syncThemeSeg();
 }
@@ -4089,7 +4091,8 @@ applyTheme();
    The whole app — every sport, every format, stats, the works — is free for the first 3 completed
    games (the trial). After that, a one-time Pro unlock is needed to start new matches. Nothing is
    gated by sport or feature; the only gate is "Start match" once the 3 free games are used up.
-   Purchases go through RevenueCat (Billing.* below); falls back to a local unlock on web/dev. */
+   Purchases go through a hand-rolled native plugin (Billing.* below); falls back to a local unlock
+   on web/dev. */
 const PRO_KEY = "tennisTracker.pro";
 const TRIAL_KEY = "tennisTracker.trialGames";
 const TRIAL_LIMIT = 3;
@@ -4108,77 +4111,60 @@ function trialRemaining() { return Math.max(0, TRIAL_LIMIT - trialUsed); }
 function trialActive() { return !proOwned && trialRemaining() > 0; }
 function isPro() { return proOwned || trialActive(); }          // may start a match (owned or trial left)
 
-/* Purchase layer — backed by RevenueCat (Cap.Plugins.Purchases) on native, no-op on web.
-   Requires the @revenuecat/purchases-capacitor plugin (13.x line for Capacitor 8 — that's the line
-   that ships Google Play Billing 8, which Play requires); without it
-   RCPurchases() is null and native builds refuse to sell rather than unlocking for free.
-   RevenueCat dashboard config this must match:
-     • entitlement id "pro" (RC_ENTITLEMENT below)
-     • a one-time product `pro_unlock`, attached to that entitlement
-     • an offering marked **Current** whose FIRST package is that product (we read availablePackages[0])
-   Swap the placeholder API keys below for the real public SDK keys (safe to ship client-side). */
-const RC_API_KEY = { ios: "REVENUECAT_IOS_API_KEY", android: "goog_whvXKmDepBOjbvzOFjhVnfAYlbw" };
-const RC_ENTITLEMENT = "pro";
-const RCPurchases = () => (IS_NATIVE && Cap.Plugins && Cap.Plugins.Purchases) || null;
-let billingReady = false;   // true only once configure() has succeeded — a purchase before that would throw
+/* Purchase layer — backed by a hand-rolled native plugin (Cap.Plugins.Billing): BillingPlugin.java
+   wraps Google Play Billing Library directly on Android, BillingPlugin.swift wraps StoreKit 2 on
+   iOS. No third party, no dashboard config — the store account IS the source of truth, per platform
+   (there's no login/cross-platform sync, same as before). No-op on web, where Pro unlocks locally so
+   the flow stays testable. Both platforms expose the same four methods:
+     • getProduct() -> {id, priceString|null}
+     • isOwned() / restore() -> {owned}
+     • purchase() -> {owned}, or {owned:false, pending:true} for a pending payment (rare — treated as
+       "not yet, not an error"; resolves itself on the next isOwned() check), or rejects with
+       code:"USER_CANCELLED" for a user-initiated cancel (any other rejection is a real failure). */
+const NativeBilling = () => (IS_NATIVE && Cap.Plugins && Cap.Plugins.Billing) || null;
 
-function entitlementActive(customerInfo) {
-  return !!(customerInfo && customerInfo.entitlements && customerInfo.entitlements.active && customerInfo.entitlements.active[RC_ENTITLEMENT]);
-}
-function currentPackage(offerings) {
-  return (offerings && offerings.current && offerings.current.availablePackages && offerings.current.availablePackages[0]) || null;
-}
-
-/* Pull the store's localized price and grant Pro if the entitlement is already owned. Safe to re-run:
-   startup may fail offline, so the paywall calls this again before it's shown. */
+/* Pull the store's localized price and grant Pro if it's already owned. Safe to re-run: startup may
+   fail offline, so the paywall calls this again before it's shown. */
 async function syncBilling() {
-  const RC = RCPurchases();
-  if (!RC || !billingReady) return;
+  const B = NativeBilling();
+  if (!B) return;
   try {
-    const pkg = currentPackage(await RC.getOfferings());
-    if (pkg && pkg.product && pkg.product.priceString) proPriceString = pkg.product.priceString;
-    const { customerInfo } = await RC.getCustomerInfo();
-    if (entitlementActive(customerInfo)) grantPro();
+    const product = await B.getProduct();
+    if (product && product.priceString) proPriceString = product.priceString;
+    const { owned } = await B.isOwned();
+    if (owned) grantPro();
   } catch (e) {}
 }
 async function configureBilling() {
-  const RC = RCPurchases();
-  if (!RC) return;
-  try {
-    const apiKey = PLATFORM === "ios" ? RC_API_KEY.ios : RC_API_KEY.android;
-    await RC.configure({ apiKey });
-    billingReady = true;
-  } catch (e) { return; }
+  if (!NativeBilling()) return;
   await syncBilling();
 }
 const Billing = {
   /* Resolves "owned" / "not owned". Throws only on a real store failure, so callers can tell the
      difference between "user backed out" (no toast) and "billing is broken" (toast). */
   async purchase() {
-    const RC = RCPurchases();
-    if (!RC || !billingReady) {
+    const B = NativeBilling();
+    if (!B) {
       // No store to talk to. On web/dev that's expected — unlock locally so the flow stays testable.
       // On native it means billing is misconfigured or offline, which must NOT be a free unlock.
       if (IS_NATIVE) throw new Error("billing unavailable");
       grantPro();
       return true;
     }
-    const pkg = currentPackage(await RC.getOfferings());
-    if (!pkg) throw new Error("no package in the current offering");
-    const { customerInfo } = await RC.purchasePackage({ aPackage: pkg });
-    if (entitlementActive(customerInfo)) { grantPro(); return true; }
-    return false;
+    const { owned } = await B.purchase();
+    if (owned) { grantPro(); return true; }
+    return false;   // includes the silent "pending" case
   },
   async restore() {
-    const RC = RCPurchases();
-    if (!RC || !billingReady) return proOwned;
-    const { customerInfo } = await RC.restorePurchases();
-    return entitlementActive(customerInfo);
+    const B = NativeBilling();
+    if (!B) return proOwned;
+    const { owned } = await B.restore();
+    return owned;
   },
 };
-// RevenueCat surfaces a user-initiated cancel as an error — that's not something to apologise for.
+// Both native plugins reject with this exact code for a user-initiated cancel — see BillingPlugin.*.
 function isUserCancelled(e) {
-  return !!(e && (e.userCancelled || e.code === "1" || /cancel/i.test(e.message || "")));
+  return !!(e && e.code === "USER_CANCELLED");
 }
 configureBilling();
 
@@ -4235,7 +4221,14 @@ el("paywallBuy").addEventListener("click", async () => {
     await Billing.purchase();
     if (proOwned) { closePaywall(); showToast(t("pro_unlocked")); }
   } catch (e) {
-    if (!isUserCancelled(e)) showToast(t("pro_store_error"));
+    if (!isUserCancelled(e)) {
+      // TEMPORARY — surfaces the real Billing/StoreKit error instead of the generic toast, so the new
+      // native plugins can be validated end-to-end. Revert to showToast(t("pro_store_error")) once
+      // purchase/restore/cancel are all confirmed working on both platforms.
+      console.error("Billing.purchase failed:", e);
+      const detail = String((e && (e.message || e.code)) || e || "unknown error").replace(/</g, "&lt;");
+      showToast(t("pro_store_error") + " — " + detail);
+    }
   } finally {
     btn.disabled = false;
   }
@@ -4605,7 +4598,7 @@ showSetup(false);
   // Native: match the status bar to the dark theme and hide the splash once the shell is ready.
   if (IS_NATIVE && Cap.Plugins) {
     window.addEventListener("load", () => {
-      try { Cap.Plugins.StatusBar && Cap.Plugins.StatusBar.setStyle({ style: "DARK" }); } catch (e) {}
+      try { Cap.Plugins.SystemBars && Cap.Plugins.SystemBars.setStyle({ style: "DARK" }); } catch (e) {}
       try { Cap.Plugins.SplashScreen && Cap.Plugins.SplashScreen.hide(); } catch (e) {}
     });
   }

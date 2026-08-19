@@ -28,10 +28,8 @@
     "@capacitor/ios": "^8.5.0",
     "@capacitor/share": "^8.0.1",
     "@capacitor/splash-screen": "^8.0.2",
-    "@capacitor/status-bar": "^8.0.3",
     "@capacitor-community/keep-awake": "^8.0.1",
-    "@capacitor-community/text-to-speech": "^8.0.2",
-    "@revenuecat/purchases-capacitor": "^13.4.0"
+    "@capacitor-community/text-to-speech": "^8.0.2"
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.0"

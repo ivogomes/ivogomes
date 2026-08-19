@@ -1,6 +1,7 @@
 ext {
-    // Capacitor 8 baseline (matches the @capacitor/android 8.5.0 template). minSdk 24 is a hard
-    // floor here: the Google Play Billing Library 8 that RevenueCat 13.x pulls in requires it.
+    // Capacitor 8 baseline (matches the @capacitor/android 8.5.0 template). minSdk 24 is an
+    // existing, independent choice — not forced by Play Billing (BillingPlugin.java's direct
+    // dependency, com.android.billingclient:billing, only requires API 21).
     minSdkVersion = 24
     compileSdkVersion = 37
     targetSdkVersion = 37

@@ -15,11 +15,9 @@
         <item name="android:background">@null</item>
         <!-- Dark window background so no white shows behind the WebView / during transitions -->
         <item name="android:windowBackground">@color/tapscoreBg</item>
-        <!-- Transparent system bars so the app draws edge-to-edge behind them -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <!-- Extend content into the display cutout (camera notch) area -->
-        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <!-- No statusBarColor / navigationBarColor / windowLayoutInDisplayCutoutMode here: Android 15
+             deprecated all three (Play flags them under "deprecated edge-to-edge APIs") and ignores them
+             at targetSdk 35+. MainActivity sets the equivalent at runtime via EdgeToEdge.enable(). -->
     </style>
 
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TapScore — Privacy Policy</title>
-  <meta name="description" content="TapScore privacy policy — no accounts, no analytics, no ads. Your matches stay on your device; only in-app purchases involve a third party." />
+  <meta name="description" content="TapScore privacy policy — no accounts, no analytics, no ads, no third parties. Your matches stay on your device; in-app purchases are handled directly by the App Store / Google Play." />
   <meta name="robots" content="index, follow" />
   <link rel="stylesheet" href="privacy.css" />
 </head>
@@ -13,15 +13,15 @@
     <header class="doc-head">
       <p class="eyebrow">TapScore</p>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: <time datetime="2026-08-17">17 August 2026</time></p>
+      <p class="updated">Last updated: <time datetime="2026-08-19">19 August 2026</time></p>
     </header>
 
     <section class="tldr" aria-label="Summary">
       <p><strong>The short version:</strong> There are no accounts, no analytics, no tracking, and no
         ads. Your matches and settings stay on your device and we never see them. The one exception is
         the TapScore&nbsp;Pro purchase: to sell it and to let you restore it on another device, the app
-        talks to the app stores and to our purchase provider,
-        <a href="#purchases">RevenueCat</a>.</p>
+        talks directly to the <a href="#purchases">App Store / Google Play</a> — no third party sits in
+        between.</p>
     </section>
 
     <section>
@@ -48,11 +48,10 @@
       <ul>
         <li><strong>Scoring is fully offline.</strong> Tracking a match never needs a connection, and
           your scores are never sent anywhere.</li>
-        <li><strong>iOS and Android apps:</strong> the app contacts
-          <a href="#purchases">RevenueCat</a> when it starts, to fetch the current
-          TapScore&nbsp;Pro price for your region and to check whether you already own Pro. It does the
-          same when you open the purchase screen or buy. These are the only calls the app makes; if
-          they fail, the app carries on working offline.</li>
+        <li><strong>iOS and Android apps:</strong> the app asks the App Store / Google Play when it
+          starts, to fetch the current TapScore&nbsp;Pro price for your region and to check whether you
+          already own Pro. It does the same when you open the purchase screen or buy. These are the only
+          calls the app makes; if they fail, the app carries on working offline.</li>
         <li><strong>Apple&nbsp;Watch and Wear&nbsp;OS apps:</strong> fully standalone. They make no
           network calls at all and send no data off your watch.</li>
         <li><strong>Web app:</strong> when opened in a browser, the page may request the “Outfit” web
@@ -68,23 +67,12 @@
         <strong>Apple App Store</strong> or <strong>Google Play</strong> — we never see or receive your
         card or payment details, your billing address, or your store account name.</p>
       <p>To show the right price for your region, to confirm a purchase is genuine, and to let you
-        restore Pro after reinstalling or on a second device, the iOS and Android apps use
-        <strong>RevenueCat</strong>, a purchase-management service that acts on our behalf and only on
-        our instructions. RevenueCat receives:</p>
-      <ul>
-        <li>a randomly generated identifier for your app installation — it is not your name, email, or
-          store account, and we cannot use it to identify you;</li>
-        <li>the store receipt for the purchase and whether the Pro entitlement is currently active;</li>
-        <li>basic technical details needed to validate that: the platform, operating-system and app
-          version, and the country your store account is registered in.</li>
-      </ul>
-      <p>RevenueCat never receives your scores, match history, player names, or app settings. We do not
-        use it — or anything else — for analytics, advertising, or profiling. Its handling of the above
-        is covered by
-        <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat’s privacy policy</a>,
-        and the transactions themselves by
-        <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s</a> and
-        <a href="https://policies.google.com/privacy" rel="noopener">Google’s</a>.</p>
+        restore Pro after reinstalling or on a second device with the same store account, the app talks
+        directly to Apple’s or Google’s purchase APIs on your device — no purchase data passes through
+        or is stored on any server of ours, and no third-party purchase service is involved at all.</p>
+      <p>We do not use anything for analytics, advertising, or profiling. The purchase itself is covered
+        by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s</a> and
+        <a href="https://policies.google.com/privacy" rel="noopener">Google’s</a> privacy policies.</p>
       <p>Whether you own Pro is also recorded on your device, so the app keeps working offline once
         you’ve bought it.</p>
     </section>
@@ -116,9 +104,7 @@
         third parties involved in TapScore is:</p>
       <ul>
         <li><strong>Apple</strong> and <strong>Google</strong> — they distribute the app and process
-          payments;</li>
-        <li><strong>RevenueCat</strong> — purchase validation and restore, as described under
-          <a href="#purchases">Purchases</a>;</li>
+          payments, as described under <a href="#purchases">Purchases</a>;</li>
         <li><strong>Google Fonts</strong> — for the web app only, to serve the “Outfit” typeface.</li>
       </ul>
       <p>We do not sell or share your data, and none of these receive your match data. There is no

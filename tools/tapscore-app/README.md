@@ -22,6 +22,13 @@ as usual, and the site on ivogomes.com keeps working.
   see `MainActivity.java` / `styles.xml`); **iOS** hides the status bar app-wide
   (`Info.plist`: `UIStatusBarHidden`) with a dark WebView background.
 
+  Android 15 deprecated the old edge-to-edge surface, and Play reports it. So: no
+  `statusBarColor` / `navigationBarColor` / `windowLayoutInDisplayCutoutMode` in the
+  theme, `EdgeToEdge.enable()` instead of `setDecorFitsSystemWindows()`, and the bars
+  are driven by `WindowInsetsControllerCompat`. Bar *styling* uses Capacitor 8's
+  built-in **`SystemBars`** core plugin — `@capacitor/status-bar` is deliberately not
+  installed, because its Android code still references the deprecated APIs.
+
 The steps below are the ones that need the network (npm registry) and, for iOS,
 a Mac with Xcode — so they couldn't be run in this environment.
 
@@ -190,80 +197,68 @@ The warning-free options:
 2. In the Play Console: create the app, complete the Data safety form,
    content rating questionnaire, store listing (icon, feature graphic
    1024x500, screenshots), and set category (Sports).
-   ⚠️ Data safety is **not** "no data collected" once RevenueCat ships — declare
-   purchase history + a device identifier, processed for app functionality. See
-   the In-app purchases section below and `../tapscore/privacy.html`.
+   ⚠️ Data safety is **not** "no data collected" — declare purchase history,
+   processed for app functionality (the App Store / Google Play see it as the
+   payment processor; no third party is involved). See the In-app purchases
+   section below and `../tapscore/privacy.html`.
 3. Roll out to internal testing first, then production.
 
 ---
 
 ## In-app purchases (TapScore Pro)
 
-The app code is already written against **RevenueCat** — see the
+Purchases talk **directly** to each store — no third party. See the
 `TapScore Pro (free trial ...)` block in `../tapscore/index.html`
-(`configureBilling()`, `syncBilling()`, `Billing.purchase()/restore()`). It expects
-entitlement id `pro`, a one-time product `pro_unlock`, and an offering marked
-**Current** whose first package is that product.
+(`configureBilling()`, `syncBilling()`, `Billing.purchase()/restore()`), which calls
+a hand-rolled native plugin (`Cap.Plugins.Billing`) exposing the same four methods on
+both platforms — `getProduct()`, `isOwned()`, `purchase()`, `restore()`:
 
-Until the plugin is installed, `RCPurchases()` is `null`: the web/PWA build unlocks
-Pro locally (intentional, so the flow is testable) and native builds refuse to sell
-rather than giving Pro away.
+- **Android:** `android/app/src/main/java/com/ivogomes/tapscore/BillingPlugin.java`,
+  wrapping `com.android.billingclient:billing` (a direct Gradle dependency —
+  `android/app/build.gradle`) — bump that version directly if Play ever raises its
+  minimum, no plugin/Capacitor version chain to reason about.
+- **iOS:** `ios/App/App/BillingPlugin.swift`, wrapping StoreKit 2 (a system
+  framework — no pod, no third-party SDK at all).
 
-**1. Install the plugin.** Already declared in `package.json` as
-`@revenuecat/purchases-capacitor: ^13.4.0` — run `npm install && npm run sync`.
+Both talk to one product id, `pro_unlock`, a one-time non-consumable purchase — no
+entitlements/offerings/dashboard to configure anywhere.
 
-The `13.x` line needs `@capacitor/core >=8.0.0`, which is why the whole shell runs on
-Capacitor 8. That chain is what satisfies Google Play's Billing Library requirement:
+If `Cap.Plugins.Billing` doesn't exist (web/PWA build), Pro unlocks locally
+(intentional, so the flow is testable); on native, a missing/broken plugin makes
+`Billing.purchase()` throw rather than giving Pro away for free.
 
-```
-@revenuecat/purchases-capacitor 13.4.0
-  └─ purchases-hybrid-common 18.29.0
-       └─ purchases-android 10.16.0
-            └─ com.android.billingclient:billing 8.3.0   ← Play requires ≥ 8.0.0
-```
-
-Play enforces a rolling minimum Billing version (it dropped 7.x in 2026), and the
-Billing library is never a direct dependency here — it only ever arrives through
-RevenueCat. So the fix for a Billing-version rejection is always to move up the
-RevenueCat line (and, with it, Capacitor), never to force a `billingclient` version in
-Gradle: RevenueCat 8.x/9.x were compiled against APIs that Billing 8 removed, so a
-forced bump compiles and then crashes at runtime.
-
-The plugin requires `minSdkVersion` 24 and Java 21 — both set in `android/variables.gradle`
-and by `cap sync`.
-
-**2. Play Console — payments profile.** Setup ▸ Payments profile (bank account,
+**1. Play Console — payments profile.** Setup ▸ Payments profile (bank account,
 address, tax/NIF). Nothing can be sold without it and verification takes a few days,
 so start here.
 
-**3. Play Console — the product.** Monetize ▸ Products ▸ In-app products ▸ create
+**2. Play Console — the product.** Monetize ▸ Products ▸ In-app products ▸ create
 `pro_unlock` as a one-time purchase, set price + localized name/description, and
-**Activate** it. Needs a release already uploaded to a track, built *after* step 1
-(the Billing library ships with the plugin).
+**Activate** it. Needs a release already uploaded to a track.
 
-**4. Service account, so RevenueCat can verify purchases.** In Google Cloud: create a
-service account, enable the Google Play Android Developer API, download the JSON key.
-In Play Console ▸ Users & permissions: invite that service-account address with *View
-financial data* and *Manage orders and subscriptions*. Upload the JSON to RevenueCat.
-Permission changes can take ~24h to propagate.
+**3. App Store Connect — the product.** Features ▸ In-App Purchases ▸ create
+`pro_unlock` as a **Non-Consumable**, set price + localized name/description/review
+screenshot. It has to exist (doesn't need full App Review) before `Product.products(for:)`
+returns anything in Sandbox.
 
-**5. RevenueCat dashboard.** Add a Google Play app for `com.ivogomes.tapscore`, import
-`pro_unlock`, attach it to an entitlement with the exact id `pro`, and add it to an
-offering marked **Current**. Then replace `REVENUECAT_ANDROID_API_KEY` in
-`../tapscore/index.html` with the public Android SDK key (`goog_…` — designed to be
-client-side, so it's fine in this repo).
+**4. Testing.**
+- Android: Play Console ▸ Setup ▸ License testing: add your accounts so purchases are
+  free. Purchases only work for builds **installed via Play** (internal testing or
+  internal app sharing) signed with the release key — a `npm run apk` debug install,
+  or `Run` from Android Studio on an emulator, will always fail with `BILLING_UNAVAILABLE`.
+- iOS: App Store Connect ▸ Users and Access ▸ Sandbox ▸ Testers: create a sandbox
+  tester Apple ID, sign into it under Settings ▸ App Store ▸ Sandbox Account on the
+  test device (prompted at purchase time, not beforehand).
 
-**6. Testing.** Play Console ▸ Setup ▸ License testing: add your accounts so purchases
-are free. Purchases only work for builds **installed via Play** (internal testing or
-internal app sharing) signed with the release key — a `npm run apk` debug install will
-always fail.
+**5. Don't forget the disclosures.** Purchase history still leaves the device (to
+Apple/Google, as the payment processor) so the Play **Data safety** answers ("no data
+collected") and `../tapscore/privacy.html` both need to say so — but neither needs a
+third-party mention anymore.
 
-**7. Don't forget the disclosures.** Adding RevenueCat means purchase and device
-identifiers leave the device, so the Play **Data safety** answers ("no data collected")
-and `../tapscore/privacy.html` both need revising before submitting.
-
-Purchase acknowledgment — Google auto-refunds purchases left unacknowledged for 3 days —
-is handled by the RevenueCat SDK.
+Purchase acknowledgment — Google auto-refunds a purchase left unacknowledged for 3
+days — is handled by `BillingPlugin.isOwned()`, which acknowledges any unacknowledged
+purchase every time it runs (app launch, Restore tap, and right after a successful
+purchase). iOS has no separate acknowledgment step — `transaction.finish()` at
+purchase time is sufficient.
 
 ---
 

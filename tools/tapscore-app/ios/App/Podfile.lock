@@ -15,15 +15,7 @@ PODS:
     - Capacitor
   - CapacitorSplashScreen (8.0.2):
     - Capacitor
-  - CapacitorStatusBar (8.0.3):
-    - Capacitor
   - IONFilesystemLib (1.1.2)
-  - PurchasesHybridCommon (18.29.0):
-    - RevenueCat (= 5.83.0)
-  - RevenueCat (5.83.0)
-  - RevenuecatPurchasesCapacitor (13.4.0):
-    - Capacitor
-    - PurchasesHybridCommon (= 18.29.0)
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
@@ -34,14 +26,10 @@ DEPENDENCIES:
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
   - "CapacitorShare (from `../../node_modules/@capacitor/share`)"
   - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
-  - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
-  - "RevenuecatPurchasesCapacitor (from `../../node_modules/@revenuecat/purchases-capacitor`)"
 
 SPEC REPOS:
   trunk:
     - IONFilesystemLib
-    - PurchasesHybridCommon
-    - RevenueCat
 
 EXTERNAL SOURCES:
   Capacitor:
@@ -60,10 +48,6 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/share"
   CapacitorSplashScreen:
     :path: "../../node_modules/@capacitor/splash-screen"
-  CapacitorStatusBar:
-    :path: "../../node_modules/@capacitor/status-bar"
-  RevenuecatPurchasesCapacitor:
-    :path: "../../node_modules/@revenuecat/purchases-capacitor"
 
 SPEC CHECKSUMS:
   Capacitor: 00b87168591cc006ea6f5c0de681ec5c39a2c8eb
@@ -74,12 +58,8 @@ SPEC CHECKSUMS:
   CapacitorHaptics: 296f771ecd89c7a1bd92a7b6826a7d268e2e70f5
   CapacitorShare: 0c58305114538568059bfc07111f22dcb9cb2a82
   CapacitorSplashScreen: 7bf61c2001557ff9e195e601c6b87344480d3c65
-  CapacitorStatusBar: eca7bc2b58d9f886f1ef9edb66e57a9b29c121af
   IONFilesystemLib: 21a63377696b2d8fab5632ecfb7d2ac67bddb68a
-  PurchasesHybridCommon: 94a0fde86cfecdc487fb64667b68f527af930265
-  RevenueCat: a83de0391a1061302699cb55eb1ff0662f5768b5
-  RevenuecatPurchasesCapacitor: 9205ff494ad81e19bccef77a88a34599c11ed319
 
-PODFILE CHECKSUM: 38a685c91394cfffe8f604df54a24c59c6f1080d
+PODFILE CHECKSUM: 9a84e13cffe437ff13a97115741852746383e24a
 
 COCOAPODS: 1.17.0

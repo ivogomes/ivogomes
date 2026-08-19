@@ -5,12 +5,13 @@
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# MainActivity.installNativeBridge() exposes an anonymous object as "TapScoreNative" to the WebView;
+# index.html calls its methods by name via reflection, so R8 must not rename/strip them. The default
+# proguard-android-optimize.txt already keeps @JavascriptInterface methods, but keep it explicit here
+# since this is the one native/JS bridge in the app that would fail silently if that ever changed.
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.

@@ -13,10 +13,8 @@ dependencies {
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-share')
     implementation project(':capacitor-splash-screen')
-    implementation project(':capacitor-status-bar')
     implementation project(':capacitor-community-keep-awake')
     implementation project(':capacitor-community-text-to-speech')
-    implementation project(':revenuecat-purchases-capacitor')
 
 }
 
