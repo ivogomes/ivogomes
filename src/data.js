@@ -19,6 +19,16 @@ const IVO_DATA = {
       ]
     },
     {
+      id: "fido",
+      company: "FIDO Alliance",
+      years: "2025 — Present",
+      role: "UX Working Group · Member",
+      summary: "Representing Dashlane in the FIDO Alliance's UX Working Group, which works on the experience of adopting and implementing passkeys.",
+      highlights: [
+        "Running usability research and writing design guidelines that reduce reliance on passwords and smooth the transition to passwordless authentication."
+      ]
+    },
+    {
       id: "talkdesk",
       company: "Talkdesk",
       years: "2017 — 2023",

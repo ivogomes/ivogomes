@@ -106,7 +106,7 @@ function EditorialDirection({ data, onOpenProject }) {
 
         <div className="ed-bio">
             <p>Today I lead the Product Design team at <a href="https://dashlane.com" target="_blank" rel="noopener noreferrer">Dashlane</a>, where we're making the internet a safer place by protecting companies and individuals' credentials and secrets from breaches and phishing. Before that, I helped grow <a href="https://talkdesk.com" target="_blank" rel="noopener noreferrer">Talkdesk</a>'s design team from 4 to nearly 70, and helped build Cobalt — their design system — from scratch.</p>
-            <p>I'm a fan of design systems, a sometime speaker and mentor, and I still like to get my hands dirty with the code when the mood strikes.</p>
+            <p>I'm a fan of design systems, a sometime speaker and mentor, and I still like to get my hands dirty with the code when the mood strikes. I also represent Dashlane in the <a href="https://fidoalliance.org" target="_blank" rel="noopener noreferrer">FIDO Alliance</a>'s UX Working Group, helping shape the experience of passkeys and the shift away from passwords.</p>
             <p>Lately I've been exploring how AI is shifting the way we design and build products, and how to make the most of it while keeping the human touch.</p>
         </div>
 
