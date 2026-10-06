@@ -10,16 +10,31 @@
 <helmet>
 <link rel="stylesheet" href="_ds/dashlane-product-91348af6-b46c-49b4-8289-059194cd2eaf/colors_and_type.css">
 <script src="_ds/dashlane-product-91348af6-b46c-49b4-8289-059194cd2eaf/_ds_bundle.js"></script>
-<style>html,body{margin:0;background:rgb(246,249,250)}a{color:rgb(12,125,140)}a:hover{color:rgb(2,98,114)}textarea:focus,input:focus{outline:2px solid rgb(12,125,140);outline-offset:3px}</style>
+<style>html,body{margin:0;background:rgb(246,249,250)}a{color:rgb(12,125,140)}a:hover{color:rgb(2,98,114)}textarea:focus,input:focus{outline:2px solid rgb(12,125,140);outline-offset:3px}.tp-hint-touch{display:none}@media (hover:none){.tp-hint-key{display:none}.tp-hint-touch{display:inline}}@media (max-width:720px){.tp-shell{grid-template-columns:minmax(0,1fr) !important}.tp-side{border-right:none !important;border-bottom:1px solid rgba(129,145,158,0.5);padding:16px !important}.tp-main{padding:16px !important}.tp-grid{grid-template-columns:minmax(0,1fr) !important}.tp-grid>section{grid-column:auto !important}.tp-editor{min-height:320px !important;font-size:16px !important}.tp-title{font-size:22px !important}}</style>
 <template id="__bundler_thumbnail" data-bg-color="#191D21"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#191D21"></rect><rect x="300" y="300" width="600" height="56" rx="8" fill="#96C8FF"></rect><rect x="300" y="400" width="460" height="56" rx="8" fill="#FFBE8C" opacity="0.5"></rect><rect x="240" y="318" width="32" height="20" rx="4" fill="#009EAA"></rect><rect x="928" y="318" width="32" height="20" rx="4" fill="#009EAA"></rect></svg></template>
 </helmet>
-<div style="min-height:100vh; display:grid; grid-template-columns:240px minmax(0,1fr); font-family:var(--ds-font-body); color:var(--ds-text-neutral-catchy); background:var(--ds-background-alternate);">
-  <aside style="background:var(--ds-background-default); border-right:1px solid rgba(129,145,158,0.5); padding:24px 16px; display:flex; flex-direction:column; gap:16px;">
+<div class="tp-shell" style="min-height:100vh; display:grid; grid-template-columns:240px minmax(0,1fr); font-family:var(--ds-font-body); color:var(--ds-text-neutral-catchy); background:var(--ds-background-alternate);">
+  <aside class="tp-side" style="background:var(--ds-background-default); border-right:1px solid rgba(129,145,158,0.5); padding:24px 16px; display:flex; flex-direction:column; gap:16px;">
     <div style="display:flex; flex-direction:column; gap:4px; padding:0 8px;">
       <div style="font-family:var(--ds-font-heading); font-weight:500; font-size:22px; letter-spacing:-0.01em;">Teleprompter</div>
       <div style="font-size:13px; color:var(--ds-text-neutral-quiet);">Scripts are saved in this browser</div>
     </div>
     <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" intensity="quiet" fullsize="{{ true }}" onClick="{{ newScript }}" hint-size="100%,40px">New script</x-import>
+    <div style="display:flex; flex-direction:column; gap:8px; padding:0 8px;">
+      <div style="font-size:13px; color:var(--ds-text-neutral-quiet);" role="status" aria-live="polite">{{ syncMsg }}</div>
+      <sc-if value="{{ showSetup }}" hint-placeholder-val="{{ true }}">
+        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" intensity="quiet" fullsize="{{ true }}" onClick="{{ openSetup }}" hint-size="100%,40px">Set up sync</x-import>
+      </sc-if>
+      <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
+        <input type="password" value="{{ tokenDraft }}" onChange="{{ onToken }}" placeholder="GitHub token" aria-label="GitHub token" autocomplete="off" style="font-family:var(--ds-font-body); font-size:16px; padding:8px; border:1px solid rgba(129,145,158,0.5); border-radius:4px; min-width:0;">
+        <div style="font-size:12px; color:var(--ds-text-neutral-quiet);">Create a <a href="https://github.com/settings/tokens/new?scopes=gist" target="_blank" rel="noopener">classic token</a> with only the “gist” scope. It stays on this device. Use the same token on your other devices.</div>
+        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" fullsize="{{ true }}" onClick="{{ connect }}" hint-size="100%,40px">Connect</x-import>
+      </sc-if>
+      <sc-if value="{{ syncConnected }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" intensity="quiet" fullsize="{{ true }}" onClick="{{ syncNow }}" hint-size="100%,40px">Sync now</x-import>
+        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" intensity="supershy" fullsize="{{ true }}" onClick="{{ disconnect }}" hint-size="100%,40px">Disconnect</x-import>
+      </sc-if>
+    </div>
     <div style="display:flex; flex-direction:column; gap:2px;">
       <div style="font-size:12px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:var(--ds-text-neutral-quiet); padding:8px 8px 4px;">Scripts</div>
       <sc-for list="{{ scriptList }}" as="s" hint-placeholder-count="2">
@@ -31,22 +46,22 @@
     </div>
   </aside>
 
-  <main style="padding:32px; display:flex; flex-direction:column; gap:24px; min-width:0;">
+  <main class="tp-main" style="padding:32px; display:flex; flex-direction:column; gap:24px; min-width:0;">
     <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
-      <input value="{{ title }}" onChange="{{ onTitle }}" placeholder="Untitled script" aria-label="Script title" style="flex:1 1 280px; min-width:0; font-family:var(--ds-font-body); font-size:28px; font-weight:600; letter-spacing:-0.01em; color:var(--ds-text-neutral-catchy); background:transparent; border:1px solid transparent; border-radius:4px; padding:4px 8px; margin-left:-8px;" style-hover="border-color:rgba(129,145,158,0.5)">
+      <input class="tp-title" value="{{ title }}" onChange="{{ onTitle }}" placeholder="Untitled script" aria-label="Script title" style="flex:1 1 280px; min-width:0; font-family:var(--ds-font-body); font-size:28px; font-weight:600; letter-spacing:-0.01em; color:var(--ds-text-neutral-catchy); background:transparent; border:1px solid transparent; border-radius:4px; padding:4px 8px; margin-left:-8px;" style-hover="border-color:rgba(129,145,158,0.5)">
       <div style="display:flex; gap:8px; align-items:center;">
         <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" mood="danger" intensity="supershy" onClick="{{ deleteScript }}" disabled="{{ cantDelete }}" hint-size="80px,40px">Delete</x-import>
         <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" size="large" onClick="{{ present }}" hint-size="120px,48px">Present</x-import>
       </div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; align-items:start;">
+    <div class="tp-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; align-items:start;">
       <section style="grid-column:span 2; min-width:0; background:var(--ds-background-default); border:1px solid rgba(129,145,158,0.5); border-radius:8px; box-shadow:var(--ds-shadow-sm); display:flex; flex-direction:column;">
         <div style="padding:16px 20px; border-bottom:1px solid rgba(129,145,158,0.5); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:baseline;">
           <div style="font-size:16px; font-weight:600;">Script</div>
           <div style="font-size:13px; color:var(--ds-text-neutral-quiet);">{{ stats }}</div>
         </div>
-        <textarea value="{{ text }}" onChange="{{ onText }}" spellcheck="true" placeholder="Aochen: Wait a minute…" style="min-height:520px; resize:vertical; border:none; padding:20px; font-family:var(--ds-font-mono); font-size:14px; line-height:1.7; color:var(--ds-text-neutral-catchy); background:transparent; border-radius:0 0 8px 8px;"></textarea>
+        <textarea class="tp-editor" value="{{ text }}" onChange="{{ onText }}" spellcheck="true" placeholder="Aochen: Wait a minute…" style="min-height:520px; resize:vertical; border:none; padding:20px; font-family:var(--ds-font-mono); font-size:14px; line-height:1.7; color:var(--ds-text-neutral-catchy); background:transparent; border-radius:0 0 8px 8px;"></textarea>
         <div style="padding:16px 20px; border-top:1px solid rgba(129,145,158,0.5); background:var(--ds-background-alternate); border-radius:0 0 8px 8px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; font-size:13px; color:var(--ds-text-neutral-quiet);">
           <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--ds-font-mono); color:var(--ds-text-neutral-catchy);">Name: Line</span><span>Spoken line, colored by speaker</span></div>
           <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--ds-font-mono); color:var(--ds-text-neutral-catchy);">[Stage direction] …</span><span>Shown in grey as a direction</span></div>
@@ -112,7 +127,7 @@
 
   <sc-if value="{{ presenting }}" hint-placeholder-val="{{ false }}">
     <div style="position:fixed; inset:0; z-index:10; background:{{ bgColor }}; overflow:hidden;">
-      <div onClick="{{ next }}" style="position:absolute; inset:0; cursor:pointer; user-select:none; transform:{{ mirrorT }};">
+      <div onClick="{{ tap }}" onTouchStart="{{ touchStart }}" onTouchEnd="{{ touchEnd }}" style="position:absolute; inset:0; cursor:pointer; user-select:none; -webkit-user-select:none; touch-action:none; -webkit-tap-highlight-color:transparent; transform:{{ mirrorT }};">
         <div style="position:absolute; left:0; right:0; top:42%; display:flex; justify-content:space-between; pointer-events:none;">
           <div style="width:28px; height:4px; background:rgb(0,158,170); border-radius:2px;"></div>
           <div style="width:28px; height:4px; background:rgb(0,158,170); border-radius:2px;"></div>
@@ -137,17 +152,19 @@
         </div>
       </div>
       <div style="position:absolute; left:20px; right:20px; top:16px; display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:14px; color:{{ dirColor }};">
-        <button onClick="{{ exit }}" style="all:unset; cursor:pointer; padding:8px 12px; border-radius:4px; border:1px solid rgba(129,145,158,0.5);" style-hover="background:rgba(129,145,158,0.2)">Exit · Esc</button>
+        <button onClick="{{ exit }}" style="all:unset; cursor:pointer; padding:12px 16px; border-radius:4px; border:1px solid rgba(129,145,158,0.5);" style-hover="background:rgba(129,145,158,0.2)">Exit<span class="tp-hint-key"> · Esc</span></button>
         <span>{{ counter }}</span>
       </div>
       <div style="position:absolute; left:0; bottom:0; height:3px; width:{{ progress }}; background:rgb(0,158,170); transition:width 300ms cubic-bezier(0.2,0,0,1);"></div>
-      <div style="position:absolute; right:20px; bottom:16px; font-size:13px; color:{{ dirColor }};">Space, click, or clicker: next · ←: back · Home: restart</div>
+      <div style="position:absolute; right:20px; bottom:16px; font-size:13px; color:{{ dirColor }};"><span class="tp-hint-key">Space, click, or clicker: next · ←: back · Home: restart</span><span class="tp-hint-touch">Tap: next · Tap left side or swipe down: back</span></div>
     </div>
   </sc-if>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const KEY = 'teleprompter-app-v1';
+const SYNC_KEY = 'teleprompter-sync-v1';
+const FILE = 'teleprompter.json';
 const SEED = `[Stage Direction] Aochen and Hans walk on stage. Aochen looks closely at a map. Hans waves happily at the crowd.
 
 Aochen: Wait a minute… Hans, this is not the International Seafood Festival.
@@ -205,15 +222,17 @@ class Component extends DCLogic {
     this.state = Object.assign({
       scripts: [first], activeId: first.id,
       settings: { size: 72, bg: 'dark', mirror: false, showNext: true },
-      colors: { Aochen: 0, Hans: 1 }, positions: {}, presenting: false
-    }, saved || {}, { presenting: false });
+      colors: { Aochen: 0, Hans: 1 }, positions: {}, deleted: {}, presenting: false
+    }, saved || {}, { presenting: false, vw: window.innerWidth, syncOpen: false, tokenDraft: '', syncMsg: this.syncCfg().token ? 'Not synced yet' : 'Sync is off — scripts stay on this device' });
   }
   colRef = React.createRef();
-  componentDidMount() { window.addEventListener('keydown', this.onKey); window.addEventListener('resize', this.align); }
-  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.align); }
+  componentDidMount() { window.addEventListener('keydown', this.onKey); window.addEventListener('resize', this.onResize); document.addEventListener('visibilitychange', this.onVisible); this.sync(); }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); document.removeEventListener('visibilitychange', this.onVisible); clearTimeout(this.syncTimer); this.setLock(false); }
   componentDidUpdate(_, prev) {
-    const { presenting, ...rest } = this.state;
+    const { presenting, vw, syncMsg, syncOpen, tokenDraft, ...rest } = this.state;
     localStorage.setItem(KEY, JSON.stringify(rest));
+    if (presenting !== prev.presenting) this.setLock(presenting);
+    if (prev.scripts !== this.state.scripts || prev.colors !== this.state.colors || prev.deleted !== this.state.deleted) this.schedSync();
     if (presenting) { this.align(); if (!prev.presenting) setTimeout(this.align, 80); }
   }
   active() { return this.state.scripts.find(s => s.id === this.state.activeId) || this.state.scripts[0]; }
@@ -228,6 +247,85 @@ class Component extends DCLogic {
     this.setState(s => ({ positions: { ...s.positions, [id]: Math.max(0, Math.min(n - 1, (s.positions[id] || 0) + d)) } }));
   };
   setPos = (v) => { const id = this.active().id; this.setState(s => ({ positions: { ...s.positions, [id]: v } })); };
+  syncCfg() { try { return JSON.parse(localStorage.getItem(SYNC_KEY)) || {}; } catch (e) { return {}; } }
+  saveCfg(c) { try { localStorage.setItem(SYNC_KEY, JSON.stringify(c)); } catch (e) {} }
+  gh(path, opts = {}) {
+    return fetch('https://api.github.com' + path, { ...opts, cache: 'no-store', headers: { Authorization: 'Bearer ' + this.syncCfg().token, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' } })
+      .then(r => { if (!r.ok) throw new Error(r.status === 401 ? 'bad token' : 'GitHub ' + r.status); return r.json(); });
+  }
+  pack(o) { return JSON.stringify({ scripts: [...o.scripts].sort((a, b) => a.id < b.id ? -1 : 1), colors: o.colors || {}, deleted: o.deleted || {} }); }
+  // Newest edit per script wins; deletions are tombstones so they propagate
+  merge(l, r) {
+    const deleted = { ...(r.deleted || {}) };
+    for (const [k, v] of Object.entries(l.deleted || {})) deleted[k] = Math.max(v, deleted[k] || 0);
+    const byId = {};
+    for (const s of [...(r.scripts || []), ...l.scripts]) if (!byId[s.id] || s.updated > byId[s.id].updated) byId[s.id] = s;
+    const scripts = Object.values(byId).filter(s => !(deleted[s.id] >= s.updated));
+    return { scripts: scripts.length ? scripts : l.scripts.slice(0, 1), colors: { ...(r.colors || {}), ...l.colors }, deleted };
+  }
+  schedSync() { if (!this.syncCfg().token) return; clearTimeout(this.syncTimer); this.syncTimer = setTimeout(() => this.sync(), 1500); }
+  onVisible = () => { if (document.visibilityState === 'visible') this.sync(); };
+  sync = async () => {
+    if (!this.syncCfg().token) return;
+    if (this.syncing) { this.again = true; return; }
+    this.syncing = true;
+    this.setState({ syncMsg: 'Syncing…' });
+    try {
+      let { gistId } = this.syncCfg();
+      if (!gistId) {
+        const g = (await this.gh('/gists?per_page=100')).find(x => x.files && x.files[FILE]);
+        if (g) { gistId = g.id; this.saveCfg({ ...this.syncCfg(), gistId }); }
+      }
+      let remote = null;
+      if (gistId) {
+        const f = (await this.gh('/gists/' + gistId)).files[FILE];
+        if (f) remote = JSON.parse(f.content);
+      }
+      const { scripts, colors, deleted, activeId } = this.state;
+      const local = { scripts, colors, deleted };
+      const merged = remote ? this.merge(local, remote) : local;
+      const body = this.pack(merged);
+      if (this.pack(local) !== body) this.setState({ ...merged, activeId: merged.scripts.some(s => s.id === activeId) ? activeId : merged.scripts[0].id });
+      if (!remote || this.pack(remote) !== body) {
+        const files = { [FILE]: { content: body } };
+        if (gistId) await this.gh('/gists/' + gistId, { method: 'PATCH', body: JSON.stringify({ files }) });
+        else { const g = await this.gh('/gists', { method: 'POST', body: JSON.stringify({ description: 'Teleprompter scripts', public: false, files }) }); this.saveCfg({ ...this.syncCfg(), gistId: g.id }); }
+      }
+      this.setState({ syncMsg: 'Synced at ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) });
+    } catch (e) {
+      if (e.message === 'GitHub 404') this.saveCfg({ token: this.syncCfg().token });
+      this.setState({ syncMsg: 'Sync failed: ' + e.message });
+    }
+    this.syncing = false;
+    if (this.again) { this.again = false; this.sync(); }
+  };
+  connect = () => {
+    const token = this.state.tokenDraft.trim(); if (!token) return;
+    this.saveCfg({ token }); this.setState({ tokenDraft: '', syncOpen: false }); this.sync();
+  };
+  disconnect = () => { this.saveCfg({}); this.setState({ syncMsg: 'Sync is off — scripts stay on this device' }); };
+  onResize = () => { this.setState({ vw: window.innerWidth }); this.align(); };
+  // Keep the phone awake while presenting
+  setLock(on) {
+    try {
+      if (on && navigator.wakeLock && !this.lock) {
+        navigator.wakeLock.request('screen').then(l => {
+          if (!this.state.presenting) { l.release(); return; }
+          this.lock = l; l.addEventListener('release', () => { this.lock = null; });
+        }).catch(() => {});
+      } else if (!on && this.lock) { this.lock.release(); this.lock = null; }
+    } catch (e) {}
+  }
+  // Touch: tap left third = back, elsewhere = next; swipe up/left = next, down/right = back
+  tap = (e) => this.go(window.matchMedia('(hover: none)').matches && e.clientX < window.innerWidth / 3 ? -1 : 1);
+  touchStart = (e) => { const t = e.touches[0]; this.t0 = { x: t.clientX, y: t.clientY }; };
+  touchEnd = (e) => {
+    const t = e.changedTouches[0], s = this.t0; if (!s) return;
+    const dx = t.clientX - s.x, dy = t.clientY - s.y;
+    if (Math.max(Math.abs(dx), Math.abs(dy)) < 50) return;
+    const d = Math.abs(dy) >= Math.abs(dx) ? dy : dx;
+    this.go(d < 0 ? 1 : -1);
+  };
   onKey = (e) => {
     if (!this.state.presenting) return;
     if ([' ', 'ArrowDown', 'ArrowRight', 'PageDown', 'Enter'].includes(e.key)) { e.preventDefault(); this.go(1); }
@@ -277,7 +375,7 @@ class Component extends DCLogic {
       deleteScript: () => {
         if (scripts.length < 2 || !confirm(`Delete “${a.title || 'Untitled script'}”?`)) return;
         const rest = scripts.filter(s => s.id !== a.id);
-        this.setState({ scripts: rest, activeId: rest[0].id });
+        this.setState(st => ({ scripts: rest, activeId: rest[0].id, deleted: { ...st.deleted, [a.id]: Date.now() } }));
       },
       cantDelete: scripts.length < 2,
       title: a.title, onTitle: e => this.updateActive({ title: e.target.value }),
@@ -302,9 +400,9 @@ class Component extends DCLogic {
       bgColor: BGS[settings.bg].c, dirColor,
       mirrorT: settings.mirror ? 'scaleX(-1)' : 'none',
       previewItems: parsed.slice(0, 4).map(decorate),
-      presenting, colRef: this.colRef, next: () => this.go(1),
+      presenting, colRef: this.colRef, next: () => this.go(1), tap: this.tap, touchStart: this.touchStart, touchEnd: this.touchEnd, syncMsg: this.state.syncMsg, syncConnected: !!this.syncCfg().token, showSetup: !this.syncCfg().token && !this.state.syncOpen, showForm: !this.syncCfg().token && this.state.syncOpen, openSetup: () => this.setState({ syncOpen: true }), tokenDraft: this.state.tokenDraft, onToken: e => this.setState({ tokenDraft: e.target.value }), connect: this.connect, disconnect: this.disconnect, syncNow: () => this.sync(),
       items: parsed.map(decorate),
-      sizePx: settings.size + 'px',
+      sizePx: Math.round(settings.size * Math.min(1, (this.state.vw || window.innerWidth) / 900)) + 'px',
       counter: `${i + 1} / ${parsed.length}`,
       progress: parsed.length ? `${((i + 1) / parsed.length) * 100}%` : '0%'
     };
