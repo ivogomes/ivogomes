@@ -128,10 +128,6 @@
   <sc-if value="{{ presenting }}" hint-placeholder-val="{{ false }}">
     <div style="position:fixed; inset:0; z-index:10; background:{{ bgColor }}; overflow:hidden;">
       <div onClick="{{ tap }}" onTouchStart="{{ touchStart }}" onTouchEnd="{{ touchEnd }}" style="position:absolute; inset:0; cursor:pointer; user-select:none; -webkit-user-select:none; touch-action:none; -webkit-tap-highlight-color:transparent; transform:{{ mirrorT }};">
-        <div style="position:absolute; left:0; right:0; top:42%; display:flex; justify-content:space-between; pointer-events:none;">
-          <div style="width:28px; height:4px; background:rgb(0,158,170); border-radius:2px;"></div>
-          <div style="width:28px; height:4px; background:rgb(0,158,170); border-radius:2px;"></div>
-        </div>
         <div ref="{{ colRef }}" style="position:absolute; left:0; right:0; top:0; padding:0 6vw; display:flex; flex-direction:column; gap:0.75em; transition:transform 420ms cubic-bezier(0.2,0,0,1); font-size:{{ sizePx }};">
           <sc-for list="{{ items }}" as="l" hint-placeholder-count="4">
             <div data-line="1" style="display:flex; flex-direction:column; gap:0.15em; max-width:1600px; opacity:{{ l.opacity }}; transition:opacity 300ms cubic-bezier(0.2,0,0,1);">
