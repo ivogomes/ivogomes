@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/dashlane-product-91348af6-b46c-49b4-8289-059194cd2eaf/colors_and_type.css">
+<script src="_ds/dashlane-product-91348af6-b46c-49b4-8289-059194cd2eaf/_ds_bundle.js"></script>
+<style>html,body{margin:0;background:rgb(246,249,250)}a{color:rgb(12,125,140)}a:hover{color:rgb(2,98,114)}textarea:focus,input:focus{outline:2px solid rgb(12,125,140);outline-offset:3px}</style>
+<template id="__bundler_thumbnail" data-bg-color="#191D21"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#191D21"></rect><rect x="300" y="300" width="600" height="56" rx="8" fill="#96C8FF"></rect><rect x="300" y="400" width="460" height="56" rx="8" fill="#FFBE8C" opacity="0.5"></rect><rect x="240" y="318" width="32" height="20" rx="4" fill="#009EAA"></rect><rect x="928" y="318" width="32" height="20" rx="4" fill="#009EAA"></rect></svg></template>
+</helmet>
+<div style="min-height:100vh; display:grid; grid-template-columns:240px minmax(0,1fr); font-family:var(--ds-font-body); color:var(--ds-text-neutral-catchy); background:var(--ds-background-alternate);">
+  <aside style="background:var(--ds-background-default); border-right:1px solid rgba(129,145,158,0.5); padding:24px 16px; display:flex; flex-direction:column; gap:16px;">
+    <div style="display:flex; flex-direction:column; gap:4px; padding:0 8px;">
+      <div style="font-family:var(--ds-font-heading); font-weight:500; font-size:22px; letter-spacing:-0.01em;">Teleprompter</div>
+      <div style="font-size:13px; color:var(--ds-text-neutral-quiet);">Scripts are saved in this browser</div>
+    </div>
+    <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" intensity="quiet" fullsize="{{ true }}" onClick="{{ newScript }}" hint-size="100%,40px">New script</x-import>
+    <div style="display:flex; flex-direction:column; gap:2px;">
+      <div style="font-size:12px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:var(--ds-text-neutral-quiet); padding:8px 8px 4px;">Scripts</div>
+      <sc-for list="{{ scriptList }}" as="s" hint-placeholder-count="2">
+        <button onClick="{{ s.select }}" style="all:unset; cursor:pointer; display:flex; flex-direction:column; gap:2px; padding:10px 12px; border-radius:4px; background:{{ s.bg }}; transition:background 180ms cubic-bezier(0.2,0,0,1);" style-hover="background:rgba(12,125,140,0.08)">
+          <span style="font-size:14px; font-weight:{{ s.weight }}; color:{{ s.color }}; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ s.title }}</span>
+          <span style="font-size:12px; color:var(--ds-text-neutral-quiet);">{{ s.meta }}</span>
+        </button>
+      </sc-for>
+    </div>
+  </aside>
+
+  <main style="padding:32px; display:flex; flex-direction:column; gap:24px; min-width:0;">
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
+      <input value="{{ title }}" onChange="{{ onTitle }}" placeholder="Untitled script" aria-label="Script title" style="flex:1 1 280px; min-width:0; font-family:var(--ds-font-body); font-size:28px; font-weight:600; letter-spacing:-0.01em; color:var(--ds-text-neutral-catchy); background:transparent; border:1px solid transparent; border-radius:4px; padding:4px 8px; margin-left:-8px;" style-hover="border-color:rgba(129,145,158,0.5)">
+      <div style="display:flex; gap:8px; align-items:center;">
+        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" mood="danger" intensity="supershy" onClick="{{ deleteScript }}" disabled="{{ cantDelete }}" hint-size="80px,40px">Delete</x-import>
+        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" size="large" onClick="{{ present }}" hint-size="120px,48px">Present</x-import>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; align-items:start;">
+      <section style="grid-column:span 2; min-width:0; background:var(--ds-background-default); border:1px solid rgba(129,145,158,0.5); border-radius:8px; box-shadow:var(--ds-shadow-sm); display:flex; flex-direction:column;">
+        <div style="padding:16px 20px; border-bottom:1px solid rgba(129,145,158,0.5); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:baseline;">
+          <div style="font-size:16px; font-weight:600;">Script</div>
+          <div style="font-size:13px; color:var(--ds-text-neutral-quiet);">{{ stats }}</div>
+        </div>
+        <textarea value="{{ text }}" onChange="{{ onText }}" spellcheck="true" placeholder="Aochen: Wait a minute…" style="min-height:520px; resize:vertical; border:none; padding:20px; font-family:var(--ds-font-mono); font-size:14px; line-height:1.7; color:var(--ds-text-neutral-catchy); background:transparent; border-radius:0 0 8px 8px;"></textarea>
+        <div style="padding:16px 20px; border-top:1px solid rgba(129,145,158,0.5); background:var(--ds-background-alternate); border-radius:0 0 8px 8px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; font-size:13px; color:var(--ds-text-neutral-quiet);">
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--ds-font-mono); color:var(--ds-text-neutral-catchy);">Name: Line</span><span>Spoken line, colored by speaker</span></div>
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--ds-font-mono); color:var(--ds-text-neutral-catchy);">[Stage direction] …</span><span>Shown in grey as a direction</span></div>
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--ds-font-mono); color:var(--ds-text-neutral-catchy);">Name: (Gasps) Line</span><span>Cue in italics before the line</span></div>
+        </div>
+      </section>
+
+      <div style="display:flex; flex-direction:column; gap:24px; min-width:0;">
+        <section style="background:var(--ds-background-default); border:1px solid rgba(129,145,158,0.5); border-radius:8px; box-shadow:var(--ds-shadow-sm); padding:20px; display:flex; flex-direction:column; gap:20px;">
+          <div style="font-size:16px; font-weight:600;">Appearance</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="font-size:14px; font-weight:500;">Background</div>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;">
+              <sc-for list="{{ bgOptions }}" as="b" hint-placeholder-count="3">
+                <button onClick="{{ b.pick }}" style="all:unset; cursor:pointer; display:flex; flex-direction:column; gap:6px; align-items:center; font-size:13px; color:var(--ds-text-neutral-standard);">
+                  <span style="width:100%; height:40px; border-radius:4px; background:{{ b.swatch }}; border:1px solid rgba(129,145,158,0.5); outline:{{ b.ring }}; outline-offset:2px; box-sizing:border-box;"></span>
+                  {{ b.label }}
+                </button>
+              </sc-for>
+            </div>
+          </div>
+          <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Slider" label="Text size" min="{{ sizeMin }}" max="{{ sizeMax }}" step="{{ sizeStep }}" value="{{ size }}" onChange="{{ onSize }}" show-value="{{ true }}" hint-size="100%,56px"></x-import>
+          <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Toggle" label="Show upcoming line" description="Dimmed preview of what comes next" checked="{{ showNext }}" onChange="{{ onShowNext }}" hint-size="100%,44px"></x-import>
+          <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Toggle" label="Mirror text" description="For reflective teleprompter glass" checked="{{ mirror }}" onChange="{{ onMirror }}" hint-size="100%,44px"></x-import>
+        </section>
+
+        <section style="background:var(--ds-background-default); border:1px solid rgba(129,145,158,0.5); border-radius:8px; box-shadow:var(--ds-shadow-sm); padding:20px; display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <div style="font-size:16px; font-weight:600;">Speaker colors</div>
+            <div style="font-size:13px; color:var(--ds-text-neutral-quiet);">Detected from your script</div>
+          </div>
+          <sc-if value="{{ noSpeakers }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:14px; color:var(--ds-text-neutral-quiet);">Add lines like “Name: Line” to assign colors.</div>
+          </sc-if>
+          <sc-for list="{{ speakers }}" as="sp" hint-placeholder-count="2">
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="font-size:14px; font-weight:500;">{{ sp.name }}</div>
+              <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <sc-for list="{{ sp.swatches }}" as="sw" hint-placeholder-count="7">
+                  <button onClick="{{ sw.pick }}" title="{{ sw.label }}" aria-label="{{ sw.label }}" style="all:unset; cursor:pointer; width:28px; height:28px; border-radius:4px; background:{{ sw.color }}; border:1px solid rgba(129,145,158,0.5); outline:{{ sw.ring }}; outline-offset:2px; box-sizing:border-box;"></button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </section>
+
+        <section style="border-radius:8px; overflow:hidden; border:1px solid rgba(129,145,158,0.5); display:flex; flex-direction:column;">
+          <div style="background:var(--ds-background-default); padding:12px 20px; font-size:13px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:var(--ds-text-neutral-quiet);">Preview</div>
+          <div style="background:{{ bgColor }}; padding:20px; display:flex; flex-direction:column; gap:14px; transform:{{ mirrorT }};">
+            <sc-for list="{{ previewItems }}" as="l" hint-placeholder-count="3">
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <sc-if value="{{ l.speaker }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:{{ l.color }};">{{ l.speaker }}</div>
+                </sc-if>
+                <div style="font-size:17px; line-height:1.3; font-weight:{{ l.weight }}; font-style:{{ l.fstyle }}; color:{{ l.color }};"><sc-if value="{{ l.cue }}" hint-placeholder-val="{{ false }}"><span style="font-style:italic; font-weight:400; color:{{ dirColor }};">{{ l.cue }} </span></sc-if>{{ l.text }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <sc-if value="{{ presenting }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:10; background:{{ bgColor }}; overflow:hidden;">
+      <div onClick="{{ next }}" style="position:absolute; inset:0; cursor:pointer; user-select:none; transform:{{ mirrorT }};">
+        <div style="position:absolute; left:0; right:0; top:42%; display:flex; justify-content:space-between; pointer-events:none;">
+          <div style="width:28px; height:4px; background:rgb(0,158,170); border-radius:2px;"></div>
+          <div style="width:28px; height:4px; background:rgb(0,158,170); border-radius:2px;"></div>
+        </div>
+        <div ref="{{ colRef }}" style="position:absolute; left:0; right:0; top:0; padding:0 6vw; display:flex; flex-direction:column; gap:0.75em; transition:transform 420ms cubic-bezier(0.2,0,0,1); font-size:{{ sizePx }};">
+          <sc-for list="{{ items }}" as="l" hint-placeholder-count="4">
+            <div data-line="1" style="display:flex; flex-direction:column; gap:0.15em; max-width:1600px; opacity:{{ l.opacity }}; transition:opacity 300ms cubic-bezier(0.2,0,0,1);">
+              <sc-if value="{{ l.isDir }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:0.55em; line-height:1.3; font-style:italic; color:{{ dirColor }}; border-top:1px solid rgba(129,145,158,0.5); border-bottom:1px solid rgba(129,145,158,0.5); padding:0.4em 0;">
+                  <div style="font-size:0.6em; font-style:normal; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.2em;">Stage direction</div>
+                  {{ l.text }}
+                </div>
+              </sc-if>
+              <sc-if value="{{ l.isLine }}" hint-placeholder-val="{{ true }}">
+                <sc-if value="{{ l.speaker }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-size:0.5em; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:{{ l.color }};">{{ l.speaker }}</div>
+                </sc-if>
+                <div style="font-weight:500; line-height:1.2; letter-spacing:-0.01em; text-wrap:pretty; color:{{ l.color }};"><sc-if value="{{ l.cue }}" hint-placeholder-val="{{ false }}"><span style="font-style:italic; font-weight:400; color:{{ dirColor }};">{{ l.cue }} </span></sc-if>{{ l.text }}</div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="position:absolute; left:20px; right:20px; top:16px; display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:14px; color:{{ dirColor }};">
+        <button onClick="{{ exit }}" style="all:unset; cursor:pointer; padding:8px 12px; border-radius:4px; border:1px solid rgba(129,145,158,0.5);" style-hover="background:rgba(129,145,158,0.2)">Exit · Esc</button>
+        <span>{{ counter }}</span>
+      </div>
+      <div style="position:absolute; left:0; bottom:0; height:3px; width:{{ progress }}; background:rgb(0,158,170); transition:width 300ms cubic-bezier(0.2,0,0,1);"></div>
+      <div style="position:absolute; right:20px; bottom:16px; font-size:13px; color:{{ dirColor }};">Space, click, or clicker: next · ←: back · Home: restart</div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const KEY = 'teleprompter-app-v1';
+const SEED = `[Stage Direction] Aochen and Hans walk on stage. Aochen looks closely at a map. Hans waves happily at the crowd.
+
+Aochen: Wait a minute… Hans, this is not the International Seafood Festival.
+Hans: What do you mean? Look at this crowd! They look hungry. They want to eat us!
+Aochen: No, look at the screen! It says “DashHack 2026”. We’re two lobsters at a hackathon!
+Hans: (Gasps) Oh no! And there are already more than 20 projects registered!
+Aochen: More than 20?! What are they building? New ways to cook lobster?!
+Hans: Worse. Tech projects!
+Aochen: Worse?
+Hans: Yes! They’re engineers. They can build anything!
+Aochen: Right! Pretend we know about tech. Say some computer words!
+Hans: (Pointing claws at the crowd) Uh… AI! Wi-Fi! Passwords! Please don’t boil us!
+Aochen: They’re not buying it! We need someone who actually knows what happened at DashHack!
+Hans: Ivo, save us! Tell them about the great things they built in 2025!
+
+[Stage Direction] Both Aochen and Hans quickly run off the stage sideways, clicking their claws. Ivo continues with the 2025 achievements.`;
+const PALETTE = [
+  { label: 'Blue', dark: 'rgb(150,200,255)', light: 'rgb(20,90,170)' },
+  { label: 'Orange', dark: 'rgb(255,190,140)', light: 'rgb(170,80,20)' },
+  { label: 'Green', dark: 'rgb(150,225,180)', light: 'rgb(10,115,70)' },
+  { label: 'Purple', dark: 'rgb(205,180,255)', light: 'rgb(105,60,180)' },
+  { label: 'Yellow', dark: 'rgb(250,225,140)', light: 'rgb(130,95,0)' },
+  { label: 'Pink', dark: 'rgb(255,170,190)', light: 'rgb(175,35,75)' },
+  { label: 'White', dark: 'rgb(246,249,250)', light: 'rgb(33,37,41)' }
+];
+const BGS = { dark: { label: 'Dark', c: 'rgb(25,29,33)' }, black: { label: 'Black', c: 'rgb(0,0,0)' }, light: { label: 'Light', c: 'rgb(255,255,255)' } };
+const uid = () => Math.random().toString(36).slice(2, 9);
+const unquote = s => s.trim().replace(/^["“”']+|["“”']+$/g, '').trim();
+
+function parse(text) {
+  const out = [];
+  for (let raw of (text || '').split('\n')) {
+    const t = raw.trim();
+    if (!t) continue;
+    let m = t.match(/^\[([^\]]*)\]\s*(.*)$/);
+    if (m) { const body = /stage\s*direction/i.test(m[1]) ? m[2] : (m[2] ? m[1] + ' ' + m[2] : m[1]); out.push({ type: 'dir', text: unquote(body) }); continue; }
+    if (/^\(.*\)$/.test(t)) { out.push({ type: 'dir', text: t.slice(1, -1) }); continue; }
+    m = t.match(/^([^:"“\[\(]{1,30}):\s*(.*)$/);
+    let speaker = '', body = t;
+    if (m) { speaker = m[1].trim(); body = m[2]; }
+    let cue = '';
+    const c = body.match(/^\s*(\([^)]*\))\s*(.*)$/);
+    if (c) { cue = c[1]; body = c[2]; }
+    out.push({ type: 'line', speaker, cue, text: unquote(body) });
+  }
+  return out;
+}
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    let saved = null;
+    try { saved = JSON.parse(localStorage.getItem(KEY)); } catch (e) {}
+    const first = { id: uid(), title: 'Lobsters at DashHack', text: SEED, updated: Date.now() };
+    this.state = Object.assign({
+      scripts: [first], activeId: first.id,
+      settings: { size: 72, bg: 'dark', mirror: false, showNext: true },
+      colors: { Aochen: 0, Hans: 1 }, positions: {}, presenting: false
+    }, saved || {}, { presenting: false });
+  }
+  colRef = React.createRef();
+  componentDidMount() { window.addEventListener('keydown', this.onKey); window.addEventListener('resize', this.align); }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.align); }
+  componentDidUpdate(_, prev) {
+    const { presenting, ...rest } = this.state;
+    localStorage.setItem(KEY, JSON.stringify(rest));
+    if (presenting) { this.align(); if (!prev.presenting) setTimeout(this.align, 80); }
+  }
+  active() { return this.state.scripts.find(s => s.id === this.state.activeId) || this.state.scripts[0]; }
+  pos() { return this.state.positions[this.active().id] || 0; }
+  updateActive(patch) {
+    const id = this.active().id;
+    this.setState(s => ({ scripts: s.scripts.map(x => x.id === id ? { ...x, ...patch, updated: Date.now() } : x) }));
+  }
+  setSetting(k, v) { this.setState(s => ({ settings: { ...s.settings, [k]: v } })); }
+  go = (d) => {
+    const n = parse(this.active().text).length, id = this.active().id;
+    this.setState(s => ({ positions: { ...s.positions, [id]: Math.max(0, Math.min(n - 1, (s.positions[id] || 0) + d)) } }));
+  };
+  setPos = (v) => { const id = this.active().id; this.setState(s => ({ positions: { ...s.positions, [id]: v } })); };
+  onKey = (e) => {
+    if (!this.state.presenting) return;
+    if ([' ', 'ArrowDown', 'ArrowRight', 'PageDown', 'Enter'].includes(e.key)) { e.preventDefault(); this.go(1); }
+    else if (['ArrowUp', 'ArrowLeft', 'PageUp', 'Backspace'].includes(e.key)) { e.preventDefault(); this.go(-1); }
+    else if (e.key === 'Home') this.setPos(0);
+    else if (e.key === 'Escape') this.setState({ presenting: false });
+  };
+  align = () => {
+    const col = this.colRef.current; if (!col) return;
+    const el = col.querySelectorAll('[data-line]')[this.pos()]; if (!el) return;
+    col.style.transform = `translateY(${window.innerHeight * 0.42 - el.offsetTop - el.offsetHeight * 0.25}px)`;
+  };
+  colorIdx(name, speakers) {
+    const c = this.state.colors;
+    if (c[name] != null) return c[name];
+    const used = new Set(Object.values(c));
+    const free = [...PALETTE.keys()].filter(i => !used.has(i));
+    return free[speakers.indexOf(name) % Math.max(free.length, 1)] ?? speakers.indexOf(name) % PALETTE.length;
+  }
+  renderVals() {
+    const { scripts, settings, presenting } = this.state;
+    const a = this.active();
+    const parsed = parse(a.text);
+    const tone = settings.bg === 'light' ? 'light' : 'dark';
+    const dirColor = tone === 'light' ? 'rgb(74,91,105)' : 'rgba(150,167,176,0.95)';
+    const neutral = tone === 'light' ? 'rgb(33,37,41)' : 'rgb(246,249,250)';
+    const speakerNames = [...new Set(parsed.filter(p => p.speaker).map(p => p.speaker))];
+    const colorOf = n => n ? PALETTE[this.colorIdx(n, speakerNames)][tone] : neutral;
+    const i = Math.min(this.pos(), Math.max(parsed.length - 1, 0));
+    const decorate = (p, k) => ({
+      ...p, isDir: p.type === 'dir', isLine: p.type === 'line',
+      color: p.type === 'dir' ? dirColor : colorOf(p.speaker),
+      weight: p.type === 'dir' ? 400 : 500, fstyle: p.type === 'dir' ? 'italic' : 'normal',
+      opacity: k === i ? 1 : (k === i + 1 && settings.showNext ? 0.45 : (k < i ? 0.18 : (settings.showNext ? 0.18 : 0)))
+    });
+    const lineCount = parsed.filter(p => p.type === 'line').length;
+    return {
+      scriptList: [...scripts].sort((x, y) => y.updated - x.updated).map(s => ({
+        title: s.title || 'Untitled script',
+        meta: `${parse(s.text).filter(p => p.type === 'line').length} lines`,
+        bg: s.id === a.id ? 'rgba(12,125,140,0.12)' : 'transparent',
+        color: s.id === a.id ? 'rgb(2,98,114)' : 'rgba(42,49,56,0.92)',
+        weight: s.id === a.id ? 600 : 400,
+        select: () => this.setState({ activeId: s.id })
+      })),
+      newScript: () => { const s = { id: uid(), title: '', text: '', updated: Date.now() }; this.setState(st => ({ scripts: [...st.scripts, s], activeId: s.id })); },
+      deleteScript: () => {
+        if (scripts.length < 2 || !confirm(`Delete “${a.title || 'Untitled script'}”?`)) return;
+        const rest = scripts.filter(s => s.id !== a.id);
+        this.setState({ scripts: rest, activeId: rest[0].id });
+      },
+      cantDelete: scripts.length < 2,
+      title: a.title, onTitle: e => this.updateActive({ title: e.target.value }),
+      text: a.text, onText: e => this.updateActive({ text: e.target.value }),
+      stats: `${lineCount} lines · ${speakerNames.length} speakers · ${parsed.length - lineCount} directions`,
+      present: () => { if (parsed.length) this.setState({ presenting: true }); },
+      exit: (e) => { e.stopPropagation(); this.setState({ presenting: false }); },
+      bgOptions: Object.entries(BGS).map(([k, b]) => ({ label: b.label, swatch: b.c, ring: settings.bg === k ? '2px solid rgb(12,125,140)' : 'none', pick: () => this.setSetting('bg', k) })),
+      size: settings.size, sizeMin: 40, sizeMax: 160, sizeStep: 4,
+      onSize: e => this.setSetting('size', +e.target.value),
+      showNext: settings.showNext, onShowNext: e => this.setSetting('showNext', e.target.checked),
+      mirror: settings.mirror, onMirror: e => this.setSetting('mirror', e.target.checked),
+      noSpeakers: speakerNames.length === 0,
+      speakers: speakerNames.map(n => {
+        const cur = this.colorIdx(n, speakerNames);
+        return { name: n, swatches: PALETTE.map((p, pi) => ({
+          label: p.label, color: p[tone],
+          ring: pi === cur ? '2px solid rgb(12,125,140)' : 'none',
+          pick: () => this.setState(s => ({ colors: { ...s.colors, [n]: pi } }))
+        })) };
+      }),
+      bgColor: BGS[settings.bg].c, dirColor,
+      mirrorT: settings.mirror ? 'scaleX(-1)' : 'none',
+      previewItems: parsed.slice(0, 4).map(decorate),
+      presenting, colRef: this.colRef, next: () => this.go(1),
+      items: parsed.map(decorate),
+      sizePx: settings.size + 'px',
+      counter: `${i + 1} / ${parsed.length}`,
+      progress: parsed.length ? `${((i + 1) / parsed.length) * 100}%` : '0%'
+    };
+  }
+}
+</script>
+</body>
+</html>

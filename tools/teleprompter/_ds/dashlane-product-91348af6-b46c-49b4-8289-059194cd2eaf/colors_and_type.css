@@ -1,0 +1,277 @@
+/* Dashlane Design System — Core CSS Variables
+   Extracted from design-tokens (colors + typography) and default-theme.ts
+   All tokens prefixed with --ds- to match the upstream naming convention.
+*/
+
+/* ---------- Fonts ---------- */
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/PublicSans-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./fonts/PublicSans-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./fonts/PublicSans-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GT Walsheim Pro';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./fonts/GTWalsheimPro-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Apercu Mono Pro';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/ApercuMonoPro-Regular.woff2') format('woff2');
+}
+
+:root {
+  /* --- Font families ---
+     These are the WEB platform fonts. Text-style NAMES are shared across platforms,
+     but each platform renders the "platform" role in its native typeface:
+       Web → Public Sans   ·   Apple → SF Pro   ·   Android → Roboto
+     Monospace role: Web → Apercu Mono Pro · Apple → SF Mono · Android → Roboto Mono
+     Brand role (specialty/brand only) → GT Walsheim Pro on every platform. */
+  --ds-font-body: 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --ds-font-heading: 'GT Walsheim Pro', 'Public Sans', sans-serif;
+  --ds-font-mono: 'Apercu Mono Pro', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* --- Light theme tokens (default) --- */
+
+  /* Background */
+  --ds-background-default: rgb(255, 255, 255);
+  --ds-background-alternate: rgb(246, 249, 250);
+
+  /* Brand (Dashlane teal/green) */
+  --ds-brand-base: rgb(12, 125, 140);      /* primary teal */
+  --ds-brand-dark: rgb(2, 98, 114);
+  --ds-brand-light: rgb(50, 169, 178);
+  --ds-brand-catchy-idle: rgb(12, 125, 140);
+  --ds-brand-catchy-hover: rgb(20, 105, 118);
+  --ds-brand-catchy-active: rgb(23, 68, 75);
+  --ds-brand-quiet-idle: rgba(50, 169, 178, 0.2);
+  --ds-brand-quiet-hover: rgba(50, 169, 178, 0.34);
+  --ds-brand-quiet-active: rgba(50, 169, 178, 0.5);
+
+  /* Text */
+  --ds-text-neutral-catchy: rgb(33, 37, 41);
+  --ds-text-neutral-standard: rgba(42, 49, 56, 0.92);
+  --ds-text-neutral-quiet: rgba(74, 91, 105, 0.87);
+  --ds-text-inverse-catchy: rgb(255, 255, 255);
+  --ds-text-inverse-standard: rgb(241, 244, 246);
+  --ds-text-inverse-quiet: rgba(150, 167, 176, 0.95);
+  --ds-text-brand-standard: rgb(2, 98, 114);
+  --ds-text-brand-quiet: rgb(12, 125, 140);
+  --ds-text-danger-standard: rgb(173, 28, 33);
+  --ds-text-danger-quiet: rgb(217, 50, 72);
+  --ds-text-positive-standard: rgb(27, 100, 78);
+  --ds-text-positive-quiet: rgb(5, 128, 99);
+  --ds-text-warning-standard: rgb(150, 60, 34);
+  --ds-text-warning-quiet: rgb(178, 87, 41);
+  --ds-text-disabled: rgba(129, 145, 158, 0.7);
+
+  /* Containers — neutral */
+  --ds-container-neutral-quiet: rgb(246, 249, 250);
+  --ds-container-neutral-standard: rgb(240, 244, 245);
+  --ds-container-neutral-supershy: rgb(255, 255, 255);
+  --ds-container-inverse-standard: rgb(42, 49, 56);
+
+  /* Containers — expressive (catchy = filled) */
+  --ds-container-danger-catchy: rgb(217, 50, 72);
+  --ds-container-danger-quiet: rgba(255, 115, 133, 0.2);
+  --ds-container-positive-catchy: rgb(5, 128, 99);
+  --ds-container-positive-quiet: rgba(63, 186, 149, 0.2);
+  --ds-container-warning-catchy: rgb(178, 87, 41);
+  --ds-container-warning-quiet: rgba(237, 137, 45, 0.2);
+  --ds-container-neutral-catchy: rgb(98, 114, 128);
+
+  /* Containers — decorative */
+  --ds-decorative-black: rgb(52, 67, 80);
+  --ds-decorative-blue: rgb(64, 172, 255);
+  --ds-decorative-green: rgb(63, 186, 149);
+  --ds-decorative-grey: rgb(150, 167, 176);
+  --ds-decorative-orange: rgb(237, 137, 45);
+  --ds-decorative-purple: rgb(193, 142, 250);
+  --ds-decorative-red: rgb(255, 115, 133);
+  --ds-decorative-yellow: rgb(209, 158, 27);
+
+  /* Borders */
+  --ds-border-neutral-quiet: rgba(25, 29, 33, 0.1);
+  --ds-border-neutral-standard: rgba(129, 145, 158, 0.5);
+  --ds-border-brand-standard: rgba(0, 158, 170, 0.95);
+  --ds-border-danger-standard: rgba(245, 88, 112, 0.95);
+  --ds-border-positive-standard: rgba(26, 162, 122, 0.95);
+  --ds-border-warning-standard: rgba(219, 116, 22, 0.95);
+
+  /* Oddity */
+  --ds-focus: rgb(12, 125, 140);
+  --ds-overlay: rgba(33, 37, 41, 0.24);
+  --ds-oddity-brand: rgb(9, 54, 63);
+  --ds-password-digits: rgb(0, 112, 191);
+  --ds-password-symbols: rgb(178, 87, 41);
+
+  /* Chart palette (base shades) */
+  --ds-chart-aquamarine: rgb(83, 163, 162);
+  --ds-chart-cherry: rgb(237, 109, 100);
+  --ds-chart-indigo: rgb(136, 143, 235);
+  --ds-chart-magenta: rgb(222, 104, 204);
+  --ds-chart-moss: rgb(150, 153, 98);
+  --ds-chart-ochre: rgb(199, 137, 56);
+
+  /* --- Radii (Dashlane uses tight 4px) --- */
+  --ds-radius-xs: 2px;
+  --ds-radius-sm: 4px;     /* buttons, inputs */
+  --ds-radius-md: 8px;     /* cards */
+  --ds-radius-lg: 12px;    /* dialogs */
+  --ds-radius-pill: 999px;
+
+  /* --- Spacing scale (4px base) --- */
+  --ds-space-1: 4px;
+  --ds-space-2: 8px;
+  --ds-space-3: 12px;
+  --ds-space-4: 16px;
+  --ds-space-5: 24px;
+  --ds-space-6: 32px;
+  --ds-space-7: 48px;
+  --ds-space-8: 64px;
+
+  /* --- Elevation / shadows (subtle, short-distance) --- */
+  --ds-shadow-sm: 0 1px 2px rgba(137, 138, 141, 0.16);
+  --ds-shadow-md: 0 2px 8px rgba(137, 138, 141, 0.18), 0 1px 2px rgba(0,0,0,0.06);
+  --ds-shadow-lg: 0 8px 24px rgba(137, 138, 141, 0.24), 0 2px 6px rgba(0,0,0,0.08);
+  --ds-shadow-dialog: 0 16px 48px rgba(0, 0, 0, 0.24);
+
+  /* --- Motion --- */
+  --ds-ease: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --ds-duration-fast: 150ms; /* @kind other */
+  --ds-duration-med: 220ms; /* @kind other */
+}
+
+/* Dark theme — opt in with [data-theme="dark"] */
+[data-theme='dark'] {
+  --ds-background-default: rgb(25, 29, 33);
+  --ds-background-alternate: rgb(25, 29, 33);
+  --ds-container-neutral-quiet: rgb(27, 32, 36);
+  --ds-container-neutral-standard: rgb(36, 42, 46);
+  --ds-container-neutral-supershy: rgb(33, 37, 41);
+  --ds-container-inverse-standard: rgb(36, 42, 46);
+  --ds-text-neutral-catchy: rgb(246, 249, 250);
+  --ds-text-neutral-standard: rgba(241, 244, 246, 0.9);
+  --ds-text-neutral-quiet: rgba(150, 167, 176, 0.85);
+  --ds-text-brand-standard: rgb(122, 199, 207);
+  --ds-text-brand-quiet: rgb(0, 158, 170);
+  --ds-border-neutral-quiet: rgba(246, 249, 250, 0.1);
+  --ds-border-neutral-standard: rgba(98, 114, 128, 0.5);
+  --ds-overlay: rgba(25, 29, 33, 0.86);
+}
+
+/* ==================================================================
+   TYPOGRAPHY — semantic classes matching DS tokens
+   ================================================================== */
+
+body {
+  font-family: var(--ds-font-body);
+  color: var(--ds-text-neutral-standard);
+  background: var(--ds-background-default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ds.specialty.brand — GT Walsheim Pro, display */
+.ds-specialty-brand-large {
+  font-family: var(--ds-font-heading);
+  font-weight: 500;
+  font-size: 110px;
+  line-height: 110px;
+  letter-spacing: -0.02em;
+}
+.ds-specialty-brand-medium {
+  font-family: var(--ds-font-heading);
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 64px;
+  letter-spacing: -0.02em;
+}
+.ds-specialty-brand-small {
+  font-family: var(--ds-font-heading);
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+}
+
+/* ds.specialty.monospace */
+.ds-specialty-mono-large {
+  font-family: var(--ds-font-mono);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 64px;
+  letter-spacing: -0.03em;
+}
+.ds-specialty-mono-medium {
+  font-family: var(--ds-font-mono);
+  font-weight: 400;
+  font-size: 37px;
+  line-height: 42px;
+  letter-spacing: -0.03em;
+}
+.ds-specialty-mono-small {
+  font-family: var(--ds-font-mono);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+}
+
+/* ds.specialty.spotlight */
+.ds-specialty-spotlight-large { font-family: var(--ds-font-body); font-weight: 400; font-size: 64px; line-height: 64px; }
+.ds-specialty-spotlight-medium { font-family: var(--ds-font-body); font-weight: 400; font-size: 37px; line-height: 42px; }
+.ds-specialty-spotlight-small { font-family: var(--ds-font-body); font-weight: 400; font-size: 26px; line-height: 30px; }
+
+/* ds.title */
+.ds-title-section-large  { font-family: var(--ds-font-body); font-weight: 500; font-size: 31px; line-height: 36px; letter-spacing: -0.02em; }
+.ds-title-section-medium { font-family: var(--ds-font-body); font-weight: 500; font-size: 22px; line-height: 28px; letter-spacing: -0.01em; }
+.ds-title-block-medium   { font-family: var(--ds-font-body); font-weight: 500; font-size: 16px; line-height: 20px; }
+.ds-title-block-small    { font-family: var(--ds-font-body); font-weight: 500; font-size: 14px; line-height: 18px; }
+.ds-title-supporting-small {
+  font-family: var(--ds-font-body);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ds.body */
+.ds-body-standard-regular { font-family: var(--ds-font-body); font-weight: 400; font-size: 15px; line-height: 20px; }
+.ds-body-standard-strong  { font-family: var(--ds-font-body); font-weight: 600; font-size: 15px; line-height: 20px; }
+.ds-body-standard-link    { font-family: var(--ds-font-body); font-weight: 400; font-size: 15px; line-height: 20px; text-decoration: underline; }
+.ds-body-standard-mono    { font-family: var(--ds-font-mono); font-weight: 400; font-size: 15px; line-height: 20px; letter-spacing: -0.02em; }
+.ds-body-reduced-regular  { font-family: var(--ds-font-body); font-weight: 400; font-size: 13px; line-height: 18px; }
+.ds-body-reduced-strong   { font-family: var(--ds-font-body); font-weight: 600; font-size: 13px; line-height: 18px; }
+.ds-body-reduced-mono     { font-family: var(--ds-font-mono); font-weight: 400; font-size: 13px; line-height: 18px; letter-spacing: -0.02em; }
+.ds-body-helper-regular   { font-family: var(--ds-font-body); font-weight: 400; font-size: 11px; line-height: 12px; }
+
+/* ds.component */
+.ds-component-button-standard { font-family: var(--ds-font-body); font-weight: 500; font-size: 15px; line-height: 18px; }
+.ds-component-button-small    { font-family: var(--ds-font-body); font-weight: 500; font-size: 13px; line-height: 14px; }
+.ds-component-link-standard   { font-family: var(--ds-font-body); font-weight: 500; font-size: 15px; line-height: 18px; }
+.ds-component-link-reduced    { font-family: var(--ds-font-body); font-weight: 500; font-size: 13px; line-height: 14px; }
+.ds-component-badge-standard {
+  font-family: var(--ds-font-body);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
