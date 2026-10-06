@@ -226,9 +226,11 @@ class Component extends DCLogic {
     }, saved || {}, { presenting: false, vw: window.innerWidth, syncOpen: false, tokenDraft: '', syncMsg: this.syncCfg().token ? 'Not synced yet' : 'Sync is off — scripts stay on this device' });
   }
   colRef = React.createRef();
-  componentDidMount() { window.addEventListener('keydown', this.onKey); window.addEventListener('resize', this.onResize); document.addEventListener('visibilitychange', this.onVisible); this.sync(); }
+  componentDidMount() { window.addEventListener('keydown', this.onKey); window.addEventListener('resize', this.onResize); document.addEventListener('visibilitychange', this.onVisible); this.prev = this.state; this.sync(); }
   componentWillUnmount() { window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); document.removeEventListener('visibilitychange', this.onVisible); clearTimeout(this.syncTimer); this.setLock(false); }
-  componentDidUpdate(_, prev) {
+  componentDidUpdate() {
+    // the runtime passes prevProps, not prevState, so keep our own snapshot
+    const prev = this.prev || {}; this.prev = this.state;
     const { presenting, vw, syncMsg, syncOpen, tokenDraft, ...rest } = this.state;
     localStorage.setItem(KEY, JSON.stringify(rest));
     if (presenting !== prev.presenting) this.setLock(presenting);
