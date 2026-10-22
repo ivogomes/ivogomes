@@ -91,7 +91,7 @@ const IVO_DATA = {
       year: "2023 — Present",
       role: "Director of Product Design",
       tag: "Design System · Multi-platform",
-      blurb: "From 5 components with low adoption, to a multi-platform system covering 95%+ of every page across Figma, Web, iOS and Android.",
+      blurb: "From 5 components with low adoption, to a multi-platform system covering 95%+ of every page across Figma, Web, iOS and Android — and now being adapted for AI agents alongside humans.",
       tileColor: "#E8553D",  // terracotta
       tileInk: "#FFF8E8",
       initials: "DS",
@@ -363,7 +363,7 @@ const IVO_DATA = {
       workId: "earlier",
       company: "Personal",
       title: "MyTVShows",
-      year: "2007 — 2016",
+      year: "2007 — 2014",
       role: "Founder / Everything",
       tag: "Pet project · Full-stack",
       blurb: "A place to track the TV shows you were watching, years before Trakt.tv. Built the whole thing solo: UI, UX, PHP, HTML/CSS, JS.",
