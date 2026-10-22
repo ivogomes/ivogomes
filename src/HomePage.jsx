@@ -80,7 +80,7 @@ function EditorialDirection({ data, onOpenProject }) {
           </h1>
           <p className="ed-hero-tagline">
             I'm a product design leader based in Lisbon. These days I'm Director of Product Design at{" "}
-            <a href="https://dashlane.com" target="_blank" rel="noopener noreferrer">Dashlane</a>, where we're making the internet a safer place — one credential at a time.
+            <a href="https://dashlane.com" target="_blank" rel="noopener noreferrer">Dashlane</a>, where we're building a safer internet for millions of people — and rethinking how design gets done with AI.
           </p>
         </div>
 

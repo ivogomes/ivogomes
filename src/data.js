@@ -13,12 +13,10 @@ const IVO_DATA = {
       role: "Director of Product Design",
       summary: "Leading the End-User (B2C and B2B) and Platform (Design System, UX Architecture) teams. Part of the product-engineering-design triad setting vision, direction, and roadmap for Dashlane.",
       highlights: [
-        "Building a safer internet by protecting millions of users from phishing, cyber threats, and data breaches through intuitive, security-first experiences.",
-        "Driving end-to-end design strategy, balancing complex security requirements with seamless user experience.",
+        "Driving end-to-end design strategy to protect millions of users from phishing, cyber threats, and data breaches — balancing complex security requirements with seamless, security-first experiences.",
+        "Spearheading the AI transformation across Product & Design — redefining how we work, accelerating design workflows, and integrating AI into the core of the product development cycle. Led a shared skills repository, with a collaboration system, used across product, research, design, marketing, and CX.",
         "Scaled the Design System from 5 low-adoption components to a multi-platform library covering 95%+ of product needs — across Figma, Web, iOS, and Android.",
-        "Shifted the team from silo'd designers into a shared practice: regular critiques, design studio hours, and cross-triad pair designing.",
-        "Spearheading the AI transformation across Product & Design — redefining how we work, accelerating design workflows, and integrating AI into the core of the product development cycle.",
-        "Driving horizontal initiatives across accessibility, localisation, and automation."
+        "Shifted the team from silo'd designers into a shared practice: regular critiques, design studio hours, and cross-triad pair designing — plus horizontal initiatives across accessibility, localisation, and automation."
       ]
     },
     {
@@ -128,6 +126,31 @@ const IVO_DATA = {
         { h: "Context", p: "Designers were spending too much time reinventing UI and not enough time solving problems. Without shared components or a common craft baseline, every feature started from scratch — inconsistency crept in and velocity suffered." },
         { h: "Approach", p: "I focused on three levers: raising the technical floor through targeted Figma coaching, deploying a Design System that made consistent, production-ready UI the path of least resistance, and creating recurring spaces — Round Tables and pair-design sessions — where the team could teach each other and stay aligned." },
         { h: "What I did", p: "Ran hands-on Figma workshops to close skill gaps across the team. Led the Design System rollout: component architecture, documentation, and adoption strategy. Established Round Tables as a weekly ritual for sharing patterns, critiquing work, and surfacing knowledge that would otherwise stay siloed. The result: designers moved faster, output was more consistent, and new features required far less rework." }
+      ]
+    },
+    {
+      id: "dashlane-ai",
+      workId: "dashlane",
+      company: "Dashlane",
+      title: "AI Transformation",
+      year: "2023 — Present",
+      role: "Director of Product Design",
+      tag: "AI · Design process",
+      blurb: "Experimenting with different ways to bring AI into the design process — from faster discovery to designing directly in code.",
+      tileColor: "#1F7A8C",  // teal
+      tileInk: "#E6F7FA",
+      initials: "AI",
+      tileImg: "",
+      tileImgThumb: "",
+      sections: [
+        { h: "Context", p: "I'm spearheading the AI transformation across Dashlane's Product & Design organization. The goal isn't to add AI for its own sake, but to understand where it genuinely changes how we work — and where it doesn't." },
+        { h: "Approach", p: "We experimented with several ways of including AI in the design process, instead of betting on a single tool or workflow up front. Designers tried different setups on real work, and we compared what held up in practice." },
+        { h: "Discovery", p: "This is where AI has already proven to be an excellent help. It supports the planning of research and, above all, the aggregation and digestion of results — turning a pile of notes, transcripts and feedback into something we can act on, much faster than before." },
+        { h: "Designing in code", p: "Some of our designers are already \"designing\" directly in code, skipping Figma altogether. It's a big shift in how a design gets made, and it taught us a lot about what designers need from their tools." },
+        { h: "What's working best", p: "For now, the most successful option is a hybrid. We use AI to clone the product repository into a local copy, with branches, that designers can work on freely. Alongside it, we still do some parts in Figma — for visual alignment and consistency — and use them as a reference for what we want the prototype to look like." },
+        { h: "Testing with users", p: "Prototypes built this way are much faster to put in front of users. We test with both real and synthetic users, but we still prefer the real ones." },
+        { h: "Shipping faster", p: "The results of the last few months show we can build new features and improve the UX — including paying down UX debt — extremely fast. Improvements that had been sitting in the drawer since 2023 are finally being implemented in a matter of weeks, especially the ones that only involve the front-end." },
+        { h: "Skills for everyone", p: "I also led the creation and distribution of AI skills across the whole product area, not just design. We built a shared repository of skills for several disciplines — product, research, design, marketing, and CX — and a collaboration system so anyone can create new skills and share them with the rest of the team." }
       ]
     },
     {
