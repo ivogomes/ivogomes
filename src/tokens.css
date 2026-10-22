@@ -1,4 +1,4 @@
-/* Soft teal-tinted neutrals — shared across all three directions */
+/* Warm grey neutrals — shared across all three directions */
 :root {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: Georgia, serif;
@@ -11,20 +11,20 @@
   --z-above: 2;
   --z-hero: 3;
   --z-modal: 1000;
-  --cream: #EAF4F2; /* very pale tint of the hero teal */
-  --cream-2: #DCEBE8;
-  --paper: #F8FCFB;
-  --ink: #16181C;
-  --ink-soft: #23262B;
-  --text: #16181C;
-  --text-muted: #4B5B59;
-  --text-quiet: #4F5F5D;
-  --rule: #16181C20;
-  --rule-strong: #16181C50;
+  --cream: #EEECE9; /* light warm grey */
+  --cream-2: #E2E0DC;
+  --paper: #FAF9F7;
+  --ink: #1C1B19;
+  --ink-soft: #292826;
+  --text: #1C1B19;
+  --text-muted: #5A5753;
+  --text-quiet: #5E5B57;
+  --rule: #1C1B1920;
+  --rule-strong: #1C1B1950;
   --accent: #C8361A; /* vivid vermillion */
   --bg: var(--cream);
   --surface: var(--paper);
-  --shadow: 0 1px 0 #16181C10;
+  --shadow: 0 1px 0 #1C1B1910;
 }
 
 @media (prefers-color-scheme: dark) {

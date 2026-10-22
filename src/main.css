@@ -809,17 +809,17 @@ a:hover { color: var(--accent); }
   overflow: hidden;
   margin-top: 28px;
   padding: 12px 24px;
-  background: var(--ink);
-  color: var(--bg);
+  background: #5BBFB5;  /* hero teal */
+  color: #16181C;
   font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.04em;
   text-decoration: none;
   border-radius: var(--radius);
-  transition: opacity 0.2s;
+  transition: background 0.2s;
 }
-.pp-download-btn:hover { opacity: 0.88; color: var(--bg); }
+.pp-download-btn:hover { background: #1F7A8C; color: #fff; }  /* deeper teal */
 .pp-download-btn::after {
   content: '';
   position: absolute;
