@@ -101,13 +101,13 @@ function EditorialDirection({ data, onOpenProject }) {
 
       <main className="ed-wrap" id="bio">
         <p className="ed-bio-intro">
-          I'm passionate about minimalist, functional design — the kind where nothing's out of place and everything earns its spot.
+          I'm passionate about minimalist, functional design and building intuitive software that solves complex human and enterprise problems at scale.
         </p>
 
         <div className="ed-bio">
-            <p>Today I lead the Product Design team at <a href="https://dashlane.com" target="_blank" rel="noopener noreferrer">Dashlane</a>, where we're making the internet a safer place by protecting companies and individuals' credentials and secrets from breaches and phishing. Before that, I helped grow <a href="https://talkdesk.com" target="_blank" rel="noopener noreferrer">Talkdesk</a>'s design team from 4 to nearly 70, and helped build Cobalt — their design system — from scratch.</p>
-            <p>I'm a fan of design systems, a sometime speaker and mentor, and I still like to get my hands dirty with the code when the mood strikes. I also represent Dashlane in the <a href="https://fidoalliance.org" target="_blank" rel="noopener noreferrer">FIDO Alliance</a>'s UX Working Group, helping shape the experience of passkeys and the shift away from passwords.</p>
-            <p>Lately I've been exploring how AI is shifting the way we design and build products, and how to make the most of it while keeping the human touch.</p>
+            <p>Today I lead a team of product designers at <a href="https://dashlane.com" target="_blank" rel="noopener noreferrer">Dashlane</a>, where our mission is to build a safer internet by protecting millions of users and organizations from phishing, cyber threats, and data breaches. Beyond product strategy, I'm spearheading the AI transformation across our Product &amp; Design organization — redefining how we work, accelerating design workflows, and integrating AI into the core of our product development cycle.</p>
+            <p>From founding a startup to leading design teams at scale at <a href="https://talkdesk.com" target="_blank" rel="noopener noreferrer">Talkdesk</a> and Dashlane, I've kept a deep commitment to design efficiency and operational excellence. As a design systems advocate, I've co-built and scaled multi-platform design systems from scratch, so design and engineering teams can focus on high-impact user experiences rather than baseline UI mechanics.</p>
+            <p>I also represent Dashlane in the <a href="https://fidoalliance.org" target="_blank" rel="noopener noreferrer">FIDO Alliance</a>'s UX Working Group, helping shape the global future of passwordless authentication (passkeys). I occasionally mentor, lead workshops, and speak at industry events on UX, design leadership, and human-centered security.</p>
         </div>
 
         <h2 className="ed-section-label" id="work">Work</h2>

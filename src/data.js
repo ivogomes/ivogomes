@@ -11,11 +11,14 @@ const IVO_DATA = {
       company: "Dashlane",
       years: "2023 — Present",
       role: "Director of Product Design",
-      summary: "Leading the End-User (B2C and B2B) and Platform (Design System, UX Architecture) teams. Part of the product-engineering-design triad setting vision and strategy for Dashlane.",
+      summary: "Leading the End-User (B2C and B2B) and Platform (Design System, UX Architecture) teams. Part of the product-engineering-design triad setting vision, direction, and roadmap for Dashlane.",
       highlights: [
+        "Building a safer internet by protecting millions of users from phishing, cyber threats, and data breaches through intuitive, security-first experiences.",
+        "Driving end-to-end design strategy, balancing complex security requirements with seamless user experience.",
         "Scaled the Design System from 5 low-adoption components to a multi-platform library covering 95%+ of product needs — across Figma, Web, iOS, and Android.",
         "Shifted the team from silo'd designers into a shared practice: regular critiques, design studio hours, and cross-triad pair designing.",
-        "Driving horizontal initiatives across accessibility, localisation, automation, and AI."
+        "Spearheading the AI transformation across Product & Design — redefining how we work, accelerating design workflows, and integrating AI into the core of the product development cycle.",
+        "Driving horizontal initiatives across accessibility, localisation, and automation."
       ]
     },
     {
@@ -23,19 +26,21 @@ const IVO_DATA = {
       company: "FIDO Alliance",
       years: "2025 — Present",
       role: "UX Working Group · Member",
-      summary: "Representing Dashlane in the FIDO Alliance's UX Working Group, which works on the experience of adopting and implementing passkeys.",
+      summary: "Representing Dashlane in the FIDO Alliance's UX Working Group and helping drive the global user experience strategy for passkeys and passwordless authentication.",
       highlights: [
+        "Collaborating with global tech leaders to establish universal UX/UI standards that make secure, passwordless authentication frictionless and intuitive for consumers and enterprises alike.",
         "Running usability research and writing design guidelines that reduce reliance on passwords and smooth the transition to passwordless authentication."
       ]
     },
     {
       id: "talkdesk",
       company: "Talkdesk",
-      years: "2017 — 2023",
-      role: "Senior Product Designer → Director of Product Design",
+      years: "2017 — 2022",
+      role: "Senior Product Designer → Lead → Associate Director → Director of Product Design",
       summary: "Led the CCaaS (Contact Center as a Service) design team with 11 direct reports. Helped grow the wider design org from 4 to nearly 70 designers across multiple locations around the world.",
       highlights: [
-        "Lead designer on Talkdesk's agent experience — the web/desktop app used daily by contact-center agents for calls, voicemails, and activity.",
+        "Lead designer on Talkdesk's agent experience — the web/desktop app used daily by contact-center agents for calls, voicemails, and activity — and later led the UX/UI architecture of Talkdesk Workspace across the Agent cluster.",
+        "Partnered with Product and Engineering directors to align design with the wider CCaaS strategy, scaling team capabilities, design ops, and design standards.",
         "Built Cobalt, Talkdesk's design system, from scratch — wrote early HTML/CSS for components to get accessibility right from the start.",
         "Extensive field research: shadowing agents in contact centers to understand their real workflows and pain points."
       ]
@@ -56,7 +61,7 @@ const IVO_DATA = {
       id: "sapo",
       company: "SAPO / Portugal Telecom",
       years: "2009 — 2016",
-      role: "Head of UX & QA",
+      role: "UX Designer → Head of UX & QA",
       summary: "Led the UX and QA team at Portugal's most-visited website. Worked across web, mobile, and IPTV (MEO TV) on both B2C and B2B products for Portugal Telecom.",
       highlights: [
         "Owned UX and accessibility for SAPO.PT and all its subportals (sports, news, videos, blogs) from 2009 to 2015.",
@@ -130,7 +135,7 @@ const IVO_DATA = {
       workId: "talkdesk",
       company: "Talkdesk",
       title: "Agent Experience",
-      year: "2017 — 2023",
+      year: "2017 — 2022",
       role: "Senior Product Designer",
       tag: "Core product · Framework",
       blurb: "The web/desktop app contact-center agents use every day. Designed as a framework that extends with first-party or third-party add-ons.",
@@ -158,7 +163,7 @@ const IVO_DATA = {
       workId: "talkdesk",
       company: "Talkdesk",
       title: "Cobalt — Talkdesk Design System",
-      year: "2017 — 2023",
+      year: "2017 — 2022",
       role: "Senior Product Designer",
       tag: "Design System · Framework",
       blurb: "Built Talkdesk's design system from the ground up. In the early days, also hand-wrote HTML/CSS for the components to nail accessibility.",
@@ -185,7 +190,7 @@ const IVO_DATA = {
       workId: "talkdesk",
       company: "Talkdesk",
       title: "From startup to decacorn",
-      year: "2017 — 2023",
+      year: "2017 — 2022",
       role: "Director of Product Design",
       tag: "Leadership · Hypergrowth",
       blurb: "Talkdesk went from scrappy startup to $10B company in under five years. I helped build the design org that scaled alongside it — from 4 designers to almost 70, across multiple cities on three continents.",
