@@ -120,8 +120,8 @@ const IVO_DATA = {
       tileColor: "#F0A830",  // amber
       tileInk: "#2A1A08",
       initials: "Craft",
-      tileImg: "",
-      tileImgThumb: "",
+      tileImg: "assets/projects/dashlane-efficiency.svg",  // abstract, 1600x1000
+      tileImgThumb: "assets/projects/dashlane-efficiency.svg",
       sections: [
         { h: "Context", p: "Designers were spending too much time reinventing UI and not enough time solving problems. Without shared components or a common craft baseline, every feature started from scratch — inconsistency crept in and velocity suffered." },
         { h: "Approach", p: "I focused on three levers: raising the technical floor through targeted Figma coaching, deploying a Design System that made consistent, production-ready UI the path of least resistance, and creating recurring spaces — Round Tables and pair-design sessions — where the team could teach each other and stay aligned." },
@@ -140,8 +140,8 @@ const IVO_DATA = {
       tileColor: "#1F7A8C",  // teal
       tileInk: "#E6F7FA",
       initials: "AI",
-      tileImg: "",
-      tileImgThumb: "",
+      tileImg: "assets/projects/dashlane-ai.svg",  // abstract, 1600x1000
+      tileImgThumb: "assets/projects/dashlane-ai.svg",
       sections: [
         { h: "Context", p: "I'm spearheading the AI transformation across Dashlane's Product & Design organization. The goal isn't to add AI for its own sake, but to understand where it genuinely changes how we work — and where it doesn't." },
         { h: "Approach", p: "We experimented with several ways of including AI in the design process, instead of betting on a single tool or workflow up front. Designers tried different setups on real work, and we compared what held up in practice." },
