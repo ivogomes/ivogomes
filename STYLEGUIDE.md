@@ -68,6 +68,8 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 - Text input, search, select, textarea: 1px `--rule-strong` border, 2px radius, `--paper` bg, `--text`, Inter 13px. Focus: border turns `--accent` and the focus ring shows.
 - Checkbox and radio: native control with `accent-color: var(--accent)`, 14px, pointer cursor, always with a text label.
 - Toggle: square 48 x 28 track, `--button-teal` when on, muted when off, `--paper` thumb. Teleprompter: `.tp-switch` (a checkbox with `role="switch"`).
+- Expandable group for secondary options: a native `<details>` whose summary is a link-style row with a chevron (`--accent` text), reading "More …" when closed and "Fewer …" when open. Teleprompter: `.tp-more`.
+- Segmented choice (a few mutually exclusive options, such as the Teleprompter font): a joined row of buttons in one 1px `--rule-strong` frame. The chosen one is `--button-teal` with `--button-teal-ink` text, set with `aria-pressed`. Teleprompter: `.tp-seg` and `.tp-seg-btn`.
 - Slider: 4px track, square thumb in `--button-teal` ringed in `--paper`. Teleprompter: `.tp-range`.
 - Labels sit above or beside the control, never as placeholder-only.
 
@@ -80,6 +82,7 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 
 ## Tool header and logo
 
+- The tool header is sticky (`position: sticky; top: 0`) so it stays on screen while the page scrolls, and sits below any full-screen layer (z-index 5).
 - Every tool starts with `.tool-header`: `--tool-header-bg` background (soft teal, deep teal in dark mode), `--tool-header-ink` text, min height 72px, 40px side padding (16px on small screens), logo at the left, page controls at the right.
 - Under the header, a tool can have a secondary toolbar (`.tool-toolbar`: `--cream-2` background, 12px 40px padding, 10px gaps) for settings and status. The Teleprompter keeps its sync controls there, Present sits in the header, and deleting a script is an icon on each row of the script list (visible on hover, focus and touch).
 - The logo is a 24px flat ink square carrying the tool's glyph. Its lines take the surface behind it (`--mark-ground`) and one block in `--tool-teal`. The name sits beside it in Georgia 22px.
