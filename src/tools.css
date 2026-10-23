@@ -1,19 +1,39 @@
 /* ── Tools index ─────────────────────────────────────────────── */
 .tools-list {
   list-style: none;
-  margin: 48px auto 0;
-  padding: 0 24px;
-  max-width: 720px;
+  margin: 48px 0 0;
+  padding: 0;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
+@media (max-width: 40rem) {
+  .tools-list { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* the teaser card: a dashed outline marks it as a placeholder, not a tool. It isn't a link, so it
+   has no hover or focus state. */
+.tools-card--next,
+.tools-card--next:hover {
+  --mark-ground: var(--cream);
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--rule-strong);
+  cursor: default;
+}
+
+.tools-card--next .tools-card-icon { color: var(--text-muted); }
+
+/* every card in a row is as tall as the tallest */
+.tools-list > li { display: flex; }
+
 .tools-card {
-  display: grid;
-  grid-template-columns: 48px 1fr;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
   gap: 20px;
-  align-items: start;
-  padding: 22px 24px;
+  padding: 24px;
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: var(--radius);

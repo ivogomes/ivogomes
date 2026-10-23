@@ -82,6 +82,7 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 
 ## Tool header and logo
 
+- The Tools page (`tools/index.html`) is a grid of two columns (one on phones, below 40rem): one card per tool, wrapping onto new rows as tools are added. A card is an icon tile, a Georgia title and a short description. To add a tool, copy an existing `<li>` and keep the list in the order you want shown; the dashed "More on the way, maybe" teaser (`.tools-card--next`) is a plain `<div>`, not a link, and stays last.
 - The tool header is sticky (`position: sticky; top: 0`) so it stays on screen while the page scrolls, and sits below any full-screen layer (z-index 5).
 - Every tool starts with `.tool-header`: `--tool-header-bg` background (soft teal, deep teal in dark mode), `--tool-header-ink` text, min height 72px, 40px side padding (16px on small screens), logo at the left, page controls at the right.
 - Under the header, a tool can have a secondary toolbar (`.tool-toolbar`: `--cream-2` background, 12px 40px padding, 10px gaps) for settings and status. The Teleprompter keeps its sync controls there, Present sits in the header, and deleting a script is an icon on each row of the script list (visible on hover, focus and touch).

@@ -4097,6 +4097,9 @@ applyTheme();
 const PRO_KEY = "tennisTracker.pro";
 const TRIAL_KEY = "tennisTracker.trialGames";
 const TRIAL_LIMIT = 3;
+/* The Pro unlock exists only in the store apps. The web version is free for everyone: no trial, no paywall,
+   no Pro pill or banner. (The native builds copy this file, so the native behaviour is unchanged.) */
+const PRO_ENABLED = IS_NATIVE;
 /* The price is set per-region in the App Store / Play Console, so we never hard-code one — it stays
    null until the store hands us a localized priceString, and the button reads "Unlock Pro" until then. */
 let proPriceString = null;
@@ -4110,7 +4113,7 @@ try { trialUsed = parseInt(localStorage.getItem(TRIAL_KEY), 10) || 0; } catch (e
 
 function trialRemaining() { return Math.max(0, TRIAL_LIMIT - trialUsed); }
 function trialActive() { return !proOwned && trialRemaining() > 0; }
-function isPro() { return proOwned || trialActive(); }          // may start a match (owned or trial left)
+function isPro() { return !PRO_ENABLED || proOwned || trialActive(); }          // may start a match (owned or trial left)
 
 /* Purchase layer — backed by a hand-rolled native plugin (Cap.Plugins.Billing): BillingPlugin.java
    wraps Google Play Billing Library directly on Android, BillingPlugin.swift wraps StoreKit 2 on
@@ -4178,7 +4181,7 @@ function grantPro() {
 
 // Called once when a match completes (from render). Every completed game counts toward the trial.
 function consumeTrialGame() {
-  if (proOwned) return;
+  if (!PRO_ENABLED || proOwned) return;
   if (!(match.rallies > 0)) return;          // don't burn a game on an empty finish
   if (trialRemaining() <= 0) return;
   trialUsed++;
@@ -4193,6 +4196,7 @@ const paywallModal = el("paywallModal");
 // Apple Watch pairs only with iPhone; Wear OS only with Android — so name the right one per platform.
 function appPlatform() { try { return (Cap && Cap.getPlatform) ? Cap.getPlatform() : "web"; } catch (e) { return "web"; } }
 function openPaywall() {
+  if (!PRO_ENABLED) return;
   el("paywallSub").textContent = t("pro_sub_default");
   el("paywallBuy").textContent = unlockLabel();
   const plat = appPlatform();
@@ -4239,6 +4243,10 @@ el("paywallRestore").addEventListener("click", async () => {
 
 // Reflect trial/entitlement status in the home pill and the settings banner.
 function refreshProUI() {
+  if (!PRO_ENABLED) {   // web: nothing to upsell
+    for (const id of ["proPill", "proBanner", "logoPro"]) { const n = el(id); if (n) n.hidden = true; }
+    return;
+  }
   const pill = el("proPill");
   if (pill) {
     if (proOwned) { pill.hidden = true; }
