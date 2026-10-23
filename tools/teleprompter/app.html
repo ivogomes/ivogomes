@@ -24,7 +24,11 @@
 </svg>
     <span class="tool-logo-text">Teleprompter</span>
   </h1>
-  <div class="tp-sync">
+  <div class="tp-actions">
+    <button type="button" class="tp-btn btn-primary" onClick="{{ present }}">Present</button>
+  </div>
+</header>
+  <div class="tool-toolbar">
     <div class="tp-sync-status" role="status" aria-live="polite">{{ syncMsg }}</div>
     <sc-if value="{{ showSetup }}" hint-placeholder-val="{{ true }}">
       <button type="button" class="tp-btn tp-btn--secondary" onClick="{{ openSetup }}">Set up sync</button>
@@ -39,7 +43,6 @@
       <button type="button" class="tp-btn tp-btn--secondary" onClick="{{ disconnect }}">Disconnect</button>
     </sc-if>
   </div>
-</header>
 <div class="tp-shell" style="min-height:100vh; display:grid; grid-template-columns:240px minmax(0,1fr); font-family:var(--font-sans); color:var(--text); background:var(--cream);">
   <aside class="tp-side" style="background:var(--paper); border-right:1px solid var(--rule-strong); padding:24px 16px; display:flex; flex-direction:column; gap:16px;">
     <div style="display:flex; flex-direction:column; gap:4px; padding:0 8px;">
@@ -48,12 +51,17 @@
     <div style="display:flex; flex-direction:column; gap:2px;">
       <div style="font-size:12px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:var(--text-muted); padding:8px 8px 4px;">Scripts</div>
       <sc-for list="{{ scriptList }}" as="s" hint-placeholder-count="2">
-        <button onClick="{{ s.select }}" style="all:unset; cursor:pointer; display:flex; flex-direction:column; gap:2px; padding:10px 12px; border-radius:var(--radius); background:{{ s.bg }}; transition:background 180ms cubic-bezier(0.2,0,0,1);" style-hover="background:color-mix(in srgb, var(--accent) 8%, transparent)">
-          <span style="font-size:14px; font-weight:{{ s.weight }}; color:{{ s.color }}; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ s.title }}</span>
-          <span style="font-size:12px; color:var(--text-muted);">{{ s.meta }}</span>
-        </button>
+        <div class="tp-script-row" style="background:{{ s.bg }}; transition:background 180ms cubic-bezier(0.2,0,0,1);" style-hover="background:color-mix(in srgb, var(--accent) 8%, transparent)">
+          <button type="button" class="tp-script-select" onClick="{{ s.select }}">
+            <span style="font-size:14px; font-weight:{{ s.weight }}; color:{{ s.color }}; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ s.title }}</span>
+            <span style="font-size:12px; color:var(--text-muted);">{{ s.meta }}</span>
+          </button>
+          <button type="button" class="tp-script-remove" onClick="{{ s.remove }}" disabled="{{ cantDelete }}" aria-label="{{ s.removeLabel }}" title="Delete script">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13"/></svg>
+          </button>
+        </div>
       </sc-for>
-      <div class="tp-new-script">
+      <div class="tp-list-actions">
         <button type="button" class="tp-btn tp-btn--secondary tp-btn--block" onClick="{{ newScript }}">New script</button>
       </div>
     </div>
@@ -62,10 +70,6 @@
   <main class="tp-main" style="padding:32px; display:flex; flex-direction:column; gap:24px; min-width:0;">
     <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
       <input class="tp-title" value="{{ title }}" onChange="{{ onTitle }}" placeholder="Untitled script" aria-label="Script title" style="flex:1 1 280px; min-width:0; font-family:var(--font-serif); font-size:28px; font-weight:400; letter-spacing:-0.015em; color:var(--text); background:transparent; border:1px solid transparent; border-radius:var(--radius); padding:4px 8px; margin-left:-8px;" style-hover="border-color:var(--rule-strong)">
-      <div style="display:flex; gap:8px; align-items:center;">
-        <button type="button" class="tp-btn tp-btn--danger" onClick="{{ deleteScript }}" disabled="{{ cantDelete }}">Delete</button>
-        <button type="button" class="tp-btn btn-primary" onClick="{{ present }}">Present</button>
-      </div>
     </div>
 
     <div class="tp-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; align-items:start;">
@@ -238,7 +242,7 @@ class Component extends DCLogic {
     super(p);
     let saved = null;
     try { saved = JSON.parse(localStorage.getItem(KEY)); } catch (e) {}
-    const first = { id: uid(), title: 'Lobsters at DashHack', text: SEED, updated: Date.now() };
+    const first = { id: uid(), title: 'Example Script', text: SEED, updated: Date.now() };
     this.state = Object.assign({
       scripts: [first], activeId: first.id,
       settings: { size: 72, bg: 'dark', mirror: false, showNext: true },
@@ -390,16 +394,17 @@ class Component extends DCLogic {
         title: s.title || 'Untitled script',
         meta: `${parse(s.text).filter(p => p.type === 'line').length} lines`,
         bg: s.id === a.id ? 'color-mix(in srgb, var(--accent) 12%, transparent)' : 'transparent',
-        color: s.id === a.id ? 'var(--ink)' : 'rgba(42,49,56,0.92)',
+        color: s.id === a.id ? 'var(--ink)' : 'var(--ink-soft)',
         weight: s.id === a.id ? 600 : 400,
-        select: () => this.setState({ activeId: s.id })
+        select: () => this.setState({ activeId: s.id }),
+        removeLabel: `Delete “${s.title || 'Untitled script'}”`,
+        remove: () => {
+          if (scripts.length < 2 || !confirm(`Delete “${s.title || 'Untitled script'}”?`)) return;
+          const rest = scripts.filter(x => x.id !== s.id);
+          this.setState(st => ({ scripts: rest, activeId: s.id === st.activeId ? rest[0].id : st.activeId, deleted: { ...st.deleted, [s.id]: Date.now() } }));
+        }
       })),
       newScript: () => { const s = { id: uid(), title: '', text: '', updated: Date.now() }; this.setState(st => ({ scripts: [...st.scripts, s], activeId: s.id })); },
-      deleteScript: () => {
-        if (scripts.length < 2 || !confirm(`Delete “${a.title || 'Untitled script'}”?`)) return;
-        const rest = scripts.filter(s => s.id !== a.id);
-        this.setState(st => ({ scripts: rest, activeId: rest[0].id, deleted: { ...st.deleted, [a.id]: Date.now() } }));
-      },
       cantDelete: scripts.length < 2,
       title: a.title, onTitle: e => this.updateActive({ title: e.target.value }),
       text: a.text, onText: e => this.updateActive({ text: e.target.value }),

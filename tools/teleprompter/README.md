@@ -6,9 +6,9 @@ Write and save scripts, read them with scrolling text you can resize and mirror,
 | --- | --- |
 | `index.html` | The page that ships (`/tools/teleprompter/`). A self-contained bundle of `app.html`, the runtime and React. Edit `app.html` first, then apply the same change here (see below). |
 | `app.html` | Source of the whole app: script list, editor, appearance settings, sync, and the full-screen presenter view. |
-| `presenter.html` | A standalone, presenter-only version of the reading view. Not bundled or linked from anywhere. |
+| `default-script.txt` | The text of the app's default script, titled "Example Script", in the app's text format. Paste it into a new script to reuse it. |
 | `teleprompter.css` | The tool's styles: buttons (`.tp-btn`), slider (`.tp-range`), toggle (`.tp-switch`) and the header sync controls, all built on the site tokens. Loaded by the page. |
-| `runtime.js` | Generated runtime that renders `app.html` and `presenter.html`. Do not edit. |
+| `runtime.js` | Generated runtime that renders `app.html`. Do not edit. |
 | `.thumbnail` | Preview image for the design tool. |
 
 ## Editing

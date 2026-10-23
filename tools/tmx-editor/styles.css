@@ -33,7 +33,6 @@
     position: sticky;
     top: 0;
     background: var(--bg);
-    border-bottom: 1px solid var(--rule-strong);
     z-index: 10;
   }
   .toolbar-row {
@@ -43,11 +42,6 @@
     align-items: center;
     padding: 14px 40px;
   }
-  .toolbar-secondary {
-    padding: 12px 40px;
-    background: var(--cream-2);
-  }
-  .toolbar-secondary[hidden] { display: none; }
   .toolbar-spacer { flex: 1 1 auto; }
   .file-only { display: contents; }
   .file-only[hidden] { display: none; }
@@ -59,7 +53,8 @@
   }
   .tool-header button.secondary:hover,
   .tool-header .icon-btn:hover { background: color-mix(in srgb, var(--hero-teal-ink) 12%, transparent); }
-  .tool-header button.danger { background: var(--tool-danger); color: var(--paper); }
+  .tool-header button.danger { background: transparent; color: var(--hero-teal-ink); border-color: color-mix(in srgb, var(--hero-teal-ink) 45%, transparent); }
+  .tool-header button.danger:hover { background: var(--tool-danger); border-color: var(--tool-danger); color: var(--paper); }
   .tool-header .pagination span { color: inherit; }
 
   button, label.file-btn {
@@ -85,10 +80,11 @@
   }
   button.secondary:hover { opacity: 1; background: var(--cream-2); }
   button.danger {
-    background: var(--tool-danger);
-    color: var(--paper);
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--rule-strong);
   }
-  button.danger:hover { background: color-mix(in srgb, var(--tool-danger) 85%, black); }
+  button.danger:hover { background: var(--tool-danger); border-color: var(--tool-danger); color: var(--paper); }
   button[hidden] { display: none; }
   #delete-count { font-variant-numeric: tabular-nums; }
   #delete-count:empty { display: none; }

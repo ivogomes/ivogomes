@@ -83,6 +83,23 @@
   }
 }
 
+/* ── Secondary toolbar: the row under a tool header ─── */
+.tool-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 40px;
+  background: var(--cream-2);
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+@media (max-width: 40rem) {
+  .tool-toolbar { padding-inline: 16px; }
+}
+
+.tool-toolbar[hidden] { display: none; }
+
 /* ── Tool header: the home hero's teal, shared by every tool ─── */
 .tool-header {
   display: flex;

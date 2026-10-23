@@ -53,7 +53,7 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 | --- | --- | --- | --- |
 | Primary | `--button-teal` bg, `--button-teal-ink` text | `--button-teal-hover` bg, text unchanged | The main action: Export, Download, Present, Open file |
 | Secondary | Transparent, 1px `--rule-strong` border, `--ink` text | `--cream-2` bg | Everything else |
-| Danger | `--tool-danger` bg, `--paper` text | Darker red (15% black mixed in) | Delete and other destructive actions |
+| Danger | Looks like secondary: transparent, 1px `--rule-strong` border, `--ink` text | `--tool-danger` bg and border, `--paper` text. Red appears only on hover | Delete and other destructive actions |
 | Icon | Secondary look, min 32px wide | As secondary | Undo, redo |
 | Link | No background, `--accent` text, underline on hover | Underline | Inline actions |
 
@@ -80,6 +80,7 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 ## Tool header and logo
 
 - Every tool starts with `.tool-header`: `--hero-teal-soft` background, `--hero-teal-ink` text, min height 72px, 40px side padding (16px on small screens), logo at the left, page controls at the right.
+- Under the header, a tool can have a secondary toolbar (`.tool-toolbar`: `--cream-2` background, 12px 40px padding, 10px gaps) for settings and status. The Teleprompter keeps its sync controls there, Present sits in the header, and deleting a script is an icon on each row of the script list (visible on hover, focus and touch).
 - The logo is a 24px flat ink square carrying the tool's glyph. Its lines take the surface behind it (`--mark-ground`) and one block in `--tool-teal`. The name sits beside it in Georgia 22px.
 - Marks live in the tool page and on its card in `tools/index.html`. Keep the two identical.
 
