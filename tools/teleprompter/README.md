@@ -11,6 +11,12 @@ Write and save scripts, read them with scrolling text you can resize and mirror,
 | `runtime.js` | Generated runtime that renders `app.html`. Do not edit. |
 | `.thumbnail` | Preview image for the design tool. |
 
+## Using it
+
+- **Timer:** the script card shows a reading-time estimate (spoken lines only, at the "Speaking pace" setting). While presenting, a timer counts up next to the line counter. Click it or press `P` to pause and resume. It resets each time you press Present.
+- **Import and export:** "Import .txt" in the sidebar creates a new script from a text file, titled from the file name. "Export .txt" in the script card downloads the current script in the same format as `default-script.txt`.
+- **Clickers and keyboards:** a Bluetooth clicker or page turner works as long as it sends keyboard keys. Next: Space, Enter, →, ↓, Page Down, Media Next. Back: ←, ↑, Page Up, Backspace, Media Previous. Home restarts, Esc exits.
+
 ## Editing
 
 `index.html` carries a copy of `app.html` inside a `__bundler/template` script (a JSON string, with camelCase attributes such as `onClick` and `onChange` written as `sc-camel-on-click` and `sc-camel-on-change`). A change to the app markup or script has to be made in both places, and the template must still parse as JSON afterwards. Styling changes go in `teleprompter.css` and need no bundle edit.

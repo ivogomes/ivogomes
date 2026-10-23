@@ -48,12 +48,12 @@
   .tool-header button.secondary,
   .tool-header .icon-btn {
     background: transparent;
-    color: var(--hero-teal-ink);
-    border-color: color-mix(in srgb, var(--hero-teal-ink) 45%, transparent);
+    color: var(--tool-header-ink);
+    border-color: color-mix(in srgb, var(--tool-header-ink) 45%, transparent);
   }
   .tool-header button.secondary:hover,
-  .tool-header .icon-btn:hover { background: color-mix(in srgb, var(--hero-teal-ink) 12%, transparent); }
-  .tool-header button.danger { background: transparent; color: var(--hero-teal-ink); border-color: color-mix(in srgb, var(--hero-teal-ink) 45%, transparent); }
+  .tool-header .icon-btn:hover { background: color-mix(in srgb, var(--tool-header-ink) 12%, transparent); }
+  .tool-header button.danger { background: transparent; color: var(--tool-header-ink); border-color: color-mix(in srgb, var(--tool-header-ink) 45%, transparent); }
   .tool-header button.danger:hover { background: var(--tool-danger); border-color: var(--tool-danger); color: var(--paper); }
   .tool-header .pagination span { color: inherit; }
 

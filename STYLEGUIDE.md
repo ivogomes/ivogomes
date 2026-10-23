@@ -33,8 +33,9 @@ Neutrals come from `tokens.css` and switch with `prefers-color-scheme`: `--cream
 | `--tool-teal-deep` | `--button-teal` (light), `#5BBFB5` (dark) | Focus rings, links, selected and modified signals, anything that must read on paper |
 | `--tool-teal` | `#5BBFB5` | Light teal for fills only: logo block, search highlight, presenter guides. Never for text on paper (about 2:1) |
 | `--hero-teal` | `#5BBFB5` | The home hero |
-| `--hero-teal-soft` | `#A4D5CF` | Tool header background |
-| `--hero-teal-ink` | `#16181C` | Text and outlines on any teal header |
+| `--hero-teal-soft` | `#A4D5CF` | The light-mode tool header teal |
+| `--hero-teal-ink` | `#16181C` | Fixed dark ink for text on the light teals (header in light mode, search highlight) |
+| `--tool-header-bg` / `--tool-header-ink` | `#A4D5CF` / `#16181C` (light), `#1B3836` / `#E4F1EF` (dark) | The tool header's background and text, outlines and borders. Use these, not the hero tokens, for anything on the header |
 | `--tool-danger` | `#B3261E` (light), `#F2867F` (dark) | Destructive actions only |
 
 In tools, `--accent` is set to `--tool-teal-deep`. The vermillion accent (`#C8361A`) belongs to the website's own links and hovers; do not use orange or vermillion in tools. Per-speaker colors in the Teleprompter are data, not theme.
@@ -72,14 +73,14 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 
 ## Focus, motion, accessibility
 
-- `:focus-visible` on everything interactive: 2px solid `--accent` (or `--hero-teal-ink` inside a tool header), offset 2 to 3px. Never `outline: none` without a replacement.
+- `:focus-visible` on everything interactive: 2px solid `--accent` (or `--tool-header-ink` inside a tool header), offset 2 to 3px. Never `outline: none` without a replacement.
 - Transitions are 120 to 220ms, ease-out. Honour `prefers-reduced-motion` (drop animation, keep state changes).
 - Text contrast 4.5:1, controls and rings 3:1. White on `--button-teal` is about 5:1.
 - Semantic elements first (`button`, `a`, `label`, `dialog`), visible text or `aria-label` on every control, full keyboard operation.
 
 ## Tool header and logo
 
-- Every tool starts with `.tool-header`: `--hero-teal-soft` background, `--hero-teal-ink` text, min height 72px, 40px side padding (16px on small screens), logo at the left, page controls at the right.
+- Every tool starts with `.tool-header`: `--tool-header-bg` background (soft teal, deep teal in dark mode), `--tool-header-ink` text, min height 72px, 40px side padding (16px on small screens), logo at the left, page controls at the right.
 - Under the header, a tool can have a secondary toolbar (`.tool-toolbar`: `--cream-2` background, 12px 40px padding, 10px gaps) for settings and status. The Teleprompter keeps its sync controls there, Present sits in the header, and deleting a script is an icon on each row of the script list (visible on hover, focus and touch).
 - The logo is a 24px flat ink square carrying the tool's glyph. Its lines take the surface behind it (`--mark-ground`) and one block in `--tool-teal`. The name sits beside it in Georgia 22px.
 - Marks live in the tool page and on its card in `tools/index.html`. Keep the two identical.

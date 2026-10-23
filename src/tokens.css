@@ -13,6 +13,8 @@
   --button-teal-hover: #186577;
   --button-teal-ink: #FFFFFF;
   --hero-teal-soft: #A4D5CF; /* the hero teal, eased toward the warm grey for tool headers */
+  --tool-header-bg: var(--hero-teal-soft); /* tool header: soft teal in light, deep teal in dark */
+  --tool-header-ink: var(--hero-teal-ink);
 
   --z-above: 2;
   --z-hero: 3;
@@ -46,6 +48,8 @@
   --rule: #EDE6D620;
   --rule-strong: #EDE6D650;
   --accent: #F2825A;
+  --tool-header-bg: #1B3836;
+  --tool-header-ink: #E4F1EF;
   --bg: var(--cream);
   --surface: var(--paper);
   --shadow: 0 1px 0 #00000030;

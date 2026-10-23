@@ -108,13 +108,13 @@
   gap: 10px;
   min-height: 72px;
   padding: 12px 40px;
-  --mark-ground: var(--hero-teal-soft);
-  background: var(--hero-teal-soft);
-  color: var(--hero-teal-ink);
+  --mark-ground: var(--tool-header-bg);
+  background: var(--tool-header-bg);
+  color: var(--tool-header-ink);
 }
 
 .tool-header :focus-visible {
-  outline-color: var(--hero-teal-ink);
+  outline-color: var(--tool-header-ink);
 }
 
 .tool-logo {
