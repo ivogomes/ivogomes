@@ -7,6 +7,12 @@
   --radius: 2px;
 
   --hero-ink: #FFF8E8;
+  --hero-teal: #5BBFB5; /* the home hero */
+  --hero-teal-ink: #16181C;
+  --button-teal: #1F7A8C; /* primary buttons, resting */
+  --button-teal-hover: #186577;
+  --button-teal-ink: #FFFFFF;
+  --hero-teal-soft: #A4D5CF; /* the hero teal, eased toward the warm grey for tool headers */
 
   --z-above: 2;
   --z-hero: 3;

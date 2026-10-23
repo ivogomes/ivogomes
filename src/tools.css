@@ -22,7 +22,12 @@
   transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
 
+.tools-card {
+  --mark-ground: var(--surface);
+}
+
 .tools-card:hover {
+  --mark-ground: var(--cream-2);
   background: var(--cream-2);
   border-color: var(--rule-strong);
 }
@@ -62,4 +67,94 @@
 
 @media (prefers-reduced-motion: reduce) {
   .tools-card { transition: none; }
+}
+
+/* ── Tool colours: the teal of the site's buttons, in place of the accent ─── */
+:root {
+  --tool-teal: #5BBFB5;
+  --tool-teal-deep: var(--button-teal); /* dark enough for rings, links and text on paper */
+  --tool-danger: #B3261E;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tool-teal-deep: #5BBFB5;
+    --tool-danger: #F2867F;
+  }
+}
+
+/* ── Tool header: the home hero's teal, shared by every tool ─── */
+.tool-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  min-height: 72px;
+  padding: 12px 40px;
+  --mark-ground: var(--hero-teal-soft);
+  background: var(--hero-teal-soft);
+  color: var(--hero-teal-ink);
+}
+
+.tool-header :focus-visible {
+  outline-color: var(--hero-teal-ink);
+}
+
+.tool-logo {
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.tool-logo-mark {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.tool-logo-text {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1;
+}
+
+@media (max-width: 40rem) {
+  .tool-header { padding-inline: 16px; }
+}
+
+/* ── Primary button shimmer: the sweep on the site's download button ─── */
+.btn-primary,
+.file-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after,
+.file-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  transform: skewX(-15deg);
+  transition: left 500ms ease;
+  pointer-events: none;
+}
+
+.btn-primary:not(:disabled):hover::after,
+.file-btn:hover::after {
+  left: 150%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary::after,
+  .file-btn::after { display: none; }
 }

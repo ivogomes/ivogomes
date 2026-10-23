@@ -15,21 +15,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/src/tokens.css">
+<link rel="stylesheet" href="/src/tools.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-  <div class="toolbar-row toolbar-primary">
-    <h1 class="logo">
-      <svg class="logo-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-        <rect x="0.75" y="0.75" width="22.5" height="22.5" rx="2" stroke-width="1.5"/>
-        <line x1="9" y1="1" x2="9" y2="23" stroke-width="1"/>
-        <line x1="1" y1="8.5" x2="23" y2="8.5" stroke-width="1"/>
-        <line x1="1" y1="15.5" x2="23" y2="15.5" stroke-width="1"/>
-        <rect x="10" y="9.5" width="13" height="5" fill="var(--accent)" stroke="none"/>
-      </svg>
-      <span class="logo-text">TMX Editor</span>
+  <div class="toolbar-row toolbar-primary tool-header">
+    <h1 class="tool-logo">
+      <svg class="tool-logo-mark" viewBox="0 0 24 24" aria-hidden="true">
+  <rect width="24" height="24" fill="currentColor"/>
+  <path d="M9 0v24M0 8.5h24M0 15.5h24" fill="none" stroke="var(--mark-ground)" stroke-width="1"/>
+  <rect x="9" y="8.5" width="15" height="7" fill="var(--tool-teal)"/>
+</svg>
+      <span class="tool-logo-text">TMX Editor</span>
     </h1>
     <div class="file-only" id="primary-controls" hidden>
       <div class="pagination" id="pagination" hidden>
@@ -42,7 +42,7 @@
         <button id="redo-btn" class="icon-btn" disabled aria-label="Redo" title="Redo (⇧⌘Z)">↷</button>
       </div>
       <button id="delete-btn" class="danger" hidden>Delete <span id="delete-count"></span></button>
-      <button id="export-btn">Export TMX</button>
+      <button class="btn-primary" id="export-btn">Export TMX</button>
     </div>
   </div>
   <div class="toolbar-row toolbar-secondary" id="secondary-controls" hidden>
@@ -95,7 +95,7 @@
           <line x1="15" y1="88" x2="138" y2="88"/>
           <line x1="15" y1="104" x2="105" y2="104"/>
         </g>
-        <rect x="124" y="98" width="22" height="14" fill="var(--accent)"/>
+        <rect x="124" y="98" width="22" height="14" fill="var(--tool-teal)"/>
         <path d="M129 105 l3.5 3.5 l7.5 -7" stroke="var(--paper)" stroke-width="1.8" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
       </g>
     </svg>
@@ -197,7 +197,7 @@
     <label class="dialog-section-label" for="lang-add-input"><span>Add language</span></label>
     <div class="lang-add-row">
       <input type="text" id="lang-add-input" class="dialog-input" placeholder="e.g. fr-ca">
-      <button type="button" id="lang-add-btn">Add</button>
+      <button class="btn-primary" type="button" id="lang-add-btn">Add</button>
     </div>
     <div class="dialog-actions">
       <button type="button" id="manage-langs-close" class="secondary">Done</button>
@@ -217,7 +217,7 @@
     </p>
     <div class="dialog-actions">
       <button type="button" id="merge-cancel" class="secondary">Cancel</button>
-      <button type="button" id="merge-confirm">Merge</button>
+      <button class="btn-primary" type="button" id="merge-confirm">Merge</button>
     </div>
   </div>
 </dialog>
@@ -278,7 +278,7 @@
     <p class="dialog-match-count" id="dialog-match-count"></p>
     <div class="dialog-actions">
       <button type="button" id="dialog-cancel" class="secondary">Cancel</button>
-      <button type="button" id="dialog-confirm">Replace</button>
+      <button class="btn-primary" type="button" id="dialog-confirm">Replace</button>
     </div>
   </div>
 </dialog>

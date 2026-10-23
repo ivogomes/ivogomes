@@ -1,0 +1,127 @@
+/* Teleprompter. Controls follow STYLEGUIDE.md: palette, fonts and radius come from
+   /src/tokens.css, the tool teal and header from /src/tools.css. */
+:root { --accent: var(--tool-teal-deep); }
+
+.tp-shell { min-height: calc(100vh - 72px) !important; }
+
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+::selection { background: var(--ink); color: var(--cream); }
+
+/* Buttons: the same shape as every tool. Primary also carries .btn-primary (shimmer, from tools.css). */
+.tp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--button-teal);
+  color: var(--button-teal-ink);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.tp-btn:not(:disabled):hover { background: var(--button-teal-hover); }
+.tp-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.tp-btn--secondary { background: transparent; color: var(--ink); border: 1px solid var(--rule-strong); }
+.tp-btn--secondary:not(:disabled):hover { background: var(--cream-2); }
+.tp-btn--danger { background: var(--tool-danger); color: var(--paper); }
+.tp-btn--danger:not(:disabled):hover { background: color-mix(in srgb, var(--tool-danger) 85%, black); }
+.tp-btn--block { width: 100%; }
+.tp-new-script { margin-top: 8px; }
+
+/* Slider: 4px track, square teal thumb ringed in the page colour. */
+.tp-field { display: flex; flex-direction: column; gap: 8px; }
+.tp-field-row { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 500; }
+.tp-field-value { color: var(--text-muted); font-weight: 400; font-variant-numeric: tabular-nums; }
+.tp-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  margin: 10px 0;
+  border-radius: 0;
+  background: var(--rule-strong);
+  cursor: pointer;
+}
+.tp-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--paper);
+  border-radius: var(--radius);
+  background: var(--button-teal);
+}
+.tp-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 2px solid var(--paper);
+  border-radius: var(--radius);
+  background: var(--button-teal);
+}
+.tp-range:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+
+/* Toggle: square 48 x 28 track, teal when on, paper thumb. */
+.tp-switch { position: relative; display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+.tp-switch-input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.tp-switch-track {
+  position: relative;
+  flex: none;
+  width: 48px;
+  height: 28px;
+  border-radius: var(--radius);
+  background: var(--text-muted);
+  transition: background-color 0.18s ease-out;
+}
+.tp-switch-track::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius);
+  background: var(--paper);
+  transition: transform 0.18s ease-out;
+}
+.tp-switch-input:checked + .tp-switch-track { background: var(--button-teal); }
+.tp-switch-input:checked + .tp-switch-track::after { transform: translateX(20px); }
+.tp-switch-input:focus-visible + .tp-switch-track { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tp-switch-text { display: flex; flex-direction: column; gap: 2px; font-size: 14px; }
+.tp-switch-hint { font-size: 13px; color: var(--text-muted); }
+
+/* Sync controls live in the tool header, on the soft teal. */
+.tp-sync { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px; }
+.tp-sync-status { font-size: 13px; }
+.tp-sync-help { flex-basis: 100%; font-size: 12px; text-align: right; }
+.tp-token-input {
+  width: 220px;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+.tool-header a { color: inherit; text-underline-offset: 3px; }
+.tool-header .tp-btn--secondary { color: var(--hero-teal-ink); border-color: color-mix(in srgb, var(--hero-teal-ink) 45%, transparent); }
+.tool-header .tp-btn--secondary:not(:disabled):hover { background: color-mix(in srgb, var(--hero-teal-ink) 12%, transparent); }
+
+@media (max-width: 40rem) {
+  .tp-sync { justify-content: flex-start; }
+  .tp-sync-help { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}

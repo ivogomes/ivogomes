@@ -3,113 +3,137 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<script src="./runtime.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="_ds/dashlane-product-91348af6-b46c-49b4-8289-059194cd2eaf/colors_and_type.css">
-<script src="_ds/dashlane-product-91348af6-b46c-49b4-8289-059194cd2eaf/_ds_bundle.js"></script>
-<style>html,body{margin:0;background:rgb(246,249,250)}a{color:rgb(12,125,140)}a:hover{color:rgb(2,98,114)}textarea:focus,input:focus{outline:2px solid rgb(12,125,140);outline-offset:3px}.tp-hint-touch{display:none}@media (hover:none){.tp-hint-key{display:none}.tp-hint-touch{display:inline}}@media (max-width:720px){.tp-shell{grid-template-columns:minmax(0,1fr) !important}.tp-side{border-right:none !important;border-bottom:1px solid rgba(129,145,158,0.5);padding:16px !important}.tp-main{padding:16px !important}.tp-grid{grid-template-columns:minmax(0,1fr) !important}.tp-grid>section{grid-column:auto !important}.tp-editor{min-height:320px !important;font-size:16px !important}.tp-title{font-size:22px !important}}</style>
+<style>html,body{margin:0;background:var(--cream)}a{color:var(--accent)}a:hover{color:var(--ink)}textarea:focus,input:focus{outline:2px solid var(--accent);outline-offset:3px}.tp-hint-touch{display:none}@media (hover:none){.tp-hint-key{display:none}.tp-hint-touch{display:inline}}@media (max-width:720px){.tp-shell{grid-template-columns:minmax(0,1fr) !important}.tp-side{border-right:none !important;border-bottom:1px solid var(--rule-strong);padding:16px !important}.tp-main{padding:16px !important}.tp-grid{grid-template-columns:minmax(0,1fr) !important}.tp-grid>section{grid-column:auto !important}.tp-editor{min-height:320px !important;font-size:16px !important}.tp-title{font-size:22px !important}}</style>
 <template id="__bundler_thumbnail" data-bg-color="#191D21"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#191D21"></rect><rect x="300" y="300" width="600" height="56" rx="8" fill="#96C8FF"></rect><rect x="300" y="400" width="460" height="56" rx="8" fill="#FFBE8C" opacity="0.5"></rect><rect x="240" y="318" width="32" height="20" rx="4" fill="#009EAA"></rect><rect x="928" y="318" width="32" height="20" rx="4" fill="#009EAA"></rect></svg></template>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/src/tokens.css">
+<link rel="stylesheet" href="/src/tools.css">
+<link rel="stylesheet" href="teleprompter.css">
 </helmet>
-<div class="tp-shell" style="min-height:100vh; display:grid; grid-template-columns:240px minmax(0,1fr); font-family:var(--ds-font-body); color:var(--ds-text-neutral-catchy); background:var(--ds-background-alternate);">
-  <aside class="tp-side" style="background:var(--ds-background-default); border-right:1px solid rgba(129,145,158,0.5); padding:24px 16px; display:flex; flex-direction:column; gap:16px;">
+<header class="tool-header">
+  <h1 class="tool-logo">
+    <svg class="tool-logo-mark" viewBox="0 0 24 24" aria-hidden="true">
+  <rect width="24" height="24" fill="currentColor"/>
+  <path d="M5 6.5h14M5 17.5h10" fill="none" stroke="var(--mark-ground)" stroke-width="1.5"/>
+  <rect x="3" y="9.5" width="18" height="5" fill="var(--tool-teal)"/>
+</svg>
+    <span class="tool-logo-text">Teleprompter</span>
+  </h1>
+  <div class="tp-sync">
+    <div class="tp-sync-status" role="status" aria-live="polite">{{ syncMsg }}</div>
+    <sc-if value="{{ showSetup }}" hint-placeholder-val="{{ true }}">
+      <button type="button" class="tp-btn tp-btn--secondary" onClick="{{ openSetup }}">Set up sync</button>
+    </sc-if>
+    <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
+      <input class="tp-token-input" type="password" value="{{ tokenDraft }}" onChange="{{ onToken }}" placeholder="GitHub token" aria-label="GitHub token" autocomplete="off">
+      <button type="button" class="tp-btn btn-primary" onClick="{{ connect }}">Connect</button>
+      <div class="tp-sync-help">Create a <a href="https://github.com/settings/tokens/new?scopes=gist" target="_blank" rel="noopener">classic token</a> with only the “gist” scope. It stays on this device. Use the same token on your other devices.</div>
+    </sc-if>
+    <sc-if value="{{ syncConnected }}" hint-placeholder-val="{{ false }}">
+      <button type="button" class="tp-btn tp-btn--secondary" onClick="{{ syncNow }}">Sync now</button>
+      <button type="button" class="tp-btn tp-btn--secondary" onClick="{{ disconnect }}">Disconnect</button>
+    </sc-if>
+  </div>
+</header>
+<div class="tp-shell" style="min-height:100vh; display:grid; grid-template-columns:240px minmax(0,1fr); font-family:var(--font-sans); color:var(--text); background:var(--cream);">
+  <aside class="tp-side" style="background:var(--paper); border-right:1px solid var(--rule-strong); padding:24px 16px; display:flex; flex-direction:column; gap:16px;">
     <div style="display:flex; flex-direction:column; gap:4px; padding:0 8px;">
-      <div style="font-family:var(--ds-font-heading); font-weight:500; font-size:22px; letter-spacing:-0.01em;">Teleprompter</div>
-      <div style="font-size:13px; color:var(--ds-text-neutral-quiet);">Scripts are saved in this browser</div>
-    </div>
-    <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" intensity="quiet" fullsize="{{ true }}" onClick="{{ newScript }}" hint-size="100%,40px">New script</x-import>
-    <div style="display:flex; flex-direction:column; gap:8px; padding:0 8px;">
-      <div style="font-size:13px; color:var(--ds-text-neutral-quiet);" role="status" aria-live="polite">{{ syncMsg }}</div>
-      <sc-if value="{{ showSetup }}" hint-placeholder-val="{{ true }}">
-        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" intensity="quiet" fullsize="{{ true }}" onClick="{{ openSetup }}" hint-size="100%,40px">Set up sync</x-import>
-      </sc-if>
-      <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
-        <input type="password" value="{{ tokenDraft }}" onChange="{{ onToken }}" placeholder="GitHub token" aria-label="GitHub token" autocomplete="off" style="font-family:var(--ds-font-body); font-size:16px; padding:8px; border:1px solid rgba(129,145,158,0.5); border-radius:4px; min-width:0;">
-        <div style="font-size:12px; color:var(--ds-text-neutral-quiet);">Create a <a href="https://github.com/settings/tokens/new?scopes=gist" target="_blank" rel="noopener">classic token</a> with only the “gist” scope. It stays on this device. Use the same token on your other devices.</div>
-        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" fullsize="{{ true }}" onClick="{{ connect }}" hint-size="100%,40px">Connect</x-import>
-      </sc-if>
-      <sc-if value="{{ syncConnected }}" hint-placeholder-val="{{ false }}">
-        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" intensity="quiet" fullsize="{{ true }}" onClick="{{ syncNow }}" hint-size="100%,40px">Sync now</x-import>
-        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" intensity="supershy" fullsize="{{ true }}" onClick="{{ disconnect }}" hint-size="100%,40px">Disconnect</x-import>
-      </sc-if>
+      <div style="font-size:13px; color:var(--text-muted);">Scripts are saved in this browser</div>
     </div>
     <div style="display:flex; flex-direction:column; gap:2px;">
-      <div style="font-size:12px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:var(--ds-text-neutral-quiet); padding:8px 8px 4px;">Scripts</div>
+      <div style="font-size:12px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:var(--text-muted); padding:8px 8px 4px;">Scripts</div>
       <sc-for list="{{ scriptList }}" as="s" hint-placeholder-count="2">
-        <button onClick="{{ s.select }}" style="all:unset; cursor:pointer; display:flex; flex-direction:column; gap:2px; padding:10px 12px; border-radius:4px; background:{{ s.bg }}; transition:background 180ms cubic-bezier(0.2,0,0,1);" style-hover="background:rgba(12,125,140,0.08)">
+        <button onClick="{{ s.select }}" style="all:unset; cursor:pointer; display:flex; flex-direction:column; gap:2px; padding:10px 12px; border-radius:var(--radius); background:{{ s.bg }}; transition:background 180ms cubic-bezier(0.2,0,0,1);" style-hover="background:color-mix(in srgb, var(--accent) 8%, transparent)">
           <span style="font-size:14px; font-weight:{{ s.weight }}; color:{{ s.color }}; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ s.title }}</span>
-          <span style="font-size:12px; color:var(--ds-text-neutral-quiet);">{{ s.meta }}</span>
+          <span style="font-size:12px; color:var(--text-muted);">{{ s.meta }}</span>
         </button>
       </sc-for>
+      <div class="tp-new-script">
+        <button type="button" class="tp-btn tp-btn--secondary tp-btn--block" onClick="{{ newScript }}">New script</button>
+      </div>
     </div>
   </aside>
 
   <main class="tp-main" style="padding:32px; display:flex; flex-direction:column; gap:24px; min-width:0;">
     <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
-      <input class="tp-title" value="{{ title }}" onChange="{{ onTitle }}" placeholder="Untitled script" aria-label="Script title" style="flex:1 1 280px; min-width:0; font-family:var(--ds-font-body); font-size:28px; font-weight:600; letter-spacing:-0.01em; color:var(--ds-text-neutral-catchy); background:transparent; border:1px solid transparent; border-radius:4px; padding:4px 8px; margin-left:-8px;" style-hover="border-color:rgba(129,145,158,0.5)">
+      <input class="tp-title" value="{{ title }}" onChange="{{ onTitle }}" placeholder="Untitled script" aria-label="Script title" style="flex:1 1 280px; min-width:0; font-family:var(--font-serif); font-size:28px; font-weight:400; letter-spacing:-0.015em; color:var(--text); background:transparent; border:1px solid transparent; border-radius:var(--radius); padding:4px 8px; margin-left:-8px;" style-hover="border-color:var(--rule-strong)">
       <div style="display:flex; gap:8px; align-items:center;">
-        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" mood="danger" intensity="supershy" onClick="{{ deleteScript }}" disabled="{{ cantDelete }}" hint-size="80px,40px">Delete</x-import>
-        <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Button" size="large" onClick="{{ present }}" hint-size="120px,48px">Present</x-import>
+        <button type="button" class="tp-btn tp-btn--danger" onClick="{{ deleteScript }}" disabled="{{ cantDelete }}">Delete</button>
+        <button type="button" class="tp-btn btn-primary" onClick="{{ present }}">Present</button>
       </div>
     </div>
 
     <div class="tp-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; align-items:start;">
-      <section style="grid-column:span 2; min-width:0; background:var(--ds-background-default); border:1px solid rgba(129,145,158,0.5); border-radius:8px; box-shadow:var(--ds-shadow-sm); display:flex; flex-direction:column;">
-        <div style="padding:16px 20px; border-bottom:1px solid rgba(129,145,158,0.5); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:baseline;">
+      <section style="grid-column:span 2; min-width:0; background:var(--paper); border:1px solid var(--rule-strong); border-radius:var(--radius); box-shadow:var(--shadow); display:flex; flex-direction:column;">
+        <div style="padding:16px 20px; border-bottom:1px solid var(--rule-strong); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:baseline;">
           <div style="font-size:16px; font-weight:600;">Script</div>
-          <div style="font-size:13px; color:var(--ds-text-neutral-quiet);">{{ stats }}</div>
+          <div style="font-size:13px; color:var(--text-muted);">{{ stats }}</div>
         </div>
-        <textarea class="tp-editor" value="{{ text }}" onChange="{{ onText }}" spellcheck="true" placeholder="Aochen: Wait a minute…" style="min-height:520px; resize:vertical; border:none; padding:20px; font-family:var(--ds-font-mono); font-size:14px; line-height:1.7; color:var(--ds-text-neutral-catchy); background:transparent; border-radius:0 0 8px 8px;"></textarea>
-        <div style="padding:16px 20px; border-top:1px solid rgba(129,145,158,0.5); background:var(--ds-background-alternate); border-radius:0 0 8px 8px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; font-size:13px; color:var(--ds-text-neutral-quiet);">
-          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--ds-font-mono); color:var(--ds-text-neutral-catchy);">Name: Line</span><span>Spoken line, colored by speaker</span></div>
-          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--ds-font-mono); color:var(--ds-text-neutral-catchy);">[Stage direction] …</span><span>Shown in grey as a direction</span></div>
-          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--ds-font-mono); color:var(--ds-text-neutral-catchy);">Name: (Gasps) Line</span><span>Cue in italics before the line</span></div>
+        <textarea class="tp-editor" value="{{ text }}" onChange="{{ onText }}" spellcheck="true" placeholder="Aochen: Wait a minute…" style="min-height:520px; resize:vertical; border:none; padding:20px; font-family:var(--font-mono); font-size:14px; line-height:1.7; color:var(--text); background:transparent; border-radius:0 0 8px 8px;"></textarea>
+        <div style="padding:16px 20px; border-top:1px solid var(--rule-strong); background:var(--cream); border-radius:0 0 8px 8px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; font-size:13px; color:var(--text-muted);">
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--font-mono); color:var(--text);">Name: Line</span><span>Spoken line, colored by speaker</span></div>
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--font-mono); color:var(--text);">[Stage direction] …</span><span>Shown in grey as a direction</span></div>
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:var(--font-mono); color:var(--text);">Name: (Gasps) Line</span><span>Cue in italics before the line</span></div>
         </div>
       </section>
 
       <div style="display:flex; flex-direction:column; gap:24px; min-width:0;">
-        <section style="background:var(--ds-background-default); border:1px solid rgba(129,145,158,0.5); border-radius:8px; box-shadow:var(--ds-shadow-sm); padding:20px; display:flex; flex-direction:column; gap:20px;">
+        <section style="background:var(--paper); border:1px solid var(--rule-strong); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; display:flex; flex-direction:column; gap:20px;">
           <div style="font-size:16px; font-weight:600;">Appearance</div>
           <div style="display:flex; flex-direction:column; gap:8px;">
             <div style="font-size:14px; font-weight:500;">Background</div>
             <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;">
               <sc-for list="{{ bgOptions }}" as="b" hint-placeholder-count="3">
-                <button onClick="{{ b.pick }}" style="all:unset; cursor:pointer; display:flex; flex-direction:column; gap:6px; align-items:center; font-size:13px; color:var(--ds-text-neutral-standard);">
-                  <span style="width:100%; height:40px; border-radius:4px; background:{{ b.swatch }}; border:1px solid rgba(129,145,158,0.5); outline:{{ b.ring }}; outline-offset:2px; box-sizing:border-box;"></span>
+                <button onClick="{{ b.pick }}" style="all:unset; cursor:pointer; display:flex; flex-direction:column; gap:6px; align-items:center; font-size:13px; color:var(--ink-soft);">
+                  <span style="width:100%; height:40px; border-radius:var(--radius); background:{{ b.swatch }}; border:1px solid var(--rule-strong); outline:{{ b.ring }}; outline-offset:2px; box-sizing:border-box;"></span>
                   {{ b.label }}
                 </button>
               </sc-for>
             </div>
           </div>
-          <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Slider" label="Text size" min="{{ sizeMin }}" max="{{ sizeMax }}" step="{{ sizeStep }}" value="{{ size }}" onChange="{{ onSize }}" show-value="{{ true }}" hint-size="100%,56px"></x-import>
-          <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Toggle" label="Show upcoming line" description="Dimmed preview of what comes next" checked="{{ showNext }}" onChange="{{ onShowNext }}" hint-size="100%,44px"></x-import>
-          <x-import component-from-global-scope="DashlaneDesignSystem_91348a.Toggle" label="Mirror text" description="For reflective teleprompter glass" checked="{{ mirror }}" onChange="{{ onMirror }}" hint-size="100%,44px"></x-import>
+          <div class="tp-field">
+            <label class="tp-field-row" for="tp-size"><span class="tp-field-label">Text size</span><span class="tp-field-value">{{ size }}</span></label>
+            <input id="tp-size" class="tp-range" type="range" min="{{ sizeMin }}" max="{{ sizeMax }}" step="{{ sizeStep }}" value="{{ size }}" onChange="{{ onSize }}">
+          </div>
+          <label class="tp-switch">
+            <input class="tp-switch-input" type="checkbox" role="switch" checked="{{ showNext }}" onChange="{{ onShowNext }}">
+            <span class="tp-switch-track" aria-hidden="true"></span>
+            <span class="tp-switch-text"><span class="tp-switch-label">Show upcoming line</span><span class="tp-switch-hint">Dimmed preview of what comes next</span></span>
+          </label>
+          <label class="tp-switch">
+            <input class="tp-switch-input" type="checkbox" role="switch" checked="{{ mirror }}" onChange="{{ onMirror }}">
+            <span class="tp-switch-track" aria-hidden="true"></span>
+            <span class="tp-switch-text"><span class="tp-switch-label">Mirror text</span><span class="tp-switch-hint">For reflective teleprompter glass</span></span>
+          </label>
         </section>
 
-        <section style="background:var(--ds-background-default); border:1px solid rgba(129,145,158,0.5); border-radius:8px; box-shadow:var(--ds-shadow-sm); padding:20px; display:flex; flex-direction:column; gap:16px;">
+        <section style="background:var(--paper); border:1px solid var(--rule-strong); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; display:flex; flex-direction:column; gap:16px;">
           <div style="display:flex; flex-direction:column; gap:4px;">
             <div style="font-size:16px; font-weight:600;">Speaker colors</div>
-            <div style="font-size:13px; color:var(--ds-text-neutral-quiet);">Detected from your script</div>
+            <div style="font-size:13px; color:var(--text-muted);">Detected from your script</div>
           </div>
           <sc-if value="{{ noSpeakers }}" hint-placeholder-val="{{ false }}">
-            <div style="font-size:14px; color:var(--ds-text-neutral-quiet);">Add lines like “Name: Line” to assign colors.</div>
+            <div style="font-size:14px; color:var(--text-muted);">Add lines like “Name: Line” to assign colors.</div>
           </sc-if>
           <sc-for list="{{ speakers }}" as="sp" hint-placeholder-count="2">
             <div style="display:flex; flex-direction:column; gap:8px;">
               <div style="font-size:14px; font-weight:500;">{{ sp.name }}</div>
               <div style="display:flex; flex-wrap:wrap; gap:8px;">
                 <sc-for list="{{ sp.swatches }}" as="sw" hint-placeholder-count="7">
-                  <button onClick="{{ sw.pick }}" title="{{ sw.label }}" aria-label="{{ sw.label }}" style="all:unset; cursor:pointer; width:28px; height:28px; border-radius:4px; background:{{ sw.color }}; border:1px solid rgba(129,145,158,0.5); outline:{{ sw.ring }}; outline-offset:2px; box-sizing:border-box;"></button>
+                  <button onClick="{{ sw.pick }}" title="{{ sw.label }}" aria-label="{{ sw.label }}" style="all:unset; cursor:pointer; width:28px; height:28px; border-radius:var(--radius); background:{{ sw.color }}; border:1px solid var(--rule-strong); outline:{{ sw.ring }}; outline-offset:2px; box-sizing:border-box;"></button>
                 </sc-for>
               </div>
             </div>
           </sc-for>
         </section>
 
-        <section style="border-radius:8px; overflow:hidden; border:1px solid rgba(129,145,158,0.5); display:flex; flex-direction:column;">
-          <div style="background:var(--ds-background-default); padding:12px 20px; font-size:13px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:var(--ds-text-neutral-quiet);">Preview</div>
+        <section style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--rule-strong); display:flex; flex-direction:column;">
+          <div style="background:var(--paper); padding:12px 20px; font-size:13px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:var(--text-muted);">Preview</div>
           <div style="background:{{ bgColor }}; padding:20px; display:flex; flex-direction:column; gap:14px; transform:{{ mirrorT }};">
             <sc-for list="{{ previewItems }}" as="l" hint-placeholder-count="3">
               <div style="display:flex; flex-direction:column; gap:4px;">
@@ -132,7 +156,7 @@
           <sc-for list="{{ items }}" as="l" hint-placeholder-count="4">
             <div data-line="1" style="display:flex; flex-direction:column; gap:0.15em; max-width:1600px; opacity:{{ l.opacity }}; transition:opacity 300ms cubic-bezier(0.2,0,0,1);">
               <sc-if value="{{ l.isDir }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:0.55em; line-height:1.3; font-style:italic; color:{{ dirColor }}; border-top:1px solid rgba(129,145,158,0.5); border-bottom:1px solid rgba(129,145,158,0.5); padding:0.4em 0;">
+                <div style="font-size:0.55em; line-height:1.3; font-style:italic; color:{{ dirColor }}; border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong); padding:0.4em 0;">
                   <div style="font-size:0.6em; font-style:normal; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.2em;">Stage direction</div>
                   {{ l.text }}
                 </div>
@@ -148,7 +172,7 @@
         </div>
       </div>
       <div style="position:absolute; left:20px; right:20px; top:16px; display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:14px; color:{{ dirColor }};">
-        <button onClick="{{ exit }}" style="all:unset; cursor:pointer; padding:12px 16px; border-radius:4px; border:1px solid rgba(129,145,158,0.5);" style-hover="background:rgba(129,145,158,0.2)">Exit<span class="tp-hint-key"> · Esc</span></button>
+        <button onClick="{{ exit }}" style="all:unset; cursor:pointer; padding:12px 16px; border-radius:var(--radius); border:1px solid var(--rule-strong);" style-hover="background:rgba(129,145,158,0.2)">Exit<span class="tp-hint-key"> · Esc</span></button>
         <span>{{ counter }}</span>
       </div>
       <div style="position:absolute; left:0; bottom:0; height:3px; width:{{ progress }}; background:rgb(0,158,170); transition:width 300ms cubic-bezier(0.2,0,0,1);"></div>
@@ -184,9 +208,9 @@ const PALETTE = [
   { label: 'Purple', dark: 'rgb(205,180,255)', light: 'rgb(105,60,180)' },
   { label: 'Yellow', dark: 'rgb(250,225,140)', light: 'rgb(130,95,0)' },
   { label: 'Pink', dark: 'rgb(255,170,190)', light: 'rgb(175,35,75)' },
-  { label: 'White', dark: 'rgb(246,249,250)', light: 'rgb(33,37,41)' }
+  { label: 'White', dark: '#F3EDE1', light: '#1C1B19' }
 ];
-const BGS = { dark: { label: 'Dark', c: 'rgb(25,29,33)' }, black: { label: 'Black', c: 'rgb(0,0,0)' }, light: { label: 'Light', c: 'rgb(255,255,255)' } };
+const BGS = { dark: { label: 'Dark', c: '#1A1814' }, light: { label: 'Light', c: '#FAF9F7' } };
 const uid = () => Math.random().toString(36).slice(2, 9);
 const unquote = s => s.trim().replace(/^["“”']+|["“”']+$/g, '').trim();
 
@@ -347,9 +371,10 @@ class Component extends DCLogic {
     const { scripts, settings, presenting } = this.state;
     const a = this.active();
     const parsed = parse(a.text);
-    const tone = settings.bg === 'light' ? 'light' : 'dark';
+    const bgKey = BGS[settings.bg] ? settings.bg : 'dark';
+    const tone = bgKey === 'light' ? 'light' : 'dark';
     const dirColor = tone === 'light' ? 'rgb(74,91,105)' : 'rgba(150,167,176,0.95)';
-    const neutral = tone === 'light' ? 'rgb(33,37,41)' : 'rgb(246,249,250)';
+    const neutral = tone === 'light' ? '#1C1B19' : '#F3EDE1';
     const speakerNames = [...new Set(parsed.filter(p => p.speaker).map(p => p.speaker))];
     const colorOf = n => n ? PALETTE[this.colorIdx(n, speakerNames)][tone] : neutral;
     const i = Math.min(this.pos(), Math.max(parsed.length - 1, 0));
@@ -364,8 +389,8 @@ class Component extends DCLogic {
       scriptList: [...scripts].sort((x, y) => y.updated - x.updated).map(s => ({
         title: s.title || 'Untitled script',
         meta: `${parse(s.text).filter(p => p.type === 'line').length} lines`,
-        bg: s.id === a.id ? 'rgba(12,125,140,0.12)' : 'transparent',
-        color: s.id === a.id ? 'rgb(2,98,114)' : 'rgba(42,49,56,0.92)',
+        bg: s.id === a.id ? 'color-mix(in srgb, var(--accent) 12%, transparent)' : 'transparent',
+        color: s.id === a.id ? 'var(--ink)' : 'rgba(42,49,56,0.92)',
         weight: s.id === a.id ? 600 : 400,
         select: () => this.setState({ activeId: s.id })
       })),
@@ -381,7 +406,7 @@ class Component extends DCLogic {
       stats: `${lineCount} lines · ${speakerNames.length} speakers · ${parsed.length - lineCount} directions`,
       present: () => { if (parsed.length) this.setState({ presenting: true }); },
       exit: (e) => { e.stopPropagation(); this.setState({ presenting: false }); },
-      bgOptions: Object.entries(BGS).map(([k, b]) => ({ label: b.label, swatch: b.c, ring: settings.bg === k ? '2px solid rgb(12,125,140)' : 'none', pick: () => this.setSetting('bg', k) })),
+      bgOptions: Object.entries(BGS).map(([k, b]) => ({ label: b.label, swatch: b.c, ring: bgKey === k ? '2px solid var(--accent)' : 'none', pick: () => this.setSetting('bg', k) })),
       size: settings.size, sizeMin: 40, sizeMax: 160, sizeStep: 4,
       onSize: e => this.setSetting('size', +e.target.value),
       showNext: settings.showNext, onShowNext: e => this.setSetting('showNext', e.target.checked),
@@ -391,11 +416,11 @@ class Component extends DCLogic {
         const cur = this.colorIdx(n, speakerNames);
         return { name: n, swatches: PALETTE.map((p, pi) => ({
           label: p.label, color: p[tone],
-          ring: pi === cur ? '2px solid rgb(12,125,140)' : 'none',
+          ring: pi === cur ? '2px solid var(--accent)' : 'none',
           pick: () => this.setState(s => ({ colors: { ...s.colors, [n]: pi } }))
         })) };
       }),
-      bgColor: BGS[settings.bg].c, dirColor,
+      bgColor: BGS[bgKey].c, dirColor,
       mirrorT: settings.mirror ? 'scaleX(-1)' : 'none',
       previewItems: parsed.slice(0, 4).map(decorate),
       presenting, colRef: this.colRef, next: () => this.go(1), tap: this.tap, touchStart: this.touchStart, touchEnd: this.touchEnd, syncMsg: this.state.syncMsg, syncConnected: !!this.syncCfg().token, showSetup: !this.syncCfg().token && !this.state.syncOpen, showForm: !this.syncCfg().token && this.state.syncOpen, openSetup: () => this.setState({ syncOpen: true }), tokenDraft: this.state.tokenDraft, onToken: e => this.setState({ tokenDraft: e.target.value }), connect: this.connect, disconnect: this.disconnect, syncNow: () => this.sync(),

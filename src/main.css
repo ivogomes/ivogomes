@@ -809,8 +809,8 @@ a:hover { color: var(--accent); }
   overflow: hidden;
   margin-top: 28px;
   padding: 12px 24px;
-  background: #5BBFB5;  /* hero teal */
-  color: #16181C;
+  background: var(--button-teal);
+  color: var(--button-teal-ink);
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 600;
@@ -819,7 +819,7 @@ a:hover { color: var(--accent); }
   border-radius: var(--radius);
   transition: background 0.2s;
 }
-.pp-download-btn:hover { background: #1F7A8C; color: #fff; }  /* deeper teal */
+.pp-download-btn:hover { background: var(--button-teal-hover); color: var(--button-teal-ink); }
 .pp-download-btn::after {
   content: '';
   position: absolute;
