@@ -39,6 +39,9 @@ jobs:
             --exclude=.git/ \
             --exclude=.github/ \
             --exclude=_site/ \
+            --exclude=tools/tapscore-app/ \
+            --exclude=tools/tapscore-watch/ \
+            --exclude=tools/tapscore-wear/ \
             . _site/
 
       - uses: actions/configure-pages@v5
