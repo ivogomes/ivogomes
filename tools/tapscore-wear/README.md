@@ -19,8 +19,8 @@ tools/tapscore-wear/
 ```
 
 ## The engine is validated
-`ScoringEngine.kt` is a line-for-line port of the web engine and passes the full spec (all 25 checks
-of `scoring.test.cjs`, mirrored in `ScoringEngineTest.kt`). **Rule:** change scoring in `scoring.js`
+`ScoringEngine.kt` is a line-for-line port of the web engine and is meant to pass the full spec (the 15 tests
+of `scoring.test.cjs`, mirrored in `ScoringEngineTest.kt`). Run `./gradlew test` to confirm. **Rule:** change scoring in `scoring.js`
 first, keep `scoring.test.cjs` green, then mirror into the Kotlin **and** Swift ports and keep both
 test suites green. JS ⇄ Kotlin ⇄ Swift must never disagree.
 
@@ -182,4 +182,3 @@ code is written; assemble/test on device per [REMOTE.md](../tapscore-watch/REMOT
   defaults; full setup stays on the phone.
 - Free-play "End match → winner/tie" entry point on the watch.
 - A Tile / complication showing the live score.
-```

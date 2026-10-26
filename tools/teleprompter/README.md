@@ -19,6 +19,10 @@ Write and save scripts, read them with scrolling text you can resize and mirror,
 - **Fullscreen:** a button in the presenter's top bar, or press `F`. It's hidden in browsers without the Fullscreen API (iPhone Safari), and leaving the presenter also leaves fullscreen.
 - **Clickers and keyboards:** a Bluetooth clicker or page turner works as long as it sends keyboard keys. Next: Space, Enter, →, ↓, Page Down, Media Next. Back: ←, ↑, Page Up, Backspace, Media Previous. Home restarts, Esc exits.
 
+## Storage and sync
+
+Scripts and settings are saved in the browser's `localStorage`, so they stay on that device and browser. Sync is optional. It copies your scripts and speaker colors to a private GitHub Gist so several devices stay in step. You give it a classic GitHub token with only the `gist` scope, and the token is stored in `localStorage` on that device. The newest edit to each script wins, and deletions propagate. Anyone with access to the browser profile can read that token, so use a token that has only the `gist` scope and revoke it if the device is shared or lost.
+
 ## Editing
 
 `index.html` carries a copy of `app.html` inside a `__bundler/template` script (a JSON string, with camelCase attributes such as `onClick` and `onChange` written as `sc-camel-on-click` and `sc-camel-on-change`). A change to the app markup or script has to be made in both places, and the template must still parse as JSON afterwards. Styling changes go in `teleprompter.css` and need no bundle edit.

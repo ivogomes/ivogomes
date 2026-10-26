@@ -29,8 +29,23 @@ as usual, and the site on ivogomes.com keeps working.
   built-in **`SystemBars`** core plugin — `@capacitor/status-bar` is deliberately not
   installed, because its Android code still references the deprecated APIs.
 
-The steps below are the ones that need the network (npm registry) and, for iOS,
-a Mac with Xcode — so they couldn't be run in this environment.
+The steps below need the network (npm registry) and, for iOS, a Mac with Xcode.
+
+## What's in this folder
+
+| Path | What it is |
+|---|---|
+| `copy-web.mjs` | Copies `../tapscore/` into `www/` and strips the web-only bits |
+| `capacitor.config.json` | Capacitor config (app id `com.ivogomes.tapscore`) |
+| `ios/`, `android/` | The native projects, including the hand-rolled `BillingPlugin` on each side |
+| `assets/` | Icon, splash and store graphics, plus the raw Play/App Store screenshots |
+| `fonts/` | Script that fetches the Outfit score font (the font files are git-ignored) |
+| `screenshots/` | `capture.sh`, used by `npm run shots` |
+| `store-listing.md` | Store listing copy and character limits |
+| `www/` | Generated web bundle — don't edit, it's rebuilt by `npm run copy:web` |
+
+Capacitor plugins in use: `haptics`, `splash-screen`, `share`, `filesystem`, `keep-awake`
+(community) and `text-to-speech` (community, for the score announcer).
 
 ---
 
@@ -124,6 +139,12 @@ npm run open:android
 **After any change to `../tapscore/`, re-run `npm run sync`** (copies the web
 app into both native projects).
 
+Other scripts: `npm run apk` builds a debug APK and installs it on a connected device
+(`apk:build` builds without installing), `npm run aab` builds the signed Play bundle,
+`npm run ios` builds and runs on iOS (`ios:list` lists the targets), and `npm run shots`
+captures store screenshots. The Gradle scripts assume Android Studio's bundled JDK and
+`~/Library/Android/sdk`, which is the macOS default.
+
 ---
 
 ## Release signing (command line)
@@ -186,7 +207,8 @@ The warning-free options:
 3. In [App Store Connect](https://appstoreconnect.apple.com): create the app,
    add screenshots (6.7" + 5.5" required), description, keywords, category
    (Sports), age rating, and a **privacy policy URL** + App Privacy answers
-   (TapScore stores data only on-device → "Data Not Collected").
+   (TapScore stores match data only on-device; the purchase itself is handled by
+   Apple, so double-check Apple's wording before answering "Data Not Collected").
 4. Submit for review (~1–3 days). Note Apple's
    [4.2 minimum-functionality](https://developer.apple.com/app-store/review/guidelines/#minimum-functionality)
    rule — the local bundle + native haptics/keep-awake help it read as a real app.
@@ -250,9 +272,14 @@ returns anything in Sandbox.
   test device (prompted at purchase time, not beforehand).
 
 **5. Don't forget the disclosures.** Purchase history still leaves the device (to
-Apple/Google, as the payment processor) so the Play **Data safety** answers ("no data
-collected") and `../tapscore/privacy.html` both need to say so — but neither needs a
-third-party mention anymore.
+Apple/Google, as the payment processor), so the Play **Data safety** form must declare
+purchase history (see the Android submission step above) and `../tapscore/privacy.html`
+must say so. Neither needs a third-party mention anymore.
+
+**Trial and gating.** In the native apps the first 3 completed games are free
+(`TRIAL_LIMIT` in `../tapscore/index.html`); after that, starting a match needs the
+`pro_unlock` purchase. Nothing is gated by sport or feature. The web version has no trial
+or paywall (`PRO_ENABLED` is only true inside the native shell).
 
 Purchase acknowledgment — Google auto-refunds a purchase left unacknowledged for 3
 days — is handled by `BillingPlugin.isOwned()`, which acknowledges any unacknowledged

@@ -9,6 +9,8 @@ tools/tapscore-watch/
 │   ├── Package.swift
 │   ├── Sources/TapScoreEngine/ScoringEngine.swift   ← faithful port of ../tapscore/scoring.js
 │   └── Tests/TapScoreEngineTests/ScoringEngineTests.swift  ← mirrors ../tapscore/scoring.test.cjs
+├── TapScore Watch/              Xcode project for the watch app (the assembled result of the steps below)
+├── AppIcon-1024.png             Watch app icon source
 └── WatchApp/                    SwiftUI sources to add to the watch target
     ├── TapScoreApp.swift        @main, RootView, Theme, Haptics
     ├── MatchModel.swift         standalone match: engine, haptics, undo, last format
@@ -23,7 +25,7 @@ tools/tapscore-watch/
 cd tools/tapscore-watch/Engine
 swift test
 ```
-The tests mirror the web spec — if they pass, the Swift port matches `scoring.js`. **Rule:** change
+The 15 tests mirror the web spec — if they pass, the Swift port matches `scoring.js`. **Rule:** change
 scoring rules in `scoring.js` first, keep `scoring.test.cjs` green, then mirror here and keep
 `swift test` green. The two must never disagree.
 
