@@ -6,4 +6,4 @@ dist/
 
 # Personal finance data and screenshots used while building tools/finance. Never publish these.
 tools/finance/exports/
-tools/finance/*.png
+tools/finance/Screenshot*.png
