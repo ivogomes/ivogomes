@@ -101,4 +101,4 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 ## Known deviations
 
 - The Teleprompter's logo mark and header exist in the bundled `tools/teleprompter/index.html` as well as in `tools/teleprompter/app.html`; edit both.
-- Fin, the finance tool (`tools/finance/finance.css`), has its own look by choice: rounded cards with soft shadows, sentence-case buttons, header sections as tabs, icon-only row actions that appear on hover or focus, and coloured category chips. It keeps the shared teal tool header and logo. Its colours are `--f-*` tokens at the top of that file, with dark-mode values.
+- Fin, the finance tool (`tools/finance/finance.css`), has its own look by choice: rounded cards with soft shadows, sentence-case buttons, header sections as tabs, icon-only row actions that appear on hover or focus, and coloured category chips. It keeps the shared teal tool header and logo, and uses Geist instead of Inter for its text. Its colours are `--f-*` tokens at the top of that file, with dark-mode values.
