@@ -38,6 +38,8 @@ Neutrals come from `tokens.css` and switch with `prefers-color-scheme`: `--cream
 | `--tool-header-bg` / `--tool-header-ink` | `#A4D5CF` / `#16181C` (light), `#1B3836` / `#E4F1EF` (dark) | The tool header's background and text, outlines and borders. Use these, not the hero tokens, for anything on the header |
 | `--tool-danger` | `#B3261E` (light), `#F2867F` (dark) | Destructive actions only |
 
+Money amounts in the Finance tool are data, not theme: money in is green (`--f-pos`), money out is red (`--f-neg`), always with a visible sign so color is never the only cue. See Known deviations for the rest of Finance's look.
+
 In tools, `--accent` is set to `--tool-teal-deep`. The vermillion accent (`#C8361A`) belongs to the website's own links and hovers; do not use orange or vermillion in tools. Per-speaker colors in the Teleprompter are data, not theme.
 
 ## Type
@@ -99,3 +101,4 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 ## Known deviations
 
 - The Teleprompter's logo mark and header exist in the bundled `tools/teleprompter/index.html` as well as in `tools/teleprompter/app.html`; edit both.
+- The Finance tool (`tools/finance/finance.css`) has its own look by choice: rounded cards with soft shadows, sentence-case buttons, header sections as tabs, icon-only row actions that appear on hover or focus, and coloured category chips. It keeps the shared teal tool header and logo. Its colours are `--f-*` tokens at the top of that file, with dark-mode values.
