@@ -18,11 +18,11 @@ Rules from the project still apply: no inline `<style>` / `<script>` / `style=""
 
 ## Two looks: the website and the tools
 
-The website is flat and square (the principles below). The tools (Fin, the TMX Editor and the Teleprompter) share Fin's look instead: a soft neutral page, white cards with a 12px radius and a soft shadow, 8px-radius controls, sentence-case buttons, Geist for text, and teal for action. Its colours are the `--f-*` tokens in `src/tools.css`, with dark values. Fin uses them directly; the TMX Editor and the Teleprompter load `src/tools-look.css`, which points the site tokens at them, so anything styled with `--paper`, `--rule-strong` or `--radius` follows. See [Tools](#tools) for the controls.
+The website keeps its own voice (warm cream, Georgia headings and blog text, vermillion links, the hero) but shares the tools' shapes: Geist for interface text, 12px cards and images with a soft shadow, 8px controls, sentence-case labels. The tools (Fin, the TMX Editor and the Teleprompter) share Fin's look instead: a soft neutral page, white cards with a 12px radius and a soft shadow, 8px-radius controls, sentence-case buttons, Geist for text, and teal for action. Its colours are the `--f-*` tokens in `src/tools.css`, with dark values. Fin uses them directly; the TMX Editor and the Teleprompter load `src/tools-look.css`, which points the site tokens at them, so anything styled with `--paper`, `--rule-strong` or `--radius` follows. See [Tools](#tools) for the controls.
 
 ## Principles (website)
 
-- Flat and square. 2px radius (`--radius`), no decorative shadows, no gradients.
+- Rounded like the tools: `--radius-lg` (12px) for cards, tiles, screenshots and images, with `--shadow-card`; `--radius-sm` (8px) for buttons, inputs and focus rings. `--radius` (2px) is left for the hero art. No gradients outside the hero art.
 - Warm greys for surfaces, teal for action, red only for danger.
 - Quiet by default: one primary action per view, everything else secondary.
 - Light and dark both work. Use tokens, never hardcode a color that has a token.
@@ -50,13 +50,13 @@ In tools, `--accent` is set to `--tool-teal-deep`. The vermillion accent (`#C836
 
 ## Type (website)
 
-- Body and controls: Inter (`--font-sans`). Headings and logo text: Georgia (`--font-serif`), weight 400, tracking about -0.015em. Code and fixed-width data: JetBrains Mono (`--font-mono`).
-- Button labels: 12px, weight 500, uppercase, 0.06em tracking.
-- Small labels and table headers: 10px, uppercase, 0.16em tracking, muted.
+- Body and controls: Geist (`--font-sans`), as in the tools. Headings, blog text and logo text: Georgia (`--font-serif`), weight 400, tracking about -0.015em. Code and fixed-width data: JetBrains Mono (`--font-mono`).
+- Button labels: 13 to 14px, weight 500, sentence case.
+- Section labels: Geist 15px weight 600 in `--ink`. Small labels (meta, tags, dates): 12 to 13px, weight 500, muted, sentence case. Uppercase stays only in the hero and the project art (tiles, banners).
 
 ## Buttons (website)
 
-Every website button has the same shape: 2px radius, no border (secondary has a 1px border), 9px 18px padding, 12px uppercase label.
+Every website button has the same shape: `--radius-sm`, no border (secondary has a 1px border), 10px 18px padding, 14px sentence-case label. Buttons on dark overlays (the lightbox) are a white wash, 12% resting and 22% on hover.
 
 | Kind | Resting | Hover | Use |
 | --- | --- | --- | --- |
@@ -75,7 +75,7 @@ Every website button has the same shape: 2px radius, no border (secondary has a 
 The behaviour (native controls, labels, `role="switch"`, `aria-pressed`) is the same in the tools; their shapes are under [Tools](#tools).
 
 
-- Text input, search, select, textarea: 1px `--rule-strong` border, 2px radius, `--paper` bg, `--text`, Inter 13px. Focus: border turns `--accent` and the focus ring shows.
+- Text input, search, select, textarea: 1px `--rule-strong` border, `--radius-sm`, `--paper` bg, `--text`, Geist 14px. Focus: the border darkens and a soft 3px halo shows.
 - Checkbox and radio: native control with `accent-color: var(--accent)`, 14px, pointer cursor, always with a text label.
 - Toggle: square 48 x 28 track, `--button-teal` when on, muted when off, `--paper` thumb.
 - Expandable group for secondary options: a native `<details>` whose summary is a link-style row with a chevron (`--accent` text), reading "More …" when closed and "Fewer …" when open. Teleprompter: `.tp-more`.

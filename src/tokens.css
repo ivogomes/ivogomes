@@ -1,10 +1,12 @@
 /* Warm grey neutrals — shared across all three directions */
 :root {
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Geist', system-ui, sans-serif; /* shared with the tools (Fin's typeface) */
   --font-serif: Georgia, serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  --radius: 2px;
+  --radius: 2px; /* the website's flat elements: rules, hero art */
+  --radius-sm: 8px; /* controls: buttons, inputs, as in the tools */
+  --radius-lg: 12px; /* cards, tiles, screenshots, images */
 
   --hero-ink: #FFF8E8;
   --hero-teal: #5BBFB5; /* the home hero */
@@ -33,6 +35,7 @@
   --bg: var(--cream);
   --surface: var(--paper);
   --shadow: 0 1px 0 #1C1B1910;
+  --shadow-card: 0 1px 2px rgb(28 27 25 / 0.05), 0 2px 8px rgb(28 27 25 / 0.04); /* Fin's soft card shadow, warm */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,6 +56,7 @@
   --bg: var(--cream);
   --surface: var(--paper);
   --shadow: 0 1px 0 #00000030;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3);
   }
 }
 
