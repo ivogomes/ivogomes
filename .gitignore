@@ -4,6 +4,9 @@ node_modules/
 dist/
 .build/
 
-# Personal finance data and screenshots used while building tools/finance. Never publish these.
-tools/finance/exports/
-tools/finance/Screenshot*.png
+# The tools live in their own repos (see tools/README.md). Clone them here to work on them with the
+# site; the deploy checks them out into the same folders.
+tools/finance/
+tools/tapscore/
+tools/teleprompter/
+tools/tmx-editor/

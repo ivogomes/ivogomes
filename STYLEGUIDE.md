@@ -9,6 +9,7 @@ Where things live:
 | Colors, fonts, radius (shared tokens) | `src/tokens.css` |
 | Tool tokens (including the tools' `--f-*` palette), tool header, logo marks | `src/tools.css` |
 | The tools' look for tools built on the site tokens: maps `--cream`, `--paper`, `--rule`, `--radius`, `--font-sans` and the rest onto `--f-*` | `src/tools-look.css` |
+| A copy of the three files above inside each tool, so it runs on its own (each tool is its own repo; see `tools/README.md`) | `shared/` in each tool |
 | Fin | `tools/finance/finance.css` |
 | Website components | `src/main.css` |
 | TMX Editor controls | `tools/tmx-editor/styles.css` |
@@ -118,6 +119,7 @@ The tools' controls match Fin's (`.fin-btn`, `.fin-input`, `.fin-switch`, `.fin-
 2. If it is new, define it in the shared tokens or the shared tool stylesheet, add it here, then use it.
 3. Apply the change to the website and every tool that has the control, not just the page you are on.
 4. Check light and dark, keyboard focus, hover and disabled.
+5. A change to `src/tokens.css`, `src/tools.css` or `src/tools-look.css` reaches a tool only once it's copied into that tool's `shared/` folder, in the tool's own repo.
 
 ## Known deviations
 

@@ -4,6 +4,9 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+  # A tool's repo asks for a deploy when it changes (its .github/workflows/deploy-site.yml).
+  repository_dispatch:
+    types: [tool-updated]
 
 permissions:
   contents: read
@@ -23,6 +26,24 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # The tools live in their own repos; each is served from its folder under /tools/.
+      - uses: actions/checkout@v7
+        with:
+          repository: ivogomes/fin
+          path: tools/finance
+      - uses: actions/checkout@v7
+        with:
+          repository: ivogomes/tapscore
+          path: tools/tapscore
+      - uses: actions/checkout@v7
+        with:
+          repository: ivogomes/teleprompter
+          path: tools/teleprompter
+      - uses: actions/checkout@v7
+        with:
+          repository: ivogomes/tmx-editor
+          path: tools/tmx-editor
+
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
@@ -39,9 +60,9 @@ jobs:
             --exclude=.git/ \
             --exclude=.github/ \
             --exclude=_site/ \
-            --exclude=tools/tapscore-app/ \
-            --exclude=tools/tapscore-watch/ \
-            --exclude=tools/tapscore-wear/ \
+            --exclude=tools/tapscore/app/ \
+            --exclude=tools/tapscore/watch/ \
+            --exclude=tools/tapscore/wear/ \
             . _site/
 
       - uses: actions/configure-pages@v6
