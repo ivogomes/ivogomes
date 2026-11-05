@@ -26,10 +26,19 @@
 
 .tools-card--next .tools-card-icon { color: var(--text-muted); }
 
+/* a tool shared as source only (Fin: it needs a database of your own): the card isn't a link, so it
+   has no hover; only its source link is. */
+.tools-card--source:hover {
+  --mark-ground: var(--surface);
+  background: var(--surface);
+  border-color: var(--rule);
+}
+
 /* every card in a row is as tall as the tallest */
 .tools-list > li { display: flex; }
 
 .tools-card {
+  position: relative;
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
@@ -54,10 +63,27 @@
   border-color: var(--rule-strong);
 }
 
-.tools-card:focus-visible {
+/* The tool's name is the card's link, stretched over the whole card so all of it opens the tool;
+   the source link sits above it. The focus ring is drawn around the card. */
+.tools-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tools-card-link:hover { color: inherit; }
+
+.tools-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+}
+
+.tools-card-link:focus-visible { outline: none; }
+
+.tools-card-link:focus-visible::after {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: var(--radius-lg);
 }
 
 .tools-card-icon {
@@ -68,7 +94,41 @@
 }
 
 .tools-card-body {
+  flex: 1 1 auto;
   min-width: 0;
+}
+
+/* Its code on GitHub: a small link at the bottom of the card, above the card's own link. */
+.tools-card-source {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.tools-card-source:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tools-card-source:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.tools-card-gh {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .tools-card-title {

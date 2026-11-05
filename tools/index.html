@@ -13,7 +13,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tools — Ivo Gomes</title>
-<meta name="description" content="Small utilities I've built — free to use, no signup, runs in your browser." />
+<meta name="description" content="Small utilities I've built, free to use: they run in your browser, with no tracking." />
 
 <link rel="icon" type="image/x-icon"  href="/assets/favicon.ico" />
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
@@ -42,13 +42,13 @@
   <header class="pp-header pp-enter" style="margin-top: 48px; --enter-delay: 100ms">
     <div>
       <h1 class="pp-title">Tools</h1>
-      <p class="pp-blurb">Small utilities I've built for myself, free to use. No signup, no tracking, everything runs in your browser.</p>
+      <p class="pp-blurb">Small utilities I've built for myself, free to use. No tracking: they run in your browser, and your data stays on your device or, for Fin, in a database of your own.</p>
     </div>
   </header>
 
   <ul class="tools-list pp-enter" style="--enter-delay: 200ms">
     <li>
-      <a href="/tools/tapscore/" class="tools-card">
+      <div class="tools-card">
         <svg class="tools-card-icon" viewBox="0 0 24 24" aria-hidden="true">
   <rect width="24" height="24" fill="currentColor"/>
   <path d="M12 0v24" fill="none" stroke="var(--mark-ground)" stroke-width="1"/>
@@ -56,36 +56,53 @@
   <path d="M15 12h6" fill="none" stroke="var(--mark-ground)" stroke-width="1.5"/>
 </svg>
         <div class="tools-card-body">
-          <h2 class="tools-card-title">TapScore</h2>
+          <h2 class="tools-card-title"><a href="/tools/tapscore/" class="tools-card-link">TapScore</a></h2>
           <p class="tools-card-desc">Keep score with a tap for tennis, padel, table tennis, pickleball, squash, badminton and volleyball. It handles deuce, tie-breaks and serve, with undo and match stats. Best on a phone or tablet: install it as an app, use it offline, and your matches stay on your device.</p>
         </div>
-      </a>
+        <a href="https://github.com/ivogomes/tapscore" class="tools-card-source" aria-label="TapScore source on GitHub"><svg class="tools-card-gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>Source on GitHub</a>
+      </div>
     </li>
     <li>
-      <a href="/tools/teleprompter/" class="tools-card">
+      <div class="tools-card">
         <svg class="tools-card-icon" viewBox="0 0 24 24" aria-hidden="true">
   <rect width="24" height="24" fill="currentColor"/>
   <path d="M5 6.5h14M5 17.5h10" fill="none" stroke="var(--mark-ground)" stroke-width="1.5"/>
   <rect x="3" y="9.5" width="18" height="5" fill="var(--tool-teal)"/>
 </svg>
         <div class="tools-card-body">
-          <h2 class="tools-card-title">Teleprompter</h2>
+          <h2 class="tools-card-title"><a href="/tools/teleprompter/" class="tools-card-link">Teleprompter</a></h2>
           <p class="tools-card-desc">Write and save scripts, read them with scrolling text you can resize and mirror, and keep your phone awake while you present. Scripts stay in your browser, with optional sync across devices.</p>
         </div>
-      </a>
+        <a href="https://github.com/ivogomes/teleprompter" class="tools-card-source" aria-label="Teleprompter source on GitHub"><svg class="tools-card-gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>Source on GitHub</a>
+      </div>
     </li>
     <li>
-      <a href="/tools/tmx-editor/" class="tools-card">
+      <div class="tools-card">
         <svg class="tools-card-icon" viewBox="0 0 24 24" aria-hidden="true">
   <rect width="24" height="24" fill="currentColor"/>
   <path d="M9 0v24M0 8.5h24M0 15.5h24" fill="none" stroke="var(--mark-ground)" stroke-width="1"/>
   <rect x="9" y="8.5" width="15" height="7" fill="var(--tool-teal)"/>
 </svg>
         <div class="tools-card-body">
-          <h2 class="tools-card-title">TMX Editor</h2>
+          <h2 class="tools-card-title"><a href="/tools/tmx-editor/" class="tools-card-link">TMX Editor</a></h2>
           <p class="tools-card-desc">Open, view, and edit TMX translation memory files. Search and replace across languages, merge duplicate rows, edit translation-unit metadata, and export — all client-side.</p>
         </div>
-      </a>
+        <a href="https://github.com/ivogomes/tmx-editor" class="tools-card-source" aria-label="TMX Editor source on GitHub"><svg class="tools-card-gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>Source on GitHub</a>
+      </div>
+    </li>
+    <li>
+      <div class="tools-card tools-card--source">
+        <svg class="tools-card-icon" viewBox="0 0 24 24" aria-hidden="true">
+  <rect width="24" height="24" fill="currentColor"/>
+  <path d="M6 18Q9 7 16.5 4.5Q13.5 9 15.3 18Z" fill="var(--mark-ground)"/>
+  <path d="M3 17q1.5-1.6 3 0t3 0t3 0t3 0t3 0t3 0V19.5H3Z" fill="var(--tool-teal)"/>
+</svg>
+        <div class="tools-card-body">
+          <h2 class="tools-card-title">Fin</h2>
+          <p class="tools-card-desc">Take care of your finances: accounts, cards, loans and investments with live prices, scheduled payments, insights, net worth and savings goals. Your data lives in your own free Supabase database, set up once with the steps in its source.</p>
+        </div>
+        <a href="https://github.com/ivogomes/fin" class="tools-card-source" aria-label="Fin source on GitHub"><svg class="tools-card-gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>Source on GitHub</a>
+      </div>
     </li>
     <li>
       <div class="tools-card tools-card--next">
