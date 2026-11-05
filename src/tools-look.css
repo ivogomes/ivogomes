@@ -1,0 +1,36 @@
+/* The tools' look (Fin's), for the tools built on the site tokens: the Teleprompter and the TMX
+   Editor. The site's neutrals, radius and fonts are mapped onto Fin's --f-* palette (src/tools.css),
+   so anything styled with them follows; each tool's stylesheet shapes its controls like Fin's.
+   Load after src/tokens.css and src/tools.css, before the tool's own stylesheet. Fin uses the --f-*
+   tokens directly and doesn't load this. */
+:root {
+  --font-sans: 'Geist', system-ui, sans-serif;
+  --radius: var(--f-radius-sm);
+  --bg: var(--f-bg);
+  --cream: var(--f-bg);
+  --cream-2: var(--f-surface-2);
+  --paper: var(--f-surface);
+  --surface: var(--f-surface);
+  --ink: var(--f-text);
+  --ink-soft: var(--f-text);
+  --text: var(--f-text);
+  --text-muted: var(--f-muted);
+  --text-quiet: var(--f-muted);
+  --rule: var(--f-border);
+  --rule-strong: var(--f-border-strong);
+  --shadow: var(--f-shadow);
+  --accent: var(--f-accent);
+}
+
+body {
+  background: var(--f-bg);
+  color: var(--f-text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+:focus-visible { outline: 2px solid var(--f-accent); outline-offset: 2px; }
+
+/* The header as in Fin: a little shorter than the site's. */
+.tool-header { min-height: 64px; padding-block: 10px; }

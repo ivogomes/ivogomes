@@ -7,14 +7,20 @@ Where things live:
 | What | File |
 | --- | --- |
 | Colors, fonts, radius (shared tokens) | `src/tokens.css` |
-| Tool tokens, tool header, logo marks | `src/tools.css` |
+| Tool tokens (including the tools' `--f-*` palette), tool header, logo marks | `src/tools.css` |
+| The tools' look for tools built on the site tokens: maps `--cream`, `--paper`, `--rule`, `--radius`, `--font-sans` and the rest onto `--f-*` | `src/tools-look.css` |
+| Fin | `tools/finance/finance.css` |
 | Website components | `src/main.css` |
 | TMX Editor controls | `tools/tmx-editor/styles.css` |
 | Teleprompter controls | `tools/teleprompter/teleprompter.css` (`.tp-btn`, `.tp-range`, `.tp-switch`: plain HTML styled by the tokens, no third-party design system) |
 
 Rules from the project still apply: no inline `<style>` / `<script>` / `style=""` in pages you author, and accessibility is first-class (see below).
 
-## Principles
+## Two looks: the website and the tools
+
+The website is flat and square (the principles below). The tools (Fin, the TMX Editor and the Teleprompter) share Fin's look instead: a soft neutral page, white cards with a 12px radius and a soft shadow, 8px-radius controls, sentence-case buttons, Geist for text, and teal for action. Its colours are the `--f-*` tokens in `src/tools.css`, with dark values. Fin uses them directly; the TMX Editor and the Teleprompter load `src/tools-look.css`, which points the site tokens at them, so anything styled with `--paper`, `--rule-strong` or `--radius` follows. See [Tools](#tools) for the controls.
+
+## Principles (website)
 
 - Flat and square. 2px radius (`--radius`), no decorative shadows, no gradients.
 - Warm greys for surfaces, teal for action, red only for danger.
@@ -42,15 +48,15 @@ Money amounts in Fin (the finance tool) are data, not theme: money in is green (
 
 In tools, `--accent` is set to `--tool-teal-deep`. The vermillion accent (`#C8361A`) belongs to the website's own links and hovers; do not use orange or vermillion in tools. Per-speaker colors in the Teleprompter are data, not theme.
 
-## Type
+## Type (website)
 
 - Body and controls: Inter (`--font-sans`). Headings and logo text: Georgia (`--font-serif`), weight 400, tracking about -0.015em. Code and fixed-width data: JetBrains Mono (`--font-mono`).
 - Button labels: 12px, weight 500, uppercase, 0.06em tracking.
 - Small labels and table headers: 10px, uppercase, 0.16em tracking, muted.
 
-## Buttons
+## Buttons (website)
 
-Every button has the same shape: 2px radius, no border (secondary has a 1px border), 9px 18px padding, 12px uppercase label.
+Every website button has the same shape: 2px radius, no border (secondary has a 1px border), 9px 18px padding, 12px uppercase label.
 
 | Kind | Resting | Hover | Use |
 | --- | --- | --- | --- |
@@ -61,18 +67,20 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 | Link | No background, `--accent` text, underline on hover | Underline | Inline actions |
 
 - Text must stay readable on hover. Links styled as buttons (`<a class="pp-download-btn">`) must set their hover text color explicitly, because the global `a:hover` rule would otherwise turn it vermillion.
-- Disabled: 40% opacity (60% on the website), `cursor: not-allowed`, no hover change.
-- A primary button on a teal header keeps the same colors.
-- Primary buttons everywhere carry the shimmer: a soft white sweep across the button on hover, 500ms (off under reduced motion, and not on disabled buttons). Website: `.pp-download-btn`. TMX: add `class="btn-primary"` (labels use `.file-btn`), defined in `src/tools.css`. Teleprompter: primary buttons are `.tp-btn.btn-primary`.
+- Disabled: 60% opacity, `cursor: not-allowed`, no hover change.
+- Primary buttons everywhere carry the shimmer: a soft white sweep across the button on hover, 500ms (off under reduced motion, and not on disabled buttons). This applies to the tools too. Website: `.pp-download-btn`. TMX: add `class="btn-primary"` (labels use `.file-btn`), defined in `src/tools.css`. Teleprompter: primary buttons are `.tp-btn.btn-primary`. Fin: `.fin-btn.btn-primary`.
 
-## Form controls
+## Form controls (website)
+
+The behaviour (native controls, labels, `role="switch"`, `aria-pressed`) is the same in the tools; their shapes are under [Tools](#tools).
+
 
 - Text input, search, select, textarea: 1px `--rule-strong` border, 2px radius, `--paper` bg, `--text`, Inter 13px. Focus: border turns `--accent` and the focus ring shows.
 - Checkbox and radio: native control with `accent-color: var(--accent)`, 14px, pointer cursor, always with a text label.
-- Toggle: square 48 x 28 track, `--button-teal` when on, muted when off, `--paper` thumb. Teleprompter: `.tp-switch` (a checkbox with `role="switch"`).
+- Toggle: square 48 x 28 track, `--button-teal` when on, muted when off, `--paper` thumb.
 - Expandable group for secondary options: a native `<details>` whose summary is a link-style row with a chevron (`--accent` text), reading "More …" when closed and "Fewer …" when open. Teleprompter: `.tp-more`.
-- Segmented choice (a few mutually exclusive options, such as the Teleprompter font): a joined row of buttons in one 1px `--rule-strong` frame. The chosen one is `--button-teal` with `--button-teal-ink` text, set with `aria-pressed`. Teleprompter: `.tp-seg` and `.tp-seg-btn`.
-- Slider: 4px track, square thumb in `--button-teal` ringed in `--paper`. Teleprompter: `.tp-range`.
+- Segmented choice (a few mutually exclusive options): a joined row of buttons in one 1px `--rule-strong` frame. The chosen one is `--button-teal` with `--button-teal-ink` text, set with `aria-pressed`.
+- Slider: 4px track, square thumb in `--button-teal` ringed in `--paper`.
 - Labels sit above or beside the control, never as placeholder-only.
 
 ## Focus, motion, accessibility
@@ -91,6 +99,19 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 - The logo is a 24px flat ink square carrying the tool's glyph. Its lines take the surface behind it (`--mark-ground`) and one block in `--tool-teal`. The name sits beside it in Georgia 22px.
 - Marks live in the tool page and on its card in `tools/index.html`. Keep the two identical.
 
+## Tools
+
+The tools' controls match Fin's (`.fin-btn`, `.fin-input`, `.fin-switch`, `.fin-seg` in `tools/finance/finance.css`). The TMX Editor (`button`, `.icon-btn`, inputs in `styles.css`) and the Teleprompter (`.tp-btn`, `.tp-range`, `.tp-switch`, `.tp-seg` in `teleprompter.css`) follow the same values:
+
+- Buttons: 8px radius, 8px 14px padding, Geist 13px weight 500, sentence case. Primary: `--f-accent` with `--f-accent-ink` text and a small shadow, `--f-accent-strong` on hover, plus the shimmer. Secondary: `--f-surface` with a 1px `--f-border-strong` border, `--f-hover` on hover. Danger: secondary with `--f-neg` text, `--f-danger-soft` and a `--f-neg` border on hover. Small: 5px 10px, 12px, 7px radius. Disabled: 45% opacity.
+- On the teal header, secondary controls are a soft wash of the header ink (8%, 16% on hover) with no border.
+- Inputs and selects: 8px radius, 1px `--f-border-strong`, `--f-surface`, 14px. Focus: `--f-accent` border and the `--f-ring` halo.
+- Switch: a 36 x 20 pill, `--f-accent` when on, round `--f-surface` thumb. Slider: rounded 4px track, round `--f-accent` thumb.
+- Segmented choice: a sunken pill row (`--f-surface-2`, 10px radius, 3px padding); the chosen option is raised on `--f-surface` with a small shadow.
+- Cards and tables: `--f-surface`, 1px `--f-border`, `--f-radius` (12px), `--f-shadow`. Table headers are 12px muted, sentence case.
+- Headings: Geist weight 650, tracking about -0.02em. The logo text stays Georgia.
+- Labels are sentence case, 12 to 13px; no uppercase mono labels. Codes and attribute names stay in JetBrains Mono.
+
 ## Adding or changing a control
 
 1. Check this guide. If the control exists here, reuse it exactly.
@@ -101,4 +122,4 @@ Every button has the same shape: 2px radius, no border (secondary has a 1px bord
 ## Known deviations
 
 - The Teleprompter's logo mark and header exist in the bundled `tools/teleprompter/index.html` as well as in `tools/teleprompter/app.html`; edit both.
-- Fin, the finance tool (`tools/finance/finance.css`), has its own look by choice: rounded cards with soft shadows, sentence-case buttons, header sections as tabs, icon-only row actions that appear on hover or focus, and coloured category chips. It keeps the shared teal tool header and logo, and uses Geist instead of Inter for its text. Its colours are `--f-*` tokens at the top of that file, with dark-mode values.
+- Fin also has controls of its own that the other tools don't need yet: header sections as tabs, icon-only row actions that appear on hover or focus, and coloured category chips. Only Fin offers a picked theme (Settings → Display); the other tools follow the system.
